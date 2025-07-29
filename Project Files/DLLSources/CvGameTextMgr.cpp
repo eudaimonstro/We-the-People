@@ -8091,7 +8091,7 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	{
 		return;
 	}
-	CvFeatureInfo& feature = GC.getFeatureInfo(eFeature);
+	const CvFeatureInfo& feature = GC.getFeatureInfo(eFeature);
 
 	int aiYields[NUM_YIELD_TYPES];
 	if (!bCivilopediaText)
@@ -8122,6 +8122,12 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_IMPASSABLE"));
+	}
+
+	if (feature.getTurnDamage() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_FEATURE_DAMAGE", feature.getTurnDamage()));
 	}
 
 	if (feature.isNorthMovementBonus() || feature.isSouthMovementBonus() || feature.isEastMovementBonus()  || feature.isWestMovementBonus() || feature.isNorthEastMovementBonus() || feature.isNorthWestMovementBonus() || feature.isSouthEastMovementBonus() || feature.isSouthWestMovementBonus())
