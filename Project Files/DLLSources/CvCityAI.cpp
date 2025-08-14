@@ -325,22 +325,37 @@ void CvCityAI::AI_assignWorkingPlots()
 		jobMutex.unlock();
 	}
 
-	// If we failed to find a job for this citizen, just remove it from the city
-	for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
-	{
-		CvUnit* const pUnit = m_aPopulationUnits[i];
-		const ProfessionTypes eProfession = pUnit->getProfession();
-		if (eProfession == NO_PROFESSION)
+	// lock scope
+	{ 
+		tbb::mutex::scoped_lock lock(jobMutex);
+
+		// If we failed to find a job for this citizen, just remove it from the city
+		int remaining = static_cast<int>(m_aPopulationUnits.size());
+		for (int i = remaining - 1; i >= 0 && remaining > 1; --i)
 		{
-			// TODO: Check if the citizen is able to leave (movement points etc.)
-			jobMutex.lock();
-			const bool res = removePopulationUnit(CREATE_ASSERT_DATA, pUnit, false, GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getDefaultProfession());
-			jobMutex.unlock();
-			FAssertMsg(res, "Failed to remove NO_PROFESSION citizen");
+			CvUnit* const pUnit = m_aPopulationUnits[i];
+			const ProfessionTypes eProfession = pUnit->getProfession();
+
+			// Only remove NO_PROFESSION citizens, but never remove the last one.
+			if (eProfession == NO_PROFESSION)
+			{
+				// TODO: Also check if the citizen can actually leave (movement points, etc.)
+				const bool res = removePopulationUnit(
+					CREATE_ASSERT_DATA,
+					pUnit,
+					false,
+					GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getDefaultProfession());
+
+				FAssertMsg(res, "Failed to remove NO_PROFESSION citizen");
+
+				if (res)
+				{
+					--remaining;
+				}
+			}
 		}
 	}
 }
-
 
 void CvCityAI::AI_updateAssignWork()
 {
