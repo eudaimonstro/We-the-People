@@ -14628,6 +14628,12 @@ bool CvGraphicOptionInfo::read(CvXMLLoadUtility* pXML)
 //
 //
 
+CvEventTriggerInfo::PlotTriggers::PlotTriggers()
+	: CanBuildImprovement(NO_IMPROVEMENT)
+	, HasNoImprovement(false)
+{
+}
+
 CvEventTriggerInfo::UnitTriggers::UnitTriggers()
 	: Tracked(false)
 	, OnPlot(false)
@@ -14678,6 +14684,11 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 }
 CvEventTriggerInfo::~CvEventTriggerInfo()
 {
+}
+
+const CvEventTriggerInfo::PlotTriggers& CvEventTriggerInfo::plotTriggers() const
+{
+	return m_PlotTrigger;
 }
 
 const CvEventTriggerInfo::UnitTriggers& CvEventTriggerInfo::unitTriggers() const
@@ -15157,6 +15168,10 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 		InfoArray<PlotTypes> ia;
 		readXML(ia, "PlotTypes");
 		ia.addTo(m_em_PlotTypes);
+
+		pXML->GetEnum(getType(), m_PlotTrigger.CanBuildImprovement, "eCanBuildImprovement", false);
+		pXML->GetChildXmlValByName(&m_PlotTrigger.HasNoImprovement, "bHasNoImprovement");
+
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
 
