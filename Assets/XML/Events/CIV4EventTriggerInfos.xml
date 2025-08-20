@@ -42706,6 +42706,9 @@
 			<bOwnPlot>1</bOwnPlot>
 			<ePlotType>NONE</ePlotType>
 			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
 				<eCanBuildImprovement>IMPROVEMENT_MONASTERY</eCanBuildImprovement>
 				<bHasNoImprovement>1</bHasNoImprovement>
 			</PlotRequirements>
