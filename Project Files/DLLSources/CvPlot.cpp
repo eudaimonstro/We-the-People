@@ -7595,7 +7595,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 }
 
 
-bool CvPlot::isBestAdjacentFound(PlayerTypes eIndex)
+bool CvPlot::isBestAdjacentFound(PlayerTypes eIndex) const
 {
 	CvPlot* pAdjacentPlot;
 	int iI;
