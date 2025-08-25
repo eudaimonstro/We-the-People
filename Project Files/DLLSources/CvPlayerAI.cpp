@@ -3332,7 +3332,7 @@ int CvPlayerAI::AI_getMemoryAttitude(PlayerTypes ePlayer, MemoryTypes eMemory)
 
 int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pList, bool bIgnoreAnnual, int iChange)
 {
-	FAssert(CxDesyncMonitor::isNeverSync());
+	CxDesyncMonitor StartMonitoring(CxDesyncMonitor::TYPE_BOTH);
 
 	int iValue = 0;
 
@@ -3406,6 +3406,7 @@ bool CvPlayerAI::AI_goldDeal(const CLinkList<TradeData>* pList)
 bool CvPlayerAI::AI_considerOffer(PlayerTypes ePlayer, const CLinkList<TradeData>* pTheirList, const CLinkList<TradeData>* pOurList, int iChange)
 {
 	FAssert(CxDesyncMonitor::isNeverSync());
+	CxDesyncMonitor StartMonitoring;
 
 	CLLNode<TradeData>* pNode;
 	int iThreshold;
@@ -3562,6 +3563,7 @@ int CvPlayerAI::AI_militaryHelp(PlayerTypes ePlayer, int& iNumUnits, UnitTypes& 
 bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeData>* pTheirList, const CLinkList<TradeData>* pOurList, CLinkList<TradeData>* pTheirInventory, CLinkList<TradeData>* pOurInventory, CLinkList<TradeData>* pTheirCounter, CLinkList<TradeData>* pOurCounter, const IDInfo& kTransport)
 {
 	FAssert(CxDesyncMonitor::isNeverSync());
+	CxDesyncMonitor StartMonitoring; // called in async from python. EXE calls this function through the virtual function pointer
 
 	CLLNode<TradeData>* pNode;
 	CLLNode<TradeData>* pBestNode;
