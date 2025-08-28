@@ -1292,7 +1292,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>500</iWeight>
@@ -1444,7 +1444,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>20</iWeight>
@@ -1514,7 +1514,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
@@ -1584,7 +1584,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>500</iWeight>
@@ -2059,7 +2059,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>500</iWeight>
@@ -2131,7 +2131,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>500</iWeight>
@@ -3042,7 +3042,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>20</iWeight>
@@ -3270,7 +3270,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
@@ -3669,7 +3669,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>200</iWeight>
@@ -3766,7 +3766,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>200</iWeight>
@@ -4152,7 +4152,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>500</iWeight>
@@ -5216,7 +5216,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Quest_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
@@ -5884,7 +5884,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
@@ -11769,7 +11769,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>500</iWeight>
@@ -11915,7 +11915,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>200</iWeight>
@@ -39443,7 +39443,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Quest_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>2000</iWeight>
@@ -42425,7 +42425,7 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
-			<bSinglePlayer>1</bSinglePlayer>
+			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Quest_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>2000</iWeight>
