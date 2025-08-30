@@ -1031,9 +1031,9 @@ void CvCity::chooseProduction(UnitTypes eTrainUnit, BuildingTypes eConstructBuil
 }
 
 
-int CvCity::getCityPlotIndex(const CvPlot* pPlot) const
+CityPlotTypes CvCity::getCityPlotIndex(const CvPlot* pPlot) const
 {
-	return plotCityXY(this, pPlot);
+	return (CityPlotTypes)plotCityXY(this, pPlot);
 }
 
 
