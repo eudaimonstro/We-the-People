@@ -6279,6 +6279,10 @@ def CanDoPortRoyalTrade(argsList, iYieldID, iQuantity):
 		return False
 	
 	king = gc.getPlayer(player.getParent())
+	
+	if king is None:
+		return False
+	
 	if not king.isEurope():
 		return False
 	
