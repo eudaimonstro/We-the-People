@@ -3303,7 +3303,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_HUNTER_TEXT</Tag>
-		<English>You have hired a slave hunter to bring back runaway slaves. Now that you're fully committed to this business and are running your plantations with slaves, there's really nothing more to say about it. May the Lord forgive you for your deeds.[NEWLINE][NEWLINE]</English>
+		<English>You've hired a slave hunter to bring back runaway slaves. Slave hunters often choose a distinctive tartan so the owner's slaves are identified by their clothing. Slaves get the bright tartan and the slave hunter, remembering Scotland, wears hunting plaid to blend into the forest.[NEWLINE][NEWLINE]</English>
 		<German>Ihr habt einen Sklavenjäger angeheuert, der Euch entlaufene Sklaven zurückbringt. Da ihr nun offensichtlich ganz und gar in dieses Geschäft eingestiegen seid und Eure Plantagen mit Sklaven betreibt, gibt es dazu eigentlich nichts mehr zu sagen. Möge der Herr Euch Eure Taten vergeben.[NEWLINE][NEWLINE]</German>
 		<Russian>Вы наняли охотника за рабами, чтобы вернуть сбежавших наглецов. Теперь, когда вы полностью посвятили себя этому делу и поручили работу на плантациях рабам, больше нечего сказать об этом. Господь милосердный да простит вас за дела неправедные.[NEWLINE][NEWLINE]</Russian>
 	</TEXT>	
@@ -4467,3 +4467,4 @@
 		<Russian>Милорд, наши тюрьмы заполняются военнопленными. Несомненно, мы могли бы использовать их на плантациях. Однако военнопленные — плохие работники. Кроме того, их ннужно постоянно охранять.[NEWLINE][NEWLINE]Вам следует рассмотреть возможность отправки их обратно врагу в обмен на золото. И, конечно, под честное слово, что они никогда больше не будут воевать на этом континенте и против нас.[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
 </Civ4GameText>
+
