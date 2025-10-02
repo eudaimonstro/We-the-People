@@ -47,15 +47,17 @@
 *.kf  binary
 
 # git specific files
-.gitattributes lf  
+.gitattributes lf
 .gitignore     lf
+.editorconfig  lf
 
 
 
 # export ignores
 # The following files will not make it into git exports (as in a zip of the git repository)
 
-.gitattributes export-ignore  
+.gitattributes export-ignore
 .gitignore     export-ignore
+.editorconfig  export-ignore
 .ini.bak       export-ignore
 Project\ Files export-ignore
