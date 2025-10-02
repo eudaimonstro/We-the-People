@@ -1,33 +1,35 @@
 # define line endings
 
+* text=auto
+
 # user readable files
-*.txt lf
-*.ini lf
-*.bak lf
-*.xml lf
+*.txt text lf
+*.ini text lf
+*.bak text lf
+*.xml text lf
 
 # encoded documentation
-*.html lf
+*.html text lf
 
 # source code
-*.cpp lf
-*.c   lf
-*.hpp lf
-*.h   lf
-*.py  lf
+*.cpp text lf
+*.c   text lf
+*.hpp text lf
+*.h   text lf
+*.py  text crlf
 
 # project files and other compilation related files
-*Makefile lf
-*.project lf
-*.vcxproj lf
-*.sln     lf
-*.filters lf
-*.pl      lf
-*.pm      lf
-*.bat     lf
+*Makefile text lf
+*.project text lf
+*.vcxproj text lf
+*.sln     text lf
+*.filters text lf
+*.pl      text lf
+*.pm      text lf
+*.bat     text lf
 
 # Custom file formats
-*.ColonizationWBSave lf
+*.ColonizationWBSave text crlf
 
 # binary files
 *.ico binary
@@ -47,9 +49,9 @@
 *.kf  binary
 
 # git specific files
-.gitattributes lf
-.gitignore     lf
-.editorconfig  lf
+.gitattributes text lf
+.gitignore     text lf
+.editorconfig  text lf
 
 
 
