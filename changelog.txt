@@ -1,5 +1,58 @@
 We the People Changelog
 
+Version 4.2.1
+
+Fixes:
+- goodies outcome set to have a minimum turn for appearing will no longer appear from the start
+- Founding Father Jacques Marquette is no longer offered 117 times, resulting in 116 extra FF offered sounds
+- Units off map will no longer take damage if a storm appears on the last plot they were on before leaving for Europe etc
+- Fixed potiential crash in CvCityAI::AI_assignWorkingPlots
+- #1147 Quest to build a monastery will no longer pick a plot where monasteries can't be build
+- The mod no longer writes CvPythonExtensions.hlp.txt in the game dir when starting, potientially resulting in errors due to write permission
+- promotions with negative movement will no longer cause units to become completely unable to move
+- negative promotions can now be repaired in forts (matching what colopedia has said from the start)
+- marked more goodie outcomes as bad (for no bad outcome feature)
+- #1152 tooltip for production in colony screen now applies production loss from lack of input (like doesn't show hammers if there is no lumber)
+- #1163 opening the domestic advisor is now faster due to rewritten code to get an overview of trade routes
+- added unit help popup when choosing which expert a student will become
+- native raids will no longer destroy buildings, which are added for free due to trait or founding father (as those buildings wouldn't disappear)
+- #1161 declaring war on somebody you have a defensive pact with will no longer cause you to declare war on yourself, which would result in a crash
+- AI is now way more determined to found a colony quickly and in a better location, avoiding the AI spending 100 turns and then settle in a location far from Europe
+- disabled events, which triggered over and over and caused scouts to get stuck forever. They will return once the trigger frequency has been balanced
+- fixed vanilla issue where AI_updateAssignWork() got called for each main loop iteration, which caused framerate stuttering in late game
+- loading 4.1 savegames will no longer corrupt game options, resulting in players being unable to found more than one colony (can't fix games already broken by being loaded in 4.2)
+- fixed possible python error when random events check if Port Royal can be accessed
+- scenarios running out of valid natives to add will no longer add a George Washington for each native failing to be placed
+- boost startup time by not looking for packed assets (we don't use packed assets). Starting the mod will set this setting for the following startup
+- #1180 completed quests will no longer keep running the timer and tell that it failed once it runs out
+
+AI
+- CvUnitAI::AI_travelToPort no longer enters undefined behavior if called by a player other than colonial players
+- CvCityAI::AI_assignWorkingPlots is now less likely to fail to employ a citizen
+
+New pathfinding
+- CvSelectionGroup::getPathCost() can no longer overflow and result in negative movement cost
+- #1099 fixed pathfinding sometimes displaying one path while moving on another
+- some cases where the chosen path isn't the fastest path
+
+Network sync fixes:
+- #1151 opening the choose production popup window
+- #1079 nargaining with natives
+- randomness in countless random events
+- all 17 singleplayer only random events can now trigger in multiplayer without causing sync issues
+- buying used ships and foreign immigrants cooldown wasn't synced (never triggered displaying OOS through)
+- savegames now saves cooldown for used ships and foreign immigrants for all players, not just host
+- #1179 clicking dangerous and direct path buttons will now sync the new setting
+
+Changes for mod creators
+- XML editor can once again save meta data
+- Added desync monitor internal tool for tracking network sync issues
+- new exe interface for plot related functions
+- new exe interface for popup window creation
+- added XMLUpdater to batch update xml files
+
+
+
 Version 4.2
 
 
