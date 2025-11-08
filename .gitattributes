@@ -3,33 +3,32 @@
 * text=auto
 
 # user readable files
-*.txt text lf
-*.ini text lf
-*.bak text lf
-*.xml text lf
-
+*.txt text eol=lf
+*.ini text eol=lf
+*.bak text eol=lf
+*.xml text eol=lf
 # encoded documentation
-*.html text lf
+*.html text eol=lf
 
 # source code
-*.cpp text lf
-*.c   text lf
-*.hpp text lf
-*.h   text lf
-*.py  text crlf
+*.cpp text eol=lf
+*.c   text eol=lf
+*.hpp text eol=lf
+*.h   text eol=lf
+*.py  text eol=crlf
 
 # project files and other compilation related files
-*Makefile text lf
-*.project text lf
-*.vcxproj text lf
-*.sln     text lf
-*.filters text lf
-*.pl      text lf
-*.pm      text lf
-*.bat     text lf
+*Makefile text eol=lf
+*.project text eol=lf
+*.vcxproj text eol=lf
+*.sln     text eol=lf
+*.filters text eol=lf
+*.pl      text eol=lf
+*.pm      text eol=lf
+*.bat     text eol=lf
 
 # Custom file formats
-*.ColonizationWBSave text crlf
+*.ColonizationWBSave text eol=crlf
 
 # binary files
 *.ico binary
@@ -49,9 +48,9 @@
 *.kf  binary
 
 # git specific files
-.gitattributes text lf
-.gitignore     text lf
-.editorconfig  text lf
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+.editorconfig  text eol=lf
 
 
 
