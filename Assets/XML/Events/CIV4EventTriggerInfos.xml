@@ -6828,6 +6828,7 @@
 			<PythonCanDoCity>canTriggerPirateAttack1</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
+			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_PIRATEATTACK2</Type>
@@ -6898,6 +6899,7 @@
 			<PythonCanDoCity>canTriggerPirateAttack2</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
+			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_WINE_PLANTS</Type>
