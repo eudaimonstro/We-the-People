@@ -12179,7 +12179,7 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 		}
 		if (isOnMapInternal() && eProfession != NO_PROFESSION && GC.getProfessionInfo(eProfession).isCitizen())
 		{
-			CvCity* pCity = plot()->getPlotCity();
+			CvCity* const pCity = plot()->getPlotCity();
 			if (pCity != NULL)
 			{
 				if (canJoinCity(plot()))
@@ -12188,7 +12188,7 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 					bool bLock = true;
 					if (GC.getProfessionInfo(eProfession).isWorkPlot())
 					{
-						int iPlotIndex = pCity->AI_bestProfessionPlot(eProfession, this);
+						const int iPlotIndex = pCity->AI_bestProfessionPlot(eProfession, this);
 						if (iPlotIndex != -1)
 						{
 							pCity->alterUnitWorkingPlot(iPlotIndex, getID(), false);
@@ -12207,7 +12207,7 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 
 		// clean up from old profession
 		processProfession(getProfession(), -1, false, bRemoveYieldsFromCity);
-		ProfessionTypes eOldProfession = getProfession();
+		const ProfessionTypes eOldProfession = getProfession();
 
 		// actually change profession
 		m_eProfession = eProfession;
@@ -12219,14 +12219,29 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 		}
 		processProfession(getProfession(), 1, true, bRemoveYieldsFromCity);
 
-		//reload unit model
-		reloadEntity();
+		bool shouldReloadEntity = true;
+		if (eOldProfession != NO_PROFESSION && m_eProfession != NO_PROFESSION)
+		{
+			const CvProfessionInfo& kOldProfessionInfo = GC.getProfessionInfo(eOldProfession);
+			const CvProfessionInfo& kProfession = GC.getProfessionInfo(eProfession);
+
+			// Reloading the unit entity is not necessary when changing citizen profession since the
+			// unit is not visible on the map while working inside the city 
+			if (kOldProfessionInfo.isCitizen() && kProfession.isCitizen())
+				shouldReloadEntity = false;
+		}
+		
+		if (shouldReloadEntity)
+		{ 
+			//reload unit model
+			reloadEntity();
+		}
 		gDLL->getInterfaceIFace()->setDirty(Domestic_Advisor_DIRTY_BIT, true);
 	}
 
 	if (eProfession != NO_PROFESSION)
 	{
-		CvProfessionInfo& kProfession = GC.getProfessionInfo(eProfession);
+		const CvProfessionInfo& kProfession = GC.getProfessionInfo(eProfession);
 		if (!kProfession.isCitizen())
 		{
 			if (kProfession.getDefaultUnitAIType() != NO_UNITAI)
