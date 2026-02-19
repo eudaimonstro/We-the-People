@@ -23227,10 +23227,6 @@
 					<iChange>2</iChange>
 				</BonusYieldChange>
 				<BonusYieldChange>
-					<YieldType>YIELD_RICE</YieldType>
-					<iChange>1</iChange>
-				</BonusYieldChange>
-				<BonusYieldChange>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iChange>1</iChange>
 				</BonusYieldChange>
