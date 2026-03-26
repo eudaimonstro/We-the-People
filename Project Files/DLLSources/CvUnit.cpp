@@ -435,7 +435,7 @@ void CvUnit::convert(CvUnit* pUnit, bool bKill)
 
 	if (bAlive)
 	{
-		if (pUnit->IsSelected() && isOnMapInternal() && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+		if (pUnit->IsSelected() && isOnMap_() && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
 		{
 			gDLL->getInterfaceIFace()->insertIntoSelectionList(this, true, false);
 		}
@@ -806,7 +806,7 @@ void CvUnit::doTurn()
 	// R&R, bugfix: we only damage ships on Sea and not the transported units, ray, START
 	// WTP, ray, we also add logic to damage Units on Land by Land Storms like e.g. Blizzard and Sandstorm
 	// Off map units are immune from turn damage
-	if (isOnMapInternal() && (getDomainType() == DOMAIN_SEA || (getDomainType() == DOMAIN_LAND && !plot()->isWater())))
+	if (isOnMap_() && (getDomainType() == DOMAIN_SEA || (getDomainType() == DOMAIN_LAND && !plot()->isWater())))
 	{
 		const FeatureTypes eFeature = plot()->getFeatureType();
 		if (NO_FEATURE != eFeature)
@@ -2425,11 +2425,11 @@ bool CvUnit::isBetterDefenderThan(const CvUnit* pDefender, const CvUnit* pAttack
 
 	if (iOurDefense == iTheirDefense)
 	{
-		if (isOnMapInternal() && !pDefender->isOnMapInternal())
+		if (isOnMap_() && !pDefender->isOnMap_())
 		{
 			++iOurDefense;
 		}
-		else if (!isOnMapInternal() && pDefender->isOnMapInternal())
+		else if (!isOnMap_() && pDefender->isOnMap_())
 		{
 			++iTheirDefense;
 		}
@@ -8949,7 +8949,7 @@ bool CvUnit::canMove() const
 		return false;
 	}
 
-	if (!isOnMapInternal())
+	if (!isOnMap_())
 	{
 		return false;
 	}
@@ -9802,7 +9802,7 @@ bool CvUnit::isFortifyable() const
 		return false;
 	}
 
-	if (!isOnMapInternal())
+	if (!isOnMap_())
 	{
 		return false;
 	}
@@ -9913,7 +9913,7 @@ bool CvUnit::isRanged() const
 
 bool CvUnit::alwaysInvisible() const
 {
-	if (!isOnMapInternal())
+	if (!isOnMap_())
 	{
 		return true;
 	}
@@ -9962,7 +9962,7 @@ bool CvUnit::isNeverInvisible() const
 
 bool CvUnit::isInvisible(TeamTypes eTeam, bool bDebug, bool bCheckCargo) const
 {
-	if (!isOnMapInternal())
+	if (!isOnMap_())
 	{
 		return true;
 	}
@@ -10024,7 +10024,7 @@ int CvUnit::getEvasionProbability(const CvUnit& kAttacker) const
 
 CvCity* CvUnit::getEvasionCity() const
 {
-	if (!isOnMapInternal())
+	if (!isOnMap_())
 	{
 		return NULL;
 	}
@@ -10650,7 +10650,7 @@ void CvUnit::joinGroup(CvSelectionGroup* pSelectionGroup, bool bRemoveSelected, 
 				}
 			}
 
-			if ((pNewSelectionGroup != NULL) && pNewSelectionGroup->addUnit(this, !isOnMapInternal()))
+			if ((pNewSelectionGroup != NULL) && pNewSelectionGroup->addUnit(this, !isOnMap_()))
 			{
 				m_iGroupID = pNewSelectionGroup->getID();
 			}
@@ -11315,7 +11315,7 @@ void CvUnit::setDamage(int iNewValue, CvUnit* pAttacker, bool bNotifyEntity)
 
 	FAssertMsg(currHitPoints() >= 0, "currHitPoints() is expected to be non-negative (invalid Index)");
 
-	if ((iOldValue != getDamage()) && isOnMapInternal())
+	if ((iOldValue != getDamage()) && isOnMap_())
 	{
 		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
 		{
@@ -11738,8 +11738,13 @@ int CvUnit::getExtraMoves() const
 void CvUnit::changeExtraMoves(int iChange)
 {
 	m_movementAbility.m_iExtraMoves += iChange;
-	// Sanity check: unit should not end up completely immobile
-	FAssert(baseMoves() > 0);
+	// Sanity check: unit should not end up completely immobile when on the map
+	// Note that basemoves can be temporarily set to 0 during the addPopulationUnit -> processPromotion
+	// call chain (for example when processing PROMOTION_FORCED_MARCH2)
+	if (isOnMap_())
+	{
+		FAssert(baseMoves() > 0);
+	}
 }
 
 
@@ -12103,7 +12108,7 @@ void CvUnit::setFacingDirection(DirectionTypes eFacingDirection)
 			m_eFacingDirection = eFacingDirection;
 		}
 
-		if (isOnMapInternal())
+		if (isOnMap_())
 		{
 			//update formation
 			NotifyEntity(NO_MISSION);
@@ -12162,7 +12167,7 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 				AI_setOldProfession(getProfession());
 			}
 		}
-		if (isOnMapInternal() && eProfession != NO_PROFESSION && GC.getProfessionInfo(eProfession).isCitizen())
+		if (isOnMap_() && eProfession != NO_PROFESSION && GC.getProfessionInfo(eProfession).isCitizen())
 		{
 			CvCity* const pCity = plot()->getPlotCity();
 			if (pCity != NULL)
@@ -12417,7 +12422,7 @@ bool CvUnit::canHaveProfession(ProfessionTypes eProfession, bool bBumpOther, con
 			}
 
 			//do not allow leaving empty city
-			if (!kNewProfession.isCitizen() && !isOnMapInternal())
+			if (!kNewProfession.isCitizen() && !isOnMap_())
 			{
 				// R&R, ray, Abandon City, START
 				if (pCity->getPopulation() <= 1)
@@ -12469,7 +12474,7 @@ bool CvUnit::canHaveProfession(ProfessionTypes eProfession, bool bBumpOther, con
 				// R&R, ray, Abandon City,  END
 			}
 
-			if (kNewProfession.isCitizen() && isOnMapInternal())
+			if (kNewProfession.isCitizen() && isOnMap_())
 			{
 				if (!canJoinCity(pPlot))
 				{
@@ -12485,7 +12490,7 @@ bool CvUnit::canHaveProfession(ProfessionTypes eProfession, bool bBumpOther, con
 			return false;
 		}
 
-		if (isOnMapInternal())
+		if (isOnMap_())
 		{
 			//TAC Whaling, ray
 			if (!getUnitInfo().isGatherBoat() && !gDLL->GetWorldBuilderMode())
@@ -14560,6 +14565,8 @@ bool CvUnit::isAlwaysHostile(const CvPlot* pPlot) const
 
 bool CvUnit::verifyStackValid()
 {
+	FAssertMsg(getGroup() != NULL, "Unit must be in a group!");
+
 	if (plot()->isVisibleEnemyUnit(this))
 	{
 		return jumpToNearestValidPlot();
@@ -14902,7 +14909,7 @@ void CvUnit::setUnitTravelState(UnitTravelStates eState, bool bShowEuropeScreen)
 			}
 		}
 
-		if (!isOnMapInternal())
+		if (!isOnMap_())
 		{
 			if (IsSelected())
 			{

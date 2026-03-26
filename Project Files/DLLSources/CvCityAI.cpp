@@ -3870,7 +3870,7 @@ int CvCityAI::AI_citizenProfessionValue(
 	const CvUnit* const pUnit = &kUnit;
 
 	// 1) off-map feasibility
-	if (!pUnit->isOnMap())
+	if (!pUnit->isOnMap_())
 	{
 		if (!pUnit->canHaveProfession(eProfession,
 			(pDisplaceUnit != NULL), pPlot))
@@ -6629,7 +6629,7 @@ bool CvCityAI::canHaveCitizenProfession(const CvUnit& kUnit, ProfessionTypes ePr
 
 	// Special case that checks if the unit can transition from an outdoor
 	// profession to being a citizen
-	if (kUnit.isOnMap())
+	if (kUnit.isOnMap_())
 	{
 		if (!kUnit.canJoinCity(plot()))
 		{

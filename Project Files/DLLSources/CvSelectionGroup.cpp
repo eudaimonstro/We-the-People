@@ -3290,7 +3290,7 @@ bool CvSelectionGroup::isOnMap() const
 	CvUnit* pUnit = getHeadUnit();
 	if (pUnit != NULL)
 	{
-		return (pUnit->isOnMap());
+		return (pUnit->isOnMap_());
 	}
 
 	return false;

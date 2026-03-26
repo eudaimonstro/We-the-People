@@ -385,7 +385,7 @@ bool shouldUnitMove(const CvUnit* pUnit)
 	{
 		return false;
 	}
-	if (!pUnit->isOnMap())
+	if (!pUnit->isOnMap_())
 	{
 		if (!((pUnit->getUnitTravelState() == UNIT_TRAVEL_STATE_IN_EUROPE) || (pUnit->getUnitTravelState() == UNIT_TRAVEL_STATE_IN_AFRICA)))
 		{

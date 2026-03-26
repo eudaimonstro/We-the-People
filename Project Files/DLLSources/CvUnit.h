@@ -739,10 +739,10 @@ public:
 
 	DllExport bool isOnMap() const
 	{
-		return isOnMapInternal(); 
+		return isOnMap_(); 
 	}
 	
-	bool isOnMapInternal() const
+	bool isOnMap_() const
 	{
 		if (getUnitTravelState() != NO_UNIT_TRAVEL_STATE) 
 			return false;

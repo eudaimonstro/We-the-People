@@ -8632,7 +8632,7 @@ void CvPlayerAI::AI_doEurope()
 void CvPlayerAI::AI_nativeYieldGift(CvUnit* pUnit)
 {
 	FAssert(pUnit != NULL);
-	FAssert(pUnit->isOnMap());
+	FAssert(pUnit->isOnMap_());
 	FAssert(pUnit->plot()->isCity());
 	FAssert(isNative());
 
@@ -8692,7 +8692,7 @@ void CvPlayerAI::AI_nativeYieldGift(CvUnit* pUnit)
 void CvPlayerAI::AI_nativeTrade(CvUnit* pUnit)
 {
 	FAssert(pUnit != NULL);
-	FAssert(pUnit->isOnMap());
+	FAssert(pUnit->isOnMap_());
 	FAssert(pUnit->plot()->isCity());
 	FAssert(isNative());
 
@@ -12055,7 +12055,7 @@ void CvPlayerAI::AI_swapUnitJobs(CvUnit* pUnitA, CvUnit* pUnitB)
 	CvCity* pCity = getPopulationUnitCity(pUnitA->getID());
 	if (pCity == NULL)
 	{
-		FAssert(pUnitA->isOnMap());
+		FAssert(pUnitA->isOnMap_());
 		pCity = pUnitA->plot()->getPlotCity();
 	}
 	FAssert(pCity != NULL);
@@ -12063,7 +12063,7 @@ void CvPlayerAI::AI_swapUnitJobs(CvUnit* pUnitA, CvUnit* pUnitB)
 	ProfessionTypes eDefaultProfession = GC.getCivilizationInfo(getCivilizationType()).getDefaultProfession();
 
 	//Ensure all units are added to city.
-	if (pUnitA->isOnMap())
+	if (pUnitA->isOnMap_())
 	{
 		pCity->addPopulationUnit(pUnitA, NO_PROFESSION);
 	}
@@ -12072,7 +12072,7 @@ void CvPlayerAI::AI_swapUnitJobs(CvUnit* pUnitA, CvUnit* pUnitB)
 		pUnitA->setProfession(NO_PROFESSION);
 	}
 
-	if (pUnitB->isOnMap())
+	if (pUnitB->isOnMap_())
 	{
 		pCity->addPopulationUnit(pUnitB, NO_PROFESSION);
 	}
@@ -16601,7 +16601,7 @@ int CvPlayerAI::AI_estimateUnemploymentCount() const
 		// 1) On the map (so not inside a city or on the docs)
 		// 2) Not being transported
 		// 3) Not executing a mission(acitvity)
-		if (pLoopUnit->AI_getUnitAIType() == UNITAI_COLONIST && pLoopUnit->isOnMap() && !pLoopUnit->isCargo() &&
+		if (pLoopUnit->AI_getUnitAIType() == UNITAI_COLONIST && pLoopUnit->isOnMap_() && !pLoopUnit->isCargo() &&
 			pLoopUnit->getGroup()->getActivityType() != ACTIVITY_MISSION)
 		{
 			cnt++;

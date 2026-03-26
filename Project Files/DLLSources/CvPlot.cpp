@@ -1589,7 +1589,7 @@ void CvPlot::changeAdjacentSight(TeamTypes eTeam, int iRange, bool bIncrement, C
 
 	if(pUnit != NULL)
 	{
-		if(!pUnit->isOnMap())
+		if(!pUnit->isOnMap_())
 		{
 			return;
 		}
@@ -1848,7 +1848,7 @@ void CvPlot::updateSight(bool bIncrement)
 	for (CLLNode<IDInfo>* pUnitNode = headUnitNode(); pUnitNode != NULL; pUnitNode = nextUnitNode(pUnitNode))
 	{
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-		if (pLoopUnit != NULL && pLoopUnit->isOnMap())
+		if (pLoopUnit != NULL && pLoopUnit->isOnMap_())
 		{
 			changeAdjacentSight(pLoopUnit->getTeam(), pLoopUnit->visibilityRange(), bIncrement, pLoopUnit);
 		}
@@ -2766,7 +2766,7 @@ CvUnit* CvPlot::getBestDefender(PlayerTypes eOwner, PlayerTypes eAttackingPlayer
 	{
 		pLoopUnit = getUnitNodeLoop(pUnitNode);
 
-		if (pLoopUnit != NULL && pLoopUnit->isOnMap() && !pLoopUnit->isCargo())
+		if (pLoopUnit != NULL && pLoopUnit->isOnMap_() && !pLoopUnit->isCargo())
 		{
 			if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
 			{
@@ -2808,7 +2808,7 @@ bool CvPlot::hasDefender(bool bCheckCanAttack, PlayerTypes eOwner, PlayerTypes e
 	{
 		pLoopUnit = getUnitNodeLoop(pUnitNode);
 
-		if (pLoopUnit != NULL && pLoopUnit->isOnMap() && !pLoopUnit->isCargo())
+		if (pLoopUnit != NULL && pLoopUnit->isOnMap_() && !pLoopUnit->isCargo())
 		{
 			if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
 			{

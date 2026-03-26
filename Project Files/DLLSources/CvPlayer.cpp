@@ -9980,7 +9980,7 @@ void CvPlayer::updateGroupCycle(CvUnit* pUnit)
 	int iValue;
 	int iBestValue;
 
-	if (!(pUnit->isOnMap()))
+	if (!(pUnit->isOnMap_()))
 	{
 		return;
 	}
