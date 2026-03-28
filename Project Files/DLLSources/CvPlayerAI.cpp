@@ -16614,7 +16614,7 @@ int CvPlayerAI::AI_estimateUnemploymentCount() const
 	return cnt;
 }
 
-int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& cityPlot)
+int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& kPlot)
 {
 	PROFILE_FUNC();
 
@@ -16624,26 +16624,30 @@ int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& cityPlot)
 	if (getNumCities() != 0)
 		return 0;
 
+	// Do not settle the first city on an island
+	if (kPlot.area()->isIsland())
+		return 0;
+
 	const TeamTypes eTeam = getTeam();
 	const CvPlayer& kParent = GET_PLAYER(getParent());
 
-	if (!canFound(Coordinates(cityPlot.getX_INLINE(), cityPlot.getY_INLINE())))
+	if (!canFound(Coordinates(kPlot.getX_INLINE(), kPlot.getY_INLINE())))
 		return 0;
 
-	if (!cityPlot.isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
+	if (!kPlot.isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
 		return 0;
-	if (cityPlot.getNearestEurope() == NO_EUROPE)
+	if (kPlot.getNearestEurope() == NO_EUROPE)
 		return 0;
 
 	// Hard reject if any hostile camp/equivalent exists in BFC
-	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
+	for (int i = 0; i < NUM_CITY_PLOTS_2_PLOTS; ++i)
 	{
-		CvPlot* p = plotCity(cityPlot.getX_INLINE(), cityPlot.getY_INLINE(), i);
+		CvPlot* p = plotCity(kPlot.getX_INLINE(), kPlot.getY_INLINE(), i);
 		if (p == NULL) continue;
 
 		if (p->isGoodyForSpawningHostileCriminals() ||
 			p->isGoodyForSpawningHostileNatives() ||
-			p->isGoodyForSpawningHostileAnimals())
+			p->isGoodyForSpawningHostileAnimals())	
 			return 0;
 
 		// Enemy city inside BFC
@@ -16655,7 +16659,7 @@ int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& cityPlot)
 	// (If you want the exact ship path, pass the transport instead.)
 	int sailTurns = 0;
 	{
-		int tiles = cityPlot.getDistanceToOcean();
+		int tiles = kPlot.getDistanceToOcean();
 		if (tiles < 0) tiles = 20;
 		sailTurns = (tiles + 3) / 4;
 		if (sailTurns > 20) sailTurns = 20;
@@ -16674,7 +16678,7 @@ int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& cityPlot)
 	{
 		if (i == CITY_HOME_PLOT) continue;
 
-		CvPlot* p = plotCity(cityPlot.getX_INLINE(), cityPlot.getY_INLINE(), i);
+		CvPlot* p = plotCity(kPlot.getX_INLINE(), kPlot.getY_INLINE(), i);
 		if (p == NULL) continue;
 
 		// Top-2 FOOD
@@ -16750,7 +16754,7 @@ int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& cityPlot)
 	int hostile = 0;
 	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
 	{
-		CvPlot* p = plotCity(cityPlot.getX_INLINE(), cityPlot.getY_INLINE(), i);
+		CvPlot* p = plotCity(kPlot.getX_INLINE(), kPlot.getY_INLINE(), i);
 		if (p && (p->isGoodyForSpawningHostileCriminals() ||
 			p->isGoodyForSpawningHostileNatives() ||
 			p->isGoodyForSpawningHostileAnimals()))

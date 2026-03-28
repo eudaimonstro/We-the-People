@@ -14874,12 +14874,6 @@ int CvUnitAI::AI_foundValue(CvPlot* pPlot)
 
 	if (kOwner.getNumCities() == 0 && kOwner.getCivCategoryTypes() == CIV_CATEGORY_COLONIAL)
 	{
-		// Do not settle the first city on an island
-		if (pPlot->area()->isIsland())
-		{
-			return 0;
-		}
-
 		// first AI colony should be a deep water colony
 		bool bFoundDeepWater = false;
 		for (int iDX = -1; iDX <= 1 && !bFoundDeepWater; iDX++)
