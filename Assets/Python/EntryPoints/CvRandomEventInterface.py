@@ -42,7 +42,6 @@ def _getTreasureProtectionScaledTurns(iBaseTurns):
 	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
 	return int((iBaseTurns * iPercent) / 100)
 
-
 def get_simple_help(text_key):
 	""" This function constructs another function that returns the fixed localized text  """
 	def get_help(argsList):
@@ -1687,8 +1686,6 @@ getHelpTheRoyals3  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_3PYTHON")
 getHelpTheRoyals4  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_4PYTHON")
 getHelpTheRoyals2a = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2aPYTHON")
 
-
-
 ####### Pirates Event ########
 
 def canTriggerPirates(argsList):
@@ -1696,11 +1693,21 @@ def canTriggerPirates(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if not player.isPlayable():
 		return False
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
 	if city.getX() == unit.getX() and city.getY() == unit.getY():
 		return True
 	return False
+
+def getHelpPirates1(argsList):
+	return localText.getText("TXT_KEY_EVENT_PIRATES_1_HELP", ())
 
 def CanDoPirates3(argsList):
 	eEvent = argsList[1]
@@ -1790,6 +1797,88 @@ def getHelpPirates4(argsList):
 	if event.getGenericParameter(1) <> 0 :
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 	return szHelp
+
+def isExpiredPirates1a(argsList):
+	eEvent = argsList[1]
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return True
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return True
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return True
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
+		return True
+
+	return False
+
+def applyPirates1a(argsList):
+	eEvent = argsList[1]
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
+		return
+
+	# The treasure wasn't moved -> Pirates steal it
+	if city.getX() == unit.getX() and city.getY() == unit.getY():
+		unit.kill(False)
+
+		if player.isHuman():
+			CyInterface().addMessage(
+				kTriggeredData.ePlayer,
+				False,
+				10,
+				localText.getText("TXT_KEY_EVENT_PIRATES_1A_STOLEN", (city.getName(),)),
+				"",
+				0,
+				"",
+				ColorTypes(7),
+				city.getX(),
+				city.getY(),
+				True,
+				True
+			)
+		return
+
+	# The treasure was moved. The treasure was saved, but pirates have appeared off the harbour
+	iPirateCutterClass = gc.getInfoTypeForString("UNITCLASS_PIRATE_CUTTER")
+	if iPirateCutterClass != -1:
+		city.spawnBarbarianUnitOnAdjacentPlotOfCity(iPirateCutterClass)
+
+	if player.isHuman():
+		CyInterface().addMessage(
+			kTriggeredData.ePlayer,
+			False,
+			10,
+			localText.getText("TXT_KEY_EVENT_PIRATES_1A_CUTTER", (city.getName(),)),
+			"",
+			0,
+			"",
+			ColorTypes(7),
+			city.getX(),
+			city.getY(),
+			True,
+			True
+		)
 
 ######## Superstitious Pirates Event ###########
 

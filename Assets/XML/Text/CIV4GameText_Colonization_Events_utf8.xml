@@ -2187,6 +2187,30 @@
 		<Spanish>La riqueza de esta tierra es asombrosa. Cofres llenos de oro, joyas y múltiples gemas llegan a las ciudades portuarias. Pues bien, ver esas cosas no siempre saca lo mejor de las personas. A decir verdad, mi señor, ya hay rumores en las tabernas y los barrios del puerto sobre qué almacén merecería una visita. Si no actúan pronto, la codicia envenenará a sus buenos colonos.</Spanish>
 		<Russian>Богатство этой страны поражает воображение! Сундуки, наполненные золотом, серебром и различными драгоценными камнями, копятся на складах портовых городов, ожидая отправки в Старый свет. И наблюдение за этим иногда пробуждает в людях не самые лучшие их качества. Честно говоря, милорд, в тавернах и портовых кварталах уже начинаются разговоры о том, какой склад стоит "посетить". Если вы не предпримете что-то в ближайшее время, жадность отравит разум ваших колонистов.</Russian>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PIRATES_1_HELP</Tag>
+		<English>If this treasure is still in the harbor after 5 turns, the pirates will steal it. If you move it away in time, a Pirate Cutter will appear off the coast instead.</English>
+		<German>Wenn sich dieser Schatz nach 5 Runden noch immer im Hafen befindet, werden die Piraten ihn stehlen. Bringst du ihn rechtzeitig fort, werden die Piraten vor der Küste lauern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PIRATES_1a</Tag>
+		<English>Pirates watch the harbor.</English>
+		<German>Piraten beobachten den Hafen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PIRATES_1A_STOLEN</Tag>
+		<English>The pirates have stolen the treasure from the harbor of %s1!</English>
+		<German>Die Piraten haben den Schatz im Hafen von %s1 gestohlen!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PIRATES_1A_CUTTER</Tag>
+		<English>A Pirate Cutter has appeared off the coast of %s1!</English>
+		<German>Vor der Küste von %s1 ist ein Piratenkutter aufgetaucht!</German>
+		<Russian/>
+	</TEXT>
 	<!--RaR Events -->
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_OVERFISHING</Tag>
