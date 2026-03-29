@@ -39507,14 +39507,12 @@
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired>
-					<UnitClass>UNITCLASS_SCOUT</UnitClass>
-					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
-					<UnitClass>UNITCLASS_MESTIZZO</UnitClass>
-					<UnitClass>UNITCLASS_MULATTO</UnitClass>
+					<UnitClass>UNITCLASS_PREACHER</UnitClass>
+					<UnitClass>UNITCLASS_HUNTER</UnitClass>
 					<UnitClass>UNITCLASS_COLONIST</UnitClass>
-					<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
-					<UnitClass>UNITCLASS_FREED_SLAVE</UnitClass>
-					<UnitClass>UNITCLASS_EXPERT_SETTLER</UnitClass>
+					<UnitClass>UNITCLASS_FISHERMAN</UnitClass>
+					<UnitClass>UNITCLASS_CARPENTER</UnitClass>
+					<UnitClass>UNITCLASS_FARMER</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -39545,6 +39543,7 @@
 				<Event>EVENT_DISCOVERY_EVENTS_START_2</Event>
 				<Event>EVENT_DISCOVERY_EVENTS_START_3</Event>
 				<Event>EVENT_DISCOVERY_EVENTS_START_4</Event>
+				<Event>EVENT_DISCOVERY_EVENTS_START_5</Event>
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>

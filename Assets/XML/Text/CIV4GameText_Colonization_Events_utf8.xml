@@ -5361,6 +5361,12 @@
 		<Russian>Ну какие опасности? Посмотрите на этих милых дикарей - они словно любопытные дети. Все, что нам нужно сделать, это уговорить их расстаться со своими сокровищами, цену которым они даже не представляют. Нам нужна повозка, чтобы мы смогли собрать как можно больше подарков в деревнях индейцев.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_START_5</Tag>
+		<English>Well, the king will appreciate it if we show restraint and try it on our own.</English>
+		<German>Nun, der König wird es zu schätzen wissen, wenn wir uns in Zurückhaltung üben und es auf eigene Faust versuchen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_START_CONQUISTADOR_HELP</Tag>
 		<English>[ICON_BULLET]Mounted conquistadores join the expedition.</English>
 		<German>[ICON_BULLET]Berittene Konquistadoren schließen sich der Expedition an.</German>

@@ -50,6 +50,24 @@ def get_simple_help(text_key):
 
 	return get_help
 
+DISCOVERY_START_MOD_ID = "DISCOVERY_START"
+
+def _getDiscoveryStartEntity(iPlayer):
+	return "DISCOVERY_START_%d" % iPlayer
+
+def _ensureDiscoveryStartData(iPlayer):
+	entity = _getDiscoveryStartEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_START_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_START_MOD_ID, entity, {"triggered": 0})
+	return entity
+
+def _hasTriggeredDiscoveryStart(iPlayer):
+	entity = _ensureDiscoveryStartData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_START_MOD_ID, entity, "triggered") == 1
+
+def _setTriggeredDiscoveryStart(iPlayer):
+	entity = _ensureDiscoveryStartData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_START_MOD_ID, entity, "triggered", 1)
 
 def doEventEndTutorial(argsList):
 	eEvent = argsList[1]
@@ -944,33 +962,152 @@ def getHelpPeasantWarPrep(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_PEASANT_WARPREP_HELP", (iPriceChange, gc.getYieldInfo(iYield1).getChar(), king.getCivilizationDescriptionKey(), iPriceChange, gc.getYieldInfo(iYield2).getChar(), king.getCivilizationDescriptionKey()))
 	return szHelp
 
-######## Discovery Events for Scouts ###########
+######## Discovery Events ###########
 
+def applyDiscoveryStart1(argsList):
+	kTriggeredData = argsList[0]
+	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	_changeKingRelation(argsList, -2)
+
+def applyDiscoveryStart2(argsList):
+	kTriggeredData = argsList[0]
+	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+
+def applyDiscoveryStart3(argsList):
+	kTriggeredData = argsList[0]
+	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	_changeKingRelation(argsList, 1)
+
+def applyDiscoveryStart4(argsList):
+	kTriggeredData = argsList[0]
+	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+
+def applyDiscoveryStart5(argsList):
+	kTriggeredData = argsList[0]
+	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
+	_changeKingRelation(argsList, 2)
+
+def _changeKingRelation(argsList, iChange):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	eKing = player.getParent()
+	if eKing == -1:
+		return
+
+	king = gc.getPlayer(eKing)
+	if king.isNone():
+		return
+
+	player.AI_changeAttitudeExtra(eKing, iChange)
+	king.AI_changeAttitudeExtra(kTriggeredData.ePlayer, iChange)
+
+	if player.isHuman():
+		if iChange > 0:
+			CyInterface().addMessage(
+				kTriggeredData.ePlayer,
+				False,
+				10,
+				localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (iChange, king.getCivilizationAdjectiveKey())),
+				"",
+				0,
+				"",
+				ColorTypes(8),
+				-1,
+				-1,
+				True,
+				True
+			)
+		elif iChange < 0:
+			CyInterface().addMessage(
+				kTriggeredData.ePlayer,
+				False,
+				10,
+				localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (iChange, king.getCivilizationAdjectiveKey())),
+				"",
+				0,
+				"",
+				ColorTypes(7),
+				-1,
+				-1,
+				True,
+				True
+			)
+    
 def canTriggerDiscoveryStart(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
 	if not player.isPlayable():
 		return False
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	eScout = gc.getInfoTypeForString("PROFESSION_SCOUT")
-	if unit.getProfession() != eScout:
+
+	# Nur vor der ersten Stadt
+	if player.getNumCities() > 0:
 		return False
+
+	# Nur einmal pro Spieler
+	if _hasTriggeredDiscoveryStart(kTriggeredData.ePlayer):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return False
+
+	# Nur Land in der Neuen Welt
+	if plot.isWater():
+		return False
+
+	eSettler = gc.getInfoTypeForString("PROFESSION_SETTLER")
+	if unit.getProfession() != eSettler:
+		return False
+
 	return True
 
-
-def canTriggerDiscovery(argsList):
+def getHelpDiscoveryStart1(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
-		return False
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	eScout = gc.getInfoTypeForString("PROFESSION_SCOUT")
-	if unit.getProfession() != eScout:
-		return False
-	# Read parameter 3 from the event as random chance
-	if TriggerChance(argsList):
-		return True
-	return False
+	eking = player.getParent()
+	king = gc.getPlayer(eking)
+
+	szHelp = getHelpDiscoveryConquistador(argsList)
+	szHelp += u"\n" + localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (-2, king.getCivilizationAdjectiveKey()))
+	return szHelp
+
+def getHelpDiscoveryStart2(argsList):
+	return getHelpDiscoveryMissionary(argsList)
+
+def getHelpDiscoveryStart3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	eking = player.getParent()
+	king = gc.getPlayer(eking)
+
+	szHelp = getHelpDiscoveryTrader(argsList)
+	szHelp += u"\n" + localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (1, king.getCivilizationAdjectiveKey()))
+	return szHelp
+
+def getHelpDiscoveryStart4(argsList):
+	return getHelpDiscoveryOxcart(argsList)
+
+def getHelpDiscoveryStart5(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	eking = player.getParent()
+	king = gc.getPlayer(eking)
+
+	return localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (2, king.getCivilizationAdjectiveKey()))
 
 ######## The Lost Tribe ###########
 
