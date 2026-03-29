@@ -964,6 +964,54 @@ def getHelpPeasantWarPrep(argsList):
 
 ######## Discovery Events ###########
 
+DISCOVERY_DESERT_MOD_ID = "DISCOVERY_DESERT"
+
+def _getDiscoveryDesertEntity(iPlayer):
+	return "DISCOVERY_DESERT_%d" % iPlayer
+
+def _ensureDiscoveryDesertData(iPlayer):
+	entity = _getDiscoveryDesertEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_DESERT_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_DESERT_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryDesertReadyTurn(iPlayer):
+	entity = _ensureDiscoveryDesertData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_DESERT_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryDesertCooldown(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryDesertData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_DESERT_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryDesertScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+DISCOVERY_FEVER_MOD_ID = "DISCOVERY_FEVER"
+
+def _getDiscoveryFeverEntity(iPlayer):
+	return "DISCOVERY_FEVER_%d" % iPlayer
+
+def _ensureDiscoveryFeverData(iPlayer):
+	entity = _getDiscoveryFeverEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_FEVER_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_FEVER_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryFeverReadyTurn(iPlayer):
+	entity = _ensureDiscoveryFeverData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_FEVER_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryFeverCooldown(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryFeverData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_FEVER_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryFeverScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
 def applyDiscoveryStart1(argsList):
 	kTriggeredData = argsList[0]
 	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
@@ -1108,6 +1156,218 @@ def getHelpDiscoveryStart5(argsList):
 	king = gc.getPlayer(eking)
 
 	return localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (2, king.getCivilizationAdjectiveKey()))
+
+def canTriggerDiscoveryFever(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	# Only playable European players
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	eFeverImmune = gc.getInfoTypeForString("PROMOTION_FEVER_IMMUNE")
+
+	# Unit already had fever and is now immune
+	if unit.isHasPromotion(eFeverImmune):
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return False
+
+	# Must be land plot (no water)
+	if plot.isWater():
+		return False
+
+	# No cities
+	if plot.isCity():
+		return False
+
+	# Not on own territory
+	#   if plot.getOwner() == kTriggeredData.ePlayer:
+	#   	return False
+
+	# Only specific "fever" terrain features
+	eFeature = plot.getFeatureType()
+	if eFeature not in (
+		gc.getInfoTypeForString("FEATURE_JUNGLE"),
+		gc.getInfoTypeForString("FEATURE_MANGROVE"),
+		gc.getInfoTypeForString("FEATURE_TROPICAL_GROVES"),
+		gc.getInfoTypeForString("FEATURE_SWAMP"),
+	):
+		return False
+
+	# Check cooldown
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getDiscoveryFeverReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	# 40% trigger chance
+	if CyGame().getSorenRandNum(100, "Discovery Fever trigger") >= 40:
+		return False
+
+	return True
+
+def applyDiscoveryFever(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	# Safety check: unit must exist
+	if unit.isNone():
+		return
+
+	# -----------------------------------------------------
+	# Apply immobilization (2–5 turns)
+	# -----------------------------------------------------
+	iImmobileTurns = 2 + CyGame().getSorenRandNum(4, "Discovery Fever duration")
+	unit.setImmobileTimer(iImmobileTurns)
+
+	# -----------------------------------------------------
+	# Apply damage (10–20%), but do not kill the unit
+	# -----------------------------------------------------
+	iDamage = 10 + CyGame().getSorenRandNum(11, "Discovery Fever damage")
+	iNewDamage = min(99, unit.getDamage() + iDamage)
+	unit.setDamage(iNewDamage)
+
+	# -----------------------------------------------------
+	# Mark unit as immune after surviving fever
+	# -----------------------------------------------------
+	eFeverImmune = gc.getInfoTypeForString("PROMOTION_FEVER_IMMUNE")
+	unit.setHasRealPromotion(eFeverImmune, True)
+
+	# -----------------------------------------------------
+	# Apply cooldown (10–20 turns, scaled by game speed)
+	# -----------------------------------------------------
+	iBaseCooldown = 10 + CyGame().getSorenRandNum(11, "Discovery Fever cooldown")
+	iCooldown = _getDiscoveryFeverScaledTurns(iBaseCooldown)
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = iCurrentTurn + iCooldown
+	_setDiscoveryFeverCooldown(kTriggeredData.ePlayer, iReadyTurn)
+
+	# -----------------------------------------------------
+	# Player feedback (localized via XML)
+	# -----------------------------------------------------
+	if player.isHuman():
+		CyInterface().addMessage(
+			kTriggeredData.ePlayer,
+			True,
+			10,
+			localText.getText(
+				"TXT_KEY_EVENT_DISCOVERY_FEVER_RESULT",
+				(unit.getName(), iDamage, iImmobileTurns)
+			),
+			"",
+			0,
+			"",
+			ColorTypes(7),
+			kTriggeredData.iPlotX,
+			kTriggeredData.iPlotY,
+			True,
+			True
+		)
+
+def canTriggerDiscoveryDesert(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	# Only playable European players
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return False
+
+	# Must be land plot
+	if plot.isWater():
+		return False
+
+	# No cities
+	if plot.isCity():
+		return False
+
+	# Must be desert terrain
+	eDesert = gc.getInfoTypeForString("TERRAIN_DESERT")
+	if plot.getTerrainType() != eDesert:
+		return False
+
+	# Check cooldown
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getDiscoveryDesertReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	return True
+
+def applyDiscoveryDesert(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	# Safety check: unit must exist
+	if unit.isNone():
+		return
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return
+
+	# -----------------------------------------------------
+	# Apply immobilization
+	# Base desert: 2–4 turns
+	# Scaled by game speed
+	# -----------------------------------------------------
+	iBaseImmobileTurns = 2 + CyGame().getSorenRandNum(3, "Discovery Desert duration")
+	iImmobileTurns = _getDiscoveryDesertScaledTurns(iBaseImmobileTurns)
+	unit.setImmobileTimer(iImmobileTurns)
+
+	# -----------------------------------------------------
+	# Apply light damage (2–5%), but do not kill the unit
+	# -----------------------------------------------------
+	iDamage = 2 + CyGame().getSorenRandNum(4, "Discovery Desert damage")
+	iNewDamage = min(99, unit.getDamage() + iDamage)
+	unit.setDamage(iNewDamage)
+
+	# -----------------------------------------------------
+	# Apply cooldown (10 turns, scaled by game speed)
+	# -----------------------------------------------------
+	iCooldown = _getDiscoveryDesertScaledTurns(10)
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = iCurrentTurn + iCooldown
+	_setDiscoveryDesertCooldown(kTriggeredData.ePlayer, iReadyTurn)
+
+	# -----------------------------------------------------
+	# Player feedback (localized via XML)
+	# -----------------------------------------------------
+	if player.isHuman():
+		CyInterface().addMessage(
+			kTriggeredData.ePlayer,
+			True,
+			10,
+			localText.getText(
+				"TXT_KEY_EVENT_DISCOVERY_DESERT_RESULT",
+				(unit.getName(), iDamage, iImmobileTurns)
+			),
+			"",
+			0,
+			"",
+			ColorTypes(7),
+			kTriggeredData.iPlotX,
+			kTriggeredData.iPlotY,
+			True,
+			True
+		)
 
 ######## The Lost Tribe ###########
 

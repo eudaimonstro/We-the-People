@@ -39581,7 +39581,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/scout.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>0</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39594,14 +39594,29 @@
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired>
-					<UnitClass>UNITCLASS_SCOUT</UnitClass>
-					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
 					<UnitClass>UNITCLASS_MESTIZZO</UnitClass>
 					<UnitClass>UNITCLASS_MULATTO</UnitClass>
-					<UnitClass>UNITCLASS_COLONIST</UnitClass>
 					<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
+					<UnitClass>UNITCLASS_COLONIST</UnitClass>
+					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
 					<UnitClass>UNITCLASS_FREED_SLAVE</UnitClass>
+					<UnitClass>UNITCLASS_PIONEER</UnitClass>
+					<UnitClass>UNITCLASS_SCOUT</UnitClass>
 					<UnitClass>UNITCLASS_EXPERT_SETTLER</UnitClass>
+					<UnitClass>UNITCLASS_CHRISTIAN_MISSIONARY</UnitClass>
+					<UnitClass>UNITCLASS_EXPERT_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_SEASONED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_FAILED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN</UnitClass>
+					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN_DRAGOON</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN_CAVALRY</UnitClass>
+					<UnitClass>UNITCLASS_MILITIA</UnitClass>
+					<UnitClass>UNITCLASS_CONTINENTAL_GUARD</UnitClass>
+					<UnitClass>UNITCLASS_RANGER</UnitClass>
+					<UnitClass>UNITCLASS_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_MOUNTED_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_HESSIAN</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -39644,7 +39659,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerDiscovery</PythonCanDo>
+			<PythonCanDo>canTriggerDiscoveryFever</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -39664,7 +39679,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/scout.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>0</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39677,14 +39692,29 @@
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired>
-					<UnitClass>UNITCLASS_SCOUT</UnitClass>
-					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
 					<UnitClass>UNITCLASS_MESTIZZO</UnitClass>
 					<UnitClass>UNITCLASS_MULATTO</UnitClass>
-					<UnitClass>UNITCLASS_COLONIST</UnitClass>
 					<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
+					<UnitClass>UNITCLASS_COLONIST</UnitClass>
+					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
 					<UnitClass>UNITCLASS_FREED_SLAVE</UnitClass>
+					<UnitClass>UNITCLASS_PIONEER</UnitClass>
+					<UnitClass>UNITCLASS_SCOUT</UnitClass>
 					<UnitClass>UNITCLASS_EXPERT_SETTLER</UnitClass>
+					<UnitClass>UNITCLASS_CHRISTIAN_MISSIONARY</UnitClass>
+					<UnitClass>UNITCLASS_EXPERT_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_SEASONED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_FAILED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN</UnitClass>
+					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN_DRAGOON</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN_CAVALRY</UnitClass>
+					<UnitClass>UNITCLASS_MILITIA</UnitClass>
+					<UnitClass>UNITCLASS_CONTINENTAL_GUARD</UnitClass>
+					<UnitClass>UNITCLASS_RANGER</UnitClass>
+					<UnitClass>UNITCLASS_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_MOUNTED_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_HESSIAN</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -39724,7 +39754,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerDiscovery</PythonCanDo>
+			<PythonCanDo>canTriggerDiscoveryDesert</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>

@@ -5408,7 +5408,25 @@
 		 <German>Nun gut, wir haben keine Wahl. Errichtet ein provisorisches Lager und versucht den Männern frisches Wasser und ein paar Früchte zu beschaffen. Mehr können wir derzeit nicht unternehmen.</German>
 		<Russian>Что ж, у нас нет выбора. Разбейте временный лагерь и выдайте всем по двойной порции рома. Тем, у кого жар, дайте порошок из коры, что подарили нам индейцы. Это все, что мы можем для них сейчас сделать.</Russian>
 	</TEXT>
-  <TEXT>
+	 <TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_FEVER_RESULT</Tag>
+		<English>The unit %s1 has been struck by fever! It loses %d2%% health and is immobilized for %d3 turns.</English>
+		<German>Die Einheit %s1 wurde von Fieber heimgesucht! Sie verliert %d2%% Gesundheit und ist für %d3 Runden kampfunfähig.</German>
+		<Russian/>
+	</TEXT> 
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE</Tag>
+		<English>Survivor of a tropical fever (immune to tropical fever)</English>
+		<German>Fieberüberlebender ((immun gegen tropisches Fieber)</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE_HELP</Tag>
+		<English>This unit has survived tropical fever and is now immune to it.</English>
+		<German>Diese Einheit hat tropisches Fieber überstanden und ist dagegen immun.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_DESERT</Tag>
 		<English>One expedition crosses a desert.</English>
 		<German>Eine Expedition durchquert eine Wüste.</German>
@@ -5425,6 +5443,12 @@
 		<English>Well, we have no choice. Drink as little as possible and give the rest to the horses. We're lost without them. Spread out across the area and look for a [COLOR_HIGHLIGHT_TEXT]watering hole[COLOR_REVERT].</English>
 		 <German>Nun gut, wir haben keine Wahl. Trinkt so wenig wie möglich und gebt den Rest den Pferden. Ohne sie sind wir verloren. Verteilt Euch in der Gegend und sucht nach einer [COLOR_HIGHLIGHT_TEXT]Wasserstelle[COLOR_REVERT].</German>
 		<Russian>Что ж, у нас нет выбора. Пейте как можно меньше, а остальное отдайте лошадям. Без них мы пропадём. И отправьте разведчиков на поиски водоёма.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_RESULT</Tag>
+		<English>The unit %s1 is exhausted by the desert. It loses %d2%% health and is immobilized for %d3 turns.</English>
+		<German>Die Einheit %s1 ist in der Wüste erschöpft. Sie verliert %d2%% Gesundheit und ist für %d3 Runden bewegungsunfähig.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Tag>
