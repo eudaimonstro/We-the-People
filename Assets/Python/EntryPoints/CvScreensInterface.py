@@ -875,6 +875,38 @@ HandleNavigationMap = {
 				# add new screens here
 				}
 
+def fourTreasuresDelayedPopup(argsList):
+	iButtonId = argsList[0]
+	iPlayer = argsList[1]
+	player = gc.getPlayer(iPlayer)
+	if player.isNone():
+		return
+
+	if iButtonId == 0:
+		if player.getGold() < 2000:
+			CyInterface().addMessage(iPlayer, True, 10, u"Ihr verfügt derzeit nicht über genügend Gold.", "", 0, "", ColorTypes(7), -1, -1, True, True)
+			return
+
+		city = _getFourTreasuresSpawnCity(player)
+		iUnitClassType = gc.getInfoTypeForString("UNITCLASS_GALLEON")
+		iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
+
+		if city is None or city.isNone():
+			CyInterface().addMessage(iPlayer, True, 10, u"Ihr besitzt derzeit keine geeignete Küstenstadt für die Galeone.", "", 0, "", ColorTypes(7), -1, -1, True, True)
+			return
+
+		if iUnitType == UnitTypes.NO_UNIT:
+			return
+
+		player.changeGold(-2000)
+		player.initUnit(iUnitType, 0, city.getX(), city.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
+		_changeKingAttitudeDirect(iPlayer, 1)
+		CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_BUY_MESSAGE", ()), "", 0, "", ColorTypes(8), -1, -1, True, True)
+
+	elif iButtonId == 1:
+		_changeKingAttitudeDirect(iPlayer, -2)
+		CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_DECLINE_MESSAGE", ()), "", 0, "", ColorTypes(7), -1, -1, True, True)
+
 #TAC: EventTriggerMenu START
 
 def selectOneEvent(argsList):
@@ -906,3 +938,21 @@ def selectOneEvent(argsList):
 	pPlayer.trigger(eventTriggerNumber)
 
 #TAC: EventTriggerMenu END
+
+def _changeKingAttitudeDirect(iPlayer, iChange):
+	player = gc.getPlayer(iPlayer)
+	eKing = player.getParent()
+	if eKing == PlayerTypes.NO_PLAYER:
+		return
+	king = gc.getPlayer(eKing)
+	player.AI_changeAttitudeExtra(eKing, iChange)
+	king.AI_changeAttitudeExtra(iPlayer, iChange)
+
+def _getFourTreasuresSpawnCity(player):
+	(city, iter) = player.firstCity(True)
+	while city:
+		if city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+			return city
+		(city, iter) = player.nextCity(iter, True)
+	return player.getCapitalCity()
+

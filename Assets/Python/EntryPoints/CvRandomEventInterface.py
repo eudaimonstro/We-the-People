@@ -13,9 +13,35 @@ import sys
 import CvUtil
 import CvScreensInterface
 from CvPythonExtensions import *
+import sdToolKit
 
 gc = CyGlobalContext()
 localText = CyTranslator()
+
+TREASURE_PROTECTION_MOD_ID = "TREASURE_PROTECTION"
+
+def _getTreasureProtectionEntity(iPlayer):
+	return "TREASURE_PROTECTION_%d" % iPlayer
+
+def _ensureTreasureProtectionData(iPlayer):
+	entity = _getTreasureProtectionEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(TREASURE_PROTECTION_MOD_ID, entity):
+		sdToolKit.sdEntityInit(TREASURE_PROTECTION_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getTreasureProtectionReadyTurn(iPlayer):
+	entity = _ensureTreasureProtectionData(iPlayer)
+	return sdToolKit.sdGetVal(TREASURE_PROTECTION_MOD_ID, entity, "readyTurn")
+
+def _setTreasureProtectionCooldown(iPlayer, iReadyTurn):
+	entity = _ensureTreasureProtectionData(iPlayer)
+	sdToolKit.sdSetVal(TREASURE_PROTECTION_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getTreasureProtectionScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return int((iBaseTurns * iPercent) / 100)
+
 
 def get_simple_help(text_key):
 	""" This function constructs another function that returns the fixed localized text  """
@@ -8342,8 +8368,31 @@ getHelpDiscoveryFailedMissionaryChange = get_simple_help("TXT_KEY_EVENT_DISCOVER
 
 ######## Treasure Protection Event  ###########
 
-getHelpNewMountedConquistador = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MOUNTED_CONQUISTADOR_HELP")
+def getHelpTreasureProtectionRules():
+	return localText.getText("TXT_KEY_EVENT_TREASURE_PROTECTION_RULES_HELP", ())
 
+def getHelpTreasureProtection1(argsList):
+	szHelp = getHelpNewMountedConquistador(argsList)
+	if szHelp is None:
+		szHelp = u""
+	if len(szHelp) > 0:
+		szHelp += u"\n"
+	szHelp += getHelpTreasureProtectionRules()
+	return szHelp
+
+def getHelpTreasureProtection2(argsList):
+	szHelp = getHelpNewMilitia(argsList)
+	if szHelp is None:
+		szHelp = u""
+	if len(szHelp) > 0:
+		szHelp += u"\n"
+	szHelp += getHelpTreasureProtectionRules()
+	return szHelp
+
+def getHelpTreasureProtection3(argsList):
+	return getHelpKingPleased(argsList)
+
+getHelpNewMountedConquistador = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MOUNTED_CONQUISTADOR_HELP")
 getHelpNewMilitia = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MILITIA_HELP")
 
 ######## Slave Hunter Offers Service ###########
@@ -8383,6 +8432,128 @@ def canTriggerIsPlayableWithTriggerChance(argsList):
 	if TriggerChance(argsList):
 		return True
 	return False
+
+
+def isTreasureProtectionEscort(loopUnit):
+	iLoopUnitType = loopUnit.getUnitType()
+	iLoopProfession = loopUnit.getProfession()
+
+	protectedUnits = (
+		gc.getInfoTypeForString("UNIT_EUROPEAN_LINE_INFANTRY"),
+		gc.getInfoTypeForString("UNIT_MORTAR"),
+		gc.getInfoTypeForString("UNIT_HESSIAN"),
+		gc.getInfoTypeForString("UNIT_MILITIA"),
+		gc.getInfoTypeForString("UNIT_CONTINENTAL_GUARD"),
+		gc.getInfoTypeForString("UNIT_NATIVE_MERC"),
+		gc.getInfoTypeForString("UNIT_RANGER"),
+		gc.getInfoTypeForString("UNIT_CONQUISTADOR"),
+		gc.getInfoTypeForString("UNIT_MOUNTED_CONQUISTADOR"),
+		gc.getInfoTypeForString("UNIT_BUCCANNEER"),
+	)
+
+	protectedProfessions = (
+		gc.getInfoTypeForString("PROFESSION_SCOUT"),
+		gc.getInfoTypeForString("PROFESSION_BRAVE"),
+		gc.getInfoTypeForString("PROFESSION_MOUNTED_BRAVE"),
+		gc.getInfoTypeForString("PROFESSION_ARMED_BRAVE"),
+		gc.getInfoTypeForString("PROFESSION_ARMED_MOUNTED_BRAVE"),
+		gc.getInfoTypeForString("PROFESSION_TOWN_GUARD"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_HALBERDIER"),
+		gc.getInfoTypeForString("PROFESSION_COLONIAL_MILITIA"),
+		gc.getInfoTypeForString("PROFESSION_LINE_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_LIGHT_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_LINE_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_DRAGOON"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_DRAGOON"),
+		gc.getInfoTypeForString("PROFESSION_HEAVY_CAVALRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_CAVALRY"),
+		gc.getInfoTypeForString("PROFESSION_LIGHT_ARTILLERY"),
+		gc.getInfoTypeForString("PROFESSION_HEAVY_ARTILLERY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_ARTILLERY"),
+	)
+
+	if iLoopUnitType in protectedUnits:
+		return True
+
+	if iLoopProfession in protectedProfessions:
+		return True
+
+	return False
+
+
+def getDistanceToOwnTerritory(plot, player, iMaxRange):
+	for iRange in range(1, iMaxRange + 1):
+		for iDX in range(-iRange, iRange + 1):
+			for iDY in range(-iRange, iRange + 1):
+				if abs(iDX) != iRange and abs(iDY) != iRange:
+					continue
+
+				pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+				if pLoop is None or pLoop.isNone():
+					continue
+
+				if pLoop.getOwner() == player.getID():
+					return iRange
+
+	return iMaxRange + 1
+
+
+def canTriggerTreasureProtection(argsList):
+	if not canTriggerIsPlayableWithTriggerChance(argsList):
+		return False
+
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getTreasureProtectionReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	plotThatTriggered = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plotThatTriggered is None or plotThatTriggered.isNone():
+		return False
+
+	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
+	bHasTreasure = False
+
+	for i in range(plotThatTriggered.getNumUnits()):
+		loopUnit = plotThatTriggered.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != player.getID():
+			continue
+
+		iLoopClass = gc.getUnitInfo(loopUnit.getUnitType()).getUnitClassType()
+
+		if iLoopClass == iTreasureClass:
+			bHasTreasure = True
+			continue
+
+		if isTreasureProtectionEscort(loopUnit):
+			return False
+
+	if not bHasTreasure:
+		return False
+
+	iDistanceToOwnTerritory = getDistanceToOwnTerritory(plotThatTriggered, player, 10)
+
+	if iDistanceToOwnTerritory <= 5:
+		iChance = 25
+	elif iDistanceToOwnTerritory <= 10:
+		iChance = 50
+	else:
+		iChance = 75
+
+	if CyGame().getSorenRandNum(100, "Treasure Protection Trigger") >= iChance:
+		return False
+
+	iCooldownTurns = _getTreasureProtectionScaledTurns(30)
+	if iCooldownTurns < 1:
+		iCooldownTurns = 1
+
+	_setTreasureProtectionCooldown(kTriggeredData.ePlayer, iCurrentTurn + iCooldownTurns)
+	return True
 
 getHelpRangerBearAttack = get_simple_help("TXT_KEY_EVENT_RANGER_BEAR_ATTACK_HELP")
 
@@ -8719,3 +8890,80 @@ def isExpiredDragoonstoFrontier(argsList):
 	return False
 
 getHelpDragoonstoFrontierDone  = get_simple_help("TXT_KEY_EVENT_DRAGOONS_TO_FRONTIER_HELP")
+
+
+def _getFourTreasuresDelayEntity(iPlayer):
+	return "FOUR_TREASURES_DELAY_%d" % iPlayer
+def _ensureFourTreasuresDelayData(iPlayer):
+	entity = _getFourTreasuresDelayEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(FOUR_TREASURES_DELAY_MOD_ID, entity):
+		sdToolKit.sdEntityInit(FOUR_TREASURES_DELAY_MOD_ID, entity, {"active": False, "readyTurn": -1})
+	return entity
+def _setFourTreasuresDelay(iPlayer, iReadyTurn):
+	entity = _ensureFourTreasuresDelayData(iPlayer)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", True)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "readyTurn", iReadyTurn)
+def _clearFourTreasuresDelay(iPlayer):
+	entity = _ensureFourTreasuresDelayData(iPlayer)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", False)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "readyTurn", -1)
+def getScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return int((iBaseTurns * iPercent) / 100)
+def applyFourTreasuresDelay(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	applyKingPleased(argsList)
+	iTurns = getScaledTurns(FOUR_TREASURES_DELAY_TURNS)
+	_setFourTreasuresDelay(iPlayer, CyGame().getGameTurn() + iTurns)
+def getHelpFourTreasuresDelay(argsList):
+	szHelp = getHelpKingPleased(argsList)
+	if szHelp is None:
+		szHelp = u""
+	iTurns = getScaledTurns(FOUR_TREASURES_DELAY_TURNS)
+	if len(szHelp) > 0:
+		szHelp += u"\n"
+	szHelp += localText.getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP", (iTurns,))
+	return szHelp
+
+FOUR_TREASURES_DELAY_MOD_ID = "WTP_RANDOM_EVENTS_POPUP"
+FOUR_TREASURES_DELAY_MAX_TURNS = 20
+
+def _getFourTreasuresDelayEntity(iPlayer):
+	return "FOUR_TREASURES_DELAY_%d" % iPlayer
+
+def _ensureFourTreasuresDelayData(iPlayer):
+	entity = _getFourTreasuresDelayEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(FOUR_TREASURES_DELAY_MOD_ID, entity):
+		sdToolKit.sdEntityInit(FOUR_TREASURES_DELAY_MOD_ID, entity, {"active": False, "startTurn": -1})
+	return entity
+
+def _setFourTreasuresDelay(iPlayer, iStartTurn):
+	entity = _ensureFourTreasuresDelayData(iPlayer)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", True)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "startTurn", iStartTurn)
+
+def _clearFourTreasuresDelay(iPlayer):
+	entity = _ensureFourTreasuresDelayData(iPlayer)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", False)
+	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "startTurn", -1)
+
+def getScaledTurns(iBaseTurns):
+	return iBaseTurns
+
+def applyFourTreasuresDelay(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	applyKingPleased(argsList)
+	_setFourTreasuresDelay(iPlayer, CyGame().getGameTurn())
+
+def getHelpFourTreasuresDelay(argsList):
+	szHelp = getHelpKingPleased(argsList)
+	if szHelp is None:
+		szHelp = u""
+	iTurns = getScaledTurns(FOUR_TREASURES_DELAY_MAX_TURNS)
+	if len(szHelp) > 0:
+		szHelp += u"\n"
+	szHelp += localText.getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP", (iTurns,))
+	return szHelp

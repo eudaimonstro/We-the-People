@@ -3379,6 +3379,55 @@
 		<Russian>Какое превосходное предложение! Мы с радостью купим галеон за эту цену.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_3</Tag>
+		<English>We would gladly serve Your Majesty, but at this moment we lack the funds. Grant us a little more time, Your Majesty.</English>
+		<French/>
+		<German>Wir würden Eurer Majestät gern zu Diensten sein, doch im Augenblick fehlen uns die Mittel. Gebt uns noch etwas Zeit, Sir.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_DELAYED</Tag>
+		<English>Your King grows impatient. What is now to become of the galleon offered to you?</English>
+		<French/>
+		<German>Der König wird ungeduldig. Was wird nun aus der Galeone, die Euch angeboten wurde?</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_1</Tag>
+		<English>Very well. We shall buy the galleon now.</English>
+		<French/>
+		<German>Gut. Wir kaufen die Galeone dann jetzt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_2</Tag>
+		<English>No. We must finally refuse the offer. We don't need a galleon.</English>
+		<French/>
+		<German>Nein. Wir müssen das Angebot nun endgültig ablehnen. Wir brauchen keine Galeone.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_BUY_MESSAGE</Tag>
+		<English>The King receives your decision with approval.</English>
+		<French/>
+		<German>Der König nimmt Eure Entscheidung wohlwollend zur Kenntnis.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_DECLINE_MESSAGE</Tag>
+		<English>The King is angered by your final refusal.</English>
+		<French/>
+		<German>Der König ist über Eure endgültige Ablehnung verärgert.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP</Tag>
+		<English>Selecting this option will postpone the offer. An envoy from the king will contact you again later, provided you have enough gold by then. The king will contact you again within 20 rounds at the latest and demand a decision.</English>
+		<French/>
+		<German>Diese Wahl vertagt das Angebot. Ein Gesandter des Königs wird sich später erneut bei euch melden, sofern Ihr wieder genug Gold habt. Der König wird sich spätestens nach 20 Runden wieder bei Euch melden und eine Entscheidung verlangen.</German>
+		<Russian/>	
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_THREE_GALLEONS</Tag>
 		<English>Milord, His Majesty is worried that our treasure fleet needs better protection. To ensure safe passage His Majesty offers us a mighty [COLOR_HIGHLIGHT_TEXT]royal frigate[COLOR_REVERT] for a discounted price.</English>
 		<French>Sire, sa Majesté est inquiète car notre convoi de trésor a besoin de plus protection. Pour assurer l'arrivée à bon port du convoi, sa majesté nous propose une puissante [COLOR_HIGHLIGHT_TEXT]frégate royale[COLOR_REVERT] à bas prix.</French>
@@ -6320,6 +6369,12 @@
 		<English>Some of your treasures have to make their way through the wilderness without protection.</English>
 		<German>Einige Eurer Schätze müssen sich schutzlos durch die Wildnis einen Weg bahnen.</German>
 		<Russian>Некоторым из ваших сокровищ придется пробираться через дикую местность без какой-либо защиты.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TREASURE_PROTECTION_RULES_HELP</Tag>
+		<English>This event only applies to unprotected treasure convoys in the wilderness. The further away they are from your own territory, the more likely this event is to occur. The event may occur again in the future.</English>
+		<German>Das Ereignis berücksichtigt nur ungeschützte Schatzkolonnen in der Wildnis. Je weiter sie von deinem eigenen Gebiet entfernt sind, desto wahrscheinlicher wird dieses Ereignis. Das Ereignis kann in Zukunft wieder auftreten.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_BUILD_MONASTERY_START</Tag>

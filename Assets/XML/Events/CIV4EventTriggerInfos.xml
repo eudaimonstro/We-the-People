@@ -14727,6 +14727,7 @@
 			<Events>
 				<Event>EVENT_FOUR_TREASURES_1</Event>
 				<Event>EVENT_FOUR_TREASURES_2</Event>
+				<Event>EVENT_FOUR_TREASURES_3</Event>
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
@@ -39918,7 +39919,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39946,16 +39947,7 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<FeaturesRequired>
-				<FeatureType>FEATURE_JUNGLE</FeatureType>
-				<FeatureType>FEATURE_MANGROVE</FeatureType>
-				<FeatureType>FEATURE_TROPICAL_GROVES</FeatureType>
-				<FeatureType>FEATURE_FOREST</FeatureType>
-				<FeatureType>FEATURE_FOREST_EVERGREEN</FeatureType>
-				<FeatureType>FEATURE_DENSE_FOREST</FeatureType>
-				<FeatureType>FEATURE_FOREST_TUNDRA</FeatureType>
-				<FeatureType>FEATURE_ANCIENT_FOREST</FeatureType>
-			</FeaturesRequired>
+			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
 			<RoutesRequired/>
@@ -39979,7 +39971,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerTreasureAttack</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -42150,7 +42142,7 @@
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_TREASURE</UnitClass>
 				</UnitsRequired>
-				<iNumUnits>6</iNumUnits>
+				<iNumUnits>4</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
 				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>1</bUnitsOnPlot>
@@ -42171,7 +42163,7 @@
 				<RequiredUnitList>
 					<RequiredUnit>
 						<RequiredUnitClass>UNITCLASS_TREASURE</RequiredUnitClass>
-						<iRequiredCount>6</iRequiredCount>
+						<iRequiredCount>4</iRequiredCount>
 						<bCountCitizens>0</bCountCitizens>
 						<bCountUnitsOnMap>1</bCountUnitsOnMap>
 						<bUnownedPlot>1</bUnownedPlot>
@@ -42191,7 +42183,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -42205,7 +42197,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerIsPlayableWithTriggerChance</PythonCanDo>
+			<PythonCanDo>canTriggerTreasureProtection</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
