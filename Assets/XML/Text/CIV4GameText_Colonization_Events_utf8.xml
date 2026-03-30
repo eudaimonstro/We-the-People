@@ -2191,25 +2191,25 @@
 		<Tag>TXT_KEY_EVENT_PIRATES_1_HELP</Tag>
 		<English>If this treasure is still in the harbor after 5 turns, the pirates will steal it. If you move it away in time, a Pirate Cutter will appear off the coast instead.</English>
 		<German>Wenn sich dieser Schatz nach 5 Runden noch immer im Hafen befindet, werden die Piraten ihn stehlen. Bringst du ihn rechtzeitig fort, werden die Piraten vor der Küste lauern.</German>
-		<Russian/>
+		<Russian>Если через 5 ходов это Сокровище будет находиться в гавани, его украдут пираты. Если же вы успеете его убрать, у берегов появится Пиратский катер.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_1a</Tag>
 		<English>Pirates watch the harbor.</English>
 		<German>Piraten beobachten den Hafen.</German>
-		<Russian/>
+		<Russian>Пираты наблюдают за гаванью.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_1A_STOLEN</Tag>
 		<English>The pirates have stolen the treasure from the harbor of %s1!</English>
 		<German>Die Piraten haben den Schatz im Hafen von %s1 gestohlen!</German>
-		<Russian/>
+		<Russian>Пираты украли Сокровище из гавани города %s1!</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_1A_CUTTER</Tag>
 		<English>A Pirate Cutter has appeared off the coast of %s1!</English>
 		<German>Vor der Küste von %s1 ist ein Piratenkutter aufgetaucht!</German>
-		<Russian/>
+		<Russian>У берегов города %s1 появился Пиратский катер!</Russian>
 	</TEXT>
 	<!--RaR Events -->
 	<TEXT>
@@ -3407,49 +3407,49 @@
 		<English>We would gladly serve Your Majesty, but at this moment we lack the funds. Grant us a little more time, Your Majesty.</English>
 		<French/>
 		<German>Wir würden Eurer Majestät gern zu Diensten sein, doch im Augenblick fehlen uns die Mittel. Gebt uns noch etwas Zeit, Sir.</German>
-		<Russian/>
+		<Russian>Мы всегда рады служить Вашему Величеству, но в данный момент не располагаем нужными средствами. Смиренно просим Его Величество дать нам еще немного времени.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_DELAYED</Tag>
 		<English>Your King grows impatient. What is now to become of the galleon offered to you?</English>
 		<French/>
 		<German>Der König wird ungeduldig. Was wird nun aus der Galeone, die Euch angeboten wurde?</German>
-		<Russian/>
+		<Russian>Его Величество недоволен... Что же будет с галеоном, который вам предлагали?</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_1</Tag>
 		<English>Very well. We shall buy the galleon now.</English>
 		<French/>
 		<German>Gut. Wir kaufen die Galeone dann jetzt.</German>
-		<Russian/>
+		<Russian>Отлично, теперь мы купим этот галеон.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_2</Tag>
 		<English>No. We must finally refuse the offer. We don't need a galleon.</English>
 		<French/>
 		<German>Nein. Wir müssen das Angebot nun endgültig ablehnen. Wir brauchen keine Galeone.</German>
-		<Russian/>
+		<Russian>Нет. Мы должны окончательно отклонить это предложение. Этот галеон нам не нужен.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_BUY_MESSAGE</Tag>
 		<English>The King receives your decision with approval.</English>
 		<French/>
 		<German>Der König nimmt Eure Entscheidung wohlwollend zur Kenntnis.</German>
-		<Russian/>
+		<Russian>Его Величество благосклонно относится к вашему решению.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_DECLINE_MESSAGE</Tag>
 		<English>The King is angered by your final refusal.</English>
 		<French/>
 		<German>Der König ist über Eure endgültige Ablehnung verärgert.</German>
-		<Russian/>
+		<Russian>Его Величество разгневан вашим окончательным отказом.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP</Tag>
 		<English>Selecting this option will postpone the offer. An envoy from the king will contact you again later, provided you have enough gold by then. The king will contact you again within 20 rounds at the latest and demand a decision.</English>
 		<French/>
 		<German>Diese Wahl vertagt das Angebot. Ein Gesandter des Königs wird sich später erneut bei euch melden, sofern Ihr wieder genug Gold habt. Der König wird sich spätestens nach 20 Runden wieder bei Euch melden und eine Entscheidung verlangen.</German>
-		<Russian/>	
+		<Russian>Выбор этого варианта отложит предложение. Посланник Короля свяжется с вами позже, при условии, что к тому времени у вас будет достаточно золота. Сам Король свяжется с вами не позднее, чем через 20 ходов и потребует немедленно принять решение.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_THREE_GALLEONS</Tag>
@@ -4744,7 +4744,7 @@
 		<French>Jarnicoton. Essayions de négocier avec les huissiers. Offrons-leur la moitié de ce que doit cet architecte</French>
 		<German>Verd...ach, man soll ja nicht fluchen. Aber es ist doch wirklich zum verrückt werden. Versuchen wir erst einmal mit den Halunken zu verhandeln. Bieten wir ihnen die Hälfte von dem was der Architekt ihnen schuldet.</German>
 		<Russian>Дьявол... Что же, давайте попробуем договориться с судебными приставами. Предложите им половину того, что должен архитектор и будем надеяться, их аппетиты не вырастут.</Russian>
-	</TEXT> 
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ARCHITECT_BAILIFF_REFUSE</Tag>
 		<English>Aha, that would have been too good to be true. Still, this is a free colony and everyone deserves to be happy here. What happened in Europe stays in Europe. Call the guard and scare away these pests. We won't hand over such a talented planner just like that.</English>
@@ -4784,7 +4784,7 @@
 		<Tag>TXT_KEY_EVENT_ARCHITECT_BAILIFF_FINAL_REFUSE</Tag>
 		<English>It's really maddening. Let's try to negotiate with the bailiffs first. Offer half of what the architect owes.</English>
 		<French>C'est de la folie, cette histoire. On va essayer de négocier avec les huissiers. On va leur offrir la moitié de ce que l'architecte leur doit.</French>
-		<German>Jetzt reicht es uns aber. Noch mehr bekommen sie nicht! Unser Geldbeutel bleibt geschlossen. Mobilisiert die Milz!</German>	 
+		<German>Jetzt reicht es uns aber. Noch mehr bekommen sie nicht! Unser Geldbeutel bleibt geschlossen. Mobilisiert die Milz!</German>
 		<Russian>Ах вот как?! Они не получат ни цента! Надо проучить этих наглецов - соберите ополченцев!</Russian>
 	</TEXT>
 	<TEXT>
@@ -5364,7 +5364,7 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_START_5</Tag>
 		<English>Well, the king will appreciate it if we show restraint and try it on our own.</English>
 		<German>Nun, der König wird es zu schätzen wissen, wenn wir uns in Zurückhaltung üben und es auf eigene Faust versuchen.</German>
-		<Russian/>
+		<Russian>Его Величество оценит по достоинству, если мы проявим выдержку и попробуем сделать это самостоятельно.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_START_CONQUISTADOR_HELP</Tag>
@@ -5412,19 +5412,19 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_FEVER_RESULT</Tag>
 		<English>The unit %s1 has been struck by fever! It loses %d2%% health and is immobilized for %d3 turns.</English>
 		<German>Die Einheit %s1 wurde von Fieber heimgesucht! Sie verliert %d2%% Gesundheit und ist für %d3 Runden kampfunfähig.</German>
-		<Russian/>
-	</TEXT> 
+		<Russian>Юнит %s1 поражен лихорадкой! Он теряет %d2%% здоровья и не сможет действовать в течении %d3 ходов.</Russian>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE</Tag>
 		<English>Survivor of a tropical fever (immune to tropical fever)</English>
-		<German>Fieberüberlebender ((immun gegen tropisches Fieber)</German>
-		<Russian/>
+		<German>Fieberüberlebender (immun gegen tropisches Fieber)</German>
+		<Russian>Переживший тропическую лихорадку (имеющий иммунитет к тропической лихорадке).</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE_HELP</Tag>
 		<English>This unit has survived tropical fever and is now immune to it.</English>
 		<German>Diese Einheit hat tropisches Fieber überstanden und ist dagegen immun.</German>
-		<Russian/>
+		<Russian>Этот юнит пережил тропическую лихорадку и обладает иммунитетом к ней.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_DESERT</Tag>
@@ -5448,7 +5448,7 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_RESULT</Tag>
 		<English>The unit %s1 is exhausted by the desert. It loses %d2%% health and is immobilized for %d3 turns.</English>
 		<German>Die Einheit %s1 ist in der Wüste erschöpft. Sie verliert %d2%% Gesundheit und ist für %d3 Runden bewegungsunfähig.</German>
-		<Russian/>
+		<Russian>Юнит %s1 истощён пустыней. Он теряет %d2%% здоровья и будет обездвижен на %d3 хода.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Tag>
@@ -5599,19 +5599,19 @@
 		<English>Excellent, that makes me happy. Let's equip him with new goods and then send him off again. Hopefully he'll be more successful this time.</English>
 		<German>Hervorragend, das freut mich. Statten wir ihn mit neuen Waren aus und senden ihn dann wieder los. Hoffentlich ist der dieses Mal erfolgreicher.</German>
 		<Russian>Превосходно, это меня радует. Давайте снабдим его новыми товарами и снова отправим к индейцам. Надеюсь, в этот раз он добьётся большего успеха.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_CHANGE_FAILED_TRADER_2</Tag>
 		<English>That's pointless. We shouldn't waste money on this. Put him somewhere in the colony.</English>
 		<German>Das ist doch sinnlos. Dafür sollten wir kein Geld verschwenden. Bringt ihn irgendwo in der Kolonie unter.</German>
 		<Russian>Что за вздор?! Прошлого раза ему было недостаточно? Дайте ему какую-нибудь работу в колонии.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FALIED_TRADER_CHANGE_HELP</Tag>
 		<English>[ICON_BULLET]A failed native trader becomes an experienced native trader again.</English>
 		<German>[ICON_BULLET]Ein gescheiterter Ureinwohnerhändler wird wieder zu einem erfahrenen Ureinwohnerhändler.</German>
 		<Russian>[ICON_BULLET]Неудачливый торговец с индейцами снова становится опытным торговцем.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_CHANGE_FAILED_MISSIONARY</Tag>
 		<English>A failed missionary has found his way back to civilization from the wilderness.</English>
@@ -5629,19 +5629,19 @@
 		<English>Excellent, that makes me happy. Let's equip him with new clothes and supplies and then send him off again. Hopefully he'll be more successful this time.</English>
 		<German>Hervorragend, das freut mich. Statten wir ihn mit neuen Gewändern und Vorräten aus und senden ihn dann wieder los. Hoffentlich ist der dieses Mal erfolgreicher.</German>
 		<Russian>Господь да укрепит дух его. Помогите ему с провиантом и одеждой. Надеюсь, в этот раз он встретит более дружелюбных индейцев.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_CHANGE_FAILED_MISSIONARY_2</Tag>
 		<English>That's pointless. We shouldn't waste money on this. Put him somewhere in the colony.</English>
 		<German>Das ist doch sinnlos. Dafür sollten wir kein Geld verschwenden. Bringt ihn irgendwo in der Kolonie unter.</German>
 		<Russian>Ни в коем случае! Такому набожному человеку не место среди дикарей. Найдите ему работу в колонии.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FALIED_MISSIONARY_CHANGE_HELP</Tag>
 		<English>[ICON_BULLET]A failed missionary becomes a Christian missionary again.</English>
 		<German>[ICON_BULLET]Ein gescheiterter Missionar wird wieder zu einem erfahrenen Missionar.</German>
 		<Russian>[ICON_BULLET]Разочаровавшийся миссионер снова становится христианским миссионером.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_FAKE_NEWS</Tag>
 		<English>News unsettles the public</English>
@@ -5659,19 +5659,19 @@
 		<English>We support the revolution. The scribblers can have their way. Let them stir up the air a bit.</English>
 		<German>Wir unterstützen die Revolution. Lasst die Schreiberlinge gewähren. Sollen sie die Stimmung ruhig ein wenig anheizen.</German>
 		<Russian>К чёрту короля с его запретами - не препятствовать выпуску этих статей. Нашему обществу давно пора проснуться.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_FAKE_NEWS_2</Tag>
 		<English>Excellent! Tthat's what people like to read. But we mustn't show our support too clearly - not yet.</English>
 		<German>Hervorragend, sowas lesen die Leute eben gerne. Aber zeigen wir unsere Unterstützung mal lieber nicht zu deutlich - noch nicht.</German>
 		<Russian>Отлично, люди любят читать такие новости. Но давайте не будем слишком явно демонстрировать нашу поддержку – пока.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>to
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_FAKE_NEWS_3</Tag>
 		<English>That is high treason! Long live the King! Line up the militia! We need to keep order! Arrest the ringleaders and restrict the newspapers to non-political local news.</English>
 		<German>Das ist Hochverrat! Verhaften wir die Rädelsführer und sorgen dafür, dass die Zeitungen nur noch unpolitische Lokalnachrichten drucken. Mobilisiert die Miliz!</German>
 		<Russian>Это же государственная измена! Да здравствует Король! Прикажите ополчению арестовать зачинщиков и навести порядок. И распорядитесь, чтобы газеты печатали только местные неполитические новости.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_FAKE_NEWS_4</Tag>
 		<English>That is high treason! Long live the King. Arrest the ringleaders. Close down the newspaper in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] as an example. That will show the others we're serious.</English>
@@ -5695,19 +5695,19 @@
 		<English>Yes, I've noticed that too. I've actually heard it myself. So what, as long as it's just talk and the drinking doesn't stop them from working. Let them talk! Speaking of which, why don't we go get a drink?</English>
 		<German>Ja, das ist mir auch schon aufgefallen, ähm ich meine, es ist mir zu Ohren gekommen. Na und, solange die Leute nur so daherreden und sie das Trinken nicht von der Arbeit abhält, lasst die Leute doch reden. Ich schlage vor, wir genehmigen uns auch erst mal einen guten Tropfen.</German>
 		<Russian>Да, я тоже это заметил, то есть даже сам слышал. Ничего страшного - пока подобные высказвания и выпивка им не мешает работать, пусть болтают. Надо же им где-то выпускать пар. Кстати, а почему бы и нам не опрокинуть по стаканчику?</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_DRUNKEN_SPEECHES_2</Tag>
 		<English>Yes, but what should we do? If we ban people from whoring and drinking, there'll be a revolution on the spot. We just can't let it get too out of hand. Let's move the curfew forward by an hour.</English>
 		<German>Ja, nur was sollen wir tun. Wenn wir den Leuten das Huren und Trinken verbieten, haben wir auf der Stelle eine Revolution. Sorgen wir aber dafür, dass es nicht zu sehr ausartet und verlegen wir die Sperrstunde um eine Stunde nach vorne.</German>
 		<Russian>Да, но что нам делать? Если мы закроем трактиры, нас тут же поднимут на вилы. Но чтобы хоть как-то обезопаситься и держать ситуацию под контролем, давайте введём комендантский час.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_DRUNKEN_SPEECHES_3</Tag>
 		<English>For heaven's sake, is nothing sacred anymore? People should have fun in pubs and not talk about politics. We absolutely have to close at least one pub and chase the whores away so that we can say we're cracking down. Make sure the pub we close is far away from the town hall.</English>
 		<German>Um Himmels Willen, ist denn gar nichts mehr heilig. Im Wirtshaus soll man sich amüsieren und nicht über Politik reden. Wir müssen unbedingt mindestens ein Wirtshaus schließen und die Huren verjagen, damit wir sagen können wir greifen hart durch. Aber schließen wir bitte ein Wirtshaus weit weg vom Rathaus.</German>
 		<Russian>Да что они себе позволяют? В кабаках люди должны отдыхать, а не говорить о политике. Давайте закроем один салун и прогоним всех шлюх, чтобы можно было сказать, что мы ужесточаем меры и к нам не было бы претензий от метрополии. Но только давайте закроем какое-нибудь заведение подальше от ратуши.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_DRUNKEN_SPEECHES_4</Tag>
 		<English>That's treason, of course! The ringleaders of the Sons of Liberty meet in the taverns. That's what I've heard. Send the royal troops to arrest them. They deserve to hang!</English>
@@ -5731,13 +5731,13 @@
 		<English>It's unbelievable. In our darkest hour, they let us down. To arms! We'll show these traitors hot lead and cold steel!</English>
 		<German>Es ist unfassbar. In unserer schwersten Stunde lassen sie uns im Stich. Zu den Waffen, mit diesen Verrätern werden wir auch noch fertig!</German>
 		<Russian>Мерзавцы, они предали всех, кто сражался с ними плечом к плечу! К оружию, разберёмся с этими предателями!</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_MUTINY_INFANTRY_2</Tag>
 		<English>We will bribe the commander. Everyone has their price. I'm sure he can change his men's minds.</English>
 		<German>Wir werden den Kommandeur bestechen. Jeder hat seinen Preis. Er kann seine Männer bestimmt umstimmen.</German>
 		<Russian>Давайте подкупим командира. У всего есть своя цена. Я уверен, что он способен изменить мнение своих людей в нужную нам сторону.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_MUTINY_INFANTRY_3</Tag>
 		<English>Let them go. We'll meet them again in hell. The fight for freedom has to come first.</English>
@@ -5767,13 +5767,13 @@
 		<English>Yes, of course! Topple the king's statue from its pedestal and burn his flag. We are free and we will fight for it!</English>
 		<German>Ja, aber natürlich! Stürzt die Statue des Königs vom Sockel und verbrennt seine Fahne. Wir sind frei und dafür werden wir kämpfen!</German>
 		<Russian>И мы согласны с ним! Свергните статую короля с постамента и сожгите его флаг. Мы свободные люди и мы будем бороться за свою свободу!</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_LIBERTY_OR_DEATH_2</Tag>
 		<English>Are we all mad? We can't go to war with our King. We're deeply loyal to our monarch! But you're right, maybe we should leave through a side entrance until things calm down a bit. That way we can talk to influential people and start to get the situation under control.</English>
 		<German>Ja sind denn alle des Wahnsinns? Wir können uns nicht mit unserem König in einen Krieg stürzen. Wir müssen loyal zu unserem Monarchen bleiben! Aber ihr habt Recht, vielleicht sollten wir uns lieber durch einen Seiteneingang verdrücken, bis sich die Lage etwas beruhigt hat. Danach müssen wir mit den einflussreichsten Leuten sprechen, um die Lage in den Griff zu bekommen.</German>
 		<Russian>Они в своём уме? Мы не можем воевать с нашим Королем. Мы должны сохранять верность нашему монарху! Но ты прав, наверное нам стоит покинуть дворец через боковой вход и подождать, пока всё немного успокоится. И нам срочно нужно поговорить с наиболее влиятельными людьми города, чтобы взять ситуацию под контроль.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_KING_MAD_HELP</Tag>
 		<English>His Majesty is beside himself at these protests. They sound like treason!</English>
@@ -5905,13 +5905,13 @@
 		<English>Yes, it seems that way to me too. We should ask the commander to send some troops back to Europe. The King won't like that, but it will calm the citizens down.</English>
 		<German>Ja, scheint mir auch so. Wir sollten den Kommandeur bitten, einige Truppen nach Europa zurückzuschicken. Das wird zwar dem König nicht gefallen, aber die Bürger etwas beruhigen.</German>
 		<Russian>Да, мне тоже так кажется. Мы должны попросить командующего отправить часть войск обратно в Европу. Королю это точно не понравится, но зато немного успокоит наших граждан.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_2</Tag>
 		<English>The protection of the colonies and the expansion of the empire require sacrifices. The troops stay where they are. My own coffers will cover their pay.</English>
 		<German>Der Schutz der Kolonien und die Erweiterung des Reiches erfordern nun mal Opfer. Die Truppen bleiben wo sie sind. Aber ich bin gerne bereit etwas aus meiner Schatulle zur Versorgung der Truppen beizusteuern.</German>
 		<Russian>Защита колоний и расширение империи требуют жертв. Войска останутся там, где они есть. Я с удовольствием пожертвую небольшую часть средств из своей казны на снабжение войск.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_3</Tag>
 		<English>The protection of the colonies and the expansion of the empire require sacrifices. The troops stay where they are, but I can understand people's concerns. We will provision the army generously and compensate for any damage caused by our troops.</English>
@@ -6069,13 +6069,13 @@
 		<English>They can keep their supplies. Give them a few crates of trade goods. That's money well spent.</English>
 		<German>Sie können ihre Vorräte behalten. Gebt ihnen ruhig einige Kisten mit Handelswaren. Das ist gut investiertes Geld.</German>
 		<Russian>Пусть оставят еду своим детям. Дайте им несколько ящиков с товарами. Это хорошая инвестиция в наши соседские отношения.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INITIAL_TRADE_WITH_NATIVES_2</Tag>
 		<English>They have to offer us more than just some corn and berries. Send them away. Tell them to come back when they have something worthwhile to offer us.</English>
 		<German>Da müssen sie uns schon mehr bieten als das bischen Mais und Beeren. Schickt sie weg. Sie sollen erst wiederkommen, wenn sie etwas anbieten können, das sich für uns lohnt.</German>
 		<Russian>Они должны предложить нам нечто большее, чем просто немного кукурузы и ягод. Гоните их прочь и пусть возвращаются только тогда, когда они смогут предложить нам что-то более стоящее.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INITIAL_TRADE_WITH_NATIVES_3</Tag>
 		<English>Yes, of course. Give them whatever they want in exchange for the food. When the Native women are happy, the warriors are happy too. We shouldn't have to worry too much about raids for a little while.</English>
@@ -6099,13 +6099,13 @@
 		<English>They can keep their supplies. Give them a few crates of trade goods. That's money well spent.</English>
 		<German>Wir handeln doch immer gerne. Sagt ihnen, dass wir bald Händler zu Ihnen schicken werden.</German>
 		<Russian>Мы с удовольствием будем развивать наше сотрудничество. Передайте индейцам, что мы скоро пришлем к ним торговцев.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_HELP</Tag>
-		<English>Within %d3 turns, send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village that wants to trade with you. Be on your guard! It looks like the traders are up to something. Double-check the goods beforehand. If we sell shoddy goods to the Natives, they'll make our lives very unpleasant.</English> 
+		<English>Within %d3 turns, send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village that wants to trade with you. Be on your guard! It looks like the traders are up to something. Double-check the goods beforehand. If we sell shoddy goods to the Natives, they'll make our lives very unpleasant.</English>
 		<German>Schickt innerhalb von %d3 Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Aber seid gewarnt, die Händler führen etwas im Schilde. Kontrolliert die Waren vorher noch einmal. Verkauft ihr den Ureinwohnern schlechte Waren, werden sie wütend werden.</German>
 		<Russian>В течение %d3 ходов отправьте [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] в деревню индейцев, которые хотят торговать с вами. Но будьте осторожны: торговец что-то замышляет. Проверьте повозки перед отправкой. Если вы продадите туземцам плохой товар, они разозлятся.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_TRADE_WITH_NATIVES_BETRAYAL_2</Tag>
 		<English>Milord, we have received word that our traders have arrived at the Native settlements. The convoy can depart now.</English>
@@ -6123,7 +6123,7 @@
 		<English>Unfortunately you waited too long. The Native village is no longer willing to trade with you at the moment. The good news is that the trek is now available for other work.</English>
 		<German>Ihr habt leider zulange gewartet. Das Indianerdorf kann oder möchte gegenwärtig keinen Handel mit Euch treiben. Ihr könnt den Treck nun wieder anderweitig verwenden.</German>
 		<Russian>К сожалению, вы слишком долго ждали. В данный момент индейцы не могут или не хотят торговать с вами. Вы можете перенаправить транспорт на другие торговые маршруты.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TRADE_WITH_NATIVES_BETRAYAL_2_DONE</Tag>
 		<English>The treacherous traders reached the Native villages.</English>
@@ -6171,7 +6171,7 @@
 		<English>Some Natives are disgruntled about all the soldiers of the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] empire.</English>
 		<German>Einige Ureinwohner sind verstimmt über die vielen Soldaten im Dienste des [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Königreichs.</German>
 		<Russian>Некоторые индейцы недовольны множеству солдат империи [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] рядом со своими деревнями.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_STIRRED_UP_NATIVES_HORSES_1</Tag>
 		<English>Milord, some Natives from a nearby village [COLOR_HIGHLIGHT_TEXT]are worried[COLOR_REVERT] but at the same time fascinated by our mounted troops. They want you to send the soldiers away. However, they obviously admire the [COLOR_HIGHLIGHT_TEXT]horses[COLOR_REVERT] and demand them as a gift.</English>
@@ -6189,7 +6189,7 @@
 		<English>So. All right, I admit it's a serious situation. But we can't just give them all the horses. It's ridiculous. They'll laugh at us. The troops stay where they are. The Natives will have to leave without them.</English>
 		<German>Soso. Nun gut, eine ernste Situation. Aber wir können Ihnen ja nicht einfach die ganzen Pferde überlassen. Man würde über uns spotten. Die Truppe bleibt wo sie ist. Die Indianer sollen ohne sie abziehen.</German>
 		<Russian>Непростая ситуация, но мы не можем просто так отдать им всех лошадей. За кого они нас принимают? Войска останутся на своих местах, а индейцам передайте - пусть уходят.</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_WN_1</Tag>
 		<English>Some of the mounted troops of the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have been disbanded and are ready to become settlers.</English>
@@ -6219,7 +6219,7 @@
 		<English>So. All right, I admit it's a serious situation. But we can't just give them all the muskets. It's ridiculous. They'll laugh at us. The troops stay where they are. The Natives will have to leave without them.</English>
 		<German>Soso. Nun gut, eine ernste Situation. Aber wir können Ihnen ja nicht einfach die ganzen Musketen überlassen. Man würde über uns spotten. Die Truppe bleibt wo sie ist. Die Indianer sollen ohne sie abziehen.</German>
 		<Russian>Неслыханная дерзость! Может быть нам ещё и пушки им отдать? Пусть убираются прочь!</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_WN_1</Tag>
 		<English>Some of the infantry troops of the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have been disbanded and are now to become settlers.</English>
@@ -6428,7 +6428,7 @@
 		<Tag>TXT_KEY_EVENT_TREASURE_PROTECTION_RULES_HELP</Tag>
 		<English>This event only applies to unprotected treasure convoys in the wilderness. The further away they are from your own territory, the more likely this event is to occur. The event may occur again in the future.</English>
 		<German>Das Ereignis berücksichtigt nur ungeschützte Schatzkolonnen in der Wildnis. Je weiter sie von deinem eigenen Gebiet entfernt sind, desto wahrscheinlicher wird dieses Ereignis. Das Ereignis kann in Zukunft wieder auftreten.</German>
-		<Russian/>
+		<Russian>Это событие относится только к незащищенным конвоям с сокровищами в дикой местности. Чем дальше они находятся от вашей территории, тем выше вероятность его возникновения. Событие может повторяться в будущем.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_BUILD_MONASTERY_START</Tag>
