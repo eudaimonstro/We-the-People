@@ -1273,6 +1273,12 @@ def applyDiscoveryFever(argsList):
 			True
 		)
 
+def getHelpDiscoveryEventsFever(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_FEVER_HELP",
+		(2, 5, 10, 20)
+	)
+
 def canTriggerDiscoveryDesert(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1368,6 +1374,12 @@ def applyDiscoveryDesert(argsList):
 			True,
 			True
 		)
+
+def getHelpDiscoveryEventsDesert(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_DESERT_HELP",
+		(2, 4, 2, 5)
+	)
 
 ######## The Lost Tribe ###########
 

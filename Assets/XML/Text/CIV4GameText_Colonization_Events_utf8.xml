@@ -5415,6 +5415,12 @@
 		<Russian>Юнит %s1 поражен лихорадкой! Он теряет %d2%% здоровья и не сможет действовать в течении %d3 ходов.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_FEVER_HELP</Tag>
+		<English>The unit will be immobilized for %d1 to %d2 turns and suffer %d3%% to %d4%% damage. Surviving units become immune to tropical fever.</English>
+		<German>Die Einheit wird für %d1 bis %d2 Runden bewegungsunfähig und erleidet %d3%% bis %d4%% Schaden. Überlebende Einheiten werden immun gegen tropisches Fieber.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE</Tag>
 		<English>Survivor of a tropical fever (immune to tropical fever)</English>
 		<German>Fieberüberlebender (immun gegen tropisches Fieber)</German>
@@ -5437,6 +5443,12 @@
 		<English>Milord, our expedition has reached a desert. We have only a little water, most of which we need for the animals. The expedition is making slow progress.</English>
 		<German>Milord, unsere Expedition hat eine Wüste erreicht und nur geringe [COLOR_HIGHLIGHT_TEXT]Wasservorräte[COLOR_REVERT] dabei. Die Tiere müssen geschont werden. Die Expedition kommt nur langsam vorran.</German>
 		<Russian>Милорд, наша экспедиция достигла пустыни и имеет лишь небольшой запас воды. Нам нужно поберечь животных и сбавить темп.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_HELP</Tag>
+		<English>The unit will be immobilized for %d1 to %d2 turns and suffer %d3%% to %d4%% damage due to extreme heat and exhaustion.</English>
+		<German>Die Einheit wird für %d1 bis %d2 Runden bewegungsunfähig und erleidet %d3%% bis %d4%% Schaden durch extreme Hitze und Erschöpfung.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_DESERT</Tag>
