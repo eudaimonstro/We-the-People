@@ -433,7 +433,7 @@ class CvEventManager:
 		return "FOUR_TREASURES_DELAY_%d" % iPlayer
 
 	def _playerHasFourTreasures(self, player):
-		iTreasureClass = gc.getInfoTypeForString("UNITCLASS_TREASURE")
+		iTreasureClass = UnitClassTypes.UNITCLASS_TREASURE
 		iCount = 0
 		(loopUnit, iter) = player.firstUnit()
 		while loopUnit:

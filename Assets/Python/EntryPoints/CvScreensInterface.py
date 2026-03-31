@@ -888,7 +888,7 @@ def fourTreasuresDelayedPopup(argsList):
 			return
 
 		city = _getFourTreasuresSpawnCity(player)
-		iUnitClassType = gc.getInfoTypeForString("UNITCLASS_GALLEON")
+		iUnitClassType = UnitClassTypes.UNITCLASS_GALLEON
 		iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
 
 		if city is None or city.isNone():

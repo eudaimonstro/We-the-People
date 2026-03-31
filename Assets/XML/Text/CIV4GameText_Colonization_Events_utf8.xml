@@ -5445,12 +5445,6 @@
 		<Russian>Милорд, наша экспедиция достигла пустыни и имеет лишь небольшой запас воды. Нам нужно поберечь животных и сбавить темп.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_FEVER_HELP</Tag>
-		<English>The unit may become immobilized for %d1 to %d2 turns and suffer %d3 to %d4 damage due to tropical fever.</English>
-		<German>Die Einheit kann durch tropisches Fieber für %d1 bis %d2 Runden bewegungsunfähig werden und %d3 bis %d4 Schaden erleiden.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_DESERT</Tag>
 		<English>Well, we have no choice. Drink as little as possible and give the rest to the horses. We're lost without them. Spread out across the area and look for a [COLOR_HIGHLIGHT_TEXT]watering hole[COLOR_REVERT].</English>
 		 <German>Nun gut, wir haben keine Wahl. Trinkt so wenig wie möglich und gebt den Rest den Pferden. Ohne sie sind wir verloren. Schwärmt aus und sucht nach einer [COLOR_HIGHLIGHT_TEXT]Wasserstelle[COLOR_REVERT].</German>
