@@ -888,7 +888,7 @@ def fourTreasuresDelayedPopup(argsList):
 			return
 
 		city = _getFourTreasuresSpawnCity(player)
-		iUnitClassType = UnitClassTypes.UNITCLASS_GALLEON
+		iUnitClassType = gc.getInfoTypeForString("UNITCLASS_GALLEON")
 		iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
 
 		if city is None or city.isNone():
@@ -906,7 +906,7 @@ def fourTreasuresDelayedPopup(argsList):
 	elif iButtonId == 1:
 		_changeKingAttitudeDirect(iPlayer, -2)
 		CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_DECLINE_MESSAGE", ()), "", 0, "", ColorTypes(7), -1, -1, True, True)
-        
+
 #TAC: EventTriggerMenu START
 
 def selectOneEvent(argsList):

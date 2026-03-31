@@ -1087,7 +1087,186 @@ def _changeKingRelation(argsList, iChange):
 				True,
 				True
 			)
-    
+  
+######## Discovery Attacked Event ###########
+
+DISCOVERY_ATTACKED_MOD_ID = "DISCOVERY_ATTACKED"
+
+def _getDiscoveryAttackedEntity(iPlayer):
+	return "DISCOVERY_ATTACKED_%d" % iPlayer
+
+def _ensureDiscoveryAttackedData(iPlayer):
+	entity = _getDiscoveryAttackedEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_ATTACKED_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_ATTACKED_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryAttackedReadyTurn(iPlayer):
+	entity = _ensureDiscoveryAttackedData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_ATTACKED_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryAttackedCooldown(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryAttackedData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_ATTACKED_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryAttackedScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _spawnSingleHostileNativeAdjacent(plot):
+	iHostileUnitClass = gc.getInfoTypeForString("UNITCLASS_HOSTILE_NATIVE")
+	if iHostileUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	iUnitType = barbCiv.getCivilizationUnits(iHostileUnitClass)
+	if iUnitType == -1:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			pUnit = barbPlayer.initUnit(
+				iUnitType,
+				0,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+			return pUnit
+
+	return None
+
+def _forceUnitToMoveToPlot(unit, targetPlot):
+	if unit is None or unit.isNone():
+		return
+
+	group = unit.getGroup()
+	if group is None:
+		return
+
+	group.pushMission(
+		MissionTypes.MISSION_MOVE_TO,
+		targetPlot.getX(),
+		targetPlot.getY(),
+		0,
+		False,
+		True,
+		MissionAITypes.NO_MISSIONAI,
+		targetPlot,
+		unit
+	)
+
+def canTriggerDiscoveryAttacked(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	# Only playable European players
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	# Must have a valid tracked unit from the trigger
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return False
+
+	# Must be land plot
+	if plot.isWater():
+		return False
+
+	# No cities
+	if plot.isCity():
+		return False
+
+	# Must be a valid ambush feature
+	aValidFeatures = [
+		gc.getInfoTypeForString("FEATURE_FOREST"),
+		gc.getInfoTypeForString("FEATURE_JUNGLE"),
+		gc.getInfoTypeForString("FEATURE_MANGROVE"),
+		gc.getInfoTypeForString("FEATURE_TROPICAL_GROVES"),
+		gc.getInfoTypeForString("FEATURE_FOREST_EVERGREEN"),
+		gc.getInfoTypeForString("FEATURE_DENSE_FOREST"),
+		gc.getInfoTypeForString("FEATURE_FOREST_TUNDRA"),
+		gc.getInfoTypeForString("FEATURE_ANCIENT_FOREST"),
+		gc.getInfoTypeForString("FEATURE_LIGHT_FOREST"),
+	]
+
+	if plot.getFeatureType() not in aValidFeatures:
+		return False
+
+	# Cooldown check
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getDiscoveryAttackedReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	# 40% chance after cooldown
+	if CyGame().getSorenRandNum(100, "Discovery Attacked trigger") >= 40:
+		return False
+
+	return True
+
+def applyDiscoveryAttacked(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	# Must affect exactly the tracked trigger unit
+	if unit.isNone():
+		return
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return
+
+	# Immobilize the ambushed expedition
+	unit.setMoves(0)
+	unit.setImmobileTimer(1)
+
+	# Set cooldown
+	iCooldown = _getDiscoveryAttackedScaledTurns(10)
+	iCurrentTurn = CyGame().getGameTurn()
+	_setDiscoveryAttackedCooldown(kTriggeredData.ePlayer, iCurrentTurn + iCooldown)
+
+	# Spawn exactly 1 hostile native and force movement onto the unit plot
+	hostileUnit = _spawnSingleHostileNativeAdjacent(plot)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		_forceUnitToMoveToPlot(hostileUnit, plot)
+
+def getHelpDiscoveryAttacked(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_ATTACKED_HELP",
+		()
+	)
+  
 def canTriggerDiscoveryStart(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1273,7 +1452,7 @@ def applyDiscoveryFever(argsList):
 			True
 		)
 
-def getHelpDiscoveryEventsFever(argsList):
+def getHelpDiscoveryFever(argsList):
 	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_FEVER_HELP",
 		(2, 5, 10, 20)
@@ -1375,7 +1554,7 @@ def applyDiscoveryDesert(argsList):
 			True
 		)
 
-def getHelpDiscoveryEventsDesert(argsList):
+def getHelpDiscoveryDesert(argsList):
 	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_DESERT_HELP",
 		(2, 4, 2, 5)
@@ -8892,6 +9071,221 @@ def getHelpTreasureProtection3(argsList):
 
 getHelpNewMountedConquistador = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MOUNTED_CONQUISTADOR_HELP")
 getHelpNewMilitia = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MILITIA_HELP")
+
+######## Treasure Attack Event ###########
+
+TREASURE_ATTACK_MOD_ID = "TREASURE_ATTACK"
+
+def _getTreasureAttackEntity(iPlayer):
+	return "TREASURE_ATTACK_%d" % iPlayer
+
+def _ensureTreasureAttackData(iPlayer):
+	entity = _getTreasureAttackEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(TREASURE_ATTACK_MOD_ID, entity):
+		sdToolKit.sdEntityInit(TREASURE_ATTACK_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getTreasureAttackReadyTurn(iPlayer):
+	entity = _ensureTreasureAttackData(iPlayer)
+	return sdToolKit.sdGetVal(TREASURE_ATTACK_MOD_ID, entity, "readyTurn")
+
+def _setTreasureAttackCooldown(iPlayer, iReadyTurn):
+	entity = _ensureTreasureAttackData(iPlayer)
+	sdToolKit.sdSetVal(TREASURE_ATTACK_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def canTriggerTreasureAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.isWater():
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getTreasureAttackReadyTurn(player.getID())
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
+	bHasTreasure = False
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+		if unit.isNone():
+			continue
+		if unit.getOwner() != player.getID():
+			continue
+
+		iLoopClass = gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
+		if iLoopClass == iTreasureClass:
+			bHasTreasure = True
+			break
+
+	if not bHasTreasure:
+		return False
+
+	iDistance = getDistanceToOwnTerritory(plot, player, 10)
+
+	if iDistance <= 5:
+		iChance = 25
+	elif iDistance <= 10:
+		iChance = 50
+	else:
+		iChance = 75
+
+	if CyGame().getSorenRandNum(100, "Treasure Attack Trigger") >= iChance:
+		return False
+
+	iCooldownTurns = getScaledTurns(25)
+	if iCooldownTurns < 1:
+		iCooldownTurns = 1
+
+	_setTreasureAttackCooldown(player.getID(), iCurrentTurn + iCooldownTurns)
+	return True
+
+def getDistanceToOwnTerritory(plot, player, iMaxRange):
+	for iRange in range(1, iMaxRange + 1):
+		for iDX in range(-iRange, iRange + 1):
+			for iDY in range(-iRange, iRange + 1):
+				if abs(iDX) != iRange and abs(iDY) != iRange:
+					continue
+
+				pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+				if pLoop is None or pLoop.isNone():
+					continue
+
+				if pLoop.getOwner() == player.getID():
+					return iRange
+
+	return iMaxRange + 1
+
+def _spawnFriendlyEscortOnTreasurePlot(plot, iPlayer, iUnitClass):
+	if iUnitClass == -1:
+		return None
+
+	player = gc.getPlayer(iPlayer)
+	civ = gc.getCivilizationInfo(player.getCivilizationType())
+	iUnitType = civ.getCivilizationUnits(iUnitClass)
+
+	if iUnitType == -1:
+		return None
+
+	unit = player.initUnit(
+		iUnitType,
+		0,
+		plot.getX(),
+		plot.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+	return unit
+
+def _spawnSingleHostileUnitAdjacent(plot, iUnitClass):
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+
+	iUnitType = barbCiv.getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+
+			unit = barbPlayer.initUnit(
+				iUnitType,
+				0,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+			return unit
+
+	return None
+
+def _immobilizeTreasureStack(plot, iPlayer):
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+		if unit.isNone():
+			continue
+		if unit.getOwner() == iPlayer:
+			unit.setMoves(0)
+			unit.setImmobileTimer(1)
+
+def _forceUnitToMoveToPlot(unit, targetPlot):
+	if unit is None or unit.isNone():
+		return
+
+	group = unit.getGroup()
+	if group is None:
+		return
+
+	group.pushMission(
+		MissionTypes.MISSION_MOVE_TO,
+		targetPlot.getX(),
+		targetPlot.getY(),
+		0,
+		False,
+		True,
+		MissionAITypes.NO_MISSIONAI,
+		targetPlot,
+		unit
+	)
+
+def applyTreasureAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return
+
+	if plot.isWater():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+	iImmobilize = event.getGenericParameter(3)
+	iFriendlyUnitClass = event.getGenericParameter(4)
+
+	if iFriendlyUnitClass != -1:
+		_spawnFriendlyEscortOnTreasurePlot(plot, kTriggeredData.ePlayer, iFriendlyUnitClass)
+
+	if iImmobilize > 0:
+		_immobilizeTreasureStack(plot, kTriggeredData.ePlayer)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnSingleHostileUnitAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None:
+		_forceUnitToMoveToPlot(hostileUnit, plot)
+
+def getHelpDiscoveryTreasureAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP", ())
 
 ######## Slave Hunter Offers Service ###########
 

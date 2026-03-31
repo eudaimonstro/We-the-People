@@ -21,7 +21,6 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 FOUR_TREASURES_DELAY_MOD_ID = "WTP_RANDOM_EVENTS_POPUP"
 FOUR_TREASURES_DELAY_GOLD = 2000
-FOUR_TREASURES_DELAY_MAX_TURNS = 10
 
 # globals
 ###################################################
@@ -434,7 +433,7 @@ class CvEventManager:
 		return "FOUR_TREASURES_DELAY_%d" % iPlayer
 
 	def _playerHasFourTreasures(self, player):
-		iTreasureClass = UnitClassTypes.UNITCLASS_TREASURE
+		iTreasureClass = gc.getInfoTypeForString("UNITCLASS_TREASURE")
 		iCount = 0
 		(loopUnit, iter) = player.firstUnit()
 		while loopUnit:
@@ -446,21 +445,11 @@ class CvEventManager:
 		return False
 
 	def _playerHasRequiredFourTreasuresBuilding(self, player):
-		aBuildingClasses = [
-			CvUtil.findInfoTypeNum("BUILDINGCLASS_BASECAMP"),
-			CvUtil.findInfoTypeNum("BUILDINGCLASS_VILLAGEHALL"),
-			CvUtil.findInfoTypeNum("BUILDINGCLASS_TOWNHALL"),
-			CvUtil.findInfoTypeNum("BUILDINGCLASS_CITYHALL"),
-			CvUtil.findInfoTypeNum("BUILDINGCLASS_PALACE"),
-			CvUtil.findInfoTypeNum("BUILDINGCLASS_COLONIAL_CONGRESS")
-		]
-
+		aBuildingClasses = ["BUILDINGCLASS_BASECAMP", "BUILDINGCLASS_VILLAGEHALL", "BUILDINGCLASS_TOWNHALL", "BUILDINGCLASS_CITYHALL", "BUILDINGCLASS_PALACE", "BUILDINGCLASS_COLONIAL_CONGRESS"]
 		(loopCity, iter) = player.firstCity(False)
 		while loopCity:
-			for iBuildingClass in aBuildingClasses:
-				if iBuildingClass == -1:
-					continue
-
+			for szBuildingClass in aBuildingClasses:
+				iBuildingClass = gc.getInfoTypeForString(szBuildingClass)
 				eBuilding = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iBuildingClass)
 				if eBuilding != BuildingTypes.NO_BUILDING:
 					if loopCity.isHasBuilding(eBuilding):

@@ -88548,7 +88548,7 @@
 			<PythonCallback>applyDiscoveryFever</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpDiscoveryEventsFever</PythonHelp>
+			<PythonHelp>getHelpDiscoveryFever</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -88609,7 +88609,7 @@
 			<PythonCallback>applyDiscoveryDesert</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpDiscoveryEventsDesert</PythonHelp>
+			<PythonHelp>getHelpDiscoveryDesert</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -88638,8 +88638,8 @@
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
-			<iUnitExperience>5</iUnitExperience>
-			<iUnitImmobileTurns>1</iUnitImmobileTurns>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -88667,15 +88667,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnit</PythonCallback>
+			<PythonCallback>applyDiscoveryAttacked</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpNativeTraderAttack</PythonHelp>
+			<PythonHelp>getHelpDiscoveryAttacked</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
-			<iGenericParameter2>2</iGenericParameter2>
-			<iGenericParameter3>200</iGenericParameter3>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -88850,7 +88850,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnNativeUnitAdjacentToUnitAndFriendlyOnSamePlot</PythonCallback>
+			<PythonCallback>applyTreasureAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpDiscoveryTreasureAttack</PythonHelp>
