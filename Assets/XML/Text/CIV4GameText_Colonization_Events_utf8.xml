@@ -5418,13 +5418,13 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_FEVER_HELP</Tag>
 		<English>A tropical fever strikes the expedition. The unit is immobilised for %d1 to %d2 rounds and takes %d3 to %d4 damage. Surviving units become immune to further fever.</English>
 		<German>Ein tropisches Fieber befällt die Expedition. Die Einheit wird für %d1 bis %d2 Runden bewegungsunfähig und erleidet %d3 bis %d4 Schaden. Überlebende Einheiten werden immun gegen weiteres Fieber.</German>
-		<Russian/>
+		<Russian>Экспедиция поражена тропической лихорадкой. Юнит получает от %d3 до %d4 урона и будет обездвижен от %d1 до %d2 ходов. Выжившие юниты становятся невосприимчивы к дальнейшему заражению лихорадкой.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE</Tag>
 		<English>Survivor of a tropical fever (immune to tropical fever)</English>
 		<German>Fieberüberlebender (immun gegen tropisches Fieber)</German>
-		<Russian>Переживший тропическую лихорадку (имеющий иммунитет к тропической лихорадке).</Russian>
+		<Russian>Переживший тропическую лихорадку (имеет иммунитет к тропической лихорадке).</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE_HELP</Tag>
