@@ -3410,46 +3410,47 @@
 		<Russian>Мы всегда рады служить Вашему Величеству, но в данный момент не располагаем нужными средствами. Смиренно просим Его Величество дать нам еще немного времени.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_DELAYED</Tag>
-		<English>Your King grows impatient. What is now to become of the galleon offered to you?</English>
-		<French/>
-		<German>Der König wird ungeduldig. Was wird nun aus der Galeone, die Euch angeboten wurde?</German>
-		<Russian>Его Величество недоволен... Что же будет с галеоном, который вам предлагали?</Russian>
+		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_RETURN</Tag>
+		<English>The envoys of your king return, reminding you of the galleon you previously declined to purchase. Now that your treasury has recovered, they demand a final decision.</English>
+		<German>Die Gesandten Eures Königs kehren zurück und erinnern Euch an die Galeone, deren Kauf Ihr zuvor aufgeschoben habt. Nun, da sich Eure Schatzkammer erholt hat, verlangen sie eine endgültige Entscheidung.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_1</Tag>
-		<English>Very well. We shall buy the galleon now.</English>
-		<French/>
-		<German>Gut. Wir kaufen die Galeone dann jetzt.</German>
-		<Russian>Отлично, теперь мы купим этот галеон.</Russian>
+		<Tag>TXT_KEY_EVENT_TRIGGER_FOUR_TREASURES_RETURN</Tag>
+		<English>The king's envoys return. Now that your treasury has recovered, they once again demand a final answer regarding the purchase of the galleon.</English>
+		<German>Die Gesandten des Königs kehren zurück. Da sich Eure Schatzkammer erholt hat, verlangen sie nun erneut eine endgültige Entscheidung über den Kauf der Galeone.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_2</Tag>
-		<English>No. We must finally refuse the offer. We don't need a galleon.</English>
-		<French/>
-		<German>Nein. Wir müssen das Angebot nun endgültig ablehnen. Wir brauchen keine Galeone.</German>
-		<Russian>Нет. Мы должны окончательно отклонить это предложение. Этот галеон нам не нужен.</Russian>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1</Tag>
+		<English>Very well. We shall honor our obligation to the Crown and purchase the galleon.</English>
+		<German>Sehr wohl. Wir werden unserer Verpflichtung gegenüber der Krone nachkommen und die Galeone kaufen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_BUY_MESSAGE</Tag>
-		<English>The King receives your decision with approval.</English>
-		<French/>
-		<German>Der König nimmt Eure Entscheidung wohlwollend zur Kenntnis.</German>
-		<Russian>Его Величество благосклонно относится к вашему решению.</Russian>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_2</Tag>
+		<English>No. We shall deny the Crown's request once and for all.</English>
+		<German>Nein. Wir werden die Forderung der Krone ein für alle Mal verweigern.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_DECLINE_MESSAGE</Tag>
-		<English>The King is angered by your final refusal.</English>
-		<French/>
-		<German>Der König ist über Eure endgültige Ablehnung verärgert.</German>
-		<Russian>Его Величество разгневан вашим окончательным отказом.</Russian>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP</Tag>
+		<English>You pay %d1 gold to fulfill your obligation to the Crown. A galleon will be commissioned in the designated coastal city, and your standing with the king improves.</English>
+		<German>Ihr zahlt %d1 Gold, um Eurer Verpflichtung gegenüber der Krone nachzukommen. Eine Galeone wird in der vorgesehenen Küstenstadt in Dienst gestellt, und Eure Stellung beim König verbessert sich.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_2_HELP</Tag>
+		<English>You refuse the Crown's request once and for all. The king will not look kindly upon your defiance.</English>
+		<German>Ihr verweigert die Forderung der Krone endgültig. Der König wird Euren Ungehorsam nicht wohlwollend aufnehmen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP</Tag>
-		<English>Selecting this option will postpone the offer. An envoy from the king will contact you again later, provided you have enough gold by then. The king will contact you again within 20 rounds at the latest and demand a decision.</English>
+		<English>Selecting this option will postpone the offer. An envoy from the king will contact you again later, provided you have enough gold by then.</English>
 		<French/>
-		<German>Diese Wahl vertagt das Angebot. Ein Gesandter des Königs wird sich später erneut bei euch melden, sofern Ihr wieder genug Gold habt. Der König wird sich spätestens nach 20 Runden wieder bei Euch melden und eine Entscheidung verlangen.</German>
-		<Russian>Выбор этого варианта отложит предложение. Посланник Короля свяжется с вами позже, при условии, что к тому времени у вас будет достаточно золота. Сам Король свяжется с вами не позднее, чем через 20 ходов и потребует немедленно принять решение.</Russian>
+		<German>Diese Wahl vertagt das Angebot. Ein Gesandter des Königs wird sich später erneut bei euch melden, sofern Ihr wieder genug Gold habt.</German>
+		<Russian>Выбор этого варианта отложит предложение. Посланник Короля свяжется с вами позже, при условии, что к тому времени у вас будет достаточно золота.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_THREE_GALLEONS</Tag>

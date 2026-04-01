@@ -5521,7 +5521,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -14746,6 +14746,74 @@
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
 			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDoCity/>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_FOUR_TREASURES_RETURN</Type>
+			<WorldNewsTexts/>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_RETURN</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/EventImages/Quest_Image1.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>-1</iWeight>
+			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<iMinTreasury>2000</iMinTreasury>
+			<iMinPopulation>1</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
+				<iNumUnitsGlobal>0</iNumUnitsGlobal>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired/>
+			<iNumBuildings>0</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<bOwnPlot>0</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+				<Events>
+					<Event>EVENT_FOUR_TREASURES_RETURN_1</Event>
+					<Event>EVENT_FOUR_TREASURES_RETURN_2</Event>
+				</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
+			<bRecurring>1</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>0</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo>canTriggerFourTreasuresReturn</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -39878,7 +39946,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/scout.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>0</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39892,13 +39960,21 @@
 			<UnitTriggerConditions>
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_SCOUT</UnitClass>
-					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
-					<UnitClass>UNITCLASS_MESTIZZO</UnitClass>
-					<UnitClass>UNITCLASS_MULATTO</UnitClass>
-					<UnitClass>UNITCLASS_COLONIST</UnitClass>
-					<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
-					<UnitClass>UNITCLASS_FREED_SLAVE</UnitClass>
 					<UnitClass>UNITCLASS_EXPERT_SETTLER</UnitClass>
+					<UnitClass>UNITCLASS_CHRISTIAN_MISSIONARY</UnitClass>
+					<UnitClass>UNITCLASS_EXPERT_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_SEASONED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_FAILED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN</UnitClass>
+					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN_DRAGOON</UnitClass>
+					<UnitClass>UNITCLASS_VETERAN_CAVALRY</UnitClass>
+					<UnitClass>UNITCLASS_MILITIA</UnitClass>
+					<UnitClass>UNITCLASS_CONTINENTAL_GUARD</UnitClass>
+					<UnitClass>UNITCLASS_RANGER</UnitClass>
+					<UnitClass>UNITCLASS_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_MOUNTED_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_HESSIAN</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -39963,7 +40039,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>-1</iWeight>
+			<iWeight>0</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>

@@ -15,12 +15,9 @@ import CvCameraControls
 import sys
 import CvWorldBuilderScreen
 import CvAdvisorUtils
-import sdToolKit
 
 gc = CyGlobalContext()
 localText = CyTranslator()
-FOUR_TREASURES_DELAY_MOD_ID = "WTP_RANDOM_EVENTS_POPUP"
-FOUR_TREASURES_DELAY_GOLD = 2000
 
 # globals
 ###################################################
@@ -427,83 +424,6 @@ class CvEventManager:
 	def onBeginPlayerTurn(self, argsList):
 		'Called at the beginning of a players turn'
 		iGameTurn, iPlayer = argsList
-		self.checkFourTreasuresDelayedPopup(iGameTurn, iPlayer)
-
-	def _getFourTreasuresDelayEntity(self, iPlayer):
-		return "FOUR_TREASURES_DELAY_%d" % iPlayer
-
-	def _playerHasFourTreasures(self, player):
-		iTreasureClass = UnitClassTypes.UNITCLASS_TREASURE
-		iCount = 0
-		(loopUnit, iter) = player.firstUnit()
-		while loopUnit:
-			if loopUnit.getUnitClassType() == iTreasureClass:
-				iCount += 1
-				if iCount >= 4:
-					return True
-			(loopUnit, iter) = player.nextUnit(iter)
-		return False
-
-	def _playerHasRequiredFourTreasuresBuilding(self, player):
-		aBuildingClasses = ["BUILDINGCLASS_BASECAMP", "BUILDINGCLASS_VILLAGEHALL", "BUILDINGCLASS_TOWNHALL", "BUILDINGCLASS_CITYHALL", "BUILDINGCLASS_PALACE", "BUILDINGCLASS_COLONIAL_CONGRESS"]
-		(loopCity, iter) = player.firstCity(False)
-		while loopCity:
-			for szBuildingClass in aBuildingClasses:
-				iBuildingClass = gc.getInfoTypeForString(szBuildingClass)
-				eBuilding = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iBuildingClass)
-				if eBuilding != BuildingTypes.NO_BUILDING:
-					if loopCity.isHasBuilding(eBuilding):
-						return True
-			(loopCity, iter) = player.nextCity(iter, False)
-		return False
-
-	def _playerHasCoastalCity(self, player):
-		(city, iter) = player.firstCity(True)
-		while city:
-			if city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
-				return True
-			(city, iter) = player.nextCity(iter, True)
-		return False
-
-	def checkFourTreasuresDelayedPopup(self, iGameTurn, iPlayer):
-		player = gc.getPlayer(iPlayer)
-		if player.isNone():
-			return
-		if not player.isAlive():
-			return
-		if not player.isPlayable():
-			return
-
-		entity = self._getFourTreasuresDelayEntity(iPlayer)
-		if not sdToolKit.sdEntityExists(FOUR_TREASURES_DELAY_MOD_ID, entity):
-			return
-
-		bActive = sdToolKit.sdGetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active")
-		iStartTurn = sdToolKit.sdGetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "startTurn")
-		if not bActive:
-			return
-		if iStartTurn == -1:
-			return
-
-		bConditionsMet = (
-			player.getGold() >= FOUR_TREASURES_DELAY_GOLD and
-			self._playerHasFourTreasures(player) and
-			self._playerHasRequiredFourTreasuresBuilding(player) and
-			self._playerHasCoastalCity(player)
-		)
-
-		if bConditionsMet or (iGameTurn - iStartTurn) >= FOUR_TREASURES_DELAY_MAX_TURNS:
-			sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", False)
-			sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "startTurn", -1)
-
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_DELAYED", ()))
-			popupInfo.setData1(iPlayer)
-			popupInfo.setOnClickedPythonCallback("fourTreasuresDelayedPopup")
-			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_1", ()), "")
-			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAYED_2", ()), "")
-			popupInfo.addPopup(iPlayer)
 
 	def onEndPlayerTurn(self, argsList):
 		'Called at the end of a players turn'

@@ -1015,30 +1015,30 @@ def _getDiscoveryFeverScaledTurns(iBaseTurns):
 def applyDiscoveryStart1(argsList):
 	kTriggeredData = argsList[0]
 	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	spawnOwnPlayerUnitInEurope(argsList)
 	_changeKingRelation(argsList, -2)
 
 def applyDiscoveryStart2(argsList):
 	kTriggeredData = argsList[0]
 	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	spawnOwnPlayerUnitInEurope(argsList)
 
 def applyDiscoveryStart3(argsList):
 	kTriggeredData = argsList[0]
 	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	spawnOwnPlayerUnitInEurope(argsList)
 	_changeKingRelation(argsList, 1)
 
 def applyDiscoveryStart4(argsList):
 	kTriggeredData = argsList[0]
 	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	spawnOwnPlayerUnitInEurope(argsList)
 
 def applyDiscoveryStart5(argsList):
 	kTriggeredData = argsList[0]
 	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
 	_changeKingRelation(argsList, 2)
-
+    
 def _changeKingRelation(argsList, iChange):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1087,6 +1087,41 @@ def _changeKingRelation(argsList, iChange):
 				True,
 				True
 			)
+
+def spawnOwnPlayerUnitInEurope(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iUnitClass = event.getGenericParameter(1)
+	iNumUnits = event.getGenericParameter(2)
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return
+
+	# profession mapping for specific unit classes
+	professionMap = {
+		gc.getInfoTypeForString("UNITCLASS_CHRISTIAN_MISSIONARY"): gc.getInfoTypeForString("PROFESSION_MISSIONARY"),
+		gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER"): gc.getInfoTypeForString("PROFESSION_SCOUT"),
+	}
+
+	for i in range(iNumUnits):
+		unit = player.initEuropeUnit(
+			iUnitType,
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.NO_DIRECTION
+		)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if iUnitClass in professionMap:
+			unit.setProfession(professionMap[iUnitClass])
   
 ######## Discovery Attacked Event ###########
 
@@ -2274,123 +2309,106 @@ getHelpTheRoyals3  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_3PYTHON")
 getHelpTheRoyals4  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_4PYTHON")
 getHelpTheRoyals2a = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2aPYTHON")
 
-####### Pirates Event ########
+# ============================================================
+# PIRATES
+# ============================================================
+
+PIRATES_MOD_ID = "PIRATES_EVENT"
+
+def _getPiratesEntity(iPlayer):
+	return "PIRATES_EVENT_%d" % iPlayer
+
+def _ensurePiratesData(iPlayer):
+	entity = _getPiratesEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(PIRATES_MOD_ID, entity):
+		sdToolKit.sdEntityInit(PIRATES_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getPiratesReadyTurn(iPlayer):
+	entity = _ensurePiratesData(iPlayer)
+	return sdToolKit.sdGetVal(PIRATES_MOD_ID, entity, "readyTurn")
+
+def _setPiratesReadyTurn(iPlayer, iReadyTurn):
+	entity = _ensurePiratesData(iPlayer)
+	sdToolKit.sdSetVal(PIRATES_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getPiratesScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _startPiratesCooldown(iPlayer):
+	iTurns = _getPiratesScaledTurns(25)
+	_setPiratesReadyTurn(iPlayer, CyGame().getGameTurn() + iTurns)
+
+def _isPiratesCooldownActive(iPlayer):
+	iReadyTurn = _getPiratesReadyTurn(iPlayer)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _plotHasAdjacentSeaWater(plot):
+	for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
+		adjPlot = plotDirection(plot.getX(), plot.getY(), DirectionTypes(iDirection))
+		if adjPlot and not adjPlot.isNone():
+			if adjPlot.isWater() and not adjPlot.isLake():
+				return True
+	return False
+
+def _cityHasEuropeAccess(city):
+	if city.isNone():
+		return False
+
+	# Primary coastal check (standard Civ logic)
+	if city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+		return True
+
+	# Additional safety: adjacent real sea tiles (no lakes)
+	if _plotHasAdjacentSeaWater(city.plot()):
+		return True
+
+	return False
 
 def canTriggerPirates(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
+		return False
+
+	# Global cooldown check
+	if _isPiratesCooldownActive(kTriggeredData.ePlayer):
 		return False
 
 	city = player.getCity(kTriggeredData.iCityId)
 	if city.isNone():
 		return False
 
+	# Only allow cities with ocean/Europe access
+	if not _cityHasEuropeAccess(city):
+		return False
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return False
 
-	if city.getX() == unit.getX() and city.getY() == unit.getY():
-		return True
-	return False
-
-def getHelpPirates1(argsList):
-	return localText.getText("TXT_KEY_EVENT_PIRATES_1_HELP", ())
-
-def CanDoPirates3(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	# Must be a treasure unit
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
 		return False
-	return True
 
-def CanDoPirates4(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	# Treasure must be on the city plot
+	if city.getX() != unit.getX() or city.getY() != unit.getY():
 		return False
+
+	# Start cooldown immediately when event triggers
+	_startPiratesCooldown(kTriggeredData.ePlayer)
 	return True
-
-def applyPirates3(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity:
-		return
-	city.changeYieldStored(iYield, quantity)
-
-def applyPirates4(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity:
-		return
-	city.changeYieldStored(iYield, quantity)
-
-def getHelpPirates3(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-	return szHelp
-
-def getHelpPirates4(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-	return szHelp
 
 def isExpiredPirates1a(argsList):
-	eEvent = argsList[1]
 	kTriggeredData = argsList[0]
-
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
 	if player.isNone():
 		return True
 
@@ -2402,16 +2420,16 @@ def isExpiredPirates1a(argsList):
 	if unit.isNone():
 		return True
 
+	# If the tracked unit is no longer treasure, cancel event
 	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
 		return True
 
 	return False
 
 def applyPirates1a(argsList):
-	eEvent = argsList[1]
 	kTriggeredData = argsList[0]
-
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
 	if player.isNone():
 		return
 
@@ -2423,10 +2441,11 @@ def applyPirates1a(argsList):
 	if unit.isNone():
 		return
 
+	# Ensure we still operate on a treasure unit
 	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
 		return
 
-	# The treasure wasn't moved -> Pirates steal it
+	# Case 1: Treasure still in city → pirates steal it
 	if city.getX() == unit.getX() and city.getY() == unit.getY():
 		unit.kill(False)
 
@@ -2434,11 +2453,14 @@ def applyPirates1a(argsList):
 			CyInterface().addMessage(
 				kTriggeredData.ePlayer,
 				False,
-				10,
-				localText.getText("TXT_KEY_EVENT_PIRATES_1A_STOLEN", (city.getName(),)),
-				"",
-				0,
-				"",
+				gc.getEVENT_MESSAGE_TIME(),
+				CyTranslator().changeTextColor(
+					localText.getText("TXT_KEY_EVENT_PIRATES_1A_STOLEN", (city.getName(),)),
+					ColorTypes(7)  # red text
+				),
+				None,
+				InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+				None,
 				ColorTypes(7),
 				city.getX(),
 				city.getY(),
@@ -2447,27 +2469,32 @@ def applyPirates1a(argsList):
 			)
 		return
 
-	# The treasure was moved. The treasure was saved, but pirates have appeared off the harbour
+	# Case 2: Treasure moved away → pirates appear offshore
 	iPirateCutterClass = gc.getInfoTypeForString("UNITCLASS_PIRATE_CUTTER")
-	if iPirateCutterClass != -1:
-		city.spawnBarbarianUnitOnAdjacentPlotOfCity(iPirateCutterClass)
+	if iPirateCutterClass == -1:
+		return
+
+	city.spawnBarbarianUnitOnAdjacentPlotOfCity(iPirateCutterClass)
 
 	if player.isHuman():
 		CyInterface().addMessage(
 			kTriggeredData.ePlayer,
 			False,
-			10,
-			localText.getText("TXT_KEY_EVENT_PIRATES_1A_CUTTER", (city.getName(),)),
-			"",
-			0,
-			"",
+			gc.getEVENT_MESSAGE_TIME(),
+			CyTranslator().changeTextColor(
+				localText.getText("TXT_KEY_EVENT_PIRATES_1A_CUTTER", (city.getName(),)),
+				ColorTypes(7)  # red text
+			),
+			None,
+			InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+			None,
 			ColorTypes(7),
 			city.getX(),
 			city.getY(),
 			True,
 			True
 		)
-
+        
 ######## Superstitious Pirates Event ###########
 
 def canTriggerSupersitiousPirates(argsList):
@@ -9093,6 +9120,11 @@ def _setTreasureAttackCooldown(iPlayer, iReadyTurn):
 	entity = _ensureTreasureAttackData(iPlayer)
 	sdToolKit.sdSetVal(TREASURE_ATTACK_MOD_ID, entity, "readyTurn", iReadyTurn)
 
+def _getTreasureAttackScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
 def canTriggerTreasureAttack(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -9101,7 +9133,16 @@ def canTriggerTreasureAttack(argsList):
 	if plot is None or plot.isNone():
 		return False
 
+	# Must be land
 	if plot.isWater():
+		return False
+
+	# Wilderness only: no city plot
+	if plot.isCity():
+		return False
+
+	# Wilderness only: not on own territory
+	if plot.getOwner() == player.getID():
 		return False
 
 	iCurrentTurn = CyGame().getGameTurn()
@@ -9129,17 +9170,18 @@ def canTriggerTreasureAttack(argsList):
 
 	iDistance = getDistanceToOwnTerritory(plot, player, 10)
 
+	# Higher trigger chance the farther the treasure is away from own territory
 	if iDistance <= 5:
-		iChance = 25
+		iChance = 20
 	elif iDistance <= 10:
-		iChance = 50
+		iChance = 30
 	else:
-		iChance = 75
+		iChance = 40
 
 	if CyGame().getSorenRandNum(100, "Treasure Attack Trigger") >= iChance:
 		return False
 
-	iCooldownTurns = getScaledTurns(25)
+	iCooldownTurns = _getTreasureAttackScaledTurns(25)
 	if iCooldownTurns < 1:
 		iCooldownTurns = 1
 
@@ -9207,6 +9249,10 @@ def _spawnSingleHostileUnitAdjacent(plot, iUnitClass):
 			if pLoop.isWater():
 				continue
 			if pLoop.isImpassable():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
 				continue
 
 			unit = barbPlayer.initUnit(
@@ -9783,79 +9829,280 @@ def isExpiredDragoonstoFrontier(argsList):
 
 getHelpDragoonstoFrontierDone  = get_simple_help("TXT_KEY_EVENT_DRAGOONS_TO_FRONTIER_HELP")
 
+# =========================================
+# FOUR TREASURES – POSTPONE / RETURN SYSTEM
+# =========================================
 
-def _getFourTreasuresDelayEntity(iPlayer):
-	return "FOUR_TREASURES_DELAY_%d" % iPlayer
-def _ensureFourTreasuresDelayData(iPlayer):
-	entity = _getFourTreasuresDelayEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(FOUR_TREASURES_DELAY_MOD_ID, entity):
-		sdToolKit.sdEntityInit(FOUR_TREASURES_DELAY_MOD_ID, entity, {"active": False, "readyTurn": -1})
-	return entity
-def _setFourTreasuresDelay(iPlayer, iReadyTurn):
-	entity = _ensureFourTreasuresDelayData(iPlayer)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", True)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "readyTurn", iReadyTurn)
-def _clearFourTreasuresDelay(iPlayer):
-	entity = _ensureFourTreasuresDelayData(iPlayer)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", False)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "readyTurn", -1)
-def getScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return int((iBaseTurns * iPercent) / 100)
-def applyFourTreasuresDelay(argsList):
-	kTriggeredData = argsList[0]
-	iPlayer = kTriggeredData.ePlayer
-	applyKingPleased(argsList)
-	iTurns = getScaledTurns(FOUR_TREASURES_DELAY_TURNS)
-	_setFourTreasuresDelay(iPlayer, CyGame().getGameTurn() + iTurns)
-def getHelpFourTreasuresDelay(argsList):
-	szHelp = getHelpKingPleased(argsList)
-	if szHelp is None:
-		szHelp = u""
-	iTurns = getScaledTurns(FOUR_TREASURES_DELAY_TURNS)
-	if len(szHelp) > 0:
-		szHelp += u"\n"
-	szHelp += localText.getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP", (iTurns,))
-	return szHelp
+FOUR_TREASURES_RETURN_MOD_ID = "FOUR_TREASURES_RETURN"
+FOUR_TREASURES_RETURN_REQUIRED_GOLD = 2000
 
-FOUR_TREASURES_DELAY_MOD_ID = "WTP_RANDOM_EVENTS_POPUP"
-FOUR_TREASURES_DELAY_MAX_TURNS = 20
 
-def _getFourTreasuresDelayEntity(iPlayer):
-	return "FOUR_TREASURES_DELAY_%d" % iPlayer
+# -----------------------------------------
+# Storage handling
+# -----------------------------------------
 
-def _ensureFourTreasuresDelayData(iPlayer):
-	entity = _getFourTreasuresDelayEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(FOUR_TREASURES_DELAY_MOD_ID, entity):
-		sdToolKit.sdEntityInit(FOUR_TREASURES_DELAY_MOD_ID, entity, {"active": False, "startTurn": -1})
+def _getFourTreasuresReturnEntity(iPlayer):
+	return "FOUR_TREASURES_RETURN_%d" % iPlayer
+
+
+def _ensureFourTreasuresReturnData(iPlayer):
+	entity = _getFourTreasuresReturnEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(FOUR_TREASURES_RETURN_MOD_ID, entity):
+		sdToolKit.sdEntityInit(
+			FOUR_TREASURES_RETURN_MOD_ID,
+			entity,
+			{"postponed": False, "resolved": False, "cityId": -1}
+		)
 	return entity
 
-def _setFourTreasuresDelay(iPlayer, iStartTurn):
-	entity = _ensureFourTreasuresDelayData(iPlayer)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", True)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "startTurn", iStartTurn)
 
-def _clearFourTreasuresDelay(iPlayer):
-	entity = _ensureFourTreasuresDelayData(iPlayer)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "active", False)
-	sdToolKit.sdSetVal(FOUR_TREASURES_DELAY_MOD_ID, entity, "startTurn", -1)
+def _setFourTreasuresPostponed(iPlayer, iCityId):
+	entity = _ensureFourTreasuresReturnData(iPlayer)
+	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "postponed", True)
+	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "resolved", False)
+	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "cityId", iCityId)
 
-def getScaledTurns(iBaseTurns):
-	return iBaseTurns
 
-def applyFourTreasuresDelay(argsList):
+def _clearFourTreasuresPostponed(iPlayer):
+	entity = _ensureFourTreasuresReturnData(iPlayer)
+	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "postponed", False)
+	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "resolved", True)
+
+
+def _isFourTreasuresPostponed(iPlayer):
+	entity = _ensureFourTreasuresReturnData(iPlayer)
+	return sdToolKit.sdGetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "postponed")
+
+
+def _isFourTreasuresResolved(iPlayer):
+	entity = _ensureFourTreasuresReturnData(iPlayer)
+	return sdToolKit.sdGetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "resolved")
+
+
+def _getStoredCityId(iPlayer):
+	entity = _ensureFourTreasuresReturnData(iPlayer)
+	return sdToolKit.sdGetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "cityId")
+
+
+# -----------------------------------------
+# City selection logic
+# -----------------------------------------
+
+def _plotHasOceanAccess(plot):
+	if plot is None or plot.isNone():
+		return False
+
+	for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
+		adjPlot = plotDirection(plot.getX(), plot.getY(), DirectionTypes(iDirection))
+		if adjPlot and not adjPlot.isNone():
+			if adjPlot.isWater() and not adjPlot.isLake():
+				return True
+	return False
+
+
+def _getFourTreasuresSpawnCity(player):
+	if player.isNone():
+		return None
+
+	(city, iter) = player.firstCity(True)
+	while city:
+		if not city.isNone():
+			if city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+				if _plotHasOceanAccess(city.plot()):
+					return city
+		(city, iter) = player.nextCity(iter, True)
+
+	return None
+
+
+def _getValidFourTreasuresReturnCity(player):
+	iCityId = _getStoredCityId(player.getID())
+
+	if iCityId == -1:
+		return None
+
+	city = player.getCity(iCityId)
+
+	if city is None or city.isNone():
+		return None
+
+	if not city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+		return None
+
+	if not _plotHasOceanAccess(city.plot()):
+		return None
+
+	return city
+
+
+# -----------------------------------------
+# Postpone
+# -----------------------------------------
+
+def applyFourTreasuresPostpone(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
-	applyKingPleased(argsList)
-	_setFourTreasuresDelay(iPlayer, CyGame().getGameTurn())
+	player = gc.getPlayer(iPlayer)
 
-def getHelpFourTreasuresDelay(argsList):
-	szHelp = getHelpKingPleased(argsList)
-	if szHelp is None:
-		szHelp = u""
-	iTurns = getScaledTurns(FOUR_TREASURES_DELAY_MAX_TURNS)
-	if len(szHelp) > 0:
-		szHelp += u"\n"
-	szHelp += localText.getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP", (iTurns,))
+	if player.isNone():
+		return
+
+	city = _getFourTreasuresSpawnCity(player)
+	if city is None or city.isNone():
+		return
+
+	_setFourTreasuresPostponed(iPlayer, city.getID())
+
+
+def getHelpFourTreasuresPostpone(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	eking = player.getParent()
+	king = gc.getPlayer(eking)
+
+	szHelp = localText.getText("TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP", ())
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_RELATION_KING_DECREASE",
+		(-1, king.getCivilizationAdjectiveKey())
+	)
+
 	return szHelp
+
+
+# -----------------------------------------
+# Return trigger
+# -----------------------------------------
+
+def canTriggerFourTreasuresReturn(argsList):
+	pTriggeredData = argsList[0]
+	player = gc.getPlayer(pTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	iPlayer = pTriggeredData.ePlayer
+
+	if _isFourTreasuresResolved(iPlayer):
+		return False
+
+	if not _isFourTreasuresPostponed(iPlayer):
+		return False
+
+	if player.getGold() < FOUR_TREASURES_RETURN_REQUIRED_GOLD:
+		return False
+
+	city = _getValidFourTreasuresReturnCity(player)
+	if city is None or city.isNone():
+		return False
+
+	return True
+
+
+# -----------------------------------------
+# Return – buy
+# -----------------------------------------
+
+def applyFourTreasuresReturnBuy(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	player = gc.getPlayer(iPlayer)
+
+	if player.isNone():
+		return
+
+	city = _getValidFourTreasuresReturnCity(player)
+	if city is None or city.isNone():
+		return
+
+	if player.getGold() < FOUR_TREASURES_RETURN_REQUIRED_GOLD:
+		return
+
+	iUnitClassType = UnitClassTypes.UNITCLASS_GALLEON
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
+
+	if iUnitType == UnitTypes.NO_UNIT:
+		return
+
+	player.changeGold(-FOUR_TREASURES_RETURN_REQUIRED_GOLD)
+
+	player.initUnit(
+		iUnitType,
+		0,
+		city.getX(),
+		city.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+	_changeKingRelation(argsList, 1)
+	_clearFourTreasuresPostponed(iPlayer)
+
+
+def getHelpFourTreasuresReturnBuy(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	eking = player.getParent()
+	king = gc.getPlayer(eking)
+
+	szHelp = localText.getText(
+		"TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP",
+		(FOUR_TREASURES_RETURN_REQUIRED_GOLD,)
+	)
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_RELATION_KING_INCREASE",
+		(1, king.getCivilizationAdjectiveKey())
+	)
+
+	return szHelp
+
+
+# -----------------------------------------
+# Return – decline
+# -----------------------------------------
+
+def applyFourTreasuresReturnDecline(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+
+	_changeKingRelation(argsList, -2)
+	_clearFourTreasuresPostponed(iPlayer)
+
+
+def getHelpFourTreasuresReturnDecline(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	eking = player.getParent()
+	king = gc.getPlayer(eking)
+
+	szHelp = localText.getText(
+		"TXT_KEY_EVENT_FOUR_TREASURES_RETURN_2_HELP",
+		()
+	)
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_RELATION_KING_DECREASE",
+		(-2, king.getCivilizationAdjectiveKey())
+	)
+
+	return szHelp
+
+def applyFourTreasuresPostpone(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	player = gc.getPlayer(iPlayer)
+
+	if player.isNone():
+		return
+
+	city = _getFourTreasuresSpawnCity(player)
+	if city is None or city.isNone():
+		return
+
+	_setFourTreasuresPostponed(iPlayer, city.getID())
+
+	_changeKingRelation(argsList, -1)
