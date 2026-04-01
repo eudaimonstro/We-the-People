@@ -1125,6 +1125,38 @@ def spawnOwnPlayerUnitInEurope(argsList):
   
 ######## Discovery Attacked Event ###########
 
+DISCOVERY_ATTACK_LOCK_MOD_ID = "DISCOVERY_ATTACK_LOCK"
+
+def _getDiscoveryAttackLockEntity(iPlayer):
+	return "DISCOVERY_ATTACK_LOCK_%d" % iPlayer
+
+def _ensureDiscoveryAttackLockData(iPlayer):
+	entity = _getDiscoveryAttackLockEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_ATTACK_LOCK_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_ATTACK_LOCK_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryAttackLockReadyTurn(iPlayer):
+	entity = _ensureDiscoveryAttackLockData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_ATTACK_LOCK_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryAttackLockReadyTurn(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryAttackLockData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_ATTACK_LOCK_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryAttackLockScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _startDiscoveryAttackLock(iPlayer):
+	iTurns = _getDiscoveryAttackLockScaledTurns(3)
+	_setDiscoveryAttackLockReadyTurn(iPlayer, CyGame().getGameTurn() + iTurns)
+
+def _isDiscoveryAttackLockActive(iPlayer):
+	iReadyTurn = _getDiscoveryAttackLockReadyTurn(iPlayer)
+	return iReadyTurn > CyGame().getGameTurn()
+
 DISCOVERY_ATTACKED_MOD_ID = "DISCOVERY_ATTACKED"
 
 def _getDiscoveryAttackedEntity(iPlayer):
@@ -1224,6 +1256,9 @@ def canTriggerDiscoveryAttacked(argsList):
 	if player.isNone() or not player.isPlayable() or player.isNative():
 		return False
 
+	if _isDiscoveryAttackLockActive(kTriggeredData.ePlayer):
+		return False
+
 	# Must have a valid tracked unit from the trigger
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
@@ -1282,12 +1317,14 @@ def applyDiscoveryAttacked(argsList):
 	if plot.isNone():
 		return
 
+	_startDiscoveryAttackLock(kTriggeredData.ePlayer)
+
 	# Immobilize the ambushed expedition
 	unit.setMoves(0)
 	unit.setImmobileTimer(1)
 
 	# Set cooldown
-	iCooldown = _getDiscoveryAttackedScaledTurns(10)
+	iCooldown = _getDiscoveryAttackedScaledTurns(30)
 	iCurrentTurn = CyGame().getGameTurn()
 	_setDiscoveryAttackedCooldown(kTriggeredData.ePlayer, iCurrentTurn + iCooldown)
 
@@ -1594,6 +1631,195 @@ def getHelpDiscoveryDesert(argsList):
 		"TXT_KEY_EVENT_DISCOVERY_DESERT_HELP",
 		(2, 4, 2, 5)
 	)
+
+######## Discovery Mutiny ###########
+
+DISCOVERY_MUTINY_MOD_ID = "DISCOVERY_MUTINY"
+
+def _getDiscoveryMutinyEntity(iPlayer):
+	return "DISCOVERY_MUTINY_%d" % iPlayer
+
+def _ensureDiscoveryMutinyData(iPlayer):
+	entity = _getDiscoveryMutinyEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_MUTINY_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_MUTINY_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryMutinyReadyTurn(iPlayer):
+	entity = _ensureDiscoveryMutinyData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_MUTINY_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryMutinyReadyTurn(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryMutinyData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_MUTINY_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryMutinyScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _startDiscoveryMutinyCooldown(iPlayer):
+	iTurns = _getDiscoveryMutinyScaledTurns(50)
+	_setDiscoveryMutinyReadyTurn(iPlayer, CyGame().getGameTurn() + iTurns)
+
+def _isDiscoveryMutinyCooldownActive(iPlayer):
+	iReadyTurn = _getDiscoveryMutinyReadyTurn(iPlayer)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _getDistanceToNearestOwnCity(player, plot):
+	if player.isNone() or plot.isNone():
+		return 99
+
+	iBest = 99
+	(city, iter) = player.firstCity(True)
+	while city:
+		iDist = plotDistance(plot.getX(), plot.getY(), city.getX(), city.getY())
+		if iDist < iBest:
+			iBest = iDist
+		(city, iter) = player.nextCity(iter, True)
+
+	return iBest
+
+def _getDiscoveryMutinyChance(player, plot):
+	iDistance = _getDistanceToNearestOwnCity(player, plot)
+
+	# base 30% + distance bonus, capped at 50%
+	iChance = 20 + min(iDistance, 10) * 3
+	return min(50, iChance)
+
+def canTriggerDiscoveryMutiny(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isDiscoveryAttackLockActive(kTriggeredData.ePlayer):
+		return False
+
+	if _isDiscoveryMutinyCooldownActive(kTriggeredData.ePlayer):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	# unit filtering comes from XML trigger definition
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return False
+
+	if plot.isWater():
+		return False
+
+	iChance = _getDiscoveryMutinyChance(player, plot)
+
+	if CyGame().getSorenRandNum(100, "Discovery Mutiny Trigger") >= iChance:
+		return False
+
+	return True
+
+def applyDiscoveryMutinyPay(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	_startDiscoveryAttackLock(kTriggeredData.ePlayer)
+
+	# set cooldown only when the event is actually applied
+	_startDiscoveryMutinyCooldown(kTriggeredData.ePlayer)
+
+	# movement bonus for this turn
+	try:
+		unit.changeMoves(-60 * 2)
+	except:
+		pass
+
+def applyDiscoveryMutinyFight(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return
+
+	if plot.isWater():
+		return
+
+	_startDiscoveryAttackLock(kTriggeredData.ePlayer)
+
+	# set cooldown only when the event is actually applied
+	_startDiscoveryMutinyCooldown(kTriggeredData.ePlayer)
+
+	# same immobilization logic as applyDiscoveryAttacked
+	unit.setMoves(0)
+	unit.setImmobileTimer(1)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	if iHostileUnitClass == -1:
+		return
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnSingleHostileUnitAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None:
+		_forceUnitToMoveToPlot(hostileUnit, plot)
+
+def getHelpDiscoveryMutiny(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	szUnitName = u""
+	if not unit.isNone():
+		szUnitName = unit.getNameKey()
+
+	if eEvent == gc.getInfoTypeForString("EVENT_DISCOVERY_EVENTS_MUTINY_1"):
+		UnitClass = gc.getUnitClassInfo(event.getGenericParameter(1))
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP_FIGHT",
+			(szUnitName, 1, UnitClass.getTextKey())
+		)
+
+	elif eEvent == gc.getInfoTypeForString("EVENT_DISCOVERY_EVENTS_MUTINY_2"):
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP_PAY",
+			(szUnitName, 500)
+		)
+
+	return u""
 
 ######## The Lost Tribe ###########
 
@@ -9057,8 +9283,6 @@ getHelpDiscoveryMissionary = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_STA
 getHelpDiscoveryTrader = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_SEASONED_TRADER_HELP")
 
 getHelpDiscoveryOxcart = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_Oxcart_HELP")
-
-getHelpDiscoveryMutiny = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP")
 
 getHelpDiscoveryTreasureAttack = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP")
 

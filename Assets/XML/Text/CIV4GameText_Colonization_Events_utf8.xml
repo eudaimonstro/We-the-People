@@ -5488,36 +5488,6 @@
 		<Russian/>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_MUTINY</Tag>
-		<English>We hear that mutineers have ended the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] expedition.</English>
-		<German>Ein Gerücht macht die Runde: Eine [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Expedition wird durch eine Meuterei aufgehalten.</German>
-		<Russian>Ходят слухи, что в экспедиции [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] назревает мятеж.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_MUTINY</Tag>
-		<English>Milord, our men are losing their nerve. They're emaciated.  They haven't prayed for many days. The're right on the edge of mutiny!</English>
-		<German>Milord, einige unserer Männer verlieren die Nerven. Sie sind ausgezehrt und haben lange keine Beute mehr gemacht. Sie drohen zu meutern!</German>
-		<Russian>Милорд, среди разведчиков ходят слухи, что вы не желаете делиться будущей добычей. Некоторые открыто предлагают забрать то, что уже было найдено. Назревает мятеж!</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_1</Tag>
-		<English>Damn it, the devil take them. And the devil is me. Call to arms!</English>
-		<German>Verdammt noch mal, der Teufel soll sie holen. Und der Teufel bin ich. Zu den Waffen!</German>
-		<Russian>Дьявол их побери, устроим им показательную порку! К оружию!</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_2</Tag>
-		<English>Well, I understand. Many of them are only here for the loot. The beauty of nature? They don't care. We'll pay their wages. See if that calms them down.</English>
-		<German>Nun gut, das verstehe ich. Viele sind nur wegen der Beute mitgekommen. Für die schöne Natur haben sie nichts übrig. Zahlen wir Ihnen erst einmal ihren Sold, das sollte sie für eine Weile beruhigen.</German>
-		<Russian>Что же, я могу их понять. Многие из них пришли сюда только ради добычи. Их не интересуют красоты природы и тайны этого мира. Давайте дадим им немного денег. На какое-то время это их успокоит.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP</Tag>
-		<English>[ICON_BULLET]Some of our men will [COLOR_HIGHLIGHT_TEXT]mutiny[COLOR_REVERT] and fight against us!</English>
-		<German>[ICON_BULLET]Einige unserer Männer werden [COLOR_HIGHLIGHT_TEXT]meutern[COLOR_REVERT] und gegen uns kämpfen!</German>
-		<Russian>[ICON_BULLET]Некоторые из наших людей взбунтуются и будут сражаться против нас!</Russian>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE_1</Tag>
 		<English>A rumour is spreading: A [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] treasure column was attacked by a roving band. Can the militiamen defend it?</English>
 		<German>Ein Gerücht macht die Runde: Eine [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Schatzkolonne wurde von einer vagabundierenden Bande angegriffen. Ob die Miliz ihn verteidigen kann?</German>
@@ -5542,12 +5512,42 @@
 		<Russian>Давайте дадим этим бедолагам небольшую часть сокровищ и будем надеяться, что они позволят нам уйти с оставшимися.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP</Tag>
-		<English>A band of roving adventurers attacks the treasure column. A few brave militiamen and guards defend it.</English>
-		<German>Eine Bande umherstreifender Abenteurer greift die Schatzkolonne an. Ein paar mutige Milizionäre und Wachen verteidigen ihn.</German>
-		<Russian>Группа бродячих искателей приключений нападает на обоз с сокровищами. Его защищают несколько храбрых ополченцев и охранников.</Russian>
+		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_MUTINY</Tag>
+		<English>We hear that mutineers have ended the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] expedition.</English>
+		<German>Ein Gerücht macht die Runde: Eine [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Expedition wird durch eine Meuterei aufgehalten.</German>
+		<Russian>Ходят слухи, что в экспедиции [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] назревает мятеж.</Russian>
 	</TEXT>
-  <TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_MUTINY</Tag>
+		<English>Milord, our men are losing their nerve. They're emaciated.  They haven't prayed for many days. The're right on the edge of mutiny!</English>
+		<German>Milord, einige unserer Männer verlieren die Nerven. Sie sind ausgezehrt und haben lange keine Beute mehr gemacht. Sie drohen zu meutern!</German>
+		<Russian>Милорд, среди разведчиков ходят слухи, что вы не желаете делиться будущей добычей. Некоторые открыто предлагают забрать то, что уже было найдено. Назревает мятеж!</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_1</Tag>
+		<English>Damn it, the devil take them. And the devil is me. Call to arms!</English>
+		<German>Verdammt noch mal, der Teufel soll sie holen. Und der Teufel bin ich. Zu den Waffen!</German>
+		<Russian>Дьявол их побери, устроим им показательную порку! К оружию!</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_2</Tag>
+		<English>Well, I understand. Many of them are only here for the loot. The beauty of nature? They don't care. We'll pay their wages. See if that calms them down.</English>
+		<German>Nun gut, das verstehe ich. Viele sind nur wegen der Beute mitgekommen. Für die schöne Natur haben sie nichts übrig. Zahlen wir Ihnen erst einmal ihren Sold, das sollte sie für eine Weile beruhigen.</German>
+		<Russian>Что же, я могу их понять. Многие из них пришли сюда только ради добычи. Их не интересуют красоты природы и тайны этого мира. Давайте дадим им немного денег. На какое-то время это их успокоит.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP_FIGHT</Tag>
+		<English>[ICON_BULLET]Some of our men will [COLOR_HIGHLIGHT_TEXT]mutiny[COLOR_REVERT] and fight against us! The unit will be unable to move for one turn.</English>
+		<German>[ICON_BULLET]Einige unserer Männer werden [COLOR_HIGHLIGHT_TEXT]meutern[COLOR_REVERT] und gegen uns kämpfen! Die Einheit ist eine Runde lang unbeweglich.</German>
+		<Russian>[ICON_BULLET]Некоторые из наших людей взбунтуются и будут сражаться против нас!</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP_PAY</Tag>
+		<English>You calm the restless men of %s1 by paying 500 gold. Order is restored, and the unit gains additional movement this turn.</English>
+		<German>Ihr beruhigt die unruhigen Männer von %s1, indem Ihr 500 Gold zahlt. Die Ordnung wird wiederhergestellt und die Einheit erhält für diese Runde zusätzliche Bewegung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_BRAVE_FELLOWS</Tag>
 		<English>Your expedition has entered a Native village. The Natives are thrilled by your strange garments and stories of the adventures they have experienced. Some warriors want to join your expedition. What would you do?</English>
 		<German>Euere Expedition hat ein Dorf der Ureinwohner betreten. Die Ureinwohner sind begeistert von Euren fremdartigen Gewändern und Geschichten von den erlebten Abenteuern. Einige Krieger wollen sich Euch anschließen. Was wollt Ihr tun?</German>
