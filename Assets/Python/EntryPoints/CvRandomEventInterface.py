@@ -1821,6 +1821,112 @@ def getHelpDiscoveryMutiny(argsList):
 
 	return u""
 
+######## The DISCOVERY EVENTS BRAVE FELLOWS EVENT ###########
+
+DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID = "DISCOVERY_BRAVE_FELLOWS_MAP"
+
+def _getDiscoveryBraveFellowsMapEntity(iPlayer):
+	return "DISCOVERY_BRAVE_FELLOWS_MAP_%d" % iPlayer
+
+def _ensureDiscoveryBraveFellowsMapData(iPlayer):
+	# Ensure sdToolKit storage exists for this player
+	entity = _getDiscoveryBraveFellowsMapEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryBraveFellowsMapReadyTurn(iPlayer):
+	# Returns the turn when the event becomes available again
+	entity = _ensureDiscoveryBraveFellowsMapData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryBraveFellowsMapCooldown(iPlayer, iReadyTurn):
+	# Sets the next available turn for the event
+	entity = _ensureDiscoveryBraveFellowsMapData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryBraveFellowsMapScaledTurns(iBaseTurns):
+	# Scale cooldown with game speed
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+
+def canTriggerDiscoveryEventsBraveFellows(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	# Must happen in a native village
+	if not isNativeVillage(argsList):
+		return False
+
+	# Require scout profession
+	eScoutProfession = gc.getInfoTypeForString("PROFESSION_SCOUT")
+	if unit.getProfession() != eScoutProfession:
+		return False
+
+	# Check cooldown
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getDiscoveryBraveFellowsMapReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	return True
+
+
+def applyDiscoveryBraveFellowsMap(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return
+
+	# Reveal a square area around the village
+	# Range 4 = 9x9 area (center + 4 tiles in each direction)
+	iRange = 4
+
+	for iDX in range(-iRange, iRange + 1):
+		for iDY in range(-iRange, iRange + 1):
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+
+			pLoop.setRevealed(player.getTeam(), True, False, TeamTypes.NO_TEAM)
+
+	# Apply cooldown (20 turns, scaled with game speed)
+	iCooldown = _getDiscoveryBraveFellowsMapScaledTurns(20)
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = iCurrentTurn + iCooldown
+	_setDiscoveryBraveFellowsMapCooldown(kTriggeredData.ePlayer, iReadyTurn)
+
+
+def getHelpDiscoveryBraveFellowsMap(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_MAP_HELP",
+		(9, 9)
+	)
+
 ######## The Lost Tribe ###########
 
 def canTriggerLostTribe(argsList):
@@ -1894,8 +2000,6 @@ def canTriggerPacificDone(argsList):
 
 
 ######## VOLCANO ###########
-
-
 
 def canApplyVolcano1(argsList):
 	iEvent = argsList[1]
@@ -9285,8 +9389,6 @@ getHelpDiscoveryTrader = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_S
 getHelpDiscoveryOxcart = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_Oxcart_HELP")
 
 getHelpDiscoveryTreasureAttack = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP")
-
-getHelpDiscoveryNoNewScout = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_NONEW_SCOUT_HELP")
 
 getHelpDiscoveryNewScout = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_NEW_SCOUT_HELP")
 

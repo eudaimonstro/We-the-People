@@ -5512,6 +5512,12 @@
 		<Russian>Давайте дадим этим бедолагам небольшую часть сокровищ и будем надеяться, что они позволят нам уйти с оставшимися.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP</Tag>
+		<English>A band of roving adventurers attacks the treasure column. A few brave militiamen and guards defend it.</English>
+		<German>Eine Bande umherstreifender Abenteurer greift die Schatzkolonne an. Ein paar mutige Milizionäre und Wachen verteidigen ihn.</German>
+		<Russian>Группа бродячих искателей приключений нападает на обоз с сокровищами. Его защищают несколько храбрых ополченцев и охранников.</Russian>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_MUTINY</Tag>
 		<English>We hear that mutineers have ended the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] expedition.</English>
 		<German>Ein Gerücht macht die Runde: Eine [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Expedition wird durch eine Meuterei aufgehalten.</German>
@@ -5567,15 +5573,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_2</Tag>
-		<English>Send them away, we don't need Indians in our ranks. They only cause trouble and want to spy on us.</English>
-		<German>Schickt sie weg, wir brauchen keine Indianer in unseren Reihen. Die machen doch nur Ärger und wollen uns ausspionieren.</German>
-		<Russian>Гоните их прочь, нам не нужны индейцы в отряде. Они только создают проблемы и, возможно, хотят шпионить за нами.</Russian>
+		<English>We thank the warriors of this brave tribe. It would already suffice if you would acquaint us with the area around your village.</English>
+		<German>Wir danken den Kriegern dieses tapferen Stammes. Es würde schon reichen, wenn Sie uns eine Karte von der Umgebung zeichnen würden.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_2_News</Tag>
-		<English>The Natives are furious about how our expedition behaved.</English>
-		<German>Die Ureinwohner sind über das Verhalten einer Expedition verärgert.</German>
-		<Russian>Индейцы возмущены поведением членов экспедиции.</Russian>
+		<English>An expedition learns about a Native American village and its surroundings.</English>
+		<German>Eine Expedition lernt etwas über ein Indianerdorf und seine Umgebung.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_3</Tag>
@@ -5596,10 +5602,10 @@
 		<Russian>[ICON_BULLET]К вам присоединятся несколько индейцев, что позволит разделить экспедицию на несколько отрядов.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_NONEW_SCOUT_HELP</Tag>
-		<English>[ICON_BULLET]These Natives are angry at your reaction. As proof of their power they're ready to attack you.</English>
-		<German>[ICON_BULLET]Einige Ureinwohner sind wütend über Eure Reaktion. Sie wollen beweisen wie wertvoll sie sind und werden Euch angreifen.</German>
-		<Russian>[ICON_BULLET]Индейцы недовольны вашей реакцией и чтобы доказать свою силу они готовы напасть на вас.</Russian>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_MAP_HELP</Tag>
+		<English>A 5x5 area around the village is revealed.</English>
+		<German>Ein Gebiet von %d1x%d2 Feldern um das Dorf wird aufgedeckt.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_CHANGE_FAILED_TRADER</Tag>
