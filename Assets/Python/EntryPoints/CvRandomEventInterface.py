@@ -1248,7 +1248,7 @@ def canTriggerDiscoveryWildernessExpert(argsList):
 	iTurnsAway = iCurrentTurn - iLeftTurn
 
 	# Test value (intended is 75)
-	if iTurnsAway < 50:
+	if iTurnsAway < 40:
 		return False
 
 	return True
