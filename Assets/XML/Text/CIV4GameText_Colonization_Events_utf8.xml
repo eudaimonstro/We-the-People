@@ -3413,37 +3413,37 @@
 		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_RETURN</Tag>
 		<English>The envoys of your king return, reminding you of the galleon you previously declined to purchase. Now that your treasury has recovered, they demand a final decision.</English>
 		<German>Die Gesandten Eures Königs kehren zurück und erinnern Euch an die Galeone, deren Kauf Ihr zuvor aufgeschoben habt. Nun, da sich Eure Schatzkammer erholt hat, verlangen sie eine endgültige Entscheidung.</German>
-		<Russian/>
+		<Russian>Посланники вашего Короля вернулись и напомнили о галеоне, покупку которого вы ранее отложили. Теперь, когда ваша казна восстановилась, они требуют окончательного решения.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FOUR_TREASURES_RETURN</Tag>
 		<English>The king's envoys return. Now that your treasury has recovered, they once again demand a final answer regarding the purchase of the galleon.</English>
 		<German>Die Gesandten des Königs kehren zurück. Da sich Eure Schatzkammer erholt hat, verlangen sie nun erneut eine endgültige Entscheidung über den Kauf der Galeone.</German>
-		<Russian/>
+		<Russian>Королевские посланники вернулись. Теперь, когда ваша казна восстановилась, они требуют окончательного решения относительно покупки галеона.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1</Tag>
 		<English>Very well. We shall honor our obligation to the Crown and purchase the galleon.</English>
 		<German>Sehr wohl. Wir werden unserer Verpflichtung gegenüber der Krone nachkommen und die Galeone kaufen.</German>
-		<Russian/>
+		<Russian>Конечно, мы выполним свои обязательства перед Короной и купим этот галеон.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_2</Tag>
 		<English>No. We shall deny the Crown's request once and for all.</English>
 		<German>Nein. Wir werden die Forderung der Krone ein für alle Mal verweigern.</German>
-		<Russian/>
+		<Russian>Корона рано или поздно получит свои сокровища. Деньги нужны на развитие колоний.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP</Tag>
 		<English>You pay %d1 gold to fulfill your obligation to the Crown. A galleon will be commissioned in the designated coastal city, and your standing with the king improves.</English>
 		<German>Ihr zahlt %d1 Gold, um Eurer Verpflichtung gegenüber der Krone nachzukommen. Eine Galeone wird in der vorgesehenen Küstenstadt in Dienst gestellt, und Eure Stellung beim König verbessert sich.</German>
-		<Russian/>
+		<Russian>Во исполнение обязательств перед Короной из вашей казны будет вычтено %d1 золота. Галеон будет подготовлен к выходу в море в указанном прибрежном городе, а ваше положение у Короля улучшиться.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_2_HELP</Tag>
 		<English>You refuse the Crown's request once and for all. The king will not look kindly upon your defiance.</English>
 		<German>Ihr verweigert die Forderung der Krone endgültig. Der König wird Euren Ungehorsam nicht wohlwollend aufnehmen.</German>
-		<Russian/>
+		<Russian>Вы отказываетесь от королевского предложения. Его Величество будет крайне недоволен.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_DELAY_HELP</Tag>
@@ -5455,7 +5455,7 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_HELP</Tag>
 		<English>The unit may become immobilized for %d1 to %d2 turns and suffer %d3%% to %d4%% damage due to extreme heat and exhaustion.</English>
 		<German>Die Einheit kann durch extreme Hitze und Erschöpfung für %d1 bis %d2 Runden bewegungsunfähig werden und %d3%% bis %d4%% Schaden erleiden.</German>
-		<Russian/>
+		<Russian>Юнит может быть обездвижен на %d1 – %d2 ходов и получить %d3%% - %d4%% повреждений из-за сильного перегрева и истощения.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_RESULT</Tag>
@@ -5473,7 +5473,7 @@
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_ATTACKED_1</Tag>
 		<English>Milord, our epedition is being [COLOR_HIGHLIGHT_TEXT]ambushed[COLOR_REVERT] by hostile Natives! All across this vast new continent they attack us wherever we search for campsites.</English>
 		<German>Milord, unsere Epedition wurde auf dem Weg durch diesen riesigen neuen Kontinent auf der Suche nach einem Lagerplatz aus dem [COLOR_HIGHLIGHT_TEXT]Hinterhalt[COLOR_REVERT] von Wilden angegriffen!</German>
-		<Russian>Милорд, наша экспедиция попала в засаду враждебно настроенных туземцев!</Russian>
+		<Russian>Милорд, наша экспедиция попала в засаду враждебно настроенных индейцев!</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_ATTACKED_1</Tag>
@@ -5485,7 +5485,7 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_ATTACKED_HELP</Tag>
 		<English>Hostile Natives attack the expedition from ambush.</English>
 		<German>Feindliche Ureinwohner greifen die Expedition aus dem Hinterhalt an.</German>
-		<Russian/>
+		<Russian>Враждебно настроенные индейцы нападают на экспедицию из засады.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE_1</Tag>
@@ -5551,7 +5551,7 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP_PAY</Tag>
 		<English>You calm the restless men of %s1 by paying 500 gold. Order is restored, and the unit gains additional movement this turn.</English>
 		<German>Ihr beruhigt die unruhigen Männer von %s1, indem Ihr 500 Gold zahlt. Die Ordnung wird wiederhergestellt und die Einheit erhält für diese Runde zusätzliche Bewegung.</German>
-		<Russian/>
+		<Russian>Вы успокаиваете возбуждённых %s1, заплатив им 500 золотых. Порядок восстанавливается и отряд получает дополнительное перемещение в этом ходу.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_BRAVE_FELLOWS</Tag>
@@ -5563,7 +5563,7 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_1</Tag>
 		<English>We will accept the warriors into our ranks. We can make good use of them. Give them some of our distinctive clothing as a symbol of friendship.</English>
 		<German>Wir werden die Krieger in unsere Reihen aufnehmen. Wir können sie gut gebrauchen. Gebt Ihnen einige unserer Kleider als Zeichen der Freundschaft.</German>
-		<Russian>Мы примем воинов в наши ряды. Думаю, они могут нам пригодится. Подарите индейцам что-нибудь из нашей одежды в знак дружбы.</Russian>
+		<Russian>Мы примем их воинов в наши ряды. Думаю, они могут нам пригодится. Подарите индейцам что-нибудь из нашей одежды в знак дружбы.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_1_News</Tag>
@@ -5575,13 +5575,13 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_2</Tag>
 		<English>We thank the warriors of this brave tribe. It would already suffice if you would acquaint us with the area around your village.</English>
 		<German>Wir danken den Kriegern dieses tapferen Stammes. Es würde schon reichen, wenn Sie uns eine Karte von der Umgebung zeichnen würden.</German>
-		<Russian/>
+		<Russian>Мы благодарны воинам этого храброго племени. Но мы хотели бы попросить их нарисовать нам карту этой местности.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_2_News</Tag>
 		<English>An expedition learns about a Native American village and its surroundings.</English>
 		<German>Eine Expedition lernt etwas über ein Indianerdorf und seine Umgebung.</German>
-		<Russian/>
+		<Russian>Участники экспедиции узнают подробности о деревне туземцев и её окрестностях.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_3</Tag>
@@ -5603,9 +5603,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_MAP_HELP</Tag>
-		<English>A 5x5 area around the village is revealed.</English>
+		<English>A %d1x%d2 area around the village is revealed.</English>
 		<German>Ein Gebiet von %d1x%d2 Feldern um das Dorf wird aufgedeckt.</German>
-		<Russian/>
+		<Russian>Вокруг деревни индейцев открывается область %d1x%d2 клеток.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_CHANGE_FAILED_TRADER</Tag>
