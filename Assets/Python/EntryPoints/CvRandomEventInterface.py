@@ -1123,6 +1123,231 @@ def spawnOwnPlayerUnitInEurope(argsList):
 		if iUnitClass in professionMap:
 			unit.setProfession(professionMap[iUnitClass])
   
+######## WILDERNESS EXPERT EVENT ###########
+
+WILDERNESS_EXPERT_MOD_ID = "WILDERNESS_EXPERT"
+
+def _getWildernessUnitKey(iPlayer, iUnitId):
+	return "WILDERNESS_%d_%d" % (iPlayer, iUnitId)
+
+def _ensureWildernessData(iPlayer, iUnitId):
+	entity = _getWildernessUnitKey(iPlayer, iUnitId)
+	if not sdToolKit.sdEntityExists(WILDERNESS_EXPERT_MOD_ID, entity):
+		sdToolKit.sdEntityInit(WILDERNESS_EXPERT_MOD_ID, entity, {
+			"leftTurn": -1
+		})
+	return entity
+
+def _getLeftTurn(iPlayer, iUnitId):
+	entity = _ensureWildernessData(iPlayer, iUnitId)
+	return sdToolKit.sdGetVal(WILDERNESS_EXPERT_MOD_ID, entity, "leftTurn")
+
+def _setLeftTurn(iPlayer, iUnitId, iTurn):
+	entity = _ensureWildernessData(iPlayer, iUnitId)
+	sdToolKit.sdSetVal(WILDERNESS_EXPERT_MOD_ID, entity, "leftTurn", iTurn)
+
+def _getDistanceToNearestOwnCity(player, plot):
+	if player.isNone() or plot is None or plot.isNone():
+		return 0
+
+	iBestDistance = -1
+	(city, iter) = player.firstCity(True)
+	while city:
+		iDist = plotDistance(plot.getX(), plot.getY(), city.getX(), city.getY())
+		if iBestDistance == -1 or iDist < iBestDistance:
+			iBestDistance = iDist
+		(city, iter) = player.nextCity(iter, True)
+
+	if iBestDistance == -1:
+		return 0
+
+	return iBestDistance
+
+def _getWildernessXPBonusByDistance(iDistance):
+	# Distance-based XP scaling (5 tiers)
+	if iDistance <= 10:
+		return 2
+	elif iDistance <= 20:
+		return 4
+	elif iDistance <= 30:
+		return 6
+	elif iDistance <= 40:
+		return 8
+	return 10
+
+def _getNearestNativePlayerFromPlot(plot):
+	if plot is None or plot.isNone():
+		return -1
+
+	iBestPlayer = -1
+	iBestDistance = 99999
+
+	for iLoopPlayer in range(gc.getMAX_PLAYERS()):
+		loopPlayer = gc.getPlayer(iLoopPlayer)
+		if loopPlayer.isNone():
+			continue
+		if not loopPlayer.isAlive():
+			continue
+		if not loopPlayer.isNative():
+			continue
+
+		(city, iter) = loopPlayer.firstCity(True)
+		while city:
+			iDist = plotDistance(plot.getX(), plot.getY(), city.getX(), city.getY())
+			if iDist < iBestDistance:
+				iBestDistance = iDist
+				iBestPlayer = iLoopPlayer
+			(city, iter) = loopPlayer.nextCity(iter, True)
+
+	return iBestPlayer
+
+def canTriggerDiscoveryWildernessExpert(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isAlive():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return False
+
+	# Only scouts
+	eScoutProfession = gc.getInfoTypeForString("PROFESSION_SCOUT")
+	if unit.getProfession() != eScoutProfession:
+		return False
+
+	# Only once per unit
+	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
+	if unit.isHasPromotion(ePromo):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Reset if back in own territory
+	if plot.getOwner() == player.getID():
+		_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, -1)
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iLeftTurn = _getLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId)
+
+	# First turn outside territory
+	if iLeftTurn == -1:
+		_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iCurrentTurn)
+		return False
+
+	iTurnsAway = iCurrentTurn - iLeftTurn
+
+	# Test value (intended is 75)
+	if iTurnsAway < 50:
+		return False
+
+	return True
+
+def applyDiscoveryWildernessExpertXP(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	iDistance = _getDistanceToNearestOwnCity(player, plot)
+	iXP = _getWildernessXPBonusByDistance(iDistance)
+
+	unit.changeExperience(iXP, -1, False, False, False)
+
+	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
+	unit.setHasRealPromotion(ePromo, True)
+
+	_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, -1)
+
+	CyInterface().addMessage(
+		kTriggeredData.ePlayer,
+		True,
+		10,
+		localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_RESULT", (iXP,)),
+		"",
+		0,
+		"",
+		ColorTypes(8),
+		unit.getX(),
+		unit.getY(),
+		True,
+		True
+	)
+
+def applyDiscoveryWildernessExpertNative(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	iNativePlayer = _getNearestNativePlayerFromPlot(plot)
+	if iNativePlayer != -1:
+		nativePlayer = gc.getPlayer(iNativePlayer)
+		if not nativePlayer.isNone():
+			player.AI_changeAttitudeExtra(iNativePlayer, 3)
+			nativePlayer.AI_changeAttitudeExtra(kTriggeredData.ePlayer, 3)
+
+			CyInterface().addMessage(
+				kTriggeredData.ePlayer,
+				True,
+				10,
+				localText.getText(
+					"TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_RESULT",
+					(3, nativePlayer.getCivilizationAdjectiveKey())
+				),
+				"",
+				0,
+				"",
+				ColorTypes(8),
+				unit.getX(),
+				unit.getY(),
+				True,
+				True
+			)
+
+	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
+	unit.setHasRealPromotion(ePromo, True)
+
+	_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, -1)
+
+def getHelpDiscoveryWildernessExpertXP(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP",
+		(2, 4, 6, 8, 10)
+	)
+
+def getHelpDiscoveryWildernessExpertNative(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_HELP",
+		(3,)
+	)
+
 ######## Discovery Attacked Event ###########
 
 DISCOVERY_ATTACK_LOCK_MOD_ID = "DISCOVERY_ATTACK_LOCK"
@@ -10374,9 +10599,16 @@ def getHelpFourTreasuresReturnBuy(argsList):
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
 
+	city = _getFourTreasuresSpawnCity(player)
+
+	if city is not None and not city.isNone():
+		szCityName = city.getName()
+	else:
+		szCityName = u"-"
+
 	szHelp = localText.getText(
 		"TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP",
-		(FOUR_TREASURES_RETURN_REQUIRED_GOLD,)
+		(FOUR_TREASURES_RETURN_REQUIRED_GOLD, szCityName)
 	)
 
 	szHelp += u"\n" + localText.getText(
@@ -10385,7 +10617,6 @@ def getHelpFourTreasuresReturnBuy(argsList):
 	)
 
 	return szHelp
-
 
 # -----------------------------------------
 # Return – decline
