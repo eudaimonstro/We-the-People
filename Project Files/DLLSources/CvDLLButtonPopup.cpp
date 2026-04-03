@@ -3461,6 +3461,8 @@ bool CvDLLButtonPopup::launchTeacherListPopup(CvPopup* pPopup, CvPopupInfo &info
 			CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
 
 			if (kUnit.NBMOD_GetTeachLevel() < 1 || kUnit.NBMOD_GetTeachLevel() > pCity->NBMOD_GetCityTeachLevel()) continue;
+			// Skip units which are not intended to be meaningful teachable professions
+			if (kUnit.getTeacherWeight() <= 0) continue;
 
 			int iPrice = pCity->getSpecialistTuition(eUnit);
 
