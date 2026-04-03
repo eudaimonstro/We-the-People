@@ -16795,7 +16795,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -87914,15 +87914,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
-			<PythonExpireCheck/>
+			<PythonCallback>doEventFailedMissionary1Locked</PythonCallback>
+			<PythonExpireCheck>expireFailedMissionaryEvent</PythonExpireCheck>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>200</iAIValue>
-			<iGenericParameter1>1</iGenericParameter1>
-			<iGenericParameter2>200</iGenericParameter2>
-			<iGenericParameter3>300</iGenericParameter3>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>		
 		<EventInfo>
@@ -87975,8 +87975,8 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
-			<PythonExpireCheck/>
+			<PythonCallback>doEventFailedMissionary2Locked</PythonCallback>
+			<PythonExpireCheck>expireFailedMissionaryEvent</PythonExpireCheck>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -88046,8 +88046,8 @@
 				</EventTime>
 			</EventTimes>
 			<ClearEvents/>
-			<PythonCallback/>
-			<PythonExpireCheck/>
+			<PythonCallback>doEventFailedMissionary3Locked</PythonCallback>
+			<PythonExpireCheck>expireFailedMissionaryEvent</PythonExpireCheck>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -89451,10 +89451,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>doDiscoveryFailedTraderChangeDecline</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpDiscoveryFailedTraderChangeDecline</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -89482,7 +89482,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -89512,7 +89512,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnOwnPlayerUnitOnSamePlotAsPlot</PythonCallback>
+			<PythonCallback>doDiscoveryFailedMissionaryChange</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpDiscoveryFailedMissionaryChange</PythonHelp>
@@ -89573,10 +89573,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>doDiscoveryFailedMissionaryChangeDecline</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpDiscoveryFailedMissionaryChangeDecline</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>

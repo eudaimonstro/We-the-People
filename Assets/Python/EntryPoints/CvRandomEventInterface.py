@@ -4496,7 +4496,7 @@ def changeFailedTraderToExpertTrader(argsList):
 
 	oldUnit.kill(False)
 
-	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(20)
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
 	iCurrentTurn = CyGame().getGameTurn()
 	iReadyTurn = iCurrentTurn + iCooldown
 	_setDiscoveryFailedTraderChangeCooldown(kTriggeredData.ePlayer, iReadyTurn)
@@ -4529,12 +4529,438 @@ def getHelpDiscoveryFailedTraderChange(argsList):
 		return u""
 
 	iGoldCost = 1000
-	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(20)
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
 
 	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_HELP",
 		(iGoldCost, iCooldown)
 	)
+
+def doDiscoveryFailedTraderChangeDecline(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
+	if gc.getUnitInfo(unit.getUnitType()).getUnitClassType() != iFailedTraderClass:
+		return
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return
+
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = iCurrentTurn + iCooldown
+	_setDiscoveryFailedTraderChangeCooldown(kTriggeredData.ePlayer, iReadyTurn)
+
+def getHelpDiscoveryFailedTraderChangeDecline(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return u""
+
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_DECLINE_HELP",
+		(iCooldown,)
+	)
+
+######## Discovery Failed Missionary Change ###########
+
+DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID = "DISCOVERY_FAILED_MISSIONARY_CHANGE"
+
+def _getDiscoveryFailedMissionaryChangeEntity(iPlayer):
+	return "DISCOVERY_FAILED_MISSIONARY_CHANGE_%d" % iPlayer
+
+def _ensureDiscoveryFailedMissionaryChangeData(iPlayer):
+	entity = _getDiscoveryFailedMissionaryChangeEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryFailedMissionaryChangeReadyTurn(iPlayer):
+	entity = _ensureDiscoveryFailedMissionaryChangeData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryFailedMissionaryChangeCooldown(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryFailedMissionaryChangeData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryFailedMissionaryChangeScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _getDiscoveryFailedMissionaryUnitClass(unit):
+	if unit is None or unit.isNone():
+		return -1
+	return gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
+
+def _getBestMissionaryTargetForPlayer(player):
+	candidates = [
+		("UNITCLASS_ORTHODOX_MISSIONARY", "PROFESSION_ORTHODOX_MISSIONARY"),
+		("UNITCLASS_ORTHODOX_MISSIONARY", "PROFESSION_MISSIONARY"),
+		("UNITCLASS_CHRISTIAN_MISSIONARY", "PROFESSION_MISSIONARY"),
+	]
+
+	for szUnitClass, szProfession in candidates:
+		iUnitClass = gc.getInfoTypeForString(szUnitClass)
+		iProfession = gc.getInfoTypeForString(szProfession)
+
+		if iUnitClass == -1 or iProfession == -1:
+			continue
+
+		iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+		if iUnitType == UnitTypes.NO_UNIT:
+			continue
+
+		return (iUnitClass, iUnitType, iProfession)
+
+	return (-1, -1, -1)
+
+def _setDiscoveryFailedMissionaryChangeCooldownFromNow(iPlayer):
+	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = iCurrentTurn + iCooldown
+	_setDiscoveryFailedMissionaryChangeCooldown(iPlayer, iReadyTurn)
+
+def canTriggerDiscoveryFailedMissionaryChange(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+	if plot.isWater():
+		return False
+	if plot.isCity():
+		return False
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if _getDiscoveryFailedMissionaryUnitClass(unit) != iFailedMissionaryClass:
+		return False
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getDiscoveryFailedMissionaryChangeReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	return True
+
+def doDiscoveryFailedMissionaryChange(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	oldUnit = player.getUnit(kTriggeredData.iUnitId)
+	if oldUnit.isNone():
+		return
+
+	plot = oldUnit.plot()
+	if plot is None or plot.isNone():
+		return
+	if plot.isWater():
+		return
+	if plot.isCity():
+		return
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if _getDiscoveryFailedMissionaryUnitClass(oldUnit) != iFailedMissionaryClass:
+		return
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if oldUnit.getProfession() != eColonistProfession:
+		return
+
+	iTargetUnitClass, iNewUnitType, eTargetProfession = _getBestMissionaryTargetForPlayer(player)
+	if iTargetUnitClass == -1 or iNewUnitType == -1 or eTargetProfession == -1:
+		return
+
+	iX = oldUnit.getX()
+	iY = oldUnit.getY()
+	iDamage = oldUnit.getDamage()
+	iExperience = oldUnit.getExperience()
+	iMoves = oldUnit.movesLeft()
+
+	szName = u""
+	if oldUnit.getNameNoDesc():
+		szName = oldUnit.getNameNoDesc()
+
+	aPromotions = []
+	for iPromotion in range(gc.getNumPromotionInfos()):
+		if oldUnit.isHasPromotion(iPromotion):
+			aPromotions.append(iPromotion)
+
+	newUnit = player.initUnit(iNewUnitType, 0, iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION, 0)
+	if newUnit.isNone():
+		return
+
+	if eTargetProfession != ProfessionTypes.NO_PROFESSION:
+		newUnit.setProfession(eTargetProfession)
+		newUnit.setProfession(eTargetProfession)
+
+	if iDamage > 0:
+		newUnit.setDamage(iDamage, PlayerTypes.NO_PLAYER)
+
+	if iExperience > 0:
+		newUnit.setExperience(iExperience, -1)
+
+	for iPromotion in aPromotions:
+		if newUnit.canAcquirePromotion(iPromotion):
+			newUnit.setHasRealPromotion(iPromotion, True)
+
+	if szName != u"":
+		newUnit.setName(szName)
+
+	try:
+		newUnit.setMoves(iMoves)
+	except:
+		pass
+
+	oldUnit.kill(False)
+
+	_setDiscoveryFailedMissionaryChangeCooldownFromNow(kTriggeredData.ePlayer)
+
+def doDiscoveryFailedMissionaryChangeDecline(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+	if plot.isWater():
+		return
+	if plot.isCity():
+		return
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if _getDiscoveryFailedMissionaryUnitClass(unit) != iFailedMissionaryClass:
+		return
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return
+
+	_setDiscoveryFailedMissionaryChangeCooldownFromNow(kTriggeredData.ePlayer)
+
+def getHelpDiscoveryFailedMissionaryChange(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return u""
+
+	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
+	szHelp = localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_HELP",
+		(iCooldown,)
+	)
+
+	return szHelp
+
+def getHelpDiscoveryFailedMissionaryChangeDecline(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return u""
+
+	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_DECLINE_HELP",
+		(iCooldown,)
+	)
+
+######## Failed Missionary Classic Shared Lock ###########
+
+FAILED_MISSIONARY_LOCK_MOD_ID = "FAILED_MISSIONARY_LOCK"
+
+def _getFailedMissionaryLockEntity(iPlayer, iUnitId):
+	return "FAILED_MISSIONARY_LOCK_%d_%d" % (iPlayer, iUnitId)
+
+def _ensureFailedMissionaryLockData(iPlayer, iUnitId):
+	entity = _getFailedMissionaryLockEntity(iPlayer, iUnitId)
+	if not sdToolKit.sdEntityExists(FAILED_MISSIONARY_LOCK_MOD_ID, entity):
+		sdToolKit.sdEntityInit(FAILED_MISSIONARY_LOCK_MOD_ID, entity, {"locked": 0})
+	return entity
+
+def _isFailedMissionaryLocked(iPlayer, iUnitId):
+	entity = _ensureFailedMissionaryLockData(iPlayer, iUnitId)
+	return sdToolKit.sdGetVal(FAILED_MISSIONARY_LOCK_MOD_ID, entity, "locked") == 1
+
+def _lockFailedMissionary(iPlayer, iUnitId):
+	entity = _ensureFailedMissionaryLockData(iPlayer, iUnitId)
+	sdToolKit.sdSetVal(FAILED_MISSIONARY_LOCK_MOD_ID, entity, "locked", 1)
+
+def canTriggerFailedMissionaryShared(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# The tracked unit itself must stand on a city plot
+	if not plot.isCity():
+		return False
+
+	# Extra safety: the city on that plot must really exist
+	plotCity = plot.getPlotCity()
+	if plotCity is None or plotCity.isNone():
+		return False
+
+	# Critical check:
+	# The tracked unit must stand exactly on the triggered city plot
+	if unit.getX() != city.getX() or unit.getY() != city.getY():
+		return False
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if gc.getUnitInfo(unit.getUnitType()).getUnitClassType() != iFailedMissionaryClass:
+		return False
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return False
+
+	return True
+
+def doEventFailedMissionary1Locked(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if _isFailedMissionaryLocked(unit.getOwner(), unit.getID()):
+		return
+
+	_lockFailedMissionary(unit.getOwner(), unit.getID())
+	ChangeFatherPoints(argsList)
+
+def doEventFailedMissionary2Locked(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if _isFailedMissionaryLocked(unit.getOwner(), unit.getID()):
+		return
+
+	_lockFailedMissionary(unit.getOwner(), unit.getID())
+
+def doEventFailedMissionary3Locked(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if _isFailedMissionaryLocked(unit.getOwner(), unit.getID()):
+		return
+
+	_lockFailedMissionary(unit.getOwner(), unit.getID())
+
+def expireFailedMissionaryEvent(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return True
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return True
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if gc.getUnitInfo(unit.getUnitType()).getUnitClassType() != iFailedMissionaryClass:
+		return True
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return True
+
+	return False
 
 ######## Native Training Event ###########
 
@@ -9947,8 +10373,6 @@ getHelpDiscoveryOxcart = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_O
 getHelpDiscoveryTreasureAttack = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP")
 
 getHelpDiscoveryNewScout = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_NEW_SCOUT_HELP")
-
-getHelpDiscoveryFailedMissionaryChange = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_FALIED_MISSIONARY_CHANGE_HELP")
 
 ######## Treasure Protection Event  ###########
 
