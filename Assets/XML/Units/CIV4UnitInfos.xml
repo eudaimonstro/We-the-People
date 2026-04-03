@@ -68730,6 +68730,10 @@
 					<iChange>-1</iChange>
 				</YieldChange>
 				<YieldChange>
+					<YieldType>YIELD_COAL</YieldType>
+					<iChange>-1</iChange>
+				</YieldChange>
+				<YieldChange>
 					<YieldType>YIELD_STONE</YieldType>
 					<iChange>-1</iChange>
 				</YieldChange>
