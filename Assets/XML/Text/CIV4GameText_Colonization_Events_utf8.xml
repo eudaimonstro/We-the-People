@@ -3437,7 +3437,7 @@
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP</Tag>
 		<English>You pay %d1 gold to fulfill your obligation to the Crown. A galleon will be arriving in the coastal city %s2, and your standing with the king improves.</English>
 		<German>Ihr zahlt %d1 Gold, um Eurer Verpflichtung gegenüber der Krone nachzukommen. Eine Galeone wird in der Küstenstadt %s2 anlanden, und Eure Stellung beim König verbessert sich.</German>
-		<Russian>Во исполнение обязательств перед Короной из вашей казны будет вычтено %d1 золота. Галеон будет подготовлен к выходу в море в указанном прибрежном городе, а ваше положение у Короля улучшиться.</Russian>
+		<Russian>Во исполнение обязательств перед Короной из вашей казны будет вычтено %d1 золота. Галеон будет прибудет в порт города %s2, а ваше положение у Короля улучшиться.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_2_HELP</Tag>
@@ -5395,49 +5395,49 @@
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT</Tag>
 		<English>After many weeks in the wilderness, your scout has learned to read the signs of the land and move with confidence through even the harshest terrain.</English>
 		<German>Nach vielen Wochen in der Wildnis hat euer Kundschafter gelernt, die Zeichen des Landes zu lesen und sich selbst durch unwegsames Gelände sicher zu bewegen.</German>
-		<Russian/>
+		<Russian>После многих недель, проведенных в глуши, ваш разведчик научился примечать особенности местности и находить общий язык с туземцами.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_OPTION_1</Tag>
 		<English>He’s quite the old hand and learns through his own experiences in the wilderness.</English>
 		<German>Er ist schon ein alter Haudegen und lernt durch die Erfahrung in der Wildnis selbst.</German>
-		<Russian/>
+		<Russian>Он действительно стал профессионалом, обучаясь на собственном опыте в диких землях.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_OPTION_2</Tag>
 		<English>He is supposed to improve relations with the local Native American tribes.</English>
 		<German>Er sollte die Beziehungen zu den einheimischen Indianerstämmen verbessern.</German>
-		<Russian/>
+		<Russian>Знание туземных обычаев улучшает отношения с ближайшими индейскими племенами.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP</Tag>
 		<English>The scout gains between [COLOR_SELECTED_TEXT]%d1[COLOR_REVERT] and [COLOR_SELECTED_TEXT]%d2, %d3, %d4 or %d5 experience[COLOR_REVERT], depending on how far he is from the nearest own settlement.</English>
 		<German>Der Kundschafter erhält je nach Entfernung zur nächsten eigenen Siedlung [COLOR_SELECTED_TEXT]%d1, %d2, %d3, %d4 oder %d5 Erfahrung[COLOR_REVERT].</German>
-		<Russian/>
+		<Russian>Разведчик получает от [COLOR_SELECTED_TEXT]%d1[COLOR_REVERT] до [COLOR_SELECTED_TEXT]%d2, %d3, %d4 или %d5[COLOR_REVERT] опыта, в зависимости от того, насколько далеко он находится от вашего ближайшего поселения.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_RESULT</Tag>
 		<English>Your scout returns from the wilderness wiser and more seasoned, [COLOR_SELECTED_TEXT]gaining %d1 experience[COLOR_REVERT].</English>
 		<German>Euer Kundschafter kehrt weiser und erfahrener aus der Wildnis zurück und erhält [COLOR_SELECTED_TEXT]%d1 Erfahrung[COLOR_REVERT].</German>
-		<Russian/>
+		<Russian>Ваш разведчик возвращается из дикой местности более мудрым и закалённым, [COLOR_SELECTED_TEXT]получая %d1 опыта[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_RESULT</Tag>
 		<English>Your scout has won the goodwill of the [COLOR_SELECTED_TEXT]%s2[COLOR_REVERT], [COLOR_SELECTED_TEXT]improving relations by +%d1[COLOR_REVERT].</English>
 		<German>Euer Kundschafter hat das Wohlwollen der [COLOR_SELECTED_TEXT]%s2[COLOR_REVERT] gewonnen. Die [COLOR_SELECTED_TEXT]Beziehungen verbessern sich um +%d1[COLOR_REVERT].</German>
-		<Russian/>
+		<Russian>Ваш разведчик завоевал расположение [COLOR_SELECTED_TEXT]%s2[COLOR_REVERT], [COLOR_SELECTED_TEXT]улучшив отношения на +%d1[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_HELP</Tag>
 		<English>Relations with the nearest native tribe [COLOR_SELECTED_TEXT]improve by +%d1[COLOR_REVERT].</English>
 		<German>Die Beziehungen zum nächstgelegenen Eingeborenenstamm [COLOR_SELECTED_TEXT]verbessern sich um +%d1[COLOR_REVERT].</German>
-		<Russian/>
+		<Russian>Отношения с ближайшим племенем индейцев [COLOR_SELECTED_TEXT]улучшаются на +%d1[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_WILDERNESS_EXPERT</Tag>
 		<English>Master of the Wild</English>
 		<German>Meister der Wildnis</German>
-		<Russian/>
+		<Russian>Знаток дикой природы</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_FEVER</Tag>
@@ -5683,13 +5683,13 @@
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_HELP</Tag>
 		<English>[ICON_BULLET]A failed native trader becomes an [COLOR_HIGHLIGHT_TEXT]experienced native trader[COLOR_REVERT] again. [NEWLINE][ICON_BULLET]His experience and promotions will be retained. [NEWLINE][ICON_BULLET]Thereafter, this opportunity will not arise again for %D2 turns.</English>
 		<German>[ICON_BULLET]Ein gescheiterter Ureinwohnerhändler wird wieder zu einem [COLOR_HIGHLIGHT_TEXT]erfahrenen Ureinwohnerhändler[COLOR_REVERT]. [NEWLINE][ICON_BULLET]Seine Erfahrung und seine Beförderungen bleiben erhalten. [NEWLINE][ICON_BULLET]Danach wird sich diese Gelegenheit für %D2 Runden nicht erneut ergeben.</German>
-		<Russian/>
+		<Russian>[ICON_BULLET]Неудачливый торговец с индейцами становится [COLOR_HIGHLIGHT_TEXT]Опытным торговцем с индейцами[COLOR_REVERT]. [NEWLINE][ICON_BULLET]Его опыт и повышения будут сохранены. [NEWLINE][ICON_BULLET]После этого такая возможность не появится в течение %D2 ходов.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_FAILED_TRADER_SEASONED_RESULT</Tag>
 		<English>Against all odds, the man returns not merely restored, but hardened by his trials. What once was a failed trader now stands before you as a [COLOR_HIGHLIGHT_TEXT]seasoned native trader[COLOR_REVERT], carrying knowledge of the wilds that few possess.</English>
 		<German>Wider aller Erwartungen hat sich der Mann nicht nur gut erholt, sondern ist gestählt durch seine Prüfungen. Was einst ein gescheiterter Händler war, steht nun als [COLOR_HIGHLIGHT_TEXT]couragierter Ureinwohnerhändler[COLOR_REVERT] vor Euch, im Besitz von Wissen über die Wildnis, das nur wenige besitzen.</German>
-		<Russian/>
+		<Russian>Вопреки всему, этот человек возвращается не просто восстановившимся, но и закаленным испытаниями. Тот, кто когда-то был неудачливым торговцем, теперь предстает перед вами как [COLOR_HIGHLIGHT_TEXT]Отважный торговец с индейцами[COLOR_REVERT], обладающий знаниями о дикой местности, которыми мало кто может похвастаться.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_CHANGE_FAILED_MISSIONARY</Tag>
