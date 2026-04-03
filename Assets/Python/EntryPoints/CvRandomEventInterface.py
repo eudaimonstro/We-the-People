@@ -1524,7 +1524,7 @@ def canTriggerDiscoveryAttacked(argsList):
 		return False
 
 	# 40% chance after cooldown
-	if CyGame().getSorenRandNum(100, "Discovery Attacked trigger") >= 40:
+	if CyGame().getSorenRandNum(100, "Discovery Attacked trigger") >= 25:
 		return False
 
 	return True
@@ -4333,6 +4333,337 @@ def getHelpWildAnimal1(argsList):
 	return szHelp
 
 ######## Native Events ###########
+
+######## Discovery Failed Trader Change ###########
+
+DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID = "DISCOVERY_FAILED_TRADER_CHANGE"
+
+def _getDiscoveryFailedTraderChangeEntity(iPlayer):
+	return "DISCOVERY_FAILED_TRADER_CHANGE_%d" % iPlayer
+
+def _ensureDiscoveryFailedTraderChangeData(iPlayer):
+	entity = _getDiscoveryFailedTraderChangeEntity(iPlayer)
+	if not sdToolKit.sdEntityExists(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity):
+		sdToolKit.sdEntityInit(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity, {"readyTurn": -1})
+	return entity
+
+def _getDiscoveryFailedTraderChangeReadyTurn(iPlayer):
+	entity = _ensureDiscoveryFailedTraderChangeData(iPlayer)
+	return sdToolKit.sdGetVal(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity, "readyTurn")
+
+def _setDiscoveryFailedTraderChangeCooldown(iPlayer, iReadyTurn):
+	entity = _ensureDiscoveryFailedTraderChangeData(iPlayer)
+	sdToolKit.sdSetVal(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity, "readyTurn", iReadyTurn)
+
+def _getDiscoveryFailedTraderChangeScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _getUnitClass(unit):
+	if unit is None or unit.isNone():
+		return -1
+	return gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
+
+def canTriggerDiscoveryFailedTraderChange(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+	if plot.isWater():
+		return False
+
+	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
+	if _getUnitClass(unit) != iFailedTraderClass:
+		return False
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = _getDiscoveryFailedTraderChangeReadyTurn(kTriggeredData.ePlayer)
+	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+		return False
+
+	return True
+
+def changeFailedTraderToExpertTrader(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	oldUnit = player.getUnit(kTriggeredData.iUnitId)
+	if oldUnit.isNone():
+		return
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return
+
+	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
+	if _getUnitClass(oldUnit) != iFailedTraderClass:
+		return
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if oldUnit.getProfession() != eColonistProfession:
+		return
+
+	# Default target
+	iTargetUnitClass = event.getGenericParameter(1)
+
+	# Chance for seasoned trader
+	bSeasoned = False
+	iSeasonedChance = event.getGenericParameter(2)
+	if iSeasonedChance < 0:
+		iSeasonedChance = 0
+	if iSeasonedChance > 100:
+		iSeasonedChance = 100
+
+	if iSeasonedChance > 0:
+		if CyGame().getSorenRandNum(100, "Failed Trader seasoned chance") < iSeasonedChance:
+			iSeasonedTraderClass = gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER")
+			if iSeasonedTraderClass != UnitClassTypes.NO_UNITCLASS:
+				iTargetUnitClass = iSeasonedTraderClass
+				bSeasoned = True
+
+	if iTargetUnitClass <= 0:
+		return
+
+	iNewUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iTargetUnitClass)
+	if iNewUnitType == UnitTypes.NO_UNIT:
+		return
+
+	iX = oldUnit.getX()
+	iY = oldUnit.getY()
+	iDamage = oldUnit.getDamage()
+	iExperience = oldUnit.getExperience()
+	iMoves = oldUnit.movesLeft()
+
+	szName = u""
+	if oldUnit.getNameNoDesc():
+		szName = oldUnit.getNameNoDesc()
+
+	aPromotions = []
+	for iPromotion in range(gc.getNumPromotionInfos()):
+		if oldUnit.isHasPromotion(iPromotion):
+			aPromotions.append(iPromotion)
+
+	newUnit = player.initUnit(iNewUnitType, 0, iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION, 0)
+	if newUnit.isNone():
+		return
+
+	# Set standard profession directly
+	eNativeTraderProfession = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+	if eNativeTraderProfession != ProfessionTypes.NO_PROFESSION:
+		newUnit.setProfession(eNativeTraderProfession)
+		newUnit.setProfession(eNativeTraderProfession)
+
+	if iDamage > 0:
+		newUnit.setDamage(iDamage, PlayerTypes.NO_PLAYER)
+
+	if iExperience > 0:
+		newUnit.setExperience(iExperience, -1)
+
+	for iPromotion in aPromotions:
+		if newUnit.canAcquirePromotion(iPromotion):
+			newUnit.setHasRealPromotion(iPromotion, True)
+
+	if szName != u"":
+		newUnit.setName(szName)
+
+	try:
+		newUnit.setMoves(iMoves)
+	except:
+		pass
+
+	oldUnit.kill(False)
+
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(20)
+	iCurrentTurn = CyGame().getGameTurn()
+	iReadyTurn = iCurrentTurn + iCooldown
+	_setDiscoveryFailedTraderChangeCooldown(kTriggeredData.ePlayer, iReadyTurn)
+
+	if bSeasoned:
+		CyInterface().addMessage(
+			kTriggeredData.ePlayer,
+			True,
+			10,
+			localText.getText("TXT_KEY_EVENT_DISCOVERY_FAILED_TRADER_SEASONED_RESULT", ()),
+			"",
+			0,
+			"",
+			ColorTypes(8),
+			iX,
+			iY,
+			True,
+			True
+		)
+
+def getHelpDiscoveryFailedTraderChange(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return u""
+
+	iGoldCost = 1000
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(20)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_HELP",
+		(iGoldCost, iCooldown)
+	)
+
+######## Native Training Event ###########
+
+NATIVE_TRAINING_MOD_ID = "NATIVE_TRAINING"
+
+def _getNativeTrainingEntity(iPlayer, iUnitId):
+	return "NATIVE_TRAINING_%d_%d" % (iPlayer, iUnitId)
+
+def _ensureNativeTrainingData(iPlayer, iUnitId):
+	entity = _getNativeTrainingEntity(iPlayer, iUnitId)
+	if not sdToolKit.sdEntityExists(NATIVE_TRAINING_MOD_ID, entity):
+		sdToolKit.sdEntityInit(NATIVE_TRAINING_MOD_ID, entity, {"trainedCount": 0, "handledTribes": []})
+	return entity
+
+def _getNativeTrainingCount(iPlayer, iUnitId):
+	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
+	return sdToolKit.sdGetVal(NATIVE_TRAINING_MOD_ID, entity, "trainedCount")
+
+def _setNativeTrainingCount(iPlayer, iUnitId, iCount):
+	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
+	sdToolKit.sdSetVal(NATIVE_TRAINING_MOD_ID, entity, "trainedCount", iCount)
+
+def _getNativeTrainingHandledTribes(iPlayer, iUnitId):
+	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
+	return sdToolKit.sdGetVal(NATIVE_TRAINING_MOD_ID, entity, "handledTribes")
+
+def _setNativeTrainingHandledTribes(iPlayer, iUnitId, aHandledTribes):
+	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
+	sdToolKit.sdSetVal(NATIVE_TRAINING_MOD_ID, entity, "handledTribes", aHandledTribes)
+
+def _hasNativeTrainingHandledTribe(iPlayer, iUnitId, iTribePlayer):
+	aHandledTribes = _getNativeTrainingHandledTribes(iPlayer, iUnitId)
+	return iTribePlayer in aHandledTribes
+
+def _markNativeTrainingHandledTribe(iPlayer, iUnitId, iTribePlayer):
+	aHandledTribes = _getNativeTrainingHandledTribes(iPlayer, iUnitId)
+	if iTribePlayer not in aHandledTribes:
+		aHandledTribes.append(iTribePlayer)
+		_setNativeTrainingHandledTribes(iPlayer, iUnitId, aHandledTribes)
+
+def canTriggerNativeTraining(argsList):
+	pTriggeredData = argsList[0]
+	player = gc.getPlayer(pTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	plot = gc.getMap().plot(pTriggeredData.iPlotX, pTriggeredData.iPlotY)
+	if plot.isNone():
+		return False
+
+	if not plot.isCity():
+		return False
+
+	iTribePlayer = plot.getOwner()
+	if iTribePlayer < 0:
+		return False
+
+	tribePlayer = gc.getPlayer(iTribePlayer)
+	if tribePlayer.isNone() or not tribePlayer.isNative():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(tribePlayer.getTeam()):
+		return False
+
+	if tribePlayer.AI_getAttitude(pTriggeredData.ePlayer) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return False
+
+	unit = player.getUnit(pTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if _getNativeTrainingCount(pTriggeredData.ePlayer, pTriggeredData.iUnitId) >= 3:
+		return False
+
+	if _hasNativeTrainingHandledTribe(pTriggeredData.ePlayer, pTriggeredData.iUnitId, iTribePlayer):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Native Training Chance") >= 25:
+		return False
+
+	return True
+
+def applyNativeTraining1(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone() or not plot.isCity():
+		return
+
+	iTribePlayer = plot.getOwner()
+	if iTribePlayer < 0:
+		return
+
+	if _hasNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer):
+		return
+
+	_markNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer)
+	_setNativeTrainingCount(kTriggeredData.ePlayer, kTriggeredData.iUnitId, _getNativeTrainingCount(kTriggeredData.ePlayer, kTriggeredData.iUnitId) + 1)
+
+def applyNativeTraining2(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone() or not plot.isCity():
+		return
+
+	iTribePlayer = plot.getOwner()
+	if iTribePlayer < 0:
+		return
+
+	if _hasNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer):
+		return
+
+	_markNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer)
 
 def isNativeVillage(argsList):
 	pTriggeredData = argsList[0]
@@ -9616,8 +9947,6 @@ getHelpDiscoveryOxcart = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_O
 getHelpDiscoveryTreasureAttack = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP")
 
 getHelpDiscoveryNewScout = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_NEW_SCOUT_HELP")
-
-getHelpDiscoveryFailedTraderChange = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_FALIED_TRADER_CHANGE_HELP")
 
 getHelpDiscoveryFailedMissionaryChange = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_FALIED_MISSIONARY_CHANGE_HELP")
 

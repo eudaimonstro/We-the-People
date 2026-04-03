@@ -5680,10 +5680,16 @@
 		<Russian>Что за вздор?! Прошлого раза ему было недостаточно? Дайте ему какую-нибудь работу в колонии.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FALIED_TRADER_CHANGE_HELP</Tag>
-		<English>[ICON_BULLET]A failed native trader becomes an experienced native trader again.</English>
-		<German>[ICON_BULLET]Ein gescheiterter Ureinwohnerhändler wird wieder zu einem erfahrenen Ureinwohnerhändler.</German>
-		<Russian>[ICON_BULLET]Неудачливый торговец с индейцами снова становится опытным торговцем.</Russian>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_HELP</Tag>
+		<English>[ICON_BULLET]A failed native trader becomes an [COLOR_HIGHLIGHT_TEXT]experienced native trader[COLOR_REVERT] again. [NEWLINE][ICON_BULLET]His experience and promotions will be retained. [NEWLINE][ICON_BULLET]Thereafter, this opportunity will not arise again for %D2 turns.</English>
+		<German>[ICON_BULLET]Ein gescheiterter Ureinwohnerhändler wird wieder zu einem [COLOR_HIGHLIGHT_TEXT]erfahrenen Ureinwohnerhändler[COLOR_REVERT]. [NEWLINE][ICON_BULLET]Seine Erfahrung und seine Beförderungen bleiben erhalten. [NEWLINE][ICON_BULLET]Danach wird sich diese Gelegenheit für %D2 Runden nicht erneut ergeben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_FAILED_TRADER_SEASONED_RESULT</Tag>
+		<English>Against all odds, the man returns not merely restored, but hardened by his trials. What once was a failed trader now stands before you as a [COLOR_HIGHLIGHT_TEXT]seasoned native trader[COLOR_REVERT], carrying knowledge of the wilds that few possess.</English>
+		<German>Wider aller Erwartungen hat sich der Mann nicht nur gut erholt, sondern ist gestählt durch seine Prüfungen. Was einst ein gescheiterter Händler war, steht nun als [COLOR_HIGHLIGHT_TEXT]couragierter Ureinwohnerhändler[COLOR_REVERT] vor Euch, im Besitz von Wissen über die Wildnis, das nur wenige besitzen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_CHANGE_FAILED_MISSIONARY</Tag>
