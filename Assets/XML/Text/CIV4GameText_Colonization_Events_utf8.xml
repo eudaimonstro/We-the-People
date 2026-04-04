@@ -261,8 +261,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FOREST_FIRE_2</Tag>
-		<English>Outlaws set a fire in a forest near [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] to escape their henchmen in the smoke, but they got lost and roasted themselves. May they burn forever in Hell! The bad news is that a wide swathe of land now lies in ruins.</English>
-		<French>Des criminels ont mis le feu à la forêt près de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] en tentant vainement d'échapper à la justice, mais ils se sont perdus dans les flammes qui les ont rôtis. Qu'ils finissent de brûler en Enfer! La mauvaise nouvelle est que des hectares de terres sont maintenant en cendres.</French>
+		<English>To escape their pursuers in the smoke, outlaws set a forest on fire near [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. They got lost and roasted themselves, a rehearsal for their eternity in Hell. The bad news is that a wide swathe of land now lies in ruins.</English>
+		<French>Des criminels ont mis le feu à la forêt près de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] en tentant vainement .d'échapper à la justice, mais ils se sont perdus dans les flammes qui les ont rôtis. Qu'ils finissent de brûler en Enfer! La mauvaise nouvelle est que des hectares de terres sont maintenant en cendres.</French>
 		<German>Gesetzlose haben in einem Wald nahe [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ein Feuer gelegt, um ihren Häschern im Rauch zu entkommen. Die Spitzbuben verliefen sich und wurden zum Opfer der Flammen - recht so! Mögen sie in der Hölle weiterbrennen. Doch ein weiter Landstrich liegt nun in Schutt und Asche.</German>
 		<Italian>Dei criminali hanno appiccato il fuoco alla foresta vicino a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT], nel fallito tentativo di coprire la propria fuga.</Italian>
 		<Spanish>Unos prófugos han prendido fuego al bosque cercano a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] en un triste intento por huir de la justicia.</Spanish>
@@ -428,7 +428,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FESTIVITY2</Tag>
-		<English>An heir to the throne has been born! His Majesty has invited all the European high nobility to his court. He expects us to deliver wares from [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] to Europe.</English>
+		<English>An heir to the throne has been born! His Majesty invites Europe's high nobility to his court. He expects us to deliver our very best wares from [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] to Europe.</English>
 		<French>Un héritier au trône vient de naître. En guise de célébration, notre Roi a invité à sa cour les plus grands nobles de toute l'Europe. Son altesse attend que nous lui livrions des marchandises depuis [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] vers l'Europe.</French>
 		<German>Ein Thronfolger wurde geboren. Seine Majestät hat den gesamten Hochadel Europas zu den Feierlichkeiten eingeladen. Er erwartet, dass wir zu diesem Prunk und Pomp Warenlieferungen aus [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] beisteuern.</German>
 		<Russian>Родился наследник престола! Его Величество пригласил ко двору всю европейскую высшую знать. Он ожидает, что мы доставим товары для празднества из [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] в Европу.</Russian>
@@ -507,7 +507,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_VOLCANO_1</Tag>
-		<English>Milord, terrible things have happened at [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. First the birds fell silent. Then the earth rumbled. And then, then the mountain next to the city burst, and a volcano rose from the rock. It shot glowing hot stones into the air. They fell on the nearby town, killing chickens and dogs and many a small child. Finally, thick flakes of ash floated down, laying a black shroud over the settlement. What a catastrophe for the crops! The survivors beg you to send help.</English>
+		<English>Milord, terrible things have happened at [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. First the birds fell silent. The earth trembled. And then, then the mountain exploded, blasting molten rocks onto the nearby town, killing chickens, dogs and many a small child. Thick ash covered the settlement with a black shroud. What a catastrophe for the crops! The survivors beg you to send help.</English>
 		<French>Sire, des choses terribles sont arrivées à [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. D'abord, les oiseaux se sont tus. Puis la terre a grondé. Et puis, la montagne à côté de la ville a éclaté, et un volcan s'est élevé de la roche. Il a tiré des pierres rouges en l'air. Ils sont descendus dans la ville voisine, tuant des poulets et des chiens et beaucoup de petits enfants. Enfin, d'épais flocons de cendres sont tombés et ont recouvert le village d'un linceul noir. Quel malheur pour nos récoltes ! Les survivants vous supplient d'envoyer de l'aide.</French>
 		<German>Milord, Schreckliches ist bei [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] geschehen. Zunächst verstummten die Vögel. Dann grollte die Erde. Und dann, dann barst der Berg neben der Stadt, und ein Vulkan erstieg aus dem Gestein. Er schoss glühendheiße Steine in die Luft. Sie gingen in der nahen Stadt nieder und erschlugen Hühner und Hunde und auch so manches kleine Kind. Schließlich schwebten dichte Ascheflocken herab und legten ein schwarzes Leichentuch über die Siedlung. Welch fruchtbares Unglück! Die Überlebenden flehen Euch an, Hilfe zu schicken.</German>
 		<Italian>Signore, sono successe cose terribili a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. Prima gli uccelli si sono ammutoliti. Poi la terra ha rimbombato. E poi, poi la montagna vicino alla città è scoppiata, e un vulcano è sorto dalla roccia. Ha sparato rocce incandescenti nell'aria. Sono scesi nella città vicina, uccidendo polli e cani e molti bambini piccoli. Infine, spesse scaglie di cenere scesero e stesero un sudario nero sull'insediamento. Che fertile sfortuna! I sopravvissuti vi implorano di mandare aiuto.</Italian>
@@ -873,7 +873,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_PRISONER_OF_WAR_AT_MONASTERY</Tag>
-		<English>News spread that the release of a prisoner of war has been negotiated by a [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] monastery. Praise the Lord for his mercy.</English>
+		<English>News spread that the release of a prisoner of war has been negotiated by a [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] monastery. Praise the Lord for His mercy.</English>
 		<French>La nouvelle se propage selon laquelle la libération des prisonniers de guerre a été négociée par un monastère [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]. Que le Seigneur soit loué dans sa miséricorde.</French>
 		<German>Es verbreitet sich die Meldung, dass die Freilassung eines Kriegsgefangenen durch ein [COLOR_HIGHLIGHT_TEXT]%s1:4_civ_adjective[COLOR_REVERT] Kloster verhandelt wurde. Gelobt sei der Herr für seine Gnade.</German>
 		<Russian>Ходят слухи о том, что переговоры об освобождении военнопленного ведутся в одном из [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] монастырей. Хвала Господу нашему за Его Милосердие.</Russian>
