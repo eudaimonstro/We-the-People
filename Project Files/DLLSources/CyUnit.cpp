@@ -94,6 +94,13 @@ bool CyUnit::canMoveThrough(CyPlot* pPlot)
 {
 	return m_pUnit ? m_pUnit->canMoveThrough(pPlot->getPlot()) : false;
 }
+void CyUnit::attack(CyPlot* pPlot, bool bQuick)
+{
+	if (m_pUnit && pPlot != NULL)
+	{
+		pointer(CREATE_ASSERT_DATA)->attack(pPlot->getPlot(), bQuick);
+	}
+}
 bool CyUnit::jumpToNearestValidPlot()
 {
 	return m_pUnit ? pointer(CREATE_ASSERT_DATA)->jumpToNearestValidPlot() : false;

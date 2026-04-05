@@ -2715,7 +2715,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -14703,7 +14703,7 @@
 				<iNumUnits>4</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
 				<bTrackUnit>1</bTrackUnit>
-				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<bUnitsOnPlot>1</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
@@ -14740,12 +14740,12 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerFourTreasures</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -14808,12 +14808,12 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerFourTreasuresReturn</PythonCanDo>
+			<PythonCanDo>canTriggerFourTreasuresReturnCity</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -39395,7 +39395,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>3000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39454,7 +39454,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerFailedMissionaryShared</PythonCanDo>
+			<PythonCanDo>canTriggerFailedMissionaryClassic</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -40032,7 +40032,6 @@
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired>
-					<UnitClass>UNITCLASS_SCOUT</UnitClass>
 					<UnitClass>UNITCLASS_VETERAN</UnitClass>
 					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
 					<UnitClass>UNITCLASS_VETERAN_DRAGOON</UnitClass>
@@ -40178,7 +40177,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/scout.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>10000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -40231,7 +40230,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerDiscoveryEventsBraveFellows</PythonCanDo>
+			<PythonCanDo>canTriggerDiscoveryBraveFellows</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -40252,7 +40251,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>2000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -40329,7 +40328,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>3000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>

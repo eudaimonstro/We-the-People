@@ -13,34 +13,13 @@ import sys
 import CvUtil
 import CvScreensInterface
 from CvPythonExtensions import *
-import sdToolKit
 
 gc = CyGlobalContext()
 localText = CyTranslator()
 
-TREASURE_PROTECTION_MOD_ID = "TREASURE_PROTECTION"
-
-def _getTreasureProtectionEntity(iPlayer):
-	return "TREASURE_PROTECTION_%d" % iPlayer
-
-def _ensureTreasureProtectionData(iPlayer):
-	entity = _getTreasureProtectionEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(TREASURE_PROTECTION_MOD_ID, entity):
-		sdToolKit.sdEntityInit(TREASURE_PROTECTION_MOD_ID, entity, {"readyTurn": -1})
-	return entity
-
-def _getTreasureProtectionReadyTurn(iPlayer):
-	entity = _ensureTreasureProtectionData(iPlayer)
-	return sdToolKit.sdGetVal(TREASURE_PROTECTION_MOD_ID, entity, "readyTurn")
-
-def _setTreasureProtectionCooldown(iPlayer, iReadyTurn):
-	entity = _ensureTreasureProtectionData(iPlayer)
-	sdToolKit.sdSetVal(TREASURE_PROTECTION_MOD_ID, entity, "readyTurn", iReadyTurn)
-
-def _getTreasureProtectionScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return int((iBaseTurns * iPercent) / 100)
+# ============================================================
+# CORE HELPERS (DO NOT TOUCH)
+# ============================================================
 
 def get_simple_help(text_key):
 	""" This function constructs another function that returns the fixed localized text  """
@@ -49,25 +28,6 @@ def get_simple_help(text_key):
 		return szHelp
 
 	return get_help
-
-DISCOVERY_START_MOD_ID = "DISCOVERY_START"
-
-def _getDiscoveryStartEntity(iPlayer):
-	return "DISCOVERY_START_%d" % iPlayer
-
-def _ensureDiscoveryStartData(iPlayer):
-	entity = _getDiscoveryStartEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_START_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_START_MOD_ID, entity, {"triggered": 0})
-	return entity
-
-def _hasTriggeredDiscoveryStart(iPlayer):
-	entity = _ensureDiscoveryStartData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_START_MOD_ID, entity, "triggered") == 1
-
-def _setTriggeredDiscoveryStart(iPlayer):
-	entity = _ensureDiscoveryStartData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_START_MOD_ID, entity, "triggered", 1)
 
 def doEventEndTutorial(argsList):
 	eEvent = argsList[1]
@@ -962,189 +922,56 @@ def getHelpPeasantWarPrep(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_PEASANT_WARPREP_HELP", (iPriceChange, gc.getYieldInfo(iYield1).getChar(), king.getCivilizationDescriptionKey(), iPriceChange, gc.getYieldInfo(iYield2).getChar(), king.getCivilizationDescriptionKey()))
 	return szHelp
 
-######## Discovery Events ###########
-
-DISCOVERY_DESERT_MOD_ID = "DISCOVERY_DESERT"
-
-def _getDiscoveryDesertEntity(iPlayer):
-	return "DISCOVERY_DESERT_%d" % iPlayer
-
-def _ensureDiscoveryDesertData(iPlayer):
-	entity = _getDiscoveryDesertEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_DESERT_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_DESERT_MOD_ID, entity, {"readyTurn": -1})
-	return entity
-
-def _getDiscoveryDesertReadyTurn(iPlayer):
-	entity = _ensureDiscoveryDesertData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_DESERT_MOD_ID, entity, "readyTurn")
-
-def _setDiscoveryDesertCooldown(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryDesertData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_DESERT_MOD_ID, entity, "readyTurn", iReadyTurn)
-
-def _getDiscoveryDesertScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
-
-DISCOVERY_FEVER_MOD_ID = "DISCOVERY_FEVER"
-
-def _getDiscoveryFeverEntity(iPlayer):
-	return "DISCOVERY_FEVER_%d" % iPlayer
-
-def _ensureDiscoveryFeverData(iPlayer):
-	entity = _getDiscoveryFeverEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_FEVER_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_FEVER_MOD_ID, entity, {"readyTurn": -1})
-	return entity
-
-def _getDiscoveryFeverReadyTurn(iPlayer):
-	entity = _ensureDiscoveryFeverData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_FEVER_MOD_ID, entity, "readyTurn")
-
-def _setDiscoveryFeverCooldown(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryFeverData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_FEVER_MOD_ID, entity, "readyTurn", iReadyTurn)
-
-def _getDiscoveryFeverScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
-
-def applyDiscoveryStart1(argsList):
-	kTriggeredData = argsList[0]
-	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitInEurope(argsList)
-	_changeKingRelation(argsList, -2)
-
-def applyDiscoveryStart2(argsList):
-	kTriggeredData = argsList[0]
-	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitInEurope(argsList)
-
-def applyDiscoveryStart3(argsList):
-	kTriggeredData = argsList[0]
-	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitInEurope(argsList)
-	_changeKingRelation(argsList, 1)
-
-def applyDiscoveryStart4(argsList):
-	kTriggeredData = argsList[0]
-	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	spawnOwnPlayerUnitInEurope(argsList)
-
-def applyDiscoveryStart5(argsList):
-	kTriggeredData = argsList[0]
-	_setTriggeredDiscoveryStart(kTriggeredData.ePlayer)
-	_changeKingRelation(argsList, 2)
-    
-def _changeKingRelation(argsList, iChange):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if player.isNone():
-		return
-
-	eKing = player.getParent()
-	if eKing == -1:
-		return
-
-	king = gc.getPlayer(eKing)
-	if king.isNone():
-		return
-
-	player.AI_changeAttitudeExtra(eKing, iChange)
-	king.AI_changeAttitudeExtra(kTriggeredData.ePlayer, iChange)
-
-	if player.isHuman():
-		if iChange > 0:
-			CyInterface().addMessage(
-				kTriggeredData.ePlayer,
-				False,
-				10,
-				localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (iChange, king.getCivilizationAdjectiveKey())),
-				"",
-				0,
-				"",
-				ColorTypes(8),
-				-1,
-				-1,
-				True,
-				True
-			)
-		elif iChange < 0:
-			CyInterface().addMessage(
-				kTriggeredData.ePlayer,
-				False,
-				10,
-				localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (iChange, king.getCivilizationAdjectiveKey())),
-				"",
-				0,
-				"",
-				ColorTypes(7),
-				-1,
-				-1,
-				True,
-				True
-			)
-
-def spawnOwnPlayerUnitInEurope(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-
-	if player.isNone():
-		return
-
-	iUnitClass = event.getGenericParameter(1)
-	iNumUnits = event.getGenericParameter(2)
-
-	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
-	if iUnitType == -1:
-		return
-
-	# profession mapping for specific unit classes
-	professionMap = {
-		gc.getInfoTypeForString("UNITCLASS_CHRISTIAN_MISSIONARY"): gc.getInfoTypeForString("PROFESSION_MISSIONARY"),
-		gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER"): gc.getInfoTypeForString("PROFESSION_SCOUT"),
-	}
-
-	for i in range(iNumUnits):
-		unit = player.initEuropeUnit(
-			iUnitType,
-			UnitAITypes.NO_UNITAI,
-			DirectionTypes.NO_DIRECTION
-		)
-
-		if unit is None or unit.isNone():
-			continue
-
-		if iUnitClass in professionMap:
-			unit.setProfession(professionMap[iUnitClass])
-  
 ######## WILDERNESS EXPERT EVENT ###########
 
-WILDERNESS_EXPERT_MOD_ID = "WILDERNESS_EXPERT"
+WILDERNESS_EXPERT_LEFT_TURN_PREFIX = "[[WTP_WILDERNESS_EXPERT_LEFT_TURN="
+WILDERNESS_EXPERT_LEFT_TURN_SUFFIX = "]]"
 
-def _getWildernessUnitKey(iPlayer, iUnitId):
-	return "WILDERNESS_%d_%d" % (iPlayer, iUnitId)
+def _getWildernessExpertLeftTurn(unit):
+	if unit is None or unit.isNone():
+		return -1
 
-def _ensureWildernessData(iPlayer, iUnitId):
-	entity = _getWildernessUnitKey(iPlayer, iUnitId)
-	if not sdToolKit.sdEntityExists(WILDERNESS_EXPERT_MOD_ID, entity):
-		sdToolKit.sdEntityInit(WILDERNESS_EXPERT_MOD_ID, entity, {
-			"leftTurn": -1
-		})
-	return entity
+	szData = unit.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getLeftTurn(iPlayer, iUnitId):
-	entity = _ensureWildernessData(iPlayer, iUnitId)
-	return sdToolKit.sdGetVal(WILDERNESS_EXPERT_MOD_ID, entity, "leftTurn")
+	iStart = szData.find(WILDERNESS_EXPERT_LEFT_TURN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setLeftTurn(iPlayer, iUnitId, iTurn):
-	entity = _ensureWildernessData(iPlayer, iUnitId)
-	sdToolKit.sdSetVal(WILDERNESS_EXPERT_MOD_ID, entity, "leftTurn", iTurn)
+	iStart += len(WILDERNESS_EXPERT_LEFT_TURN_PREFIX)
+	iEnd = szData.find(WILDERNESS_EXPERT_LEFT_TURN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setWildernessExpertLeftTurn(unit, iTurn):
+	if unit is None or unit.isNone():
+		return
+
+	szData = unit.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(WILDERNESS_EXPERT_LEFT_TURN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(WILDERNESS_EXPERT_LEFT_TURN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(WILDERNESS_EXPERT_LEFT_TURN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		WILDERNESS_EXPERT_LEFT_TURN_PREFIX,
+		iTurn,
+		WILDERNESS_EXPERT_LEFT_TURN_SUFFIX
+	)
+
+	szData += szMarker
+	unit.setScriptData(szData)
 
 def _getDistanceToNearestOwnCity(player, plot):
 	if player.isNone() or plot is None or plot.isNone():
@@ -1232,23 +1059,26 @@ def canTriggerDiscoveryWildernessExpert(argsList):
 	if plot is None or plot.isNone():
 		return False
 
+	# Exact plot binding
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
 	# Reset if back in own territory
 	if plot.getOwner() == player.getID():
-		_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, -1)
+		_setWildernessExpertLeftTurn(unit, -1)
 		return False
 
 	iCurrentTurn = CyGame().getGameTurn()
-	iLeftTurn = _getLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId)
+	iLeftTurn = _getWildernessExpertLeftTurn(unit)
 
-	# First turn outside territory
+	# First turn outside own territory
 	if iLeftTurn == -1:
-		_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iCurrentTurn)
+		_setWildernessExpertLeftTurn(unit, iCurrentTurn)
 		return False
 
 	iTurnsAway = iCurrentTurn - iLeftTurn
 
-	# Test value (intended is 75)
-	if iTurnsAway < 40:
+	if iTurnsAway < 5:
 		return False
 
 	return True
@@ -1275,7 +1105,7 @@ def applyDiscoveryWildernessExpertXP(argsList):
 	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
 	unit.setHasRealPromotion(ePromo, True)
 
-	_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, -1)
+	_setWildernessExpertLeftTurn(unit, -1)
 
 	CyInterface().addMessage(
 		kTriggeredData.ePlayer,
@@ -1310,8 +1140,8 @@ def applyDiscoveryWildernessExpertNative(argsList):
 	if iNativePlayer != -1:
 		nativePlayer = gc.getPlayer(iNativePlayer)
 		if not nativePlayer.isNone():
-			player.AI_changeAttitudeExtra(iNativePlayer, 3)
-			nativePlayer.AI_changeAttitudeExtra(kTriggeredData.ePlayer, 3)
+			player.AI_changeAttitudeExtra(iNativePlayer, 2)
+			nativePlayer.AI_changeAttitudeExtra(kTriggeredData.ePlayer, 2)
 
 			CyInterface().addMessage(
 				kTriggeredData.ePlayer,
@@ -1319,7 +1149,7 @@ def applyDiscoveryWildernessExpertNative(argsList):
 				10,
 				localText.getText(
 					"TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_RESULT",
-					(3, nativePlayer.getCivilizationAdjectiveKey())
+					(2, nativePlayer.getCivilizationAdjectiveKey())
 				),
 				"",
 				0,
@@ -1334,77 +1164,97 @@ def applyDiscoveryWildernessExpertNative(argsList):
 	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
 	unit.setHasRealPromotion(ePromo, True)
 
-	_setLeftTurn(kTriggeredData.ePlayer, kTriggeredData.iUnitId, -1)
+	_setWildernessExpertLeftTurn(unit, -1)
 
 def getHelpDiscoveryWildernessExpertXP(argsList):
-	return localText.getText(
-		"TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP",
-		(2, 4, 6, 8, 10)
-	)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (2,))
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (2,))
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (2,))
+
+	iDistance = _getDistanceToNearestOwnCity(player, plot)
+	iXP = _getWildernessXPBonusByDistance(iDistance)
+
+	return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (iXP,))
 
 def getHelpDiscoveryWildernessExpertNative(argsList):
 	return localText.getText(
 		"TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_HELP",
-		(3,)
+		(2,)
 	)
 
 ######## Discovery Attacked Event ###########
 
-DISCOVERY_ATTACK_LOCK_MOD_ID = "DISCOVERY_ATTACK_LOCK"
+DISCOVERY_ATTACKED_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_ATTACKED_SOFT_READY_TURN="
+DISCOVERY_ATTACKED_SOFT_COOLDOWN_SUFFIX = "]]"
 
-def _getDiscoveryAttackLockEntity(iPlayer):
-	return "DISCOVERY_ATTACK_LOCK_%d" % iPlayer
+def _getDiscoveryAttackedSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
 
-def _ensureDiscoveryAttackLockData(iPlayer):
-	entity = _getDiscoveryAttackLockEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_ATTACK_LOCK_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_ATTACK_LOCK_MOD_ID, entity, {"readyTurn": -1})
-	return entity
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getDiscoveryAttackLockReadyTurn(iPlayer):
-	entity = _ensureDiscoveryAttackLockData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_ATTACK_LOCK_MOD_ID, entity, "readyTurn")
+	iStart = szData.find(DISCOVERY_ATTACKED_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setDiscoveryAttackLockReadyTurn(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryAttackLockData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_ATTACK_LOCK_MOD_ID, entity, "readyTurn", iReadyTurn)
+	iStart += len(DISCOVERY_ATTACKED_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(DISCOVERY_ATTACKED_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
 
-def _getDiscoveryAttackLockScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
 
-def _startDiscoveryAttackLock(iPlayer):
-	iTurns = _getDiscoveryAttackLockScaledTurns(3)
-	_setDiscoveryAttackLockReadyTurn(iPlayer, CyGame().getGameTurn() + iTurns)
+def _setDiscoveryAttackedSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
 
-def _isDiscoveryAttackLockActive(iPlayer):
-	iReadyTurn = _getDiscoveryAttackLockReadyTurn(iPlayer)
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_ATTACKED_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_ATTACKED_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_ATTACKED_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		DISCOVERY_ATTACKED_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		DISCOVERY_ATTACKED_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _startDiscoveryAttackedSoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setDiscoveryAttackedSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+def _isDiscoveryAttackedSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getDiscoveryAttackedSoftCooldownReadyTurn(player)
 	return iReadyTurn > CyGame().getGameTurn()
-
-DISCOVERY_ATTACKED_MOD_ID = "DISCOVERY_ATTACKED"
-
-def _getDiscoveryAttackedEntity(iPlayer):
-	return "DISCOVERY_ATTACKED_%d" % iPlayer
-
-def _ensureDiscoveryAttackedData(iPlayer):
-	entity = _getDiscoveryAttackedEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_ATTACKED_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_ATTACKED_MOD_ID, entity, {"readyTurn": -1})
-	return entity
-
-def _getDiscoveryAttackedReadyTurn(iPlayer):
-	entity = _ensureDiscoveryAttackedData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_ATTACKED_MOD_ID, entity, "readyTurn")
-
-def _setDiscoveryAttackedCooldown(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryAttackedData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_ATTACKED_MOD_ID, entity, "readyTurn", iReadyTurn)
-
-def _getDiscoveryAttackedScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
 
 def _spawnSingleHostileNativeAdjacent(plot):
 	iHostileUnitClass = gc.getInfoTypeForString("UNITCLASS_HOSTILE_NATIVE")
@@ -1473,6 +1323,14 @@ def _forceUnitToMoveToPlot(unit, targetPlot):
 		unit
 	)
 
+def _getDiscoveryAttackedChance(player):
+	# Normal: 20%
+	# Soft cooldown for 30 turns after trigger: 2%
+	if _isDiscoveryAttackedSoftCooldownActive(player):
+		return 2
+
+	return 20
+
 def canTriggerDiscoveryAttacked(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1481,16 +1339,16 @@ def canTriggerDiscoveryAttacked(argsList):
 	if player.isNone() or not player.isPlayable() or player.isNative():
 		return False
 
-	if _isDiscoveryAttackLockActive(kTriggeredData.ePlayer):
-		return False
-
-	# Must have a valid tracked unit from the trigger
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Exact unit / plot binding to prevent ghost triggers
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
 	# Must be land plot
@@ -1499,6 +1357,10 @@ def canTriggerDiscoveryAttacked(argsList):
 
 	# No cities
 	if plot.isCity():
+		return False
+
+	# Only outside own borders
+	if plot.getOwner() == player.getID():
 		return False
 
 	# Must be a valid ambush feature
@@ -1517,14 +1379,9 @@ def canTriggerDiscoveryAttacked(argsList):
 	if plot.getFeatureType() not in aValidFeatures:
 		return False
 
-	# Cooldown check
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getDiscoveryAttackedReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
-		return False
+	iChance = _getDiscoveryAttackedChance(player)
 
-	# 40% chance after cooldown
-	if CyGame().getSorenRandNum(100, "Discovery Attacked trigger") >= 25:
+	if CyGame().getSorenRandNum(100, "Discovery Attacked trigger") >= iChance:
 		return False
 
 	return True
@@ -1532,31 +1389,39 @@ def canTriggerDiscoveryAttacked(argsList):
 def applyDiscoveryAttacked(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	unit = player.getUnit(kTriggeredData.iUnitId)
+	if player.isNone():
+		return
 
-	# Must affect exactly the tracked trigger unit
+	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	plot = unit.plot()
+	if plot is None or plot.isNone():
 		return
 
-	_startDiscoveryAttackLock(kTriggeredData.ePlayer)
+	# Exact unit / plot binding to prevent invalid execution
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
 
-	# Immobilize the ambushed expedition
-	unit.setMoves(0)
-	unit.setImmobileTimer(1)
+	if plot.isWater():
+		return
 
-	# Set cooldown
-	iCooldown = _getDiscoveryAttackedScaledTurns(30)
-	iCurrentTurn = CyGame().getGameTurn()
-	_setDiscoveryAttackedCooldown(kTriggeredData.ePlayer, iCurrentTurn + iCooldown)
+	if plot.isCity():
+		return
 
-	# Spawn exactly 1 hostile native and force movement onto the unit plot
+	# Safety: only outside own borders
+	if plot.getOwner() == player.getID():
+		return
+
+	# Spawn exactly 1 hostile native and attack immediately via DLL combat
 	hostileUnit = _spawnSingleHostileNativeAdjacent(plot)
 	if hostileUnit is not None and not hostileUnit.isNone():
-		_forceUnitToMoveToPlot(hostileUnit, plot)
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	# Start soft cooldown
+	_startDiscoveryAttackedSoftCooldown(player)
 
 def getHelpDiscoveryAttacked(argsList):
 	return localText.getText(
@@ -1564,6 +1429,8 @@ def getHelpDiscoveryAttacked(argsList):
 		()
 	)
   
+######## Discovery Events ###########
+
 def canTriggerDiscoveryStart(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -1572,24 +1439,26 @@ def canTriggerDiscoveryStart(argsList):
 		return False
 	if not player.isPlayable():
 		return False
-
-	# Nur vor der ersten Stadt
-	if player.getNumCities() > 0:
+	if player.isNative():
 		return False
 
-	# Nur einmal pro Spieler
-	if _hasTriggeredDiscoveryStart(kTriggeredData.ePlayer):
+	# Only before founding the first city
+	if player.getNumCities() > 0:
 		return False
 
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	plot = unit.plot()
+	if plot is None or plot.isNone():
 		return False
 
-	# Nur Land in der Neuen Welt
+	# The tracked unit must stand exactly on the triggered plot
+	if unit.getX() != kTriggeredData.iPlotX or unit.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Only on land
 	if plot.isWater():
 		return False
 
@@ -1610,7 +1479,25 @@ def getHelpDiscoveryStart1(argsList):
 	return szHelp
 
 def getHelpDiscoveryStart2(argsList):
-	return getHelpDiscoveryMissionary(argsList)
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	szHelp = getHelpDiscoveryMissionary(argsList)
+
+	iFatherPointType = event.getGenericParameter(3)
+	iFatherPoints = event.getGenericParameter(4)
+
+	if iFatherPointType != -1 and iFatherPoints > 0:
+		szHelp += u"\n" + localText.getText(
+			"TXT_KEY_EVENT_FATHER_POINTS",
+			(
+				iFatherPoints,
+				gc.getFatherPointInfo(iFatherPointType).getChar(),
+				gc.getFatherPointInfo(iFatherPointType).getDescription()
+			)
+		)
+
+	return szHelp
 
 def getHelpDiscoveryStart3(argsList):
 	kTriggeredData = argsList[0]
@@ -1632,6 +1519,127 @@ def getHelpDiscoveryStart5(argsList):
 	king = gc.getPlayer(eking)
 
 	return localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (2, king.getCivilizationAdjectiveKey()))
+
+def applyDiscoveryStart1(argsList):
+	kTriggeredData = argsList[0]
+	spawnOwnPlayerUnitInEurope(argsList)
+	_changeKingRelation(argsList, -2)
+
+def applyDiscoveryStart2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	spawnOwnPlayerUnitInEurope(argsList)
+
+	iFatherPointType = event.getGenericParameter(3)
+	iFatherPoints = event.getGenericParameter(4)
+
+	if iFatherPointType != -1 and iFatherPoints > 0:
+		team = gc.getTeam(player.getTeam())
+		team.changeFatherPoints(iFatherPointType, iFatherPoints)
+
+def applyDiscoveryStart3(argsList):
+	kTriggeredData = argsList[0]
+	spawnOwnPlayerUnitInEurope(argsList)
+	_changeKingRelation(argsList, 1)
+
+def applyDiscoveryStart4(argsList):
+	kTriggeredData = argsList[0]
+	spawnOwnPlayerUnitInEurope(argsList)
+
+def applyDiscoveryStart5(argsList):
+	kTriggeredData = argsList[0]
+	_changeKingRelation(argsList, 2)
+
+def spawnOwnPlayerUnitInEurope(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iUnitClass = event.getGenericParameter(1)
+	iNumUnits = event.getGenericParameter(2)
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return
+
+	# profession mapping
+	professionMap = {
+		gc.getInfoTypeForString("UNITCLASS_CHRISTIAN_MISSIONARY"): gc.getInfoTypeForString("PROFESSION_MISSIONARY"),
+		gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER"): gc.getInfoTypeForString("PROFESSION_SCOUT"),
+	}
+
+	for i in range(iNumUnits):
+		unit = player.initEuropeUnit(
+			iUnitType,
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.NO_DIRECTION
+		)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if iUnitClass in professionMap:
+			unit.setProfession(professionMap[iUnitClass])
+
+def _changeKingRelation(argsList, iChange):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	eKing = player.getParent()
+	if eKing == -1:
+		return
+
+	king = gc.getPlayer(eKing)
+	if king.isNone():
+		return
+
+	player.AI_changeAttitudeExtra(eKing, iChange)
+	king.AI_changeAttitudeExtra(kTriggeredData.ePlayer, iChange)
+
+	if player.isHuman():
+		if iChange > 0:
+			CyInterface().addMessage(
+				kTriggeredData.ePlayer,
+				False,
+				10,
+				localText.getText("TXT_KEY_EVENT_RELATION_KING_INCREASE", (iChange, king.getCivilizationAdjectiveKey())),
+				"",
+				0,
+				"",
+				ColorTypes(8),
+				-1,
+				-1,
+				True,
+				True
+			)
+		elif iChange < 0:
+			CyInterface().addMessage(
+				kTriggeredData.ePlayer,
+				False,
+				10,
+				localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (iChange, king.getCivilizationAdjectiveKey())),
+				"",
+				0,
+				"",
+				ColorTypes(7),
+				-1,
+				-1,
+				True,
+				True
+			)
 
 def canTriggerDiscoveryFever(argsList):
 	kTriggeredData = argsList[0]
@@ -1655,17 +1663,13 @@ def canTriggerDiscoveryFever(argsList):
 	if plot.isNone():
 		return False
 
-	# Must be land plot (no water)
+	# Must be land plot
 	if plot.isWater():
 		return False
 
 	# No cities
 	if plot.isCity():
 		return False
-
-	# Not on own territory
-	#   if plot.getOwner() == kTriggeredData.ePlayer:
-	#   	return False
 
 	# Only specific "fever" terrain features
 	eFeature = plot.getFeatureType()
@@ -1677,14 +1681,8 @@ def canTriggerDiscoveryFever(argsList):
 	):
 		return False
 
-	# Check cooldown
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getDiscoveryFeverReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
-		return False
-
-	# 40% trigger chance
-	if CyGame().getSorenRandNum(100, "Discovery Fever trigger") >= 40:
+	# Fixed trigger chance on valid plots
+	if CyGame().getSorenRandNum(100, "Discovery Fever trigger") >= 20:
 		return False
 
 	return True
@@ -1692,44 +1690,54 @@ def canTriggerDiscoveryFever(argsList):
 def applyDiscoveryFever(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
 
 	# Safety check: unit must exist
 	if unit.isNone():
 		return
 
-	# -----------------------------------------------------
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+
+	# Safety check: plot must still exist and still be valid for fever
+	if plot.isNone():
+		return
+	if plot.isWater():
+		return
+	if plot.isCity():
+		return
+
+	eFeature = plot.getFeatureType()
+	if eFeature not in (
+		gc.getInfoTypeForString("FEATURE_JUNGLE"),
+		gc.getInfoTypeForString("FEATURE_MANGROVE"),
+		gc.getInfoTypeForString("FEATURE_TROPICAL_GROVES"),
+		gc.getInfoTypeForString("FEATURE_SWAMP"),
+	):
+		return
+
+	eFeverImmune = gc.getInfoTypeForString("PROMOTION_FEVER_IMMUNE")
+
+	# Extra safety: do nothing if unit already became immune somehow
+	if unit.isHasPromotion(eFeverImmune):
+		return
+
 	# Apply immobilization (2–5 turns)
-	# -----------------------------------------------------
 	iImmobileTurns = 2 + CyGame().getSorenRandNum(4, "Discovery Fever duration")
 	unit.setImmobileTimer(iImmobileTurns)
 
-	# -----------------------------------------------------
 	# Apply damage (10–20%), but do not kill the unit
-	# -----------------------------------------------------
 	iDamage = 10 + CyGame().getSorenRandNum(11, "Discovery Fever damage")
 	iNewDamage = min(99, unit.getDamage() + iDamage)
 	unit.setDamage(iNewDamage)
 
-	# -----------------------------------------------------
 	# Mark unit as immune after surviving fever
-	# -----------------------------------------------------
-	eFeverImmune = gc.getInfoTypeForString("PROMOTION_FEVER_IMMUNE")
 	unit.setHasRealPromotion(eFeverImmune, True)
 
-	# -----------------------------------------------------
-	# Apply cooldown (10–20 turns, scaled by game speed)
-	# -----------------------------------------------------
-	iBaseCooldown = 10 + CyGame().getSorenRandNum(11, "Discovery Fever cooldown")
-	iCooldown = _getDiscoveryFeverScaledTurns(iBaseCooldown)
-
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = iCurrentTurn + iCooldown
-	_setDiscoveryFeverCooldown(kTriggeredData.ePlayer, iReadyTurn)
-
-	# -----------------------------------------------------
-	# Player feedback (localized via XML)
-	# -----------------------------------------------------
+	# Player feedback
 	if player.isHuman():
 		CyInterface().addMessage(
 			kTriggeredData.ePlayer,
@@ -1754,6 +1762,81 @@ def getHelpDiscoveryFever(argsList):
 		"TXT_KEY_EVENT_DISCOVERY_FEVER_HELP",
 		(2, 5, 10, 20)
 	)
+######## Discovery Desert ###########
+
+DISCOVERY_DESERT_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_DESERT_SOFT_READY_TURN="
+DISCOVERY_DESERT_SOFT_COOLDOWN_SUFFIX = "]]"
+
+def _getDiscoveryDesertSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(DISCOVERY_DESERT_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(DISCOVERY_DESERT_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(DISCOVERY_DESERT_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setDiscoveryDesertSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_DESERT_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_DESERT_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_DESERT_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		DISCOVERY_DESERT_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		DISCOVERY_DESERT_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _startDiscoveryDesertSoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setDiscoveryDesertSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+def _isDiscoveryDesertSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getDiscoveryDesertSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _getDiscoveryDesertScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _getDiscoveryDesertChance(player):
+	# 30% normally, 2% during soft cooldown
+	if _isDiscoveryDesertSoftCooldownActive(player):
+		return 2
+
+	return 30
 
 def canTriggerDiscoveryDesert(argsList):
 	kTriggeredData = argsList[0]
@@ -1767,11 +1850,19 @@ def canTriggerDiscoveryDesert(argsList):
 	if unit.isNone():
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	# Prevent re-trigger while already affected
+	if unit.getImmobileTimer() > 0:
 		return False
 
-	# Must be land plot
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Exact unit / plot binding (ANTI-GHOST)
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Must be land
 	if plot.isWater():
 		return False
 
@@ -1779,15 +1870,14 @@ def canTriggerDiscoveryDesert(argsList):
 	if plot.isCity():
 		return False
 
-	# Must be desert terrain
+	# Must be desert
 	eDesert = gc.getInfoTypeForString("TERRAIN_DESERT")
 	if plot.getTerrainType() != eDesert:
 		return False
 
-	# Check cooldown
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getDiscoveryDesertReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+	iChance = _getDiscoveryDesertChance(player)
+
+	if CyGame().getSorenRandNum(100, "Discovery Desert trigger") >= iChance:
 		return False
 
 	return True
@@ -1795,43 +1885,46 @@ def canTriggerDiscoveryDesert(argsList):
 def applyDiscoveryDesert(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	unit = player.getUnit(kTriggeredData.iUnitId)
 
-	# Safety check: unit must exist
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	plot = unit.plot()
+	if plot is None or plot.isNone():
 		return
 
-	# -----------------------------------------------------
-	# Apply immobilization
-	# Base desert: 2–4 turns
-	# Scaled by game speed
-	# -----------------------------------------------------
+	# Exact plot check (ANTI-GHOST SAFETY)
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	if plot.isCity():
+		return
+
+	eDesert = gc.getInfoTypeForString("TERRAIN_DESERT")
+	if plot.getTerrainType() != eDesert:
+		return
+
+	# Immobilization: 2–4 turns (scaled)
 	iBaseImmobileTurns = 2 + CyGame().getSorenRandNum(3, "Discovery Desert duration")
 	iImmobileTurns = _getDiscoveryDesertScaledTurns(iBaseImmobileTurns)
 	unit.setImmobileTimer(iImmobileTurns)
 
-	# -----------------------------------------------------
-	# Apply light damage (2–5%), but do not kill the unit
-	# -----------------------------------------------------
+	# Damage: 2–5% (non-lethal)
 	iDamage = 2 + CyGame().getSorenRandNum(4, "Discovery Desert damage")
 	iNewDamage = min(99, unit.getDamage() + iDamage)
 	unit.setDamage(iNewDamage)
 
-	# -----------------------------------------------------
-	# Apply cooldown (10 turns, scaled by game speed)
-	# -----------------------------------------------------
-	iCooldown = _getDiscoveryDesertScaledTurns(10)
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = iCurrentTurn + iCooldown
-	_setDiscoveryDesertCooldown(kTriggeredData.ePlayer, iReadyTurn)
+	# Start soft cooldown
+	_startDiscoveryDesertSoftCooldown(player)
 
-	# -----------------------------------------------------
-	# Player feedback (localized via XML)
-	# -----------------------------------------------------
+	# Player feedback
 	if player.isHuman():
 		CyInterface().addMessage(
 			kTriggeredData.ePlayer,
@@ -1859,36 +1952,66 @@ def getHelpDiscoveryDesert(argsList):
 
 ######## Discovery Mutiny ###########
 
-DISCOVERY_MUTINY_MOD_ID = "DISCOVERY_MUTINY"
+DISCOVERY_MUTINY_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_MUTINY_SOFT_READY_TURN="
+DISCOVERY_MUTINY_SOFT_COOLDOWN_SUFFIX = "]]"
 
-def _getDiscoveryMutinyEntity(iPlayer):
-	return "DISCOVERY_MUTINY_%d" % iPlayer
+def _getDiscoveryMutinySoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
 
-def _ensureDiscoveryMutinyData(iPlayer):
-	entity = _getDiscoveryMutinyEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_MUTINY_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_MUTINY_MOD_ID, entity, {"readyTurn": -1})
-	return entity
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getDiscoveryMutinyReadyTurn(iPlayer):
-	entity = _ensureDiscoveryMutinyData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_MUTINY_MOD_ID, entity, "readyTurn")
+	iStart = szData.find(DISCOVERY_MUTINY_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setDiscoveryMutinyReadyTurn(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryMutinyData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_MUTINY_MOD_ID, entity, "readyTurn", iReadyTurn)
+	iStart += len(DISCOVERY_MUTINY_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(DISCOVERY_MUTINY_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
 
-def _getDiscoveryMutinyScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
 
-def _startDiscoveryMutinyCooldown(iPlayer):
-	iTurns = _getDiscoveryMutinyScaledTurns(50)
-	_setDiscoveryMutinyReadyTurn(iPlayer, CyGame().getGameTurn() + iTurns)
+def _setDiscoveryMutinySoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
 
-def _isDiscoveryMutinyCooldownActive(iPlayer):
-	iReadyTurn = _getDiscoveryMutinyReadyTurn(iPlayer)
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_MUTINY_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_MUTINY_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_MUTINY_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		DISCOVERY_MUTINY_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		DISCOVERY_MUTINY_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _startDiscoveryMutinySoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setDiscoveryMutinySoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+def _isDiscoveryMutinySoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getDiscoveryMutinySoftCooldownReadyTurn(player)
 	return iReadyTurn > CyGame().getGameTurn()
 
 def _getDistanceToNearestOwnCity(player, plot):
@@ -1908,9 +2031,14 @@ def _getDistanceToNearestOwnCity(player, plot):
 def _getDiscoveryMutinyChance(player, plot):
 	iDistance = _getDistanceToNearestOwnCity(player, plot)
 
-	# base 30% + distance bonus, capped at 50%
-	iChance = 20 + min(iDistance, 10) * 3
-	return min(50, iChance)
+	if _isDiscoveryMutinySoftCooldownActive(player):
+		# Strongly reduced chance for 30 turns after the event
+		iChance = 1 + min(iDistance, 10)
+		return min(5, iChance)
+
+	# Normal chance outside soft cooldown
+	iChance = 5 + min(iDistance, 10) * 2
+	return min(20, iChance)
 
 def canTriggerDiscoveryMutiny(argsList):
 	kTriggeredData = argsList[0]
@@ -1925,20 +2053,16 @@ def canTriggerDiscoveryMutiny(argsList):
 	if player.isNative():
 		return False
 
-	if _isDiscoveryAttackLockActive(kTriggeredData.ePlayer):
-		return False
-
-	if _isDiscoveryMutinyCooldownActive(kTriggeredData.ePlayer):
-		return False
-
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return False
 
-	# unit filtering comes from XML trigger definition
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	# Exact unit / plot binding to prevent ghost triggers
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
 	if plot.isWater():
@@ -1962,16 +2086,13 @@ def applyDiscoveryMutinyPay(argsList):
 	if unit.isNone():
 		return
 
-	_startDiscoveryAttackLock(kTriggeredData.ePlayer)
-
-	# set cooldown only when the event is actually applied
-	_startDiscoveryMutinyCooldown(kTriggeredData.ePlayer)
-
-	# movement bonus for this turn
+	# Movement bonus for this turn
 	try:
 		unit.changeMoves(-60 * 2)
 	except:
 		pass
+
+	_startDiscoveryMutinySoftCooldown(player)
 
 def applyDiscoveryMutinyFight(argsList):
 	eEvent = argsList[1]
@@ -1986,21 +2107,16 @@ def applyDiscoveryMutinyFight(argsList):
 	if unit.isNone():
 		return
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	plot = unit.plot()
 	if plot is None or plot.isNone():
+		return
+
+	# Exact unit / plot binding to prevent invalid execution
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return
 
 	if plot.isWater():
 		return
-
-	_startDiscoveryAttackLock(kTriggeredData.ePlayer)
-
-	# set cooldown only when the event is actually applied
-	_startDiscoveryMutinyCooldown(kTriggeredData.ePlayer)
-
-	# same immobilization logic as applyDiscoveryAttacked
-	unit.setMoves(0)
-	unit.setImmobileTimer(1)
 
 	iHostileUnitClass = event.getGenericParameter(1)
 	iNumHostiles = event.getGenericParameter(2)
@@ -2014,8 +2130,11 @@ def applyDiscoveryMutinyFight(argsList):
 		iNumHostiles = 1
 
 	hostileUnit = _spawnSingleHostileUnitAdjacent(plot, iHostileUnitClass)
-	if hostileUnit is not None:
-		_forceUnitToMoveToPlot(hostileUnit, plot)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	_startDiscoveryMutinySoftCooldown(player)
 
 def getHelpDiscoveryMutiny(argsList):
 	eEvent = argsList[1]
@@ -2048,108 +2167,326 @@ def getHelpDiscoveryMutiny(argsList):
 
 ######## The DISCOVERY EVENTS BRAVE FELLOWS EVENT ###########
 
-DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID = "DISCOVERY_BRAVE_FELLOWS_MAP"
+DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_BRAVE_FELLOWS_SOFT_READY_TURN="
+DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_SUFFIX = "]]"
 
-def _getDiscoveryBraveFellowsMapEntity(iPlayer):
-	return "DISCOVERY_BRAVE_FELLOWS_MAP_%d" % iPlayer
+def _getDiscoveryBraveFellowsSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
 
-def _ensureDiscoveryBraveFellowsMapData(iPlayer):
-	# Ensure sdToolKit storage exists for this player
-	entity = _getDiscoveryBraveFellowsMapEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity, {"readyTurn": -1})
-	return entity
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getDiscoveryBraveFellowsMapReadyTurn(iPlayer):
-	# Returns the turn when the event becomes available again
-	entity = _ensureDiscoveryBraveFellowsMapData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity, "readyTurn")
+	iStart = szData.find(DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setDiscoveryBraveFellowsMapCooldown(iPlayer, iReadyTurn):
-	# Sets the next available turn for the event
-	entity = _ensureDiscoveryBraveFellowsMapData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_BRAVE_FELLOWS_MAP_MOD_ID, entity, "readyTurn", iReadyTurn)
+	iStart += len(DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
 
-def _getDiscoveryBraveFellowsMapScaledTurns(iBaseTurns):
-	# Scale cooldown with game speed
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
 
+def _setDiscoveryBraveFellowsSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
 
-def canTriggerDiscoveryEventsBraveFellows(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
 
+	iStart = szData.find(DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		DISCOVERY_BRAVE_FELLOWS_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _startDiscoveryBraveFellowsSoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setDiscoveryBraveFellowsSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+def _isDiscoveryBraveFellowsSoftCooldownActive(player):
 	if player.isNone():
 		return False
 
-	if not player.isPlayable():
+	iReadyTurn = _getDiscoveryBraveFellowsSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _getDiscoveryBraveFellowsChance(player):
+	if _isDiscoveryBraveFellowsSoftCooldownActive(player):
+		return 20
+
+	return 35
+
+def _getDiscoveryBraveFellowsVillageNativePlayer(player, plot):
+	if player.isNone() or plot is None or plot.isNone():
+		return None
+
+	# Prefer city owner (village)
+	if plot.isCity():
+		city = plot.getPlotCity()
+		if city is not None and not city.isNone():
+			iOwner = city.getOwner()
+			if iOwner >= 0:
+				nativePlayer = gc.getPlayer(iOwner)
+				if not nativePlayer.isNone() and nativePlayer.isNative():
+					return nativePlayer
+
+	# Fallback: plot owner
+	iOwner = plot.getOwner()
+	if iOwner < 0:
+		return None
+
+	nativePlayer = gc.getPlayer(iOwner)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return None
+
+	return nativePlayer
+
+def _isDiscoveryBraveFellowsFriendlyVillage(player, plot):
+	nativePlayer = _getDiscoveryBraveFellowsVillageNativePlayer(player, plot)
+	if nativePlayer is None:
 		return False
 
-	if player.isNative():
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot is None or plot.isNone():
+	# Testwise lowered by one step: pleased or better
+	return nativePlayer.AI_getAttitude(player.getID()) >= AttitudeTypes.ATTITUDE_PLEASED
+
+def _applyDiscoveryBraveFellowsVillageRelationBonus(player, plot, iBonus):
+	if player.isNone() or iBonus == 0:
+		return
+
+	nativePlayer = _getDiscoveryBraveFellowsVillageNativePlayer(player, plot)
+	if nativePlayer is None:
+		return
+
+	player.AI_changeAttitudeExtra(nativePlayer.getID(), iBonus)
+	nativePlayer.AI_changeAttitudeExtra(player.getID(), iBonus)
+
+def canTriggerDiscoveryBraveFellows(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
 		return False
 
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return False
 
-	# Must happen in a native village
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
 	if not isNativeVillage(argsList):
 		return False
 
-	# Require scout profession
-	eScoutProfession = gc.getInfoTypeForString("PROFESSION_SCOUT")
-	if unit.getProfession() != eScoutProfession:
+	if unit.getProfession() != gc.getInfoTypeForString("PROFESSION_SCOUT"):
 		return False
 
-	# Check cooldown
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getDiscoveryBraveFellowsMapReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+	nativePlayer = _getDiscoveryBraveFellowsVillageNativePlayer(player, plot)
+	if nativePlayer is None:
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return False
+
+	iChance = _getDiscoveryBraveFellowsChance(player)
+	if CyGame().getSorenRandNum(100, "Discovery Brave Fellows Trigger") >= iChance:
 		return False
 
 	return True
 
-
 def applyDiscoveryBraveFellowsMap(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	if player.isNone() or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if not isNativeVillage(argsList):
+		return
+
+	iRadius = 4
+	if _isDiscoveryBraveFellowsFriendlyVillage(player, plot):
+		iRadius = 5
+
+	for iX in range(-iRadius, iRadius + 1):
+		for iY in range(-iRadius, iRadius + 1):
+			if (iX * iX) + (iY * iY) > (iRadius * iRadius):
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iX, iY)
+			if pLoop is None or pLoop.isNone():
+				continue
+
+			pLoop.setRevealed(player.getTeam(), True, False, -1)
+
+	_applyDiscoveryBraveFellowsVillageRelationBonus(player, plot, 1)
+	_startDiscoveryBraveFellowsSoftCooldown(player)
+
+def applyDiscoveryBraveFellowsAdvice(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	if player.isNone() or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if not isNativeVillage(argsList):
+		return
+
+	if _isDiscoveryBraveFellowsFriendlyVillage(player, plot):
+		unit.changeExperience(1, -1, False, False, False)
+
+	_applyDiscoveryBraveFellowsVillageRelationBonus(player, plot, 1)
+	_startDiscoveryBraveFellowsSoftCooldown(player)
+
+def applyDiscoveryBraveFellowsWarriors(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	if player.isNone() or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if not isNativeVillage(argsList):
+		return
+
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+
+	_applyDiscoveryBraveFellowsVillageRelationBonus(player, plot, 1)
+	_startDiscoveryBraveFellowsSoftCooldown(player)
+
+def getHelpDiscoveryBraveFellows1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	iUnitClass = event.getUnitClass()
+
+	if iUnitClass == -1:
+		return u""
+
+	UnitClass = gc.getUnitClassInfo(iUnitClass)
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_1",
+		(300, UnitClass.getTextKey(), 1)
+	)
+
+def getHelpDiscoveryBraveFellows2(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	if player.isNone():
-		return
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2",
+			(200, 9, 9, 1)
+		)
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2",
+			(200, 9, 9, 1)
+		)
+
+	plot = unit.plot()
 	if plot is None or plot.isNone():
-		return
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2",
+			(200, 9, 9, 1)
+		)
 
-	# Reveal a square area around the village
-	# Range 4 = 9x9 area (center + 4 tiles in each direction)
-	iRange = 4
+	if _isDiscoveryBraveFellowsFriendlyVillage(player, plot):
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2_FRIENDLY",
+			(200, 11, 11, 1)
+		)
 
-	for iDX in range(-iRange, iRange + 1):
-		for iDY in range(-iRange, iRange + 1):
-			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
-			if pLoop is None or pLoop.isNone():
-				continue
-
-			pLoop.setRevealed(player.getTeam(), True, False, TeamTypes.NO_TEAM)
-
-	# Apply cooldown (20 turns, scaled with game speed)
-	iCooldown = _getDiscoveryBraveFellowsMapScaledTurns(20)
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = iCurrentTurn + iCooldown
-	_setDiscoveryBraveFellowsMapCooldown(kTriggeredData.ePlayer, iReadyTurn)
-
-
-def getHelpDiscoveryBraveFellowsMap(argsList):
 	return localText.getText(
-		"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_MAP_HELP",
-		(9, 9)
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2",
+		(200, 9, 9, 1)
+	)
+
+def getHelpDiscoveryBraveFellows3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3",
+			(1,)
+		)
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3",
+			(1,)
+		)
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3",
+			(1,)
+		)
+
+	if _isDiscoveryBraveFellowsFriendlyVillage(player, plot):
+		return localText.getText(
+			"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3_FRIENDLY",
+			(1,)
+		)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3",
+		(1,)
 	)
 
 ######## The Lost Tribe ###########
@@ -2868,79 +3205,172 @@ getHelpTheRoyals2a = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2aPYTHON")
 # PIRATES
 # ============================================================
 
-PIRATES_MOD_ID = "PIRATES_EVENT"
+PIRATES_SOFT_COOLDOWN_PREFIX = "[[WTP_PIRATES_READY_TURN="
+PIRATES_SOFT_COOLDOWN_SUFFIX = "]]"
 
-def _getPiratesEntity(iPlayer):
-	return "PIRATES_EVENT_%d" % iPlayer
+def _getPiratesSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
 
-def _ensurePiratesData(iPlayer):
-	entity = _getPiratesEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(PIRATES_MOD_ID, entity):
-		sdToolKit.sdEntityInit(PIRATES_MOD_ID, entity, {"readyTurn": -1})
-	return entity
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getPiratesReadyTurn(iPlayer):
-	entity = _ensurePiratesData(iPlayer)
-	return sdToolKit.sdGetVal(PIRATES_MOD_ID, entity, "readyTurn")
+	iStart = szData.find(PIRATES_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setPiratesReadyTurn(iPlayer, iReadyTurn):
-	entity = _ensurePiratesData(iPlayer)
-	sdToolKit.sdSetVal(PIRATES_MOD_ID, entity, "readyTurn", iReadyTurn)
+	iStart += len(PIRATES_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(PIRATES_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setPiratesSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(PIRATES_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(PIRATES_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(PIRATES_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		PIRATES_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		PIRATES_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
 
 def _getPiratesScaledTurns(iBaseTurns):
 	gameSpeedType = CyGame().getGameSpeedType()
 	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
 	return max(1, int((iBaseTurns * iPercent) / 100))
 
-def _startPiratesCooldown(iPlayer):
-	iTurns = _getPiratesScaledTurns(25)
-	_setPiratesReadyTurn(iPlayer, CyGame().getGameTurn() + iTurns)
+def _startPiratesSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
 
-def _isPiratesCooldownActive(iPlayer):
-	iReadyTurn = _getPiratesReadyTurn(iPlayer)
+	iReadyTurn = CyGame().getGameTurn() + _getPiratesScaledTurns(iBaseTurns)
+	_setPiratesSoftCooldownReadyTurn(player, iReadyTurn)
+
+def _isPiratesSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getPiratesSoftCooldownReadyTurn(player)
 	return iReadyTurn > CyGame().getGameTurn()
 
+def _getPiratesScaledStorageAmount(iBaseAmount):
+	if iBaseAmount == 0:
+		return 0
+
+	iPercent = gc.getGameSpeedInfo(CyGame().getGameSpeedType()).getStoragePercent()
+	iAmount = int((abs(iBaseAmount) * iPercent) / 100)
+
+	if iAmount <= 0:
+		iAmount = 1
+
+	if iBaseAmount < 0:
+		return -iAmount
+
+	return iAmount
+
 def _plotHasAdjacentSeaWater(plot):
+	if plot is None or plot.isNone():
+		return False
+
 	for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
 		adjPlot = plotDirection(plot.getX(), plot.getY(), DirectionTypes(iDirection))
 		if adjPlot and not adjPlot.isNone():
 			if adjPlot.isWater() and not adjPlot.isLake():
 				return True
+
 	return False
 
 def _cityHasEuropeAccess(city):
 	if city.isNone():
 		return False
 
-	# Primary coastal check (standard Civ logic)
 	if city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
 		return True
 
-	# Additional safety: adjacent real sea tiles (no lakes)
 	if _plotHasAdjacentSeaWater(city.plot()):
 		return True
 
 	return False
 
+def _getPiratesValidatedTriggerData(kTriggeredData, bRequireTreasureOnCityPlot):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return (None, None, None)
+
+	if not player.isPlayable():
+		return (None, None, None)
+
+	if player.isNative():
+		return (None, None, None)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return (None, None, None)
+
+	if city.getOwner() != kTriggeredData.ePlayer:
+		return (None, None, None)
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return (None, None, None)
+
+	iTreasureClass = gc.getInfoTypeForString("UNITCLASS_TREASURE")
+	if unit.getUnitClassType() != iTreasureClass:
+		return (None, None, None)
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return (None, None, None)
+
+	if bRequireTreasureOnCityPlot:
+		if city.getX() != unit.getX() or city.getY() != unit.getY():
+			return (None, None, None)
+
+		if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+			return (None, None, None)
+
+	return (player, city, unit)
+
 def canTriggerPirates(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
 
+	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
 		return False
 
 	if not player.isPlayable():
 		return False
 
-	# Global cooldown check
-	if _isPiratesCooldownActive(kTriggeredData.ePlayer):
+	if player.isNative():
+		return False
+
+	if _isPiratesSoftCooldownActive(player):
 		return False
 
 	city = player.getCity(kTriggeredData.iCityId)
 	if city.isNone():
 		return False
 
-	# Only allow cities with ocean/Europe access
 	if not _cityHasEuropeAccess(city):
 		return False
 
@@ -2948,60 +3378,162 @@ def canTriggerPirates(argsList):
 	if unit.isNone():
 		return False
 
-	# Must be a treasure unit
-	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
+	iTreasureClass = gc.getInfoTypeForString("UNITCLASS_TREASURE")
+	if unit.getUnitClassType() != iTreasureClass:
 		return False
 
-	# Treasure must be on the city plot
 	if city.getX() != unit.getX() or city.getY() != unit.getY():
 		return False
 
-	# Start cooldown immediately when event triggers
-	_startPiratesCooldown(kTriggeredData.ePlayer)
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Start cooldown on trigger intentionally.
+	# This event has a delayed branch and the player must have time to move the treasure away
+	# without the trigger reappearing immediately every turn.
+	_startPiratesSoftCooldown(player, 25)
 	return True
+
+def getHelpPirates1(argsList):
+	return localText.getText("TXT_KEY_EVENT_PIRATES_1_HELP", ())
+
+def CanDoPirates3(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, True)
+	if player is None:
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_BLADES")
+	iAmount = _getPiratesScaledStorageAmount(event.getGenericParameter(1))
+
+	if iAmount >= 0:
+		return True
+
+	if city.getYieldStored(iYield) < -iAmount:
+		return False
+
+	return True
+
+def CanDoPirates4(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, True)
+	if player is None:
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
+	iAmount = _getPiratesScaledStorageAmount(event.getGenericParameter(1))
+
+	if iAmount >= 0:
+		return True
+
+	if city.getYieldStored(iYield) < -iAmount:
+		return False
+
+	return True
+
+def applyPirates3(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, True)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_BLADES")
+	iAmount = _getPiratesScaledStorageAmount(event.getGenericParameter(1))
+
+	if iAmount < 0 and city.getYieldStored(iYield) < -iAmount:
+		return
+
+	if iAmount != 0:
+		city.changeYieldStored(iYield, iAmount)
+
+def applyPirates4(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, True)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
+	iAmount = _getPiratesScaledStorageAmount(event.getGenericParameter(1))
+
+	if iAmount < 0 and city.getYieldStored(iYield) < -iAmount:
+		return
+
+	if iAmount != 0:
+		city.changeYieldStored(iYield, iAmount)
+
+def getHelpPirates3(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, True)
+	if player is None:
+		return u""
+
+	iYield = gc.getInfoTypeForString("YIELD_BLADES")
+	iAmount = _getPiratesScaledStorageAmount(event.getGenericParameter(1))
+
+	szHelp = u""
+	if iAmount != 0:
+		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (iAmount, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+
+	return szHelp
+
+def getHelpPirates4(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, True)
+	if player is None:
+		return u""
+
+	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
+	iAmount = _getPiratesScaledStorageAmount(event.getGenericParameter(1))
+
+	szHelp = u""
+	if iAmount != 0:
+		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (iAmount, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+
+	return szHelp
 
 def isExpiredPirates1a(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
 
-	if player.isNone():
-		return True
-
-	city = player.getCity(kTriggeredData.iCityId)
-	if city.isNone():
-		return True
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return True
-
-	# If the tracked unit is no longer treasure, cancel event
-	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, False)
+	if player is None:
 		return True
 
 	return False
 
 def applyPirates1a(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
 
-	if player.isNone():
+	player, city, unit = _getPiratesValidatedTriggerData(kTriggeredData, False)
+	if player is None:
 		return
 
-	city = player.getCity(kTriggeredData.iCityId)
-	if city.isNone():
-		return
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return
-
-	# Ensure we still operate on a treasure unit
-	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
-		return
-
-	# Case 1: Treasure still in city → pirates steal it
 	if city.getX() == unit.getX() and city.getY() == unit.getY():
+		iX = city.getX()
+		iY = city.getY()
+		szCityName = city.getName()
+
 		unit.kill(False)
 
 		if player.isHuman():
@@ -3010,21 +3542,20 @@ def applyPirates1a(argsList):
 				False,
 				gc.getEVENT_MESSAGE_TIME(),
 				CyTranslator().changeTextColor(
-					localText.getText("TXT_KEY_EVENT_PIRATES_1A_STOLEN", (city.getName(),)),
-					ColorTypes(7)  # red text
+					localText.getText("TXT_KEY_EVENT_PIRATES_1A_STOLEN", (szCityName,)),
+					ColorTypes(7)
 				),
 				None,
 				InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
 				None,
 				ColorTypes(7),
-				city.getX(),
-				city.getY(),
+				iX,
+				iY,
 				True,
 				True
 			)
 		return
 
-	# Case 2: Treasure moved away → pirates appear offshore
 	iPirateCutterClass = gc.getInfoTypeForString("UNITCLASS_PIRATE_CUTTER")
 	if iPirateCutterClass == -1:
 		return
@@ -3038,7 +3569,7 @@ def applyPirates1a(argsList):
 			gc.getEVENT_MESSAGE_TIME(),
 			CyTranslator().changeTextColor(
 				localText.getText("TXT_KEY_EVENT_PIRATES_1A_CUTTER", (city.getName(),)),
-				ColorTypes(7)  # red text
+				ColorTypes(7)
 			),
 			None,
 			InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
@@ -3049,6 +3580,7 @@ def applyPirates1a(argsList):
 			True,
 			True
 		)
+
         
 ######## Superstitious Pirates Event ###########
 
@@ -4336,24 +4868,68 @@ def getHelpWildAnimal1(argsList):
 
 ######## Discovery Failed Trader Change ###########
 
-DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID = "DISCOVERY_FAILED_TRADER_CHANGE"
+DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_FAILED_TRADER_CHANGE_SOFT_READY_TURN="
+DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_SUFFIX = "]]"
 
-def _getDiscoveryFailedTraderChangeEntity(iPlayer):
-	return "DISCOVERY_FAILED_TRADER_CHANGE_%d" % iPlayer
+def _getDiscoveryFailedTraderChangeSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
 
-def _ensureDiscoveryFailedTraderChangeData(iPlayer):
-	entity = _getDiscoveryFailedTraderChangeEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity, {"readyTurn": -1})
-	return entity
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getDiscoveryFailedTraderChangeReadyTurn(iPlayer):
-	entity = _ensureDiscoveryFailedTraderChangeData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity, "readyTurn")
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setDiscoveryFailedTraderChangeCooldown(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryFailedTraderChangeData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_FAILED_TRADER_CHANGE_MOD_ID, entity, "readyTurn", iReadyTurn)
+	iStart += len(DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setDiscoveryFailedTraderChangeSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _startDiscoveryFailedTraderChangeSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(iBaseTurns)
+	_setDiscoveryFailedTraderChangeSoftCooldownReadyTurn(player, CyGame().getGameTurn() + iCooldown)
+
+def _isDiscoveryFailedTraderChangeSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getDiscoveryFailedTraderChangeSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
 
 def _getDiscoveryFailedTraderChangeScaledTurns(iBaseTurns):
 	gameSpeedType = CyGame().getGameSpeedType()
@@ -4376,14 +4952,11 @@ def canTriggerDiscoveryFailedTraderChange(argsList):
 	if player.isNative():
 		return False
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	if _isDiscoveryFailedTraderChangeSoftCooldownActive(player):
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot is None or plot.isNone():
-		return False
-	if plot.isWater():
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
 		return False
 
 	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
@@ -4394,28 +4967,34 @@ def canTriggerDiscoveryFailedTraderChange(argsList):
 	if unit.getProfession() != eColonistProfession:
 		return False
 
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getDiscoveryFailedTraderChangeReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+	if plot.isWater():
+		return False
+	if plot.getOwner() != kTriggeredData.ePlayer:
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
 	return True
 
 def changeFailedTraderToExpertTrader(argsList):
+	kTriggeredData = argsList[0]
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
 
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
 		return
+	if not player.isPlayable():
+		return
+	if player.isNative():
+		return
 
 	oldUnit = player.getUnit(kTriggeredData.iUnitId)
 	if oldUnit.isNone():
-		return
-
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot is None or plot.isNone():
 		return
 
 	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
@@ -4426,10 +5005,21 @@ def changeFailedTraderToExpertTrader(argsList):
 	if oldUnit.getProfession() != eColonistProfession:
 		return
 
-	# Default target
-	iTargetUnitClass = event.getGenericParameter(1)
+	plot = oldUnit.plot()
+	if plot is None or plot.isNone():
+		return
+	if plot.isWater():
+		return
+	if plot.getOwner() != kTriggeredData.ePlayer:
+		return
 
-	# Chance for seasoned trader
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	iTargetUnitClass = event.getGenericParameter(1)
+	if iTargetUnitClass <= 0:
+		return
+
 	bSeasoned = False
 	iSeasonedChance = event.getGenericParameter(2)
 	if iSeasonedChance < 0:
@@ -4443,9 +5033,6 @@ def changeFailedTraderToExpertTrader(argsList):
 			if iSeasonedTraderClass != UnitClassTypes.NO_UNITCLASS:
 				iTargetUnitClass = iSeasonedTraderClass
 				bSeasoned = True
-
-	if iTargetUnitClass <= 0:
-		return
 
 	iNewUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iTargetUnitClass)
 	if iNewUnitType == UnitTypes.NO_UNIT:
@@ -4470,10 +5057,8 @@ def changeFailedTraderToExpertTrader(argsList):
 	if newUnit.isNone():
 		return
 
-	# Set standard profession directly
 	eNativeTraderProfession = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
 	if eNativeTraderProfession != ProfessionTypes.NO_PROFESSION:
-		newUnit.setProfession(eNativeTraderProfession)
 		newUnit.setProfession(eNativeTraderProfession)
 
 	if iDamage > 0:
@@ -4496,10 +5081,7 @@ def changeFailedTraderToExpertTrader(argsList):
 
 	oldUnit.kill(False)
 
-	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = iCurrentTurn + iCooldown
-	_setDiscoveryFailedTraderChangeCooldown(kTriggeredData.ePlayer, iReadyTurn)
+	_startDiscoveryFailedTraderChangeSoftCooldown(player, 30)
 
 	if bSeasoned:
 		CyInterface().addMessage(
@@ -4519,6 +5101,8 @@ def changeFailedTraderToExpertTrader(argsList):
 
 def getHelpDiscoveryFailedTraderChange(argsList):
 	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
 
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
@@ -4528,12 +5112,13 @@ def getHelpDiscoveryFailedTraderChange(argsList):
 	if unit.isNone():
 		return u""
 
-	iGoldCost = 1000
+	iGoldCost = abs(event.getGold())
+	iSeasonedChance = event.getGenericParameter(2)
 	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
 
 	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_HELP",
-		(iGoldCost, iCooldown)
+		(iGoldCost, iSeasonedChance, iCooldown)
 	)
 
 def doDiscoveryFailedTraderChangeDecline(argsList):
@@ -4542,27 +5127,38 @@ def doDiscoveryFailedTraderChangeDecline(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
 		return
+	if not player.isPlayable():
+		return
+	if player.isNative():
+		return
 
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return
 
 	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
-	if gc.getUnitInfo(unit.getUnitType()).getUnitClassType() != iFailedTraderClass:
+	if _getUnitClass(unit) != iFailedTraderClass:
 		return
 
 	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
 	if unit.getProfession() != eColonistProfession:
 		return
 
-	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = iCurrentTurn + iCooldown
-	_setDiscoveryFailedTraderChangeCooldown(kTriggeredData.ePlayer, iReadyTurn)
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+	if plot.isWater():
+		return
+	if plot.getOwner() != kTriggeredData.ePlayer:
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	_startDiscoveryFailedTraderChangeSoftCooldown(player, 30)
 
 def getHelpDiscoveryFailedTraderChangeDecline(argsList):
 	kTriggeredData = argsList[0]
-	eEvent = argsList[1]
 
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
@@ -4580,30 +5176,6 @@ def getHelpDiscoveryFailedTraderChangeDecline(argsList):
 	)
 
 ######## Discovery Failed Missionary Change ###########
-
-DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID = "DISCOVERY_FAILED_MISSIONARY_CHANGE"
-
-def _getDiscoveryFailedMissionaryChangeEntity(iPlayer):
-	return "DISCOVERY_FAILED_MISSIONARY_CHANGE_%d" % iPlayer
-
-def _ensureDiscoveryFailedMissionaryChangeData(iPlayer):
-	entity = _getDiscoveryFailedMissionaryChangeEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity):
-		sdToolKit.sdEntityInit(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity, {"readyTurn": -1})
-	return entity
-
-def _getDiscoveryFailedMissionaryChangeReadyTurn(iPlayer):
-	entity = _ensureDiscoveryFailedMissionaryChangeData(iPlayer)
-	return sdToolKit.sdGetVal(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity, "readyTurn")
-
-def _setDiscoveryFailedMissionaryChangeCooldown(iPlayer, iReadyTurn):
-	entity = _ensureDiscoveryFailedMissionaryChangeData(iPlayer)
-	sdToolKit.sdSetVal(DISCOVERY_FAILED_MISSIONARY_CHANGE_MOD_ID, entity, "readyTurn", iReadyTurn)
-
-def _getDiscoveryFailedMissionaryChangeScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
 
 def _getDiscoveryFailedMissionaryUnitClass(unit):
 	if unit is None or unit.isNone():
@@ -4631,12 +5203,6 @@ def _getBestMissionaryTargetForPlayer(player):
 		return (iUnitClass, iUnitType, iProfession)
 
 	return (-1, -1, -1)
-
-def _setDiscoveryFailedMissionaryChangeCooldownFromNow(iPlayer):
-	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = iCurrentTurn + iCooldown
-	_setDiscoveryFailedMissionaryChangeCooldown(iPlayer, iReadyTurn)
 
 def canTriggerDiscoveryFailedMissionaryChange(argsList):
 	kTriggeredData = argsList[0]
@@ -4669,9 +5235,8 @@ def canTriggerDiscoveryFailedMissionaryChange(argsList):
 	if unit.getProfession() != eColonistProfession:
 		return False
 
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getDiscoveryFailedMissionaryChangeReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
+	# Fixed trigger chance on valid plots
+	if CyGame().getSorenRandNum(100, "Failed Missionary Change trigger") >= 30:
 		return False
 
 	return True
@@ -4751,8 +5316,6 @@ def doDiscoveryFailedMissionaryChange(argsList):
 
 	oldUnit.kill(False)
 
-	_setDiscoveryFailedMissionaryChangeCooldownFromNow(kTriggeredData.ePlayer)
-
 def doDiscoveryFailedMissionaryChangeDecline(argsList):
 	kTriggeredData = argsList[0]
 
@@ -4780,7 +5343,7 @@ def doDiscoveryFailedMissionaryChangeDecline(argsList):
 	if unit.getProfession() != eColonistProfession:
 		return
 
-	_setDiscoveryFailedMissionaryChangeCooldownFromNow(kTriggeredData.ePlayer)
+	return
 
 def getHelpDiscoveryFailedMissionaryChange(argsList):
 	kTriggeredData = argsList[0]
@@ -4794,10 +5357,9 @@ def getHelpDiscoveryFailedMissionaryChange(argsList):
 	if unit.isNone():
 		return u""
 
-	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
 	szHelp = localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_HELP",
-		(iCooldown,)
+		()
 	)
 
 	return szHelp
@@ -4814,35 +5376,14 @@ def getHelpDiscoveryFailedMissionaryChangeDecline(argsList):
 	if unit.isNone():
 		return u""
 
-	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
-
 	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_DECLINE_HELP",
-		(iCooldown,)
+		()
 	)
 
-######## Failed Missionary Classic Shared Lock ###########
+######## Failed Missionary Classic ###########
 
-FAILED_MISSIONARY_LOCK_MOD_ID = "FAILED_MISSIONARY_LOCK"
-
-def _getFailedMissionaryLockEntity(iPlayer, iUnitId):
-	return "FAILED_MISSIONARY_LOCK_%d_%d" % (iPlayer, iUnitId)
-
-def _ensureFailedMissionaryLockData(iPlayer, iUnitId):
-	entity = _getFailedMissionaryLockEntity(iPlayer, iUnitId)
-	if not sdToolKit.sdEntityExists(FAILED_MISSIONARY_LOCK_MOD_ID, entity):
-		sdToolKit.sdEntityInit(FAILED_MISSIONARY_LOCK_MOD_ID, entity, {"locked": 0})
-	return entity
-
-def _isFailedMissionaryLocked(iPlayer, iUnitId):
-	entity = _ensureFailedMissionaryLockData(iPlayer, iUnitId)
-	return sdToolKit.sdGetVal(FAILED_MISSIONARY_LOCK_MOD_ID, entity, "locked") == 1
-
-def _lockFailedMissionary(iPlayer, iUnitId):
-	entity = _ensureFailedMissionaryLockData(iPlayer, iUnitId)
-	sdToolKit.sdSetVal(FAILED_MISSIONARY_LOCK_MOD_ID, entity, "locked", 1)
-
-def canTriggerFailedMissionaryShared(argsList):
+def canTriggerFailedMissionaryClassic(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
@@ -4887,9 +5428,13 @@ def canTriggerFailedMissionaryShared(argsList):
 	if unit.getProfession() != eColonistProfession:
 		return False
 
+	# Fixed trigger chance on valid city plots
+	if CyGame().getSorenRandNum(100, "Failed Missionary Classic trigger") >= 30:
+		return False
+
 	return True
 
-def doEventFailedMissionary1Locked(argsList):
+def doEventFailedMissionary1(argsList):
 	kTriggeredData = argsList[0]
 	eEvent = argsList[1]
 
@@ -4901,13 +5446,9 @@ def doEventFailedMissionary1Locked(argsList):
 	if unit.isNone():
 		return
 
-	if _isFailedMissionaryLocked(unit.getOwner(), unit.getID()):
-		return
-
-	_lockFailedMissionary(unit.getOwner(), unit.getID())
 	ChangeFatherPoints(argsList)
 
-def doEventFailedMissionary2Locked(argsList):
+def doEventFailedMissionary2(argsList):
 	kTriggeredData = argsList[0]
 	eEvent = argsList[1]
 
@@ -4919,12 +5460,9 @@ def doEventFailedMissionary2Locked(argsList):
 	if unit.isNone():
 		return
 
-	if _isFailedMissionaryLocked(unit.getOwner(), unit.getID()):
-		return
+	return
 
-	_lockFailedMissionary(unit.getOwner(), unit.getID())
-
-def doEventFailedMissionary3Locked(argsList):
+def doEventFailedMissionary3(argsList):
 	kTriggeredData = argsList[0]
 	eEvent = argsList[1]
 
@@ -4936,10 +5474,7 @@ def doEventFailedMissionary3Locked(argsList):
 	if unit.isNone():
 		return
 
-	if _isFailedMissionaryLocked(unit.getOwner(), unit.getID()):
-		return
-
-	_lockFailedMissionary(unit.getOwner(), unit.getID())
+	return
 
 def expireFailedMissionaryEvent(argsList):
 	kTriggeredData = argsList[0]
@@ -4961,135 +5496,6 @@ def expireFailedMissionaryEvent(argsList):
 		return True
 
 	return False
-
-######## Native Training Event ###########
-
-NATIVE_TRAINING_MOD_ID = "NATIVE_TRAINING"
-
-def _getNativeTrainingEntity(iPlayer, iUnitId):
-	return "NATIVE_TRAINING_%d_%d" % (iPlayer, iUnitId)
-
-def _ensureNativeTrainingData(iPlayer, iUnitId):
-	entity = _getNativeTrainingEntity(iPlayer, iUnitId)
-	if not sdToolKit.sdEntityExists(NATIVE_TRAINING_MOD_ID, entity):
-		sdToolKit.sdEntityInit(NATIVE_TRAINING_MOD_ID, entity, {"trainedCount": 0, "handledTribes": []})
-	return entity
-
-def _getNativeTrainingCount(iPlayer, iUnitId):
-	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
-	return sdToolKit.sdGetVal(NATIVE_TRAINING_MOD_ID, entity, "trainedCount")
-
-def _setNativeTrainingCount(iPlayer, iUnitId, iCount):
-	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
-	sdToolKit.sdSetVal(NATIVE_TRAINING_MOD_ID, entity, "trainedCount", iCount)
-
-def _getNativeTrainingHandledTribes(iPlayer, iUnitId):
-	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
-	return sdToolKit.sdGetVal(NATIVE_TRAINING_MOD_ID, entity, "handledTribes")
-
-def _setNativeTrainingHandledTribes(iPlayer, iUnitId, aHandledTribes):
-	entity = _ensureNativeTrainingData(iPlayer, iUnitId)
-	sdToolKit.sdSetVal(NATIVE_TRAINING_MOD_ID, entity, "handledTribes", aHandledTribes)
-
-def _hasNativeTrainingHandledTribe(iPlayer, iUnitId, iTribePlayer):
-	aHandledTribes = _getNativeTrainingHandledTribes(iPlayer, iUnitId)
-	return iTribePlayer in aHandledTribes
-
-def _markNativeTrainingHandledTribe(iPlayer, iUnitId, iTribePlayer):
-	aHandledTribes = _getNativeTrainingHandledTribes(iPlayer, iUnitId)
-	if iTribePlayer not in aHandledTribes:
-		aHandledTribes.append(iTribePlayer)
-		_setNativeTrainingHandledTribes(iPlayer, iUnitId, aHandledTribes)
-
-def canTriggerNativeTraining(argsList):
-	pTriggeredData = argsList[0]
-	player = gc.getPlayer(pTriggeredData.ePlayer)
-
-	if player.isNone() or not player.isPlayable() or player.isNative():
-		return False
-
-	plot = gc.getMap().plot(pTriggeredData.iPlotX, pTriggeredData.iPlotY)
-	if plot.isNone():
-		return False
-
-	if not plot.isCity():
-		return False
-
-	iTribePlayer = plot.getOwner()
-	if iTribePlayer < 0:
-		return False
-
-	tribePlayer = gc.getPlayer(iTribePlayer)
-	if tribePlayer.isNone() or not tribePlayer.isNative():
-		return False
-
-	if gc.getTeam(player.getTeam()).isAtWar(tribePlayer.getTeam()):
-		return False
-
-	if tribePlayer.AI_getAttitude(pTriggeredData.ePlayer) < AttitudeTypes.ATTITUDE_CAUTIOUS:
-		return False
-
-	unit = player.getUnit(pTriggeredData.iUnitId)
-	if unit.isNone():
-		return False
-
-	if _getNativeTrainingCount(pTriggeredData.ePlayer, pTriggeredData.iUnitId) >= 3:
-		return False
-
-	if _hasNativeTrainingHandledTribe(pTriggeredData.ePlayer, pTriggeredData.iUnitId, iTribePlayer):
-		return False
-
-	if CyGame().getSorenRandNum(100, "Native Training Chance") >= 25:
-		return False
-
-	return True
-
-def applyNativeTraining1(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if player.isNone():
-		return
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return
-
-	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone() or not plot.isCity():
-		return
-
-	iTribePlayer = plot.getOwner()
-	if iTribePlayer < 0:
-		return
-
-	if _hasNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer):
-		return
-
-	_markNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer)
-	_setNativeTrainingCount(kTriggeredData.ePlayer, kTriggeredData.iUnitId, _getNativeTrainingCount(kTriggeredData.ePlayer, kTriggeredData.iUnitId) + 1)
-
-def applyNativeTraining2(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if player.isNone():
-		return
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return
-
-	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone() or not plot.isCity():
-		return
-
-	iTribePlayer = plot.getOwner()
-	if iTribePlayer < 0:
-		return
-
-	if _hasNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer):
-		return
-
-	_markNativeTrainingHandledTribe(kTriggeredData.ePlayer, kTriggeredData.iUnitId, iTribePlayer)
 
 def isNativeVillage(argsList):
 	pTriggeredData = argsList[0]
@@ -5130,6 +5536,275 @@ def isNativeVillageAndHumanTrade(argsList):
 	if not iUnitsCurrent > 5:
 		return False
 	return True
+
+######## Native Training Event ###########
+
+NATIVE_TRAINING_STATE_PREFIX = "[[WTP_NATIVE_TRAINING_STATE="
+NATIVE_TRAINING_STATE_SUFFIX = "]]"
+
+def _getNativeTrainingState(unit):
+	if unit is None or unit.isNone():
+		return (0, [])
+
+	szData = unit.getScriptData()
+	if szData is None or szData == "":
+		return (0, [])
+
+	iStart = szData.find(NATIVE_TRAINING_STATE_PREFIX)
+	if iStart == -1:
+		return (0, [])
+
+	iStart += len(NATIVE_TRAINING_STATE_PREFIX)
+	iEnd = szData.find(NATIVE_TRAINING_STATE_SUFFIX, iStart)
+	if iEnd == -1:
+		return (0, [])
+
+	szPayload = szData[iStart:iEnd]
+	if szPayload == "":
+		return (0, [])
+
+	aParts = szPayload.split("|", 1)
+
+	try:
+		iTrainedCount = int(aParts[0])
+	except:
+		iTrainedCount = 0
+
+	aHandledVillages = []
+	if len(aParts) > 1 and aParts[1] != "":
+		for szEntry in aParts[1].split(","):
+			if szEntry == "":
+				continue
+			aHandledVillages.append(szEntry)
+
+	return (iTrainedCount, aHandledVillages)
+
+def _setNativeTrainingState(unit, iTrainedCount, aHandledVillages):
+	if unit is None or unit.isNone():
+		return
+
+	if iTrainedCount < 0:
+		iTrainedCount = 0
+
+	aCleanHandledVillages = []
+	for szVillageKey in aHandledVillages:
+		if szVillageKey == "":
+			continue
+		if szVillageKey not in aCleanHandledVillages:
+			aCleanHandledVillages.append(szVillageKey)
+
+	szData = unit.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(NATIVE_TRAINING_STATE_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(NATIVE_TRAINING_STATE_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(NATIVE_TRAINING_STATE_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szHandled = ",".join(aCleanHandledVillages)
+	szMarker = "%s%d|%s%s" % (
+		NATIVE_TRAINING_STATE_PREFIX,
+		iTrainedCount,
+		szHandled,
+		NATIVE_TRAINING_STATE_SUFFIX
+	)
+
+	szData += szMarker
+	unit.setScriptData(szData)
+
+def _getNativeTrainingCount(unit):
+	iTrainedCount, aHandledVillages = _getNativeTrainingState(unit)
+	return iTrainedCount
+
+def _setNativeTrainingCount(unit, iCount):
+	iTrainedCount, aHandledVillages = _getNativeTrainingState(unit)
+	_setNativeTrainingState(unit, iCount, aHandledVillages)
+
+def _getNativeTrainingHandledVillages(unit):
+	iTrainedCount, aHandledVillages = _getNativeTrainingState(unit)
+	return aHandledVillages
+
+def _setNativeTrainingHandledVillages(unit, aHandledVillages):
+	iTrainedCount, aOldHandledVillages = _getNativeTrainingState(unit)
+	_setNativeTrainingState(unit, iTrainedCount, aHandledVillages)
+
+def _getNativeTrainingVillageKey(plot):
+	if plot is None or plot.isNone():
+		return ""
+
+	if not plot.isCity():
+		return ""
+
+	city = plot.getPlotCity()
+	if city is None or city.isNone():
+		return ""
+
+	return "%d:%d" % (plot.getOwner(), city.getID())
+
+def _hasNativeTrainingHandledVillage(unit, szVillageKey):
+	if szVillageKey == "":
+		return False
+
+	aHandledVillages = _getNativeTrainingHandledVillages(unit)
+	return szVillageKey in aHandledVillages
+
+def _markNativeTrainingHandledVillage(unit, szVillageKey):
+	if szVillageKey == "":
+		return
+
+	aHandledVillages = _getNativeTrainingHandledVillages(unit)
+	if szVillageKey not in aHandledVillages:
+		aHandledVillages.append(szVillageKey)
+		_setNativeTrainingHandledVillages(unit, aHandledVillages)
+
+def _showNativeTrainingProgressMessage(player, unit, iCount):
+	if player.isNone() or unit is None or unit.isNone():
+		return
+
+	if not player.isHuman():
+		return
+
+	if iCount <= 1:
+		szText = localText.getText("TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_1", (unit.getNameKey(),))
+	elif iCount == 2:
+		szText = localText.getText("TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_2", (unit.getNameKey(),))
+	else:
+		szText = localText.getText("TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_3", (unit.getNameKey(),))
+
+	CyInterface().addMessage(
+		player.getID(),
+		True,
+		10,
+		szText,
+		"",
+		0,
+		"",
+		ColorTypes(8),
+		unit.getX(),
+		unit.getY(),
+		True,
+		True
+	)
+
+def _showNativeTrainingVisitedVillageMessage(player, unit):
+	if player.isNone() or unit is None or unit.isNone():
+		return
+
+	if not player.isHuman():
+		return
+
+	szText = localText.getText("TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_VISITED_ONLY", (unit.getNameKey(),))
+
+	CyInterface().addMessage(
+		player.getID(),
+		True,
+		10,
+		szText,
+		"",
+		0,
+		"",
+		ColorTypes(8),
+		unit.getX(),
+		unit.getY(),
+		True,
+		True
+	)
+
+def _getNativeTrainingValidatedData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return (None, None, None, None, "", None)
+
+	if not player.isPlayable():
+		return (None, None, None, None, "", None)
+
+	if player.isNative():
+		return (None, None, None, None, "", None)
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return (None, None, None, None, "", None)
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot.isNone():
+		return (None, None, None, None, "", None)
+
+	if unit.getX() != plot.getX() or unit.getY() != plot.getY():
+		return (None, None, None, None, "", None)
+
+	if not plot.isCity():
+		return (None, None, None, None, "", None)
+
+	city = plot.getPlotCity()
+	if city is None or city.isNone():
+		return (None, None, None, None, "", None)
+
+	iTribePlayer = plot.getOwner()
+	if iTribePlayer < 0:
+		return (None, None, None, None, "", None)
+
+	tribePlayer = gc.getPlayer(iTribePlayer)
+	if tribePlayer.isNone():
+		return (None, None, None, None, "", None)
+
+	if not tribePlayer.isNative():
+		return (None, None, None, None, "", None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(tribePlayer.getTeam()):
+		return (None, None, None, None, "", None)
+
+	if tribePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return (None, None, None, None, "", None)
+
+	if _getNativeTrainingCount(unit) >= 3:
+		return (None, None, None, None, "", None)
+
+	szVillageKey = _getNativeTrainingVillageKey(plot)
+	if szVillageKey == "":
+		return (None, None, None, None, "", None)
+
+	if _hasNativeTrainingHandledVillage(unit, szVillageKey):
+		return (None, None, None, None, "", None)
+
+	return (player, unit, plot, city, szVillageKey, tribePlayer)
+
+def canTriggerNativeTraining(argsList):
+	kTriggeredData = argsList[0]
+
+	player, unit, plot, city, szVillageKey, tribePlayer = _getNativeTrainingValidatedData(kTriggeredData)
+	if player is None:
+		return False
+
+	# No extra random chance:
+	# once all conditions are fulfilled, the event should trigger reliably
+	return True
+
+def applyNativeTraining1(argsList):
+	kTriggeredData = argsList[0]
+
+	player, unit, plot, city, szVillageKey, tribePlayer = _getNativeTrainingValidatedData(kTriggeredData)
+	if player is None:
+		return
+
+	_markNativeTrainingHandledVillage(unit, szVillageKey)
+
+	iNewCount = _getNativeTrainingCount(unit) + 1
+	_setNativeTrainingCount(unit, iNewCount)
+
+	_showNativeTrainingProgressMessage(player, unit, iNewCount)
+
+def applyNativeTraining2(argsList):
+	kTriggeredData = argsList[0]
+
+	player, unit, plot, city, szVillageKey, tribePlayer = _getNativeTrainingValidatedData(kTriggeredData)
+	if player is None:
+		return
+
+	_markNativeTrainingHandledVillage(unit, szVillageKey)
+	_showNativeTrainingVisitedVillageMessage(player, unit)
 
 ####### Stirred up natives events ########
 
@@ -10370,127 +11045,69 @@ getHelpDiscoveryTrader = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_S
 
 getHelpDiscoveryOxcart = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_START_Oxcart_HELP")
 
-getHelpDiscoveryTreasureAttack = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP")
-
-getHelpDiscoveryNewScout = get_simple_help("TXT_KEY_EVENT_DISCOVERY_EVENTS_NEW_SCOUT_HELP")
-
-######## Treasure Protection Event  ###########
-
-def getHelpTreasureProtectionRules():
-	return localText.getText("TXT_KEY_EVENT_TREASURE_PROTECTION_RULES_HELP", ())
-
-def getHelpTreasureProtection1(argsList):
-	szHelp = getHelpNewMountedConquistador(argsList)
-	if szHelp is None:
-		szHelp = u""
-	if len(szHelp) > 0:
-		szHelp += u"\n"
-	szHelp += getHelpTreasureProtectionRules()
-	return szHelp
-
-def getHelpTreasureProtection2(argsList):
-	szHelp = getHelpNewMilitia(argsList)
-	if szHelp is None:
-		szHelp = u""
-	if len(szHelp) > 0:
-		szHelp += u"\n"
-	szHelp += getHelpTreasureProtectionRules()
-	return szHelp
-
-def getHelpTreasureProtection3(argsList):
-	return getHelpKingPleased(argsList)
-
-getHelpNewMountedConquistador = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MOUNTED_CONQUISTADOR_HELP")
-getHelpNewMilitia = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MILITIA_HELP")
-
 ######## Treasure Attack Event ###########
 
-TREASURE_ATTACK_MOD_ID = "TREASURE_ATTACK"
+TREASURE_ATTACK_SOFT_COOLDOWN_PREFIX = "[[WTP_TREASURE_ATTACK_SOFT_READY_TURN="
+TREASURE_ATTACK_SOFT_COOLDOWN_SUFFIX = "]]"
 
-def _getTreasureAttackEntity(iPlayer):
-	return "TREASURE_ATTACK_%d" % iPlayer
+def _getTreasureAttackSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
 
-def _ensureTreasureAttackData(iPlayer):
-	entity = _getTreasureAttackEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(TREASURE_ATTACK_MOD_ID, entity):
-		sdToolKit.sdEntityInit(TREASURE_ATTACK_MOD_ID, entity, {"readyTurn": -1})
-	return entity
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def _getTreasureAttackReadyTurn(iPlayer):
-	entity = _ensureTreasureAttackData(iPlayer)
-	return sdToolKit.sdGetVal(TREASURE_ATTACK_MOD_ID, entity, "readyTurn")
+	iStart = szData.find(TREASURE_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
 
-def _setTreasureAttackCooldown(iPlayer, iReadyTurn):
-	entity = _ensureTreasureAttackData(iPlayer)
-	sdToolKit.sdSetVal(TREASURE_ATTACK_MOD_ID, entity, "readyTurn", iReadyTurn)
+	iStart += len(TREASURE_ATTACK_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(TREASURE_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
 
-def _getTreasureAttackScaledTurns(iBaseTurns):
-	gameSpeedType = CyGame().getGameSpeedType()
-	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
-	return max(1, int((iBaseTurns * iPercent) / 100))
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
 
-def canTriggerTreasureAttack(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
+def _setTreasureAttackSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot is None or plot.isNone():
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(TREASURE_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(TREASURE_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(TREASURE_ATTACK_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		TREASURE_ATTACK_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		TREASURE_ATTACK_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _startTreasureAttackSoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setTreasureAttackSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+def _isTreasureAttackSoftCooldownActive(player):
+	if player.isNone():
 		return False
 
-	# Must be land
-	if plot.isWater():
-		return False
-
-	# Wilderness only: no city plot
-	if plot.isCity():
-		return False
-
-	# Wilderness only: not on own territory
-	if plot.getOwner() == player.getID():
-		return False
-
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getTreasureAttackReadyTurn(player.getID())
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
-		return False
-
-	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
-	bHasTreasure = False
-
-	for i in range(plot.getNumUnits()):
-		unit = plot.getUnit(i)
-		if unit.isNone():
-			continue
-		if unit.getOwner() != player.getID():
-			continue
-
-		iLoopClass = gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
-		if iLoopClass == iTreasureClass:
-			bHasTreasure = True
-			break
-
-	if not bHasTreasure:
-		return False
-
-	iDistance = getDistanceToOwnTerritory(plot, player, 10)
-
-	# Higher trigger chance the farther the treasure is away from own territory
-	if iDistance <= 5:
-		iChance = 20
-	elif iDistance <= 10:
-		iChance = 30
-	else:
-		iChance = 40
-
-	if CyGame().getSorenRandNum(100, "Treasure Attack Trigger") >= iChance:
-		return False
-
-	iCooldownTurns = _getTreasureAttackScaledTurns(25)
-	if iCooldownTurns < 1:
-		iCooldownTurns = 1
-
-	_setTreasureAttackCooldown(player.getID(), iCurrentTurn + iCooldownTurns)
-	return True
+	iReadyTurn = _getTreasureAttackSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
 
 def getDistanceToOwnTerritory(plot, player, iMaxRange):
 	for iRange in range(1, iMaxRange + 1):
@@ -10508,11 +11125,32 @@ def getDistanceToOwnTerritory(plot, player, iMaxRange):
 
 	return iMaxRange + 1
 
+def _getTreasureAttackChance(player, plot):
+	iDistance = getDistanceToOwnTerritory(plot, player, 10)
+
+	if _isTreasureAttackSoftCooldownActive(player):
+		if iDistance <= 5:
+			return 0
+		elif iDistance <= 10:
+			return 2
+		else:
+			return 5
+
+	if iDistance <= 5:
+		return 5
+	elif iDistance <= 10:
+		return 10
+	else:
+		return 15
+
 def _spawnFriendlyEscortOnTreasurePlot(plot, iPlayer, iUnitClass):
 	if iUnitClass == -1:
 		return None
 
 	player = gc.getPlayer(iPlayer)
+	if player.isNone():
+		return None
+
 	civ = gc.getCivilizationInfo(player.getCivilizationType())
 	iUnitType = civ.getCivilizationUnits(iUnitClass)
 
@@ -10536,8 +11174,10 @@ def _spawnSingleHostileUnitAdjacent(plot, iUnitClass):
 
 	iBarbarian = gc.getGame().getBarbarianPlayer()
 	barbPlayer = gc.getPlayer(iBarbarian)
-	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	if barbPlayer.isNone():
+		return None
 
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
 	iUnitType = barbCiv.getCivilizationUnits(iUnitClass)
 	if iUnitType == -1:
 		return None
@@ -10553,6 +11193,8 @@ def _spawnSingleHostileUnitAdjacent(plot, iUnitClass):
 			if pLoop.isWater():
 				continue
 			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
 				continue
 			if pLoop.isCity():
 				continue
@@ -10601,17 +11243,87 @@ def _forceUnitToMoveToPlot(unit, targetPlot):
 		unit
 	)
 
+def canTriggerTreasureAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	# Exact unit type check
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Exact unit / plot binding to prevent ghost triggers
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Must be land
+	if plot.isWater():
+		return False
+
+	# Wilderness only: no city plot
+	if plot.isCity():
+		return False
+
+	# Wilderness only: not on own territory
+	if plot.getOwner() == player.getID():
+		return False
+
+	iChance = _getTreasureAttackChance(player, plot)
+
+	if CyGame().getSorenRandNum(100, "Treasure Attack Trigger") >= iChance:
+		return False
+
+	# Start soft cooldown here so both event choices get it,
+	# including the XML-only pay option without Python callback.
+	_startTreasureAttackSoftCooldown(player)
+
+	return True
+
 def applyTreasureAttack(argsList):
 	kTriggeredData = argsList[0]
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	# Ensure we still operate on a treasure unit
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_TREASURE"):
+		return
+
+	plot = unit.plot()
 	if plot is None or plot.isNone():
 		return
 
+	# Exact unit / plot binding to prevent invalid execution
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
 	if plot.isWater():
+		return
+
+	if plot.isCity():
 		return
 
 	iHostileUnitClass = event.getGenericParameter(1)
@@ -10631,8 +11343,9 @@ def applyTreasureAttack(argsList):
 		iNumHostiles = 1
 
 	hostileUnit = _spawnSingleHostileUnitAdjacent(plot, iHostileUnitClass)
-	if hostileUnit is not None:
-		_forceUnitToMoveToPlot(hostileUnit, plot)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
 
 def getHelpDiscoveryTreasureAttack(argsList):
 	return localText.getText("TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP", ())
@@ -10674,128 +11387,6 @@ def canTriggerIsPlayableWithTriggerChance(argsList):
 	if TriggerChance(argsList):
 		return True
 	return False
-
-
-def isTreasureProtectionEscort(loopUnit):
-	iLoopUnitType = loopUnit.getUnitType()
-	iLoopProfession = loopUnit.getProfession()
-
-	protectedUnits = (
-		gc.getInfoTypeForString("UNIT_EUROPEAN_LINE_INFANTRY"),
-		gc.getInfoTypeForString("UNIT_MORTAR"),
-		gc.getInfoTypeForString("UNIT_HESSIAN"),
-		gc.getInfoTypeForString("UNIT_MILITIA"),
-		gc.getInfoTypeForString("UNIT_CONTINENTAL_GUARD"),
-		gc.getInfoTypeForString("UNIT_NATIVE_MERC"),
-		gc.getInfoTypeForString("UNIT_RANGER"),
-		gc.getInfoTypeForString("UNIT_CONQUISTADOR"),
-		gc.getInfoTypeForString("UNIT_MOUNTED_CONQUISTADOR"),
-		gc.getInfoTypeForString("UNIT_BUCCANNEER"),
-	)
-
-	protectedProfessions = (
-		gc.getInfoTypeForString("PROFESSION_SCOUT"),
-		gc.getInfoTypeForString("PROFESSION_BRAVE"),
-		gc.getInfoTypeForString("PROFESSION_MOUNTED_BRAVE"),
-		gc.getInfoTypeForString("PROFESSION_ARMED_BRAVE"),
-		gc.getInfoTypeForString("PROFESSION_ARMED_MOUNTED_BRAVE"),
-		gc.getInfoTypeForString("PROFESSION_TOWN_GUARD"),
-		gc.getInfoTypeForString("PROFESSION_ROYAL_HALBERDIER"),
-		gc.getInfoTypeForString("PROFESSION_COLONIAL_MILITIA"),
-		gc.getInfoTypeForString("PROFESSION_LINE_INFANTRY"),
-		gc.getInfoTypeForString("PROFESSION_ROYAL_LIGHT_INFANTRY"),
-		gc.getInfoTypeForString("PROFESSION_ROYAL_LINE_INFANTRY"),
-		gc.getInfoTypeForString("PROFESSION_DRAGOON"),
-		gc.getInfoTypeForString("PROFESSION_ROYAL_DRAGOON"),
-		gc.getInfoTypeForString("PROFESSION_HEAVY_CAVALRY"),
-		gc.getInfoTypeForString("PROFESSION_ROYAL_CAVALRY"),
-		gc.getInfoTypeForString("PROFESSION_LIGHT_ARTILLERY"),
-		gc.getInfoTypeForString("PROFESSION_HEAVY_ARTILLERY"),
-		gc.getInfoTypeForString("PROFESSION_ROYAL_ARTILLERY"),
-	)
-
-	if iLoopUnitType in protectedUnits:
-		return True
-
-	if iLoopProfession in protectedProfessions:
-		return True
-
-	return False
-
-
-def getDistanceToOwnTerritory(plot, player, iMaxRange):
-	for iRange in range(1, iMaxRange + 1):
-		for iDX in range(-iRange, iRange + 1):
-			for iDY in range(-iRange, iRange + 1):
-				if abs(iDX) != iRange and abs(iDY) != iRange:
-					continue
-
-				pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
-				if pLoop is None or pLoop.isNone():
-					continue
-
-				if pLoop.getOwner() == player.getID():
-					return iRange
-
-	return iMaxRange + 1
-
-
-def canTriggerTreasureProtection(argsList):
-	if not canTriggerIsPlayableWithTriggerChance(argsList):
-		return False
-
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-
-	iCurrentTurn = CyGame().getGameTurn()
-	iReadyTurn = _getTreasureProtectionReadyTurn(kTriggeredData.ePlayer)
-	if iReadyTurn != -1 and iCurrentTurn < iReadyTurn:
-		return False
-
-	plotThatTriggered = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plotThatTriggered is None or plotThatTriggered.isNone():
-		return False
-
-	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
-	bHasTreasure = False
-
-	for i in range(plotThatTriggered.getNumUnits()):
-		loopUnit = plotThatTriggered.getUnit(i)
-		if loopUnit.isNone():
-			continue
-		if loopUnit.getOwner() != player.getID():
-			continue
-
-		iLoopClass = gc.getUnitInfo(loopUnit.getUnitType()).getUnitClassType()
-
-		if iLoopClass == iTreasureClass:
-			bHasTreasure = True
-			continue
-
-		if isTreasureProtectionEscort(loopUnit):
-			return False
-
-	if not bHasTreasure:
-		return False
-
-	iDistanceToOwnTerritory = getDistanceToOwnTerritory(plotThatTriggered, player, 10)
-
-	if iDistanceToOwnTerritory <= 5:
-		iChance = 25
-	elif iDistanceToOwnTerritory <= 10:
-		iChance = 50
-	else:
-		iChance = 75
-
-	if CyGame().getSorenRandNum(100, "Treasure Protection Trigger") >= iChance:
-		return False
-
-	iCooldownTurns = _getTreasureProtectionScaledTurns(30)
-	if iCooldownTurns < 1:
-		iCooldownTurns = 1
-
-	_setTreasureProtectionCooldown(kTriggeredData.ePlayer, iCurrentTurn + iCooldownTurns)
-	return True
 
 getHelpRangerBearAttack = get_simple_help("TXT_KEY_EVENT_RANGER_BEAR_ATTACK_HELP")
 
@@ -11133,63 +11724,105 @@ def isExpiredDragoonstoFrontier(argsList):
 
 getHelpDragoonstoFrontierDone  = get_simple_help("TXT_KEY_EVENT_DRAGOONS_TO_FRONTIER_HELP")
 
-# =========================================
-# FOUR TREASURES – POSTPONE / RETURN SYSTEM
-# =========================================
+# FOUR TREASURES – POSTPONE / RETURN SYSTEM #
 
-FOUR_TREASURES_RETURN_MOD_ID = "FOUR_TREASURES_RETURN"
 FOUR_TREASURES_RETURN_REQUIRED_GOLD = 2000
+FOUR_TREASURES_STATE_PREFIX = "[[WTP_FOUR_TREASURES_STATE="
+FOUR_TREASURES_STATE_SUFFIX = "]]"
 
 
 # -----------------------------------------
 # Storage handling
 # -----------------------------------------
 
-def _getFourTreasuresReturnEntity(iPlayer):
-	return "FOUR_TREASURES_RETURN_%d" % iPlayer
+def _getFourTreasuresState(player):
+	if player is None or player.isNone():
+		return (False, False, -1)
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return (False, False, -1)
+
+	iStart = szData.find(FOUR_TREASURES_STATE_PREFIX)
+	if iStart == -1:
+		return (False, False, -1)
+
+	iStart += len(FOUR_TREASURES_STATE_PREFIX)
+	iEnd = szData.find(FOUR_TREASURES_STATE_SUFFIX, iStart)
+	if iEnd == -1:
+		return (False, False, -1)
+
+	try:
+		szValue = szData[iStart:iEnd]
+		aParts = szValue.split("|")
+		if len(aParts) != 3:
+			return (False, False, -1)
+
+		bPostponed = (int(aParts[0]) == 1)
+		bResolved = (int(aParts[1]) == 1)
+		iCityId = int(aParts[2])
+
+		return (bPostponed, bResolved, iCityId)
+	except:
+		return (False, False, -1)
 
 
-def _ensureFourTreasuresReturnData(iPlayer):
-	entity = _getFourTreasuresReturnEntity(iPlayer)
-	if not sdToolKit.sdEntityExists(FOUR_TREASURES_RETURN_MOD_ID, entity):
-		sdToolKit.sdEntityInit(
-			FOUR_TREASURES_RETURN_MOD_ID,
-			entity,
-			{"postponed": False, "resolved": False, "cityId": -1}
-		)
-	return entity
+def _setFourTreasuresState(player, bPostponed, bResolved, iCityId):
+	if player is None or player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(FOUR_TREASURES_STATE_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(FOUR_TREASURES_STATE_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(FOUR_TREASURES_STATE_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iPostponed = 0
+	if bPostponed:
+		iPostponed = 1
+
+	iResolved = 0
+	if bResolved:
+		iResolved = 1
+
+	szMarker = "%s%d|%d|%d%s" % (
+		FOUR_TREASURES_STATE_PREFIX,
+		iPostponed,
+		iResolved,
+		iCityId,
+		FOUR_TREASURES_STATE_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
 
 
-def _setFourTreasuresPostponed(iPlayer, iCityId):
-	entity = _ensureFourTreasuresReturnData(iPlayer)
-	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "postponed", True)
-	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "resolved", False)
-	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "cityId", iCityId)
+def _clearFourTreasuresState(player):
+	if player is None or player.isNone():
+		return
+
+	_setFourTreasuresState(player, False, True, -1)
 
 
-def _clearFourTreasuresPostponed(iPlayer):
-	entity = _ensureFourTreasuresReturnData(iPlayer)
-	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "postponed", False)
-	sdToolKit.sdSetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "resolved", True)
+def _isFourTreasuresPostponed(player):
+	return _getFourTreasuresState(player)[0]
 
 
-def _isFourTreasuresPostponed(iPlayer):
-	entity = _ensureFourTreasuresReturnData(iPlayer)
-	return sdToolKit.sdGetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "postponed")
+def _isFourTreasuresResolved(player):
+	return _getFourTreasuresState(player)[1]
 
 
-def _isFourTreasuresResolved(iPlayer):
-	entity = _ensureFourTreasuresReturnData(iPlayer)
-	return sdToolKit.sdGetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "resolved")
-
-
-def _getStoredCityId(iPlayer):
-	entity = _ensureFourTreasuresReturnData(iPlayer)
-	return sdToolKit.sdGetVal(FOUR_TREASURES_RETURN_MOD_ID, entity, "cityId")
+def _getStoredFourTreasuresCityId(player):
+	return _getFourTreasuresState(player)[2]
 
 
 # -----------------------------------------
-# City selection logic
+# City / plot validation
 # -----------------------------------------
 
 def _plotHasOceanAccess(plot):
@@ -11201,42 +11834,102 @@ def _plotHasOceanAccess(plot):
 		if adjPlot and not adjPlot.isNone():
 			if adjPlot.isWater() and not adjPlot.isLake():
 				return True
+
 	return False
 
 
-def _getFourTreasuresSpawnCity(player):
-	if player.isNone():
+def _isValidFourTreasuresCity(player, city):
+	if player is None or player.isNone():
+		return False
+	if city is None or city.isNone():
+		return False
+	if city.getOwner() != player.getID():
+		return False
+	if not city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+		return False
+	if not _plotHasOceanAccess(city.plot()):
+		return False
+
+	return True
+
+
+def _getFourTreasuresCity(player, iCityId):
+	if player is None or player.isNone():
 		return None
-
-	(city, iter) = player.firstCity(True)
-	while city:
-		if not city.isNone():
-			if city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
-				if _plotHasOceanAccess(city.plot()):
-					return city
-		(city, iter) = player.nextCity(iter, True)
-
-	return None
-
-
-def _getValidFourTreasuresReturnCity(player):
-	iCityId = _getStoredCityId(player.getID())
-
 	if iCityId == -1:
 		return None
 
 	city = player.getCity(iCityId)
-
 	if city is None or city.isNone():
 		return None
 
-	if not city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
-		return None
-
-	if not _plotHasOceanAccess(city.plot()):
+	if city.getOwner() != player.getID():
 		return None
 
 	return city
+
+
+# -----------------------------------------
+# Treasure checks
+# -----------------------------------------
+
+def _countTreasureUnitsOnCityPlot(player, city):
+	if player is None or player.isNone():
+		return 0
+	if city is None or city.isNone():
+		return 0
+
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return 0
+
+	eTreasureClass = gc.getInfoTypeForString("UNITCLASS_TREASURE")
+	iCount = 0
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+		if unit is None or unit.isNone():
+			continue
+		if unit.getOwner() != player.getID():
+			continue
+
+		eUnitClass = gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
+		if eUnitClass == eTreasureClass:
+			iCount += 1
+
+	return iCount
+
+
+def _hasFourTreasuresOnCityPlot(player, city):
+	return _countTreasureUnitsOnCityPlot(player, city) >= 4
+
+
+# -----------------------------------------
+# Initial trigger
+# -----------------------------------------
+
+def canTriggerFourTreasures(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isAlive():
+		return False
+	if not player.isPlayable():
+		return False
+
+	city = _getFourTreasuresCity(player, kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return False
+
+	if not _isValidFourTreasuresCity(player, city):
+		return False
+
+	if not _hasFourTreasuresOnCityPlot(player, city):
+		return False
+
+	return True
 
 
 # -----------------------------------------
@@ -11245,17 +11938,20 @@ def _getValidFourTreasuresReturnCity(player):
 
 def applyFourTreasuresPostpone(argsList):
 	kTriggeredData = argsList[0]
-	iPlayer = kTriggeredData.ePlayer
-	player = gc.getPlayer(iPlayer)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	if player.isNone():
 		return
 
-	city = _getFourTreasuresSpawnCity(player)
+	city = _getFourTreasuresCity(player, kTriggeredData.iCityId)
 	if city is None or city.isNone():
 		return
 
-	_setFourTreasuresPostponed(iPlayer, city.getID())
+	if not _isValidFourTreasuresCity(player, city):
+		return
+
+	_setFourTreasuresState(player, True, False, city.getID())
+	_changeKingRelation(argsList, -1)
 
 
 def getHelpFourTreasuresPostpone(argsList):
@@ -11278,32 +11974,132 @@ def getHelpFourTreasuresPostpone(argsList):
 # -----------------------------------------
 
 def canTriggerFourTreasuresReturn(argsList):
-	pTriggeredData = argsList[0]
-	player = gc.getPlayer(pTriggeredData.ePlayer)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	if player.isNone():
 		return False
-
+	if not player.isAlive():
+		return False
 	if not player.isPlayable():
 		return False
 
-	iPlayer = pTriggeredData.ePlayer
-
-	if _isFourTreasuresResolved(iPlayer):
+	if _isFourTreasuresResolved(player):
 		return False
 
-	if not _isFourTreasuresPostponed(iPlayer):
+	if not _isFourTreasuresPostponed(player):
+		return False
+
+	iStoredCityId = _getStoredFourTreasuresCityId(player)
+	if iStoredCityId == -1:
+		_clearFourTreasuresState(player)
+		return False
+
+	if kTriggeredData.iCityId != iStoredCityId:
+		return False
+
+	city = _getFourTreasuresCity(player, iStoredCityId)
+	if city is None or city.isNone():
+		_clearFourTreasuresState(player)
+		return False
+
+	if not _isValidFourTreasuresCity(player, city):
+		_clearFourTreasuresState(player)
+		return False
+
+	if not _hasFourTreasuresOnCityPlot(player, city):
+		_clearFourTreasuresState(player)
 		return False
 
 	if player.getGold() < FOUR_TREASURES_RETURN_REQUIRED_GOLD:
 		return False
 
-	city = _getValidFourTreasuresReturnCity(player)
+	return True
+
+
+# -----------------------------------------
+# Return trigger
+# -----------------------------------------
+
+def canTriggerFourTreasuresReturn(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isAlive():
+		return False
+	if not player.isPlayable():
+		return False
+
+	if _isFourTreasuresResolved(player):
+		return False
+
+	if not _isFourTreasuresPostponed(player):
+		return False
+
+	iStoredCityId = _getStoredFourTreasuresCityId(player)
+	if iStoredCityId == -1:
+		_clearFourTreasuresState(player)
+		return False
+
+	if kTriggeredData.iCityId != iStoredCityId:
+		return False
+
+	city = _getFourTreasuresCity(player, iStoredCityId)
 	if city is None or city.isNone():
+		_clearFourTreasuresState(player)
+		return False
+
+	if not _isValidFourTreasuresCity(player, city):
+		_clearFourTreasuresState(player)
+		return False
+
+	if not _hasFourTreasuresOnCityPlot(player, city):
+		_clearFourTreasuresState(player)
+		return False
+
+	if player.getGold() < FOUR_TREASURES_RETURN_REQUIRED_GOLD:
 		return False
 
 	return True
 
+
+def canTriggerFourTreasuresReturnCity(argsList):
+	# Robust wrapper because callback signatures may differ depending on call path.
+
+	if len(argsList) >= 3:
+		ePlayer = argsList[1]
+		iCityId = argsList[2]
+
+		player = gc.getPlayer(ePlayer)
+		if player.isNone():
+			return False
+		if not player.isAlive():
+			return False
+		if not player.isPlayable():
+			return False
+
+		class TriggerData:
+			pass
+
+		kTriggeredData = TriggerData()
+		kTriggeredData.ePlayer = ePlayer
+		kTriggeredData.iCityId = iCityId
+
+		return canTriggerFourTreasuresReturn([kTriggeredData])
+
+	if len(argsList) >= 1:
+		kTriggeredData = argsList[0]
+
+		if not hasattr(kTriggeredData, "ePlayer"):
+			return False
+		if not hasattr(kTriggeredData, "iCityId"):
+			return False
+
+		return canTriggerFourTreasuresReturn([kTriggeredData])
+
+	return False
 
 # -----------------------------------------
 # Return – buy
@@ -11311,20 +12107,29 @@ def canTriggerFourTreasuresReturn(argsList):
 
 def applyFourTreasuresReturnBuy(argsList):
 	kTriggeredData = argsList[0]
-	iPlayer = kTriggeredData.ePlayer
-	player = gc.getPlayer(iPlayer)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	if player.isNone():
 		return
 
-	city = _getValidFourTreasuresReturnCity(player)
+	iStoredCityId = _getStoredFourTreasuresCityId(player)
+	city = _getFourTreasuresCity(player, iStoredCityId)
 	if city is None or city.isNone():
+		_clearFourTreasuresState(player)
+		return
+
+	if not _isValidFourTreasuresCity(player, city):
+		_clearFourTreasuresState(player)
+		return
+
+	if not _hasFourTreasuresOnCityPlot(player, city):
+		_clearFourTreasuresState(player)
 		return
 
 	if player.getGold() < FOUR_TREASURES_RETURN_REQUIRED_GOLD:
 		return
 
-	iUnitClassType = UnitClassTypes.UNITCLASS_GALLEON
+	iUnitClassType = gc.getInfoTypeForString("UNITCLASS_GALLEON")
 	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
 
 	if iUnitType == UnitTypes.NO_UNIT:
@@ -11343,7 +12148,7 @@ def applyFourTreasuresReturnBuy(argsList):
 	)
 
 	_changeKingRelation(argsList, 1)
-	_clearFourTreasuresPostponed(iPlayer)
+	_clearFourTreasuresState(player)
 
 
 def getHelpFourTreasuresReturnBuy(argsList):
@@ -11352,7 +12157,7 @@ def getHelpFourTreasuresReturnBuy(argsList):
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
 
-	city = _getFourTreasuresSpawnCity(player)
+	city = _getFourTreasuresCity(player, kTriggeredData.iCityId)
 
 	if city is not None and not city.isNone():
 		szCityName = city.getName()
@@ -11371,16 +12176,20 @@ def getHelpFourTreasuresReturnBuy(argsList):
 
 	return szHelp
 
+
 # -----------------------------------------
 # Return – decline
 # -----------------------------------------
 
 def applyFourTreasuresReturnDecline(argsList):
 	kTriggeredData = argsList[0]
-	iPlayer = kTriggeredData.ePlayer
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
 
 	_changeKingRelation(argsList, -2)
-	_clearFourTreasuresPostponed(iPlayer)
+	_clearFourTreasuresState(player)
 
 
 def getHelpFourTreasuresReturnDecline(argsList):
@@ -11401,18 +12210,288 @@ def getHelpFourTreasuresReturnDecline(argsList):
 
 	return szHelp
 
-def applyFourTreasuresPostpone(argsList):
-	kTriggeredData = argsList[0]
-	iPlayer = kTriggeredData.ePlayer
-	player = gc.getPlayer(iPlayer)
+######## Treasure Protection Event ###########
 
+TREASURE_PROTECTION_SOFT_COOLDOWN_PREFIX = "[[WTP_TREASURE_PROTECTION_READY_TURN="
+TREASURE_PROTECTION_SOFT_COOLDOWN_SUFFIX = "]]"
+
+def _getTreasureProtectionSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(TREASURE_PROTECTION_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(TREASURE_PROTECTION_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(TREASURE_PROTECTION_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setTreasureProtectionSoftCooldownReadyTurn(player, iReadyTurn):
 	if player.isNone():
 		return
 
-	city = _getFourTreasuresSpawnCity(player)
-	if city is None or city.isNone():
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(TREASURE_PROTECTION_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(TREASURE_PROTECTION_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(TREASURE_PROTECTION_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		TREASURE_PROTECTION_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		TREASURE_PROTECTION_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _getTreasureProtectionScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _startTreasureProtectionSoftCooldown(player, iBaseTurns):
+	if player.isNone():
 		return
 
-	_setFourTreasuresPostponed(iPlayer, city.getID())
+	iReadyTurn = CyGame().getGameTurn() + _getTreasureProtectionScaledTurns(iBaseTurns)
+	_setTreasureProtectionSoftCooldownReadyTurn(player, iReadyTurn)
 
-	_changeKingRelation(argsList, -1)
+def _isTreasureProtectionSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getTreasureProtectionSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _isTreasureProtectionEscortUnit(loopUnit):
+	if loopUnit is None or loopUnit.isNone():
+		return False
+
+	iLoopUnitType = loopUnit.getUnitType()
+	iLoopProfession = loopUnit.getProfession()
+
+	protectedUnits = (
+		gc.getInfoTypeForString("UNIT_EUROPEAN_LINE_INFANTRY"),
+		gc.getInfoTypeForString("UNIT_MORTAR"),
+		gc.getInfoTypeForString("UNIT_HESSIAN"),
+		gc.getInfoTypeForString("UNIT_MILITIA"),
+		gc.getInfoTypeForString("UNIT_CONTINENTAL_GUARD"),
+		gc.getInfoTypeForString("UNIT_NATIVE_MERC"),
+		gc.getInfoTypeForString("UNIT_RANGER"),
+		gc.getInfoTypeForString("UNIT_CONQUISTADOR"),
+		gc.getInfoTypeForString("UNIT_MOUNTED_CONQUISTADOR"),
+		gc.getInfoTypeForString("UNIT_BUCCANNEER"),
+	)
+
+	protectedProfessions = (
+		gc.getInfoTypeForString("PROFESSION_SCOUT"),
+		gc.getInfoTypeForString("PROFESSION_SOLDIER"),
+		gc.getInfoTypeForString("PROFESSION_DRAGOON"),
+		gc.getInfoTypeForString("PROFESSION_PIONEER"),
+		gc.getInfoTypeForString("PROFESSION_MISSIONARY"),
+		gc.getInfoTypeForString("PROFESSION_PREACHER"),
+		gc.getInfoTypeForString("PROFESSION_TRADER"),
+		gc.getInfoTypeForString("PROFESSION_TOWN_GUARD"),
+		gc.getInfoTypeForString("PROFESSION_NATIVE_MERC"),
+		gc.getInfoTypeForString("PROFESSION_ARMED_BRAVE"),
+		gc.getInfoTypeForString("PROFESSION_ARMED_MOUNTED_BRAVE"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_HALBERDIER"),
+		gc.getInfoTypeForString("PROFESSION_COLONIAL_MILITIA"),
+		gc.getInfoTypeForString("PROFESSION_LINE_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_LIGHT_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_LINE_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_HEAVY_CAVALRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_CAVALRY"),
+		gc.getInfoTypeForString("PROFESSION_LIGHT_ARTILLERY"),
+		gc.getInfoTypeForString("PROFESSION_HEAVY_ARTILLERY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_ARTILLERY"),
+	)
+
+	if iLoopUnitType in protectedUnits:
+		return True
+
+	if iLoopProfession in protectedProfessions:
+		return True
+
+	return False
+
+def _getTreasureProtectionDistanceToOwnTerritory(plot, player, iMaxRange):
+	for iRange in range(1, iMaxRange + 1):
+		for iDX in range(-iRange, iRange + 1):
+			for iDY in range(-iRange, iRange + 1):
+				if abs(iDX) != iRange and abs(iDY) != iRange:
+					continue
+
+				pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+				if pLoop is None or pLoop.isNone():
+					continue
+
+				if pLoop.getOwner() == player.getID():
+					return iRange
+
+	return iMaxRange + 1
+
+def _getTreasureProtectionValidatedPlotAndPlayer(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return (None, None)
+
+	if not player.isPlayable():
+		return (None, None)
+
+	if player.isNative():
+		return (None, None)
+
+	plotThatTriggered = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plotThatTriggered is None or plotThatTriggered.isNone():
+		return (None, None)
+
+	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
+	bHasTreasure = False
+
+	for i in range(plotThatTriggered.getNumUnits()):
+		loopUnit = plotThatTriggered.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != player.getID():
+			continue
+
+		iLoopClass = gc.getUnitInfo(loopUnit.getUnitType()).getUnitClassType()
+
+		if iLoopClass == iTreasureClass:
+			bHasTreasure = True
+			continue
+
+		if _isTreasureProtectionEscortUnit(loopUnit):
+			return (None, None)
+
+	if not bHasTreasure:
+		return (None, None)
+
+	return (player, plotThatTriggered)
+
+def canTriggerTreasureProtection(argsList):
+	if not canTriggerIsPlayableWithTriggerChance(argsList):
+		return False
+
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if _isTreasureProtectionSoftCooldownActive(player):
+		return False
+
+	plotThatTriggered = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plotThatTriggered is None or plotThatTriggered.isNone():
+		return False
+
+	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
+	bHasTreasure = False
+
+	for i in range(plotThatTriggered.getNumUnits()):
+		loopUnit = plotThatTriggered.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != player.getID():
+			continue
+
+		iLoopClass = gc.getUnitInfo(loopUnit.getUnitType()).getUnitClassType()
+
+		if iLoopClass == iTreasureClass:
+			bHasTreasure = True
+			continue
+
+		if _isTreasureProtectionEscortUnit(loopUnit):
+			return False
+
+	if not bHasTreasure:
+		return False
+
+	iDistanceToOwnTerritory = _getTreasureProtectionDistanceToOwnTerritory(plotThatTriggered, player, 10)
+
+	if iDistanceToOwnTerritory <= 5:
+		iChance = 25
+	elif iDistanceToOwnTerritory <= 10:
+		iChance = 50
+	else:
+		iChance = 75
+
+	if CyGame().getSorenRandNum(100, "Treasure Protection Trigger") >= iChance:
+		return False
+
+	return True
+
+def getHelpTreasureProtectionRules():
+	return localText.getText("TXT_KEY_EVENT_TREASURE_PROTECTION_RULES_HELP", ())
+
+def getHelpTreasureProtection1(argsList):
+	szHelp = getHelpNewMountedConquistador(argsList)
+	if szHelp is None:
+		szHelp = u""
+	if len(szHelp) > 0:
+		szHelp += u"\n"
+	szHelp += getHelpTreasureProtectionRules()
+	return szHelp
+
+def getHelpTreasureProtection2(argsList):
+	szHelp = getHelpNewMilitia(argsList)
+	if szHelp is None:
+		szHelp = u""
+	if len(szHelp) > 0:
+		szHelp += u"\n"
+	szHelp += getHelpTreasureProtectionRules()
+	return szHelp
+
+def getHelpTreasureProtection3(argsList):
+	return getHelpKingPleased(argsList)
+
+def applyTreasureProtection1(argsList):
+	kTriggeredData = argsList[0]
+
+	player, plotThatTriggered = _getTreasureProtectionValidatedPlotAndPlayer(kTriggeredData)
+	if player is None:
+		return
+
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	_startTreasureProtectionSoftCooldown(player, 30)
+
+def applyTreasureProtection2(argsList):
+	kTriggeredData = argsList[0]
+
+	player, plotThatTriggered = _getTreasureProtectionValidatedPlotAndPlayer(kTriggeredData)
+	if player is None:
+		return
+
+	spawnOwnPlayerUnitOnSamePlotAsPlot(argsList)
+	_startTreasureProtectionSoftCooldown(player, 30)
+
+def applyTreasureProtection3(argsList):
+	kTriggeredData = argsList[0]
+
+	player, plotThatTriggered = _getTreasureProtectionValidatedPlotAndPlayer(kTriggeredData)
+	if player is None:
+		return
+
+	_startTreasureProtectionSoftCooldown(player, 30)
+
+getHelpNewMountedConquistador = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MOUNTED_CONQUISTADOR_HELP")
+getHelpNewMilitia = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MILITIA_HELP")

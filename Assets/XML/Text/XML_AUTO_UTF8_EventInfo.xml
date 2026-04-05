@@ -1566,6 +1566,30 @@
 		<Russian>Это невозможно. Этот индейский наемник срочно нужен в другом месте.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_1</Tag>
+		<English>A native mercenary has learned much of value in a native village and can still learn in two more villages.</English>
+		<German>Ein indianischer Söldner hat in einem Dorf viel Wissenswertes gelernt und kann noch in zwei weiteren Dörfern etwas lernen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_2</Tag>
+		<English>A native mercenary has once more learned from the natives and can still learn in one more village.</English>
+		<German>Ein indianischer Söldner hat erneut von den Einheimischen gelernt und kann noch in einem weiteren Dorf etwas lernen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_3</Tag>
+		<English>A native mercenary has learned all that the natives are willing to teach.</English>
+		<German>Ein indianischer Söldner hat alles gelernt, was die Einheimischen ihm beibringen können.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_VISITED_ONLY</Tag>
+		<English>A native mercenary was welcomed in this village, but gained no new knowledge.</English>
+		<German>Ein indianischer Söldner wurde in diesem Dorf freundlich empfangen, konnte jedoch nichts Neues lernen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_NO_SMOKING_1</Tag>
 		<English>Our ladies won't become arsonists. Ignore them.</English>
 		<French>Nos dames ne deviendront pas des incendiaires. Ignorez-les.</French>
@@ -1672,10 +1696,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_3</Tag>
-		<English>Gather the people together! Let it be proclaimed at every market that the wealth of the land is immeasurable and that anyone who ventures into its depths with desire and will can pick up gold with his bare hands! Far from our houses and churches lies earthly fortune, far, far behind the hills. Give a horse to every cutthroat whose greed has gone to his head, and do not let him out of your sight until he disappears over the hills. Then peace should return.</English>
-		<French>Rassemblez les gens ! Que l'on proclame sur tous les marchés que les richesses de la terre sont incommensurables, et que quiconque s'aventure dans ses profondeurs avec désir et volonté peut ramasser l'or à mains nues ! Surtout, loin de nos maisons et de nos églises se trouve la fortune terrestre, loin, très loin au-delà des collines. Donnez un cheval à chaque égorgeur dont la cupidité lui est montée à la tête, et ne le perdez pas de vue jusqu'à ce qu'il soit au-delà des collines. Ensuite, tout devrait redevenir calme.</French>
-		<German>Trommelt die Leute zusammen! Lasst auf jedem Markte verkünden, dass der Reichtum des Landes unermesslich sei und jeder, der mit Lust und Wille in seine Tiefen vorstöße, das Gold mit bloßen Händen aufklauben könne! Vor allem fern unserer Häuser und Kirchen liegt das irdische Glück, weit, weit hinter den Hügeln. Gebt darauf jedem Halsabschneider, dem die Gier zu Kopfe gestiegen ist, ein Pferd und lasst ihn nicht aus den Augen, bis er hinter den Hügeln ist. Dann sollte wieder Ruhe einkehren.</German>
-		<Russian>Соберите людей на городской площади. Попробуем убедить их, что богатства этой земли неисчислимы и что всякий, кто не испугается трудностей, сможет добыть золото! Земное счастье не здесь, оно ждёт их вдали от наших домов и церквей, за далёкими горами. И каждому безумцу, которому жадность вскружит голову, дайте лошадь и не выпускайте из виду, пока он не скроется за холмами. И тогда в колонии снова наступит покой.</Russian>
+		<English>Gather the townsmen together! Let it be proclaimed in every street that idle rabble shall no longer lurk about our harbour and warehouses. Let every fellow whose greed has overcome his wits be handed a pike and set to honest watch and ward. March them before the gates, place them under stern officers, and make them earn their bread as guards of the town. Then peace should return.</English>
+		<German>Trommelt die Bürger zusammen! Lasst in allen Gassen verkünden, dass müßiges Gesindel fortan nicht länger um Hafen und Lagerhäuser lungern soll. Jedem Burschen, dem die Gier den Verstand benommen hat, reiche man eine Pike und stelle ihn in ehrliche Wach- und Wehrdienste. Führt sie vor die Tore, setzt sie unter strenge Aufsicht und lasst sie ihr Brot fortan als Wächter der Stadt verdienen. Dann sollte wieder Ruhe einkehren.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_4</Tag>

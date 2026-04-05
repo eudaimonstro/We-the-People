@@ -36,6 +36,7 @@ public:
 	bool canMoveInto(CyPlot* pPlot, bool bAttack, bool bDeclareWar, bool bIgnoreLoad);
 	bool canMoveOrAttackInto(CyPlot* pPlot, bool bDeclareWar);
 	bool canMoveThrough(CyPlot* pPlot);
+	void attack(CyPlot* pPlot, bool bQuick);
 	bool jumpToNearestValidPlot();
 	bool canAutomate(AutomateTypes eAutomate);
 	bool canScrap();

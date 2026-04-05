@@ -5411,8 +5411,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP</Tag>
-		<English>The scout gains between [COLOR_SELECTED_TEXT]%d1[COLOR_REVERT] and [COLOR_SELECTED_TEXT]%d2, %d3, %d4 or %d5 experience[COLOR_REVERT], depending on how far he is from the nearest own settlement.</English>
-		<German>Der Kundschafter erhält je nach Entfernung zur nächsten eigenen Siedlung [COLOR_SELECTED_TEXT]%d1, %d2, %d3, %d4 oder %d5 Erfahrung[COLOR_REVERT].</German>
+		<English>The scout gains [COLOR_SELECTED_TEXT]%d1 experience[COLOR_REVERT]. The amount depens on how far he is from the nearest own settlement.</English>
+		<German>Der Kundschafter erhält je nach Entfernung zur nächsten eigenen Siedlung Erfahrung. Dieser Kundschafter erhält [COLOR_SELECTED_TEXT]%d1 Erfahrung[COLOR_REVERT].</German>
 		<Russian>Разведчик получает от [COLOR_SELECTED_TEXT]%d1[COLOR_REVERT] до [COLOR_SELECTED_TEXT]%d2, %d3, %d4 или %d5[COLOR_REVERT] опыта, в зависимости от того, насколько далеко он находится от вашего ближайшего поселения.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5447,8 +5447,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_FEVER</Tag>
-		<English>Milord, our expedition has reached impenetrable jungle. The mosquitoes buzz around the men's heads and bite like tiny arrows. Swamps here have bad air, what the Italians call [COLOR_HIGHLIGHT_TEXT]malaria[COLOR_REVERT]. Our men and even the animals have been weakened. We need frequent rest.</English>
-		<German>Milord, unsere Expedition hat sumpfigen, undurchdringlichen Urwald erreicht. Die Mücken schwirren nur so um die Köpfe der Männer herum und sie stechen wie Pfeile. Man nennt es wohl [COLOR_HIGHLIGHT_TEXT]Malaria[COLOR_REVERT]. Die Männer und sogar die Tiere sind geschwächt und müssen sich eine Weile ausruhen.</German>
+		<English>Milord, our expedition has reached impenetrable jungle. The mosquitoes buzz around the men's heads and bite like tiny arrows. Swamps here have bad air, what the they call [COLOR_HIGHLIGHT_TEXT]swamp fever[COLOR_REVERT]. Our men and even the animals have been weakened. We need frequent rest.</English>
+		<German>Milord, unsere Expedition hat sumpfigen, undurchdringlichen Urwald erreicht. Die Mücken schwirren nur so um die Köpfe der Männer herum und sie stechen wie Pfeile. Man nennt es wohl [COLOR_HIGHLIGHT_TEXT]Sumpffieber[COLOR_REVERT]. Die Männer und sogar die Tiere sind geschwächt und müssen sich eine Weile ausruhen.</German>
 		<Russian>Милорд, наша экспедиция достигла непроходимых, болотистых джунглей. Тучи комаров жужжат над головами людей и жалят, как стрелы. Люди и даже животные ослаблены, а у некоторых сильный жар. Кажется, это называется малярией. Нам всем нужен отдых.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5465,9 +5465,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_FEVER_HELP</Tag>
-		<English>A tropical fever strikes the expedition. The unit is immobilised for %d1 to %d2 rounds and takes %d3 to %d4 damage. Surviving units become immune to further fever.</English>
-		<German>Ein tropisches Fieber befällt die Expedition. Die Einheit wird für %d1 bis %d2 Runden bewegungsunfähig und erleidet %d3 bis %d4 Schaden. Überlebende Einheiten werden immun gegen weiteres Fieber.</German>
-		<Russian>Экспедиция поражена тропической лихорадкой. Юнит получает от %d3 до %d4 урона и будет обездвижен от %d1 до %d2 ходов. Выжившие юниты становятся невосприимчивы к дальнейшему заражению лихорадкой.</Russian>
+		<English>A tropical fever strikes the expedition. The unit is immobilised for [COLOR_HIGHLIGHT_TEXT]%d1 to %d2 rounds[COLOR_REVERT] and takes [COLOR_HIGHLIGHT_TEXT]%d3 to %d4[COLOR_REVERT] damage. Surviving units become immune to further fever.</English>
+		<German>Ein tropisches Fieber befällt die Expedition. Die Einheit wird für [COLOR_HIGHLIGHT_TEXT]%d1 bis %d2 Runden[COLOR_REVERT] bewegungsunfähig und erleidet [COLOR_HIGHLIGHT_TEXT]%d3 bis %d4[COLOR_REVERT] Schaden. Überlebende Einheiten werden immun gegen weiteres Fieber.</German>
+		<Russian>Экспедиция поражена тропической лихорадкой. Юнит получает от [COLOR_HIGHLIGHT_TEXT]%d3 до %d4 урона[COLOR_REVERT] и будет обездвижен от [COLOR_HIGHLIGHT_TEXT]%d1 до %d2[COLOR_REVERT] ходов. Выжившие юниты становятся невосприимчивы к дальнейшему заражению лихорадкой.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FEVER_IMMUNE</Tag>
@@ -5487,11 +5487,11 @@
 		<German>Eine Expedition durchquert eine Wüste.</German>
 		<Russian>Экспедиция пересекает пустыню.</Russian>
 	</TEXT>
-   <TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_DESERT</Tag>
-		<English>Milord, our expedition has reached a desert. We have only a little water, most of which we need for the animals. The expedition is making slow progress.</English>
-		<German>Milord, unsere Expedition hat eine Wüste erreicht und nur geringe [COLOR_HIGHLIGHT_TEXT]Wasservorräte[COLOR_REVERT] dabei. Die Tiere müssen geschont werden. Die Expedition kommt nur langsam vorran.</German>
-		<Russian>Милорд, наша экспедиция достигла пустыни и имеет лишь небольшой запас воды. Нам нужно поберечь животных и сбавить темп.</Russian>
+		<English>Milord, our expedition has ventured deep into the barren wastes. The scorching sun, endless dunes, and lack of water are taking a heavy toll on the men. The expedition is making slow progress and the animals need to rest.</English>
+		<German>Milord, unsere Expedition ist tief in die kargen Ödlande vorgedrungen. Die sengende Sonne, endlose Dünen und [COLOR_HIGHLIGHT_TEXT]Wassermangel [COLOR_REVERT]fordern ihren Tribut von den Männern und die Tiere müssen geschont werden.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_DESERT</Tag>
@@ -5501,15 +5501,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_HELP</Tag>
-		<English>The unit may become immobilized for %d1 to %d2 turns and suffer %d3%% to %d4%% damage due to extreme heat and exhaustion.</English>
-		<German>Die Einheit kann durch extreme Hitze und Erschöpfung für %d1 bis %d2 Runden bewegungsunfähig werden und %d3%% bis %d4%% Schaden erleiden.</German>
+		<English>The unit may become [COLOR_HIGHLIGHT_TEXT]immobilized for %d1 to %d2 turns[COLOR_REVERT] and suffer [COLOR_HIGHLIGHT_TEXT]%d3%% to %d4%% damage[COLOR_REVERT] due to extreme heat and exhaustion.</English>
+		<German>Die Einheit kann durch extreme Hitze und [COLOR_HIGHLIGHT_TEXT]Erschöpfung für %d1 bis %d2 Runden bewegungsunfähig[COLOR_REVERT] werden und [COLOR_HIGHLIGHT_TEXT]%d3%% bis %d4%% Schaden[COLOR_REVERT] erleiden.</German>
 		<Russian>Юнит может быть обездвижен на %d1 – %d2 ходов и получить %d3%% - %d4%% повреждений из-за сильного перегрева и истощения.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_DESERT_RESULT</Tag>
-		<English>The unit %s1 is exhausted by the desert. It loses %d2%% health and is immobilized for %d3 turns.</English>
-		<German>Die Einheit %s1 ist in der Wüste erschöpft. Sie verliert %d2%% Gesundheit und ist für %d3 Runden bewegungsunfähig.</German>
-		<Russian>Юнит %s1 истощён пустыней. Он теряет %d2%% здоровья и будет обездвижен на %d3 хода.</Russian>
+		<English>The unforgiving desert weakens %s1. The men suffer %d2%% damage and are delayed for %d3 turns.</English>
+		<German>Die erbarmungslose Wüste schwächt %s1. Die Männer erleiden %d2%% Schaden und werden für %d3 Runden aufgehalten.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Tag>
@@ -5573,8 +5573,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_MUTINY</Tag>
-		<English>Milord, our men are losing their nerve. They're emaciated.  They haven't prayed for many days. The're right on the edge of mutiny!</English>
-		<German>Milord, einige unserer Männer verlieren die Nerven. Sie sind ausgezehrt und haben lange keine Beute mehr gemacht. Sie drohen zu meutern!</German>
+		<English>Milord, our men are exhausted and their discipline is faltering. They have endured long hardship and now stand on the brink of mutiny.</English>
+		<German>Milord, unsere Männer sind erschöpft und ihre Disziplin beginnt zu wanken. Sie haben lange Entbehrungen ertragen und stehen nun am Rande der Meuterei.</German>
 		<Russian>Милорд, среди разведчиков ходят слухи, что вы не желаете делиться будущей добычей. Некоторые открыто предлагают забрать то, что уже было найдено. Назревает мятеж!</Russian>
 	</TEXT>
 	<TEXT>
@@ -5585,9 +5585,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_2</Tag>
-		<English>Well, I understand. Many of them are only here for the loot. The beauty of nature? They don't care. We'll pay their wages. See if that calms them down.</English>
-		<German>Nun gut, das verstehe ich. Viele sind nur wegen der Beute mitgekommen. Für die schöne Natur haben sie nichts übrig. Zahlen wir Ihnen erst einmal ihren Sold, das sollte sie für eine Weile beruhigen.</German>
-		<Russian>Что же, я могу их понять. Многие из них пришли сюда только ради добычи. Их не интересуют красоты природы и тайны этого мира. Давайте дадим им немного денег. На какое-то время это их успокоит.</Russian>
+		<English>I can hardly blame them. The men have suffered enough. Pay them their wages at once and restore order before worse befalls us.</English>
+		<German>Ich kann es ihnen kaum verdenken. Die Männer haben genug gelitten. Zahlt ihnen unverzüglich ihren Sold und stellt die Ordnung wieder her, ehe uns Schlimmeres widerfährt.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_MUTINY_HELP_FIGHT</Tag>
@@ -5601,6 +5601,8 @@
 		<German>Ihr beruhigt die unruhigen Männer von %s1, indem Ihr 500 Gold zahlt. Die Ordnung wird wiederhergestellt und die Einheit erhält für diese Runde zusätzliche Bewegung.</German>
 		<Russian>Вы успокаиваете возбуждённых %s1, заплатив им 500 золотых. Порядок восстанавливается и отряд получает дополнительное перемещение в этом ходу.</Russian>
 	</TEXT>
+
+
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_BRAVE_FELLOWS</Tag>
 		<English>Your expedition has entered a Native village. The Natives are thrilled by your strange garments and stories of the adventures they have experienced. Some warriors want to join your expedition. What would you do?</English>
@@ -5620,6 +5622,12 @@
 		<Russian>К вашей экспедиции присоединились несколько индейских воинов.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_1</Tag>
+		<English>[ICON_BULLET]Some Natives will [COLOR_POSITIVE_TEXT]join[COLOR_REVERT] your expedition, allowing you to split your expedition. Relations with the tribe improve by [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT]. The unit becomes [COLOR_NEGATIVE_TEXT]immobile for 2 turns[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Einige Ureinwohner werden sich Eurer Expedition [COLOR_POSITIVE_TEXT]anschließen[COLOR_REVERT], wodurch Ihr die Expedition aufteilen könnt. Die Beziehungen zu dem Stamm verbessern sich um [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT]. Die Einheit ist für [COLOR_NEGATIVE_TEXT]2 Runden bewegungsunfähig[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_2</Tag>
 		<English>We thank the warriors of this brave tribe. It would already suffice if you would acquaint us with the area around your village.</English>
 		<German>Wir danken den Kriegern dieses tapferen Stammes. Es würde schon reichen, wenn Sie uns eine Karte von der Umgebung zeichnen würden.</German>
@@ -5630,6 +5638,18 @@
 		<English>An expedition learns about a Native American village and its surroundings.</English>
 		<German>Eine Expedition lernt etwas über ein Indianerdorf und seine Umgebung.</German>
 		<Russian>Участники экспедиции узнают подробности о деревне туземцев и её окрестностях.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2</Tag>
+		<English>[ICON_BULLET]Pay %d1[ICON_GOLD] to reveal a %d2 x %d3 area around the village and improve relations with the tribe by [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Zahle %d1[ICON_GOLD], um ein Gebiet von %d2 x %d3 Feldern um das Dorf aufzudecken und die Beziehungen zu dem Stamm um [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT] zu verbessern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_2_FRIENDLY</Tag>
+		<English>[ICON_BULLET]Pay %d1[ICON_GOLD] to reveal a %d2 x %d3 area around the village and improve relations with the tribe by [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT]. As the tribe holds you in high regard, they reveal even more of the surrounding lands.</English>
+		<German>[ICON_BULLET]Zahle %d1[ICON_GOLD], um ein Gebiet von %d2 x %d3 Feldern um das Dorf aufzudecken und die Beziehungen zu dem Stamm um [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT] zu verbessern. Da der Stamm Euch wohlgesinnt ist, offenbart er Euch ein größeres Gebiet der Umgebung.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_3</Tag>
@@ -5644,16 +5664,16 @@
 		<Russian>Экспедиция заводит дружбу с индейцами.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_NEW_SCOUT_HELP</Tag>
-		<English>[ICON_BULLET]Some Natives will join you, so you can split up the expedition.</English>
-		<German>[ICON_BULLET]Einige Ureinwohner werden sich Euch anschließen, wodurch Ihr die Expedition aufteilen könnt.</German>
-		<Russian>[ICON_BULLET]К вам присоединятся несколько индейцев, что позволит разделить экспедицию на несколько отрядов.</Russian>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3</Tag>
+		<English>[ICON_BULLET]Gain [COLOR_POSITIVE_TEXT]+3 Experience[COLOR_REVERT], improve relations with the tribe by [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT], but the unit becomes [COLOR_NEGATIVE_TEXT]immobile for 2 turns[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Erhalte [COLOR_POSITIVE_TEXT]+3 Erfahrung[COLOR_REVERT], verbessere die Beziehungen zu dem Stamm um [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT], aber die Einheit ist für [COLOR_NEGATIVE_TEXT]2 Runden bewegungsunfähig[COLOR_REVERT].</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_MAP_HELP</Tag>
-		<English>A %d1x%d2 area around the village is revealed.</English>
-		<German>Ein Gebiet von %d1x%d2 Feldern um das Dorf wird aufgedeckt.</German>
-		<Russian>Вокруг деревни индейцев открывается область %d1x%d2 клеток.</Russian>
+		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_BRAVE_FELLOWS_HELP_3_FRIENDLY</Tag>
+		<English>[ICON_BULLET]Gain [COLOR_POSITIVE_TEXT]+4 Experience[COLOR_REVERT], improve relations with the tribe by [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT], but the unit becomes [COLOR_NEGATIVE_TEXT]immobile for 2 turns[COLOR_REVERT]. The tribe’s goodwill grants especially valuable counsel.</English>
+		<German>[ICON_BULLET]Erhalte [COLOR_POSITIVE_TEXT]+4 Erfahrung[COLOR_REVERT], verbessere die Beziehungen zu dem Stamm um [COLOR_POSITIVE_TEXT]+1[COLOR_REVERT], aber die Einheit ist für [COLOR_NEGATIVE_TEXT]2 Runden bewegungsunfähig[COLOR_REVERT]. Die Wohlgesonnenheit des Stammes macht ihren Rat besonders wertvoll.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_CHANGE_FAILED_TRADER</Tag>
@@ -5681,14 +5701,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_HELP</Tag>
-		<English>[ICON_BULLET]A failed native trader becomes an [COLOR_HIGHLIGHT_TEXT]experienced native trader[COLOR_REVERT] again. [NEWLINE][ICON_BULLET]His experience and promotions will be retained. [NEWLINE][ICON_BULLET]Thereafter, this opportunity will [COLOR_NEGATIVE_TEXT]not arise again for %D2 turns[COLOR_REVERT].</English>
-		<German>[ICON_BULLET]Ein gescheiterter Ureinwohnerhändler wird wieder zu einem [COLOR_HIGHLIGHT_TEXT]erfahrenen Ureinwohnerhändler[COLOR_REVERT]. [NEWLINE][ICON_BULLET]Seine Erfahrung und seine Beförderungen bleiben erhalten. [NEWLINE][ICON_BULLET]Danach wird sich diese Gelegenheit [COLOR_NEGATIVE_TEXT]für %D2 Runden nicht erneut[COLOR_REVERT] ergeben.</German>
-		<Russian>[ICON_BULLET]Неудачливый торговец с индейцами становится [COLOR_HIGHLIGHT_TEXT]Опытным торговцем с индейцами[COLOR_REVERT]. [NEWLINE][ICON_BULLET]Его опыт и повышения будут сохранены. [NEWLINE][ICON_BULLET]После этого такая возможность не появится в течение %D2 ходов.</Russian>
+		<English>[ICON_BULLET]For %D1 gold, a failed native trader becomes an [COLOR_HIGHLIGHT_TEXT]experienced native trader[COLOR_REVERT] again. [ICON_BULLET]His experience and promotions will be retained. [ICON_BULLET]There is a %D2 chance that he will instead become a [COLOR_POSITIVE_TEXT]seasoned trader[COLOR_REVERT]. [ICON_BULLET]Thereafter, this opportunity will [COLOR_NEGATIVE_TEXT]not arise again for %D3 turns[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Für %D1 Gold wird aus dem gescheiterten Ureinwohnerhändler wieder ein [COLOR_HIGHLIGHT_TEXT]erfahrener Ureinwohnerhändler[COLOR_REVERT]. [ICON_BULLET]Seine Erfahrung und seine Beförderungen bleiben erhalten. [ICON_BULLET]Mit einer Chance von %D2%% wird er stattdessen sogar zu einem [COLOR_POSITIVE_TEXT]altgedienten Ureinwohnerhändler[COLOR_REVERT]. [ICON_BULLET]Danach wird sich diese Gelegenheit [COLOR_NEGATIVE_TEXT]für %D3 Runden nicht erneut[COLOR_REVERT] ergeben.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_TRADER_CHANGE_DECLINE_HELP</Tag>
-		<English>[ICON_BULLET]The failed trader remains unchanged.[NEWLINE][ICON_BULLET]Thereafter, this opportunity will [COLOR_NEGATIVE_TEXT]not arise again for at least %D1 turns[COLOR_REVERT].</English>
-		<German>[ICON_BULLET]Der gescheiterte Händler bleibt unverändert.[NEWLINE][ICON_BULLET]Danach wird sich diese Gelegenheit für [COLOR_NEGATIVE_TEXT]mindestens %D1 Runden nicht erneut [COLOR_REVERT]ergeben.</German>
+		<English>[ICON_BULLET]The failed trader remains unchanged. [ICON_BULLET]Thereafter, this opportunity will [COLOR_NEGATIVE_TEXT]not arise again for at least %D1 turns[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Der gescheiterte Ureinwohnerhändler bleibt unverändert. [ICON_BULLET]Danach wird sich diese Gelegenheit für [COLOR_NEGATIVE_TEXT]mindestens %D1 Runden nicht erneut[COLOR_REVERT] ergeben.</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>
@@ -5723,14 +5743,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_HELP</Tag>
-		<English>[ICON_BULLET]A failed missionary becomes a Christian missionary again.[NEWLINE]His experience and promotions will be retained.[NEWLINE]Thereafter, this opportunity will [COLOR_NEGATIVE_TEXT]not arise again for at least %D1 turns[COLOR_REVERT]</English>
-		<German>[ICON_BULLET]Ein gescheiterter Missionar wird wieder zu einem erfahrenen Missionar.[NEWLINE]Seine Erfahrung und seine Beförderungen bleiben [COLOR_POSITIVE_TEXT]erhalten.[COLOR_REVERT][NEWLINE]Danach wird sich diese Gelegenheit [COLOR_NEGATIVE_TEXT]für mindestens %D1 Runden nicht erneut[COLOR_REVERT] ergeben. </German>
+		<English>[ICON_BULLET]A failed missionary becomes a Christian missionary again.[NEWLINE]His experience and [COLOR_POSITIVE_TEXT]promotions will be retained.[COLOR_REVERT]</English>
+		<German>[ICON_BULLET]Ein gescheiterter Missionar wird wieder zu einem erfahrenen Missionar.[NEWLINE]Seine Erfahrung und seine Beförderungen bleiben [COLOR_POSITIVE_TEXT]erhalten.[COLOR_REVERT]</German>
 		<Russian>[ICON_BULLET]Разочаровавшийся миссионер снова становится христианским миссионером.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_DECLINE_HELP</Tag>
-		<English>[ICON_BULLET]The failed missionary remains unchanged.[NEWLINE][ICON_BULLET]Thereafter, this opportunity will [COLOR_NEGATIVE_TEXT]not arise again for at least %D1 turns[COLOR_REVERT].</English>
-		<German>[ICON_BULLET]Der gescheiterte Missionar bleibt unverändert.[NEWLINE][ICON_BULLET]Danach wird sich diese Gelegenheit [COLOR_NEGATIVE_TEXT]für mindestens %D1 Runden nicht erneut [COLOR_REVERT]ergeben.</German>
+		<English>[ICON_BULLET]The failed missionary remains unchanged.</English>
+		<German>[ICON_BULLET]Der gescheiterte Missionar bleibt unverändert.</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>
