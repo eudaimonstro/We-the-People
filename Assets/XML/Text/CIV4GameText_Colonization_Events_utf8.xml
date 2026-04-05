@@ -5601,8 +5601,6 @@
 		<German>Ihr beruhigt die unruhigen Männer von %s1, indem Ihr 500 Gold zahlt. Die Ordnung wird wiederhergestellt und die Einheit erhält für diese Runde zusätzliche Bewegung.</German>
 		<Russian>Вы успокаиваете возбуждённых %s1, заплатив им 500 золотых. Порядок восстанавливается и отряд получает дополнительное перемещение в этом ходу.</Russian>
 	</TEXT>
-
-
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DISCOVERY_EVENTS_BRAVE_FELLOWS</Tag>
 		<English>Your expedition has entered a Native village. The Natives are thrilled by your strange garments and stories of the adventures they have experienced. Some warriors want to join your expedition. What would you do?</English>
