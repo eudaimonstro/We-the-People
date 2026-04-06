@@ -1569,25 +1569,25 @@
 		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_1</Tag>
 		<English>A native mercenary has learned much of value in a native village and can still learn in two more villages.</English>
 		<German>Ein indianischer Söldner hat in einem Dorf viel Wissenswertes gelernt und kann noch in zwei weiteren Dörfern etwas lernen.</German>
-		<Russian/>
+		<Russian>Индейский наёмник, получивший много ценной информации в одной деревне, может ещё многому научиться в двух других.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_2</Tag>
 		<English>A native mercenary has once more learned from the natives and can still learn in one more village.</English>
 		<German>Ein indianischer Söldner hat erneut von den Einheimischen gelernt und kann noch in einem weiteren Dorf etwas lernen.</German>
-		<Russian/>
+		<Russian>Индейский наёмник в очередной раз получил знания у местных жителей и может продолжить обучение ещё в одной деревне туземцев.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_3</Tag>
 		<English>A native mercenary has learned all that the natives are willing to teach.</English>
 		<German>Ein indianischer Söldner hat alles gelernt, was die Einheimischen ihm beibringen können.</German>
-		<Russian/>
+		<Russian>Индейский наёмник выучил всё, чему его могли научить местные жители.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVE_TRAINING_PROGRESS_VISITED_ONLY</Tag>
 		<English>A native mercenary was welcomed in this village, but gained no new knowledge.</English>
 		<German>Ein indianischer Söldner wurde in diesem Dorf freundlich empfangen, konnte jedoch nichts Neues lernen.</German>
-		<Russian/>
+		<Russian>Индейского наёмника радушно приняли в этой деревне, но он не получил никаких новых знаний.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NO_SMOKING_1</Tag>
@@ -1698,7 +1698,7 @@
 		<Tag>TXT_KEY_EVENT_PIRATES_3</Tag>
 		<English>Gather the townsmen together! Let it be proclaimed in every street that idle rabble shall no longer lurk about our harbour and warehouses. Let every fellow whose greed has overcome his wits be handed a pike and set to honest watch and ward. March them before the gates, place them under stern officers, and make them earn their bread as guards of the town. Then peace should return.</English>
 		<German>Trommelt die Bürger zusammen! Lasst in allen Gassen verkünden, dass müßiges Gesindel fortan nicht länger um Hafen und Lagerhäuser lungern soll. Jedem Burschen, dem die Gier den Verstand benommen hat, reiche man eine Pike und stelle ihn in ehrliche Wach- und Wehrdienste. Führt sie vor die Tore, setzt sie unter strenge Aufsicht und lasst sie ihr Brot fortan als Wächter der Stadt verdienen. Dann sollte wieder Ruhe einkehren.</German>
-		<Russian/>
+		<Russian>Соберите горожан! Пусть на каждой улице провозгласят, что праздная толпа больше не будет слоняться вокруг гавани и складов. Каждому, чей разум затуманен жадностью, следует выдать пику и отправить нести службу в охране. Отправьте их к воротам, поставьте под строгий надзор офицеров и пусть отныне они зарабатывают себе на хлеб, будучи стражами города. Тогда спокойствие вновь воцарится в городе.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_4</Tag>
