@@ -14702,8 +14702,8 @@
 				</UnitsRequired>
 				<iNumUnits>4</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
-				<bUnitsOnPlot>1</bUnitsOnPlot>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
@@ -39965,6 +39965,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
