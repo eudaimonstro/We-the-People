@@ -39635,11 +39635,11 @@
 			<PythonCallback/>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_DISCOVERY_WILDERNESS_EXPERT</Type>
+			<Type>EVENTTRIGGER_DISCOVERY_LEGENDARY_SCOUT</Type>
 			<WorldNewsTexts/>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENT_WILDERNESS_EXPERT</Text>
+					<Text>TXT_KEY_EVENT_LEGENDARY_SCOUT</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>
@@ -39661,8 +39661,6 @@
 			<UnitTriggerConditions>
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_SCOUT</UnitClass>
-					<UnitClass>UNITCLASS_COLONIST</UnitClass>
-					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -39683,8 +39681,7 @@
 			<ImprovementsRequired/>
 			<RoutesRequired/>
 			<Events>
-				<Event>EVENT_DISCOVERY_WILDERNESS_EXPERT_1</Event>
-				<Event>EVENT_DISCOVERY_WILDERNESS_EXPERT_2</Event>
+				<Event>EVENT_DISCOVERY_LEGENDARY_SCOUT</Event>
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
@@ -39702,7 +39699,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerDiscoveryWildernessExpert</PythonCanDo>
+			<PythonCanDo>canTriggerDiscoveryLegendaryScout</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>

@@ -21,6 +21,11 @@ localText = CyTranslator()
 # CORE HELPERS (DO NOT TOUCH)
 # ============================================================
 
+def _scaleTurnsByGameSpeed(iBaseTurns):
+	iGameSpeedType = CyGame().getGameSpeedType()
+	iGrowthPercent = gc.getGameSpeedInfo(iGameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iGrowthPercent) / 100))
+
 def get_simple_help(text_key):
 	""" This function constructs another function that returns the fixed localized text  """
 	def get_help(argsList):
@@ -922,12 +927,14 @@ def getHelpPeasantWarPrep(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_PEASANT_WARPREP_HELP", (iPriceChange, gc.getYieldInfo(iYield1).getChar(), king.getCivilizationDescriptionKey(), iPriceChange, gc.getYieldInfo(iYield2).getChar(), king.getCivilizationDescriptionKey()))
 	return szHelp
 
-######## WILDERNESS EXPERT EVENT ###########
+######## DISCOVERY LEGENDARY SCOUT EVENT ###########
 
-WILDERNESS_EXPERT_LEFT_TURN_PREFIX = "[[WTP_WILDERNESS_EXPERT_LEFT_TURN="
-WILDERNESS_EXPERT_LEFT_TURN_SUFFIX = "]]"
+######## DISCOVERY LEGENDARY SCOUT EVENT ###########
 
-def _getWildernessExpertLeftTurn(unit):
+DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_PREFIX = "[[WTP_DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN="
+DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_SUFFIX = "]]"
+
+def _getDiscoveryLegendaryScoutLeftTurn(unit):
 	if unit is None or unit.isNone():
 		return -1
 
@@ -935,12 +942,12 @@ def _getWildernessExpertLeftTurn(unit):
 	if szData is None or szData == "":
 		return -1
 
-	iStart = szData.find(WILDERNESS_EXPERT_LEFT_TURN_PREFIX)
+	iStart = szData.find(DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_PREFIX)
 	if iStart == -1:
 		return -1
 
-	iStart += len(WILDERNESS_EXPERT_LEFT_TURN_PREFIX)
-	iEnd = szData.find(WILDERNESS_EXPERT_LEFT_TURN_SUFFIX, iStart)
+	iStart += len(DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_PREFIX)
+	iEnd = szData.find(DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_SUFFIX, iStart)
 	if iEnd == -1:
 		return -1
 
@@ -949,7 +956,7 @@ def _getWildernessExpertLeftTurn(unit):
 	except:
 		return -1
 
-def _setWildernessExpertLeftTurn(unit, iTurn):
+def _setDiscoveryLegendaryScoutLeftTurn(unit, iTurn):
 	if unit is None or unit.isNone():
 		return
 
@@ -957,81 +964,35 @@ def _setWildernessExpertLeftTurn(unit, iTurn):
 	if szData is None:
 		szData = ""
 
-	iStart = szData.find(WILDERNESS_EXPERT_LEFT_TURN_PREFIX)
+	iStart = szData.find(DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_PREFIX)
 	if iStart != -1:
-		iEnd = szData.find(WILDERNESS_EXPERT_LEFT_TURN_SUFFIX, iStart)
+		iEnd = szData.find(DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_SUFFIX, iStart)
 		if iEnd != -1:
-			iEnd += len(WILDERNESS_EXPERT_LEFT_TURN_SUFFIX)
+			iEnd += len(DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_SUFFIX)
 			szData = szData[:iStart] + szData[iEnd:]
 
 	szMarker = "%s%d%s" % (
-		WILDERNESS_EXPERT_LEFT_TURN_PREFIX,
+		DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_PREFIX,
 		iTurn,
-		WILDERNESS_EXPERT_LEFT_TURN_SUFFIX
+		DISCOVERY_LEGENDARY_SCOUT_LEFT_TURN_SUFFIX
 	)
 
 	szData += szMarker
 	unit.setScriptData(szData)
 
-def _getDistanceToNearestOwnCity(player, plot):
-	if player.isNone() or plot is None or plot.isNone():
-		return 0
+def _getDiscoveryLegendaryScoutRequiredTurns():
+	iBaseTurns = 30
+	iGameSpeed = CyGame().getGameSpeedType()
+	gameSpeedInfo = gc.getGameSpeedInfo(iGameSpeed)
+	iPercent = gameSpeedInfo.getGrowthPercent()
 
-	iBestDistance = -1
-	(city, iter) = player.firstCity(True)
-	while city:
-		iDist = plotDistance(plot.getX(), plot.getY(), city.getX(), city.getY())
-		if iBestDistance == -1 or iDist < iBestDistance:
-			iBestDistance = iDist
-		(city, iter) = player.nextCity(iter, True)
+	iScaledTurns = iBaseTurns * iPercent / 100
+	if iScaledTurns < 1:
+		iScaledTurns = 1
 
-	if iBestDistance == -1:
-		return 0
+	return int(iScaledTurns)
 
-	return iBestDistance
-
-def _getWildernessXPBonusByDistance(iDistance):
-	# Distance-based XP scaling (5 tiers)
-	if iDistance <= 10:
-		return 2
-	elif iDistance <= 20:
-		return 4
-	elif iDistance <= 30:
-		return 6
-	elif iDistance <= 40:
-		return 8
-	return 10
-
-def _getNearestNativePlayerFromPlot(plot):
-	if plot is None or plot.isNone():
-		return -1
-
-	iBestPlayer = -1
-	iBestDistance = 99999
-
-	for iLoopPlayer in range(gc.getMAX_PLAYERS()):
-		loopPlayer = gc.getPlayer(iLoopPlayer)
-		if loopPlayer.isNone():
-			continue
-		if not loopPlayer.isAlive():
-			continue
-		if not loopPlayer.isNative():
-			continue
-
-		(city, iter) = loopPlayer.firstCity(True)
-		while city:
-			iDist = plotDistance(plot.getX(), plot.getY(), city.getX(), city.getY())
-			if iDist < iBestDistance:
-				iBestDistance = iDist
-				iBestPlayer = iLoopPlayer
-			(city, iter) = loopPlayer.nextCity(iter, True)
-
-	return iBestPlayer
-
-def canTriggerDiscoveryWildernessExpert(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-
+def _isValidDiscoveryLegendaryScoutUnit(player, unit, kTriggeredData):
 	if player.isNone():
 		return False
 	if not player.isAlive():
@@ -1041,17 +1002,14 @@ def canTriggerDiscoveryWildernessExpert(argsList):
 	if player.isNative():
 		return False
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit is None or unit.isNone():
 		return False
 
-	# Only scouts
 	eScoutProfession = gc.getInfoTypeForString("PROFESSION_SCOUT")
 	if unit.getProfession() != eScoutProfession:
 		return False
 
-	# Only once per unit
-	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
+	ePromo = gc.getInfoTypeForString("PROMOTION_LEGENDARY_SCOUT")
 	if unit.isHasPromotion(ePromo):
 		return False
 
@@ -1059,59 +1017,71 @@ def canTriggerDiscoveryWildernessExpert(argsList):
 	if plot is None or plot.isNone():
 		return False
 
-	# Exact plot binding
 	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
-	# Reset if back in own territory
+	if plot.isWater():
+		return False
+
+	if plot.isCity():
+		return False
+
 	if plot.getOwner() == player.getID():
-		_setWildernessExpertLeftTurn(unit, -1)
-		return False
-
-	iCurrentTurn = CyGame().getGameTurn()
-	iLeftTurn = _getWildernessExpertLeftTurn(unit)
-
-	# First turn outside own territory
-	if iLeftTurn == -1:
-		_setWildernessExpertLeftTurn(unit, iCurrentTurn)
-		return False
-
-	iTurnsAway = iCurrentTurn - iLeftTurn
-
-	if iTurnsAway < 5:
 		return False
 
 	return True
 
-def applyDiscoveryWildernessExpertXP(argsList):
+def canTriggerDiscoveryLegendaryScout(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if not _isValidDiscoveryLegendaryScoutUnit(player, unit, kTriggeredData):
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+	iLeftTurn = _getDiscoveryLegendaryScoutLeftTurn(unit)
+
+	# First valid turn in the wilderness
+	if iLeftTurn == -1:
+		_setDiscoveryLegendaryScoutLeftTurn(unit, iCurrentTurn)
+		return False
+
+	iTurnsAway = iCurrentTurn - iLeftTurn
+	iRequiredTurns = _getDiscoveryLegendaryScoutRequiredTurns()
+
+	if iTurnsAway < iRequiredTurns:
+		return False
+
+	return True
+
+def applyDiscoveryLegendaryScoutXP(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
 		return
 
 	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit is None or unit.isNone():
+	if not _isValidDiscoveryLegendaryScoutUnit(player, unit, kTriggeredData):
 		return
 
-	plot = unit.plot()
-	if plot is None or plot.isNone():
-		return
-
-	iDistance = _getDistanceToNearestOwnCity(player, plot)
-	iXP = _getWildernessXPBonusByDistance(iDistance)
+	iXP = 15 + CyGame().getSorenRandNum(6, "Legendary Scout XP")
 
 	unit.changeExperience(iXP, -1, False, False, False)
 
-	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
+	ePromo = gc.getInfoTypeForString("PROMOTION_LEGENDARY_SCOUT")
 	unit.setHasRealPromotion(ePromo, True)
 
-	_setWildernessExpertLeftTurn(unit, -1)
+	_setDiscoveryLegendaryScoutLeftTurn(unit, -1)
 
 	CyInterface().addMessage(
 		kTriggeredData.ePlayer,
 		True,
 		10,
-		localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_RESULT", (iXP,)),
+		localText.getText("TXT_KEY_EVENT_DISCOVERY_LEGENDARY_SCOUT_XP_RESULT", (iXP,)),
 		"",
 		0,
 		"",
@@ -1122,91 +1092,13 @@ def applyDiscoveryWildernessExpertXP(argsList):
 		True
 	)
 
-def applyDiscoveryWildernessExpertNative(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if player.isNone():
-		return
+def getHelpDiscoveryLegendaryScoutXP(argsList):
+	iTurns = _getDiscoveryLegendaryScoutRequiredTurns()
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit is None or unit.isNone():
-		return
-
-	plot = unit.plot()
-	if plot is None or plot.isNone():
-		return
-
-	iNativePlayer = _getNearestNativePlayerFromPlot(plot)
-	if iNativePlayer != -1:
-		nativePlayer = gc.getPlayer(iNativePlayer)
-		if not nativePlayer.isNone():
-			player.AI_changeAttitudeExtra(iNativePlayer, 2)
-			nativePlayer.AI_changeAttitudeExtra(kTriggeredData.ePlayer, 2)
-
-			CyInterface().addMessage(
-				kTriggeredData.ePlayer,
-				True,
-				10,
-				localText.getText(
-					"TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_RESULT",
-					(2, nativePlayer.getCivilizationAdjectiveKey())
-				),
-				"",
-				0,
-				"",
-				ColorTypes(8),
-				unit.getX(),
-				unit.getY(),
-				True,
-				True
-			)
-
-	ePromo = gc.getInfoTypeForString("PROMOTION_WILDERNESS_EXPERT")
-	unit.setHasRealPromotion(ePromo, True)
-
-	_setWildernessExpertLeftTurn(unit, -1)
-
-def getHelpDiscoveryWildernessExpertXP(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-
-	if player.isNone():
-		return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (2,))
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit is None or unit.isNone():
-		return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (2,))
-
-	plot = unit.plot()
-	if plot is None or plot.isNone():
-		return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (2,))
-
-	iDistance = _getDistanceToNearestOwnCity(player, plot)
-	iXP = _getWildernessXPBonusByDistance(iDistance)
-
-	return localText.getText("TXT_KEY_EVENT_WILDERNESS_EXPERT_XP_HELP", (iXP,))
-
-def getHelpDiscoveryWildernessExpertNative(argsList):
 	return localText.getText(
-		"TXT_KEY_EVENT_WILDERNESS_EXPERT_NATIVE_HELP",
-		(2,)
+		"TXT_KEY_EVENT_DISCOVERY_LEGENDARY_SCOUT_XP_HELP",
+		(iTurns,)
 	)
-
-######## Discovery Attacked and Mutiny GameSpeed Base Code Event ###########
-
-def _scaleTurnsByGameSpeed(iBaseTurns):
-	iGameSpeed = CyGame().getGameSpeedType()
-	gameSpeedInfo = gc.getGameSpeedInfo(iGameSpeed)
-
-	# Use GrowthPercent for general turn-based scaling
-	iPercent = gameSpeedInfo.getGrowthPercent()
-
-	iScaledTurns = iBaseTurns * iPercent / 100
-
-	if iScaledTurns < 1:
-		iScaledTurns = 1
-
-	return int(iScaledTurns)
 
 ######## Discovery Attacked Event ###########
 
@@ -2520,7 +2412,7 @@ def applyDiscoveryBraveFellowsWarriors(argsList):
 def getHelpDiscoveryBraveFellows1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
-	iUnitClass = event.getUnitClass()
+	iUnitClass = event.getGenericParameter(1)
 
 	if iUnitClass == -1:
 		return u""
@@ -5097,6 +4989,12 @@ def getHelpWildAnimal1(argsList):
 DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_FAILED_TRADER_CHANGE_SOFT_READY_TURN="
 DISCOVERY_FAILED_TRADER_CHANGE_SOFT_COOLDOWN_SUFFIX = "]]"
 
+DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_PREFIX = "[[WTP_DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT="
+DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX = "]]"
+
+DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_PREFIX = "[[WTP_DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT="
+DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX = "]]"
+
 def _getDiscoveryFailedTraderChangeSoftCooldownReadyTurn(player):
 	if player.isNone():
 		return -1
@@ -5167,10 +5065,116 @@ def _getUnitClass(unit):
 		return -1
 	return gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
 
-def canTriggerDiscoveryFailedTraderChange(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
+def _setDiscoveryFailedTraderSelectedUnitData(player, iUnitId, iPlotX, iPlotY):
+	if player.isNone():
+		return
 
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_PREFIX,
+		iUnitId,
+		DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX
+	)
+
+	szData += "%s%d,%d%s" % (
+		DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_PREFIX,
+		iPlotX,
+		iPlotY,
+		DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+def _clearDiscoveryFailedTraderSelectedUnitData(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		return
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	player.setScriptData(szData)
+
+def _getDiscoveryFailedTraderSelectedUnitId(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_PREFIX)
+	iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_UNIT_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _getDiscoveryFailedTraderSelectedPlot(player):
+	if player.isNone():
+		return (-1, -1)
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return (-1, -1)
+
+	iStart = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_PREFIX)
+	if iStart == -1:
+		return (-1, -1)
+
+	iStart += len(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_PREFIX)
+	iEnd = szData.find(DISCOVERY_FAILED_TRADER_CHANGE_SELECTED_PLOT_SUFFIX, iStart)
+	if iEnd == -1:
+		return (-1, -1)
+
+	try:
+		szCoords = szData[iStart:iEnd]
+		aParts = szCoords.split(",")
+		if len(aParts) != 2:
+			return (-1, -1)
+		return (int(aParts[0]), int(aParts[1]))
+	except:
+		return (-1, -1)
+
+def _isValidFailedTraderChangeUnit(player, unit, ePlayer):
 	if player.isNone():
 		return False
 	if not player.isPlayable():
@@ -5178,11 +5182,7 @@ def canTriggerDiscoveryFailedTraderChange(argsList):
 	if player.isNative():
 		return False
 
-	if _isDiscoveryFailedTraderChangeSoftCooldownActive(player):
-		return False
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	if unit is None or unit.isNone():
 		return False
 
 	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
@@ -5198,13 +5198,65 @@ def canTriggerDiscoveryFailedTraderChange(argsList):
 		return False
 	if plot.isWater():
 		return False
-	if plot.getOwner() != kTriggeredData.ePlayer:
+	if plot.isCity():
 		return False
-
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+	if plot.getOwner() != ePlayer:
 		return False
 
 	return True
+
+def _findDiscoveryFailedTraderChangeCandidate(player):
+	if player.isNone():
+		return None
+
+	(unit, iter) = player.firstUnit()
+	while unit:
+		if _isValidFailedTraderChangeUnit(player, unit, player.getID()):
+			return unit
+		(unit, iter) = player.nextUnit(iter)
+
+	return None
+
+def canTriggerDiscoveryFailedTraderChange(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	if _isDiscoveryFailedTraderChangeSoftCooldownActive(player):
+		return False
+
+	unit = _findDiscoveryFailedTraderChangeCandidate(player)
+	if unit is None or unit.isNone():
+		_clearDiscoveryFailedTraderSelectedUnitData(player)
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		_clearDiscoveryFailedTraderSelectedUnitData(player)
+		return False
+
+	_setDiscoveryFailedTraderSelectedUnitData(player, unit.getID(), plot.getX(), plot.getY())
+	return True
+
+def _getStoredDiscoveryFailedTraderUnit(player):
+	if player.isNone():
+		return None
+
+	iUnitId = _getDiscoveryFailedTraderSelectedUnitId(player)
+	if iUnitId < 0:
+		return None
+
+	unit = player.getUnit(iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
 
 def changeFailedTraderToExpertTrader(argsList):
 	kTriggeredData = argsList[0]
@@ -5219,27 +5271,19 @@ def changeFailedTraderToExpertTrader(argsList):
 	if player.isNative():
 		return
 
-	oldUnit = player.getUnit(kTriggeredData.iUnitId)
-	if oldUnit.isNone():
+	oldUnit = _getStoredDiscoveryFailedTraderUnit(player)
+	if oldUnit is None or oldUnit.isNone():
 		return
 
-	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
-	if _getUnitClass(oldUnit) != iFailedTraderClass:
-		return
-
-	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
-	if oldUnit.getProfession() != eColonistProfession:
+	if not _isValidFailedTraderChangeUnit(player, oldUnit, kTriggeredData.ePlayer):
 		return
 
 	plot = oldUnit.plot()
 	if plot is None or plot.isNone():
 		return
-	if plot.isWater():
-		return
-	if plot.getOwner() != kTriggeredData.ePlayer:
-		return
 
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+	iStoredPlotX, iStoredPlotY = _getDiscoveryFailedTraderSelectedPlot(player)
+	if plot.getX() != iStoredPlotX or plot.getY() != iStoredPlotY:
 		return
 
 	iTargetUnitClass = event.getGenericParameter(1)
@@ -5276,7 +5320,6 @@ def changeFailedTraderToExpertTrader(argsList):
 		if oldUnit.isHasPromotion(iPromotion):
 			aPromotions.append(iPromotion)
 
-	# ✅ ASSERT FIX
 	newUnit = player.initUnit(
 		iNewUnitType,
 		ProfessionTypes.NO_PROFESSION,
@@ -5314,6 +5357,7 @@ def changeFailedTraderToExpertTrader(argsList):
 	oldUnit.kill(False)
 
 	_startDiscoveryFailedTraderChangeSoftCooldown(player, 30)
+	_clearDiscoveryFailedTraderSelectedUnitData(player)
 
 	if bSeasoned:
 		CyInterface().addMessage(
@@ -5340,10 +5384,6 @@ def getHelpDiscoveryFailedTraderChange(argsList):
 	if player.isNone():
 		return u""
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return u""
-
 	iGoldCost = abs(event.getGold())
 	iSeasonedChance = event.getGenericParameter(2)
 	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
@@ -5364,40 +5404,29 @@ def doDiscoveryFailedTraderChangeDecline(argsList):
 	if player.isNative():
 		return
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	unit = _getStoredDiscoveryFailedTraderUnit(player)
+	if unit is None or unit.isNone():
 		return
 
-	iFailedTraderClass = gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER")
-	if _getUnitClass(unit) != iFailedTraderClass:
-		return
-
-	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
-	if unit.getProfession() != eColonistProfession:
+	if not _isValidFailedTraderChangeUnit(player, unit, kTriggeredData.ePlayer):
 		return
 
 	plot = unit.plot()
 	if plot is None or plot.isNone():
 		return
-	if plot.isWater():
-		return
-	if plot.getOwner() != kTriggeredData.ePlayer:
-		return
 
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+	iStoredPlotX, iStoredPlotY = _getDiscoveryFailedTraderSelectedPlot(player)
+	if plot.getX() != iStoredPlotX or plot.getY() != iStoredPlotY:
 		return
 
 	_startDiscoveryFailedTraderChangeSoftCooldown(player, 30)
+	_clearDiscoveryFailedTraderSelectedUnitData(player)
 
 def getHelpDiscoveryFailedTraderChangeDecline(argsList):
 	kTriggeredData = argsList[0]
 
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
-		return u""
-
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
 		return u""
 
 	iCooldown = _getDiscoveryFailedTraderChangeScaledTurns(30)
@@ -5409,10 +5438,248 @@ def getHelpDiscoveryFailedTraderChangeDecline(argsList):
 
 ######## Discovery Failed Missionary Change ###########
 
+DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_PREFIX = "[[WTP_DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_READY_TURN="
+DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_SUFFIX = "]]"
+
+DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_PREFIX = "[[WTP_DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT="
+DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX = "]]"
+
+DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_PREFIX = "[[WTP_DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT="
+DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX = "]]"
+
+def _getDiscoveryFailedMissionaryChangeSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setDiscoveryFailedMissionaryChangeSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		DISCOVERY_FAILED_MISSIONARY_CHANGE_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _getDiscoveryFailedMissionaryChangeScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _startDiscoveryFailedMissionaryChangeSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(iBaseTurns)
+	_setDiscoveryFailedMissionaryChangeSoftCooldownReadyTurn(player, CyGame().getGameTurn() + iCooldown)
+
+def _isDiscoveryFailedMissionaryChangeSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getDiscoveryFailedMissionaryChangeSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
 def _getDiscoveryFailedMissionaryUnitClass(unit):
 	if unit is None or unit.isNone():
 		return -1
 	return gc.getUnitInfo(unit.getUnitType()).getUnitClassType()
+
+def _setDiscoveryFailedMissionarySelectedUnitData(player, iUnitId, iPlotX, iPlotY):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_PREFIX,
+		iUnitId,
+		DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX
+	)
+
+	szData += "%s%d,%d%s" % (
+		DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_PREFIX,
+		iPlotX,
+		iPlotY,
+		DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+def _clearDiscoveryFailedMissionarySelectedUnitData(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		return
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	player.setScriptData(szData)
+
+def _getDiscoveryFailedMissionarySelectedUnitId(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_PREFIX)
+	iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_UNIT_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _getDiscoveryFailedMissionarySelectedPlot(player):
+	if player.isNone():
+		return (-1, -1)
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return (-1, -1)
+
+	iStart = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_PREFIX)
+	if iStart == -1:
+		return (-1, -1)
+
+	iStart += len(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_PREFIX)
+	iEnd = szData.find(DISCOVERY_FAILED_MISSIONARY_CHANGE_SELECTED_PLOT_SUFFIX, iStart)
+	if iEnd == -1:
+		return (-1, -1)
+
+	try:
+		szCoords = szData[iStart:iEnd]
+		aParts = szCoords.split(",")
+		if len(aParts) != 2:
+			return (-1, -1)
+		return (int(aParts[0]), int(aParts[1]))
+	except:
+		return (-1, -1)
+
+def _isValidFailedMissionaryChangeUnit(player, unit, ePlayer):
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	if unit is None or unit.isNone():
+		return False
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if _getDiscoveryFailedMissionaryUnitClass(unit) != iFailedMissionaryClass:
+		return False
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+	if plot.isWater():
+		return False
+	if plot.isCity():
+		return False
+
+	return True
+
+def _findDiscoveryFailedMissionaryChangeCandidate(player):
+	if player.isNone():
+		return None
+
+	(unit, iter) = player.firstUnit()
+	while unit:
+		if _isValidFailedMissionaryChangeUnit(player, unit, player.getID()):
+			return unit
+		(unit, iter) = player.nextUnit(iter)
+
+	return None
+
+def _getStoredDiscoveryFailedMissionaryUnit(player):
+	if player.isNone():
+		return None
+
+	iUnitId = _getDiscoveryFailedMissionarySelectedUnitId(player)
+	if iUnitId < 0:
+		return None
+
+	unit = player.getUnit(iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
 
 def _getBestMissionaryTargetForPlayer(player):
 	iMissionaryClass = gc.getInfoTypeForString("UNITCLASS_CHRISTIAN_MISSIONARY")
@@ -5440,30 +5707,33 @@ def canTriggerDiscoveryFailedMissionaryChange(argsList):
 	if player.isNative():
 		return False
 
+	if _isDiscoveryFailedMissionaryChangeSoftCooldownActive(player):
+		return False
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	if unit is None or unit.isNone():
+		_clearDiscoveryFailedMissionarySelectedUnitData(player)
+		return False
+
+	if not _isValidFailedMissionaryChangeUnit(player, unit, kTriggeredData.ePlayer):
+		_clearDiscoveryFailedMissionarySelectedUnitData(player)
 		return False
 
 	plot = unit.plot()
 	if plot is None or plot.isNone():
-		return False
-	if plot.isWater():
-		return False
-	if plot.isCity():
+		_clearDiscoveryFailedMissionarySelectedUnitData(player)
 		return False
 
-	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
-	if _getDiscoveryFailedMissionaryUnitClass(unit) != iFailedMissionaryClass:
-		return False
-
-	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
-	if unit.getProfession() != eColonistProfession:
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		_clearDiscoveryFailedMissionarySelectedUnitData(player)
 		return False
 
 	# Fixed trigger chance on valid plots
 	if CyGame().getSorenRandNum(100, "Failed Missionary Change trigger") >= 30:
+		_clearDiscoveryFailedMissionarySelectedUnitData(player)
 		return False
 
+	_setDiscoveryFailedMissionarySelectedUnitData(player, unit.getID(), plot.getX(), plot.getY())
 	return True
 
 def doDiscoveryFailedMissionaryChange(argsList):
@@ -5474,24 +5744,25 @@ def doDiscoveryFailedMissionaryChange(argsList):
 	if player.isNone():
 		return
 
-	oldUnit = player.getUnit(kTriggeredData.iUnitId)
-	if oldUnit.isNone():
+	oldUnit = _getStoredDiscoveryFailedMissionaryUnit(player)
+	if oldUnit is None or oldUnit.isNone():
+		return
+
+	if oldUnit.getID() != kTriggeredData.iUnitId:
+		return
+
+	if not _isValidFailedMissionaryChangeUnit(player, oldUnit, kTriggeredData.ePlayer):
 		return
 
 	plot = oldUnit.plot()
 	if plot is None or plot.isNone():
 		return
-	if plot.isWater():
-		return
-	if plot.isCity():
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return
 
-	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
-	if _getDiscoveryFailedMissionaryUnitClass(oldUnit) != iFailedMissionaryClass:
-		return
-
-	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
-	if oldUnit.getProfession() != eColonistProfession:
+	iStoredPlotX, iStoredPlotY = _getDiscoveryFailedMissionarySelectedPlot(player)
+	if plot.getX() != iStoredPlotX or plot.getY() != iStoredPlotY:
 		return
 
 	iTargetUnitClass, iNewUnitType, eTargetProfession = _getBestMissionaryTargetForPlayer(player)
@@ -5548,6 +5819,9 @@ def doDiscoveryFailedMissionaryChange(argsList):
 
 	oldUnit.kill(False)
 
+	_startDiscoveryFailedMissionaryChangeSoftCooldown(player, 30)
+	_clearDiscoveryFailedMissionarySelectedUnitData(player)
+
 def doDiscoveryFailedMissionaryChangeDecline(argsList):
 	kTriggeredData = argsList[0]
 
@@ -5555,27 +5829,29 @@ def doDiscoveryFailedMissionaryChangeDecline(argsList):
 	if player.isNone():
 		return
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	unit = _getStoredDiscoveryFailedMissionaryUnit(player)
+	if unit is None or unit.isNone():
+		return
+
+	if unit.getID() != kTriggeredData.iUnitId:
+		return
+
+	if not _isValidFailedMissionaryChangeUnit(player, unit, kTriggeredData.ePlayer):
 		return
 
 	plot = unit.plot()
 	if plot is None or plot.isNone():
 		return
-	if plot.isWater():
-		return
-	if plot.isCity():
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return
 
-	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
-	if _getDiscoveryFailedMissionaryUnitClass(unit) != iFailedMissionaryClass:
+	iStoredPlotX, iStoredPlotY = _getDiscoveryFailedMissionarySelectedPlot(player)
+	if plot.getX() != iStoredPlotX or plot.getY() != iStoredPlotY:
 		return
 
-	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
-	if unit.getProfession() != eColonistProfession:
-		return
-
-	return
+	_startDiscoveryFailedMissionaryChangeSoftCooldown(player, 30)
+	_clearDiscoveryFailedMissionarySelectedUnitData(player)
 
 def getHelpDiscoveryFailedMissionaryChange(argsList):
 	kTriggeredData = argsList[0]
@@ -5585,16 +5861,12 @@ def getHelpDiscoveryFailedMissionaryChange(argsList):
 	if player.isNone():
 		return u""
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return u""
+	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
 
-	szHelp = localText.getText(
+	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_HELP",
-		()
+		(iCooldown,)
 	)
-
-	return szHelp
 
 def getHelpDiscoveryFailedMissionaryChangeDecline(argsList):
 	kTriggeredData = argsList[0]
@@ -5604,16 +5876,192 @@ def getHelpDiscoveryFailedMissionaryChangeDecline(argsList):
 	if player.isNone():
 		return u""
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
-		return u""
+	iCooldown = _getDiscoveryFailedMissionaryChangeScaledTurns(30)
 
 	return localText.getText(
 		"TXT_KEY_EVENT_DISCOVERY_EVENTS_FAILED_MISSIONARY_CHANGE_DECLINE_HELP",
-		()
+		(iCooldown,)
 	)
 
 ######## Failed Missionary Classic ###########
+
+FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_PREFIX = "[[WTP_FAILED_MISSIONARY_CLASSIC_SOFT_READY_TURN="
+FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_SUFFIX = "]]"
+
+FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_PREFIX = "[[WTP_FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT="
+FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX = "]]"
+
+FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_PREFIX = "[[WTP_FAILED_MISSIONARY_CLASSIC_SELECTED_CITY="
+FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX = "]]"
+
+def _getFailedMissionaryClassicSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setFailedMissionaryClassicSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		FAILED_MISSIONARY_CLASSIC_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _getFailedMissionaryClassicScaledTurns(iBaseTurns):
+	gameSpeedType = CyGame().getGameSpeedType()
+	iPercent = gc.getGameSpeedInfo(gameSpeedType).getGrowthPercent()
+	return max(1, int((iBaseTurns * iPercent) / 100))
+
+def _startFailedMissionaryClassicSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldown = _getFailedMissionaryClassicScaledTurns(iBaseTurns)
+	_setFailedMissionaryClassicSoftCooldownReadyTurn(player, CyGame().getGameTurn() + iCooldown)
+
+def _isFailedMissionaryClassicSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getFailedMissionaryClassicSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _setFailedMissionaryClassicSelectedUnitData(player, iUnitId, iCityId):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_PREFIX,
+		iUnitId,
+		FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX
+	)
+
+	szData += "%s%d%s" % (
+		FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_PREFIX,
+		iCityId,
+		FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+def _clearFailedMissionaryClassicSelectedUnitData(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		return
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	player.setScriptData(szData)
+
+def _getFailedMissionaryClassicSelectedUnitId(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_PREFIX)
+	iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_UNIT_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _getFailedMissionaryClassicSelectedCityId(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_PREFIX)
+	iEnd = szData.find(FAILED_MISSIONARY_CLASSIC_SELECTED_CITY_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
 
 def _getFailedMissionaryClassicUnitOnCityPlot(player, city):
 	if player.isNone() or city.isNone():
@@ -5640,6 +6088,78 @@ def _getFailedMissionaryClassicUnitOnCityPlot(player, city):
 
 	return None
 
+def _findFailedMissionaryClassicCandidate(player):
+	if player.isNone():
+		return (None, None)
+
+	(city, iter) = player.firstCity(True)
+	while city:
+		unit = _getFailedMissionaryClassicUnitOnCityPlot(player, city)
+		if unit is not None and not unit.isNone():
+			return (city, unit)
+		(city, iter) = player.nextCity(iter, True)
+
+	return (None, None)
+
+def _getStoredFailedMissionaryClassicUnit(player):
+	if player.isNone():
+		return None
+
+	iUnitId = _getFailedMissionaryClassicSelectedUnitId(player)
+	if iUnitId < 0:
+		return None
+
+	unit = player.getUnit(iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
+
+def _getStoredFailedMissionaryClassicCity(player):
+	if player.isNone():
+		return None
+
+	iCityId = _getFailedMissionaryClassicSelectedCityId(player)
+	if iCityId < 0:
+		return None
+
+	city = player.getCity(iCityId)
+	if city is None or city.isNone():
+		return None
+
+	return city
+
+def _isValidFailedMissionaryClassicUnit(player, city, unit):
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	if unit is None or unit.isNone():
+		return False
+
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if unit.getX() != city.getX() or unit.getY() != city.getY():
+		return False
+
+	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
+	if gc.getUnitInfo(unit.getUnitType()).getUnitClassType() != iFailedMissionaryClass:
+		return False
+
+	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
+	if unit.getProfession() != eColonistProfession:
+		return False
+
+	return True
+
 def canTriggerFailedMissionaryClassic(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -5651,19 +6171,20 @@ def canTriggerFailedMissionaryClassic(argsList):
 	if player.isNative():
 		return False
 
-	city = player.getCity(kTriggeredData.iCityId)
-	if city.isNone():
+	if _isFailedMissionaryClassicSoftCooldownActive(player):
 		return False
 
-	# Search the eligible failed missionary directly on the triggered city plot
-	unit = _getFailedMissionaryClassicUnitOnCityPlot(player, city)
-	if unit is None or unit.isNone():
+	city, unit = _findFailedMissionaryClassicCandidate(player)
+	if city is None or city.isNone() or unit is None or unit.isNone():
+		_clearFailedMissionaryClassicSelectedUnitData(player)
 		return False
 
 	# Fixed trigger chance on valid city plots
 	if CyGame().getSorenRandNum(100, "Failed Missionary Classic trigger") >= 30:
+		_clearFailedMissionaryClassicSelectedUnitData(player)
 		return False
 
+	_setFailedMissionaryClassicSelectedUnitData(player, unit.getID(), city.getID())
 	return True
 
 def doEventFailedMissionary1(argsList):
@@ -5674,11 +6195,22 @@ def doEventFailedMissionary1(argsList):
 	if player.isNone():
 		return
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	city = _getStoredFailedMissionaryClassicCity(player)
+	unit = _getStoredFailedMissionaryClassicUnit(player)
+
+	if city is None or city.isNone():
+		return
+	if unit is None or unit.isNone():
 		return
 
+	if not _isValidFailedMissionaryClassicUnit(player, city, unit):
+		return
+
+	# Original reward must stay
 	ChangeFatherPoints(argsList)
+
+	_startFailedMissionaryClassicSoftCooldown(player, 30)
+	_clearFailedMissionaryClassicSelectedUnitData(player)
 
 def doEventFailedMissionary2(argsList):
 	kTriggeredData = argsList[0]
@@ -5688,11 +6220,19 @@ def doEventFailedMissionary2(argsList):
 	if player.isNone():
 		return
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	city = _getStoredFailedMissionaryClassicCity(player)
+	unit = _getStoredFailedMissionaryClassicUnit(player)
+
+	if city is None or city.isNone():
+		return
+	if unit is None or unit.isNone():
 		return
 
-	return
+	if not _isValidFailedMissionaryClassicUnit(player, city, unit):
+		return
+
+	_startFailedMissionaryClassicSoftCooldown(player, 30)
+	_clearFailedMissionaryClassicSelectedUnitData(player)
 
 def doEventFailedMissionary3(argsList):
 	kTriggeredData = argsList[0]
@@ -5702,11 +6242,19 @@ def doEventFailedMissionary3(argsList):
 	if player.isNone():
 		return
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	city = _getStoredFailedMissionaryClassicCity(player)
+	unit = _getStoredFailedMissionaryClassicUnit(player)
+
+	if city is None or city.isNone():
+		return
+	if unit is None or unit.isNone():
 		return
 
-	return
+	if not _isValidFailedMissionaryClassicUnit(player, city, unit):
+		return
+
+	_startFailedMissionaryClassicSoftCooldown(player, 30)
+	_clearFailedMissionaryClassicSelectedUnitData(player)
 
 def expireFailedMissionaryEvent(argsList):
 	kTriggeredData = argsList[0]
@@ -5715,19 +6263,46 @@ def expireFailedMissionaryEvent(argsList):
 	if player.isNone():
 		return True
 
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if unit.isNone():
+	city = _getStoredFailedMissionaryClassicCity(player)
+	unit = _getStoredFailedMissionaryClassicUnit(player)
+
+	if city is None or city.isNone():
+		return True
+	if unit is None or unit.isNone():
 		return True
 
-	iFailedMissionaryClass = gc.getInfoTypeForString("UNITCLASS_FAILED_MISSIONARY")
-	if gc.getUnitInfo(unit.getUnitType()).getUnitClassType() != iFailedMissionaryClass:
-		return True
-
-	eColonistProfession = gc.getInfoTypeForString("PROFESSION_COLONIST")
-	if unit.getProfession() != eColonistProfession:
+	if not _isValidFailedMissionaryClassicUnit(player, city, unit):
 		return True
 
 	return False
+
+def getHelpFailedMissionaryClassic1(argsList):
+	iCooldown = _getFailedMissionaryClassicScaledTurns(30)
+
+	szHelp = getHelpChangeFatherPoints(argsList)
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_FAILED_MISSIONARY_CLASSIC_COOLDOWN_HELP",
+		(iCooldown,)
+	)
+	return szHelp
+
+def getHelpFailedMissionaryClassic2(argsList):
+	iCooldown = _getFailedMissionaryClassicScaledTurns(30)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FAILED_MISSIONARY_CLASSIC_COOLDOWN_HELP",
+		(iCooldown,)
+	)
+
+def getHelpFailedMissionaryClassic3(argsList):
+	iCooldown = _getFailedMissionaryClassicScaledTurns(30)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FAILED_MISSIONARY_CLASSIC_COOLDOWN_HELP",
+		(iCooldown,)
+	)
+
+######## Native Events ###########
 
 def isNativeVillage(argsList):
 	pTriggeredData = argsList[0]

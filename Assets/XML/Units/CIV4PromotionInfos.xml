@@ -9437,8 +9437,8 @@
 			<Button>Art/interface/buttons/New_Promotion_Buttons/malaria_heal.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
-			<Type>PROMOTION_WILDERNESS_EXPERT</Type>
-			<Description>TXT_KEY_PROMOTION_WILDERNESS_EXPERT</Description>
+			<Type>PROMOTION_LEGENDARY_SCOUT</Type>
+			<Description>TXT_KEY_PROMOTION_LEGENDARY_SCOUT</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereq>NONE</PromotionPrereq>
 			<PromotionPrereqOr1>NONE</PromotionPrereqOr1>
@@ -9452,7 +9452,7 @@
 			<bAlwaysHeal>0</bAlwaysHeal>
 			<bHillsDoubleMove>1</bHillsDoubleMove>
 			<iVisibilityChange>1</iVisibilityChange>
-			<iMovesChange>0</iMovesChange>
+			<iMovesChange>1</iMovesChange>
 			<iMoveDiscountChange>0</iMoveDiscountChange>
 			<iWithdrawalChange>0</iWithdrawalChange>
 			<iCargoChange>0</iCargoChange>
@@ -9503,7 +9503,7 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 			<bNotEarnedByXP>1</bNotEarnedByXP>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/interface/buttons/New_Promotion_Buttons/Wilderness_expert.dds</Button>
+			<Button>Art/interface/buttons/New_Promotion_Buttons/Legendary_Scout.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
