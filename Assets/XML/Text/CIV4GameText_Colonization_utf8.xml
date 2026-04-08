@@ -3654,4 +3654,234 @@
 		<Italian>I/O</Italian>
 		<Spanish>E/S</Spanish>
 	</TEXT>
+<!--		 Schmiddie - Text for New Achievement Colopedia Screen -->
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_ACHIEVEMENTS</Tag>
+		<English>Achievements</English>
+		<German>Errungenschaften</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_BODY_TITLE</Tag>
+		<English>Achievement Text</English>
+		<German>Text für diese Errungenschaft</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_OR</Tag>
+		<English>or</English>
+		<German>oder</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_ALL</Tag>
+		<English>All</English>
+		<German>Alle</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_UNITS</Tag>
+		<English>Units</English>
+		<German>Einheiten</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_BUILDINGS</Tag>
+		<English>Buildings</English>
+		<German>Gebäude</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_PROFESSIONS</Tag>
+		<English>Professions</English>
+		<German>Berufe</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_ALL_UNITS</Tag>
+		<English>All Units</English>
+		<German>Alle Einheiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_ALL_BUILDINGS</Tag>
+		<English>All Buildings</English>
+		<German>Alle Gebäude</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_ALL_PROFESSIONS</Tag>
+		<English>All Professions</English>
+		<German>Alle Berufe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_ALL_GOODS</Tag>
+		<English>All Goods</English>
+		<German>Alle Waren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_ALL_MISC</Tag>
+		<English>All Miscellaneous</English>
+		<German>Alles Sonstige</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_GOODS</Tag>
+		<English>Goods</English>
+		<German>Waren</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_MISC</Tag>
+		<English>Miscellaneous</English>
+		<German>Sonstige</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_TRADED_GOODS</Tag>
+		<English>Traded goods</English>
+		<German>Gehandelte Waren</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_LAND_DISCOVERED</Tag>
+		<English>Discover land</English>
+		<German>Land entdecken</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_DISCOVER_EAST</Tag>
+		<English>Reach eastern border</English>
+		<German>Östlichen Kartenrand erreichen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_DISCOVER_WEST</Tag>
+		<English>Reach western border</English>
+		<German>Westlichen Kartenrand erreichen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_NUM_COLONIES</Tag>
+		<English>Found colonies</English>
+		<German>Siedlungen gründen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_EURO_CONTACTS</Tag>
+		<English>Meet European nations</English>
+		<German>Europäische Nationen treffen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_NATIVE_CONTACTS</Tag>
+		<English>Meet native tribes</English>
+		<German>Eingeborenenstämme treffen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_COMBATS_WON</Tag>
+		<English>Win combats</English>
+		<German>Kämpfe gewinnen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_MISC_SEA_COMBATS_WON</Tag>
+		<English>Win sea combats</English>
+		<German>Seekämpfe gewinnen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_CATEGORY</Tag>
+		<English>Category</English>
+		<German>Kategorie</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_FILTER_VALUE</Tag>
+		<English>Entry</English>
+		<German>Eintrag</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQUIREMENTS</Tag>
+		<English>Requirements</English>
+		<German>Voraussetzungen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_COLONIES</Tag>
+		<English>Found %d1 colonies</English>
+		<German>Gründet %d1 Siedlungen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_EURO_CONTACTS</Tag>
+		<English>Meet %d1 European nations</English>
+		<German>Trefft %d1 europäische Nationen</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_NATIVE_CONTACTS</Tag>
+		<English>Meet %d1 native tribes</English>
+		<German>Trefft %d1 Eingeborenenstämme</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_GOODS</Tag>
+		<English>Trade %d1 goods</English>
+		<German>Handelt %d1 Waren</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_COMBATS</Tag>
+		<English>Win %d1 combats</English>
+		<German>Gewinnt %d1 Kämpfe</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_SEA_COMBATS</Tag>
+		<English>Win %d1 sea combats</English>
+		<German>Gewinnt %d1 Seekämpfe</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_DISCOVER_LAND</Tag>
+		<English>Discover land</English>
+		<German>Entdeckt Land</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_DISCOVER_EAST</Tag>
+		<English>Reach the eastern border</English>
+		<German>Erreicht den östlichen Kartenrand</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_DISCOVER_WEST</Tag>
+		<English>Reach the western border</English>
+		<German>Erreicht den westlichen Kartenrand</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_UNITS</Tag>
+		<English>Recruit %d1 %s2</English>
+		<German>Rekrutiert %d1 %s2</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_BUILDINGS</Tag>
+		<English>Build %d1 %s2</English>
+		<German>Errichtet %d1 %s2</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_PROFESSIONS</Tag>
+		<English>Have %d1 %s2</English>
+		<German>Verfügt über %d1 %s2</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ACHIEVE_REQ_YIELD</Tag>
+		<English>Produce %d1 %s2</English>
+		<German>Produziert %d1 %s2</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

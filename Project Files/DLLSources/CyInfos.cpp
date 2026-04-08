@@ -328,3 +328,18 @@ int CyYieldInfo::getUnitClass() const
 {
 	return CvYieldInfo::getUnitClass();
 }
+
+const char* CyAchieveInfo::getPictureFileName() const
+{
+	return CvAchieveInfo::getPictureFileName();
+}
+
+const wchar* CyAchieveInfo::getHeaderTextKey() const
+{
+	return CvAchieveInfo::getHeaderTextKey();
+}
+
+const wchar* CyAchieveInfo::getBodyTextKey() const
+{
+	return CvAchieveInfo::getBodyTextKey();
+}

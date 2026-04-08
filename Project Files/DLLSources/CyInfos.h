@@ -6,6 +6,9 @@
 class CyAchieveInfo : public CvAchieveInfo
 {
 public:
+	const char* getPictureFileName() const;
+	const wchar* getHeaderTextKey() const;
+	const wchar* getBodyTextKey() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyAchieveInfo) == sizeof(CvAchieveInfo));
 
