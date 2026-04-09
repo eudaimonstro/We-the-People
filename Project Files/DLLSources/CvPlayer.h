@@ -1169,6 +1169,9 @@ protected:
 	std::vector<CvUnit*> m_aPortRoyalUnits; // R&R, ray, Port Royal
 	FFreeListTrashArray<CvSelectionGroupAI> m_selectionGroups;
 	FFreeListTrashArray<EventTriggeredData> m_eventsTriggered;
+
+	// === NEW: Persistent quest log texts ===
+	std::map<int, CvWString> m_mapQuestMessages;
 	CvEventMap m_mapEventsOccured;
 	CvEventMap m_mapEventCountdown;
 	UnitCombatPromotionArray m_aFreeUnitCombatPromotions;

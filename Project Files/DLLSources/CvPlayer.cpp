@@ -8595,7 +8595,7 @@ void CvPlayer::setTurnActiveForPbem(bool bActive)
 	}
 }
 
-
+	// WTP, Schmiddie: Fix for Quest log bug
 void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 {
 	if (isTurnActive() != bNewValue)
@@ -8674,6 +8674,27 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 				}
 
 				doWarnings();
+			}
+
+			if (getID() == GC.getGameINLINE().getActivePlayer())
+			{
+				// WTP, Schmiddie: Fix for Quest log bug
+				for (CvEventMap::const_iterator it = m_mapEventsOccured.begin(); it != m_mapEventsOccured.end(); ++it)
+				{
+					const EventTypes eEvent = (*it).first;
+					const EventTriggeredData& kTriggeredData = (*it).second;
+
+					if (GC.getEventInfo(eEvent).isQuest())
+					{
+						const int iID = kTriggeredData.getID();
+						std::map<int, CvWString>::const_iterator itMessage = m_mapQuestMessages.find(iID);
+
+						if (itMessage != m_mapQuestMessages.end())
+						{
+							gDLL->getInterfaceIFace()->addQuestMessage(getID(), itMessage->second, iID);
+						}
+					}
+				}
 			}
 
 			if (getID() == GC.getGameINLINE().getActivePlayer())
@@ -13822,8 +13843,13 @@ void CvPlayer::resetEventOccured(EventTypes eEvent, bool bAnnounce)
 
 	if (it != m_mapEventsOccured.end())
 	{
+	// WTP, Schmiddie: Fix for Quest log bug
+		const int iTriggeredId = (*it).second.getID();
+
 		expireEvent((*it).first, (*it).second, bAnnounce);
 		m_mapEventsOccured.erase(it);
+
+		m_mapQuestMessages.erase(iTriggeredId);
 	}
 }
 
@@ -13836,9 +13862,14 @@ void CvPlayer::setEventOccured(EventTypes eEvent, const EventTriggeredData& kEve
 	if (GC.getEventInfo(eEvent).isQuest())
 	{
 		CvWStringBuffer szMessageBuffer;
+
 		szMessageBuffer.append(GC.getEventInfo(eEvent).getDescription());
 		GAMETEXT.setEventHelp(szMessageBuffer, eEvent, kEventTriggered.getID(), getID());
+
 		gDLL->getInterfaceIFace()->addQuestMessage(getID(), szMessageBuffer.getCString(), kEventTriggered.getID());
+	// WTP, Schmiddie: Fix for Quest log bug	
+
+		m_mapQuestMessages[kEventTriggered.getID()] = szMessageBuffer.getCString();
 	}
 
 	if (bOthers)
@@ -25750,4 +25781,5 @@ int CvPlayer::calculateEuropeTravelTime(EuropeTypes eEurope) const
 	FAssertMsg(iTravelTime >= 0, "Europe travel time cannot be negative");
 	return iTravelTime;
 }
+
 
