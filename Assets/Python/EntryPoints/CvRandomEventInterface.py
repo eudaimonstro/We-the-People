@@ -13326,3 +13326,141 @@ def applyTreasureProtection3(argsList):
 
 getHelpNewMountedConquistador = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MOUNTED_CONQUISTADOR_HELP")
 getHelpNewMilitia = get_simple_help("TXT_KEY_EVENT_TREASURE_PROTECTION_NEW_MILITIA_HELP")
+
+######## Happy Hunting ###########
+
+HAPPY_HUNTING_COOLDOWN_PREFIX = "[[HAPPY_HUNTING_READY_TURN="
+HAPPY_HUNTING_COOLDOWN_SUFFIX = "]]"
+
+HAPPY_HUNTING_VALID_FEATURES = [
+	gc.getInfoTypeForString("FEATURE_FOREST"),
+	gc.getInfoTypeForString("FEATURE_FOREST_TUNDRA"),
+	gc.getInfoTypeForString("FEATURE_FOREST_EVERGREEN"),
+]
+
+def _getHappyHuntingReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if not szData:
+		return -1
+
+	iStart = szData.find(HAPPY_HUNTING_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(HAPPY_HUNTING_COOLDOWN_PREFIX)
+	iEnd = szData.find(HAPPY_HUNTING_COOLDOWN_SUFFIX, iStart)
+
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setHappyHuntingReadyTurn(player, iTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if not szData:
+		szData = ""
+
+	iStart = szData.find(HAPPY_HUNTING_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(HAPPY_HUNTING_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(HAPPY_HUNTING_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += HAPPY_HUNTING_COOLDOWN_PREFIX + str(iTurn) + HAPPY_HUNTING_COOLDOWN_SUFFIX
+	player.setScriptData(szData)
+
+
+def _isHappyHuntingCooldownActive(player):
+	iReadyTurn = _getHappyHuntingReadyTurn(player)
+	return iReadyTurn > gc.getGame().getGameTurn()
+
+
+def _startHappyHuntingCooldown(player, iTurns):
+	iTurn = gc.getGame().getGameTurn() + iTurns
+	_setHappyHuntingReadyTurn(player, iTurn)
+
+
+def canTriggerHappyHunting(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not isPlayable(argsList):
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None:
+		return False
+	if plot.isWater():
+		return False
+	if plot.isCity():
+		return False
+	if plot.getOwner() != kTriggeredData.ePlayer:
+		return False
+	if plot.getFeatureType() not in HAPPY_HUNTING_VALID_FEATURES:
+		return False
+
+	if _isHappyHuntingCooldownActive(player):
+		if CyGame().getSorenRandNum(100, "Happy Hunting Cooldown") >= 1:
+			return False
+
+	return True
+
+
+def canTriggerHappyHuntingCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone():
+		return False
+
+	if city.getPopulation() >= 5:
+		return False
+
+	# Check whether this city actually has at least one valid owned forest plot
+	# in its working radius, so the event can meaningfully belong to it.
+	for i in range(gc.getNUM_CITY_PLOTS()):
+		pPlot = city.getCityIndexPlot(i)
+		if pPlot is None:
+			continue
+		if pPlot.isNone():
+			continue
+		if pPlot.getOwner() != ePlayer:
+			continue
+		if pPlot.isWater():
+			continue
+		if pPlot.isCity():
+			continue
+		if pPlot.getFeatureType() not in HAPPY_HUNTING_VALID_FEATURES:
+			continue
+		return True
+
+	return False
+
+
+def doTriggerHappyHunting(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	_startHappyHuntingCooldown(player, 50)

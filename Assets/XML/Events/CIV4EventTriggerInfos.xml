@@ -634,6 +634,8 @@
 			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
+				<FeatureType>FEATURE_FOREST_TUNDRA</FeatureType>
+				<FeatureType>FEATURE_FOREST_EVERGREEN</FeatureType>
 			</FeaturesRequired>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -687,7 +689,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -715,6 +717,8 @@
 			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
+				<FeatureType>FEATURE_FOREST_TUNDRA</FeatureType>
+				<FeatureType>FEATURE_FOREST_EVERGREEN</FeatureType>
 			</FeaturesRequired>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -724,7 +728,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -733,15 +737,15 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
-			<PythonCanDoCity/>
+			<PythonCanDo>canTriggerHappyHunting</PythonCanDo>
+			<PythonCanDoCity>canTriggerHappyHuntingCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
-			<PythonCallback/>
+			<PythonCallback>doTriggerHappyHunting</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_WASHED_OUT</Type>
