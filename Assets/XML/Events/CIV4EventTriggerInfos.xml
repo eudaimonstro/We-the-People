@@ -13414,6 +13414,8 @@
 			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
+				<FeatureType>FEATURE_FOREST_TUNDRA</FeatureType>
+				<FeatureType>FEATURE_FOREST_EVERGREEN</FeatureType>
 			</FeaturesRequired>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
