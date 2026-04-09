@@ -278,6 +278,15 @@
 		<Russian>Трагедия возле [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]: пожар, случившийся в одной деревне, перекинулся на близлежащий лес, превратив большую территорию в выжженную пустыню на многие мили.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOREST_FIRE_4</Tag>
+		<English>A forest fire sparked by lightning has raged across the land near [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</English>
+		<French>Un feu de forêt provoqué par la foudre s'est propagé autour de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</French>
+		<German>Der Waldbrand bei [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] breitet sich aus. Höfe und Häuser werden zum Raub der Flammen.</German>
+		<Italian>Un incendio forestale, causato da un fulmine, ha devastato il territorio vicino a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</Italian>
+		<Spanish>Un incendio forestal causado por un rayo ha asolado las tierras aledañas a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</Spanish>
+		<Russian>Лесной пожар, вызванный молнией, бушует около [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</Russian>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_HAPPY_HUNTING</Tag>
 		<English>Surplus game harvested by hunters near the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] city of [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] has fueled a minor population boom.</English>
 		<French>Un surplus de gibier débusqué par des chasseurs près de la ville [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] a donné lieu à une brusque hausse de la population.</French>

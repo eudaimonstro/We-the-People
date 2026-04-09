@@ -2928,6 +2928,40 @@ def applyForestFire(argsList):
 	pPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	CyEngine().triggerEffect(gc.getInfoTypeForString("EFFECT_SETTLERSMOKE"), pPlot.getPoint())
 
+def applyForestFire4(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	pPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if pPlot is None:
+		return
+
+	# Visual effect
+	CyEngine().triggerEffect(gc.getInfoTypeForString("EFFECT_CITY_BIG_BURNING_SMOKE"), pPlot.getPoint())
+
+	# Only human players
+	if not player.isHuman():
+		return
+
+	city = None
+	if kTriggeredData.iCityId != -1:
+		city = player.getCity(kTriggeredData.iCityId)
+		if city.isNone():
+			city = None
+
+	popupInfo = CyPopupInfo()
+	popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+
+	if city is not None:
+		popupInfo.setText(localText.getText("TXT_KEY_EVENT_FOREST_FIRE_4", (city.getNameKey(),)))
+	else:
+		popupInfo.setText(localText.getText("TXT_KEY_EVENT_FOREST_FIRE_4", ()))
+
+	popupInfo.addPopup(kTriggeredData.ePlayer)
+
 ######## Cargospace ###########
 
 def canTriggerCargoSpace(argsList):

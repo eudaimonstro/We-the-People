@@ -3273,7 +3273,7 @@
 		<EventInfo>
 			<Type>EVENT_FOREST_FIRE_4</Type>
 			<Description>TXT_KEY_EVENT_FOREST_FIRE_4</Description>
-			<LocalInfoText>TXT_KEY_EVENT_TRIGGER_FOREST_FIRE_4</LocalInfoText>
+			<LocalInfoText/>
 			<WorldNewsTexts/>
 			<OtherPlayerPopup/>
 			<QuestFailText/>
@@ -3320,7 +3320,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyForestFire4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
