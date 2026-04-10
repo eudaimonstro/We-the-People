@@ -1441,11 +1441,28 @@
 		<Russian>[ICON_BULLET]На нас напали враждебно настроенные индейцы!</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_REVOLT_HELP</Tag>
-		<English>[ICON_BULLET]The poor in our city revolt!</English>
-		<French>[ICON_BULLEt]Les pauvres dans notre ville se soulèvent !</French>
-		<German>[ICON_BULLET]Die Armen in unserer Stadt revoltieren!</German>
-		<Russian>[ICON_BULLET]Бедняки нашего города устроили бунт!</Russian>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP</Tag>
+		<English>[ICON_BULLET]Refusing their demands will provoke an [COLOR_HIGHLIGHT_TEXT]immediate attack against %s1_city[COLOR_REVERT]. If the attackers break through, they may [COLOR_HIGHLIGHT_TEXT]loot [COLOR_REVERT]gold, goods, or weapons, but they cannot capture the city.</English>
+		<German>[ICON_BULLET]Wenn ihre Forderungen zurückgewiesen werden, [COLOR_HIGHLIGHT_TEXT]wird %s1_city sofort angegriffen[COLOR_REVERT]. Falls die Angreifer durchbrechen, können sie Gold, Waren oder Waffen [COLOR_HIGHLIGHT_TEXT]plündern[COLOR_REVERT], die Stadt jedoch nicht einnehmen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD</Tag>
+		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 gold.</English>
+		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen plünderten die Siedlung und schafften %d2 Gold fort.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOODS</Tag>
+		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 %s3.</English>
+		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen plünderten die Siedlung und schafften %d2 %s3 fort.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_NOTHING</Tag>
+		<English>There were no defenders in %s1_city. The criminals overran the settlement, but found little worth carrying away.</English>
+		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen überrannten die Siedlung, fanden jedoch kaum etwas, das den Abtransport lohnte.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BUCCANNERS_ATTACK_MINE_HELP</Tag>

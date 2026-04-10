@@ -11791,70 +11791,435 @@ getHelpNativeTraderAttack = get_simple_help("TXT_KEY_EVENT_NATIVE_TRADER_ATTACK_
 
 ######## Criminal Attacks City ###########
 
-def canTriggerCriminalsAttackCity(argsList):
+CRIMINALS_BLACKMAIL_CITY_COOLDOWN_PREFIX = "[[WTP_CRIMINALS_BLACKMAIL_CITY_READY_TURN="
+CRIMINALS_BLACKMAIL_CITY_COOLDOWN_SUFFIX = "]]"
+
+
+def _getCriminalsBlackmailCityCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(CRIMINALS_BLACKMAIL_CITY_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(CRIMINALS_BLACKMAIL_CITY_COOLDOWN_PREFIX)
+	iEnd = szData.find(CRIMINALS_BLACKMAIL_CITY_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	sValue = szData[iStart:iEnd]
+	if sValue == "":
+		return -1
+
+	try:
+		return int(sValue)
+	except:
+		return -1
+
+
+def _setCriminalsBlackmailCityCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iOldStart = szData.find(CRIMINALS_BLACKMAIL_CITY_COOLDOWN_PREFIX)
+	if iOldStart != -1:
+		iOldEnd = szData.find(CRIMINALS_BLACKMAIL_CITY_COOLDOWN_SUFFIX, iOldStart)
+		if iOldEnd != -1:
+			iOldEnd += len(CRIMINALS_BLACKMAIL_CITY_COOLDOWN_SUFFIX)
+			szData = szData[:iOldStart] + szData[iOldEnd:]
+
+	szData += CRIMINALS_BLACKMAIL_CITY_COOLDOWN_PREFIX + str(iReadyTurn) + CRIMINALS_BLACKMAIL_CITY_COOLDOWN_SUFFIX
+	player.setScriptData(szData)
+
+
+def _isCriminalsBlackmailCityCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getCriminalsBlackmailCityCooldownReadyTurn(player)
+	if iReadyTurn < 0:
+		return False
+
+	return CyGame().getGameTurn() < iReadyTurn
+
+
+def _startCriminalsBlackmailCityCooldown(player, iTurns):
+	if player.isNone():
+		return
+
+	iReadyTurn = CyGame().getGameTurn() + iTurns
+	_setCriminalsBlackmailCityCooldownReadyTurn(player, iReadyTurn)
+
+
+def canTriggerCriminalsBlackmailCity(argsList):
 	ePlayer = argsList[1]
 	iCity = argsList[2]
 
 	player = gc.getPlayer(ePlayer)
-	city = player.getCity(iCity)
-
-	if city.isNone():
+	if player.isNone():
 		return False
 
 	if not player.isPlayable():
 		return False
 
+	city = player.getCity(iCity)
+	if city.isNone():
+		return False
+
+	if city.getOwner() != ePlayer:
+		return False
+
+	if city.isOccupation():
+		return False
+
 	iHappiness = city.getCityHappiness()
 	iUnhappiness = city.getCityUnHappiness()
 
-	# Happiness Check
-	if iHappiness >= iUnhappiness:
+	if iUnhappiness <= iHappiness:
 		return False
 
-	# Food Check
-	eEvent = gc.getInfoTypeForString("EVENT_CRIMINALS_BLACKMAIL_CITY_GIVE")
-	event = gc.getEventInfo(eEvent)
-	iYield = gc.getInfoTypeForString("YIELD_FOOD")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < quantity :
+	if city.getPopulation() < 3:
+		return False
+
+	# Soft cooldown trigger chance:
+	# normal: 10%, during cooldown: 1%
+	iChance = 10
+	if _isCriminalsBlackmailCityCooldownActive(player):
+		iChance = 1
+
+	if CyGame().getSorenRandNum(100, "Criminals Blackmail City trigger chance") >= iChance:
 		return False
 
 	return True
 
-def applyGiveFood(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if not player.isHuman():
-		city = player.firstCity(True)[0]
-	iYield = gc.getInfoTypeForString("YIELD_FOOD")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < quantity :
+
+def canDoCriminalsBlackmailCityGive(argsList):
+	if len(argsList) < 1:
 		return False
-	city.changeYieldStored(iYield, -quantity)
 
-def getHelpGiveFood(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	iYield = gc.getInfoTypeForString("YIELD_FOOD")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-	return szHelp
 
-getHelpCriminalsAttackCity = get_simple_help("TXT_KEY_EVENT_CRIMINALS_REVOLT_HELP")
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iFoodCost = 50
+	gameSpeed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iFoodCost = iFoodCost * gameSpeed.getStoragePercent() / 100
+
+	if city.getFood() < iFoodCost:
+		return False
+
+	return True
+
+
+def _cityHasDefender(city):
+	if city.isNone():
+		return False
+
+	pCityPlot = city.plot()
+	if pCityPlot is None:
+		return False
+
+	for i in range(pCityPlot.getNumUnits()):
+		loopUnit = pCityPlot.getUnit(i)
+		if loopUnit is None or loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != city.getOwner():
+			continue
+		if not loopUnit.canDefend(pCityPlot):
+			continue
+		return True
+
+	return False
+
+
+def _getCriminalsBlackmailCityNumAttackers(city):
+	if city.isNone():
+		return 2
+
+	if city.getPopulation() >= 20:
+		return 4
+
+	return 2
+
+
+def _getBestCriminalRaidYield(player, city, iLootCapPerYield):
+	bestYield = -1
+	bestValue = 0
+	bestLoot = 0
+
+	iFoodYield = gc.getInfoTypeForString("YIELD_FOOD")
+
+	for iYield in range(YieldTypes.NUM_YIELD_TYPES):
+		eYield = YieldTypes(iYield)
+
+		if eYield == iFoodYield:
+			continue
+
+		iStored = city.getYieldStored(eYield)
+		if iStored <= 0:
+			continue
+
+		iLoot = min(iStored, iLootCapPerYield)
+		if iLoot <= 0:
+			continue
+
+		iPrice = player.getYieldSellPrice(eYield)
+		iTotalValue = iPrice * iLoot
+
+		if iTotalValue > bestValue:
+			bestValue = iTotalValue
+			bestYield = eYield
+			bestLoot = iLoot
+
+	return (bestYield, bestLoot, bestValue)
+
+
+def _applyDirectSuccessfulCriminalRaid(city):
+	if city.isNone():
+		return False
+
+	pCityPlot = city.plot()
+	if pCityPlot is None:
+		return False
+
+	player = gc.getPlayer(city.getOwner())
+	if player.isNone():
+		return False
+
+	eKing = player.getParent()
+	king = gc.getPlayer(eKing)
+	if king is None or king.isNone():
+		return False
+
+	bestYield = -1
+	bestValue = 0
+	bestLoot = 0
+	bestType = "none"
+
+	iFoodYield = gc.getInfoTypeForString("YIELD_FOOD")
+
+	# --- GOLD OPTION ---
+	iGold = player.getGold()
+	if iGold > 0:
+		iGoldLoot = min(iGold, 80 + CyGame().getSorenRandNum(121, "Criminal raid gold"))
+		if iGoldLoot > 0:
+			if iGoldLoot > bestValue:
+				bestValue = iGoldLoot
+				bestLoot = iGoldLoot
+				bestType = "gold"
+
+	# --- YIELD OPTIONS ---
+	for iYield in range(YieldTypes.NUM_YIELD_TYPES):
+		eYield = YieldTypes(iYield)
+
+		# Skip food
+		if eYield == iFoodYield:
+			continue
+
+		iStored = city.getYieldStored(eYield)
+		if iStored <= 0:
+			continue
+
+		iMaxLoot = min(iStored, 20 + CyGame().getSorenRandNum(31, "Criminal raid goods"))
+		if iMaxLoot <= 0:
+			continue
+
+		# Price via king / Europe market
+		iPrice = king.getYieldBuyPrice(eYield)
+		iTotalValue = iPrice * iMaxLoot
+
+		if iTotalValue > bestValue:
+			bestValue = iTotalValue
+			bestYield = eYield
+			bestLoot = iMaxLoot
+			bestType = "yield"
+
+	# --- EXECUTE RAID ---
+
+	# Gold
+	if bestType == "gold" and bestLoot > 0:
+		player.changeGold(-bestLoot)
+
+		CyInterface().addMessage(
+			player.getID(),
+			True,
+			gc.getEVENT_MESSAGE_TIME(),
+			localText.getText(
+				"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD",
+				(city.getNameKey(), bestLoot)
+			),
+			"AS2D_CITYRAID",
+			InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+			None,
+			gc.getInfoTypeForString("COLOR_RED"),
+			pCityPlot.getX(),
+			pCityPlot.getY(),
+			True,
+			True
+		)
+		return True
+
+	# Yield (Goods incl. weapons)
+	if bestType == "yield" and bestYield != -1 and bestLoot > 0:
+		city.changeYieldStored(bestYield, -bestLoot)
+
+		sYieldName = gc.getYieldInfo(bestYield).getDescription()
+
+		CyInterface().addMessage(
+			player.getID(),
+			True,
+			gc.getEVENT_MESSAGE_TIME(),
+			localText.getText(
+				"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOODS",
+				(
+					city.getNameKey(),
+					bestLoot,
+					sYieldName
+				)
+			),
+			"AS2D_CITYRAID",
+			InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+			gc.getYieldInfo(bestYield).getButton(),
+			gc.getInfoTypeForString("COLOR_RED"),
+			pCityPlot.getX(),
+			pCityPlot.getY(),
+			True,
+			True
+		)
+		return True
+
+	# Fallback
+	CyInterface().addMessage(
+		player.getID(),
+		True,
+		gc.getEVENT_MESSAGE_TIME(),
+		localText.getText(
+			"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_NOTHING",
+			(city.getNameKey(),)
+		),
+		"AS2D_CITYRAID",
+		InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+		None,
+		gc.getInfoTypeForString("COLOR_RED"),
+		pCityPlot.getX(),
+		pCityPlot.getY(),
+		True,
+		True
+	)
+
+	return True
+
+
+def _spawnHostileUnitAndAttackCity(player, city, iUnitType, iNumUnits):
+	if player.isNone() or city.isNone():
+		return False
+
+	pCityPlot = city.plot()
+	if pCityPlot is None:
+		return False
+
+	iBarbarianPlayer = CyGame().getBarbarianPlayer()
+	barbarianPlayer = gc.getPlayer(iBarbarianPlayer)
+	if barbarianPlayer.isNone():
+		return False
+
+	# No defender -> direct raid
+	if not _cityHasDefender(city):
+		return _applyDirectSuccessfulCriminalRaid(city)
+
+	iSpawned = 0
+
+	for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
+		if iSpawned >= iNumUnits:
+			break
+
+		spawnPlot = plotDirection(pCityPlot.getX(), pCityPlot.getY(), DirectionTypes(iDirection))
+
+		if spawnPlot is None:
+			continue
+		if spawnPlot.isWater():
+			continue
+		if spawnPlot.isImpassable():
+			continue
+		if spawnPlot.isCity():
+			continue
+
+		newUnit = barbarianPlayer.initUnit(
+			iUnitType,
+			ProfessionTypes.NO_PROFESSION,
+			spawnPlot.getX(),
+			spawnPlot.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.DIRECTION_SOUTH,
+			0
+		)
+
+		if newUnit is None or newUnit.isNone():
+			continue
+
+		if not newUnit.canMoveInto(pCityPlot, True, False, False):
+			newUnit.kill(False)
+			continue
+
+		newUnit.attack(pCityPlot, False)
+		iSpawned += 1
+
+	return iSpawned > 0
+
+
+def applyCriminalsBlackmailCityRefuse(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	iUnitType = gc.getInfoTypeForString("UNIT_REVOLTING_CRIMINAL")
+	iNumAttackers = _getCriminalsBlackmailCityNumAttackers(city)
+
+	# Start soft cooldown after the player chose this outcome
+	_startCriminalsBlackmailCityCooldown(player, 75)
+
+	_spawnHostileUnitAndAttackCity(player, city, iUnitType, iNumAttackers)
+
+def getHelpCriminalsBlackmailCityRefuse(argsList):
+	if len(argsList) == 0:
+		return u""
+
+	kTriggeredData = argsList[0]
+
+	# some calls may not pass TriggeredData correctly
+	if not hasattr(kTriggeredData, "ePlayer") or not hasattr(kTriggeredData, "iCityId"):
+		return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", ())
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", ())
+
+	return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", (city.getNameKey(),))
 
 ######## Officer duel ###########
 

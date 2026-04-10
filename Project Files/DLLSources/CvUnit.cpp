@@ -16020,7 +16020,7 @@ bool CvUnit::raidCityByRebels(CvCity* pCity)
 		// If the raider was defeated, either capture the raider or nothing happens
 		if (bRaidingUnitDefeated)
 		{
-			if (iRaidStrength > 300)
+			if (iRaidStrength > 700)
 			{
 				CvPlayer& kPlayer = GET_PLAYER(pCity->getOwnerINLINE());
 
