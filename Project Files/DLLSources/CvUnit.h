@@ -629,6 +629,11 @@ public:
 	UnitTypes getUnitType() const;
 	DllExport CvUnitInfo &getUnitInfo() const;
 	UnitClassTypes getUnitClassType() const;
+	// WTP, Schmiddie: units that cannot capture cities
+	bool isNoCityCaptureUnit() const;
+	bool raidCityByRebels(CvCity* pCity);
+	UnitClassTypes getRaidCaptureUnitClass() const;
+
 
 	DllExport UnitTypes getLeaderUnitType() const;
 	void setLeaderUnitType(UnitTypes leaderUnitType);

@@ -1218,6 +1218,18 @@ void CvUnit::updateCombat(bool bQuick)
 		setAttackPlot(NULL);
 		setCombatUnit(NULL);
 
+		if (isNoCityCaptureUnit() && pPlot->isCity())
+		{
+			CvCity* pCity = pPlot->getPlotCity();
+			if (pCity != NULL)
+			{
+				raidCityByRebels(pCity);
+			}
+
+			getGroup()->clearMissionQueue();
+			return;
+		}
+
 		getGroup()->groupMove(pPlot, true, ((canAdvance(pPlot, 0)) ? this : NULL));
 
 		getGroup()->clearMissionQueue();
@@ -1481,20 +1493,31 @@ void CvUnit::updateCombat(bool bQuick)
 				GET_TEAM(pDefender->getTeam()).AI_changeWarSuccess(getTeam(), GLOBAL_DEFINE_WAR_SUCCESS_DEFENDING);
 			}
 
-			// R&R, ray, Natives raiding party - START
-			CvCity* pCity = pPlot->getPlotCity();
-			if (pCity != NULL)
+			if (isNoCityCaptureUnit())
 			{
-				if (bIsNativeRaid)
+				CvCity* pCity = pPlot->getPlotCity();
+				if (pCity != NULL)
 				{
-					raidCity(pCity);
-				}
-				else
-				{
-					raidGoods(pCity);
+					raidCityByRebels(pCity);
 				}
 			}
-			// R&R, ray, Natives raiding party - END
+			else
+			{
+				// R&R, ray, Natives raiding party - START
+				CvCity* pCity = pPlot->getPlotCity();
+				if (pCity != NULL)
+				{
+					if (bIsNativeRaid)
+					{
+						raidCity(pCity);
+					}
+					else
+					{
+						raidGoods(pCity);
+					}
+				}
+				// R&R, ray, Natives raiding party - END
+			}
 
 			// R&R, ray, Monasteries and Forts - START
 			if (bIsNativeRaid && pPlot->isFort())
@@ -1527,7 +1550,7 @@ void CvUnit::updateCombat(bool bQuick)
 			}
 			// TAC - AI purchases military units - koma13 - END
 		}
-
+		
 		// case: Attacker won, defender died
 		else if (pDefender->isDead())
 		{
@@ -1725,7 +1748,12 @@ void CvUnit::updateCombat(bool bQuick)
 			gDLL->getEventReporterIFace()->combatResult(this, pDefender);
 
 			bool bAdvance = false;
-			const bool bRaided = raidWeapons(pDefender);
+			bool bRaided = false;
+
+			if (!isNoCityCaptureUnit())
+			{
+				bRaided = raidWeapons(pDefender);
+			}
 
 			// WTP, ray, prevent Barbarian Civs to eject all the unarmed Units to defend a City it just conquered - START
 			// if (!pDefender->isUnarmed() || GET_PLAYER(getOwnerINLINE()).isNative())
@@ -1810,7 +1838,12 @@ void CvUnit::updateCombat(bool bQuick)
 			}
 
 			bAdvance = canAdvance(pPlot, ((pDefender->canDefend()) ? 1 : 0));
-
+			// WTP, Schmiddie, cities raided by criminals
+			if (isNoCityCaptureUnit() && pPlot->isCity())
+			{
+				bAdvance = false;
+			}
+			// WTO, Schmiddie, cities raided by criminals
 			if (!bAdvance)
 			{
 				changeMoves(pPlot->movementCost(this, plot()));
@@ -1931,13 +1964,17 @@ void CvUnit::updateCombat(bool bQuick)
 
 			if (!bRaided)
 			{
-				// R&R, ray, Natives raiding party - START
+				// R&R, ray, Natives raiding party // WTP, Schmiddie cities raided by criminals - START 
 				CvCity* pCity = pPlot->getPlotCity();
 				if (pCity != NULL)
 				{
 					if (bIsNativeRaid)
 					{
 						raidCity(pCity);
+					}
+					else if (isNoCityCaptureUnit())
+					{
+						raidCityByRebels(pCity);
 					}
 					else
 					{
@@ -1947,7 +1984,7 @@ void CvUnit::updateCombat(bool bQuick)
 						}
 					}
 				}
-				// R&R, ray, Natives raiding party - END
+				// R&R, ray, Natives raiding party // WTP, Schmiddie cities raided by criminals - END
 			}
 
 			if (pPlot->getNumVisibleEnemyDefenders(this) == 0)
@@ -12949,6 +12986,53 @@ UnitClassTypes CvUnit::getUnitClassType() const
 	return m_pUnitInfo->getUnitClassType();
 }
 
+// >>> WTP Schmiddie city attack for criminals <<<
+bool CvUnit::isNoCityCaptureUnit() const
+{
+	const UnitClassTypes eClass = (UnitClassTypes)getUnitInfo().getUnitClassType();
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_CRIMINAL"))
+		return true;
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_SLAVE"))
+		return true;
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_NATIVE_SLAVE"))
+		return true;
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_PRISONER_OF_WAR"))
+		return true;
+
+	return false;
+}
+
+UnitClassTypes CvUnit::getRaidCaptureUnitClass() const
+{
+	const UnitClassTypes eClass = (UnitClassTypes)getUnitInfo().getUnitClassType();
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_CRIMINAL"))
+	{
+		return (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_CRIMINAL");
+	}
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_SLAVE"))
+	{
+		return (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_AFRICAN_SLAVE");
+	}
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_NATIVE_SLAVE"))
+	{
+		return (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_NATIVE_SLAVE");
+	}
+
+	if (eClass == GC.getInfoTypeForString("UNITCLASS_REVOLTING_PRISONER_OF_WAR"))
+	{
+		return (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_PRISONER_OF_WAR");
+	}
+
+	return NO_UNITCLASS;
+}
+
 UnitTypes CvUnit::getLeaderUnitType() const
 {
 	return m_eLeaderUnitType;
@@ -15916,6 +16000,194 @@ bool CvUnit::raidCity(CvCity* pCity)
 	return bRaided;
 }
 // R&R, ray, Natives raiding party - END
+// WTP, Schmiddie, Cities raided by criminals START
+bool CvUnit::raidCityByRebels(CvCity* pCity)
+{
+	FAssertMsg(isNoCityCaptureUnit(), "Only no-city-capture rebel units can use raidCityByRebels");
+
+	if (pCity == NULL)
+	{
+		return false;
+	}
+
+	bool bRaidingUnitDefeated = isDead();
+	bool bRaided = false;
+
+	for (int iPass = 0; iPass < 3; iPass++)
+	{
+		int iRaidStrength = GC.getGameINLINE().getSorenRandNum(1000, "Choose rebel raid resolve");
+
+		// If the raider was defeated, either capture the raider or nothing happens
+		if (bRaidingUnitDefeated)
+		{
+			if (iRaidStrength > 300)
+			{
+				CvPlayer& kPlayer = GET_PLAYER(pCity->getOwnerINLINE());
+
+				const UnitClassTypes eCapturedUnitClass = getRaidCaptureUnitClass();
+				if (eCapturedUnitClass != NO_UNITCLASS)
+				{
+					const UnitTypes eCapturedUnitType = kPlayer.getUnitType(eCapturedUnitClass);
+					if (eCapturedUnitType != NO_UNIT)
+					{
+						CvUnit* pCapturedUnit = kPlayer.initUnit(
+							eCapturedUnitType,
+							GC.getUnitInfo(eCapturedUnitType).getDefaultProfession(),
+							pCity->getX_INLINE(),
+							pCity->getY_INLINE(),
+							NO_UNITAI
+						);
+
+						if (pCapturedUnit != NULL)
+						{
+							CvWString szString;
+
+							if (eCapturedUnitClass == GC.getInfoTypeForString("UNITCLASS_CRIMINAL"))
+							{
+								szString = gDLL->getText("TXT_KEY_REBEL_RAID_CAPTURED_CRIMINAL", pCity->getNameKey());
+							}
+							else if (eCapturedUnitClass == GC.getInfoTypeForString("UNITCLASS_AFRICAN_SLAVE"))
+							{
+								szString = gDLL->getText("TXT_KEY_REBEL_RAID_CAPTURED_AFRICAN_SLAVE", pCity->getNameKey());
+							}
+							else if (eCapturedUnitClass == GC.getInfoTypeForString("UNITCLASS_NATIVE_SLAVE"))
+							{
+								szString = gDLL->getText("TXT_KEY_REBEL_RAID_CAPTURED_NATIVE_SLAVE", pCity->getNameKey());
+							}
+							else if (eCapturedUnitClass == GC.getInfoTypeForString("UNITCLASS_PRISONER_OF_WAR"))
+							{
+								szString = gDLL->getText("TXT_KEY_REBEL_RAID_CAPTURED_PRISONER_OF_WAR", pCity->getNameKey());
+							}
+							else
+							{
+								szString = gDLL->getText("TXT_KEY_REBEL_RAID_NOTHING", pCity->getNameKey());
+							}
+
+							gDLL->UI().addPlayerMessage(
+								pCity->getOwnerINLINE(),
+								true,
+								GC.getEVENT_MESSAGE_TIME(),
+								szString,
+								"AS2D_UNITCAPTURE",
+								MESSAGE_TYPE_INFO,
+								pCapturedUnit->getButton(),
+								COLOR_GREEN,
+								pCity->getX_INLINE(),
+								pCity->getY_INLINE()
+							);
+
+							bRaided = true;
+						}
+					}
+				}
+			}
+			else
+			{
+				CvWString szString = gDLL->getText("TXT_KEY_REBEL_RAID_NOTHING", pCity->getNameKey());
+				gDLL->UI().addPlayerMessage(
+					pCity->getOwnerINLINE(),
+					true,
+					GC.getEVENT_MESSAGE_TIME(),
+					szString,
+					"AS2D_REVOLTEND",
+					MESSAGE_TYPE_MINOR_EVENT,
+					NULL,
+					COLOR_GREEN
+				);
+				bRaided = true;
+			}
+		}
+		// If the raider succeeded, only gold / goods / weapons can be stolen
+		else
+		{
+			if (iRaidStrength > 666)
+			{
+				bRaided = raidTreasury(pCity);
+				if (bRaided)
+				{
+					CvWString szString = gDLL->getText("TXT_KEY_REBEL_RAID_GOLD", pCity->getNameKey());
+					gDLL->UI().addPlayerMessage(
+						pCity->getOwnerINLINE(),
+						true,
+						GC.getEVENT_MESSAGE_TIME(),
+						szString,
+						"AS2D_CITYRAID",
+						MESSAGE_TYPE_MINOR_EVENT,
+						NULL,
+						COLOR_RED,
+						pCity->getX_INLINE(),
+						pCity->getY_INLINE()
+					);
+				}
+			}
+			else if (iRaidStrength > 333)
+			{
+				bRaided = raidGoods(pCity);
+				if (bRaided)
+				{
+					CvWString szString = gDLL->getText("TXT_KEY_REBEL_RAID_GOODS", pCity->getNameKey());
+					gDLL->UI().addPlayerMessage(
+						pCity->getOwnerINLINE(),
+						true,
+						GC.getEVENT_MESSAGE_TIME(),
+						szString,
+						"AS2D_CITYRAID",
+						MESSAGE_TYPE_MINOR_EVENT,
+						NULL,
+						COLOR_RED,
+						pCity->getX_INLINE(),
+						pCity->getY_INLINE()
+					);
+				}
+			}
+			else
+			{
+				bRaided = raidWeapons(pCity);
+				if (bRaided)
+				{
+					CvWString szString = gDLL->getText("TXT_KEY_REBEL_RAID_WEAPONS", pCity->getNameKey());
+					gDLL->UI().addPlayerMessage(
+						pCity->getOwnerINLINE(),
+						true,
+						GC.getEVENT_MESSAGE_TIME(),
+						szString,
+						"AS2D_CITYRAID",
+						MESSAGE_TYPE_MINOR_EVENT,
+						NULL,
+						COLOR_RED,
+						pCity->getX_INLINE(),
+						pCity->getY_INLINE()
+					);
+				}
+			}
+		}
+
+		if (bRaided)
+		{
+			break;
+		}
+	}
+
+	if (!bRaided)
+	{
+		CvWString szString = gDLL->getText("TXT_KEY_REBEL_RAID_NOTHING", pCity->getNameKey());
+		gDLL->UI().addPlayerMessage(
+			pCity->getOwnerINLINE(),
+			true,
+			GC.getEVENT_MESSAGE_TIME(),
+			szString,
+			"AS2D_REVOLTEND",
+			MESSAGE_TYPE_MINOR_EVENT,
+			NULL,
+			COLOR_GREEN
+		);
+
+		bRaided = true;
+	}
+
+	return bRaided;
+}
+// WTP, Schmiddie, Cities raided by criminals - END
 
 bool CvUnit::raidGoods(CvCity* pCity)
 {
