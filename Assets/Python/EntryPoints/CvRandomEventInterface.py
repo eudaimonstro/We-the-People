@@ -4132,6 +4132,78 @@ hasPumpkinBonus = has_plot_this_bonus("BONUS_PUMPKIN")
 hasTurkeyBonus = has_plot_this_bonus("BONUS_TURKEYS")
 hasGiantTreeBonus = has_plot_this_bonus("BONUS_GIANT_TREE")
 
+######## HALLOWEEN Event Start ###########
+
+def _playerHasPumpkinBonus(player):
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+
+	iPumpkinBonus = gc.getInfoTypeForString("BONUS_PUMPKIN")
+	map = gc.getMap()
+
+	for iPlot in range(map.numPlots()):
+		plot = map.plotByIndex(iPlot)
+		if plot is None:
+			continue
+		if plot.isNone():
+			continue
+		if plot.getOwner() != player.getID():
+			continue
+		if plot.getBonusType() == iPumpkinBonus:
+			return True
+
+	return False
+
+
+def _isHalloweenSeasonNow():
+	game = CyGame()
+	gameSpeed = gc.getGameSpeedInfo(game.getGameSpeedType())
+	iMonthIncrement = gameSpeed.getGameTurnInfo(0).iMonthIncrement
+	iCurrentTurn = game.getGameTurn()
+	szDate = CyGameTextMgr().getTimeStr(iCurrentTurn + 1, True)
+
+	October = localText.getText("TXT_KEY_MONTH_OCTOBER", ())
+
+	# Month-based speeds: Halloween only in October
+	if iMonthIncrement < 6:
+		if October in szDate:
+			return True
+		return False
+
+	# Half-year speeds: Halloween only in the second half of the year
+	if iMonthIncrement == 6:
+		if October in szDate:
+			return True
+
+		# Fallback if month names are not clearly exposed in the date string
+		if (iCurrentTurn % 2) == 1:
+			return True
+
+		return False
+
+	# Year-based speeds: Halloween can occur once per year
+	return True
+
+
+def canTriggerHalloween(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	if not _playerHasPumpkinBonus(player):
+		return False
+
+	return _isHalloweenSeasonNow()
+    
+######## HALLOWEEN Event End ###########
 
 def hasNoBonus(argsList):
 	pTriggeredData = argsList[0]
