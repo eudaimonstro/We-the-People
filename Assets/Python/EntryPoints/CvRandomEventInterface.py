@@ -4187,6 +4187,27 @@ def _isHalloweenSeasonNow():
 	return True
 
 
+def _getHalloweenTriggerCity(kTriggeredData, player):
+	if player.isNone():
+		return None
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None:
+		return None
+	if plot.isNone():
+		return None
+
+	city = plot.getWorkingCity()
+	if city is None:
+		return None
+	if city.isNone():
+		return None
+	if city.getOwner() != player.getID():
+		return None
+
+	return city
+
+
 def canTriggerHalloween(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -4198,12 +4219,131 @@ def canTriggerHalloween(argsList):
 	if player.isNative():
 		return False
 
+	# Keep the pumpkin requirement, but player-wide instead of plot-only
 	if not _playerHasPumpkinBonus(player):
 		return False
 
-	return _isHalloweenSeasonNow()
+	if not _isHalloweenSeasonNow():
+		return False
+
+	# The settlement connected to the triggering farm plot must have enough food
+	city = _getHalloweenTriggerCity(kTriggeredData, player)
+	if city is None:
+		return False
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	if city.getYieldStored(iFood) < 50:
+		return False
+
+	return True
     
 ######## HALLOWEEN Event End ###########
+
+######## THANKSGIVING Event Start ###########
+
+def _playerHasTurkeyBonus(player):
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+
+	iTurkeyBonus = gc.getInfoTypeForString("BONUS_TURKEYS")
+	map = gc.getMap()
+
+	for iPlot in range(map.numPlots()):
+		plot = map.plotByIndex(iPlot)
+		if plot is None:
+			continue
+		if plot.isNone():
+			continue
+		if plot.getOwner() != player.getID():
+			continue
+		if plot.getBonusType() == iTurkeyBonus:
+			return True
+
+	return False
+
+
+def _isThanksgivingSeasonNow():
+	game = CyGame()
+	gameSpeed = gc.getGameSpeedInfo(game.getGameSpeedType())
+	iMonthIncrement = gameSpeed.getGameTurnInfo(0).iMonthIncrement
+	iCurrentTurn = game.getGameTurn()
+	szDate = CyGameTextMgr().getTimeStr(iCurrentTurn + 1, True)
+
+	November = localText.getText("TXT_KEY_MONTH_NOVEMBER", ())
+
+	# Month-based speeds: Thanksgiving only in November
+	if iMonthIncrement < 6:
+		if November in szDate:
+			return True
+		return False
+
+	# Half-year speeds: Thanksgiving only in the second half of the year
+	if iMonthIncrement == 6:
+		if November in szDate:
+			return True
+
+		# Fallback if month names are not clearly exposed in the date string
+		if (iCurrentTurn % 2) == 1:
+			return True
+
+		return False
+
+	# Year-based speeds: Thanksgiving can occur once per year
+	return True
+
+
+def _getThanksgivingTriggerCity(kTriggeredData, player):
+	if player.isNone():
+		return None
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None:
+		return None
+	if plot.isNone():
+		return None
+
+	city = plot.getWorkingCity()
+	if city is None:
+		return None
+	if city.isNone():
+		return None
+	if city.getOwner() != player.getID():
+		return None
+
+	return city
+
+
+def canTriggerThanksgiving(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	# Keep the original turkey requirement, but player-wide instead of plot-only
+	if not _playerHasTurkeyBonus(player):
+		return False
+
+	if not _isThanksgivingSeasonNow():
+		return False
+
+	# The settlement connected to the triggering farm plot must have enough food
+	city = _getThanksgivingTriggerCity(kTriggeredData, player)
+	if city is None:
+		return False
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	if city.getYieldStored(iFood) < 100:
+		return False
+
+	return True
+######## THANKSGIVING Event End ###########
 
 def hasNoBonus(argsList):
 	pTriggeredData = argsList[0]
