@@ -775,108 +775,188 @@ def getHelpWhaling1(argsList):
 
 ######## WINTER ###########
 
+def _isWinterSeasonNow():
+	game = CyGame()
+	gameSpeed = gc.getGameSpeedInfo(game.getGameSpeedType())
+	iMonthIncrement = gameSpeed.getGameTurnInfo(0).iMonthIncrement
+	iCurrentTurn = game.getGameTurn()
+	szDate = CyGameTextMgr().getTimeStr(iCurrentTurn + 1, True)
+
+	January = localText.getText("TXT_KEY_MONTH_JANUARY", ())
+	February = localText.getText("TXT_KEY_MONTH_FEBRUARY", ())
+	December = localText.getText("TXT_KEY_MONTH_DECEMBER", ())
+	November = localText.getText("TXT_KEY_MONTH_NOVEMBER", ())
+	October = localText.getText("TXT_KEY_MONTH_OCTOBER", ())
+
+	# 1) Monatssystem
+	if iMonthIncrement < 6:
+		if (January in szDate or February in szDate or December in szDate or November in szDate or October in szDate):
+			return True
+		return False
+
+	# 2) Halbjahre
+	if iMonthIncrement == 6:
+		if (October in szDate or November in szDate or December in szDate or January in szDate or February in szDate):
+			return True
+
+		# Fallback falls Monatsnamen nicht zuverlässig sind
+		if (iCurrentTurn % 2) == 0:
+			return True
+
+		return False
+
+	# 3) Jahres-System (Fallback)
+	if (iCurrentTurn % 4) == 0:
+		return True
+
+	return False
+
+
 def canTriggerWinter(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
 	if not player.isPlayable():
 		return False
+	if player.isNative():
+		return False
+
 	king = gc.getPlayer(player.getParent())
+	if king.isNone():
+		return False
 	if not king.isEurope():
 		return False
-	#iCurrentTurn = CyGame().getGameTurn()
-	#szDate = CyGameTextMgr().getTimeStr(iCurrentTurn+1, true)
-	#January = localText.getText("TXT_KEY_MONTH_JANUARY", ())
-	#February = localText.getText("TXT_KEY_MONTH_FEBRUARY", ())
-	#December = localText.getText("TXT_KEY_MONTH_DECEMBER", ())
-	#November = localText.getText("TXT_KEY_MONTH_NOVEMBER", ())
-	#October = localText.getText("TXT_KEY_MONTH_OCTOBER", ())
-	#if (gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGameTurnInfo(0).iMonthIncrement != 12):
-	#	if (January in szDate or February in szDate or December in szDate or November in szDate or October in szDate):
-	#		return true
-	#return False
-	return True
+
+	return _isWinterSeasonNow()
+
 
 def applyWinter(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	iYield1 = gc.getInfoTypeForString("YIELD_COATS")
 	iYield2 = gc.getInfoTypeForString("YIELD_FUR")
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	eking = player.getParent()
-	king = gc.getPlayer(eking)
+	king = gc.getPlayer(player.getParent())
+
 	iPrice1 = king.getYieldBuyPrice(iYield1)
-	king.setYieldBuyPrice(iYield1, iPrice1+event.getGenericParameter(1), 1)
+	king.setYieldBuyPrice(iYield1, iPrice1 + event.getGenericParameter(1), 1)
+
 	iPrice2 = king.getYieldBuyPrice(iYield2)
-	king.setYieldBuyPrice(iYield2, iPrice2+event.getGenericParameter(2), 1)
+	king.setYieldBuyPrice(iYield2, iPrice2 + event.getGenericParameter(2), 1)
+
 
 def getHelpWinter(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	eking = player.getParent()
-	king = gc.getPlayer(eking)
+	king = gc.getPlayer(player.getParent())
+
 	iYield1 = gc.getInfoTypeForString("YIELD_COATS")
 	iYield2 = gc.getInfoTypeForString("YIELD_FUR")
+
 	szHelp = localText.getText("TXT_KEY_EVENT_WINTER_HELP", (king.getCivilizationShortDescriptionKey(),))
-	if event.getGenericParameter(1) <> 0 :
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_PRICE_INCREASE", (event.getGenericParameter(2), gc.getYieldInfo(iYield1).getChar(), king.getCivilizationShortDescriptionKey()))
-	if event.getGenericParameter(2) <> 0 :
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_PRICE_INCREASE", (event.getGenericParameter(2), gc.getYieldInfo(iYield2).getChar(), king.getCivilizationShortDescriptionKey()))
+
+	if event.getGenericParameter(1) <> 0:
+		szHelp += "\n" + localText.getText(
+			"TXT_KEY_EVENT_PRICE_INCREASE",
+			(event.getGenericParameter(1), gc.getYieldInfo(iYield1).getChar(), king.getCivilizationShortDescriptionKey())
+		)
+
+	if event.getGenericParameter(2) <> 0:
+		szHelp += "\n" + localText.getText(
+			"TXT_KEY_EVENT_PRICE_INCREASE",
+			(event.getGenericParameter(2), gc.getYieldInfo(iYield2).getChar(), king.getCivilizationShortDescriptionKey())
+		)
+
 	return szHelp
 
+
 def canEndWinter(argsList):
-	#iCurrentTurn = CyGame().getGameTurn()
-	#kTriggeredData = argsList[0]
-	#player = gc.getPlayer(kTriggeredData.ePlayer)
-	#eEvent = gc.getInfoTypeForString("EVENT_WINTER_1")
-	#kEventdata = player.getEventOccured(eEvent)
-	#iWinterTurn = kEventdata.iTurn
-	#CyInterface().addImmediateMessage(str(iWinterTurn)+" Winter Start", "")
-	#CyInterface().addImmediateMessage(str(iCurrentTurn)+" Aktuell", "")
-	#if iCurrentTurn <= (iWinterTurn + 3) :
-	#	return False
-	#szDate = CyGameTextMgr().getTimeStr(iCurrentTurn+1, true)
-	#January = localText.getText("TXT_KEY_MONTH_JANUARY", ())
-	#February = localText.getText("TXT_KEY_MONTH_FEBRUARY", ())
-	#December = localText.getText("TXT_KEY_MONTH_DECEMBER", ())
-	#November = localText.getText("TXT_KEY_MONTH_NOVEMBER", ())
-	#October = localText.getText("TXT_KEY_MONTH_OCTOBER", ())
-	#if (gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGameTurnInfo(0).iMonthIncrement != 12):
-		#if not (January in szDate or February in szDate or December in szDate or November in szDate or October in szDate):
-	#		return true
-	#return False
-	return True
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	king = gc.getPlayer(player.getParent())
+	if king.isNone():
+		return False
+	if not king.isEurope():
+		return False
+
+	# Winter darf erst enden, wenn Mindestdauer erreicht ist
+	eWinterEvent = gc.getInfoTypeForString("EVENT_WINTER_1")
+	kEventData = player.getEventOccured(eWinterEvent)
+
+	if kEventData is None:
+		return True  # failsafe
+
+	iWinterTurn = kEventData.iTurn
+	iCurrentTurn = CyGame().getGameTurn()
+
+	iMinDuration = _scaleTurnsByGameSpeed(30)
+
+	if iCurrentTurn < iWinterTurn + iMinDuration:
+		return False
+
+	# danach zusätzlich prüfen: sind wir noch im Winter?
+	return not _isWinterSeasonNow()
+
 
 def applyEndWinter(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	iYield1 = gc.getInfoTypeForString("YIELD_COATS")
 	iYield2 = gc.getInfoTypeForString("YIELD_FUR")
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	eking = player.getParent()
-	king = gc.getPlayer(eking)
+	king = gc.getPlayer(player.getParent())
+
 	iPrice1 = king.getYieldBuyPrice(iYield1)
-	king.setYieldBuyPrice(iYield1, iPrice1+event.getGenericParameter(1), 1)
+	king.setYieldBuyPrice(iYield1, iPrice1 + event.getGenericParameter(1), 1)
+
 	iPrice2 = king.getYieldBuyPrice(iYield2)
-	king.setYieldBuyPrice(iYield2, iPrice2+event.getGenericParameter(2), 1)
+	king.setYieldBuyPrice(iYield2, iPrice2 + event.getGenericParameter(2), 1)
+
 
 def getHelpEndWinter(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	eking = player.getParent()
-	king = gc.getPlayer(eking)
+	king = gc.getPlayer(player.getParent())
+
 	iYield1 = gc.getInfoTypeForString("YIELD_COATS")
 	iYield2 = gc.getInfoTypeForString("YIELD_FUR")
-	szHelp = localText.getText("TXT_KEY_EVENT_END_WINTER_HELP", (king.getCivilizationShortDescriptionKey(), ))
-	if event.getGenericParameter(1) <> 0 :
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_PRICE_DECREASE", (event.getGenericParameter(2), gc.getYieldInfo(iYield1).getChar(), king.getCivilizationShortDescriptionKey()))
-	if event.getGenericParameter(2) <> 0 :
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_PRICE_DECREASE", (event.getGenericParameter(2), gc.getYieldInfo(iYield2).getChar(), king.getCivilizationShortDescriptionKey()))
+
+	szHelp = localText.getText("TXT_KEY_EVENT_END_WINTER_HELP", (king.getCivilizationShortDescriptionKey(),))
+
+	if event.getGenericParameter(1) <> 0:
+		szHelp += "\n" + localText.getText(
+			"TXT_KEY_EVENT_PRICE_DECREASE",
+			(event.getGenericParameter(1), gc.getYieldInfo(iYield1).getChar(), king.getCivilizationShortDescriptionKey())
+		)
+
+	if event.getGenericParameter(2) <> 0:
+		szHelp += "\n" + localText.getText(
+			"TXT_KEY_EVENT_PRICE_DECREASE",
+			(event.getGenericParameter(2), gc.getYieldInfo(iYield2).getChar(), king.getCivilizationShortDescriptionKey())
+		)
+
 	return szHelp
 
 ######## Peasant War Preparations ###########

@@ -1632,6 +1632,7 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
+			<iMinTurn>30</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_FARM_BANDITS</Type>
