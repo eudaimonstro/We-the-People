@@ -12917,30 +12917,481 @@ def spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
 	for iX in range(iNumOwnToSpawn):
 		unitThatTriggered.spawnOwnPlayerUnitOnPlotOfUnit(iOwnUnitClassTypeToSpawn)
 
+
 ######## Highwayman Attack ###########
 
-getHelpHighwaymanAttack = get_simple_help("TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_HELP")
+HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX = "[[WTP_HIGHWAYMAN_ATTACK_SOFT_READY_TURN="
+HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX = "]]"
+
+HIGHWAYMAN_ATTACK_BRIBE_GOLD = 500
+
+def _getHighwaymanAttackSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setHighwaymanAttackSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _isHighwaymanAttackSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getHighwaymanAttackSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _startHighwaymanAttackSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldownTurns = _scaleTurnsByGameSpeed(iBaseTurns)
+	_setHighwaymanAttackSoftCooldownReadyTurn(
+		player,
+		CyGame().getGameTurn() + iCooldownTurns
+	)
+
+def _spawnHighwaymanHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+def canTriggerHighwaymanAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isHighwaymanAttackSoftCooldownActive(player):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_STAGECOACH"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Highwayman Attack Trigger") >= 30:
+		return False
+
+	return True
+
+def applyHighwaymanAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	stagecoach = player.getUnit(kTriggeredData.iUnitId)
+	if stagecoach.isNone():
+		return
+
+	if stagecoach.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_STAGECOACH"):
+		return
+
+	plot = stagecoach.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Freeze stagecoach for current turn and next turn
+	stagecoach.setMoves(0)
+	stagecoach.setImmobileTimer(1)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnHighwaymanHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	_startHighwaymanAttackSoftCooldown(player, 50)
+
+def applyHighwaymanAttackBribe(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	_startHighwaymanAttackSoftCooldown(player, 50)
+
+def getHelpHighwaymanAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_HELP", ())
 
 ######## Land Transport Attack ###########
 
-def spawnNativeUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
+LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX = "[[WTP_LANDTRANSPORT_ATTACK_SOFT_READY_TURN="
+LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX = "]]"
+
+LANDTRANSPORT_ATTACK_BRIBE_GOLD = 500
+
+def _getLandtransportAttackSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setLandtransportAttackSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _isLandtransportAttackSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getLandtransportAttackSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _startLandtransportAttackSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldownTurns = _scaleTurnsByGameSpeed(iBaseTurns)
+	_setLandtransportAttackSoftCooldownReadyTurn(
+		player,
+		CyGame().getGameTurn() + iCooldownTurns
+	)
+
+def _spawnLandtransportHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+def canTriggerLandtransportAttack(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	unitThatTriggered = player.getUnit(kTriggeredData.iUnitId)
-	# This part spawns the Barbarian
-	iHostileUnitClassTypeToSpawn = event.getGenericParameter(1)
-	iNumHostilesToSpawn = event.getGenericParameter(2)
-	for iX in range(iNumHostilesToSpawn):
-		unitThatTriggered.spawnBarbarianUnitOnAdjacentPlotOfUnit(iHostileUnitClassTypeToSpawn)
-	# This Part spawns the Friendly
-	iOwnUnitClassTypeToSpawn = event.getGenericParameter(4)
-	iNumOwnToSpawn = event.getGenericParameter(3)
-	for iX in range(iNumOwnToSpawn):
-		unitThatTriggered.spawnOwnPlayerUnitOnPlotOfUnit(iOwnUnitClassTypeToSpawn)
 
-getHelpLandTransportAttack = get_simple_help("TXT_KEY_EVENT_LANDTRANSPORT_ATTACK_HELP")
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isLandtransportAttackSoftCooldownActive(player):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return False
+
+	# Fixed 30% chance in Python
+	if CyGame().getSorenRandNum(100, "Landtransport Attack Trigger") >= 30:
+		return False
+
+	return True
+
+def applyLandtransportAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Freeze land transport for current turn and next turn
+	unit.setMoves(0)
+	unit.setImmobileTimer(1)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnLandtransportHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	_startLandtransportAttackSoftCooldown(player, 50)
+
+def applyLandtransportAttackBribe(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	_startLandtransportAttackSoftCooldown(player, 50)
+
+def getHelpLandtransportAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_LANDTRANSPORT_ATTACK_HELP", ())
 
 ######## Milkmaid in Need ###########
 

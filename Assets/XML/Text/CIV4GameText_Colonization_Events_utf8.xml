@@ -1035,11 +1035,23 @@
 		<Russian>Если пассажиры хотят выжить, они должны защищать дилижанс!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_2</Tag>
+		<English>Pay the scoundrels and avoid bloodshed.</English>
+		<German>Zahlt den Halunken und vermeidet Blutvergießen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_HELP</Tag>
 		<English>Highwaymen attack the stagecoach. Brave passengers defend it.</English>
 		<French>Des bandits attaquent la diligence. Des passagers courageux la défendent.</French>
 		<German>Straßenräuber greifen die Kutsche an. Ein paar mutige Passagiere verteidigen sie.</German>
 		<Russian>На дилижанс нападают разбойники. Храбрые пассажиры защищаются.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_BRIBE_HELP</Tag>
+		<English>You pay %D1 [ICON_GOLD] to the highwaymen and they let you pass.</English>
+		<German>Ihr zahlt %D1 [ICON_GOLD] an die Wegelagerer und dürft passieren.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_LANDTRANSPORT_ATTACK</Tag>
