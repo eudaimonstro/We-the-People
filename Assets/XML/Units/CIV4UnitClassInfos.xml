@@ -1342,6 +1342,11 @@
 			<DefaultUnit>UNIT_HUMPBACK_WHALE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_HUMPBACK_WHALE_COMBAT</Type>
+			<Description>TXT_KEY_UNITCLASS_HUMPBACK_WHALE</Description>
+			<DefaultUnit>UNIT_HUMPBACK_WHALE_COMBAT</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_KRAKEN</Type>
 			<Description>TXT_KEY_UNITCLASS_KRAKEN</Description>
 			<DefaultUnit>UNIT_KRAKEN</DefaultUnit>

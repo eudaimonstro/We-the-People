@@ -12948,7 +12948,149 @@ def spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
 	for iX in range(iNumOwnToSpawn):
 		unitThatTriggered.spawnOwnPlayerUnitOnPlotOfUnit(iOwnUnitClassTypeToSpawn)
 
-######## Ranger Bear Attack ###########
+######## Whale Attack ###########
+
+def canTriggerWhaleAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if not plot.isWater():
+		return False
+
+	# One-time event -> no cooldown required
+	return True
+
+
+def _spawnWhaleAttackHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if not pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
+def applyWhaleAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if not plot.isWater():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnWhaleAttackHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is None or hostileUnit.isNone():
+		return
+
+	if hostileUnit.canMoveInto(plot, True, False, False):
+		hostileUnit.attack(plot, False)
+
+	# Reward whale blubber only if ship survived and whale died
+	unitAfterCombat = player.getUnit(kTriggeredData.iUnitId)
+	if unitAfterCombat is None or unitAfterCombat.isNone():
+		return
+
+	if hostileUnit is not None and not hostileUnit.isNone():
+		return
+
+	iYieldWhaleBlubber = gc.getInfoTypeForString("YIELD_WHALE_BLUBBER")
+	if iYieldWhaleBlubber == -1:
+		return
+
+	iReward = event.getGenericParameter(3)
+	if iReward <= 0:
+		iReward = 20
+
+	unitAfterCombat.changeYieldStored(iYieldWhaleBlubber, iReward)
+
+getHelpWhaleAttack = get_simple_help("TXT_KEY_WHALE_ATTACK_HELP")
 
 ######## Ranger Bear Attack ###########
 
