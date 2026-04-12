@@ -12182,9 +12182,7 @@ def canTriggerCriminalsBlackmailCity(argsList):
 	if city.getPopulation() < 3:
 		return False
 
-	# Soft cooldown trigger chance:
-	# normal: 10%, during cooldown: 1%
-	iChance = 10
+	iChance = 20
 	if _isCriminalsBlackmailCityCooldownActive(player):
 		iChance = 1
 
@@ -12218,7 +12216,7 @@ def canDoCriminalsBlackmailCityGive(argsList):
 	return True
 
 
-def _cityHasDefender(city):
+def _cityHasAnyDefenderOnCityPlot(city):
 	if city.isNone():
 		return False
 
@@ -12228,57 +12226,126 @@ def _cityHasDefender(city):
 
 	for i in range(pCityPlot.getNumUnits()):
 		loopUnit = pCityPlot.getUnit(i)
+
 		if loopUnit is None or loopUnit.isNone():
 			continue
 		if loopUnit.getOwner() != city.getOwner():
 			continue
+		if loopUnit.isDead():
+			continue
+		if loopUnit.getDomainType() != DomainTypes.DOMAIN_LAND:
+			continue
 		if not loopUnit.canDefend(pCityPlot):
 			continue
+
 		return True
 
 	return False
 
-
-def _getCriminalsBlackmailCityNumAttackers(city):
+def _spawnRevoltingCriminalAdjacentToCity(city):
 	if city.isNone():
-		return 2
+		return None
 
-	if city.getPopulation() >= 20:
-		return 4
+	player = gc.getPlayer(city.getOwner())
+	if player.isNone():
+		return None
 
-	return 2
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitClass = gc.getInfoTypeForString("UNITCLASS_REVOLTING_CRIMINAL")
+	if iUnitClass == -1:
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return None
+
+	pCityPlot = city.plot()
+	if pCityPlot is None:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			pUnit = barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if pUnit is not None and not pUnit.isNone():
+				return pUnit
+
+	return None
+
+def applyGiveFood(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_FOOD")
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < quantity:
+		return False
+
+	city.changeYieldStored(iYield, -quantity)
+
+	_startCriminalsBlackmailCityCooldown(player, 75)
+	return True
 
 
-def _getBestCriminalRaidYield(player, city, iLootCapPerYield):
-	bestYield = -1
-	bestValue = 0
-	bestLoot = 0
+def getHelpGiveFood(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
 
-	iFoodYield = gc.getInfoTypeForString("YIELD_FOOD")
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
 
-	for iYield in range(YieldTypes.NUM_YIELD_TYPES):
-		eYield = YieldTypes(iYield)
+	iYield = gc.getInfoTypeForString("YIELD_FOOD")
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
 
-		if eYield == iFoodYield:
-			continue
+	szHelp = ""
+	if event.getGenericParameter(1) <> 0:
+		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 
-		iStored = city.getYieldStored(eYield)
-		if iStored <= 0:
-			continue
-
-		iLoot = min(iStored, iLootCapPerYield)
-		if iLoot <= 0:
-			continue
-
-		iPrice = player.getYieldSellPrice(eYield)
-		iTotalValue = iPrice * iLoot
-
-		if iTotalValue > bestValue:
-			bestValue = iTotalValue
-			bestYield = eYield
-			bestLoot = iLoot
-
-	return (bestYield, bestLoot, bestValue)
+	return szHelp
 
 
 def _applyDirectSuccessfulCriminalRaid(city):
@@ -12319,7 +12386,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 	for iYield in range(YieldTypes.NUM_YIELD_TYPES):
 		eYield = YieldTypes(iYield)
 
-		# Skip food
 		if eYield == iFoodYield:
 			continue
 
@@ -12331,7 +12397,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 		if iMaxLoot <= 0:
 			continue
 
-		# Price via king / Europe market
 		iPrice = king.getYieldBuyPrice(eYield)
 		iTotalValue = iPrice * iMaxLoot
 
@@ -12343,7 +12408,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 
 	# --- EXECUTE RAID ---
 
-	# Gold
 	if bestType == "gold" and bestLoot > 0:
 		player.changeGold(-bestLoot)
 
@@ -12366,7 +12430,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 		)
 		return True
 
-	# Yield (Goods incl. weapons)
 	if bestType == "yield" and bestYield != -1 and bestLoot > 0:
 		city.changeYieldStored(bestYield, -bestLoot)
 
@@ -12395,7 +12458,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 		)
 		return True
 
-	# Fallback
 	CyInterface().addMessage(
 		player.getID(),
 		True,
@@ -12417,101 +12479,72 @@ def _applyDirectSuccessfulCriminalRaid(city):
 	return True
 
 
-def _spawnHostileUnitAndAttackCity(player, city, iUnitType, iNumUnits):
-	if player.isNone() or city.isNone():
-		return False
-
-	pCityPlot = city.plot()
-	if pCityPlot is None:
-		return False
-
-	iBarbarianPlayer = CyGame().getBarbarianPlayer()
-	barbarianPlayer = gc.getPlayer(iBarbarianPlayer)
-	if barbarianPlayer.isNone():
-		return False
-
-	# No defender -> direct raid
-	if not _cityHasDefender(city):
-		return _applyDirectSuccessfulCriminalRaid(city)
-
-	iSpawned = 0
-
-	for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
-		if iSpawned >= iNumUnits:
-			break
-
-		spawnPlot = plotDirection(pCityPlot.getX(), pCityPlot.getY(), DirectionTypes(iDirection))
-
-		if spawnPlot is None:
-			continue
-		if spawnPlot.isWater():
-			continue
-		if spawnPlot.isImpassable():
-			continue
-		if spawnPlot.isCity():
-			continue
-
-		newUnit = barbarianPlayer.initUnit(
-			iUnitType,
-			ProfessionTypes.NO_PROFESSION,
-			spawnPlot.getX(),
-			spawnPlot.getY(),
-			UnitAITypes.NO_UNITAI,
-			DirectionTypes.DIRECTION_SOUTH,
-			0
-		)
-
-		if newUnit is None or newUnit.isNone():
-			continue
-
-		if not newUnit.canMoveInto(pCityPlot, True, False, False):
-			newUnit.kill(False)
-			continue
-
-		newUnit.attack(pCityPlot, False)
-		iSpawned += 1
-
-	return iSpawned > 0
-
-
 def applyCriminalsBlackmailCityRefuse(argsList):
 	kTriggeredData = argsList[0]
 
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
-		return
+		return False
 
 	city = player.getCity(kTriggeredData.iCityId)
 	if city.isNone():
-		return
+		return False
 
-	iUnitType = gc.getInfoTypeForString("UNIT_REVOLTING_CRIMINAL")
-	iNumAttackers = _getCriminalsBlackmailCityNumAttackers(city)
+	_startCriminalsBlackmailCityCooldown(player, 50)
 
-	# Start soft cooldown after the player chose this outcome
-	_startCriminalsBlackmailCityCooldown(player, 75)
+	# Always spawn one visible criminal next to the city if possible
+	_spawnRevoltingCriminalAdjacentToCity(city)
 
-	_spawnHostileUnitAndAttackCity(player, city, iUnitType, iNumAttackers)
+	# Defender on city plot -> 50/50 outcome
+	if _cityHasAnyDefenderOnCityPlot(city):
+		iRoll = CyGame().getSorenRandNum(100, "Criminals Blackmail City defended outcome")
 
-def getHelpCriminalsBlackmailCityRefuse(argsList):
-	if len(argsList) == 0:
-		return u""
+		# 50%: city successfully defended
+		if iRoll < 50:
+			CyInterface().addMessage(
+				player.getID(),
+				True,
+				gc.getEVENT_MESSAGE_TIME(),
+				localText.getText(
+					"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_ABORTED",
+					(city.getNameKey(),)
+				),
+				"AS2D_GOODNEWS",
+				InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+				None,
+				gc.getInfoTypeForString("COLOR_GREEN"),
+				city.getX(),
+				city.getY(),
+				True,
+				True
+			)
+			return True
 
-	kTriggeredData = argsList[0]
+		# 50%: defenders fail to prevent the raid
+		CyInterface().addMessage(
+			player.getID(),
+			True,
+			gc.getEVENT_MESSAGE_TIME(),
+			localText.getText(
+				"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_BUT_RAIDED",
+				(city.getNameKey(),)
+			),
+			"AS2D_CITYRAID",
+			InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+			None,
+			gc.getInfoTypeForString("COLOR_RED"),
+			city.getX(),
+			city.getY(),
+			True,
+			True
+		)
 
-	# some calls may not pass TriggeredData correctly
-	if not hasattr(kTriggeredData, "ePlayer") or not hasattr(kTriggeredData, "iCityId"):
-		return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", ())
+		return _applyDirectSuccessfulCriminalRaid(city)
 
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if player.isNone():
-		return u""
+	# No defender on city plot -> direct successful raid
+	return _applyDirectSuccessfulCriminalRaid(city)
 
-	city = player.getCity(kTriggeredData.iCityId)
-	if city.isNone():
-		return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", ())
-
-	return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", (city.getNameKey(),))
+getHelpCriminalsBlackmailCityRefuse = get_simple_help("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP")
 
 ######## Officer duel ###########
 
@@ -12885,7 +12918,7 @@ def checkRunawaySlavesOnAdjacentPlotOfCity(argsList): ### When you copy rename s
 		return True
 	return False
 
-######## Ranger Bear Attack ###########
+######## General Attack Function ###########
 
 def canTriggerIsPlayableWithTriggerChance(argsList):
 	kTriggeredData = argsList[0]
@@ -12896,8 +12929,6 @@ def canTriggerIsPlayableWithTriggerChance(argsList):
 	if TriggerChance(argsList):
 		return True
 	return False
-
-getHelpRangerBearAttack = get_simple_help("TXT_KEY_EVENT_RANGER_BEAR_ATTACK_HELP")
 
 # adjacent Plot for Barbarian, same Plot for own Unit
 def spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
@@ -12917,6 +12948,159 @@ def spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
 	for iX in range(iNumOwnToSpawn):
 		unitThatTriggered.spawnOwnPlayerUnitOnPlotOfUnit(iOwnUnitClassTypeToSpawn)
 
+######## Ranger Bear Attack ###########
+
+######## Ranger Bear Attack ###########
+
+def canTriggerRangerBearAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	ranger = player.getUnit(kTriggeredData.iUnitId)
+	if ranger.isNone():
+		return False
+
+	plot = ranger.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Optional: only allow land plots
+	if plot.isWater():
+		return False
+
+	# One-time event → no cooldown required
+	return True
+
+
+def applyRangerBearAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	ranger = player.getUnit(kTriggeredData.iUnitId)
+	if ranger.isNone():
+		return
+
+	plot = ranger.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	# =========================
+	# Spawn grizzly (hostile unit on adjacent plot)
+	# =========================
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+
+	if barbPlayer.isNone():
+		return
+
+	iGrizzlyType = gc.getInfoTypeForString("UNIT_GRIZZLY")
+	if iGrizzlyType == -1:
+		return
+
+	hostileUnit = None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			hostileUnit = barbPlayer.initUnit(
+				iGrizzlyType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+			break
+		if hostileUnit is not None and not hostileUnit.isNone():
+			break
+
+	# =========================
+	# Freeze ranger (current turn + next turn)
+	# =========================
+	ranger.setMoves(0)
+	ranger.setImmobileTimer(1)
+
+	# =========================
+	# Direct combat against the ranger
+	# =========================
+	if hostileUnit is not None and not hostileUnit.isNone():
+		pTargetPlot = ranger.plot()
+		if pTargetPlot is not None and not pTargetPlot.isNone():
+			hostileUnit.attack(pTargetPlot, False)
+
+	# =========================
+	# Spawn missionary only if ranger survived
+	# =========================
+	iMissionaryClass = event.getGenericParameter(4)
+
+	if iMissionaryClass != -1:
+		rangerAfterCombat = player.getUnit(kTriggeredData.iUnitId)
+		if rangerAfterCombat is not None and not rangerAfterCombat.isNone():
+			pMissionaryPlot = rangerAfterCombat.plot()
+			if pMissionaryPlot is not None and not pMissionaryPlot.isNone():
+				iMissionaryType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iMissionaryClass)
+
+				if iMissionaryType != UnitTypes.NO_UNIT:
+					player.initUnit(
+						iMissionaryType,
+						ProfessionTypes.NO_PROFESSION,
+						pMissionaryPlot.getX(),
+						pMissionaryPlot.getY(),
+						UnitAITypes.NO_UNITAI,
+						DirectionTypes.NO_DIRECTION,
+						0
+					)
+
+
+def getHelpRangerBearAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_RANGER_BEAR_ATTACK_HELP", ())
 
 ######## Highwayman Attack ###########
 

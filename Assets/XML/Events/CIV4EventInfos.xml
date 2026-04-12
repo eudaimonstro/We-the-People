@@ -5736,13 +5736,13 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot</PythonCallback>
+			<PythonCallback>applyRangerBearAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpRangerBearAttack</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>UNITCLASS_GRIZZLY</iGenericParameter1>
+			<iGenericParameter1>UNITCLASS_GRIZZLY_COMBAT</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
 			<iGenericParameter3>100</iGenericParameter3>
 			<iGenericParameter4>UNITCLASS_CHRISTIAN_MISSIONARY</iGenericParameter4>

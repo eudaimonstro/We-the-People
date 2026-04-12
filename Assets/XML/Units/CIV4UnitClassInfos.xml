@@ -1387,6 +1387,11 @@
 			<DefaultUnit>UNIT_GRIZZLY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_GRIZZLY_COMBAT</Type>
+			<Description>TXT_KEY_UNITCLASS_GRIZZLY</Description>
+			<DefaultUnit>UNIT_GRIZZLY_COMBAT</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_BEAR_POLAR</Type>
 			<Description>TXT_KEY_UNITCLASS_BEAR_POLAR</Description>
 			<DefaultUnit>UNIT_BEAR_POLAR</DefaultUnit>

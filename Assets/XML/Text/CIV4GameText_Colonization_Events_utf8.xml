@@ -968,7 +968,7 @@
 		<Tag>TXT_KEY_EVENT_TRIGGER_RANGER_BEAR_ATTACK_1</Tag>
 		<English>Our ranger is on patrol through the forest. Suddenly he hears a high-pitched scream of fear followed by a rattling sound, like a tree in a high wind. He heads toward the noise and sees a missionary up in a tree, while a hungry grizzly methodically tries to shake him loose.</English>
 		<French>Notre garde forestier patrouille en forêt. Il entend un cri de peur haut-perché suivi par un bruit de branches, comme un arbre pris dans une rafale. Il se dirige vers le vacarme et voit un missionnaire haut perché dans un arbre, tandis qu'un grissly affamé secoue l'arbre comme un prunier pour récupérer le morceau.</French>
-		<German>Einer unserer Missionare ist auf Parolie in den Wäldern. Plötzlich hört er Schreie voller Angst. Nach einer kurzen Suche findet er den Urpsrpung der Schreie. Er wird Zeuge wie ein Missionar in einem Baum von einem hungrigen Grizzly angegriffen wird, der wütend versucht ihn herunter zu schütteln.</German>
+		<German>Einer unserer Ranger ist auf Patrouille in den Wäldern. Plötzlich hört er Schreie voller Angst. Nach einer kurzen Suche findet er den Urpsrpung der Schreie. Er wird Zeuge wie ein Missionar in einem Baum von einem hungrigen Grizzly angegriffen wird, der wütend versucht ihn herunter zu schütteln.</German>
 		<Russian>Наш рейнджер патрулирует лес. Внезапно он слышит пронзительный крик, за которым следует глухой стук, как будто чем-то бъют по деревяшке. Он направляется на шум и видит на дереве трясущегося от страха миссионера, в то время как большой голодный гризли методичными ударами по дереву пытается стряхнуть его.</Russian>
 	</TEXT>
 	<TEXT>
@@ -1285,6 +1285,42 @@
 		<Russian>Мы не позволим преступникам шантажировать нас. Единственное, что они получают от нас, это смерть.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_BUT_RAIDED</Tag>
+		<English>The brave townsfolk of %s1 tried to resist, but could not prevent the bandits from plundering the city.</English>
+		<German>Die tapferen Bürger von %s1 versuchten sich zu wehren, konnten aber nicht verhindern, dass die Banditen die Stadt plünderten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD</Tag>
+		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 gold.</English>
+		<German>Die Kriminellen plünderten die Siedlung und schafften %d2 Gold fort.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOODS</Tag>
+		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 %s3.</English>
+		<German>Die Kriminellen plünderten die Siedlung und schafften %d2 %s3 fort.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_NOTHING</Tag>
+		<English>There were no defenders in %s1_city. The criminals overran the settlement, but found little worth carrying away.</English>
+		<German>Die Kriminellen überrannten die Siedlung, fanden jedoch kaum etwas, das den Abtransport lohnte.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_ABORTED</Tag>
+		<English>The bandits were confronted by the local townsfolk in %s1 and abandoned their attack.</English>
+		<German>Die Banditen wurden in %s1 von der örtlichen Stadtbevölkerung gestellt und brachen ihren Angriff ab.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP</Tag>
+		<English>[ICON_BULLET]Refusing their demands will provoke a [COLOR_HIGHLIGHT_TEXT]immediate raid[COLOR_REVERT]. If the attackers are successful, they may [COLOR_HIGHLIGHT_TEXT]loot [COLOR_REVERT]gold, goods, or weapons, but they cannot capture the city.</English>
+		<German>[ICON_BULLET]Wenn ihre Forderungen zurückgewiesen werden, [COLOR_HIGHLIGHT_TEXT]wird die Stadt überfallen[COLOR_REVERT]. Falls die Banditen Erfolg haben, können sie Gold, Waren oder Waffen [COLOR_HIGHLIGHT_TEXT]plündern[COLOR_REVERT], die Stadt jedoch nicht einnehmen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER</Tag>
 		<English>A rumour is spreading: In [COLOR_HIGHLIGHT_TEXT]%s2_city[COLOR_REVERT] an indentured servant has stolen money from his employer.</English>
 		<French>Selon une rumeur à [COLOR_HIGHLIGHT_TEXT]%s2_city[COLOR_REVERT], un domestique sous contrat vole de l'argent à son patron.</French>
@@ -1451,30 +1487,6 @@
 		<French>[ICON_BULLET]Nous sommes attaqués par des indigènes hostiles !</French>
 		<German>[ICON_BULLET]Wir werden durch Ureinwohner angegriffen!</German>
 		<Russian>[ICON_BULLET]На нас напали враждебно настроенные индейцы!</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP</Tag>
-		<English>[ICON_BULLET]Refusing their demands will provoke an [COLOR_HIGHLIGHT_TEXT]immediate attack against %s1_city[COLOR_REVERT]. If the attackers break through, they may [COLOR_HIGHLIGHT_TEXT]loot [COLOR_REVERT]gold, goods, or weapons, but they cannot capture the city.</English>
-		<German>[ICON_BULLET]Wenn ihre Forderungen zurückgewiesen werden, [COLOR_HIGHLIGHT_TEXT]wird %s1_city sofort angegriffen[COLOR_REVERT]. Falls die Angreifer durchbrechen, können sie Gold, Waren oder Waffen [COLOR_HIGHLIGHT_TEXT]plündern[COLOR_REVERT], die Stadt jedoch nicht einnehmen.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD</Tag>
-		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 gold.</English>
-		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen plünderten die Siedlung und schafften %d2 Gold fort.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOODS</Tag>
-		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 %s3.</English>
-		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen plünderten die Siedlung und schafften %d2 %s3 fort.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_NOTHING</Tag>
-		<English>There were no defenders in %s1_city. The criminals overran the settlement, but found little worth carrying away.</English>
-		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen überrannten die Siedlung, fanden jedoch kaum etwas, das den Abtransport lohnte.</German>
-		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BUCCANNERS_ATTACK_MINE_HELP</Tag>

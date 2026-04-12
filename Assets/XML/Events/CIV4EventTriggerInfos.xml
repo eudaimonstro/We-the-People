@@ -355,7 +355,7 @@
 			<PythonCanDoCity>canTriggerCriminalsBlackmailCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
+			<iMinTurn>1</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER</Type>
@@ -2524,7 +2524,10 @@
 			<bOwnPlot>0</bOwnPlot>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
+				<FeatureType>FEATURE_FOREST_EVERGREEN</FeatureType>
 				<FeatureType>FEATURE_DENSE_FOREST</FeatureType>
+				<FeatureType>FEATURE_FOREST_TUNDRA</FeatureType>
+				<FeatureType>FEATURE_ANCIENT_FOREST</FeatureType>
 			</FeaturesRequired>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2548,7 +2551,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerIsPlayableWithTriggerChance</PythonCanDo>
+			<PythonCanDo>canTriggerRangerBearAttack</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
