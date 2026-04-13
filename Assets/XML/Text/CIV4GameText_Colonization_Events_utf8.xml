@@ -1187,6 +1187,18 @@
 		<Russian>Разбойники атакуют паромную переправу.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DEFEND_CHOICE</Tag>
+		<English>The brave defenders rush to secure the ferry station and confront the bandits! Can they defend the ferry station?</English>
+		<German>Die mutigen Verteidiger eilen herbei, um die Fährstation zu sichern und sich den Banditen entgegenzustellen! Können Sie die Fähre vor der Zerstörung bewahren?</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DESTROY_CHOICE</Tag>
+		<English>The bandits overrun the ferry station and begin to plunder and destroy it!</English>
+		<German>Die Banditen überwältigen die Fährstation und beginnen sie zu plündern und zu zerstören!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SLAVE_AND_PLANATION_OWNER_DAUGHTER</Tag>
 		<English>A rumour is spreading that the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] daughter of a plantation owner fell in love with a slave.</English>
 		<French>Selon une rumeur, la fille d'un riche planteur [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] est tombé amouruese d'un esclave.</French>

@@ -12546,6 +12546,378 @@ def applyCriminalsBlackmailCityRefuse(argsList):
 
 getHelpCriminalsBlackmailCityRefuse = get_simple_help("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP")
 
+######## Ferry Station Robbers ###########
+
+######## Ferry Station Robbers ###########
+
+def canTriggerFerryStationRobbers(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	iFerryStation = gc.getInfoTypeForString("IMPROVEMENT_RAFT_STATION")
+	if iFerryStation == -1:
+		return False
+
+	if plot.getImprovementType() != iFerryStation:
+		return False
+
+	# Keep existing chance logic
+	if not TriggerChance(argsList):
+		return False
+
+	return True
+
+
+def _getFerryStationBattlePlot(plot):
+	if plot is None or plot.isNone():
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+
+			return pLoop
+
+	return None
+
+
+def _spawnFerryStationRobbersHostileAdjacent(plot, iUnitClass, iNumUnits):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	if iNumUnits < 1:
+		iNumUnits = 1
+	if iNumUnits > 3:
+		iNumUnits = 3
+
+	spawnedUnit = None
+
+	for i in range(iNumUnits):
+		bSpawnedThisOne = False
+
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+				if pLoop is None or pLoop.isNone():
+					continue
+				if pLoop.isImpassable():
+					continue
+				if pLoop.isPeak():
+					continue
+				if pLoop.isCity():
+					continue
+				if pLoop.isUnit():
+					continue
+
+				unit = barbPlayer.initUnit(
+					iUnitType,
+					ProfessionTypes.NO_PROFESSION,
+					pLoop.getX(),
+					pLoop.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+
+				if spawnedUnit is None:
+					spawnedUnit = unit
+
+				bSpawnedThisOne = True
+				break
+
+			if bSpawnedThisOne:
+				break
+
+	return spawnedUnit
+
+
+def _spawnFerryStationDefendersOnPlot(plot, ePlayer, iUnitClass, iNumUnits):
+	if plot is None or plot.isNone():
+		return
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return
+
+	if iNumUnits < 1:
+		iNumUnits = 1
+	if iNumUnits > 3:
+		iNumUnits = 3
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return
+
+	for i in range(iNumUnits):
+		player.initUnit(
+			iUnitType,
+			ProfessionTypes.NO_PROFESSION,
+			plot.getX(),
+			plot.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.DIRECTION_SOUTH,
+			0
+		)
+
+
+def _spawnFerryStationDefendersWithFallback(ferryPlot, ePlayer, iUnitClass, iNumUnits):
+	if ferryPlot is None or ferryPlot.isNone():
+		return None
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	if iNumUnits < 1:
+		iNumUnits = 1
+	if iNumUnits > 3:
+		iNumUnits = 3
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	# First try directly on the ferry plot
+	firstUnit = player.initUnit(
+		iUnitType,
+		ProfessionTypes.NO_PROFESSION,
+		ferryPlot.getX(),
+		ferryPlot.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+	if firstUnit is not None and not firstUnit.isNone():
+		for i in range(1, iNumUnits):
+			player.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				ferryPlot.getX(),
+				ferryPlot.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+		return ferryPlot
+
+	# Fallback to adjacent land plot
+	battlePlot = _getFerryStationBattlePlot(ferryPlot)
+	if battlePlot is None or battlePlot.isNone():
+		return None
+
+	for i in range(iNumUnits):
+		player.initUnit(
+			iUnitType,
+			ProfessionTypes.NO_PROFESSION,
+			battlePlot.getX(),
+			battlePlot.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.DIRECTION_SOUTH,
+			0
+		)
+
+	return battlePlot
+
+def _sendFerryStationRobbersMessage(ePlayer, szTextKey, plot, iColor):
+	if plot is None or plot.isNone():
+		return
+
+	CyInterface().addMessage(
+		ePlayer,
+		True,
+		gc.getEVENT_MESSAGE_TIME(),
+		localText.getText(szTextKey, ()),
+		None,
+		0,
+		None,
+		ColorTypes(iColor),
+		plot.getX(),
+		plot.getY(),
+		True,
+		True
+	)
+    
+def applyFerryStationRobbers1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	ferryPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if ferryPlot is None or ferryPlot.isNone():
+		return
+
+	if ferryPlot.getOwner() != player.getID():
+		return
+
+	iFerryStation = gc.getInfoTypeForString("IMPROVEMENT_RAFT_STATION")
+	if iFerryStation == -1:
+		return
+
+	if ferryPlot.getImprovementType() != iFerryStation:
+		return
+
+	_sendFerryStationRobbersMessage(
+		kTriggeredData.ePlayer,
+		"TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DEFEND_CHOICE",
+		ferryPlot,
+		10  # weiß
+	)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+	iDefenderUnitClass = event.getGenericParameter(3)
+	iNumDefenders = event.getGenericParameter(4)
+
+	# Spawn defenders (prefer ferryPlot, fallback if needed)
+	defenderPlot = _spawnFerryStationDefendersWithFallback(
+		ferryPlot,
+		kTriggeredData.ePlayer,
+		iDefenderUnitClass,
+		iNumDefenders
+	)
+
+	if defenderPlot is None or defenderPlot.isNone():
+		return
+
+	# Spawn attackers adjacent to defender plot
+	hostileUnit = _spawnFerryStationRobbersHostileAdjacent(
+		defenderPlot,
+		iHostileUnitClass,
+		iNumHostiles
+	)
+
+	if hostileUnit is None or hostileUnit.isNone():
+		return
+
+	# 100% direct attack
+	if hostileUnit.canMoveInto(defenderPlot, True, False, False):
+		hostileUnit.attack(defenderPlot, False)
+
+def applyFerryStationRobbers2(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	ferryPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if ferryPlot is None or ferryPlot.isNone():
+		return
+
+	if ferryPlot.getOwner() != player.getID():
+		return
+
+	iFerryStation = gc.getInfoTypeForString("IMPROVEMENT_RAFT_STATION")
+	if iFerryStation == -1:
+		return
+
+	if ferryPlot.getImprovementType() != iFerryStation:
+		return
+
+	_sendFerryStationRobbersMessage(
+		kTriggeredData.ePlayer,
+		"TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DESTROY_CHOICE",
+		ferryPlot,
+		7  # rot
+	)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Spawn attackers adjacent to the ferry station
+	_spawnFerryStationRobbersHostileAdjacent(
+		ferryPlot,
+		iHostileUnitClass,
+		iNumHostiles
+	)
+
+	# Destroy ferry station
+	ferryPlot.setImprovementType(ImprovementTypes.NO_IMPROVEMENT)
+
+	# Smoke / fire effect
+	CyEngine().triggerEffect(
+		gc.getInfoTypeForString("EFFECT_CITY_BIG_BURNING_SMOKE"),
+		ferryPlot.getPoint()
+	)
+
+	# Plunder / destruction sound
+	CyInterface().playGeneralSound("AS2D_CITYRAID")
+
+
+def getHelpFerryStationRobbers(argsList):
+	return localText.getText("TXT_KEY_EVENT_FERRY_STATION_ROBBERS_HELP", ())
+
 ######## Officer duel ###########
 
 getHelpOfficerDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_DUEL_HELP")
@@ -13752,7 +14124,6 @@ def spawnBarbarianUnitAdjacentToPlotAndFriendlyOnSamePlot(argsList):
 		plotThatTriggered.spawnPlayerUnitOnPlot(ePlayer, iOwnUnitClassTypeToSpawn)
 
 ######## Pig Herder in Need ###########
-getHelpFerryStationRobbers = get_simple_help("TXT_KEY_EVENT_FERRY_STATION_ROBBERS_HELP")
 
 ######## Slave and Planation Owner Daughter ###########
 getHelpSlaveAndPlanationOwnerDaughter1 = get_simple_help("TXT_KEY_EVENT_SLAVE_AND_PLANATION_OWNER_DAUGHTER_1_HELP")

@@ -6989,8 +6989,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_MILITIA</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -7021,7 +7021,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applyFerryStationRobbers1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpFerryStationRobbers</PythonHelp>
@@ -7029,8 +7029,8 @@
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>UNITCLASS_MILITIA</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_FERRY_STATION_ROBBERS_2</Type>
@@ -7082,7 +7082,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applyFerryStationRobbers2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpFerryStationRobbers</PythonHelp>
@@ -7090,8 +7090,8 @@
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>UNITCLASS_MILITIA</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SLAVE_AND_PLANATION_OWNER_DAUGHTER_1</Type>
