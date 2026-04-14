@@ -57001,7 +57001,7 @@
 			<FeatureImpassables/>
 			<EvasionBuildings/>
 			<iCombat>3</iCombat>
-			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueAttack>5</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iWithdrawalProb>5</iWithdrawalProb>
 			<iCityAttack>0</iCityAttack>

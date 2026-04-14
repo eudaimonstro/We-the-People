@@ -5675,7 +5675,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnit</PythonCallback>
+			<PythonCallback>applyNativeTraderAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpNativeTraderAttack</PythonHelp>
@@ -5683,7 +5683,7 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>100</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -5797,16 +5797,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnit</PythonCallback>
+			<PythonCallback>applyConquistadorAmbush</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
-            <HelpText>TXT_KEY_EVENT_CONQUISTADOR_AMBUSH_HELP</HelpText>
+            <PythonHelp>getHelpConquistadorAmbush</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>1000</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>

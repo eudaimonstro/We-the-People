@@ -1128,7 +1128,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>-1</iWeight>
+			<iWeight>1000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -2413,7 +2413,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>1000</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -2586,6 +2586,7 @@
 			<UnitTriggerConditions>
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_CONQUISTADOR</UnitClass>
+					<UnitClass>UNITCLASS_MOUNTED_CONQUISTADOR</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -2626,11 +2627,11 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerIsPlayableWithTriggerChance</PythonCanDo>
+			<PythonCanDo>canTriggerConquistadorAmbush</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
+			<iMinTurn>30</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_HIGHWAYMAN_ATTACK</Type>

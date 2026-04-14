@@ -12065,21 +12065,307 @@ def spawnOwnPlayerUnitAdjacentToPlot(argsList):
 
 ######## Native Trader Attack ###########
 
+def _spawnNativeTraderAttackHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
 def canTriggerNativeTraderAttack(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	eScout = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
-	if unit.getProfession() != eScout:
+
+	if player.isNative():
 		return False
-	# Read parameter 3 from the event as random chance
-	if TriggerChance(argsList):
-		return True
-	return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return False
+
+	iExpertTraderClass = gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER")
+	if unit.getUnitClassType() != iExpertTraderClass:
+		return False
+
+	eNativeTraderProfession = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+	if unit.getProfession() != eNativeTraderProfession:
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	if plot.isCity():
+		return False
+
+	return True
+
+
+def applyNativeTraderAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return
+
+	iExpertTraderClass = gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER")
+	if unit.getUnitClassType() != iExpertTraderClass:
+		return
+
+	eNativeTraderProfession = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+	if unit.getProfession() != eNativeTraderProfession:
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	if plot.isCity():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Freeze native trader for current turn + next turn
+	unit.setMoves(0)
+	unit.setImmobileTimer(1)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnNativeTraderAttackHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
 
 getHelpNativeTraderAttack = get_simple_help("TXT_KEY_EVENT_NATIVE_TRADER_ATTACK_HELP")
+
+######## Conquistador Ambush ###########
+
+def _spawnConquistadorAmbushHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
+def canTriggerConquistadorAmbush(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Sync check to prevent desync issues
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	if plot.isCity():
+		return False
+
+	# Allow both conquistador unit classes
+	iConq = gc.getInfoTypeForString("UNITCLASS_CONQUISTADOR")
+	iMountedConq = gc.getInfoTypeForString("UNITCLASS_MOUNTED_CONQUISTADOR")
+
+	iUnitClass = unit.getUnitClassType()
+
+	if iUnitClass != iConq and iUnitClass != iMountedConq:
+		return False
+
+	return True
+
+
+def applyConquistadorAmbush(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	# Sync check to ensure correct plot
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	if plot.isCity():
+		return
+
+	# Validate unit class again (safety check)
+	iConq = gc.getInfoTypeForString("UNITCLASS_CONQUISTADOR")
+	iMountedConq = gc.getInfoTypeForString("UNITCLASS_MOUNTED_CONQUISTADOR")
+
+	iUnitClass = unit.getUnitClassType()
+
+	if iUnitClass != iConq and iUnitClass != iMountedConq:
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+
+	hostileUnit = _spawnConquistadorAmbushHostileAdjacent(
+		plot,
+		iHostileUnitClass
+	)
+
+	if hostileUnit is None or hostileUnit.isNone():
+		return
+
+	# Trigger real combat via DLL
+	if hostileUnit.canMoveInto(plot, True, False, False):
+		hostileUnit.attack(plot, False)
+
+
+getHelpConquistadorAmbush = get_simple_help("TXT_KEY_EVENT_CONQUISTADOR_AMBUSH_HELP")
 
 ######## Criminal Attacks City ###########
 
