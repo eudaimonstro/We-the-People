@@ -1062,9 +1062,9 @@
 	 </TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_LANDTRANSPORT_ATTACK_1</Tag>
-		<English>Lured by the prospects of rich takings, hostile Natives have attacked a [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. They're shooting flaming arrows! Take cover and save what can be saved!</English>
-		<French>Alléché par le butin potentiel, un groupe d'Indiens a attaqué un [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. Ils décochent des flèches de feu. À couvert, et sauvons ce que nous pouvons !</French>
-		<German>Angelockt von den Aussichten auf reiche Beute hat ein feindlicher Indianer-Trupp einen [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] angegriffen. Sie schießen mit Brandpfeilen! Jetzt heißt es in Deckung gehen und retten was zu retten ist.</German>
+		<English>Lured by the prospects of rich takings, hostile Natives have attacked one of your [COLOR_UNIT_TEXT]carriages[COLOR_REVERT]. They're shooting flaming arrows! Take cover and save what can be saved!</English>
+		<French>Alléché par le butin potentiel, un groupe d'Indiens a attaqué un [COLOR_UNIT_TEXT]voiture[COLOR_REVERT]. Ils décochent des flèches de feu. À couvert, et sauvons ce que nous pouvons !</French>
+		<German>Angelockt von den Aussichten auf reiche Beute hat ein feindlicher Indianer-Trupp eines Eurer [COLOR_UNIT_TEXT]Gespanne[COLOR_REVERT] angegriffen. Sie schießen mit Brandpfeilen! Jetzt heißt es in Deckung gehen und retten was zu retten ist.</German>
 		<Russian>Соблазнившись перспективой богатой добычи, отряд злобных индейцев напал на [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. Они стреляют зажигательными стрелами! Все в укрытие! Спасайтесь!</Russian>
 	</TEXT>
 	<TEXT>
@@ -5052,6 +5052,12 @@
 		<French>Et bien, .. d'accord. Mais je ne crois pas dans cette paix. On va se répartir les coûts et leur faire don de quelques chevaux. Quand les Indiens partiront, on enverra des éclaireurs les pister pour ecplorer leurs villages.</French>
 		<German>Ja, gut,... einverstanden. Ich traue dem Frieden aber nicht. Beteiligen wir uns mit einem Teil der Kosten und schenken ihnen ein paar Pferde. Wenn die Wilden wieder abziehen, schickt Ihnen Kundschafter hinterher, um ihre Dörfer zu erkunden.</German>
 		<Russian>Что же, это.. интересно. Давайте покроем часть расходов на организацию и задобрим краснокожих, подарив им несколько лошадей. А когда дикари уйдут, отправьте за ними разведчиков, чтобы они обследовали их деревни.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEASONED_TRADER_UPGRADE_HELP</Tag>
+		<English>[ICON_BULLET]The expert native trader becomes a courageous native trader.</English>
+		<German>[ICON_BULLET]Der erfahrene Ureinwohnerhändler wird zu einem couragierten Ureinwohnerhändler.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP</Tag>

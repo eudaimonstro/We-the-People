@@ -1323,7 +1323,7 @@ def _getDiscoveryAttackedChance(player, plot):
 
 	if _isDiscoveryAttackedSoftCooldownActive(player):
 		iChance = (1 + iScaledDistance / 2) * 2
-		return min(12, int(iChance))
+		return min(3, int(iChance))
 
 	# Normal chance
 	iChance = (2 + iScaledDistance) * 2
@@ -2039,7 +2039,7 @@ def _getDiscoveryMutinyChance(player, plot):
 
 	if _isDiscoveryMutinySoftCooldownActive(player):
 		iChance = (1 + iScaledDistance / 4) * 2
-		return min(8, int(iChance))
+		return min(2, int(iChance))
 
 	# Normal chance
 	iChance = (1 + iScaledDistance / 2) * 2
@@ -2315,7 +2315,7 @@ def _isDiscoveryBraveFellowsSoftCooldownActive(player):
 
 def _getDiscoveryBraveFellowsChance(player):
 	if _isDiscoveryBraveFellowsSoftCooldownActive(player):
-		return 20
+		return 2
 
 	return 35
 
@@ -5193,47 +5193,332 @@ def getHelpHorseDeal1(argsList):
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 	return szHelp
 
-######## Seasoned Trader Horse Gift and Event Help ###########
+######## Seasoned Trader Trade Gathering Event ###########
 
-def canTriggerHorseGift(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() :
+SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX = "[[WTP_SEASONED_TRADER_MEETING_SOFT_READY_TURN="
+SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX = "]]"
+
+def _getSeasonedTraderMeetingSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setSeasonedTraderMeetingSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX + str(iReadyTurn) + SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX
+	player.setScriptData(szData)
+
+
+def _startSeasonedTraderMeetingSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	_setSeasonedTraderMeetingSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+
+def _isSeasonedTraderMeetingSoftCooldownActive(player):
+	if player.isNone():
 		return False
+
+	iReadyTurn = _getSeasonedTraderMeetingSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def _getSeasonedTraderMeetingHorseYield():
+	return gc.getInfoTypeForString("YIELD_HORSES")
+
+
+def _getSeasonedTraderMeetingRequiredTriggerHorses():
+	return 100
+
+
+def _getSeasonedTraderMeetingCity(player, kTriggeredData):
+	if player.isNone():
+		return None
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return None
+
+	return city
+
+
+def _getSeasonedTraderMeetingUnit(player, kTriggeredData):
+	if player.isNone():
+		return None
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
+
+
+def _isValidSeasonedTraderMeetingContext(player, city, unit, kTriggeredData):
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	if city.isNone():
+
+	if player.isNative():
 		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if city.getX() == unit.getX() and city.getY() == unit.getY():
-		return True
-	return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
-	eEvent1 = gc.getInfoTypeForString("EVENT_SEASONED_TRADER_MEETING_1")
-	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity*2 :
+
+	if city is None or city.isNone():
 		return False
+
+	if unit is None or unit.isNone():
+		return False
+
+	if city.getID() != kTriggeredData.iCityId:
+		return False
+
+	if unit.getX() != city.getX() or unit.getY() != city.getY():
+		return False
+
+	if unit.getX() != kTriggeredData.iPlotX or unit.getY() != kTriggeredData.iPlotY:
+		return False
+
+	iExpertTraderClass = gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER")
+	if unit.getUnitClassType() != iExpertTraderClass:
+		return False
+
+	iHorseYield = _getSeasonedTraderMeetingHorseYield()
+	if iHorseYield == -1:
+		return False
+
+	if city.getYieldStored(iHorseYield) < _getSeasonedTraderMeetingRequiredTriggerHorses():
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if otherPlayer.isNone():
+		return False
+
+	if not otherPlayer.isNative():
+		return False
+
+	otherCity = otherPlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if otherCity is None or otherCity.isNone():
+		return False
+
 	return True
+
+
+def canTriggerTraderMeeting(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	city = _getSeasonedTraderMeetingCity(player, kTriggeredData)
+	unit = _getSeasonedTraderMeetingUnit(player, kTriggeredData)
+
+	if not _isValidSeasonedTraderMeetingContext(player, city, unit, kTriggeredData):
+		return False
+
+	if _isSeasonedTraderMeetingSoftCooldownActive(player):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Seasoned Trader Meeting normal chance") >= 20:
+		return False
+
+	return True
+
+
+def canDoSeasonedTraderHorseOption(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = _getSeasonedTraderMeetingCity(player, kTriggeredData)
+	unit = _getSeasonedTraderMeetingUnit(player, kTriggeredData)
+
+	if not _isValidSeasonedTraderMeetingContext(player, city, unit, kTriggeredData):
+		return False
+
+	iHorseCost = abs(event.getGenericParameter(1))
+	if iHorseCost <= 0:
+		return False
+
+	iHorseYield = _getSeasonedTraderMeetingHorseYield()
+	if iHorseYield == -1:
+		return False
+
+	if city.getYieldStored(iHorseYield) < iHorseCost:
+		return False
+
+	return True
+
 
 def applyHorseGift1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < -quantity:
 		return
+
 	city.changeYieldStored(iYield, quantity)
+
+	_startSeasonedTraderMeetingSoftCooldown(player, 30)
+
+
+def applyHorseGift3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < -quantity:
+		return
+
+	city.changeYieldStored(iYield, quantity)
+
+	_startSeasonedTraderMeetingSoftCooldown(player, 30)
+
+
+def _spawnSeasonedTraderMeetingRaidersAdjacent(cityPlot, iUnitClass, iNumUnits):
+	if cityPlot is None or cityPlot.isNone():
+		return []
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return []
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return []
+
+	spawnedUnits = []
+
+	for i in range(iNumUnits):
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				pLoop = plotXY(cityPlot.getX(), cityPlot.getY(), iDX, iDY)
+
+				if pLoop is None or pLoop.isNone():
+					continue
+				if pLoop.isWater() or pLoop.isImpassable() or pLoop.isPeak():
+					continue
+				if pLoop.isCity() or pLoop.isUnit():
+					continue
+
+				newUnit = barbPlayer.initUnit(
+					iUnitType,
+					ProfessionTypes.NO_PROFESSION,
+					pLoop.getX(),
+					pLoop.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+
+				if newUnit is not None and not newUnit.isNone():
+					spawnedUnits.append(newUnit)
+
+				break
+
+	return spawnedUnits
+
+
+def applySeasonedTraderMeetingRaid(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	_startSeasonedTraderMeetingSoftCooldown(player, 30)
+
+	city = _getSeasonedTraderMeetingCity(player, kTriggeredData)
+	if city is None or city.isNone():
+		return
+
+	cityPlot = city.plot()
+	if cityPlot is None or cityPlot.isNone():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumRaiders = event.getGenericParameter(2)
+
+	raiders = _spawnSeasonedTraderMeetingRaidersAdjacent(cityPlot, iHostileUnitClass, iNumRaiders)
+
+	for raider in raiders:
+		if raider is None or raider.isNone():
+			continue
+
+		if raider.canMoveInto(cityPlot, True, False, False):
+			raider.attack(cityPlot, False)
+
 
 def getHelpHorseGift1(argsList):
 	eEvent = argsList[1]
@@ -5242,16 +5527,44 @@ def getHelpHorseGift1(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	szHelp = ""
 
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+	szHelp = u""
+
+	quantity = abs(event.getGenericParameter(1))
+	if quantity <> 0:
+		szHelp += localText.getText(
+			"TXT_KEY_EVENT_YIELD_LOOSE",
+			(-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+		)
+
+	szHelp += u"\n"
+	szHelp += localText.getText("TXT_KEY_EVENT_SEASONED_TRADER_UPGRADE_HELP", ())
+
 	return szHelp
 
-getHelpSeasonedTraderNo = get_simple_help("TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP")
+
+def getHelpHorseGift3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
+	szHelp = u""
+
+	quantity = abs(event.getGenericParameter(1))
+	if quantity <> 0:
+		szHelp += localText.getText(
+			"TXT_KEY_EVENT_YIELD_LOOSE",
+			(-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+		)
+
+	return szHelp
+
+
+def getHelpSeasonedTraderRaid(argsList):
+	return localText.getText("TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP", ())
 
 getHelpSeasonedScoutNativeCity = get_simple_help("TXT_KEY_EVENT_SEASONED_SCOUT_NATIVE_CITY_HELP")
 
@@ -15285,6 +15598,9 @@ def _getTreasureProtectionValidatedPlotAndPlayer(kTriggeredData):
 	if plotThatTriggered is None or plotThatTriggered.isNone():
 		return (None, None)
 
+	if plotThatTriggered.isWater():
+		return (None, None)
+
 	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
 	bHasTreasure = False
 
@@ -15324,6 +15640,9 @@ def canTriggerTreasureProtection(argsList):
 
 	plotThatTriggered = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	if plotThatTriggered is None or plotThatTriggered.isNone():
+		return False
+
+	if plotThatTriggered.isWater():
 		return False
 
 	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')

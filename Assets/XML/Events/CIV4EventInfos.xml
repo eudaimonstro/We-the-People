@@ -86568,7 +86568,7 @@
 			<ClearEvents/>
 			<PythonCallback>applyHorseGift1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
+			<PythonCanDo>canDoSeasonedTraderHorseOption</PythonCanDo>
 			<PythonHelp>getHelpHorseGift1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
@@ -86590,14 +86590,14 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>0</iGold>
+			<iGold>500</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -86627,10 +86627,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToCity</PythonCallback>
+			<PythonCallback>applySeasonedTraderMeetingRaid</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpSeasonedTraderNo</PythonHelp>
+			<PythonHelp>getHelpSeasonedTraderRaid</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
@@ -86688,10 +86688,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyHorseGift1</PythonCallback>
+			<PythonCallback>applyHorseGift3</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
-			<PythonHelp>getHelpHorseGift1</PythonHelp>
+			<PythonCanDo>canDoSeasonedTraderHorseOption</PythonCanDo>
+			<PythonHelp>getHelpHorseGift3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>-50</iGenericParameter1>
