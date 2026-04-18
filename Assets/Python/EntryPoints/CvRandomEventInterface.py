@@ -1007,7 +1007,11 @@ def getHelpPeasantWarPrep(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_PEASANT_WARPREP_HELP", (iPriceChange, gc.getYieldInfo(iYield1).getChar(), king.getCivilizationDescriptionKey(), iPriceChange, gc.getYieldInfo(iYield2).getChar(), king.getCivilizationDescriptionKey()))
 	return szHelp
 
-######## DISCOVERY LEGENDARY SCOUT EVENT ###########
+def getHelpPeasantWarPrepWarend(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_PEASANT_WARPREP_WAREND_HELP",
+		()
+	)
 
 ######## DISCOVERY LEGENDARY SCOUT EVENT ###########
 
@@ -12695,6 +12699,44 @@ def applyRemoveSpecificCityUnitClassFromEventParamsAndSpawnBarbarianAdjacentToCi
 ######## Indentured Servant Steals from Employer ###########
 getHelpIndenturedServantStealsFromEmployer1 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP")
 getHelpIndenturedServantStealsFromEmployer2 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2_HELP")
+
+######## Check for city if granary already has been built ###########
+
+def canTriggerBurningCornChamberCity(argsList):
+	ePlayer = argsList[1]
+	iCity = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	city = player.getCity(iCity)
+	if city.isNone():
+		return False
+
+	iCornChamberClass = gc.getInfoTypeForString("BUILDINGCLASS_CORN_CHAMBER")
+	iGranaryClass = gc.getInfoTypeForString("BUILDINGCLASS_GRANARY")
+
+	if iCornChamberClass == -1 or iGranaryClass == -1:
+		return False
+
+	iCornChamber = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iCornChamberClass)
+	iGranary = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iGranaryClass)
+
+	if iCornChamber == -1 or iGranary == -1:
+		return False
+
+	if not city.isHasBuilding(iCornChamber):
+		return False
+
+	if city.isHasBuilding(iGranary):
+		return False
+
+	return True
+
 
 ######## Native Trader Attack ###########
 

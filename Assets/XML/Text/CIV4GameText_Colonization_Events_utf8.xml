@@ -747,6 +747,30 @@
 		<Russian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1[COLOR_REVERT][ICON_GOLD] за %F2_yield в [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT] и [COLOR_POSITIVE_TEXT]%D4[COLOR_REVERT][ICON_GOLD] за %F5_yield в [COLOR_SELECTED_TEXT]%s6_city[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_PEASANT_WARPREP_EMIGRANT</Tag>
+		<English>Unrest in Europe is leading to an increase in the number of emigrants.</English>
+		<German>Unruhen in Europa führen zu einem Anstieg von Auswanderern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_PEASANT_WARPREP_EMIGRANT</Tag>
+		<English>The unrest among the rural population has led to more emigrants waiting at the European docks to set sail for the New World.</English>
+		<German>Die Unruhen unter der Landbevölkerung haben dazu geführt, dass mehr Auswanderer an den europäischen Docks warten, um ihre Reise in die neue Welt anzutreten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PEASANT_WARPREP_EMIGRANT</Tag>
+		<English>Bad for Europe, but good for us. Bring them over and give them work!</English>
+		<German>Schlecht für Europa, aber gut für uns. Holt sie herüber und gebt ihnen Arbeit!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PEASANT_WARPREP_WAREND_HELP</Tag>
+		<English>A number of free colonists were at the docks in Europe, waiting to set sail for the New World!</English>
+		<German>Einige freie Kolonisten waren an den Docks in Europa auf Ihre Überfahrt in die Neue Welt!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TAX_INCREASE</Tag>
 		<English>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1%%[COLOR_REVERT] Tax increase to %D2%% total</English>
 		<French>[ICON_BULLET]Augmentation du taux d'impôt de [COLOR_NEGATIVE_TEXT]%D1%%[COLOR_REVERT] pour atteindre %D2%%</French>
