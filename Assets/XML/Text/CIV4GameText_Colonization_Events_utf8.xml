@@ -1362,10 +1362,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP</Tag>
-		<English>The indentured servant will run away.</English>
-		<French>Le domestique va prendre la fuite.</French>
-		<German>Der Schuldknecht versucht zu fliehen.</German>
-		<Russian>Наемный слуга убежит.</Russian>
+		<English>[ICON_BULLET]The indentured servant will run away.</English>
+		<French>[ICON_BULLET]Le domestique va prendre la fuite.</French>
+		<German>[ICON_BULLET]Der Schuldknecht versucht zu fliehen.</German>
+		<Russian>[ICON_BULLET]Наемный слуга убежит.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2_HELP</Tag>
+		<English>[ICON_BULLET]The indentured servant is ransomed and becomes a free colonist.</English>
+		<German>[ICON_BULLET]Der Schuldknecht wird freigekauft und zu einem freien Kolonisten.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_PREACHER_AND_HARLOT</Tag>

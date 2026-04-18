@@ -12376,6 +12376,326 @@ def spawnOwnPlayerUnitAdjacentToPlot(argsList):
 	for iX in range(iNumOwnToSpawn):
 		plotThatTriggered.spawnPlayerUnitOnAdjacentPlot(ePlayer, iOwnUnitClassTypeToSpawn)
 
+
+######## Generic Helper Methods for specific City UnitClass Checks ###########
+######## These helpers are intended for CITY TRIGGERS ###########
+
+def countUnitClassInSpecificCityPopulation(argsList, iUnitClass):
+	ePlayer = argsList[1]
+	player = gc.getPlayer(ePlayer)
+	iCity = argsList[2]
+	city = player.getCity(iCity)
+
+	if city.isNone():
+		return 0
+
+	iUnitsCurrent = 0
+
+	for iCitizen in range(city.getPopulation()):
+		loopUnit = city.getPopulationUnitByIndex(iCitizen)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getUnitClassType() == iUnitClass:
+			iUnitsCurrent += 1
+
+	return iUnitsCurrent
+
+
+def countUnitClassOnSpecificCityPlot(argsList, iUnitClass):
+	ePlayer = argsList[1]
+	player = gc.getPlayer(ePlayer)
+	iCity = argsList[2]
+	city = player.getCity(iCity)
+
+	if city.isNone():
+		return 0
+
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return 0
+
+	iUnitsCurrent = 0
+
+	for i in range(plot.getNumUnits()):
+		loopUnit = plot.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != ePlayer:
+			continue
+		if loopUnit.getUnitClassType() == iUnitClass:
+			iUnitsCurrent += 1
+
+	return iUnitsCurrent
+
+
+def countUnitClassInSpecificCityPopulationAndPlot(argsList, iUnitClass, bCheckPopulation, bCheckPlot):
+	iUnitsCurrent = 0
+
+	if bCheckPopulation:
+		iUnitsCurrent += countUnitClassInSpecificCityPopulation(argsList, iUnitClass)
+
+	if bCheckPlot:
+		iUnitsCurrent += countUnitClassOnSpecificCityPlot(argsList, iUnitClass)
+
+	return iUnitsCurrent
+
+
+def canTriggerSpecificCityUnitClassFromEventParams(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCity = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(iCity)
+	if city.isNone():
+		return False
+
+	trigger = gc.getEventTriggerInfo(eTrigger)
+	if trigger is None:
+		return False
+
+	if trigger.getNumEvents() <= 0:
+		return False
+
+	eEvent = trigger.getEvent(0)
+	if eEvent == -1:
+		return False
+
+	event = gc.getEventInfo(eEvent)
+	if event is None:
+		return False
+
+	iUnitClass = event.getGenericParameter(1)
+	iMinUnits = event.getGenericParameter(2)
+	bCheckPopulation = (event.getGenericParameter(3) > 0)
+	bCheckPlot = (event.getGenericParameter(4) > 0)
+
+	if iUnitClass == -1:
+		return False
+
+	if iMinUnits <= 0:
+		iMinUnits = 1
+
+	# Failsafe: if both checks are disabled, do not allow the trigger
+	if not bCheckPopulation and not bCheckPlot:
+		return False
+
+	iUnitsCurrent = countUnitClassInSpecificCityPopulationAndPlot(
+		argsList,
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+	if iUnitsCurrent < iMinUnits:
+		return False
+
+	return True
+
+######## Generic Helper Methods for specific City UnitClass Event Handling ###########
+######## These helpers are intended for CITY TRIGGERS and CITY EVENTS ###########
+
+def _getSpecificCityFromTriggeredData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return None
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return None
+
+	return city
+
+
+def _removeFirstMatchingUnitClassFromSpecificCityPopulation(city, iUnitClass):
+	if city is None or city.isNone():
+		return False
+
+	for iCitizen in range(city.getPopulation()):
+		loopUnit = city.getPopulationUnitByIndex(iCitizen)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getUnitClassType() != iUnitClass:
+			continue
+
+		# removePopulationUnit releases the citizen from population,
+		# but does not necessarily delete the unit.
+		# Therefore we immediately kill the released unit afterwards.
+		city.removePopulationUnit(loopUnit, False, ProfessionTypes.NO_PROFESSION)
+
+		if loopUnit is not None and not loopUnit.isNone():
+			loopUnit.kill(False)
+
+		return True
+
+	return False
+
+
+def _removeFirstMatchingUnitClassFromSpecificCityPlot(player, city, iUnitClass):
+	if player.isNone():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	for i in range(plot.getNumUnits()):
+		loopUnit = plot.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != player.getID():
+			continue
+		if loopUnit.getUnitClassType() != iUnitClass:
+			continue
+
+		loopUnit.kill(False)
+		return True
+
+	return False
+
+
+def removeFirstMatchingUnitClassFromSpecificCity(player, city, iUnitClass, bCheckPopulation, bCheckPlot):
+	if player.isNone():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	if iUnitClass == -1:
+		return False
+
+	# Prefer city population first because this is usually the more thematic case
+	if bCheckPopulation:
+		if _removeFirstMatchingUnitClassFromSpecificCityPopulation(city, iUnitClass):
+			return True
+
+	if bCheckPlot:
+		if _removeFirstMatchingUnitClassFromSpecificCityPlot(player, city, iUnitClass):
+			return True
+
+	return False
+
+
+def _getSpecificCityUnitClassEventParams(event):
+	if event is None:
+		return (-1, 1, True, True)
+
+	iUnitClass = event.getGenericParameter(1)
+	iMinUnits = event.getGenericParameter(2)
+	bCheckPopulation = (event.getGenericParameter(3) > 0)
+	bCheckPlot = (event.getGenericParameter(4) > 0)
+
+	if iMinUnits <= 0:
+		iMinUnits = 1
+
+	return (iUnitClass, iMinUnits, bCheckPopulation, bCheckPlot)
+
+
+######## Generic Helper Methods for specific City UnitClass Event Effects ###########
+######## These helpers are intended for CITY EVENTS ###########
+
+def _isValidSpecificCityUnitClassEventContext(player, city, iUnitClass):
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	if iUnitClass == -1:
+		return False
+
+	return True
+
+
+def applyRemoveSpecificCityUnitClassFromEventParams(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = _getSpecificCityFromTriggeredData(kTriggeredData)
+
+	iUnitClass, iMinUnits, bCheckPopulation, bCheckPlot = _getSpecificCityUnitClassEventParams(event)
+
+	if not _isValidSpecificCityUnitClassEventContext(player, city, iUnitClass):
+		return
+
+	iUnitsCurrent = countUnitClassInSpecificCityPopulationAndPlot(
+		(kTriggeredData.eTrigger, kTriggeredData.ePlayer, kTriggeredData.iCityId),
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+	if iUnitsCurrent < iMinUnits:
+		return
+
+	removeFirstMatchingUnitClassFromSpecificCity(
+		player,
+		city,
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+
+def applyRemoveSpecificCityUnitClassFromEventParamsAndSpawnBarbarianAdjacentToCity(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = _getSpecificCityFromTriggeredData(kTriggeredData)
+
+	iUnitClass, iMinUnits, bCheckPopulation, bCheckPlot = _getSpecificCityUnitClassEventParams(event)
+
+	if not _isValidSpecificCityUnitClassEventContext(player, city, iUnitClass):
+		return
+
+	iUnitsCurrent = countUnitClassInSpecificCityPopulationAndPlot(
+		(kTriggeredData.eTrigger, kTriggeredData.ePlayer, kTriggeredData.iCityId),
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+	if iUnitsCurrent < iMinUnits:
+		return
+
+	if not removeFirstMatchingUnitClassFromSpecificCity(
+		player,
+		city,
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	):
+		return
+
+	spawnBarbarianUnitAdjacentToCity(argsList)
+
+
+######## Indentured Servant Steals from Employer ###########
+getHelpIndenturedServantStealsFromEmployer1 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP")
+getHelpIndenturedServantStealsFromEmployer2 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2_HELP")
+
 ######## Native Trader Attack ###########
 
 def _spawnNativeTraderAttackHostileAdjacent(plot, iUnitClass):
@@ -14726,9 +15046,6 @@ def spawnBarbarianUnitAdjacentToPlotAndFriendlyOnSamePlot(argsList):
 
 ######## Slave and Planation Owner Daughter ###########
 getHelpSlaveAndPlanationOwnerDaughter1 = get_simple_help("TXT_KEY_EVENT_SLAVE_AND_PLANATION_OWNER_DAUGHTER_1_HELP")
-
-######## Indentured Servant Steals from Employer ###########
-getHelpIndenturedServantStealsFromEmployer = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP")
 
 ######## Liet Event Training ###########
 
