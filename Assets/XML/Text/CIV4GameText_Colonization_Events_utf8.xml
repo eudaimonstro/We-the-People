@@ -4385,9 +4385,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SELL_NATIVE_SLAVE_SELL</Tag>
-		<English>I find these legal proceedings tedious. Arrest this slave for dereliction of duty. Sell him to the next outbound slave ship.</English>
+		<English>I find these legal proceedings tedious. Arrest this slave for dereliction of duty. Sell him to the next outbound slave ship. But I want my share of the business.</English>
 		<French>Toutes ces lois sont dépassées. Arrêtez juste l'esclave pour sédition. Puis à la prochaine occasion, vendez-le à un navire d'esclaves en partance.</French>
-		<German>Diese ganzen Gesetze sind veraltet. Verhaftet den Sklaven einfach wegen Aufrührerei. Bei nächster Gelegenheit verkauft ihn dann an ein auslaufendes Sklavenschiff.</German>
+		<German>Diese ganzen Gesetze sind veraltet. Verhaftet den Sklaven einfach wegen Aufrührerei. Bei nächster Gelegenheit verkauft ihn dann an ein auslaufendes Sklavenschiff. Aber ich will meinen Anteil an dem Geschäft.</German>
 		<Russian>Я нахожу эти судебные разбирательства утомительными. Закуйте этого раба в кандалы за невыполнение служебных обязанностей и продайте на ближайший невольничьеский корабль.</Russian>
 	</TEXT>
 	<TEXT>
@@ -4420,9 +4420,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SELL_AFRICAN_SLAVE_SELL</Tag>
-		<English>Allow the sale to proceed, but sell them to a foreign plantation to avoid further incident.</English>
+		<English>Allow the sale to proceed, but sell them to a foreign plantation to avoid further incident. But I want my share of the business.</English>
 		<French>Autorisez la vente, mais vendez-les à une plantation étrangère pour éviter tout autre incident.</French>
-		<German>Weist die Sklaveneintreiber an, die schwarzen Sklaven an eine Plantage einer anderen Nation zu verkaufen.</German>
+		<German>Weist die Sklaveneintreiber an, die schwarzen Sklaven an eine Plantage einer anderen Nation zu verkaufen. Aber ich will meinen Anteil an dem Geschäft.</German>
 		<Russian>Разрешить продажу, но только на иностранную плантацию, чтобы избежать дальнейших инцидентов.</Russian>
 	</TEXT>
 	<TEXT>

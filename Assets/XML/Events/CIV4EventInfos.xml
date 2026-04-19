@@ -28184,10 +28184,10 @@
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_NATIVE_SLAVE_FREE</Type>
@@ -28209,7 +28209,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28239,16 +28239,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_NATIVE_SLAVE_SELL</Type>
@@ -28265,12 +28265,12 @@
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>100</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>0</iRandomGold>
+			<iRandomGold>200</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28300,16 +28300,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_AFRICAN_SLAVE_FREE</Type>
@@ -28331,7 +28331,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_FREED_SLAVE</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28361,16 +28361,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_AFRICAN_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_AFRICAN_SLAVE_KEEP</Type>
@@ -28448,12 +28448,12 @@
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>100</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>0</iRandomGold>
+			<iRandomGold>200</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28483,16 +28483,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_AFRICAN_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_RABBLE_1</Type>

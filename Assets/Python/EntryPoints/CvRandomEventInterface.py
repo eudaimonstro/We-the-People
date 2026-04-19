@@ -12695,7 +12695,6 @@ def applyRemoveSpecificCityUnitClassFromEventParamsAndSpawnBarbarianAdjacentToCi
 
 	spawnBarbarianUnitAdjacentToCity(argsList)
 
-
 ######## Indentured Servant Steals from Employer ###########
 getHelpIndenturedServantStealsFromEmployer1 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP")
 getHelpIndenturedServantStealsFromEmployer2 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2_HELP")
