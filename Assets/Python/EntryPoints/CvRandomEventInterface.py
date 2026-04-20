@@ -1065,7 +1065,7 @@ def _setDiscoveryLegendaryScoutLeftTurn(unit, iTurn):
 	unit.setScriptData(szData)
 
 def _getDiscoveryLegendaryScoutRequiredTurns():
-	iBaseTurns = 30
+	iBaseTurns = 75
 	iGameSpeed = CyGame().getGameSpeedType()
 	gameSpeedInfo = gc.getGameSpeedInfo(iGameSpeed)
 	iPercent = gameSpeedInfo.getGrowthPercent()
@@ -1183,6 +1183,495 @@ def getHelpDiscoveryLegendaryScoutXP(argsList):
 		"TXT_KEY_EVENT_DISCOVERY_LEGENDARY_SCOUT_XP_HELP",
 		(iTurns,)
 	)
+
+######## Seasoned Native City Events (Scout + Trader) ###########
+
+SEASONED_SCOUT_NATIVE_CITY_SOFT_COOLDOWN_PREFIX = "[[WTP_SEASONED_SCOUT_NATIVE_CITY_SOFT_READY_TURN="
+SEASONED_TRADER_NATIVE_CITY_SOFT_COOLDOWN_PREFIX = "[[WTP_SEASONED_TRADER_NATIVE_CITY_SOFT_READY_TURN="
+SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX = "]]"
+
+
+def _getSeasonedNativeCitySoftCooldownPrefix(kTriggeredData):
+	eTrigger = kTriggeredData.eTrigger
+	if eTrigger == -1:
+		return ""
+
+	triggerInfo = gc.getEventTriggerInfo(eTrigger)
+	if triggerInfo is None:
+		return ""
+
+	szTriggerType = triggerInfo.getType()
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_SCOUT_NATIVE_CITY":
+		return SEASONED_SCOUT_NATIVE_CITY_SOFT_COOLDOWN_PREFIX
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY":
+		return SEASONED_TRADER_NATIVE_CITY_SOFT_COOLDOWN_PREFIX
+
+	return ""
+
+
+def _getSeasonedNativeCitySoftCooldownReadyTurn(player, kTriggeredData):
+	if player.isNone():
+		return -1
+
+	szPrefix = _getSeasonedNativeCitySoftCooldownPrefix(kTriggeredData)
+	if szPrefix == "":
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(szPrefix)
+	if iStart == -1:
+		return -1
+
+	iStart += len(szPrefix)
+	iEnd = szData.find(SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setSeasonedNativeCitySoftCooldownReadyTurn(player, kTriggeredData, iReadyTurn):
+	if player.isNone():
+		return
+
+	szPrefix = _getSeasonedNativeCitySoftCooldownPrefix(kTriggeredData)
+	if szPrefix == "":
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(szPrefix)
+	if iStart != -1:
+		iEnd = szData.find(SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		szPrefix,
+		iReadyTurn,
+		SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+
+def _startSeasonedNativeCitySoftCooldown(player, kTriggeredData):
+	if player.isNone():
+		return
+
+	_setSeasonedNativeCitySoftCooldownReadyTurn(
+		player,
+		kTriggeredData,
+		CyGame().getGameTurn() + 50
+	)
+
+
+def _isSeasonedNativeCitySoftCooldownActive(player, kTriggeredData):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getSeasonedNativeCitySoftCooldownReadyTurn(player, kTriggeredData)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def _getSeasonedNativeCityTrackedUnit(player, kTriggeredData):
+	if player.isNone():
+		return None
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
+
+
+def _getSeasonedNativeCityRequiredProfession(kTriggeredData):
+	eTrigger = kTriggeredData.eTrigger
+	if eTrigger == -1:
+		return -1
+
+	triggerInfo = gc.getEventTriggerInfo(eTrigger)
+	if triggerInfo is None:
+		return -1
+
+	szTriggerType = triggerInfo.getType()
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_SCOUT_NATIVE_CITY":
+		return gc.getInfoTypeForString("PROFESSION_SCOUT")
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY":
+		return gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+
+	return -1
+
+
+def _getSeasonedNativeCityPlotCityFromUnit(unit):
+	if unit is None or unit.isNone():
+		return None
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return None
+
+	if not plot.isCity():
+		return None
+
+	return plot.getPlotCity()
+
+
+def _getSeasonedNativeCityNativePlayerFromUnit(unit):
+	city = _getSeasonedNativeCityPlotCityFromUnit(unit)
+	if city is None:
+		return None
+
+	iOwner = city.getOwner()
+	if iOwner < 0:
+		return None
+
+	nativePlayer = gc.getPlayer(iOwner)
+	if nativePlayer is None or nativePlayer.isNone():
+		return None
+
+	if not nativePlayer.isNative():
+		return None
+
+	return nativePlayer
+
+
+def _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if unit is None or unit.isNone():
+		return False
+
+	if plot is None or plot.isNone():
+		return False
+
+	if not plot.isCity():
+		return False
+
+	nativePlayer = _getSeasonedNativeCityNativePlayerFromUnit(unit)
+	if nativePlayer is None:
+		return False
+
+	eRequiredProfession = _getSeasonedNativeCityRequiredProfession(kTriggeredData)
+	if eRequiredProfession == -1:
+		return False
+
+	if unit.getProfession() != eRequiredProfession:
+		return False
+
+	return True
+
+
+def _spawnSeasonedNativeCityHostileAdjacent(plot, iHostileUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iHostileUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	iUnitType = barbCiv.getCivilizationUnits(iHostileUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
+def _applySeasonedNativeCityRelationChange(kTriggeredData, iChange):
+	if iChange == 0:
+		return
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return
+
+	nativePlayer = _getSeasonedNativeCityNativePlayerFromUnit(unit)
+	if nativePlayer is None:
+		return
+
+	player.AI_changeAttitudeExtra(nativePlayer.getID(), iChange)
+	nativePlayer.AI_changeAttitudeExtra(player.getID(), iChange)
+
+
+def canTriggerSeasonedNativeCity(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if _isSeasonedNativeCitySoftCooldownActive(player, kTriggeredData):
+		return False
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+		return False
+
+	return True
+
+
+def applySeasonedNativeCityStartCooldown(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+		return
+
+	_startSeasonedNativeCitySoftCooldown(player, kTriggeredData)
+
+
+def applySeasonedNativeCity1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	iRelationChange = event.getGenericParameter(1)
+	_applySeasonedNativeCityRelationChange(argsList[0], iRelationChange)
+	applySeasonedNativeCityStartCooldown(argsList)
+
+
+def applySeasonedNativeCity2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iRelationChange = event.getGenericParameter(3)
+
+	hostileUnit = _spawnSeasonedNativeCityHostileAdjacent(plot, iHostileUnitClass)
+
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	_applySeasonedNativeCityRelationChange(kTriggeredData, iRelationChange)
+	applySeasonedNativeCityStartCooldown(argsList)
+
+
+def applySeasonedNativeCity3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	iRelationChange = event.getGenericParameter(1)
+	_applySeasonedNativeCityRelationChange(argsList[0], iRelationChange)
+	applySeasonedNativeCityStartCooldown(argsList)
+
+
+def _getSeasonedNativeCityNativePlayerName(unit):
+	nativePlayer = _getSeasonedNativeCityNativePlayerFromUnit(unit)
+	if nativePlayer is None:
+		return u""
+
+	return nativePlayer.getCivilizationDescription(0)
+
+def _getSeasonedNativeCityRelationHelp(unit, iRelationChange):
+	if unit is None or unit.isNone():
+		return u""
+
+	if iRelationChange == 0:
+		return u""
+
+	szNativeName = _getSeasonedNativeCityNativePlayerName(unit)
+	if szNativeName == u"":
+		return u""
+
+	# Tribe yellow
+	szNativeColored = u"<color=255,255,0>%s</color>" % szNativeName
+
+	if iRelationChange > 0:
+		szValue = u"<color=0,255,0>+%d</color>" % iRelationChange
+	else:
+		szValue = u"<color=255,0,0>-%d</color>" % abs(iRelationChange)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_RELATION",
+		(szNativeColored, szValue)
+	)
+
+def _getSeasonedNativeCityHelp1(unit, event):
+	iRelationChange = event.getGenericParameter(1)
+	return _getSeasonedNativeCityRelationHelp(unit, iRelationChange)
+
+
+def _getSeasonedNativeCityHelp2(unit, event):
+	szNativeName = _getSeasonedNativeCityNativePlayerName(unit)
+	if szNativeName == u"":
+		return u""
+
+	iRelationChange = event.getGenericParameter(3)
+
+	szHelpParts = []
+	szHelpParts.append(
+		localText.getText(
+		"TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_ANGRY_ATTACK",
+		(szNativeName,)
+		)
+	)
+
+	szRelationHelp = _getSeasonedNativeCityRelationHelp(unit, iRelationChange)
+	if szRelationHelp != u"":
+		szHelpParts.append(szRelationHelp)
+
+	return u"\n".join(szHelpParts)
+
+
+def _getSeasonedNativeCityHelp3(unit, event):
+	szNativeName = _getSeasonedNativeCityNativePlayerName(unit)
+	if szNativeName == u"":
+		return u""
+
+	iRelationChange = event.getGenericParameter(1)
+
+	szHelpParts = []
+	szHelpParts.append(
+		localText.getText(
+		"TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_UNPLEASED",
+		(szNativeName,)
+		)
+	)
+
+	szRelationHelp = _getSeasonedNativeCityRelationHelp(unit, iRelationChange)
+	if szRelationHelp != u"":
+		szHelpParts.append(szRelationHelp)
+
+	return u"\n".join(szHelpParts)
+
+
+def _getHelpSeasonedNativeCity(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return u""
+
+	szEventType = event.getType()
+
+	if szEventType.endswith("_1"):
+		return _getSeasonedNativeCityHelp1(unit, event)
+
+	if szEventType.endswith("_2"):
+		return _getSeasonedNativeCityHelp2(unit, event)
+
+	if szEventType.endswith("_3"):
+		return _getSeasonedNativeCityHelp3(unit, event)
+
+	return u""
+
+
+def getHelpSeasonedScoutNativeCity1(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+def getHelpSeasonedScoutNativeCity2(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+def getHelpSeasonedScoutNativeCity3(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+def getHelpSeasonedTraderNativeCity1(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+def getHelpSeasonedTraderNativeCity2(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+def getHelpSeasonedTraderNativeCity3(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
 
 ######## Discovery Attacked Event ###########
 
@@ -1424,12 +1913,6 @@ def applyDiscoveryAttacked(argsList):
 
 	# Start soft cooldown
 	_startDiscoveryAttackedSoftCooldown(player)
-
-def getHelpDiscoveryAttacked(argsList):
-	return localText.getText(
-		"TXT_KEY_EVENT_DISCOVERY_EVENTS_ATTACKED_HELP",
-		()
-	)
   
 ######## Discovery Events ###########
 
@@ -1661,8 +2144,11 @@ def canTriggerDiscoveryFever(argsList):
 	if unit.isHasPromotion(eFeverImmune):
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
 	# Must be land plot
@@ -1702,10 +2188,13 @@ def applyDiscoveryFever(argsList):
 	if unit.isNone():
 		return
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	plot = unit.plot()
 
-	# Safety check: plot must still exist and still be valid for fever
-	if plot.isNone():
+	# Safety check: unit must still stand on the originally triggered plot
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return
 	if plot.isWater():
 		return
@@ -5570,7 +6059,7 @@ def getHelpHorseGift3(argsList):
 def getHelpSeasonedTraderRaid(argsList):
 	return localText.getText("TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP", ())
 
-getHelpSeasonedScoutNativeCity = get_simple_help("TXT_KEY_EVENT_SEASONED_SCOUT_NATIVE_CITY_HELP")
+
 
 ######## Wild Animal ###########
 
@@ -14006,37 +14495,6 @@ def _getTreasureAttackChance(player, plot):
 	else:
 		return 15
 
-def _spawnTreasureAttackFriendlyEscortOnTreasurePlot(plot, iPlayer, iUnitClass):
-	if plot is None or plot.isNone():
-		return None
-
-	if iUnitClass == -1:
-		return None
-
-	player = gc.getPlayer(iPlayer)
-	if player.isNone():
-		return None
-
-	civ = gc.getCivilizationInfo(player.getCivilizationType())
-	iUnitType = civ.getCivilizationUnits(iUnitClass)
-	if iUnitType == UnitTypes.NO_UNIT:
-		return None
-
-	unit = player.initUnit(
-		iUnitType,
-		ProfessionTypes.NO_PROFESSION,
-		plot.getX(),
-		plot.getY(),
-		UnitAITypes.NO_UNITAI,
-		DirectionTypes.DIRECTION_SOUTH,
-		0
-	)
-
-	if unit is not None and not unit.isNone():
-		return unit
-
-	return None
-
 def _spawnTreasureAttackHostileAdjacent(plot, iUnitClass):
 	if plot is None or plot.isNone():
 		return None
@@ -14142,10 +14600,6 @@ def canTriggerTreasureAttack(argsList):
 	if plot is None or plot.isNone():
 		return False
 
-	# Exact unit / plot binding to prevent ghost triggers
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
-		return False
-
 	# Must be land
 	if plot.isWater():
 		return False
@@ -14190,10 +14644,6 @@ def applyTreasureAttack(argsList):
 	if plot is None or plot.isNone():
 		return
 
-	# Exact unit / plot binding to prevent invalid execution
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
-		return
-
 	if plot.isWater():
 		return
 
@@ -14203,10 +14653,6 @@ def applyTreasureAttack(argsList):
 	iHostileUnitClass = event.getGenericParameter(1)
 	iNumHostiles = event.getGenericParameter(2)
 	iImmobilize = event.getGenericParameter(3)
-	iFriendlyUnitClass = event.getGenericParameter(4)
-
-	if iFriendlyUnitClass != -1:
-		_spawnTreasureAttackFriendlyEscortOnTreasurePlot(plot, kTriggeredData.ePlayer, iFriendlyUnitClass)
 
 	if iImmobilize > 0:
 		_immobilizeTreasureStack(plot, kTriggeredData.ePlayer)
@@ -14217,6 +14663,7 @@ def applyTreasureAttack(argsList):
 		iNumHostiles = 1
 
 	hostileUnit = _spawnTreasureAttackHostileAdjacent(plot, iHostileUnitClass)
+
 	if hostileUnit is not None and not hostileUnit.isNone():
 		if hostileUnit.canMoveInto(plot, True, False, False):
 			hostileUnit.attack(plot, False)

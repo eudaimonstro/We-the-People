@@ -96615,10 +96615,10 @@
 			</TerrainImpassables>
 			<FeatureImpassables/>
 			<EvasionBuildings/>
-			<iCombat>2</iCombat>
+			<iCombat>4</iCombat>
 			<iXPValueAttack>0</iXPValueAttack>
-			<iXPValueDefense>0</iXPValueDefense>
-			<iWithdrawalProb>0</iWithdrawalProb>
+			<iXPValueDefense>3</iXPValueDefense>
+			<iWithdrawalProb>10</iWithdrawalProb>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
 			<iHillsAttack>0</iHillsAttack>

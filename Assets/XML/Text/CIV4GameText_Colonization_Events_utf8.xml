@@ -5139,11 +5139,24 @@
 		<Russian>Нам некогда разглядывать еще одно стойбище этих дикарей. Поторопимся, впереди еще много более важных дел.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_SEASONED_SCOUT_NATIVE_CITY_HELP</Tag>
-		<English>[ICON_BULLET]Some Natives are angry, seeing their chief giving you such a rich gift.</English>
-		<French>[ICON_BULLET]Des indigènes sont en colère et n'apprécient pas que leur chef vous fasse un tel cadeau.</French>
-		<German>[ICON_BULLET]Einige Ureinwohner sind wütend und nicht damit einverstanden, dass ihr Häuptling Euch so reich beschenkt.</German>
-		<Russian>[ICON_BULLET]Некоторые индейцы разгневаны и не одобряют того, что их вождь преподносит вам богатый подарок.</Russian>
+		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_RELATION</Tag>
+		<English>[ICON_BULLET]Relations with the %s1 change by %s2.</English>
+		<German>[ICON_BULLET]Die Beziehungen zu den %s1 verändern sich um %s2.</German>
+		<Russian/>
+	</TEXT>
+
+		<TEXT>
+			<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_ANGRY_ATTACK</Tag>
+			<English>[ICON_BULLET]Some Natives of the %s1 are angry, seeing their chief giving you such a rich gift. Hostile warrior will [COLOR_NEGATIVE_TEXT]attack[COLOR_REVERT] you.</English>
+			<German>[ICON_BULLET]Einige Krieger der %s1 sind wütend und nicht damit einverstanden, dass ihr Häuptling Euch so reich beschenkt. Krieger werden Euch [COLOR_NEGATIVE_TEXT]angreifen[COLOR_REVERT].</German>
+			<Russian/>
+		</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_UNPLEASED</Tag>
+		<English>[ICON_BULLET]The %s1 are [COLOR_NEGATIVE_TEXT] displeased[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Die %s1 sind [COLOR_NEGATIVE_TEXT] verärgert[COLOR_REVERT]. Sie hatten sich mehr von Eurem Besuch versprochen. Das wird nicht so schnell vergessen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SEASONED_TRADER_NATIVE_CITY_1</Tag>

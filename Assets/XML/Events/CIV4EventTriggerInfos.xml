@@ -12081,7 +12081,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -12093,13 +12093,11 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_NATIVE_SLAVE</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>1</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
-				<bUnitsOnPlot>1</bUnitsOnPlot>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
@@ -12107,7 +12105,7 @@
 			<BuildingsRequired/>
 			<iNumBuildings>0</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
@@ -12128,15 +12126,16 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
-			<PythonCanDoCity/>
+			<PythonCanDo/>
+			<PythonCanDoCity>canTriggerSpecificCityUnitClassFromEventParams</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
+			<iMinTurn>55</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_DIPLOMATIC_CONNECTIONS</Type>
@@ -14460,7 +14459,6 @@
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired>
-					<UnitClass>UNITCLASS_NATIVE_SLAVE</UnitClass>
 					<UnitClass>UNITCLASS_AFRICAN_SLAVE</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>2</iNumUnits>
@@ -14479,7 +14477,7 @@
 				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
 			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
+			<iNumBuildings>2</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
@@ -39020,7 +39018,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>800</iWeight>
+			<iWeight>2000</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39034,17 +39032,28 @@
 			<UnitTriggerConditions>
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_SCOUT</UnitClass>
+					<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
+					<UnitClass>UNITCLASS_MESTIZZO</UnitClass>
+					<UnitClass>UNITCLASS_MULATTO</UnitClass>
+					<UnitClass>UNITCLASS_COLONIST</UnitClass>
+					<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
 				<bTrackUnit>1</bTrackUnit>
 				<bUnitsOnPlot>1</bUnitsOnPlot>
-				<iUnitDamagedWeight>1</iUnitDamagedWeight>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
-			<BuildingsRequired/>
-			<iNumBuildings>0</iNumBuildings>
+			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_BASECAMP</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+			</BuildingsRequired>
+			<iNumBuildings>3</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
@@ -39073,11 +39082,11 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isNativeVillage</PythonCanDo>
+			<PythonCanDo>canTriggerSeasonedNativeCity</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
+			<iMinTurn>20</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY</Type>
@@ -39100,7 +39109,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>2000</iWeight>
+			<iWeight>3000</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -39114,6 +39123,7 @@
 			<UnitTriggerConditions>
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_SEASONED_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_EXPERT_TRADER</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -39153,11 +39163,11 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isNativeVillage</PythonCanDo>
+			<PythonCanDo>canTriggerSeasonedNativeCity</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
+			<iMinTurn>25</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_NATIVE_TRADE_WAGON</Type>
@@ -40170,7 +40180,7 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>0</iMinTurn>
+			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE</Type>
@@ -40243,7 +40253,7 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>0</iMinTurn>
+			<iMinTurn>15</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_DISCOVERY_EVENTS_BRAVE_FELLOWS</Type>
