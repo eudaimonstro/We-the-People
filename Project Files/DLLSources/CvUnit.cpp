@@ -1,6 +1,7 @@
 // unit.cpp
 
 #include "CvGameCoreDLL.h"
+#include "CombatOdds.h"
 #include "CvUnit.h"
 #include "CvArea.h"
 #include "CvPlot.h"
@@ -12,7 +13,6 @@
 #include "CvPlayerAI.h"
 #include "CvRandom.h"
 #include "CvTeamAI.h"
-#include "CvGameCoreUtils.h"
 #include "CyUnit.h"
 #include "CyArgsList.h"
 #include "CyPlot.h"

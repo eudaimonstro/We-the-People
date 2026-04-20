@@ -12,6 +12,7 @@
 
 #include "CvGameCoreDLL.h"
 #include "CvGameTextMgr.h"
+#include "CombatOdds.h"
 #include "CvGameCoreUtils.h"
 #include "CvDLLUtilityIFaceBase.h"
 #include "CvDLLInterfaceIFaceBase.h"
@@ -2024,32 +2025,29 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 			pDefender = pCity->getBestDefender(&eProfession, pDefender, pAttacker);
 		}
 
-		CvUnitTemporaryStrengthModifier kTemporaryStrength(pDefender, eProfession);
 		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefend(pPlot))
 		{
-			// Erik: I've adapted and modified PieceOfMind's Advanced Combat Odds for use in RaR			
+			// Erik: Advanced Combat Odds display, with corrected outcome calculation
 			CvWString szTempBuffer2;
-		
-			float AttackerKillOdds = getCombatOdds(pAttacker, pDefender) / 1000.0F;
-			float PullOutOdds = 0;
-			float RetreatOdds = getCombatOddsDraw(pAttacker, pDefender) / 1000.0F;
-			// Erik: Ensure that the odds are positive
-			float DefenderKillOdds = std::max(0.0F, 1.0F - AttackerKillOdds - RetreatOdds);
 
-			// Erik: We have to add in the actual retreat chance as well
-			float prob1 = 100.0f*(AttackerKillOdds + PullOutOdds);//up to win odds
-			float prob2 = prob1 + 100.0f*RetreatOdds;//up to retreat odds
+			const CombatPreviewOdds kOdds = getCombatPreviewOdds(pAttacker, pDefender, pPlot);
 
-			szTempBuffer.Format(L"%.2f%%", 100.0f*(AttackerKillOdds + RetreatOdds + PullOutOdds));
-			szTempBuffer2.Format(L"%.2f%%", 100.0f*(RetreatOdds + PullOutOdds + DefenderKillOdds));
+			const float AttackerKillOdds = kOdds.iAttackerWin / 1000.0f;
+			const float UnresolvedOdds = kOdds.iUnresolved / 1000.0f;
+			const float DefenderKillOdds = kOdds.iDefenderWin / 1000.0f;
+
+			float prob1 = 100.0f * AttackerKillOdds; // up to win odds
+			float prob2 = prob1 + 100.0f * UnresolvedOdds; // up to unresolved odds
+
+			szTempBuffer.Format(L"%.2f%%", 100.0f * (AttackerKillOdds + UnresolvedOdds));
 			szString.append(gDLL->getText("TXT_ACO_SurvivalOdds"));
 
 			// Assign the color based on the most likely outcome
-			if (AttackerKillOdds > RetreatOdds && AttackerKillOdds > DefenderKillOdds)
+			if (AttackerKillOdds > UnresolvedOdds && AttackerKillOdds > DefenderKillOdds)
 			{
 				szString.append(gDLL->getText("[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT]", szTempBuffer.GetCString()));
 			}
-			else if (RetreatOdds > AttackerKillOdds && RetreatOdds > DefenderKillOdds)
+			else if (UnresolvedOdds > AttackerKillOdds && UnresolvedOdds > DefenderKillOdds)
 			{
 				szString.append(gDLL->getText("[COLOR_UNIT_TEXT]%s1[COLOR_REVERT]", szTempBuffer.GetCString()));
 			}
@@ -2057,16 +2055,15 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 			{
 				szString.append(gDLL->getText("[COLOR_NEGATIVE_TEXT]%s1[COLOR_REVERT]", szTempBuffer.GetCString()));
 			}
-			
+
 			szString.append(NEWLINE);
 
-			float prob = 100.0f*(AttackerKillOdds + RetreatOdds + PullOutOdds);
-			int pixels_left = 199;// 1 less than 200 to account for right end bar
+			int pixels_left = 199; // 1 less than 200 to account for right end bar
 			int pixels;
 			int fullBlocks;
 			int lastBlock;
 
-			pixels = (2 * ((int)(prob1 + 0.5))) - 1;  // 1% per pixel // subtracting one to account for left end bar
+			pixels = (2 * ((int)(prob1 + 0.5f))) - 1; // 1% per pixel, subtract 1 for left end bar
 			fullBlocks = pixels / 10;
 			lastBlock = pixels % 10;
 
@@ -2083,7 +2080,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				pixels_left -= lastBlock;
 			}
 
-			pixels = 2 * ((int)(prob2 + 0.5)) - (pixels + 1);//the number up to the next one...
+			pixels = 2 * ((int)(prob2 + 0.5f)) - (pixels + 1); // the number up to the next one
 			fullBlocks = pixels / 10;
 			lastBlock = pixels % 10;
 			for (int i = 0; i < fullBlocks; ++i)
@@ -2116,66 +2113,23 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 			// Individual outcomes
 
 			szTempBuffer.Format(L": " SETCOLR L"%.2f%% " L"" ENDCOLR,
-				TEXT_COLOR("COLOR_POSITIVE_TEXT"), 100.0f*AttackerKillOdds);
+				TEXT_COLOR("COLOR_POSITIVE_TEXT"), 100.0f * AttackerKillOdds);
 			szString.append(gDLL->getText("TXT_ACO_Victory"));
 			szString.append(szTempBuffer.GetCString());
 			szString.append(NEWLINE);
 
 			szTempBuffer.Format(L": " SETCOLR L"%.2f%% " ENDCOLR SETCOLR L"" ENDCOLR,
-				TEXT_COLOR("COLOR_UNIT_TEXT"), 100.0f*RetreatOdds, TEXT_COLOR("COLOR_POSITIVE_TEXT"));
-			szString.append(gDLL->getText("TXT_ACO_Retreat"));
+				TEXT_COLOR("COLOR_UNIT_TEXT"), 100.0f * UnresolvedOdds, TEXT_COLOR("COLOR_POSITIVE_TEXT"));
+			szString.append(gDLL->getText("TXT_ACO_Unresolved"));
 			szString.append(szTempBuffer.GetCString());
 			szString.append(NEWLINE);
 
 			szTempBuffer.Format(L": " SETCOLR L"%.2f%% " L"" ENDCOLR,
-				TEXT_COLOR("COLOR_NEGATIVE_TEXT"), 100.0f*DefenderKillOdds);
+				TEXT_COLOR("COLOR_NEGATIVE_TEXT"), 100.0f * DefenderKillOdds);
 			szString.append(gDLL->getText("TXT_ACO_Defeat"));
 			szString.append(szTempBuffer.GetCString());
 			szString.append(NEWLINE);
-
 			// ACO end
-
-			// Erik: Old combat odds below
-			/*
-			int iCombatOdds = getCombatOdds(pAttacker, pDefender);
-
-			if (iCombatOdds > 999)
-			{
-				szTempBuffer = L"&gt; 99.9";
-			}
-			else if (iCombatOdds < 1)
-			{
-				szTempBuffer = L"&lt; 0.1";
-			}
-			else
-			{
-				szTempBuffer.Format(L"%.1f", ((float)iCombatOdds) / 10.0f);
-			}
-			szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_ODDS", szTempBuffer.GetCString()));
-
-			int iWithdrawal = 0;
-
-			iWithdrawal += std::min(100, pAttacker->withdrawalProbability()) * (1000 - iCombatOdds);
-
-			if (iWithdrawal > 0)
-			{
-				if (iWithdrawal > 99900)
-				{
-					szTempBuffer = L"&gt; 99.9";
-				}
-				else if (iWithdrawal < 100)
-				{
-					szTempBuffer = L"&lt; 0.1";
-				}
-				else
-				{
-					szTempBuffer.Format(L"%.1f", iWithdrawal / 1000.0f);
-				}
-
-				szString.append(NEWLINE);
-				szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_ODDS_RETREAT", szTempBuffer.GetCString()));
-			}
-			*/
 
 			szOffenseOdds.Format(L"%.2f", pAttacker->currCombatStrFloat(NULL, NULL));
 			szDefenseOdds.Format(L"%.2f", pDefender->currCombatStrFloat(pPlot, pAttacker));
