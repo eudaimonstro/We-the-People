@@ -548,6 +548,9 @@
     <ClCompile Include="DLLSources\Network\CvNetworkMessage.cpp">
       <Filter>Classes\Network\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\CombatOdds.cpp">
+      <Filter>Combat\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">
@@ -1062,6 +1065,9 @@
     <ClInclude Include="DLLSources\DeferredPopEject.h">
       <Filter>Misc\Header</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\CombatOdds.h">
+      <Filter>Combat\Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">
@@ -1317,6 +1323,15 @@
     </Filter>
     <Filter Include="Classes\Network\Header">
       <UniqueIdentifier>{c2126a81-fbcc-440a-8977-48882c9f7e47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Combat">
+      <UniqueIdentifier>{948b7319-e4f3-4a69-abbb-0252dc159665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Combat\CPP">
+      <UniqueIdentifier>{02ca1357-7f2e-4e0b-8a01-dfa1cb28f063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Combat\Header">
+      <UniqueIdentifier>{9de6045c-b49c-4e6a-a46b-3d6ca6df57df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
