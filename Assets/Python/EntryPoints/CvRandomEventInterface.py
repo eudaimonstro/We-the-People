@@ -1451,6 +1451,39 @@ def _applySeasonedNativeCityRelationChange(kTriggeredData, iChange):
 	player.AI_changeAttitudeExtra(nativePlayer.getID(), iChange)
 	nativePlayer.AI_changeAttitudeExtra(player.getID(), iChange)
 
+def _getSeasonedNativeCityTriggerChance(kTriggeredData):
+	eTrigger = kTriggeredData.eTrigger
+	if eTrigger == -1:
+		return 100
+
+	triggerInfo = gc.getEventTriggerInfo(eTrigger)
+	if triggerInfo is None:
+		return 100
+
+	szTriggerType = triggerInfo.getType()
+	iCurrentTurn = CyGame().getGameTurn()
+
+	iEarlyTurns = _scaleTurnsByGameSpeed(100)
+	iMidTurns = _scaleTurnsByGameSpeed(200)
+
+	# Scout: high early, lower later
+	if szTriggerType == "EVENTTRIGGER_SEASONED_SCOUT_NATIVE_CITY":
+		if iCurrentTurn <= iEarlyTurns:
+			return 80
+		if iCurrentTurn <= iMidTurns:
+			return 60
+		return 30
+
+	# Trader: low early, higher later
+	if szTriggerType == "EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY":
+		if iCurrentTurn <= iEarlyTurns:
+			return 40
+		if iCurrentTurn <= iMidTurns:
+			return 70
+		return 80
+
+	# Failsafe: do not accidentally disable the trigger
+	return 100
 
 def canTriggerSeasonedNativeCity(argsList):
 	kTriggeredData = argsList[0]
@@ -1473,8 +1506,11 @@ def canTriggerSeasonedNativeCity(argsList):
 	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
 		return False
 
-	return True
+	iChance = _getSeasonedNativeCityTriggerChance(kTriggeredData)
+	if CyGame().getSorenRandNum(100, "Seasoned Native City trigger") >= iChance:
+		return False
 
+	return True
 
 def applySeasonedNativeCityStartCooldown(argsList):
 	kTriggeredData = argsList[0]
@@ -7874,44 +7910,148 @@ getHelpNativeAttackCity = get_simple_help("TXT_KEY_EVENT_NATIVES_ATTACK_HELP")
 
 ######## Initial Native Trade Event ###########
 
+######## Initial Trade With Natives ###########
+
+def _getInitialNativeTradeScaledAmount(iBaseAmount):
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return (iBaseAmount * Speed.getStoragePercent()) / 100
+
+
+def _doInitialNativeTradeCitiesShareBorder(city, nativeCity):
+	if city is None or city.isNone():
+		return False
+
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	iPlayer = city.getOwner()
+	iNativePlayer = nativeCity.getOwner()
+
+	# Check plots around own city for plots owned by the selected native player
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			pLoop = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+
+			if pLoop.getOwner() == iNativePlayer:
+				return True
+
+	# Symmetric safety check around the native city
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			pLoop = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+
+			if pLoop.getOwner() == iPlayer:
+				return True
+
+	return False
+
+
+def _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player is None or player.isNone():
+		return None
+
+	if not player.isPlayable():
+		return None
+
+	if player.isNative():
+		return None
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return None
+
+	if city.getOwner() != player.getID():
+		return None
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer is None or nativePlayer.isNone():
+		return None
+
+	if not nativePlayer.isNative():
+		return None
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return None
+
+	if nativeCity.getOwner() != nativePlayer.getID():
+		return None
+
+	# Hard validation for exactly the selected native player / city
+	if not _doInitialNativeTradeCitiesShareBorder(city, nativeCity):
+		return None
+
+	# At least cautious relations, no war
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return None
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return None
+
+	if player.AI_getAttitude(nativePlayer.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return None
+
+	iTradeGoods = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+	if city.getYieldStored(iTradeGoods) < iRequiredTradeGoods:
+		return None
+
+	return (player, city, nativePlayer, nativeCity)
+
+
 def canTriggerInitialNativeTrade(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
-		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
-		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
+
 	eEvent1 = gc.getInfoTypeForString("EVENT_INITIAL_TRADE_WITH_NATIVES_1")
 	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+
+	iRequiredTradeGoods = _getInitialNativeTradeScaledAmount(-event1.getGenericParameter(1))
+
+	if _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods) is None:
 		return False
+
 	return True
+
+
+def canApplyInitialNativeTrade3(argsList):
+	kTriggeredData = argsList[0]
+
+	eEvent3 = gc.getInfoTypeForString("EVENT_INITIAL_TRADE_WITH_NATIVES_3")
+	event3 = gc.getEventInfo(eEvent3)
+
+	iRequiredTradeGoods = _getInitialNativeTradeScaledAmount(-event3.getGenericParameter(1))
+
+	if _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods) is None:
+		return False
+
+	return True
+
 
 def applyInitialNativeTrade(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity:
+
+	iRequiredTradeGoods = _getInitialNativeTradeScaledAmount(-event.getGenericParameter(1))
+
+	data = _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods)
+	if data is None:
 		return
-	city.changeYieldStored(iYield, quantity)
-	nativecity.changeYieldStored(iYield, -quantity)
+
+	player, city, nativePlayer, nativeCity = data
+
+	iTradeGoods = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+
+	# Failsafe: re-check just before changing storage
+	if city.getYieldStored(iTradeGoods) < iRequiredTradeGoods:
+		return
+
+	city.changeYieldStored(iTradeGoods, -iRequiredTradeGoods)
+	nativeCity.changeYieldStored(iTradeGoods, iRequiredTradeGoods)
 
 def getHelpInitialNativeTrade1(argsList):
 	eEvent = argsList[1]
@@ -7930,26 +8070,6 @@ def getHelpInitialNativeTrade1(argsList):
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey()))
 	return szHelp
-
-def canApplyInitialNativeTrade3(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() or player2.isNone() :
-		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from event and check if enough yield is stored in city
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
-		return False
-	return True
 
 ######## Coca Events ###########
 def canTriggerCocaEvent(argsList):
