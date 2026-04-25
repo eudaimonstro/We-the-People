@@ -5278,10 +5278,15 @@
 		<Russian>Милорд, наш торговый обоз достиг индейской деревни. Какую сделку нам следует заключить?</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_RELATION_NATIVE_INCREASE</Tag>
+		<English>Your trade relations will improve relations with the [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] by [COLOR_POSITIVE_TEXT]+%d2[COLOR_REVERT].</English>
+		<German>Eure Handelsbeziehungen werden die Beziehungen zu den [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] um [COLOR_POSITIVE_TEXT]+%d2[COLOR_REVERT] verbessern.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FAILED_TRADER_DAUGHTER</Tag>
 		<English>In [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] trappers have found the daughter of a failed trader and returned her to her father. She had been kidnapped by hostile Natives.</English>
 		<French>À [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] des trappeurs ont ramené à un marchand ruiné sa fille ravie par des peaux-rouges.</French>
-		<German>In [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] haben Waldläufer einem gescheiterten Ureinwohnerhändler seine von Rothäuten entführte Tochter wieder zurückgebracht.</German>
+		<German>In [COLOR_REVERT]%s2_city[COLOR_REVERT] haben Waldläufer einem gescheiterten Ureinwohnerhändler seine von Rothäuten entführte Tochter wieder zurückgebracht.</German>
 		<Russian>В городе [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] зверолов вернул неудачливому торговцу его дочь, похищенную краснокожими.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5672,8 +5677,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP</Tag>
-		<English>A band of roving adventurers attacks the treasure column. A few brave militiamen and guards defend it.</English>
-		<German>Eine Bande umherstreifender Abenteurer greift die Schatzkolonne an. Ein paar mutige Milizionäre und Wachen verteidigen ihn.</German>
+		<English>A band of roving adventurers attacks the treasure column. A few brave charioteers and guards defend it.</English>
+		<German>Eine Bande umherstreifender Abenteurer greift die Schatzkolonne an. Ein paar mutige Wagenlenker und Wachen verteidigen ihn.</German>
 		<Russian>Группа бродячих искателей приключений нападает на обоз с сокровищами. Его защищают несколько храбрых ополченцев и охранников.</Russian>
 	</TEXT>
 	<TEXT>
