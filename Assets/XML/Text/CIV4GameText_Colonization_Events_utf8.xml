@@ -6157,8 +6157,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP</Tag>
-		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village within %d3 rounds. Take trade goods from Europe or anything else, local or imported. It's up to you whatever you want to trade.</English>
-		<German>Schickt innerhalb von %d3 Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Nehmt Handelswaren aus Europa mit oder andere Waren, die ihr vor Ort produziert habt. Es bleibt Euch überlassen, mit was Ihr handeln wollt.</German>
+		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village within [COLOR_HIGHLIGHT_TEXT]%d3 rounds[COLOR_REVERT]. Take [COLOR_HIGHLIGHT_TEXT]%d4 trade goods from Europe [COLOR_REVERT]and sell or donate them to the native village.</English>
+		<German>Schickt innerhalb von [COLOR_HIGHLIGHT_TEXT]%d3 Runden[COLOR_REVERT] eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Nehmt [COLOR_HIGHLIGHT_TEXT]%d4 Handelswaren aus Europa[COLOR_REVERT] mit und verkauft oder schenkt sie dem Dorf.</German>
 		<Russian>Отправьте [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] в соседнюю деревню индейцев, которые хотят торговать с вами, в течение %d3 ходов. Можете взять с собой [COLOR_SELECTED_TEXT]мануфактуру[COLOR_REVERT] из Европы или другие товары, которые вы произвели в своих поселениях. Чем вы будете торговать, зависит только от вас.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6169,8 +6169,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_DONE</Tag>
-		<English>Milord, our wagon train has reached the Native village. What happens next?</English>
-		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht. Wie geht es weiter?</German>
+		<English>Milord, our wagon train has reached the Native village and traded the goods. What happens next?</English>
+		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht und die Handelswaren gehandelt. Wie geht es weiter?</German>
 		<Russian>Милорд, наш транспорт добрался до деревни индейцев. Что будем делать дальше?</Russian>
 	</TEXT>
 	<TEXT>

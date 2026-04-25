@@ -92240,8 +92240,8 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
-			<PythonExpireCheck>isExpiredNativeWagonTrade</PythonExpireCheck>
+			<PythonCallback>applyNativeNeighborTradeStart</PythonCallback>
+			<PythonExpireCheck>isExpiredNativeNeighborTrade</PythonExpireCheck>
 			<PythonCanDo/>
 			<PythonHelp>getHelpNativeNeighborTrade</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -92316,10 +92316,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeNeighborTradeDone1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeNeighborTradeDone1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -92392,10 +92392,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeNeighborTradeDone2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeNeighborTradeDone2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -92468,10 +92468,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyNativeNeighborTradeDone3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpNativeNeighborTradeDone3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>

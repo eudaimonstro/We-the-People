@@ -3757,7 +3757,7 @@ def getHelpRuins5(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
 	return szHelp
 
-######## Native Wagon Trade Quest 1 ###########
+######## Native Wagon Trade Quest with seasoned native trader ###########
 
 def _hasNativeWagonTradeSharedBorder(player, nativeCity):
 	if player.isNone():
@@ -3768,8 +3768,8 @@ def _hasNativeWagonTradeSharedBorder(player, nativeCity):
 
 	iPlayer = player.getID()
 
-	for iDX in range(-1, 2):
-		for iDY in range(-1, 2):
+	for iDX in range(-4, 5):
+		for iDY in range(-4, 5):
 			if iDX == 0 and iDY == 0:
 				continue
 
@@ -3938,10 +3938,16 @@ def canTriggerNativeWagonTrade(argsList):
 	return True
 
 
-def canTriggerNativeWagonTradeDone(argsList):
+def canTriggerNativeWagonTrade(argsList):
 	kTriggeredData = argsList[0]
-	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, True, False)
-	return player is not None
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False, True)
+	if player is None:
+		return False
+
+	if CyGame().getSorenRandNum(100, "Native Wagon Trade trigger") >= 30:
+		return False
+
+	return True
 
 
 def applyNativeWagonTradeStart(argsList):
@@ -4064,17 +4070,338 @@ def getHelpNativeWagonTrade5(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
 	return szHelp
 
-######## Native Wagon Trade Quest 2 ###########
+######## Native Wagon Trade Quest - native expert trader in native village ###########
+
+NATIVE_NEIGHBOR_TRADE_YIELD = "YIELD_TRADE_GOODS"
+NATIVE_NEIGHBOR_TRADE_AMOUNT = 200
+
+
+def _nntData(player):
+	if player.isNone():
+		return ""
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+	return szData
+
+
+def _nntHas(player, key):
+	return key in _nntData(player)
+
+
+def _nntAdd(player, key):
+	szData = _nntData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _nntRemove(player, key):
+	szData = _nntData(player)
+	if key in szData:
+		player.setScriptData(szData.replace(key, ""))
+
+
+def _nntKeyActive(nativePlayer):
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_ACTIVE_%d]]" % nativePlayer.getID()
+
+
+def _nntKeyUsed(nativePlayer):
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_USED_%d]]" % nativePlayer.getID()
+
+
+def _nntKeyTarget(nativePlayer):
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_TARGET_%d=" % nativePlayer.getID()
+
+
+def _nntKeyCooldown():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_READY="
+
+
+def _nntGetNumber(player, key):
+	szData = _nntData(player)
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _nntSetNumber(player, key, iValue):
+	szData = _nntData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			szData = szData[:iStart] + szData[iEnd + 2:]
+
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _nntRemoveNumber(player, key):
+	szData = _nntData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			player.setScriptData(szData[:iStart] + szData[iEnd + 2:])
+
+
+def _nntScaledAmount():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, NATIVE_NEIGHBOR_TRADE_AMOUNT * Speed.getStoragePercent() / 100)
+
+
+def _nntHasSharedBorder(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return False
+
+	iPlayer = player.getID()
+
+	for iDX in range(-4, 5):
+		for iDY in range(-4, 5):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			loopPlot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() == iPlayer:
+				return True
+
+	return False
+
+
+def _nntGetContext(kTriggeredData, bCheckCooldown, bCheckUsed):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone() or not plot.isCity():
+		return (None, None, None)
+
+	nativeCity = plot.getPlotCity()
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(nativeCity.getOwner())
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	# Relations must still be peaceful and at least cautious.
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return (None, None, None)
+
+	# The native village must share a direct border with the player.
+	if not _nntHasSharedBorder(player, nativeCity):
+		return (None, None, None)
+
+	# This quest can only happen once per native player, no matter if it failed or was completed.
+	if bCheckUsed:
+		if _nntHas(player, _nntKeyUsed(nativePlayer)):
+			return (None, None, None)
+
+	if bCheckCooldown:
+		if _nntGetNumber(player, _nntKeyCooldown()) > CyGame().getGameTurn():
+			return (None, None, None)
+
+		if _nntHas(player, _nntKeyActive(nativePlayer)):
+			return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def _nntHasWagonOnPlot(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return False
+
+	plot = nativeCity.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	iWagonClass = gc.getInfoTypeForString("UNITCLASS_WAGON_TRAIN")
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+		if unit.isNone():
+			continue
+
+		if unit.getOwner() == player.getID() and unit.getUnitClassType() == iWagonClass:
+			return True
+
+	return False
+
+
+def _nntStartCooldown(player):
+	_nntSetNumber(player, _nntKeyCooldown(), CyGame().getGameTurn() + _scaleTurnsByGameSpeed(50))
+
+
+def _nntComplete(player, nativePlayer):
+	_nntRemove(player, _nntKeyActive(nativePlayer))
+	_nntRemoveNumber(player, _nntKeyTarget(nativePlayer))
+	_nntAdd(player, _nntKeyUsed(nativePlayer))
+	_nntStartCooldown(player)
+
+
+def canTriggerNativeNeighborTrade(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData, True, True)
+	if player is None:
+		return False
+
+	if CyGame().getSorenRandNum(100, "Native Neighbor Trade trigger") >= 30:
+		return False
+
+	return True
+
+
+def canTriggerNativeNeighborTradeDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData, False, False)
+
+	if player is None:
+		return False
+
+	if not _nntHasWagonOnPlot(player, nativeCity):
+		return False
+
+	iTarget = _nntGetNumber(player, _nntKeyTarget(nativePlayer))
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_YIELD)
+	return nativeCity.getYieldStored(iYield) >= iTarget
+
+
+def applyNativeNeighborTradeStart(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData, False, False)
+
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_YIELD)
+	iTarget = nativeCity.getYieldStored(iYield) + _nntScaledAmount()
+
+	_nntAdd(player, _nntKeyActive(nativePlayer))
+	_nntSetNumber(player, _nntKeyTarget(nativePlayer), iTarget)
+
+
+def isExpiredNativeNeighborTrade(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + event.getGenericParameter(1):
+		return False
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return True
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is not None and not plot.isNone() and plot.isCity():
+		nativeCity = plot.getPlotCity()
+		if nativeCity is not None and not nativeCity.isNone():
+			nativePlayer = gc.getPlayer(nativeCity.getOwner())
+			if not nativePlayer.isNone() and nativePlayer.isNative():
+				_nntComplete(player, nativePlayer)
+
+	return True
+
+
+def applyNativeNeighborTradeDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData, False, False)
+
+	if player is None:
+		return
+
+	if not _nntHasWagonOnPlot(player, nativeCity):
+		return
+
+	iTarget = _nntGetNumber(player, _nntKeyTarget(nativePlayer))
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_nntComplete(player, nativePlayer)
+
+
+def applyNativeNeighborTradeDone1(argsList):
+	ChangeFatherPoints(argsList)
+	applyNativeNeighborTradeDone(argsList)
+
+
+def applyNativeNeighborTradeDone2(argsList):
+	ChangeFatherPoints(argsList)
+	applyNativeNeighborTradeDone(argsList)
+
+
+def applyNativeNeighborTradeDone3(argsList):
+	applyNativeNeighborTradeDone(argsList)
+
 
 def getHelpNativeNeighborTrade(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_WAGON_TRAIN'))
-	szHelp = localText.getText("TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP", (UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1)))
+
+	iAmount = _nntScaledAmount()
+
+	szHelp = localText.getText(
+		"TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP",
+		(UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1), iAmount)
+	)
+
 	return szHelp
+
+
+def getHelpNativeNeighborTradeDone1(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone2(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone3(argsList):
+	return u""
+
+
+def getHelpNativeNeighborTradeDone1(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone2(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone3(argsList):
+	return u""
+
+######## Native Wagon Trade Quests ###########
 
 def applyNativeNeighborTrade5(argsList):
 	eEvent = argsList[1]
