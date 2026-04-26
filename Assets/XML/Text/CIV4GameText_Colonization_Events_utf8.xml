@@ -5144,14 +5144,12 @@
 		<German>[ICON_BULLET]Die Beziehungen zu den %s1 verändern sich um %s2.</German>
 		<Russian/>
 	</TEXT>
-
-		<TEXT>
-			<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_ANGRY_ATTACK</Tag>
-			<English>[ICON_BULLET]Some Natives of the %s1 are angry, seeing their chief giving you such a rich gift. Hostile warrior will [COLOR_NEGATIVE_TEXT]attack[COLOR_REVERT] you.</English>
-			<German>[ICON_BULLET]Einige Krieger der %s1 sind wütend und nicht damit einverstanden, dass ihr Häuptling Euch so reich beschenkt. Krieger werden Euch [COLOR_NEGATIVE_TEXT]angreifen[COLOR_REVERT].</German>
-			<Russian/>
-		</TEXT>
-
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_ANGRY_ATTACK</Tag>
+		<English>[ICON_BULLET]Some Natives of the %s1 are angry, seeing their chief giving you such a rich gift. Hostile warrior will [COLOR_NEGATIVE_TEXT]attack[COLOR_REVERT] you.</English>
+		<German>[ICON_BULLET]Einige Krieger der %s1 sind wütend und nicht damit einverstanden, dass ihr Häuptling Euch so reich beschenkt. Krieger werden Euch [COLOR_NEGATIVE_TEXT]angreifen[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_UNPLEASED</Tag>
 		<English>[ICON_BULLET]The %s1 are [COLOR_NEGATIVE_TEXT] displeased[COLOR_REVERT].</English>
@@ -5244,9 +5242,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_TRADE_WAGON_1</Tag>
-		<English>Milord, our neighbours are waiting for us to start trading with them. We should send a wagon train to establish trade relations.</English>
+		<English>Milord, our neighbours are waiting for us to do trading with them. We should send a wagon train to establish trade relations.</English>
 		<French>Sire, nos voisins espèrent que nous commmercerons avec eux. Nous devrions vraiment envoyer un chariot pour commencer les relations commerciales.</French>
-		<German>Milord, unsere Nachbarn warten darauf, dass wir den Handel mit Ihnen aufnehmen. Wir sollten unbedingt einen Wagenzug entsenden und Handelsbeziehungen beginnen.</German>
+		<German>Milord, unsere Nachbarn warten darauf, dass wir mit Ihnen handeln. Wir sollten unbedingt einen Wagenzug entsenden und Handelsbeziehungen beginnen.</German>
 		<Russian>Милорд, наши соседи ждут, когда мы начнем с нами торговать. Нам обязательно надо отправить к ним обоз и завязать торговые отношения.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5258,9 +5256,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVE_TRADE_WAGON_HELP</Tag>
-		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the Native village within %d3 rounds where the trader who made this deal is located.</English>
-		<French> Envoyez une unité [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT]) dans le village Indien où le marchand a commencé ses affaires dans les %d3 tours.</French>
-		<German>Schickt innerhalb von %d3 Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem Indianer-Dorf, wo sich der Händler befindet, der den Handel eingefädelt hat.</German>
+		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village within [COLOR_HIGHLIGHT_TEXT]%d3 rounds[COLOR_REVERT]. Take [COLOR_HIGHLIGHT_TEXT]%d4 trade goods from Europe [COLOR_REVERT]and sell or donate them to the native village.</English>
+		<German>Schickt innerhalb von [COLOR_HIGHLIGHT_TEXT]%d3 Runden[COLOR_REVERT] eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Nehmt [COLOR_HIGHLIGHT_TEXT]%d4 Handelswaren aus Europa[COLOR_REVERT] mit und verkauft oder schenkt sie dem Dorf.</German>
 		<Russian>В течение %d3 ходов отправьте [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] в индейскую деревню, где находится торговец, организовавший торговлю.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5272,15 +5269,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_TRADE_WAGON_DONE</Tag>
-		<English>Milord, our wagon train has reached the Native village. What deal should we make?</English>
-		<French>Sire, notre chariot a atteint le village indien. Quel marché devons-nous conclure ?</French>
-		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht. Welchen Handel sollen wir abschließen?</German>
+		<English>Milord, our wagon train has reached the Native village and traded the goods. How shall we proceed?</English>
+		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht und die Waren getauscht. Wie geht es weiter? </German>
 		<Russian>Милорд, наш торговый обоз достиг индейской деревни. Какую сделку нам следует заключить?</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_RELATION_NATIVE_INCREASE</Tag>
-		<English>Your trade relations will improve relations with the [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] by [COLOR_POSITIVE_TEXT]+%d2[COLOR_REVERT].</English>
-		<German>Eure Handelsbeziehungen werden die Beziehungen zu den [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] um [COLOR_POSITIVE_TEXT]+%d2[COLOR_REVERT] verbessern.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FAILED_TRADER_DAUGHTER</Tag>

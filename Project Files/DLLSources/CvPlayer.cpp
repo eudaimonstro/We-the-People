@@ -14320,46 +14320,86 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 
 		if (NO_PLAYER == eOtherPlayer)
 		{
-			for (int i = 0; i < MAX_PLAYERS; i++)
+			if (kTrigger.isOtherPlayerPlotOwner())
 			{
-				if (GET_PLAYER((PlayerTypes)i).canTrigger(eEventTrigger, getID()))
+				if (NULL == pPlot)
 				{
-					if (kTrigger.isPickOtherPlayerCity())
+					return NULL;
+				}
+
+				eOtherPlayer = pPlot->getOwnerINLINE();
+
+				if (NO_PLAYER == eOtherPlayer)
+				{
+					return NULL;
+				}
+
+				if (!GET_PLAYER(eOtherPlayer).canTrigger(eEventTrigger, getID()))
+				{
+					return NULL;
+				}
+
+				if (kTrigger.isPickOtherPlayerCity())
+				{
+					if (pPlot->isCity())
 					{
-						CvCity* pBestCity = NULL;
+						CvCity* pPlotCity = pPlot->getPlotCity();
 
-						if (NULL != pCity)
+						if (NULL != pPlotCity && pPlotCity->getOwnerINLINE() == eOtherPlayer)
 						{
-							pBestCity = GC.getMap().findCity(pCity->coord(), (PlayerTypes)i);
-						}
-						else
-						{
-							pBestCity = GET_PLAYER((PlayerTypes)i).pickTriggerCity(eEventTrigger);
-						}
-
-						if (NULL != pBestCity)
-						{
-							apCities.push_back(pBestCity);
-							aePlayers.push_back((PlayerTypes)i);
+							pOtherPlayerCity = pPlotCity;
 						}
 					}
-					else
+
+					if (NULL == pOtherPlayerCity)
 					{
-						apCities.push_back(NULL);
-						aePlayers.push_back((PlayerTypes)i);
+						return NULL;
 					}
 				}
 			}
-
-			if (aePlayers.size() > 0)
-			{
-				int iChosen = GC.getGameINLINE().getSorenRandNum(aePlayers.size(), "Event pick player");
-				eOtherPlayer = aePlayers[iChosen];
-				pOtherPlayerCity = apCities[iChosen];
-			}
 			else
 			{
-				return NULL;
+				for (int i = 0; i < MAX_PLAYERS; i++)
+				{
+					if (GET_PLAYER((PlayerTypes)i).canTrigger(eEventTrigger, getID()))
+					{
+						if (kTrigger.isPickOtherPlayerCity())
+						{
+							CvCity* pBestCity = NULL;
+
+							if (NULL != pCity)
+							{
+								pBestCity = GC.getMap().findCity(pCity->coord(), (PlayerTypes)i);
+							}
+							else
+							{
+								pBestCity = GET_PLAYER((PlayerTypes)i).pickTriggerCity(eEventTrigger);
+							}
+
+							if (NULL != pBestCity)
+							{
+								apCities.push_back(pBestCity);
+								aePlayers.push_back((PlayerTypes)i);
+							}
+						}
+						else
+						{
+							apCities.push_back(NULL);
+							aePlayers.push_back((PlayerTypes)i);
+						}
+					}
+				}
+
+				if (aePlayers.size() > 0)
+				{
+					int iChosen = GC.getGameINLINE().getSorenRandNum(aePlayers.size(), "Event pick player");
+					eOtherPlayer = aePlayers[iChosen];
+					pOtherPlayerCity = apCities[iChosen];
+				}
+				else
+				{
+					return NULL;
+				}
 			}
 		}
 	}

@@ -39072,6 +39072,7 @@
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerPlotOwner>1</bOtherPlayerPlotOwner>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>1</bOtherPlayerNative>
@@ -39152,6 +39153,7 @@
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerPlotOwner>1</bOtherPlayerPlotOwner>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>1</bOtherPlayerNative>
@@ -39222,13 +39224,14 @@
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerPlotOwner>1</bOtherPlayerPlotOwner>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>1</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
-			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
 			<bPickCity>0</bPickCity>
-			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
@@ -39262,13 +39265,11 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_WAGON_TRAIN</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>1</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
-				<bUnitsOnPlot>1</bUnitsOnPlot>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
@@ -39295,13 +39296,14 @@
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerPlotOwner>1</bOtherPlayerPlotOwner>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>1</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
-			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
 			<bPickCity>0</bPickCity>
-			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
@@ -41507,7 +41509,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
@@ -41551,13 +41553,11 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_WAGON_TRAIN</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>1</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
-				<bUnitsOnPlot>1</bUnitsOnPlot>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
@@ -41580,15 +41580,16 @@
 				<Event>EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_1</Event>
 			</PrereqEvents>
 			<bPrereqEventPlot>1</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerPlotOwner>1</bOtherPlayerPlotOwner>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>1</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
-			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>

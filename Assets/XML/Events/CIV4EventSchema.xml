@@ -69,6 +69,7 @@
 	<ElementType name="bRecurring" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bGlobal" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPickPlayer" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bOtherPlayerPlotOwner" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bGoldToPlayer" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bOtherPlayerWar" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bOtherPlayerAI" content="textOnly" dt:type="boolean"/>
@@ -268,6 +269,7 @@
 		<element type="bTeam"/>
 		<element type="bGlobal"/>
 		<element type="bPickPlayer"/>
+		<element type="bOtherPlayerPlotOwner" minOccurs="0"/>
 		<element type="bOtherPlayerWar"/>
 		<element type="bOtherPlayerAI"/>
 		<element type="bOtherPlayerNative"/>

@@ -86804,7 +86804,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -86816,7 +86816,7 @@
 			<PythonHelp>getHelpSeasonedScoutNativeCity1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
-			<iGenericParameter1>2</iGenericParameter1>
+			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -86865,7 +86865,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>-1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -86879,7 +86879,7 @@
 			<iAIValue>500</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>2</iGenericParameter2>
-			<iGenericParameter3>-1</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -86926,7 +86926,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>-1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -86938,7 +86938,7 @@
 			<PythonHelp>getHelpSeasonedScoutNativeCity3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
-			<iGenericParameter1>-1</iGenericParameter1>
+			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -86987,7 +86987,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -86999,7 +86999,7 @@
 			<PythonHelp>getHelpSeasonedTraderNativeCity1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
-			<iGenericParameter1>2</iGenericParameter1>
+			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -87048,7 +87048,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>-1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -87062,7 +87062,7 @@
 			<iAIValue>600</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>-1</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -87109,7 +87109,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>-1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -87121,7 +87121,7 @@
 			<PythonHelp>getHelpSeasonedTraderNativeCity3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
-			<iGenericParameter1>-1</iGenericParameter1>
+			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -87209,7 +87209,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -87231,7 +87231,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>
@@ -87285,7 +87285,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -87307,7 +87307,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>
@@ -87361,7 +87361,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -87383,7 +87383,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>
@@ -92349,7 +92349,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -92425,7 +92425,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -92447,7 +92447,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>

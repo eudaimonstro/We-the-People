@@ -4518,6 +4518,7 @@ public:
 	bool isRecurring() const;
 	bool isGlobal() const;
 	bool isPickPlayer() const;
+	bool isOtherPlayerPlotOwner() const;
 	bool isOtherPlayerWar() const;
 	bool isOtherPlayerAI() const;
 	bool isOtherPlayerNative() const;
@@ -4593,6 +4594,7 @@ private:
 	bool m_bRecurring;
 	bool m_bGlobal;
 	bool m_bPickPlayer;
+	bool m_bOtherPlayerPlotOwner;
 	bool m_bOtherPlayerWar;
 	bool m_bOtherPlayerAI;
 	bool m_bOtherPlayerNative;
