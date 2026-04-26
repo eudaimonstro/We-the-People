@@ -311,6 +311,9 @@ enum SavegameVariableTypes
 	PlayerSave_WillingToBargain_Enummap,
 	PlayerSave_TimeNoTrade_Enummap,
 	PlayerSave_TimerUsedShipsAndImmigrants,
+	// WTP, Schmiddie, persistent quest log texts - START
+	PlayerSave_mapQuestMessages,
+	// WTP, Schmiddie, persistent quest log texts - END
 
 	NUM_SAVE_ENUM_VALUES,
 };
@@ -514,6 +517,9 @@ const char* getSavedEnumNamePlayer(SavegameVariableTypes eType)
 	case PlayerSave_WillingToBargain_Enummap: return "PlayerSave_WillingToBargain_Enummap";
 	case PlayerSave_TimeNoTrade_Enummap: return "PlayerSave_TimeNoTrade_Enummap";
 	case PlayerSave_TimerUsedShipsAndImmigrants: return "PlayerSave_TimerUsedShipsAndImmigrants";
+	// WTP, Schmiddie, persistent quest log texts - START
+	case PlayerSave_mapQuestMessages: return "PlayerSave_mapQuestMessages";
+	// WTP, Schmiddie, persistent quest log texts - END
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -711,7 +717,9 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_mapCultureHistory.clear();
 	m_mapEventsOccured.clear();
 	m_mapEventCountdown.clear();
-
+	// WTP, Schmiddie, persistent quest log texts - START
+	m_mapQuestMessages.clear();
+	// WTP, Schmiddie, persistent quest log texts - END
 	m_aFreeUnitCombatPromotions.clear();
 	m_aFreeUnitClassPromotions.clear();
 	m_aEuropeRevolutionUnits.clear();
@@ -961,7 +969,25 @@ void CvPlayer::read(CvSavegameReader reader)
 		case PlayerSave_mapCultureHistory: reader.Read(m_mapCultureHistory); break;
 		case PlayerSave_mapEventsOccured: reader.Read(m_mapEventsOccured); break;
 		case PlayerSave_mapEventCountdown: reader.Read(m_mapEventCountdown); break;
+		// WTP, Schmiddie, persistent quest log texts - START
+		case PlayerSave_mapQuestMessages:
+		{
+			int iSize;
+			reader.Read(iSize);
 
+			for (int i = 0; i < iSize; ++i)
+			{
+				int iTriggeredId;
+				CvWString szMessage;
+
+				reader.Read(iTriggeredId);
+				reader.Read(szMessage);
+
+				m_mapQuestMessages[iTriggeredId] = szMessage;
+			}
+			break;
+		}
+		// WTP, Schmiddie, persistent quest log texts - END
 		case PlayerSave_FreeUnitCombatPromotions: reader.Read(m_aFreeUnitCombatPromotions); break;
 		case PlayerSave_FreeUnitClassPromotions: reader.Read(m_aFreeUnitClassPromotions); break;
 		case PlayerSave_EuropeRevolutionUnits: reader.Read(m_aEuropeRevolutionUnits); break;
@@ -1223,7 +1249,19 @@ void CvPlayer::write(CvSavegameWriter writer)
 	writer.Write(PlayerSave_mapCultureHistory, m_mapCultureHistory);
 	writer.Write(PlayerSave_mapEventsOccured, m_mapEventsOccured);
 	writer.Write(PlayerSave_mapEventCountdown, m_mapEventCountdown);
+	// WTP, Schmiddie, persistent quest log texts - START
+	if (!m_mapQuestMessages.empty())
+	{
+		writer.Write(PlayerSave_mapQuestMessages);
+		writer.Write((int)m_mapQuestMessages.size());
 
+		for (std::map<int, CvWString>::const_iterator it = m_mapQuestMessages.begin(); it != m_mapQuestMessages.end(); ++it)
+		{
+			writer.Write(it->first);
+			writer.Write(it->second);
+		}
+	}
+	// WTP, Schmiddie, persistent quest log texts - END
 	writer.Write(PlayerSave_FreeUnitCombatPromotions, m_aFreeUnitCombatPromotions);
 	writer.Write(PlayerSave_FreeUnitClassPromotions, m_aFreeUnitClassPromotions);
 	writer.Write(PlayerSave_EuropeRevolutionUnits, m_aEuropeRevolutionUnits);

@@ -14664,6 +14664,7 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 	m_bRecurring(false),
 	m_bGlobal(false),
 	m_bPickPlayer(false),
+	m_bOtherPlayerPlotOwner(false),
 	m_bOtherPlayerWar(false),
 	m_bOtherPlayerAI(false),
 	m_bOtherPlayerNative(false),
@@ -14915,6 +14916,10 @@ bool CvEventTriggerInfo::isGlobal() const
 {
 	return m_bGlobal;
 }
+bool CvEventTriggerInfo::isOtherPlayerPlotOwner() const
+{
+	return m_bOtherPlayerPlotOwner;
+}
 bool CvEventTriggerInfo::isPickPlayer() const
 {
 	return m_bPickPlayer;
@@ -15043,6 +15048,10 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bProbabilityBuildingMultiply);
 	stream->Read(&m_bPrereqEventCity);
 	stream->Read(&m_bFrontPopup);
+	if (uiFlag > 1)
+	{
+		stream->Read(&m_bOtherPlayerPlotOwner);
+	}
 	stream->Read(&iNumElements);
 	m_aszText.clear();
 	for (int i = 0; i < iNumElements; ++i)
@@ -15074,7 +15083,7 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 void CvEventTriggerInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
-	uint uiFlag=1; // Added iMinTurn
+	uint uiFlag=2; // Added iMinTurn and bOtherPlayerPlotOwner
 	stream->Write(uiFlag);		// flag for expansion
 	stream->Write(m_iPercentGamesActive);
 	stream->Write(m_iProbability);
@@ -15112,6 +15121,7 @@ void CvEventTriggerInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bProbabilityBuildingMultiply);
 	stream->Write(m_bPrereqEventCity);
 	stream->Write(m_bFrontPopup);
+	stream->Write(m_bOtherPlayerPlotOwner);
 	stream->Write(m_aszText.size());
 	for (std::vector<CvWString>::iterator it = m_aszText.begin(); it != m_aszText.end(); ++it)
 	{
@@ -15284,6 +15294,7 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bRecurring, "bRecurring");
 	pXML->GetChildXmlValByName(&m_bGlobal, "bGlobal");
 	pXML->GetChildXmlValByName(&m_bPickPlayer, "bPickPlayer");
+	pXML->GetChildXmlValByName(&m_bOtherPlayerPlotOwner, "bOtherPlayerPlotOwner");
 	pXML->GetChildXmlValByName(&m_bOtherPlayerWar, "bOtherPlayerWar");
 	pXML->GetChildXmlValByName(&m_bOtherPlayerAI, "bOtherPlayerAI");
 	pXML->GetChildXmlValByName(&m_bOtherPlayerNative, "bOtherPlayerNative");

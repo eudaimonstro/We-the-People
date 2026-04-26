@@ -747,6 +747,30 @@
 		<Russian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1[COLOR_REVERT][ICON_GOLD] за %F2_yield в [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT] и [COLOR_POSITIVE_TEXT]%D4[COLOR_REVERT][ICON_GOLD] за %F5_yield в [COLOR_SELECTED_TEXT]%s6_city[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_PEASANT_WARPREP_EMIGRANT</Tag>
+		<English>Unrest in Europe is leading to an increase in the number of emigrants.</English>
+		<German>Unruhen in Europa führen zu einem Anstieg von Auswanderern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_PEASANT_WARPREP_EMIGRANT</Tag>
+		<English>The unrest among the rural population has led to more emigrants waiting at the European docks to set sail for the New World.</English>
+		<German>Die Unruhen unter der Landbevölkerung haben dazu geführt, dass mehr Auswanderer an den europäischen Docks warten, um ihre Reise in die neue Welt anzutreten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PEASANT_WARPREP_EMIGRANT</Tag>
+		<English>Bad for Europe, but good for us. Bring them over and give them work!</English>
+		<German>Schlecht für Europa, aber gut für uns. Holt sie herüber und gebt ihnen Arbeit!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PEASANT_WARPREP_WAREND_HELP</Tag>
+		<English>A number of free colonists were at the docks in Europe, waiting to set sail for the New World!</English>
+		<German>Einige freie Kolonisten waren an den Docks in Europa auf Ihre Überfahrt in die Neue Welt!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TAX_INCREASE</Tag>
 		<English>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1%%[COLOR_REVERT] Tax increase to %D2%% total</English>
 		<French>[ICON_BULLET]Augmentation du taux d'impôt de [COLOR_NEGATIVE_TEXT]%D1%%[COLOR_REVERT] pour atteindre %D2%%</French>
@@ -968,7 +992,7 @@
 		<Tag>TXT_KEY_EVENT_TRIGGER_RANGER_BEAR_ATTACK_1</Tag>
 		<English>Our ranger is on patrol through the forest. Suddenly he hears a high-pitched scream of fear followed by a rattling sound, like a tree in a high wind. He heads toward the noise and sees a missionary up in a tree, while a hungry grizzly methodically tries to shake him loose.</English>
 		<French>Notre garde forestier patrouille en forêt. Il entend un cri de peur haut-perché suivi par un bruit de branches, comme un arbre pris dans une rafale. Il se dirige vers le vacarme et voit un missionnaire haut perché dans un arbre, tandis qu'un grissly affamé secoue l'arbre comme un prunier pour récupérer le morceau.</French>
-		<German>Einer unserer Missionare ist auf Parolie in den Wäldern. Plötzlich hört er Schreie voller Angst. Nach einer kurzen Suche findet er den Urpsrpung der Schreie. Er wird Zeuge wie ein Missionar in einem Baum von einem hungrigen Grizzly angegriffen wird, der wütend versucht ihn herunter zu schütteln.</German>
+		<German>Einer unserer Ranger ist auf Patrouille in den Wäldern. Plötzlich hört er Schreie voller Angst. Nach einer kurzen Suche findet er den Urpsrpung der Schreie. Er wird Zeuge wie ein Missionar in einem Baum von einem hungrigen Grizzly angegriffen wird, der wütend versucht ihn herunter zu schütteln.</German>
 		<Russian>Наш рейнджер патрулирует лес. Внезапно он слышит пронзительный крик, за которым следует глухой стук, как будто чем-то бъют по деревяшке. Он направляется на шум и видит на дереве трясущегося от страха миссионера, в то время как большой голодный гризли методичными ударами по дереву пытается стряхнуть его.</Russian>
 	</TEXT>
 	<TEXT>
@@ -1035,11 +1059,23 @@
 		<Russian>Если пассажиры хотят выжить, они должны защищать дилижанс!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_2</Tag>
+		<English>Pay the scoundrels and avoid bloodshed.</English>
+		<German>Zahlt den Halunken und vermeidet Blutvergießen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_HELP</Tag>
 		<English>Highwaymen attack the stagecoach. Brave passengers defend it.</English>
 		<French>Des bandits attaquent la diligence. Des passagers courageux la défendent.</French>
 		<German>Straßenräuber greifen die Kutsche an. Ein paar mutige Passagiere verteidigen sie.</German>
 		<Russian>На дилижанс нападают разбойники. Храбрые пассажиры защищаются.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_BRIBE_HELP</Tag>
+		<English>You pay %D1 [ICON_GOLD] to the highwaymen and they let you pass.</English>
+		<German>Ihr zahlt %D1 [ICON_GOLD] an die Wegelagerer und dürft passieren.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_LANDTRANSPORT_ATTACK</Tag>
@@ -1050,9 +1086,9 @@
 	 </TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_LANDTRANSPORT_ATTACK_1</Tag>
-		<English>Lured by the prospects of rich takings, hostile Natives have attacked a [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. They're shooting flaming arrows! Take cover and save what can be saved!</English>
-		<French>Alléché par le butin potentiel, un groupe d'Indiens a attaqué un [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. Ils décochent des flèches de feu. À couvert, et sauvons ce que nous pouvons !</French>
-		<German>Angelockt von den Aussichten auf reiche Beute hat ein feindlicher Indianer-Trupp einen [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] angegriffen. Sie schießen mit Brandpfeilen! Jetzt heißt es in Deckung gehen und retten was zu retten ist.</German>
+		<English>Lured by the prospects of rich takings, hostile Natives have attacked one of your [COLOR_UNIT_TEXT]carriages[COLOR_REVERT]. They're shooting flaming arrows! Take cover and save what can be saved!</English>
+		<French>Alléché par le butin potentiel, un groupe d'Indiens a attaqué un [COLOR_UNIT_TEXT]voiture[COLOR_REVERT]. Ils décochent des flèches de feu. À couvert, et sauvons ce que nous pouvons !</French>
+		<German>Angelockt von den Aussichten auf reiche Beute hat ein feindlicher Indianer-Trupp eines Eurer [COLOR_UNIT_TEXT]Gespanne[COLOR_REVERT] angegriffen. Sie schießen mit Brandpfeilen! Jetzt heißt es in Deckung gehen und retten was zu retten ist.</German>
 		<Russian>Соблазнившись перспективой богатой добычи, отряд злобных индейцев напал на [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. Они стреляют зажигательными стрелами! Все в укрытие! Спасайтесь!</Russian>
 	</TEXT>
 	<TEXT>
@@ -1175,6 +1211,18 @@
 		<Russian>Разбойники атакуют паромную переправу.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DEFEND_CHOICE</Tag>
+		<English>The brave defenders rush to secure the ferry station and confront the bandits! Can they defend the ferry station?</English>
+		<German>Die mutigen Verteidiger eilen herbei, um die Fährstation zu sichern und sich den Banditen entgegenzustellen! Können Sie die Fähre vor der Zerstörung bewahren?</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DESTROY_CHOICE</Tag>
+		<English>The bandits overrun the ferry station and begin to plunder and destroy it!</English>
+		<German>Die Banditen überwältigen die Fährstation und beginnen sie zu plündern und zu zerstören!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SLAVE_AND_PLANATION_OWNER_DAUGHTER</Tag>
 		<English>A rumour is spreading that the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] daughter of a plantation owner fell in love with a slave.</English>
 		<French>Selon une rumeur, la fille d'un riche planteur [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] est tombé amouruese d'un esclave.</French>
@@ -1273,6 +1321,42 @@
 		<Russian>Мы не позволим преступникам шантажировать нас. Единственное, что они получают от нас, это смерть.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_BUT_RAIDED</Tag>
+		<English>The brave townsfolk of %s1 tried to resist, but could not prevent the bandits from plundering the city.</English>
+		<German>Die tapferen Bürger von %s1 versuchten sich zu wehren, konnten aber nicht verhindern, dass die Banditen die Stadt plünderten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD</Tag>
+		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 gold.</English>
+		<German>Die Kriminellen plünderten die Siedlung und schafften %d2 Gold fort.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOODS</Tag>
+		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 %s3.</English>
+		<German>Die Kriminellen plünderten die Siedlung und schafften %d2 %s3 fort.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_NOTHING</Tag>
+		<English>There were no defenders in %s1_city. The criminals overran the settlement, but found little worth carrying away.</English>
+		<German>Die Kriminellen überrannten die Siedlung, fanden jedoch kaum etwas, das den Abtransport lohnte.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_ABORTED</Tag>
+		<English>The bandits were confronted by the local townsfolk in %s1 and abandoned their attack.</English>
+		<German>Die Banditen wurden in %s1 von der örtlichen Stadtbevölkerung gestellt und brachen ihren Angriff ab.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP</Tag>
+		<English>[ICON_BULLET]Refusing their demands will provoke a [COLOR_HIGHLIGHT_TEXT]immediate raid[COLOR_REVERT]. If the attackers are successful, they may [COLOR_HIGHLIGHT_TEXT]loot [COLOR_REVERT]gold, goods, or weapons, but they cannot capture the city.</English>
+		<German>[ICON_BULLET]Wenn ihre Forderungen zurückgewiesen werden, [COLOR_HIGHLIGHT_TEXT]wird die Stadt überfallen[COLOR_REVERT]. Falls die Banditen Erfolg haben, können sie Gold, Waren oder Waffen [COLOR_HIGHLIGHT_TEXT]plündern[COLOR_REVERT], die Stadt jedoch nicht einnehmen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER</Tag>
 		<English>A rumour is spreading: In [COLOR_HIGHLIGHT_TEXT]%s2_city[COLOR_REVERT] an indentured servant has stolen money from his employer.</English>
 		<French>Selon une rumeur à [COLOR_HIGHLIGHT_TEXT]%s2_city[COLOR_REVERT], un domestique sous contrat vole de l'argent à son patron.</French>
@@ -1302,10 +1386,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP</Tag>
-		<English>The indentured servant will run away.</English>
-		<French>Le domestique va prendre la fuite.</French>
-		<German>Der Schuldknecht versucht zu fliehen.</German>
-		<Russian>Наемный слуга убежит.</Russian>
+		<English>[ICON_BULLET]The indentured servant will run away.</English>
+		<French>[ICON_BULLET]Le domestique va prendre la fuite.</French>
+		<German>[ICON_BULLET]Der Schuldknecht versucht zu fliehen.</German>
+		<Russian>[ICON_BULLET]Наемный слуга убежит.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2_HELP</Tag>
+		<English>[ICON_BULLET]The indentured servant is ransomed and becomes a free colonist.</English>
+		<German>[ICON_BULLET]Der Schuldknecht wird freigekauft und zu einem freien Kolonisten.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_PREACHER_AND_HARLOT</Tag>
@@ -1439,30 +1529,6 @@
 		<French>[ICON_BULLET]Nous sommes attaqués par des indigènes hostiles !</French>
 		<German>[ICON_BULLET]Wir werden durch Ureinwohner angegriffen!</German>
 		<Russian>[ICON_BULLET]На нас напали враждебно настроенные индейцы!</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP</Tag>
-		<English>[ICON_BULLET]Refusing their demands will provoke an [COLOR_HIGHLIGHT_TEXT]immediate attack against %s1_city[COLOR_REVERT]. If the attackers break through, they may [COLOR_HIGHLIGHT_TEXT]loot [COLOR_REVERT]gold, goods, or weapons, but they cannot capture the city.</English>
-		<German>[ICON_BULLET]Wenn ihre Forderungen zurückgewiesen werden, [COLOR_HIGHLIGHT_TEXT]wird %s1_city sofort angegriffen[COLOR_REVERT]. Falls die Angreifer durchbrechen, können sie Gold, Waren oder Waffen [COLOR_HIGHLIGHT_TEXT]plündern[COLOR_REVERT], die Stadt jedoch nicht einnehmen.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD</Tag>
-		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 gold.</English>
-		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen plünderten die Siedlung und schafften %d2 Gold fort.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOODS</Tag>
-		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 %s3.</English>
-		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen plünderten die Siedlung und schafften %d2 %s3 fort.</German>
-		<Russian/>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_NOTHING</Tag>
-		<English>There were no defenders in %s1_city. The criminals overran the settlement, but found little worth carrying away.</English>
-		<German>Es gab keine Verteidiger in %s1_city. Die Kriminellen überrannten die Siedlung, fanden jedoch kaum etwas, das den Abtransport lohnte.</German>
-		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BUCCANNERS_ATTACK_MINE_HELP</Tag>
@@ -2828,7 +2894,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FIVE_GRAVEYARDS_DONE</Tag>
-		<English>Milord, another colonial nation is the first to have graveyards in five cities.</English>
+		<English>One colonial nation was able to establish graveyards in five cities before any other.</English>
 		<French>Sire, une autre nation a été la première à construire cinq cimetières dans les villes.</French>
 		<German>Eine Kolonialmacht konnte vor allen anderen in fünf Städten Friedhöfe errichten.</German>
 		<Russian>Колониальная нация организовала кладбища в пяти городах.</Russian>
@@ -3290,7 +3356,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SIX_WARSHIPS_QUEST_DONE_WORLD</Tag>
-		<English>Milord, another colonial nation is the first to have a war fleet of at least six warships (frigate or larger).</English>
+		<English>One colonial power was able to build a fleet of six warships (frigates or larger) before any other. (frigate or larger).</English>
 		<French>Sire, une autre nation coloniale a constitué une flotte de guerre de six grands navires de combats.</French>
 		<German>Eine Kolonialmacht konnte vor allen anderen eine Flotte von sechs Kriegsschiffen (Fregatte oder größer) aufbauen.</German>
 		<Russian>У одной из европейских колониальных наций есть военный флот, состоящий как минимум из шести военных кораблей (фрегат или больше).</Russian>
@@ -4319,9 +4385,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SELL_NATIVE_SLAVE_SELL</Tag>
-		<English>I find these legal proceedings tedious. Arrest this slave for dereliction of duty. Sell him to the next outbound slave ship.</English>
+		<English>I find these legal proceedings tedious. Arrest this slave for dereliction of duty. Sell him to the next outbound slave ship. But I want my share of the business.</English>
 		<French>Toutes ces lois sont dépassées. Arrêtez juste l'esclave pour sédition. Puis à la prochaine occasion, vendez-le à un navire d'esclaves en partance.</French>
-		<German>Diese ganzen Gesetze sind veraltet. Verhaftet den Sklaven einfach wegen Aufrührerei. Bei nächster Gelegenheit verkauft ihn dann an ein auslaufendes Sklavenschiff.</German>
+		<German>Diese ganzen Gesetze sind veraltet. Verhaftet den Sklaven einfach wegen Aufrührerei. Bei nächster Gelegenheit verkauft ihn dann an ein auslaufendes Sklavenschiff. Aber ich will meinen Anteil an dem Geschäft.</German>
 		<Russian>Я нахожу эти судебные разбирательства утомительными. Закуйте этого раба в кандалы за невыполнение служебных обязанностей и продайте на ближайший невольничьеский корабль.</Russian>
 	</TEXT>
 	<TEXT>
@@ -4354,9 +4420,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SELL_AFRICAN_SLAVE_SELL</Tag>
-		<English>Allow the sale to proceed, but sell them to a foreign plantation to avoid further incident.</English>
+		<English>Allow the sale to proceed, but sell them to a foreign plantation to avoid further incident. But I want my share of the business.</English>
 		<French>Autorisez la vente, mais vendez-les à une plantation étrangère pour éviter tout autre incident.</French>
-		<German>Weist die Sklaveneintreiber an, die schwarzen Sklaven an eine Plantage einer anderen Nation zu verkaufen.</German>
+		<German>Weist die Sklaveneintreiber an, die schwarzen Sklaven an eine Plantage einer anderen Nation zu verkaufen. Aber ich will meinen Anteil an dem Geschäft.</German>
 		<Russian>Разрешить продажу, но только на иностранную плантацию, чтобы избежать дальнейших инцидентов.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5018,6 +5084,12 @@
 		<Russian>Что же, это.. интересно. Давайте покроем часть расходов на организацию и задобрим краснокожих, подарив им несколько лошадей. А когда дикари уйдут, отправьте за ними разведчиков, чтобы они обследовали их деревни.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEASONED_TRADER_UPGRADE_HELP</Tag>
+		<English>[ICON_BULLET]The expert native trader becomes a courageous native trader.</English>
+		<German>[ICON_BULLET]Der erfahrene Ureinwohnerhändler wird zu einem couragierten Ureinwohnerhändler.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP</Tag>
 		<English>[ICON_BULLET]The Natives are furious. A trader has lost his scalp.</English>
 		<French>[ICON_BULLET]Les indigènes furieux décident de scalper quelques marchands.</French>
@@ -5067,11 +5139,22 @@
 		<Russian>Нам некогда разглядывать еще одно стойбище этих дикарей. Поторопимся, впереди еще много более важных дел.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_SEASONED_SCOUT_NATIVE_CITY_HELP</Tag>
-		<English>[ICON_BULLET]Some Natives are angry, seeing their chief giving you such a rich gift.</English>
-		<French>[ICON_BULLET]Des indigènes sont en colère et n'apprécient pas que leur chef vous fasse un tel cadeau.</French>
-		<German>[ICON_BULLET]Einige Ureinwohner sind wütend und nicht damit einverstanden, dass ihr Häuptling Euch so reich beschenkt.</German>
-		<Russian>[ICON_BULLET]Некоторые индейцы разгневаны и не одобряют того, что их вождь преподносит вам богатый подарок.</Russian>
+		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_RELATION</Tag>
+		<English>[ICON_BULLET]Relations with the %s1 change by %s2.</English>
+		<German>[ICON_BULLET]Die Beziehungen zu den %s1 verändern sich um %s2.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_ANGRY_ATTACK</Tag>
+		<English>[ICON_BULLET]Some Natives of the %s1 are angry, seeing their chief giving you such a rich gift. Hostile warrior will [COLOR_NEGATIVE_TEXT]attack[COLOR_REVERT] you.</English>
+		<German>[ICON_BULLET]Einige Krieger der %s1 sind wütend und nicht damit einverstanden, dass ihr Häuptling Euch so reich beschenkt. Krieger werden Euch [COLOR_NEGATIVE_TEXT]angreifen[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_UNPLEASED</Tag>
+		<English>[ICON_BULLET]The %s1 are [COLOR_NEGATIVE_TEXT] displeased[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Die %s1 sind [COLOR_NEGATIVE_TEXT] verärgert[COLOR_REVERT]. Sie hatten sich mehr von Eurem Besuch versprochen. Das wird nicht so schnell vergessen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SEASONED_TRADER_NATIVE_CITY_1</Tag>
@@ -5159,9 +5242,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_TRADE_WAGON_1</Tag>
-		<English>Milord, our neighbours are waiting for us to start trading with them. We should send a wagon train to establish trade relations.</English>
+		<English>Milord, our neighbours are waiting for us to do trading with them. We should send a wagon train to establish trade relations.</English>
 		<French>Sire, nos voisins espèrent que nous commmercerons avec eux. Nous devrions vraiment envoyer un chariot pour commencer les relations commerciales.</French>
-		<German>Milord, unsere Nachbarn warten darauf, dass wir den Handel mit Ihnen aufnehmen. Wir sollten unbedingt einen Wagenzug entsenden und Handelsbeziehungen beginnen.</German>
+		<German>Milord, unsere Nachbarn warten darauf, dass wir mit Ihnen handeln. Wir sollten unbedingt einen Wagenzug entsenden und Handelsbeziehungen beginnen.</German>
 		<Russian>Милорд, наши соседи ждут, когда мы начнем с нами торговать. Нам обязательно надо отправить к ним обоз и завязать торговые отношения.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5173,9 +5256,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVE_TRADE_WAGON_HELP</Tag>
-		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the Native village within %d3 rounds where the trader who made this deal is located.</English>
-		<French> Envoyez une unité [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT]) dans le village Indien où le marchand a commencé ses affaires dans les %d3 tours.</French>
-		<German>Schickt innerhalb von %d3 Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem Indianer-Dorf, wo sich der Händler befindet, der den Handel eingefädelt hat.</German>
+		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village within [COLOR_HIGHLIGHT_TEXT]%d3 rounds[COLOR_REVERT]. Take [COLOR_HIGHLIGHT_TEXT]%d4 trade goods from Europe [COLOR_REVERT]and sell or donate them to the native village.</English>
+		<German>Schickt innerhalb von [COLOR_HIGHLIGHT_TEXT]%d3 Runden[COLOR_REVERT] eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Nehmt [COLOR_HIGHLIGHT_TEXT]%d4 Handelswaren aus Europa[COLOR_REVERT] mit und verkauft oder schenkt sie dem Dorf.</German>
 		<Russian>В течение %d3 ходов отправьте [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] в индейскую деревню, где находится торговец, организовавший торговлю.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5187,16 +5269,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_TRADE_WAGON_DONE</Tag>
-		<English>Milord, our wagon train has reached the Native village. What deal should we make?</English>
-		<French>Sire, notre chariot a atteint le village indien. Quel marché devons-nous conclure ?</French>
-		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht. Welchen Handel sollen wir abschließen?</German>
+		<English>Milord, our wagon train has reached the Native village and traded the goods. How shall we proceed?</English>
+		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht und die Waren getauscht. Wie geht es weiter? </German>
 		<Russian>Милорд, наш торговый обоз достиг индейской деревни. Какую сделку нам следует заключить?</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FAILED_TRADER_DAUGHTER</Tag>
 		<English>In [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] trappers have found the daughter of a failed trader and returned her to her father. She had been kidnapped by hostile Natives.</English>
 		<French>À [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] des trappeurs ont ramené à un marchand ruiné sa fille ravie par des peaux-rouges.</French>
-		<German>In [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] haben Waldläufer einem gescheiterten Ureinwohnerhändler seine von Rothäuten entführte Tochter wieder zurückgebracht.</German>
+		<German>In [COLOR_REVERT]%s2_city[COLOR_REVERT] haben Waldläufer einem gescheiterten Ureinwohnerhändler seine von Rothäuten entführte Tochter wieder zurückgebracht.</German>
 		<Russian>В городе [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] зверолов вернул неудачливому торговцу его дочь, похищенную краснокожими.</Russian>
 	</TEXT>
 	<TEXT>
@@ -5587,8 +5668,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISCOVERY_EVENTS_TREASURE_ATTACK_HELP</Tag>
-		<English>A band of roving adventurers attacks the treasure column. A few brave militiamen and guards defend it.</English>
-		<German>Eine Bande umherstreifender Abenteurer greift die Schatzkolonne an. Ein paar mutige Milizionäre und Wachen verteidigen ihn.</German>
+		<English>A band of roving adventurers attacks the treasure column. A few brave charioteers and guards defend it.</English>
+		<German>Eine Bande umherstreifender Abenteurer greift die Schatzkolonne an. Ein paar mutige Wagenlenker und Wachen verteidigen ihn.</German>
 		<Russian>Группа бродячих искателей приключений нападает на обоз с сокровищами. Его защищают несколько храбрых ополченцев и охранников.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6067,8 +6148,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP</Tag>
-		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village within %d3 rounds. Take trade goods from Europe or anything else, local or imported. It's up to you whatever you want to trade.</English>
-		<German>Schickt innerhalb von %d3 Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Nehmt Handelswaren aus Europa mit oder andere Waren, die ihr vor Ort produziert habt. Es bleibt Euch überlassen, mit was Ihr handeln wollt.</German>
+		<English>Send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village within [COLOR_HIGHLIGHT_TEXT]%d3 rounds[COLOR_REVERT]. Take [COLOR_HIGHLIGHT_TEXT]%d4 trade goods from Europe [COLOR_REVERT]and sell or donate them to the native village.</English>
+		<German>Schickt innerhalb von [COLOR_HIGHLIGHT_TEXT]%d3 Runden[COLOR_REVERT] eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Nehmt [COLOR_HIGHLIGHT_TEXT]%d4 Handelswaren aus Europa[COLOR_REVERT] mit und verkauft oder schenkt sie dem Dorf.</German>
 		<Russian>Отправьте [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] в соседнюю деревню индейцев, которые хотят торговать с вами, в течение %d3 ходов. Можете взять с собой [COLOR_SELECTED_TEXT]мануфактуру[COLOR_REVERT] из Европы или другие товары, которые вы произвели в своих поселениях. Чем вы будете торговать, зависит только от вас.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6079,8 +6160,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_DONE</Tag>
-		<English>Milord, our wagon train has reached the Native village. What happens next?</English>
-		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht. Wie geht es weiter?</German>
+		<English>Milord, our wagon train has reached the Native village and traded the goods. What happens next?</English>
+		<German>Milord, unser Wagenzug hat das Indianer-Dorf erreicht und die Handelswaren gehandelt. Wie geht es weiter?</German>
 		<Russian>Милорд, наш транспорт добрался до деревни индейцев. Что будем делать дальше?</Russian>
 	</TEXT>
 	<TEXT>

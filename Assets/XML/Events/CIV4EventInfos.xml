@@ -4970,8 +4970,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>NONE</UnitClass>
-			<iNumFreeUnits>0</iNumFreeUnits>
+			<UnitClass>UNITCLASS_CRIMINAL</UnitClass>
+			<iNumFreeUnits>1</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -5081,7 +5081,7 @@
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENT_PEASANT_WARPREP_1A</Text>
 			</WorldNewsTexts>
-			<OtherPlayerPopup>TXT_KEY_EVENT_PEASANT_WARPREP_1A</OtherPlayerPopup>
+			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
@@ -5134,6 +5134,67 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_PEASANT_WARPREP_EMIGRANT</Type>
+			<Description>TXT_KEY_EVENT_PEASANT_WARPREP_EMIGRANT</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>0</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType/>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback>spawnOwnPlayerUnitInEurope</PythonCallback>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpPeasantWarPrepWarend</PythonHelp>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+			<iGenericParameter1>UNITCLASS_COLONIST</iGenericParameter1>
+			<iGenericParameter2>3</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
@@ -5675,7 +5736,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnit</PythonCallback>
+			<PythonCallback>applyNativeTraderAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpNativeTraderAttack</PythonHelp>
@@ -5683,7 +5744,7 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>100</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -5736,13 +5797,13 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot</PythonCallback>
+			<PythonCallback>applyRangerBearAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpRangerBearAttack</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>UNITCLASS_GRIZZLY</iGenericParameter1>
+			<iGenericParameter1>UNITCLASS_GRIZZLY_COMBAT</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
 			<iGenericParameter3>100</iGenericParameter3>
 			<iGenericParameter4>UNITCLASS_CHRISTIAN_MISSIONARY</iGenericParameter4>
@@ -5797,16 +5858,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnit</PythonCallback>
+			<PythonCallback>applyConquistadorAmbush</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
-            <HelpText>TXT_KEY_EVENT_CONQUISTADOR_AMBUSH_HELP</HelpText>
+            <PythonHelp>getHelpConquistadorAmbush</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>1000</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -5859,7 +5919,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot</PythonCallback>
+			<PythonCallback>applyHighwaymanAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpHighwaymanAttack</PythonHelp>
@@ -5867,8 +5927,69 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
-			<iGenericParameter4>UNITCLASS_MILITIA</iGenericParameter4>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_HIGHWAYMAN_ATTACK_2</Type>
+			<Description>TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_2</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>-500</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType/>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback>applyHighwaymanAttackBribe</PythonCallback>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpHighwaymanAttackBribe</PythonHelp>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>700</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_LANDTRANSPORT_ATTACK_1</Type>
@@ -5920,7 +6041,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnNativeUnitAdjacentToUnitAndFriendlyOnSamePlot</PythonCallback>
+			<PythonCallback>applyLandtransportAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpLandTransportAttack</PythonHelp>
@@ -5928,8 +6049,8 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
 			<iGenericParameter2>2</iGenericParameter2>
-			<iGenericParameter3>1</iGenericParameter3>
-			<iGenericParameter4>UNITCLASS_MILITIA</iGenericParameter4>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_LANDTRANSPORT_ATTACK_2</Type>
@@ -5981,7 +6102,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyLandtransportAttackBribe</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -6042,15 +6163,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToUnit</PythonCallback>
+			<PythonCallback>applyWhaleAttack</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpWhaleAttack</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>UNITCLASS_HUMPBACK_WHALE</iGenericParameter1>
+			<iGenericParameter1>UNITCLASS_HUMPBACK_WHALE_COMBAT</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -6195,7 +6316,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -6225,16 +6346,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToCity</PythonCallback>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParamsAndSpawnBarbarianAdjacentToCity</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpIndenturedServantStealsFromEmployer</PythonHelp>
+			<PythonHelp>getHelpIndenturedServantStealsFromEmployer1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>600</iAIValue>
 			<iGenericParameter1>UNITCLASS_INDENTURED_SERVANT</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2</Type>
@@ -6286,16 +6407,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpIndenturedServantStealsFromEmployer2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>600</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_INDENTURED_SERVANT</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_PREACHER_AND_HARLOT_1</Type>
@@ -6928,8 +7049,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_MILITIA</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -6960,7 +7081,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applyFerryStationRobbers1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpFerryStationRobbers</PythonHelp>
@@ -6968,8 +7089,8 @@
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>UNITCLASS_MILITIA</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_FERRY_STATION_ROBBERS_2</Type>
@@ -7021,7 +7142,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applyFerryStationRobbers2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpFerryStationRobbers</PythonHelp>
@@ -7029,8 +7150,8 @@
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>UNITCLASS_MILITIA</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SLAVE_AND_PLANATION_OWNER_DAUGHTER_1</Type>
@@ -14578,7 +14699,7 @@
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>600</iAIValue>
+			<iAIValue>500</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
@@ -14639,7 +14760,7 @@
 			<PythonCanDo/>
 			<PythonHelp>getHelpHorsethief_2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>600</iAIValue>
+			<iAIValue>700</iAIValue>
 			<iGenericParameter1>-100</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
@@ -16479,7 +16600,7 @@
 			<iRevoltTurns>0</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
-			<iFood>-50</iFood>
+			<iFood>-100</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FeatureType>NONE</FeatureType>
 			<iFeatureChange>0</iFeatureChange>
@@ -23782,7 +23903,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -23812,16 +23933,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>600</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_BRAVE_NATIVE_SLAVE_2</Type>
@@ -23843,7 +23964,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_NATIVE_MERC</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -23873,16 +23994,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_DIPLOMATIC_CONNECTIONS_1</Type>
@@ -28063,10 +28184,10 @@
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_NATIVE_SLAVE_FREE</Type>
@@ -28088,7 +28209,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28118,16 +28239,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_NATIVE_SLAVE_SELL</Type>
@@ -28144,12 +28265,12 @@
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>100</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>0</iRandomGold>
+			<iRandomGold>200</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28179,16 +28300,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_NATIVE_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_AFRICAN_SLAVE_FREE</Type>
@@ -28210,7 +28331,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_FREED_SLAVE</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28240,16 +28361,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_AFRICAN_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_SELL_AFRICAN_SLAVE_KEEP</Type>
@@ -28327,12 +28448,12 @@
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>100</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>0</iRandomGold>
+			<iRandomGold>200</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -28362,16 +28483,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyRemoveSpecificCityUnitClassFromEventParams</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter1>UNITCLASS_AFRICAN_SLAVE</iGenericParameter1>
+			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_RABBLE_1</Type>
@@ -28508,13 +28629,13 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>0</iGold>
+			<iGold>-800</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>NONE</UnitClass>
-			<iNumFreeUnits>0</iNumFreeUnits>
+			<UnitClass>UNITCLASS_VETERAN_TOWN_GUARD</UnitClass>
+			<iNumFreeUnits>1</iNumFreeUnits>
 			<bDisbandUnit>1</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -86508,7 +86629,7 @@
 			<ClearEvents/>
 			<PythonCallback>applyHorseGift1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
+			<PythonCanDo>canDoSeasonedTraderHorseOption</PythonCanDo>
 			<PythonHelp>getHelpHorseGift1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
@@ -86530,14 +86651,14 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>0</iGold>
+			<iGold>500</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -86567,10 +86688,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToCity</PythonCallback>
+			<PythonCallback>applySeasonedTraderMeetingRaid</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpSeasonedTraderNo</PythonHelp>
+			<PythonHelp>getHelpSeasonedTraderRaid</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
@@ -86628,10 +86749,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyHorseGift1</PythonCallback>
+			<PythonCallback>applyHorseGift3</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
-			<PythonHelp>getHelpHorseGift1</PythonHelp>
+			<PythonCanDo>canDoSeasonedTraderHorseOption</PythonCanDo>
+			<PythonHelp>getHelpHorseGift3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>-50</iGenericParameter1>
@@ -86683,16 +86804,16 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>1</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applySeasonedNativeCity1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpSeasonedScoutNativeCity1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -86744,16 +86865,16 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>-1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applySeasonedNativeCity2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpSeasonedScoutNativeCity</PythonHelp>
+			<PythonHelp>getHelpSeasonedScoutNativeCity2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>500</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
@@ -86811,10 +86932,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applySeasonedNativeCity3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpSeasonedScoutNativeCity3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -86872,10 +86993,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applySeasonedNativeCity1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpSeasonedTraderNativeCity1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -86927,20 +87048,20 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>-1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applySeasonedNativeCity2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpSeasonedScoutNativeCity</PythonHelp>
+			<PythonHelp>getHelpSeasonedTraderNativeCity2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>600</iAIValue>
 			<iGenericParameter1>UNITCLASS_HOSTILE_NATIVE</iGenericParameter1>
-			<iGenericParameter2>3</iGenericParameter2>
+			<iGenericParameter2>1</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
@@ -86994,10 +87115,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applySeasonedNativeCity3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpSeasonedTraderNativeCity3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -87055,7 +87176,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyNativeWagonTradeStart</PythonCallback>
 			<PythonExpireCheck>isExpiredNativeWagonTrade</PythonExpireCheck>
 			<PythonCanDo/>
 			<PythonHelp>getHelpNativeWagonTrade</PythonHelp>
@@ -87088,7 +87209,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -87131,10 +87252,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeWagonTradeDone1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeWagonTradeDone1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -87164,7 +87285,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -87207,10 +87328,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyNativeWagonTradeDone</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpNativeWagonTradeDone2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -87240,7 +87361,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -87283,10 +87404,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyNativeWagonTradeDone</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpNativeWagonTradeDone3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -89033,7 +89154,7 @@
 			<iGenericParameter1>UNITCLASS_CONQUISTADOR</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>UNITCLASS_MILITIA</iGenericParameter4>
+			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_DISCOVERY_EVENTS_ATTACK_TREASURE_2</Type>
@@ -89331,7 +89452,7 @@
 			<ClearEvents/>
 			<PythonCallback>changeFailedTraderToExpertTrader</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
+			<PythonCanDo>canDoDiscoveryFailedTraderChange</PythonCanDo>
 			<PythonHelp>getHelpDiscoveryFailedTraderChange</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -92119,8 +92240,8 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
-			<PythonExpireCheck>isExpiredNativeWagonTrade</PythonExpireCheck>
+			<PythonCallback>applyNativeNeighborTradeStart</PythonCallback>
+			<PythonExpireCheck>isExpiredNativeNeighborTrade</PythonExpireCheck>
 			<PythonCanDo/>
 			<PythonHelp>getHelpNativeNeighborTrade</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
@@ -92195,10 +92316,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeNeighborTradeDone1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeNeighborTradeDone1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -92228,7 +92349,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -92271,10 +92392,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeNeighborTradeDone2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeNeighborTradeDone2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -92304,7 +92425,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -92326,7 +92447,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>
@@ -92347,10 +92468,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyNativeNeighborTradeDone3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpNativeNeighborTradeDone3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>

@@ -1007,7 +1007,11 @@ def getHelpPeasantWarPrep(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_PEASANT_WARPREP_HELP", (iPriceChange, gc.getYieldInfo(iYield1).getChar(), king.getCivilizationDescriptionKey(), iPriceChange, gc.getYieldInfo(iYield2).getChar(), king.getCivilizationDescriptionKey()))
 	return szHelp
 
-######## DISCOVERY LEGENDARY SCOUT EVENT ###########
+def getHelpPeasantWarPrepWarend(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_PEASANT_WARPREP_WAREND_HELP",
+		()
+	)
 
 ######## DISCOVERY LEGENDARY SCOUT EVENT ###########
 
@@ -1061,7 +1065,7 @@ def _setDiscoveryLegendaryScoutLeftTurn(unit, iTurn):
 	unit.setScriptData(szData)
 
 def _getDiscoveryLegendaryScoutRequiredTurns():
-	iBaseTurns = 30
+	iBaseTurns = 75
 	iGameSpeed = CyGame().getGameSpeedType()
 	gameSpeedInfo = gc.getGameSpeedInfo(iGameSpeed)
 	iPercent = gameSpeedInfo.getGrowthPercent()
@@ -1179,6 +1183,458 @@ def getHelpDiscoveryLegendaryScoutXP(argsList):
 		"TXT_KEY_EVENT_DISCOVERY_LEGENDARY_SCOUT_XP_HELP",
 		(iTurns,)
 	)
+
+######## Seasoned Native City Events (Scout + Trader) ###########
+
+SEASONED_SCOUT_NATIVE_CITY_SOFT_COOLDOWN_PREFIX = "[[WTP_SEASONED_SCOUT_NATIVE_CITY_SOFT_READY_TURN="
+SEASONED_TRADER_NATIVE_CITY_SOFT_COOLDOWN_PREFIX = "[[WTP_SEASONED_TRADER_NATIVE_CITY_SOFT_READY_TURN="
+SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX = "]]"
+
+
+def _getSeasonedNativeCitySoftCooldownPrefix(kTriggeredData):
+	eTrigger = kTriggeredData.eTrigger
+	if eTrigger == -1:
+		return ""
+
+	triggerInfo = gc.getEventTriggerInfo(eTrigger)
+	if triggerInfo is None:
+		return ""
+
+	szTriggerType = triggerInfo.getType()
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_SCOUT_NATIVE_CITY":
+		return SEASONED_SCOUT_NATIVE_CITY_SOFT_COOLDOWN_PREFIX
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY":
+		return SEASONED_TRADER_NATIVE_CITY_SOFT_COOLDOWN_PREFIX
+
+	return ""
+
+
+def _getSeasonedNativeCitySoftCooldownReadyTurn(player, kTriggeredData):
+	if player.isNone():
+		return -1
+
+	szPrefix = _getSeasonedNativeCitySoftCooldownPrefix(kTriggeredData)
+	if szPrefix == "":
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(szPrefix)
+	if iStart == -1:
+		return -1
+
+	iStart += len(szPrefix)
+	iEnd = szData.find(SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setSeasonedNativeCitySoftCooldownReadyTurn(player, kTriggeredData, iReadyTurn):
+	if player.isNone():
+		return
+
+	szPrefix = _getSeasonedNativeCitySoftCooldownPrefix(kTriggeredData)
+	if szPrefix == "":
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(szPrefix)
+	if iStart != -1:
+		iEnd = szData.find(SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		szPrefix,
+		iReadyTurn,
+		SEASONED_NATIVE_CITY_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+
+def _startSeasonedNativeCitySoftCooldown(player, kTriggeredData):
+	if player.isNone():
+		return
+
+	_setSeasonedNativeCitySoftCooldownReadyTurn(
+		player,
+		kTriggeredData,
+		CyGame().getGameTurn() + 60
+	)
+
+
+def _isSeasonedNativeCitySoftCooldownActive(player, kTriggeredData):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getSeasonedNativeCitySoftCooldownReadyTurn(player, kTriggeredData)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def _getSeasonedNativeCityTrackedUnit(player, kTriggeredData):
+	if player.isNone():
+		return None
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
+
+
+def _getSeasonedNativeCityRequiredProfession(kTriggeredData):
+	eTrigger = kTriggeredData.eTrigger
+	if eTrigger == -1:
+		return -1
+
+	triggerInfo = gc.getEventTriggerInfo(eTrigger)
+	if triggerInfo is None:
+		return -1
+
+	szTriggerType = triggerInfo.getType()
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_SCOUT_NATIVE_CITY":
+		return gc.getInfoTypeForString("PROFESSION_SCOUT")
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY":
+		return gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+
+	return -1
+
+
+def _getSeasonedNativeCityPlotCityFromUnit(unit):
+	if unit is None or unit.isNone():
+		return None
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return None
+
+	if not plot.isCity():
+		return None
+
+	return plot.getPlotCity()
+
+
+def _getSeasonedNativeCityNativePlayerFromUnit(unit):
+	city = _getSeasonedNativeCityPlotCityFromUnit(unit)
+	if city is None:
+		return None
+
+	iOwner = city.getOwner()
+	if iOwner < 0:
+		return None
+
+	nativePlayer = gc.getPlayer(iOwner)
+	if nativePlayer is None or nativePlayer.isNone():
+		return None
+
+	if not nativePlayer.isNative():
+		return None
+
+	return nativePlayer
+
+
+def _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if unit is None or unit.isNone():
+		return False
+
+	if plot is None or plot.isNone():
+		return False
+
+	if not plot.isCity():
+		return False
+
+	nativePlayer = _getSeasonedNativeCityNativePlayerFromUnit(unit)
+	if nativePlayer is None:
+		return False
+
+	eRequiredProfession = _getSeasonedNativeCityRequiredProfession(kTriggeredData)
+	if eRequiredProfession == -1:
+		return False
+
+	if unit.getProfession() != eRequiredProfession:
+		return False
+
+	return True
+
+
+def _spawnSeasonedNativeCityHostileAdjacent(plot, iHostileUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iHostileUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	iUnitType = barbCiv.getCivilizationUnits(iHostileUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
+def _getSeasonedNativeCityTriggerChance(kTriggeredData):
+	eTrigger = kTriggeredData.eTrigger
+	if eTrigger == -1:
+		return 100
+
+	triggerInfo = gc.getEventTriggerInfo(eTrigger)
+	if triggerInfo is None:
+		return 100
+
+	szTriggerType = triggerInfo.getType()
+	iCurrentTurn = CyGame().getGameTurn()
+
+	iEarlyTurns = _scaleTurnsByGameSpeed(100)
+	iMidTurns = _scaleTurnsByGameSpeed(200)
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_SCOUT_NATIVE_CITY":
+		if iCurrentTurn <= iEarlyTurns:
+			return 70
+		if iCurrentTurn <= iMidTurns:
+			return 50
+		return 30
+
+	if szTriggerType == "EVENTTRIGGER_SEASONED_TRADER_NATIVE_CITY":
+		if iCurrentTurn <= iEarlyTurns:
+			return 40
+		if iCurrentTurn <= iMidTurns:
+			return 50
+		return 70
+
+	return 100
+
+
+def canTriggerSeasonedNativeCity(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if _isSeasonedNativeCitySoftCooldownActive(player, kTriggeredData):
+		return False
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+		return False
+
+	iChance = _getSeasonedNativeCityTriggerChance(kTriggeredData)
+	if CyGame().getSorenRandNum(100, "Seasoned Native City trigger") >= iChance:
+		return False
+
+	return True
+
+
+def applySeasonedNativeCityStartCooldown(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+		return
+
+	_startSeasonedNativeCitySoftCooldown(player, kTriggeredData)
+
+
+def applySeasonedNativeCity1(argsList):
+	applySeasonedNativeCityStartCooldown(argsList)
+
+
+def applySeasonedNativeCity2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if not _isValidSeasonedNativeCityContext(player, unit, plot, kTriggeredData):
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+
+	hostileUnit = _spawnSeasonedNativeCityHostileAdjacent(plot, iHostileUnitClass)
+
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	applySeasonedNativeCityStartCooldown(argsList)
+
+
+def applySeasonedNativeCity3(argsList):
+	applySeasonedNativeCityStartCooldown(argsList)
+
+
+def _getSeasonedNativeCityNativePlayerName(unit):
+	nativePlayer = _getSeasonedNativeCityNativePlayerFromUnit(unit)
+	if nativePlayer is None:
+		return u""
+
+	return nativePlayer.getCivilizationDescription(0)
+
+
+def _getSeasonedNativeCityHelp1(unit, event):
+	return u""
+
+
+def _getSeasonedNativeCityHelp2(unit, event):
+	szNativeName = _getSeasonedNativeCityNativePlayerName(unit)
+	if szNativeName == u"":
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_ANGRY_ATTACK",
+		(szNativeName,)
+	)
+
+
+def _getSeasonedNativeCityHelp3(unit, event):
+	szNativeName = _getSeasonedNativeCityNativePlayerName(unit)
+	if szNativeName == u"":
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_SEASONED_NATIVE_CITY_HELP_UNPLEASED",
+		(szNativeName,)
+	)
+
+
+def _getHelpSeasonedNativeCity(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = _getSeasonedNativeCityTrackedUnit(player, kTriggeredData)
+	if unit is None:
+		return u""
+
+	szEventType = event.getType()
+
+	if szEventType.endswith("_1"):
+		return _getSeasonedNativeCityHelp1(unit, event)
+
+	if szEventType.endswith("_2"):
+		return _getSeasonedNativeCityHelp2(unit, event)
+
+	if szEventType.endswith("_3"):
+		return _getSeasonedNativeCityHelp3(unit, event)
+
+	return u""
+
+
+def getHelpSeasonedScoutNativeCity1(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+
+def getHelpSeasonedScoutNativeCity2(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+
+def getHelpSeasonedScoutNativeCity3(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+
+def getHelpSeasonedTraderNativeCity1(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+
+def getHelpSeasonedTraderNativeCity2(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
+
+
+def getHelpSeasonedTraderNativeCity3(argsList):
+	return _getHelpSeasonedNativeCity(argsList)
 
 ######## Discovery Attacked Event ###########
 
@@ -1323,7 +1779,7 @@ def _getDiscoveryAttackedChance(player, plot):
 
 	if _isDiscoveryAttackedSoftCooldownActive(player):
 		iChance = (1 + iScaledDistance / 2) * 2
-		return min(12, int(iChance))
+		return min(3, int(iChance))
 
 	# Normal chance
 	iChance = (2 + iScaledDistance) * 2
@@ -1420,12 +1876,6 @@ def applyDiscoveryAttacked(argsList):
 
 	# Start soft cooldown
 	_startDiscoveryAttackedSoftCooldown(player)
-
-def getHelpDiscoveryAttacked(argsList):
-	return localText.getText(
-		"TXT_KEY_EVENT_DISCOVERY_EVENTS_ATTACKED_HELP",
-		()
-	)
   
 ######## Discovery Events ###########
 
@@ -1657,8 +2107,11 @@ def canTriggerDiscoveryFever(argsList):
 	if unit.isHasPromotion(eFeverImmune):
 		return False
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	if plot.isNone():
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
 	# Must be land plot
@@ -1698,10 +2151,13 @@ def applyDiscoveryFever(argsList):
 	if unit.isNone():
 		return
 
-	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	plot = unit.plot()
 
-	# Safety check: plot must still exist and still be valid for fever
-	if plot.isNone():
+	# Safety check: unit must still stand on the originally triggered plot
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return
 	if plot.isWater():
 		return
@@ -2039,7 +2495,7 @@ def _getDiscoveryMutinyChance(player, plot):
 
 	if _isDiscoveryMutinySoftCooldownActive(player):
 		iChance = (1 + iScaledDistance / 4) * 2
-		return min(8, int(iChance))
+		return min(2, int(iChance))
 
 	# Normal chance
 	iChance = (1 + iScaledDistance / 2) * 2
@@ -2315,7 +2771,7 @@ def _isDiscoveryBraveFellowsSoftCooldownActive(player):
 
 def _getDiscoveryBraveFellowsChance(player):
 	if _isDiscoveryBraveFellowsSoftCooldownActive(player):
-		return 20
+		return 2
 
 	return 35
 
@@ -3228,78 +3684,610 @@ def getHelpRuins5(argsList):
 	szHelp = localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
 	return szHelp
 
-######## Native Trade Quests ###########
+######## Native Wagon Trade Quest with seasoned native trader ###########
+
+NATIVE_WAGON_TRADE_YIELD = "YIELD_TRADE_GOODS"
+NATIVE_WAGON_TRADE_AMOUNT = 200
+
+
+def _hasNativeWagonTradeSharedBorder(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return False
+
+	iPlayer = player.getID()
+
+	for iDX in range(-4, 5):
+		for iDY in range(-4, 5):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			loopPlot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() == iPlayer:
+				return True
+
+	return False
+
+
+def _getNativeWagonTradeActiveKey():
+	return "[[WTP_NATIVE_WAGON_ACTIVE]]"
+
+
+def _getNativeWagonTradeCompletedKey():
+	return "[[WTP_NATIVE_WAGON_COMPLETED]]"
+
+
+def _getNativeWagonTradeFailedKey(nativePlayer):
+	return "[[WTP_NATIVE_WAGON_FAILED_%d]]" % nativePlayer.getID()
+
+
+def _getNativeWagonTradeTargetKey():
+	return "[[WTP_NATIVE_WAGON_TARGET="
+
+
+def _getNativeWagonTradeScaledAmount():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, NATIVE_WAGON_TRADE_AMOUNT * Speed.getStoragePercent() / 100)
+
+
+def _nativeWagonTradeData(player):
+	if player.isNone():
+		return ""
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+	return szData
+
+
+def _nativeWagonTradeHas(player, key):
+	return key in _nativeWagonTradeData(player)
+
+
+def _nativeWagonTradeAdd(player, key):
+	szData = _nativeWagonTradeData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _nativeWagonTradeRemove(player, key):
+	szData = _nativeWagonTradeData(player)
+	if key in szData:
+		player.setScriptData(szData.replace(key, ""))
+
+
+def _getNativeWagonTradeNumber(player, key):
+	szData = _nativeWagonTradeData(player)
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setNativeWagonTradeNumber(player, key, iValue):
+	szData = _nativeWagonTradeData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			szData = szData[:iStart] + szData[iEnd + 2:]
+
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _removeNativeWagonTradeNumber(player, key):
+	szData = _nativeWagonTradeData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			player.setScriptData(szData[:iStart] + szData[iEnd + 2:])
+
+
+def _getNativeWagonTradeData(kTriggeredData, bRequireWagon):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone() or not plot.isCity():
+		return (None, None, None)
+
+	nativeCity = plot.getPlotCity()
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(nativeCity.getOwner())
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return (None, None, None)
+
+	if not _hasNativeWagonTradeSharedBorder(player, nativeCity):
+		return (None, None, None)
+
+	if bRequireWagon:
+		iWagonClass = gc.getInfoTypeForString("UNITCLASS_WAGON_TRAIN")
+		bHasWagon = False
+
+		for i in range(plot.getNumUnits()):
+			unit = plot.getUnit(i)
+			if unit.isNone():
+				continue
+
+			if unit.getOwner() == player.getID() and unit.getUnitClassType() == iWagonClass:
+				bHasWagon = True
+				break
+
+		if not bHasWagon:
+			return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def canTriggerNativeWagonTrade(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False)
+	if player is None:
+		return False
+
+	if _nativeWagonTradeHas(player, _getNativeWagonTradeCompletedKey()):
+		return False
+
+	if _nativeWagonTradeHas(player, _getNativeWagonTradeActiveKey()):
+		return False
+
+	if _nativeWagonTradeHas(player, _getNativeWagonTradeFailedKey(nativePlayer)):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Native Wagon Trade trigger") >= 100:
+		return False
+
+	return True
+
+
+def applyNativeWagonTradeStart(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_WAGON_TRADE_YIELD)
+	iTarget = nativeCity.getYieldStored(iYield) + _getNativeWagonTradeScaledAmount()
+
+	_nativeWagonTradeAdd(player, _getNativeWagonTradeActiveKey())
+	_setNativeWagonTradeNumber(player, _getNativeWagonTradeTargetKey(), iTarget)
+
 
 def isExpiredNativeWagonTrade(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if gc.getGame().getGameTurn() >= kTriggeredData.iTurn + event.getGenericParameter(1):
-		return True
-	if not player.isPlayable():
-		return True
-	return False
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + event.getGenericParameter(1):
+		return False
+
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False)
+
+	if player is not None:
+		_nativeWagonTradeAdd(player, _getNativeWagonTradeFailedKey(nativePlayer))
+		_nativeWagonTradeRemove(player, _getNativeWagonTradeActiveKey())
+		_removeNativeWagonTradeNumber(player, _getNativeWagonTradeTargetKey())
+
+	return True
+
 
 def getHelpNativeWagonTrade(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
+
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False)
+	if player is None:
+		return u""
+
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_WAGON_TRAIN'))
-	szHelp = localText.getText("TXT_KEY_EVENT_NATIVE_TRADE_WAGON_HELP", (UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1)))
-	return szHelp
+	iAmount = _getNativeWagonTradeScaledAmount()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_TRADE_WAGON_HELP",
+		(UnitClass.getTextKey(), nativeCity.getNameKey(), event.getGenericParameter(1), iAmount)
+	)
+
+
+def canTriggerNativeWagonTradeDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False)
+	if player is None:
+		return False
+
+	if not _nativeWagonTradeHas(player, _getNativeWagonTradeActiveKey()):
+		return False
+
+	iTarget = _getNativeWagonTradeNumber(player, _getNativeWagonTradeTargetKey())
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(NATIVE_WAGON_TRADE_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return False
+
+	return True
+
+
+def applyNativeWagonTradeDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _getNativeWagonTradeData(kTriggeredData, False)
+	if player is None:
+		return
+
+	if not _nativeWagonTradeHas(player, _getNativeWagonTradeActiveKey()):
+		return
+
+	iTarget = _getNativeWagonTradeNumber(player, _getNativeWagonTradeTargetKey())
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_WAGON_TRADE_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_nativeWagonTradeRemove(player, _getNativeWagonTradeActiveKey())
+	_removeNativeWagonTradeNumber(player, _getNativeWagonTradeTargetKey())
+	_nativeWagonTradeAdd(player, _getNativeWagonTradeCompletedKey())
+
+
+def applyNativeWagonTradeDone1(argsList):
+	ChangeFatherPoints(argsList)
+	applyNativeWagonTradeDone(argsList)
+
+
+def getHelpNativeWagonTradeDone1(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeWagonTradeDone2(argsList):
+	return u""
+
+
+def getHelpNativeWagonTradeDone3(argsList):
+	return u""
+
 
 def applyNativeWagonTrade5(argsList):
 	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
 	iUnitClassType = CvUtil.findInfoTypeNum('UNITCLASS_WAGON_TRAIN')
 	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
+
 	if iUnitType != -1:
-		player.initUnit(iUnitType, 0, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
+		player.initUnit(iUnitType, ProfessionTypes.NO_PROFESSION, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
+
 
 def getHelpNativeWagonTrade5(argsList):
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_WAGON_TRAIN'))
-	szHelp = localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
-	return szHelp
+	return localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
+    
+
+######## Native Wagon Trade Quest - native expert trader in native village ###########
+
+NATIVE_NEIGHBOR_TRADE_YIELD = "YIELD_TRADE_GOODS"
+NATIVE_NEIGHBOR_TRADE_AMOUNT = 200
+
+
+def _nntData(player):
+	if player.isNone():
+		return ""
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+	return szData
+
+
+def _nntHas(player, key):
+	return key in _nntData(player)
+
+
+def _nntAdd(player, key):
+	szData = _nntData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _nntRemove(player, key):
+	szData = _nntData(player)
+	if key in szData:
+		player.setScriptData(szData.replace(key, ""))
+
+
+def _nntKeyActive():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_ACTIVE]]"
+
+
+def _nntKeyCompleted():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_COMPLETED]]"
+
+
+def _nntKeyFailed(nativePlayer):
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_FAILED_%d]]" % nativePlayer.getID()
+
+
+def _nntKeyTarget():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_TARGET="
+
+
+def _nntGetNumber(player, key):
+	szData = _nntData(player)
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _nntSetNumber(player, key, iValue):
+	szData = _nntData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			szData = szData[:iStart] + szData[iEnd + 2:]
+
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _nntRemoveNumber(player, key):
+	szData = _nntData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			player.setScriptData(szData[:iStart] + szData[iEnd + 2:])
+
+
+def _nntScaledAmount():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, NATIVE_NEIGHBOR_TRADE_AMOUNT * Speed.getStoragePercent() / 100)
+
+
+def _nntHasSharedBorder(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return False
+
+	iPlayer = player.getID()
+
+	for iDX in range(-4, 5):
+		for iDY in range(-4, 5):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			loopPlot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() == iPlayer:
+				return True
+
+	return False
+
+
+def _nntGetContext(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone() or not plot.isCity():
+		return (None, None, None)
+
+	nativeCity = plot.getPlotCity()
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(nativeCity.getOwner())
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return (None, None, None)
+
+	if not _nntHasSharedBorder(player, nativeCity):
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def canTriggerNativeNeighborTrade(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if _nntHas(player, _nntKeyCompleted()):
+		return False
+
+	if _nntHas(player, _nntKeyActive()):
+		return False
+
+	if _nntHas(player, _nntKeyFailed(nativePlayer)):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Native Neighbor Trade trigger") >= 100:
+		return False
+
+	return True
+
+
+def applyNativeNeighborTradeStart(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_YIELD)
+	iTarget = nativeCity.getYieldStored(iYield) + _nntScaledAmount()
+
+	_nntAdd(player, _nntKeyActive())
+	_nntSetNumber(player, _nntKeyTarget(), iTarget)
+
+
+def isExpiredNativeNeighborTrade(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + event.getGenericParameter(1):
+		return False
+
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+
+	if player is not None:
+		_nntAdd(player, _nntKeyFailed(nativePlayer))
+		_nntRemove(player, _nntKeyActive())
+		_nntRemoveNumber(player, _nntKeyTarget())
+
+	return True
+
+
+def canTriggerNativeNeighborTradeDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if not _nntHas(player, _nntKeyActive()):
+		return False
+
+	iTarget = _nntGetNumber(player, _nntKeyTarget())
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return False
+
+	return True
+
+
+def applyNativeNeighborTradeDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return
+
+	if not _nntHas(player, _nntKeyActive()):
+		return
+
+	iTarget = _nntGetNumber(player, _nntKeyTarget())
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_nntRemove(player, _nntKeyActive())
+	_nntRemoveNumber(player, _nntKeyTarget())
+	_nntAdd(player, _nntKeyCompleted())
+
+
+def applyNativeNeighborTradeDone1(argsList):
+	ChangeFatherPoints(argsList)
+	applyNativeNeighborTradeDone(argsList)
+
+
+def applyNativeNeighborTradeDone2(argsList):
+	ChangeFatherPoints(argsList)
+	applyNativeNeighborTradeDone(argsList)
+
+
+def applyNativeNeighborTradeDone3(argsList):
+	applyNativeNeighborTradeDone(argsList)
+
 
 def getHelpNativeNeighborTrade(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
+
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return u""
+
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_WAGON_TRAIN'))
-	szHelp = localText.getText("TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP", (UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1)))
-	return szHelp
+	iAmount = _nntScaledAmount()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP",
+		(UnitClass.getTextKey(), nativeCity.getNameKey(), event.getGenericParameter(1), iAmount)
+	)
+
+
+def getHelpNativeNeighborTradeDone1(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone2(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone3(argsList):
+	return u""
+
 
 def applyNativeNeighborTrade5(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
 	iUnitClassType = CvUtil.findInfoTypeNum('UNITCLASS_EXPERT_TRADER')
 	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
+
 	if iUnitType != -1:
-		player.initUnit(iUnitType, 0, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
+		player.initUnit(iUnitType, ProfessionTypes.NO_PROFESSION, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
+
 
 def getHelpNativeNeighborTrade5(argsList):
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_EXPERT_TRADER'))
-	szHelp = localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
-	return szHelp
+	return localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
 
-def getHelpNativeNeighborTrade2(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_TREK'))
-	szHelp = localText.getText("TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP", (UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1)))
-	return szHelp
+
+######## Native Wagon Trade Quests Other ###########
 
 def getHelpNativeNeighborTradeBetrayal(argsList):
 	eEvent = argsList[1]
@@ -4132,6 +5120,218 @@ hasPumpkinBonus = has_plot_this_bonus("BONUS_PUMPKIN")
 hasTurkeyBonus = has_plot_this_bonus("BONUS_TURKEYS")
 hasGiantTreeBonus = has_plot_this_bonus("BONUS_GIANT_TREE")
 
+######## HALLOWEEN Event Start ###########
+
+def _playerHasPumpkinBonus(player):
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+
+	iPumpkinBonus = gc.getInfoTypeForString("BONUS_PUMPKIN")
+	map = gc.getMap()
+
+	for iPlot in range(map.numPlots()):
+		plot = map.plotByIndex(iPlot)
+		if plot is None:
+			continue
+		if plot.isNone():
+			continue
+		if plot.getOwner() != player.getID():
+			continue
+		if plot.getBonusType() == iPumpkinBonus:
+			return True
+
+	return False
+
+
+def _isHalloweenSeasonNow():
+	game = CyGame()
+	gameSpeed = gc.getGameSpeedInfo(game.getGameSpeedType())
+	iMonthIncrement = gameSpeed.getGameTurnInfo(0).iMonthIncrement
+	iCurrentTurn = game.getGameTurn()
+	szDate = CyGameTextMgr().getTimeStr(iCurrentTurn + 1, True)
+
+	October = localText.getText("TXT_KEY_MONTH_OCTOBER", ())
+
+	# Month-based speeds: Halloween only in October
+	if iMonthIncrement < 6:
+		if October in szDate:
+			return True
+		return False
+
+	# Half-year speeds: Halloween only in the second half of the year
+	if iMonthIncrement == 6:
+		if October in szDate:
+			return True
+
+		# Fallback if month names are not clearly exposed in the date string
+		if (iCurrentTurn % 2) == 1:
+			return True
+
+		return False
+
+	# Year-based speeds: Halloween can occur once per year
+	return True
+
+
+def _getHalloweenTriggerCity(kTriggeredData, player):
+	if player.isNone():
+		return None
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None:
+		return None
+	if plot.isNone():
+		return None
+
+	city = plot.getWorkingCity()
+	if city is None:
+		return None
+	if city.isNone():
+		return None
+	if city.getOwner() != player.getID():
+		return None
+
+	return city
+
+
+def canTriggerHalloween(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	# Keep the pumpkin requirement, but player-wide instead of plot-only
+	if not _playerHasPumpkinBonus(player):
+		return False
+
+	if not _isHalloweenSeasonNow():
+		return False
+
+	# The settlement connected to the triggering farm plot must have enough food
+	city = _getHalloweenTriggerCity(kTriggeredData, player)
+	if city is None:
+		return False
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	if city.getYieldStored(iFood) < 50:
+		return False
+
+	return True
+    
+######## HALLOWEEN Event End ###########
+
+######## THANKSGIVING Event Start ###########
+
+def _playerHasTurkeyBonus(player):
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+
+	iTurkeyBonus = gc.getInfoTypeForString("BONUS_TURKEYS")
+	map = gc.getMap()
+
+	for iPlot in range(map.numPlots()):
+		plot = map.plotByIndex(iPlot)
+		if plot is None:
+			continue
+		if plot.isNone():
+			continue
+		if plot.getOwner() != player.getID():
+			continue
+		if plot.getBonusType() == iTurkeyBonus:
+			return True
+
+	return False
+
+
+def _isThanksgivingSeasonNow():
+	game = CyGame()
+	gameSpeed = gc.getGameSpeedInfo(game.getGameSpeedType())
+	iMonthIncrement = gameSpeed.getGameTurnInfo(0).iMonthIncrement
+	iCurrentTurn = game.getGameTurn()
+	szDate = CyGameTextMgr().getTimeStr(iCurrentTurn + 1, True)
+
+	November = localText.getText("TXT_KEY_MONTH_NOVEMBER", ())
+
+	# Month-based speeds: Thanksgiving only in November
+	if iMonthIncrement < 6:
+		if November in szDate:
+			return True
+		return False
+
+	# Half-year speeds: Thanksgiving only in the second half of the year
+	if iMonthIncrement == 6:
+		if November in szDate:
+			return True
+
+		# Fallback if month names are not clearly exposed in the date string
+		if (iCurrentTurn % 2) == 1:
+			return True
+
+		return False
+
+	# Year-based speeds: Thanksgiving can occur once per year
+	return True
+
+
+def _getThanksgivingTriggerCity(kTriggeredData, player):
+	if player.isNone():
+		return None
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None:
+		return None
+	if plot.isNone():
+		return None
+
+	city = plot.getWorkingCity()
+	if city is None:
+		return None
+	if city.isNone():
+		return None
+	if city.getOwner() != player.getID():
+		return None
+
+	return city
+
+
+def canTriggerThanksgiving(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	# Keep the original turkey requirement, but player-wide instead of plot-only
+	if not _playerHasTurkeyBonus(player):
+		return False
+
+	if not _isThanksgivingSeasonNow():
+		return False
+
+	# The settlement connected to the triggering farm plot must have enough food
+	city = _getThanksgivingTriggerCity(kTriggeredData, player)
+	if city is None:
+		return False
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	if city.getYieldStored(iFood) < 100:
+		return False
+
+	return True
+######## THANKSGIVING Event End ###########
 
 def hasNoBonus(argsList):
 	pTriggeredData = argsList[0]
@@ -4981,47 +6181,332 @@ def getHelpHorseDeal1(argsList):
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 	return szHelp
 
-######## Seasoned Trader Horse Gift and Event Help ###########
+######## Seasoned Trader Trade Gathering Event ###########
 
-def canTriggerHorseGift(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() :
+SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX = "[[WTP_SEASONED_TRADER_MEETING_SOFT_READY_TURN="
+SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX = "]]"
+
+def _getSeasonedTraderMeetingSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setSeasonedTraderMeetingSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += SEASONED_TRADER_MEETING_SOFT_COOLDOWN_PREFIX + str(iReadyTurn) + SEASONED_TRADER_MEETING_SOFT_COOLDOWN_SUFFIX
+	player.setScriptData(szData)
+
+
+def _startSeasonedTraderMeetingSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	_setSeasonedTraderMeetingSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+
+
+def _isSeasonedTraderMeetingSoftCooldownActive(player):
+	if player.isNone():
 		return False
+
+	iReadyTurn = _getSeasonedTraderMeetingSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def _getSeasonedTraderMeetingHorseYield():
+	return gc.getInfoTypeForString("YIELD_HORSES")
+
+
+def _getSeasonedTraderMeetingRequiredTriggerHorses():
+	return 100
+
+
+def _getSeasonedTraderMeetingCity(player, kTriggeredData):
+	if player.isNone():
+		return None
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return None
+
+	return city
+
+
+def _getSeasonedTraderMeetingUnit(player, kTriggeredData):
+	if player.isNone():
+		return None
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return None
+
+	return unit
+
+
+def _isValidSeasonedTraderMeetingContext(player, city, unit, kTriggeredData):
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	if city.isNone():
+
+	if player.isNative():
 		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if city.getX() == unit.getX() and city.getY() == unit.getY():
-		return True
-	return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
-	eEvent1 = gc.getInfoTypeForString("EVENT_SEASONED_TRADER_MEETING_1")
-	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity*2 :
+
+	if city is None or city.isNone():
 		return False
+
+	if unit is None or unit.isNone():
+		return False
+
+	if city.getID() != kTriggeredData.iCityId:
+		return False
+
+	if unit.getX() != city.getX() or unit.getY() != city.getY():
+		return False
+
+	if unit.getX() != kTriggeredData.iPlotX or unit.getY() != kTriggeredData.iPlotY:
+		return False
+
+	iExpertTraderClass = gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER")
+	if unit.getUnitClassType() != iExpertTraderClass:
+		return False
+
+	iHorseYield = _getSeasonedTraderMeetingHorseYield()
+	if iHorseYield == -1:
+		return False
+
+	if city.getYieldStored(iHorseYield) < _getSeasonedTraderMeetingRequiredTriggerHorses():
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if otherPlayer.isNone():
+		return False
+
+	if not otherPlayer.isNative():
+		return False
+
+	otherCity = otherPlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if otherCity is None or otherCity.isNone():
+		return False
+
 	return True
+
+
+def canTriggerTraderMeeting(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	city = _getSeasonedTraderMeetingCity(player, kTriggeredData)
+	unit = _getSeasonedTraderMeetingUnit(player, kTriggeredData)
+
+	if not _isValidSeasonedTraderMeetingContext(player, city, unit, kTriggeredData):
+		return False
+
+	if _isSeasonedTraderMeetingSoftCooldownActive(player):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Seasoned Trader Meeting normal chance") >= 20:
+		return False
+
+	return True
+
+
+def canDoSeasonedTraderHorseOption(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = _getSeasonedTraderMeetingCity(player, kTriggeredData)
+	unit = _getSeasonedTraderMeetingUnit(player, kTriggeredData)
+
+	if not _isValidSeasonedTraderMeetingContext(player, city, unit, kTriggeredData):
+		return False
+
+	iHorseCost = abs(event.getGenericParameter(1))
+	if iHorseCost <= 0:
+		return False
+
+	iHorseYield = _getSeasonedTraderMeetingHorseYield()
+	if iHorseYield == -1:
+		return False
+
+	if city.getYieldStored(iHorseYield) < iHorseCost:
+		return False
+
+	return True
+
 
 def applyHorseGift1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < -quantity:
 		return
+
 	city.changeYieldStored(iYield, quantity)
+
+	_startSeasonedTraderMeetingSoftCooldown(player, 30)
+
+
+def applyHorseGift3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < -quantity:
+		return
+
+	city.changeYieldStored(iYield, quantity)
+
+	_startSeasonedTraderMeetingSoftCooldown(player, 30)
+
+
+def _spawnSeasonedTraderMeetingRaidersAdjacent(cityPlot, iUnitClass, iNumUnits):
+	if cityPlot is None or cityPlot.isNone():
+		return []
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return []
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return []
+
+	spawnedUnits = []
+
+	for i in range(iNumUnits):
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				pLoop = plotXY(cityPlot.getX(), cityPlot.getY(), iDX, iDY)
+
+				if pLoop is None or pLoop.isNone():
+					continue
+				if pLoop.isWater() or pLoop.isImpassable() or pLoop.isPeak():
+					continue
+				if pLoop.isCity() or pLoop.isUnit():
+					continue
+
+				newUnit = barbPlayer.initUnit(
+					iUnitType,
+					ProfessionTypes.NO_PROFESSION,
+					pLoop.getX(),
+					pLoop.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+
+				if newUnit is not None and not newUnit.isNone():
+					spawnedUnits.append(newUnit)
+
+				break
+
+	return spawnedUnits
+
+
+def applySeasonedTraderMeetingRaid(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	_startSeasonedTraderMeetingSoftCooldown(player, 30)
+
+	city = _getSeasonedTraderMeetingCity(player, kTriggeredData)
+	if city is None or city.isNone():
+		return
+
+	cityPlot = city.plot()
+	if cityPlot is None or cityPlot.isNone():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumRaiders = event.getGenericParameter(2)
+
+	raiders = _spawnSeasonedTraderMeetingRaidersAdjacent(cityPlot, iHostileUnitClass, iNumRaiders)
+
+	for raider in raiders:
+		if raider is None or raider.isNone():
+			continue
+
+		if raider.canMoveInto(cityPlot, True, False, False):
+			raider.attack(cityPlot, False)
+
 
 def getHelpHorseGift1(argsList):
 	eEvent = argsList[1]
@@ -5030,18 +6515,46 @@ def getHelpHorseGift1(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	szHelp = ""
 
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+	szHelp = u""
+
+	quantity = abs(event.getGenericParameter(1))
+	if quantity <> 0:
+		szHelp += localText.getText(
+			"TXT_KEY_EVENT_YIELD_LOOSE",
+			(-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+		)
+
+	szHelp += u"\n"
+	szHelp += localText.getText("TXT_KEY_EVENT_SEASONED_TRADER_UPGRADE_HELP", ())
+
 	return szHelp
 
-getHelpSeasonedTraderNo = get_simple_help("TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP")
 
-getHelpSeasonedScoutNativeCity = get_simple_help("TXT_KEY_EVENT_SEASONED_SCOUT_NATIVE_CITY_HELP")
+def getHelpHorseGift3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
+	szHelp = u""
+
+	quantity = abs(event.getGenericParameter(1))
+	if quantity <> 0:
+		szHelp += localText.getText(
+			"TXT_KEY_EVENT_YIELD_LOOSE",
+			(-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+		)
+
+	return szHelp
+
+
+def getHelpSeasonedTraderRaid(argsList):
+	return localText.getText("TXT_KEY_EVENT_SEASONED_TRADER_MEETING_HELP", ())
+
+
 
 ######## Wild Animal ###########
 
@@ -6856,44 +8369,148 @@ getHelpNativeAttackCity = get_simple_help("TXT_KEY_EVENT_NATIVES_ATTACK_HELP")
 
 ######## Initial Native Trade Event ###########
 
+######## Initial Trade With Natives ###########
+
+def _getInitialNativeTradeScaledAmount(iBaseAmount):
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return (iBaseAmount * Speed.getStoragePercent()) / 100
+
+
+def _doInitialNativeTradeCitiesShareBorder(city, nativeCity):
+	if city is None or city.isNone():
+		return False
+
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	iPlayer = city.getOwner()
+	iNativePlayer = nativeCity.getOwner()
+
+	# Check plots around own city for plots owned by the selected native player
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			pLoop = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+
+			if pLoop.getOwner() == iNativePlayer:
+				return True
+
+	# Symmetric safety check around the native city
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			pLoop = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+
+			if pLoop.getOwner() == iPlayer:
+				return True
+
+	return False
+
+
+def _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player is None or player.isNone():
+		return None
+
+	if not player.isPlayable():
+		return None
+
+	if player.isNative():
+		return None
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return None
+
+	if city.getOwner() != player.getID():
+		return None
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer is None or nativePlayer.isNone():
+		return None
+
+	if not nativePlayer.isNative():
+		return None
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return None
+
+	if nativeCity.getOwner() != nativePlayer.getID():
+		return None
+
+	# Hard validation for exactly the selected native player / city
+	if not _doInitialNativeTradeCitiesShareBorder(city, nativeCity):
+		return None
+
+	# At least cautious relations, no war
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return None
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return None
+
+	if player.AI_getAttitude(nativePlayer.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return None
+
+	iTradeGoods = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+	if city.getYieldStored(iTradeGoods) < iRequiredTradeGoods:
+		return None
+
+	return (player, city, nativePlayer, nativeCity)
+
+
 def canTriggerInitialNativeTrade(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
-		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
-		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
+
 	eEvent1 = gc.getInfoTypeForString("EVENT_INITIAL_TRADE_WITH_NATIVES_1")
 	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+
+	iRequiredTradeGoods = _getInitialNativeTradeScaledAmount(-event1.getGenericParameter(1))
+
+	if _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods) is None:
 		return False
+
 	return True
+
+
+def canApplyInitialNativeTrade3(argsList):
+	kTriggeredData = argsList[0]
+
+	eEvent3 = gc.getInfoTypeForString("EVENT_INITIAL_TRADE_WITH_NATIVES_3")
+	event3 = gc.getEventInfo(eEvent3)
+
+	iRequiredTradeGoods = _getInitialNativeTradeScaledAmount(-event3.getGenericParameter(1))
+
+	if _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods) is None:
+		return False
+
+	return True
+
 
 def applyInitialNativeTrade(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity:
+
+	iRequiredTradeGoods = _getInitialNativeTradeScaledAmount(-event.getGenericParameter(1))
+
+	data = _getInitialNativeTradeValidatedData(kTriggeredData, iRequiredTradeGoods)
+	if data is None:
 		return
-	city.changeYieldStored(iYield, quantity)
-	nativecity.changeYieldStored(iYield, -quantity)
+
+	player, city, nativePlayer, nativeCity = data
+
+	iTradeGoods = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+
+	# Failsafe: re-check just before changing storage
+	if city.getYieldStored(iTradeGoods) < iRequiredTradeGoods:
+		return
+
+	city.changeYieldStored(iTradeGoods, -iRequiredTradeGoods)
+	nativeCity.changeYieldStored(iTradeGoods, iRequiredTradeGoods)
 
 def getHelpInitialNativeTrade1(argsList):
 	eEvent = argsList[1]
@@ -6912,26 +8529,6 @@ def getHelpInitialNativeTrade1(argsList):
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey()))
 	return szHelp
-
-def canApplyInitialNativeTrade3(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() or player2.isNone() :
-		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from event and check if enough yield is stored in city
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
-		return False
-	return True
 
 ######## Coca Events ###########
 def canTriggerCocaEvent(argsList):
@@ -11851,23 +13448,666 @@ def spawnOwnPlayerUnitAdjacentToPlot(argsList):
 	for iX in range(iNumOwnToSpawn):
 		plotThatTriggered.spawnPlayerUnitOnAdjacentPlot(ePlayer, iOwnUnitClassTypeToSpawn)
 
+
+######## Generic Helper Methods for specific City UnitClass Checks ###########
+######## These helpers are intended for CITY TRIGGERS ###########
+
+def countUnitClassInSpecificCityPopulation(argsList, iUnitClass):
+	ePlayer = argsList[1]
+	player = gc.getPlayer(ePlayer)
+	iCity = argsList[2]
+	city = player.getCity(iCity)
+
+	if city.isNone():
+		return 0
+
+	iUnitsCurrent = 0
+
+	for iCitizen in range(city.getPopulation()):
+		loopUnit = city.getPopulationUnitByIndex(iCitizen)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getUnitClassType() == iUnitClass:
+			iUnitsCurrent += 1
+
+	return iUnitsCurrent
+
+
+def countUnitClassOnSpecificCityPlot(argsList, iUnitClass):
+	ePlayer = argsList[1]
+	player = gc.getPlayer(ePlayer)
+	iCity = argsList[2]
+	city = player.getCity(iCity)
+
+	if city.isNone():
+		return 0
+
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return 0
+
+	iUnitsCurrent = 0
+
+	for i in range(plot.getNumUnits()):
+		loopUnit = plot.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != ePlayer:
+			continue
+		if loopUnit.getUnitClassType() == iUnitClass:
+			iUnitsCurrent += 1
+
+	return iUnitsCurrent
+
+
+def countUnitClassInSpecificCityPopulationAndPlot(argsList, iUnitClass, bCheckPopulation, bCheckPlot):
+	iUnitsCurrent = 0
+
+	if bCheckPopulation:
+		iUnitsCurrent += countUnitClassInSpecificCityPopulation(argsList, iUnitClass)
+
+	if bCheckPlot:
+		iUnitsCurrent += countUnitClassOnSpecificCityPlot(argsList, iUnitClass)
+
+	return iUnitsCurrent
+
+
+def canTriggerSpecificCityUnitClassFromEventParams(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCity = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(iCity)
+	if city.isNone():
+		return False
+
+	trigger = gc.getEventTriggerInfo(eTrigger)
+	if trigger is None:
+		return False
+
+	if trigger.getNumEvents() <= 0:
+		return False
+
+	eEvent = trigger.getEvent(0)
+	if eEvent == -1:
+		return False
+
+	event = gc.getEventInfo(eEvent)
+	if event is None:
+		return False
+
+	iUnitClass = event.getGenericParameter(1)
+	iMinUnits = event.getGenericParameter(2)
+	bCheckPopulation = (event.getGenericParameter(3) > 0)
+	bCheckPlot = (event.getGenericParameter(4) > 0)
+
+	if iUnitClass == -1:
+		return False
+
+	if iMinUnits <= 0:
+		iMinUnits = 1
+
+	# Failsafe: if both checks are disabled, do not allow the trigger
+	if not bCheckPopulation and not bCheckPlot:
+		return False
+
+	iUnitsCurrent = countUnitClassInSpecificCityPopulationAndPlot(
+		argsList,
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+	if iUnitsCurrent < iMinUnits:
+		return False
+
+	return True
+
+######## Generic Helper Methods for specific City UnitClass Event Handling ###########
+######## These helpers are intended for CITY TRIGGERS and CITY EVENTS ###########
+
+def _getSpecificCityFromTriggeredData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return None
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return None
+
+	return city
+
+
+def _removeFirstMatchingUnitClassFromSpecificCityPopulation(city, iUnitClass):
+	if city is None or city.isNone():
+		return False
+
+	for iCitizen in range(city.getPopulation()):
+		loopUnit = city.getPopulationUnitByIndex(iCitizen)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getUnitClassType() != iUnitClass:
+			continue
+
+		# removePopulationUnit releases the citizen from population,
+		# but does not necessarily delete the unit.
+		# Therefore we immediately kill the released unit afterwards.
+		city.removePopulationUnit(loopUnit, False, ProfessionTypes.NO_PROFESSION)
+
+		if loopUnit is not None and not loopUnit.isNone():
+			loopUnit.kill(False)
+
+		return True
+
+	return False
+
+
+def _removeFirstMatchingUnitClassFromSpecificCityPlot(player, city, iUnitClass):
+	if player.isNone():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	for i in range(plot.getNumUnits()):
+		loopUnit = plot.getUnit(i)
+		if loopUnit.isNone():
+			continue
+		if loopUnit.getOwner() != player.getID():
+			continue
+		if loopUnit.getUnitClassType() != iUnitClass:
+			continue
+
+		loopUnit.kill(False)
+		return True
+
+	return False
+
+
+def removeFirstMatchingUnitClassFromSpecificCity(player, city, iUnitClass, bCheckPopulation, bCheckPlot):
+	if player.isNone():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	if iUnitClass == -1:
+		return False
+
+	# Prefer city population first because this is usually the more thematic case
+	if bCheckPopulation:
+		if _removeFirstMatchingUnitClassFromSpecificCityPopulation(city, iUnitClass):
+			return True
+
+	if bCheckPlot:
+		if _removeFirstMatchingUnitClassFromSpecificCityPlot(player, city, iUnitClass):
+			return True
+
+	return False
+
+
+def _getSpecificCityUnitClassEventParams(event):
+	if event is None:
+		return (-1, 1, True, True)
+
+	iUnitClass = event.getGenericParameter(1)
+	iMinUnits = event.getGenericParameter(2)
+	bCheckPopulation = (event.getGenericParameter(3) > 0)
+	bCheckPlot = (event.getGenericParameter(4) > 0)
+
+	if iMinUnits <= 0:
+		iMinUnits = 1
+
+	return (iUnitClass, iMinUnits, bCheckPopulation, bCheckPlot)
+
+
+######## Generic Helper Methods for specific City UnitClass Event Effects ###########
+######## These helpers are intended for CITY EVENTS ###########
+
+def _isValidSpecificCityUnitClassEventContext(player, city, iUnitClass):
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if city is None or city.isNone():
+		return False
+
+	if iUnitClass == -1:
+		return False
+
+	return True
+
+
+def applyRemoveSpecificCityUnitClassFromEventParams(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = _getSpecificCityFromTriggeredData(kTriggeredData)
+
+	iUnitClass, iMinUnits, bCheckPopulation, bCheckPlot = _getSpecificCityUnitClassEventParams(event)
+
+	if not _isValidSpecificCityUnitClassEventContext(player, city, iUnitClass):
+		return
+
+	iUnitsCurrent = countUnitClassInSpecificCityPopulationAndPlot(
+		(kTriggeredData.eTrigger, kTriggeredData.ePlayer, kTriggeredData.iCityId),
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+	if iUnitsCurrent < iMinUnits:
+		return
+
+	removeFirstMatchingUnitClassFromSpecificCity(
+		player,
+		city,
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+
+def applyRemoveSpecificCityUnitClassFromEventParamsAndSpawnBarbarianAdjacentToCity(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = _getSpecificCityFromTriggeredData(kTriggeredData)
+
+	iUnitClass, iMinUnits, bCheckPopulation, bCheckPlot = _getSpecificCityUnitClassEventParams(event)
+
+	if not _isValidSpecificCityUnitClassEventContext(player, city, iUnitClass):
+		return
+
+	iUnitsCurrent = countUnitClassInSpecificCityPopulationAndPlot(
+		(kTriggeredData.eTrigger, kTriggeredData.ePlayer, kTriggeredData.iCityId),
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	)
+
+	if iUnitsCurrent < iMinUnits:
+		return
+
+	if not removeFirstMatchingUnitClassFromSpecificCity(
+		player,
+		city,
+		iUnitClass,
+		bCheckPopulation,
+		bCheckPlot
+	):
+		return
+
+	spawnBarbarianUnitAdjacentToCity(argsList)
+
+######## Indentured Servant Steals from Employer ###########
+getHelpIndenturedServantStealsFromEmployer1 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP")
+getHelpIndenturedServantStealsFromEmployer2 = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_2_HELP")
+
+######## Check for city if granary already has been built ###########
+
+def canTriggerBurningCornChamberCity(argsList):
+	ePlayer = argsList[1]
+	iCity = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	city = player.getCity(iCity)
+	if city.isNone():
+		return False
+
+	iCornChamberClass = gc.getInfoTypeForString("BUILDINGCLASS_CORN_CHAMBER")
+	iGranaryClass = gc.getInfoTypeForString("BUILDINGCLASS_GRANARY")
+
+	if iCornChamberClass == -1 or iGranaryClass == -1:
+		return False
+
+	iCornChamber = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iCornChamberClass)
+	iGranary = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iGranaryClass)
+
+	if iCornChamber == -1 or iGranary == -1:
+		return False
+
+	if not city.isHasBuilding(iCornChamber):
+		return False
+
+	if city.isHasBuilding(iGranary):
+		return False
+
+	return True
+
+
 ######## Native Trader Attack ###########
+
+def _spawnNativeTraderAttackHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
 
 def canTriggerNativeTraderAttack(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	eScout = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
-	if unit.getProfession() != eScout:
+
+	if player.isNative():
 		return False
-	# Read parameter 3 from the event as random chance
-	if TriggerChance(argsList):
-		return True
-	return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return False
+
+	iExpertTraderClass = gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER")
+	if unit.getUnitClassType() != iExpertTraderClass:
+		return False
+
+	eNativeTraderProfession = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+	if unit.getProfession() != eNativeTraderProfession:
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	if plot.isCity():
+		return False
+
+	return True
+
+
+def applyNativeTraderAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return
+
+	iExpertTraderClass = gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER")
+	if unit.getUnitClassType() != iExpertTraderClass:
+		return
+
+	eNativeTraderProfession = gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER")
+	if unit.getProfession() != eNativeTraderProfession:
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	if plot.isCity():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Freeze native trader for current turn + next turn
+	unit.setMoves(0)
+	unit.setImmobileTimer(1)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnNativeTraderAttackHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
 
 getHelpNativeTraderAttack = get_simple_help("TXT_KEY_EVENT_NATIVE_TRADER_ATTACK_HELP")
+
+######## Conquistador Ambush ###########
+
+def _spawnConquistadorAmbushHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
+def canTriggerConquistadorAmbush(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Sync check to prevent desync issues
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	if plot.isCity():
+		return False
+
+	# Allow both conquistador unit classes
+	iConq = gc.getInfoTypeForString("UNITCLASS_CONQUISTADOR")
+	iMountedConq = gc.getInfoTypeForString("UNITCLASS_MOUNTED_CONQUISTADOR")
+
+	iUnitClass = unit.getUnitClassType()
+
+	if iUnitClass != iConq and iUnitClass != iMountedConq:
+		return False
+
+	return True
+
+
+def applyConquistadorAmbush(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	# Sync check to ensure correct plot
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	if plot.isCity():
+		return
+
+	# Validate unit class again (safety check)
+	iConq = gc.getInfoTypeForString("UNITCLASS_CONQUISTADOR")
+	iMountedConq = gc.getInfoTypeForString("UNITCLASS_MOUNTED_CONQUISTADOR")
+
+	iUnitClass = unit.getUnitClassType()
+
+	if iUnitClass != iConq and iUnitClass != iMountedConq:
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+
+	hostileUnit = _spawnConquistadorAmbushHostileAdjacent(
+		plot,
+		iHostileUnitClass
+	)
+
+	if hostileUnit is None or hostileUnit.isNone():
+		return
+
+	# Trigger real combat via DLL
+	if hostileUnit.canMoveInto(plot, True, False, False):
+		hostileUnit.attack(plot, False)
+
+
+getHelpConquistadorAmbush = get_simple_help("TXT_KEY_EVENT_CONQUISTADOR_AMBUSH_HELP")
 
 ######## Criminal Attacks City ###########
 
@@ -11970,9 +14210,7 @@ def canTriggerCriminalsBlackmailCity(argsList):
 	if city.getPopulation() < 3:
 		return False
 
-	# Soft cooldown trigger chance:
-	# normal: 10%, during cooldown: 1%
-	iChance = 10
+	iChance = 20
 	if _isCriminalsBlackmailCityCooldownActive(player):
 		iChance = 1
 
@@ -12006,7 +14244,7 @@ def canDoCriminalsBlackmailCityGive(argsList):
 	return True
 
 
-def _cityHasDefender(city):
+def _cityHasAnyDefenderOnCityPlot(city):
 	if city.isNone():
 		return False
 
@@ -12016,57 +14254,126 @@ def _cityHasDefender(city):
 
 	for i in range(pCityPlot.getNumUnits()):
 		loopUnit = pCityPlot.getUnit(i)
+
 		if loopUnit is None or loopUnit.isNone():
 			continue
 		if loopUnit.getOwner() != city.getOwner():
 			continue
+		if loopUnit.isDead():
+			continue
+		if loopUnit.getDomainType() != DomainTypes.DOMAIN_LAND:
+			continue
 		if not loopUnit.canDefend(pCityPlot):
 			continue
+
 		return True
 
 	return False
 
-
-def _getCriminalsBlackmailCityNumAttackers(city):
+def _spawnRevoltingCriminalAdjacentToCity(city):
 	if city.isNone():
-		return 2
+		return None
 
-	if city.getPopulation() >= 20:
-		return 4
+	player = gc.getPlayer(city.getOwner())
+	if player.isNone():
+		return None
 
-	return 2
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitClass = gc.getInfoTypeForString("UNITCLASS_REVOLTING_CRIMINAL")
+	if iUnitClass == -1:
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return None
+
+	pCityPlot = city.plot()
+	if pCityPlot is None:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			pUnit = barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if pUnit is not None and not pUnit.isNone():
+				return pUnit
+
+	return None
+
+def applyGiveFood(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_FOOD")
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < quantity:
+		return False
+
+	city.changeYieldStored(iYield, -quantity)
+
+	_startCriminalsBlackmailCityCooldown(player, 75)
+	return True
 
 
-def _getBestCriminalRaidYield(player, city, iLootCapPerYield):
-	bestYield = -1
-	bestValue = 0
-	bestLoot = 0
+def getHelpGiveFood(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
 
-	iFoodYield = gc.getInfoTypeForString("YIELD_FOOD")
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
 
-	for iYield in range(YieldTypes.NUM_YIELD_TYPES):
-		eYield = YieldTypes(iYield)
+	iYield = gc.getInfoTypeForString("YIELD_FOOD")
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
 
-		if eYield == iFoodYield:
-			continue
+	szHelp = ""
+	if event.getGenericParameter(1) <> 0:
+		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 
-		iStored = city.getYieldStored(eYield)
-		if iStored <= 0:
-			continue
-
-		iLoot = min(iStored, iLootCapPerYield)
-		if iLoot <= 0:
-			continue
-
-		iPrice = player.getYieldSellPrice(eYield)
-		iTotalValue = iPrice * iLoot
-
-		if iTotalValue > bestValue:
-			bestValue = iTotalValue
-			bestYield = eYield
-			bestLoot = iLoot
-
-	return (bestYield, bestLoot, bestValue)
+	return szHelp
 
 
 def _applyDirectSuccessfulCriminalRaid(city):
@@ -12107,7 +14414,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 	for iYield in range(YieldTypes.NUM_YIELD_TYPES):
 		eYield = YieldTypes(iYield)
 
-		# Skip food
 		if eYield == iFoodYield:
 			continue
 
@@ -12119,7 +14425,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 		if iMaxLoot <= 0:
 			continue
 
-		# Price via king / Europe market
 		iPrice = king.getYieldBuyPrice(eYield)
 		iTotalValue = iPrice * iMaxLoot
 
@@ -12131,7 +14436,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 
 	# --- EXECUTE RAID ---
 
-	# Gold
 	if bestType == "gold" and bestLoot > 0:
 		player.changeGold(-bestLoot)
 
@@ -12154,7 +14458,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 		)
 		return True
 
-	# Yield (Goods incl. weapons)
 	if bestType == "yield" and bestYield != -1 and bestLoot > 0:
 		city.changeYieldStored(bestYield, -bestLoot)
 
@@ -12183,7 +14486,6 @@ def _applyDirectSuccessfulCriminalRaid(city):
 		)
 		return True
 
-	# Fallback
 	CyInterface().addMessage(
 		player.getID(),
 		True,
@@ -12205,101 +14507,444 @@ def _applyDirectSuccessfulCriminalRaid(city):
 	return True
 
 
-def _spawnHostileUnitAndAttackCity(player, city, iUnitType, iNumUnits):
-	if player.isNone() or city.isNone():
-		return False
-
-	pCityPlot = city.plot()
-	if pCityPlot is None:
-		return False
-
-	iBarbarianPlayer = CyGame().getBarbarianPlayer()
-	barbarianPlayer = gc.getPlayer(iBarbarianPlayer)
-	if barbarianPlayer.isNone():
-		return False
-
-	# No defender -> direct raid
-	if not _cityHasDefender(city):
-		return _applyDirectSuccessfulCriminalRaid(city)
-
-	iSpawned = 0
-
-	for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
-		if iSpawned >= iNumUnits:
-			break
-
-		spawnPlot = plotDirection(pCityPlot.getX(), pCityPlot.getY(), DirectionTypes(iDirection))
-
-		if spawnPlot is None:
-			continue
-		if spawnPlot.isWater():
-			continue
-		if spawnPlot.isImpassable():
-			continue
-		if spawnPlot.isCity():
-			continue
-
-		newUnit = barbarianPlayer.initUnit(
-			iUnitType,
-			ProfessionTypes.NO_PROFESSION,
-			spawnPlot.getX(),
-			spawnPlot.getY(),
-			UnitAITypes.NO_UNITAI,
-			DirectionTypes.DIRECTION_SOUTH,
-			0
-		)
-
-		if newUnit is None or newUnit.isNone():
-			continue
-
-		if not newUnit.canMoveInto(pCityPlot, True, False, False):
-			newUnit.kill(False)
-			continue
-
-		newUnit.attack(pCityPlot, False)
-		iSpawned += 1
-
-	return iSpawned > 0
-
-
 def applyCriminalsBlackmailCityRefuse(argsList):
 	kTriggeredData = argsList[0]
 
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	if player.isNone():
-		return
+		return False
 
 	city = player.getCity(kTriggeredData.iCityId)
 	if city.isNone():
-		return
+		return False
 
-	iUnitType = gc.getInfoTypeForString("UNIT_REVOLTING_CRIMINAL")
-	iNumAttackers = _getCriminalsBlackmailCityNumAttackers(city)
+	_startCriminalsBlackmailCityCooldown(player, 50)
 
-	# Start soft cooldown after the player chose this outcome
-	_startCriminalsBlackmailCityCooldown(player, 75)
+	# Always spawn one visible criminal next to the city if possible
+	_spawnRevoltingCriminalAdjacentToCity(city)
 
-	_spawnHostileUnitAndAttackCity(player, city, iUnitType, iNumAttackers)
+	# Defender on city plot -> 50/50 outcome
+	if _cityHasAnyDefenderOnCityPlot(city):
+		iRoll = CyGame().getSorenRandNum(100, "Criminals Blackmail City defended outcome")
 
-def getHelpCriminalsBlackmailCityRefuse(argsList):
-	if len(argsList) == 0:
-		return u""
+		# 50%: city successfully defended
+		if iRoll < 50:
+			CyInterface().addMessage(
+				player.getID(),
+				True,
+				gc.getEVENT_MESSAGE_TIME(),
+				localText.getText(
+					"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_ABORTED",
+					(city.getNameKey(),)
+				),
+				"AS2D_GOODNEWS",
+				InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+				None,
+				gc.getInfoTypeForString("COLOR_GREEN"),
+				city.getX(),
+				city.getY(),
+				True,
+				True
+			)
+			return True
 
+		# 50%: defenders fail to prevent the raid
+		CyInterface().addMessage(
+			player.getID(),
+			True,
+			gc.getEVENT_MESSAGE_TIME(),
+			localText.getText(
+				"TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DEFENDED_BUT_RAIDED",
+				(city.getNameKey(),)
+			),
+			"AS2D_CITYRAID",
+			InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+			None,
+			gc.getInfoTypeForString("COLOR_RED"),
+			city.getX(),
+			city.getY(),
+			True,
+			True
+		)
+
+		return _applyDirectSuccessfulCriminalRaid(city)
+
+	# No defender on city plot -> direct successful raid
+	return _applyDirectSuccessfulCriminalRaid(city)
+
+getHelpCriminalsBlackmailCityRefuse = get_simple_help("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP")
+
+######## Ferry Station Robbers ###########
+
+######## Ferry Station Robbers ###########
+
+def canTriggerFerryStationRobbers(argsList):
 	kTriggeredData = argsList[0]
-
-	# some calls may not pass TriggeredData correctly
-	if not hasattr(kTriggeredData, "ePlayer") or not hasattr(kTriggeredData, "iCityId"):
-		return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", ())
-
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
 	if player.isNone():
-		return u""
+		return False
 
-	city = player.getCity(kTriggeredData.iCityId)
-	if city.isNone():
-		return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", ())
+	if not player.isPlayable():
+		return False
 
-	return localText.getText("TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_REFUSE_HELP", (city.getNameKey(),))
+	if player.isNative():
+		return False
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	iFerryStation = gc.getInfoTypeForString("IMPROVEMENT_RAFT_STATION")
+	if iFerryStation == -1:
+		return False
+
+	if plot.getImprovementType() != iFerryStation:
+		return False
+
+	# Keep existing chance logic
+	if not TriggerChance(argsList):
+		return False
+
+	return True
+
+
+def _getFerryStationBattlePlot(plot):
+	if plot is None or plot.isNone():
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+
+			return pLoop
+
+	return None
+
+
+def _spawnFerryStationRobbersHostileAdjacent(plot, iUnitClass, iNumUnits):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	if iNumUnits < 1:
+		iNumUnits = 1
+	if iNumUnits > 3:
+		iNumUnits = 3
+
+	spawnedUnit = None
+
+	for i in range(iNumUnits):
+		bSpawnedThisOne = False
+
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+				if pLoop is None or pLoop.isNone():
+					continue
+				if pLoop.isImpassable():
+					continue
+				if pLoop.isPeak():
+					continue
+				if pLoop.isCity():
+					continue
+				if pLoop.isUnit():
+					continue
+
+				unit = barbPlayer.initUnit(
+					iUnitType,
+					ProfessionTypes.NO_PROFESSION,
+					pLoop.getX(),
+					pLoop.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+
+				if spawnedUnit is None:
+					spawnedUnit = unit
+
+				bSpawnedThisOne = True
+				break
+
+			if bSpawnedThisOne:
+				break
+
+	return spawnedUnit
+
+
+def _spawnFerryStationDefendersOnPlot(plot, ePlayer, iUnitClass, iNumUnits):
+	if plot is None or plot.isNone():
+		return
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return
+
+	if iNumUnits < 1:
+		iNumUnits = 1
+	if iNumUnits > 3:
+		iNumUnits = 3
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return
+
+	for i in range(iNumUnits):
+		player.initUnit(
+			iUnitType,
+			ProfessionTypes.NO_PROFESSION,
+			plot.getX(),
+			plot.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.DIRECTION_SOUTH,
+			0
+		)
+
+
+def _spawnFerryStationDefendersWithFallback(ferryPlot, ePlayer, iUnitClass, iNumUnits):
+	if ferryPlot is None or ferryPlot.isNone():
+		return None
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return None
+
+	if iUnitClass == -1 or iUnitClass == 0:
+		return None
+
+	if iNumUnits < 1:
+		iNumUnits = 1
+	if iNumUnits > 3:
+		iNumUnits = 3
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	# First try directly on the ferry plot
+	firstUnit = player.initUnit(
+		iUnitType,
+		ProfessionTypes.NO_PROFESSION,
+		ferryPlot.getX(),
+		ferryPlot.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+	if firstUnit is not None and not firstUnit.isNone():
+		for i in range(1, iNumUnits):
+			player.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				ferryPlot.getX(),
+				ferryPlot.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+		return ferryPlot
+
+	# Fallback to adjacent land plot
+	battlePlot = _getFerryStationBattlePlot(ferryPlot)
+	if battlePlot is None or battlePlot.isNone():
+		return None
+
+	for i in range(iNumUnits):
+		player.initUnit(
+			iUnitType,
+			ProfessionTypes.NO_PROFESSION,
+			battlePlot.getX(),
+			battlePlot.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.DIRECTION_SOUTH,
+			0
+		)
+
+	return battlePlot
+
+def _sendFerryStationRobbersMessage(ePlayer, szTextKey, plot, iColor):
+	if plot is None or plot.isNone():
+		return
+
+	CyInterface().addMessage(
+		ePlayer,
+		True,
+		gc.getEVENT_MESSAGE_TIME(),
+		localText.getText(szTextKey, ()),
+		None,
+		0,
+		None,
+		ColorTypes(iColor),
+		plot.getX(),
+		plot.getY(),
+		True,
+		True
+	)
+    
+def applyFerryStationRobbers1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	ferryPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if ferryPlot is None or ferryPlot.isNone():
+		return
+
+	if ferryPlot.getOwner() != player.getID():
+		return
+
+	iFerryStation = gc.getInfoTypeForString("IMPROVEMENT_RAFT_STATION")
+	if iFerryStation == -1:
+		return
+
+	if ferryPlot.getImprovementType() != iFerryStation:
+		return
+
+	_sendFerryStationRobbersMessage(
+		kTriggeredData.ePlayer,
+		"TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DEFEND_CHOICE",
+		ferryPlot,
+		10  # weiß
+	)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+	iDefenderUnitClass = event.getGenericParameter(3)
+	iNumDefenders = event.getGenericParameter(4)
+
+	# Spawn defenders (prefer ferryPlot, fallback if needed)
+	defenderPlot = _spawnFerryStationDefendersWithFallback(
+		ferryPlot,
+		kTriggeredData.ePlayer,
+		iDefenderUnitClass,
+		iNumDefenders
+	)
+
+	if defenderPlot is None or defenderPlot.isNone():
+		return
+
+	# Spawn attackers adjacent to defender plot
+	hostileUnit = _spawnFerryStationRobbersHostileAdjacent(
+		defenderPlot,
+		iHostileUnitClass,
+		iNumHostiles
+	)
+
+	if hostileUnit is None or hostileUnit.isNone():
+		return
+
+	# 100% direct attack
+	if hostileUnit.canMoveInto(defenderPlot, True, False, False):
+		hostileUnit.attack(defenderPlot, False)
+
+def applyFerryStationRobbers2(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	ferryPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if ferryPlot is None or ferryPlot.isNone():
+		return
+
+	if ferryPlot.getOwner() != player.getID():
+		return
+
+	iFerryStation = gc.getInfoTypeForString("IMPROVEMENT_RAFT_STATION")
+	if iFerryStation == -1:
+		return
+
+	if ferryPlot.getImprovementType() != iFerryStation:
+		return
+
+	_sendFerryStationRobbersMessage(
+		kTriggeredData.ePlayer,
+		"TXT_KEY_EVENT_FERRY_STATION_ROBBERS_DESTROY_CHOICE",
+		ferryPlot,
+		7  # rot
+	)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Spawn attackers adjacent to the ferry station
+	_spawnFerryStationRobbersHostileAdjacent(
+		ferryPlot,
+		iHostileUnitClass,
+		iNumHostiles
+	)
+
+	# Destroy ferry station
+	ferryPlot.setImprovementType(ImprovementTypes.NO_IMPROVEMENT)
+
+	# Smoke / fire effect
+	CyEngine().triggerEffect(
+		gc.getInfoTypeForString("EFFECT_CITY_BIG_BURNING_SMOKE"),
+		ferryPlot.getPoint()
+	)
+
+	# Plunder / destruction sound
+	CyInterface().playGeneralSound("AS2D_CITYRAID")
+
+
+def getHelpFerryStationRobbers(argsList):
+	return localText.getText("TXT_KEY_EVENT_FERRY_STATION_ROBBERS_HELP", ())
 
 ######## Officer duel ###########
 
@@ -12386,7 +15031,7 @@ def _startTreasureAttackSoftCooldown(player):
 	if player.isNone():
 		return
 
-	_setTreasureAttackSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 30)
+	_setTreasureAttackSoftCooldownReadyTurn(player, CyGame().getGameTurn() + 50)
 
 def _isTreasureAttackSoftCooldownActive(player):
 	if player.isNone():
@@ -12428,37 +15073,6 @@ def _getTreasureAttackChance(player, plot):
 		return 10
 	else:
 		return 15
-
-def _spawnTreasureAttackFriendlyEscortOnTreasurePlot(plot, iPlayer, iUnitClass):
-	if plot is None or plot.isNone():
-		return None
-
-	if iUnitClass == -1:
-		return None
-
-	player = gc.getPlayer(iPlayer)
-	if player.isNone():
-		return None
-
-	civ = gc.getCivilizationInfo(player.getCivilizationType())
-	iUnitType = civ.getCivilizationUnits(iUnitClass)
-	if iUnitType == UnitTypes.NO_UNIT:
-		return None
-
-	unit = player.initUnit(
-		iUnitType,
-		ProfessionTypes.NO_PROFESSION,
-		plot.getX(),
-		plot.getY(),
-		UnitAITypes.NO_UNITAI,
-		DirectionTypes.DIRECTION_SOUTH,
-		0
-	)
-
-	if unit is not None and not unit.isNone():
-		return unit
-
-	return None
 
 def _spawnTreasureAttackHostileAdjacent(plot, iUnitClass):
 	if plot is None or plot.isNone():
@@ -12565,10 +15179,6 @@ def canTriggerTreasureAttack(argsList):
 	if plot is None or plot.isNone():
 		return False
 
-	# Exact unit / plot binding to prevent ghost triggers
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
-		return False
-
 	# Must be land
 	if plot.isWater():
 		return False
@@ -12613,10 +15223,6 @@ def applyTreasureAttack(argsList):
 	if plot is None or plot.isNone():
 		return
 
-	# Exact unit / plot binding to prevent invalid execution
-	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
-		return
-
 	if plot.isWater():
 		return
 
@@ -12626,10 +15232,6 @@ def applyTreasureAttack(argsList):
 	iHostileUnitClass = event.getGenericParameter(1)
 	iNumHostiles = event.getGenericParameter(2)
 	iImmobilize = event.getGenericParameter(3)
-	iFriendlyUnitClass = event.getGenericParameter(4)
-
-	if iFriendlyUnitClass != -1:
-		_spawnTreasureAttackFriendlyEscortOnTreasurePlot(plot, kTriggeredData.ePlayer, iFriendlyUnitClass)
 
 	if iImmobilize > 0:
 		_immobilizeTreasureStack(plot, kTriggeredData.ePlayer)
@@ -12640,6 +15242,7 @@ def applyTreasureAttack(argsList):
 		iNumHostiles = 1
 
 	hostileUnit = _spawnTreasureAttackHostileAdjacent(plot, iHostileUnitClass)
+
 	if hostileUnit is not None and not hostileUnit.isNone():
 		if hostileUnit.canMoveInto(plot, True, False, False):
 			hostileUnit.attack(plot, False)
@@ -12673,7 +15276,7 @@ def checkRunawaySlavesOnAdjacentPlotOfCity(argsList): ### When you copy rename s
 		return True
 	return False
 
-######## Ranger Bear Attack ###########
+######## General Attack Function ###########
 
 def canTriggerIsPlayableWithTriggerChance(argsList):
 	kTriggeredData = argsList[0]
@@ -12684,8 +15287,6 @@ def canTriggerIsPlayableWithTriggerChance(argsList):
 	if TriggerChance(argsList):
 		return True
 	return False
-
-getHelpRangerBearAttack = get_simple_help("TXT_KEY_EVENT_RANGER_BEAR_ATTACK_HELP")
 
 # adjacent Plot for Barbarian, same Plot for own Unit
 def spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
@@ -12705,30 +15306,778 @@ def spawnBarbarianUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
 	for iX in range(iNumOwnToSpawn):
 		unitThatTriggered.spawnOwnPlayerUnitOnPlotOfUnit(iOwnUnitClassTypeToSpawn)
 
+######## Whale Attack ###########
+
+def canTriggerWhaleAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if not plot.isWater():
+		return False
+
+	# One-time event -> no cooldown required
+	return True
+
+
+def _spawnWhaleAttackHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if not pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+
+def applyWhaleAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if not plot.isWater():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnWhaleAttackHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is None or hostileUnit.isNone():
+		return
+
+	if hostileUnit.canMoveInto(plot, True, False, False):
+		hostileUnit.attack(plot, False)
+
+	# Reward whale blubber only if ship survived and whale died
+	unitAfterCombat = player.getUnit(kTriggeredData.iUnitId)
+	if unitAfterCombat is None or unitAfterCombat.isNone():
+		return
+
+	if hostileUnit is not None and not hostileUnit.isNone():
+		return
+
+	iYieldWhaleBlubber = gc.getInfoTypeForString("YIELD_WHALE_BLUBBER")
+	if iYieldWhaleBlubber == -1:
+		return
+
+	iReward = event.getGenericParameter(3)
+	if iReward <= 0:
+		iReward = 20
+
+	unitAfterCombat.changeYieldStored(iYieldWhaleBlubber, iReward)
+
+getHelpWhaleAttack = get_simple_help("TXT_KEY_WHALE_ATTACK_HELP")
+
+######## Ranger Bear Attack ###########
+
+def canTriggerRangerBearAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	ranger = player.getUnit(kTriggeredData.iUnitId)
+	if ranger.isNone():
+		return False
+
+	plot = ranger.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Optional: only allow land plots
+	if plot.isWater():
+		return False
+
+	# One-time event → no cooldown required
+	return True
+
+
+def applyRangerBearAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	ranger = player.getUnit(kTriggeredData.iUnitId)
+	if ranger.isNone():
+		return
+
+	plot = ranger.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	# =========================
+	# Spawn grizzly (hostile unit on adjacent plot)
+	# =========================
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+
+	if barbPlayer.isNone():
+		return
+
+	iGrizzlyType = gc.getInfoTypeForString("UNIT_GRIZZLY")
+	if iGrizzlyType == -1:
+		return
+
+	hostileUnit = None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			hostileUnit = barbPlayer.initUnit(
+				iGrizzlyType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+			break
+		if hostileUnit is not None and not hostileUnit.isNone():
+			break
+
+	# =========================
+	# Freeze ranger (current turn + next turn)
+	# =========================
+	ranger.setMoves(0)
+	ranger.setImmobileTimer(1)
+
+	# =========================
+	# Direct combat against the ranger
+	# =========================
+	if hostileUnit is not None and not hostileUnit.isNone():
+		pTargetPlot = ranger.plot()
+		if pTargetPlot is not None and not pTargetPlot.isNone():
+			hostileUnit.attack(pTargetPlot, False)
+
+	# =========================
+	# Spawn missionary only if ranger survived
+	# =========================
+	iMissionaryClass = event.getGenericParameter(4)
+
+	if iMissionaryClass != -1:
+		rangerAfterCombat = player.getUnit(kTriggeredData.iUnitId)
+		if rangerAfterCombat is not None and not rangerAfterCombat.isNone():
+			pMissionaryPlot = rangerAfterCombat.plot()
+			if pMissionaryPlot is not None and not pMissionaryPlot.isNone():
+				iMissionaryType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iMissionaryClass)
+
+				if iMissionaryType != UnitTypes.NO_UNIT:
+					player.initUnit(
+						iMissionaryType,
+						ProfessionTypes.NO_PROFESSION,
+						pMissionaryPlot.getX(),
+						pMissionaryPlot.getY(),
+						UnitAITypes.NO_UNITAI,
+						DirectionTypes.NO_DIRECTION,
+						0
+					)
+
+
+def getHelpRangerBearAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_RANGER_BEAR_ATTACK_HELP", ())
+
 ######## Highwayman Attack ###########
 
-getHelpHighwaymanAttack = get_simple_help("TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_HELP")
+HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX = "[[WTP_HIGHWAYMAN_ATTACK_SOFT_READY_TURN="
+HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX = "]]"
+
+HIGHWAYMAN_ATTACK_BRIBE_GOLD = 500
+
+def _getHighwaymanAttackSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setHighwaymanAttackSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		HIGHWAYMAN_ATTACK_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _isHighwaymanAttackSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getHighwaymanAttackSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _startHighwaymanAttackSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldownTurns = _scaleTurnsByGameSpeed(iBaseTurns)
+	_setHighwaymanAttackSoftCooldownReadyTurn(
+		player,
+		CyGame().getGameTurn() + iCooldownTurns
+	)
+
+def _spawnHighwaymanHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+def canTriggerHighwaymanAttack(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isHighwaymanAttackSoftCooldownActive(player):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_STAGECOACH"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Highwayman Attack Trigger") >= 20:
+		return False
+
+	return True
+
+def applyHighwaymanAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	stagecoach = player.getUnit(kTriggeredData.iUnitId)
+	if stagecoach.isNone():
+		return
+
+	if stagecoach.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_STAGECOACH"):
+		return
+
+	plot = stagecoach.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Freeze stagecoach for current turn and next turn
+	stagecoach.setMoves(0)
+	stagecoach.setImmobileTimer(1)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnHighwaymanHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	_startHighwaymanAttackSoftCooldown(player, 50)
+
+def applyHighwaymanAttackBribe(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	_startHighwaymanAttackSoftCooldown(player, 50)
+
+def getHelpHighwaymanAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_HIGHWAYMAN_ATTACK_HELP", ())
 
 ######## Land Transport Attack ###########
 
-def spawnNativeUnitAdjacentToUnitAndFriendlyOnSamePlot(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
+LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX = "[[WTP_LANDTRANSPORT_ATTACK_SOFT_READY_TURN="
+LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX = "]]"
+
+LANDTRANSPORT_ATTACK_BRIBE_GOLD = 500
+
+def _getLandtransportAttackSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+def _setLandtransportAttackSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		LANDTRANSPORT_ATTACK_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+def _isLandtransportAttackSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getLandtransportAttackSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+def _startLandtransportAttackSoftCooldown(player, iBaseTurns):
+	if player.isNone():
+		return
+
+	iCooldownTurns = _scaleTurnsByGameSpeed(iBaseTurns)
+	_setLandtransportAttackSoftCooldownReadyTurn(
+		player,
+		CyGame().getGameTurn() + iCooldownTurns
+	)
+
+def _spawnLandtransportHostileAdjacent(plot, iUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			return barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	return None
+
+def canTriggerLandtransportAttack(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	unitThatTriggered = player.getUnit(kTriggeredData.iUnitId)
-	# This part spawns the Barbarian
-	iHostileUnitClassTypeToSpawn = event.getGenericParameter(1)
-	iNumHostilesToSpawn = event.getGenericParameter(2)
-	for iX in range(iNumHostilesToSpawn):
-		unitThatTriggered.spawnBarbarianUnitOnAdjacentPlotOfUnit(iHostileUnitClassTypeToSpawn)
-	# This Part spawns the Friendly
-	iOwnUnitClassTypeToSpawn = event.getGenericParameter(4)
-	iNumOwnToSpawn = event.getGenericParameter(3)
-	for iX in range(iNumOwnToSpawn):
-		unitThatTriggered.spawnOwnPlayerUnitOnPlotOfUnit(iOwnUnitClassTypeToSpawn)
 
-getHelpLandTransportAttack = get_simple_help("TXT_KEY_EVENT_LANDTRANSPORT_ATTACK_HELP")
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	bCooldownActive = _isLandtransportAttackSoftCooldownActive(player)
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.isWater():
+		return False
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return False
+
+	iChance = 20
+	if bCooldownActive:
+		iChance = 1
+
+	if CyGame().getSorenRandNum(100, "Landtransport Attack Trigger") >= iChance:
+		return False
+
+	return True
+
+def applyLandtransportAttack(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if plot.isWater():
+		return
+
+	iRouteType = plot.getRouteType()
+	if iRouteType not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD")
+	):
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	# Freeze land transport for current turn and next turn
+	unit.setMoves(0)
+	unit.setImmobileTimer(1)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+	if iNumHostiles > 1:
+		iNumHostiles = 1
+
+	hostileUnit = _spawnLandtransportHostileAdjacent(plot, iHostileUnitClass)
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	_startLandtransportAttackSoftCooldown(player, 50)
+
+def applyLandtransportAttackBribe(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	_startLandtransportAttackSoftCooldown(player, 50)
+
+def getHelpLandtransportAttack(argsList):
+	return localText.getText("TXT_KEY_EVENT_LANDTRANSPORT_ATTACK_HELP", ())
 
 ######## Milkmaid in Need ###########
 
@@ -12763,13 +16112,9 @@ def spawnBarbarianUnitAdjacentToPlotAndFriendlyOnSamePlot(argsList):
 		plotThatTriggered.spawnPlayerUnitOnPlot(ePlayer, iOwnUnitClassTypeToSpawn)
 
 ######## Pig Herder in Need ###########
-getHelpFerryStationRobbers = get_simple_help("TXT_KEY_EVENT_FERRY_STATION_ROBBERS_HELP")
 
 ######## Slave and Planation Owner Daughter ###########
 getHelpSlaveAndPlanationOwnerDaughter1 = get_simple_help("TXT_KEY_EVENT_SLAVE_AND_PLANATION_OWNER_DAUGHTER_1_HELP")
-
-######## Indentured Servant Steals from Employer ###########
-getHelpIndenturedServantStealsFromEmployer = get_simple_help("TXT_KEY_EVENT_INDENTURED_SERVANT_STEALS_FROM_EMPLOYER_1_HELP")
 
 ######## Liet Event Training ###########
 
@@ -13639,6 +16984,9 @@ def _getTreasureProtectionValidatedPlotAndPlayer(kTriggeredData):
 	if plotThatTriggered is None or plotThatTriggered.isNone():
 		return (None, None)
 
+	if plotThatTriggered.isWater():
+		return (None, None)
+
 	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
 	bHasTreasure = False
 
@@ -13678,6 +17026,9 @@ def canTriggerTreasureProtection(argsList):
 
 	plotThatTriggered = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	if plotThatTriggered is None or plotThatTriggered.isNone():
+		return False
+
+	if plotThatTriggered.isWater():
 		return False
 
 	iTreasureClass = CvUtil.findInfoTypeNum('UNITCLASS_TREASURE')
