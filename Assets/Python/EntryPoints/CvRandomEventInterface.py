@@ -4143,7 +4143,7 @@ def canTriggerNativeNeighborTrade(argsList):
 	if _nntHas(player, _nntKeyFailed(nativePlayer)):
 		return False
 
-	if CyGame().getSorenRandNum(100, "Native Neighbor Trade trigger") >= 100:
+	if CyGame().getSorenRandNum(100, "Native Neighbor Trade trigger") >= 20:
 		return False
 
 	return True
@@ -4287,17 +4287,418 @@ def getHelpNativeNeighborTrade5(argsList):
 	return localText.getText("TXT_KEY_EVENT_BONUS_UNIT", (1, UnitClass.getTextKey(), ))
 
 
-######## Native Wagon Trade Quests Other ###########
+######## Native Neighbor Trade Quest 2 - larger follow-up trade ###########
 
-def getHelpNativeNeighborTradeBetrayal(argsList):
+NATIVE_NEIGHBOR_TRADE_2_YIELD = "YIELD_TRADE_GOODS"
+NATIVE_NEIGHBOR_TRADE_2_AMOUNT = 400
+
+
+def _nnt2KeyActive():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_2_ACTIVE]]"
+
+
+def _nnt2KeyCompleted():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_2_COMPLETED]]"
+
+
+def _nnt2KeyFailed(nativePlayer):
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_2_FAILED_%d]]" % nativePlayer.getID()
+
+
+def _nnt2KeyTarget():
+	return "[[WTP_NATIVE_NEIGHBOR_TRADE_2_TARGET="
+
+
+def _nnt2ScaledAmount():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, NATIVE_NEIGHBOR_TRADE_2_AMOUNT * Speed.getStoragePercent() / 100)
+
+
+def canTriggerNativeNeighborTrade2(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if _nntHas(player, _nnt2KeyCompleted()):
+		return False
+
+	if _nntHas(player, _nnt2KeyActive()):
+		return False
+
+	if _nntHas(player, _nnt2KeyFailed(nativePlayer)):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Native Neighbor Trade 2 trigger") >= 20:
+		return False
+
+	return True
+
+
+def applyNativeNeighborTradeStart2(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_2_YIELD)
+	iTarget = nativeCity.getYieldStored(iYield) + _nnt2ScaledAmount()
+
+	_nntAdd(player, _nnt2KeyActive())
+	_nntSetNumber(player, _nnt2KeyTarget(), iTarget)
+
+
+def isExpiredNativeNeighborTrade2(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + event.getGenericParameter(1):
+		return False
+
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+
+	if player is not None:
+		_nntAdd(player, _nnt2KeyFailed(nativePlayer))
+		_nntRemove(player, _nnt2KeyActive())
+		_nntRemoveNumber(player, _nnt2KeyTarget())
+
+	return True
+
+
+def canTriggerNativeNeighborTradeDone2(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if not _nntHas(player, _nnt2KeyActive()):
+		return False
+
+	iTarget = _nntGetNumber(player, _nnt2KeyTarget())
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_2_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return False
+
+	return True
+
+
+def _applyNativeNeighborTradeDone2(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return
+
+	if not _nntHas(player, _nnt2KeyActive()):
+		return
+
+	iTarget = _nntGetNumber(player, _nnt2KeyTarget())
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(NATIVE_NEIGHBOR_TRADE_2_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_nntRemove(player, _nnt2KeyActive())
+	_nntRemoveNumber(player, _nnt2KeyTarget())
+	_nntAdd(player, _nnt2KeyCompleted())
+
+
+def applyNativeNeighborTradeDone2_1(argsList):
+	ChangeFatherPoints(argsList)
+	_applyNativeNeighborTradeDone2(argsList)
+
+
+def applyNativeNeighborTradeDone2_2(argsList):
+	ChangeFatherPoints(argsList)
+	_applyNativeNeighborTradeDone2(argsList)
+
+
+def applyNativeNeighborTradeDone2_3(argsList):
+	_applyNativeNeighborTradeDone2(argsList)
+
+
+def getHelpNativeNeighborTrade2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _nntGetContext(kTriggeredData)
+	if player is None:
+		return u""
+
+	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum("UNITCLASS_TREK"))
+	iAmount = _nnt2ScaledAmount()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_HELP",
+		(UnitClass.getTextKey(), nativeCity.getNameKey(), event.getGenericParameter(1), iAmount)
+	)
+
+
+def getHelpNativeNeighborTradeDone2_1(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone2_2(argsList):
+	return getHelpChangeFatherPoints(argsList)
+
+
+def getHelpNativeNeighborTradeDone2_3(argsList):
+	return u""
+
+
+######### Trade With Natives Betrayal Quest ###########
+
+TRADE_WITH_NATIVES_BETRAYAL_YIELD = "YIELD_TRADE_GOODS"
+TRADE_WITH_NATIVES_BETRAYAL_AMOUNT = 400
+
+
+def _twbKeyActive():
+	return "[[WTP_TRADE_WITH_NATIVES_BETRAYAL_ACTIVE]]"
+
+
+def _twbKeyCompleted():
+	return "[[WTP_TRADE_WITH_NATIVES_BETRAYAL_COMPLETED]]"
+
+
+def _twbKeyTarget():
+	return "[[WTP_TRADE_WITH_NATIVES_BETRAYAL_TARGET="
+
+
+def _twbKeyNativePlayer():
+	return "[[WTP_TRADE_WITH_NATIVES_BETRAYAL_NATIVE_PLAYER="
+
+
+def _twbScaledAmount():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, TRADE_WITH_NATIVES_BETRAYAL_AMOUNT * Speed.getStoragePercent() / 100)
+
+def _twbHasSharedBorder(player, city):
+	if player.isNone() or city is None or city.isNone():
+		return False
+
+	iPlayer = player.getID()
+
+	for dx in range(-2, 3):
+		for dy in range(-2, 3):
+			plot = plotXY(city.getX(), city.getY(), dx, dy)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.getOwner() != iPlayer:
+				continue
+
+			if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) <= 2:
+				return True
+
+	return False
+
+def _twbGetContext(kTriggeredData):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_TREK'))
-	szHelp = localText.getText("TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_HELP", (UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1)))
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone() or not plot.isCity():
+		return (None, None, None)
+
+	nativeCity = plot.getPlotCity()
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(nativeCity.getOwner())
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	iRequiredNativePlayer = _nntGetNumber(player, _twbKeyNativePlayer())
+	if iRequiredNativePlayer < 0:
+		return (None, None, None)
+
+	if nativePlayer.getID() != iRequiredNativePlayer:
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return (None, None, None)
+
+	if not _twbHasSharedBorder(player, nativeCity):
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def canTriggerTradeWithNativesBetrayalIntro(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if _nntHas(player, _twbKeyCompleted()):
+		return False
+
+	if _nntHas(player, _twbKeyActive()):
+		return False
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return False
+
+	return True
+
+
+def applyTradeWithNativesBetrayalIntro(argsList):
+	ChangeFatherPoints(argsList)
+
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return
+
+	_nntSetNumber(player, _twbKeyNativePlayer(), nativePlayer.getID())
+
+
+def canTriggerTradeWithNativesBetrayal(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _twbGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if _nntHas(player, _twbKeyCompleted()):
+		return False
+
+	if _nntHas(player, _twbKeyActive()):
+		return False
+
+	return True
+
+
+def applyTradeWithNativesBetrayalStart(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _twbGetContext(kTriggeredData)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString(TRADE_WITH_NATIVES_BETRAYAL_YIELD)
+	iTarget = nativeCity.getYieldStored(iYield) + _twbScaledAmount()
+
+	_nntAdd(player, _twbKeyActive())
+	_nntSetNumber(player, _twbKeyTarget(), iTarget)
+
+
+def isExpiredTradeWithNativesBetrayal(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + event.getGenericParameter(1):
+		return False
+
+	player, nativePlayer, nativeCity = _twbGetContext(kTriggeredData)
+
+	if player is not None:
+		_nntRemove(player, _twbKeyActive())
+		_nntRemoveNumber(player, _twbKeyTarget())
+		_nntRemoveNumber(player, _twbKeyNativePlayer())
+
+	return True
+
+
+def canTriggerTradeWithNativesBetrayalDone(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _twbGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if not _nntHas(player, _twbKeyActive()):
+		return False
+
+	iTarget = _nntGetNumber(player, _twbKeyTarget())
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(TRADE_WITH_NATIVES_BETRAYAL_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return False
+
+	return True
+
+
+def applyTradeWithNativesBetrayalDone(argsList):
+	ChangeFatherPoints(argsList)
+
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _twbGetContext(kTriggeredData)
+	if player is None:
+		return
+
+	if not _nntHas(player, _twbKeyActive()):
+		return
+
+	iTarget = _nntGetNumber(player, _twbKeyTarget())
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(TRADE_WITH_NATIVES_BETRAYAL_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_nntRemove(player, _twbKeyActive())
+	_nntRemoveNumber(player, _twbKeyTarget())
+	_nntRemoveNumber(player, _twbKeyNativePlayer())
+	_nntAdd(player, _twbKeyCompleted())
+
+
+def getHelpTradeWithNativesBetrayalIntro(argsList):
+	szHelp = getHelpChangeFatherPoints(argsList)
+
+	kTriggeredData = argsList[0]
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not nativePlayer.isNone():
+		if len(szHelp) > 0:
+			szHelp += u"\n\n"
+
+		szHelp += localText.getText(
+			"TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_INTRO_HELP",
+			(nativePlayer.getCivilizationDescription(0),)
+		)
+
 	return szHelp
+
+
+def getHelpTradeWithNativesBetrayal(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _twbGetContext(kTriggeredData)
+	if player is None:
+		return u""
+
+	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum("UNITCLASS_TREK"))
+	iAmount = _twbScaledAmount()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_HELP",
+		(UnitClass.getTextKey(), nativeCity.getNameKey(), event.getGenericParameter(1), iAmount)
+	)
 
 ####### The Royals Event ########
 

@@ -92733,13 +92733,13 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
-			<PythonExpireCheck>isExpiredNativeWagonTrade</PythonExpireCheck>
+			<PythonCallback>applyNativeNeighborTradeStart2</PythonCallback>
+			<PythonExpireCheck>isExpiredNativeNeighborTrade2</PythonExpireCheck>
 			<PythonCanDo/>
 			<PythonHelp>getHelpNativeNeighborTrade2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>15</iGenericParameter1>
+			<iGenericParameter1>25</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -92788,7 +92788,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>1</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>
@@ -92809,10 +92809,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeNeighborTradeDone2_1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeNeighborTradeDone2_1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -92842,7 +92842,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -92864,7 +92864,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>1</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents>
@@ -92885,10 +92885,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyNativeNeighborTradeDone2_2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpNativeNeighborTradeDone2_2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -92918,7 +92918,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -92957,14 +92957,14 @@
 			</EventTimes>
 			<ClearEvents>
 				<EventChance>
-					<Event>EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_1</Event>
+					<Event>EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_2_1</Event>
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyNativeNeighborTradeDone2_3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpNativeNeighborTradeDone2_3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -93226,10 +93226,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyTradeWithNativesBetrayalIntro</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
+			<PythonHelp>getHelpTradeWithNativesBetrayalIntro</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>2</iGenericParameter1>
@@ -93287,10 +93287,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
-			<PythonExpireCheck>isExpiredNativeWagonTrade</PythonExpireCheck>
+			<PythonCallback>applyTradeWithNativesBetrayalStart</PythonCallback>
+			<PythonExpireCheck>isExpiredTradeWithNativesBetrayal</PythonExpireCheck>
 			<PythonCanDo/>
-			<PythonHelp>getHelpNativeNeighborTradeBetrayal</PythonHelp>
+			<PythonHelp>getHelpTradeWithNativesBetrayal</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>20</iGenericParameter1>
@@ -93320,7 +93320,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>2</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -93363,7 +93363,7 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>ChangeFatherPoints</PythonCallback>
+			<PythonCallback>applyTradeWithNativesBetrayalDone</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpChangeFatherPoints</PythonHelp>
@@ -93398,7 +93398,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -93420,7 +93420,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>-10</iAttitudeModifier>
+			<iAttitudeModifier>-5</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>

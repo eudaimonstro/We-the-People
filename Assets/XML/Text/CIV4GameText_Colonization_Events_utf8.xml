@@ -6236,8 +6236,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FRIENDLY_TRADE_WITH_NATIVE_NEIGHBORS_DONE_2_1</Tag>
-		<English>Trade went very well for us last time, but we must always keep in mind the importance of good neighbourly relations.</English>
-		<German>Beim letzten Mal lief der Handel schon sehr gut für uns. Aber wollten die gute nachbarschaftlichen Beziehungen weiter in den Vordergrund stellen.</German>u
+		<English>That was an excellent deal between neighbours, but we must always keep in mind the importance of good neighbourly relations.</English>
+		<German>Das war ein vortrefflicher Handel unter Nachbarn. Aber wir sollten die gute nachbarschaftlichen Beziehungen weiter in den Vordergrund stellen.</German>u
 		<Russian>Мы не должны требовать больших скидок от индейцев с первой же сделки. Установление хороших торговых отношений сейчас для нас важнее, чем золото.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6311,6 +6311,12 @@
 		<Russian>Индейцы снова приезжают в города империи [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] для торговли.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_INTRO_HELP</Tag>
+		<English>Send an [COLOR_HIGHLIGHT_TEXT]expert native trader[COLOR_REVERT] to the %s1 to facilitate further trade.</English>
+		<German>Schickt einen [COLOR_HIGHLIGHT_TEXT]erfahrenen Ureinwohnerhändler[COLOR_REVERT] zu den %s1, um weiteren Handel zu ermöglichen. </German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADE_WITH_NATIVES_BETRAYAL_1</Tag>
 		<English>They can keep their supplies. Give them a few crates of trade goods. That's money well spent.</English>
 		<German>Wir handeln doch immer gerne. Sagt ihnen, dass wir bald Händler zu Ihnen schicken werden.</German>
@@ -6318,8 +6324,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_HELP</Tag>
-		<English>Within %d3 turns, send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village that wants to trade with you. Be on your guard! It looks like the traders are up to something. Double-check the goods beforehand. If we sell shoddy goods to the Natives, they'll make our lives very unpleasant.</English>
-		<German>Schickt innerhalb von %d3 Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf, das mit Euch Handel treiben möchte. Aber seid gewarnt, die Händler führen etwas im Schilde. Kontrolliert die Waren vorher noch einmal. Verkauft ihr den Ureinwohnern schlechte Waren, werden sie wütend werden.</German>
+		<English>Within [COLOR_HIGHLIGHT_TEXT]%d3[COLOR_REVERT] turns, send a unit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] to the neighbouring Native village [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] that wants to trade with you and sell or give away [COLOR_HIGHLIGHT_TEXT]%d4 trade goods from Europe[COLOR_REVERT].[NEWLINE]Be on your guard! It looks like the traders are up to something. Double-check the goods beforehand. If we sell shoddy goods to the Natives, they'll make our lives very unpleasant.</English>
+		<German>Schickt innerhalb von [COLOR_HIGHLIGHT_TEXT]%d3[COLOR_REVERT] Runden eine Einheit [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] zu dem benachbarten Indianer-Dorf [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT], das mit Euch Handel treiben möchte und verkauft oder verschenkt [COLOR_HIGHLIGHT_TEXT]%d4 Handelswaren aus Europa [COLOR_REVERT] an das Dorf. [NEWLINE]Aber seid gewarnt, die Händler führen etwas im Schilde. Kontrolliert die Waren vorher noch einmal. Verkauft ihr den Ureinwohnern schlechte Waren, werden sie wütend werden.</German>
 		<Russian>В течение %d3 ходов отправьте [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_REVERT] в деревню индейцев, которые хотят торговать с вами. Но будьте осторожны: торговец что-то замышляет. Проверьте повозки перед отправкой. Если вы продадите туземцам плохой товар, они разозлятся.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6330,8 +6336,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADE_WITH_NATIVES_BETRAYAL_2_1</Tag>
-		<English>The Native people in a neighbouring village want to trade with the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] empire.</English>
-		<German>Ureinwohner eines benachbarten Dorfes wollen wieder mit dem [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich handeln.</German>
+		<English>The Native people in a neighbouring village want to trade with us.</English>
+		<German>Ureinwohner eines benachbarten Dorfes wollen wieder mit uns handeln.</German>
 		<Russian>Индейцы снова приезжают в города империи [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] для торговли.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6348,8 +6354,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADE_WITH_NATIVES_BETRAYAL_2_DONE_1</Tag>
-		<English>Milord, the wagon train has reached the Native village, but something seems wrong. The traders avoid eye contact with villagers eagerly awaiting their goods.[NEWLINE]Suddenly it dawns on you - the goods must be spoiled, the blankets mouldy, perhaps even infected with smallpox.[NEWLINE]It's too late to do anything. The traders' greed has won out.</English>
-		<German>Milord, die Wagenkolonne hat das Indianerdorf erreicht. Aber irgend etwas stimmt hier nicht. Die Händler blicken verschlagen zu den Indianern herüber, die begierig den Waren entgegensehen. Jetzt geht Euch ein Licht auf - die Waren sind verdorben und die Decken verschimmelt, vielleicht sogar mit Pocken infiziert. Aber ihr könnt nichts mehr tun, die Gier auf Seiten der Händler hat gesiegt. Ihr solltet machen, dass ihr da wegkommt!</German>
+		<English>Milord, the wagon train has reached the Native village, but something seems wrong. The traders avoid eye contact with villagers eagerly awaiting their goods.[NEWLINE][NEWLINE]Suddenly it dawns on you - the goods must be spoiled, the blankets mouldy, perhaps even infected with smallpox.[NEWLINE]It's too late to do anything. The traders' greed has won out.</English>
+		<German>Milord, die Wagenkolonne hat das Indianerdorf erreicht. Aber irgend etwas stimmt hier nicht. Die Händler blicken verschlagen zu den Indianern herüber, die begierig den Waren entgegensehen.[NEWLINE][NEWLINE]Jetzt geht Euch ein Licht auf - die Waren sind verdorben und die Decken verschimmelt, vielleicht sogar mit Pocken infiziert. Aber ihr könnt nichts mehr tun, die Gier auf Seiten der Händler hat gesiegt. Ihr solltet machen, dass ihr da wegkommt!</German>
 		<Russian>Милорд, обоз прибыл в деревню индейцев. Но что-то здесь не так... Торговцы хитро поглядывают на индейцев, с нетерпением ожидающих товар. Теперь до вас доходит — товар испорчен, а одеяла заплесневели, а возможно, даже заражены оспой! Но теперь уже ничего не исправить, жадность торговцев взяла верх. Надо уходить оттуда как можно скорее!</Russian>
 	</TEXT>
 	<TEXT>
@@ -6360,8 +6366,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TRADE_WITH_NATIVES_BETRAYAL_3</Tag>
-		<English>Natives are bitterly disappointed by Europeans and their fraudulent trading.</English>
-		<German>Ureinwohner sind zutiefst enttäuscht von den Europäern und ihrem Betrug mit gehandelten Waren.</German>
+		<English>[COLOR_HIGHLIGHT_TEXT]Natives are bitterly disappointed[COLOR_REVERT] by Europeans and their fraudulent trading.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Ureinwohner sind zutiefst[COLOR_REVERT] enttäuscht von den Europäern und ihrem Betrug mit gehandelten Waren.</German>
 		<Russian>Индейцы сильно разочарованы европейцами и их мошенничеством с товарами для торговли.</Russian>
 	</TEXT>
 	<TEXT>
