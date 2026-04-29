@@ -78080,7 +78080,7 @@
 				</UnitAI>
 			</NotUnitAIs>
 			<Builds/>
-			<PrereqBuilding>BUILDINGCLASS_LANDING_STAGE</PrereqBuilding>
+			<PrereqBuilding>BUILDINGCLASS_DOCK</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
 			<iAIWeight>30</iAIWeight>
