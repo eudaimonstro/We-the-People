@@ -42031,7 +42031,7 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>1</iMinTurn>
+			<iMinTurn>100</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_STIRRED_UP_NATIVES_HORSES</Type>
