@@ -41983,7 +41983,7 @@
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>15</iMinPopulation>
+			<iMinPopulation>1</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -42002,7 +42002,7 @@
 			<BuildingsRequired/>
 			<iNumBuildings>0</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
-			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
@@ -42021,16 +42021,17 @@
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>1</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
-			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
 			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerStirredUpNatives</PythonCanDo>
+			<PythonCanDo>canTriggerStirredUpNativesInitial</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
+			<iMinTurn>1</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_STIRRED_UP_NATIVES_HORSES</Type>

@@ -8641,16 +8641,112 @@ def applyNativeTraining2(argsList):
 	_markNativeTrainingHandledVillage(unit, szVillageKey)
 	_showNativeTrainingVisitedVillageMessage(player, unit)
 
-####### Stirred up natives events ########
 
-def canTriggerStirredUpNatives(argsList):
-	kTriggeredData = argsList[0]
+####### Stirred up natives events ########
+######## Stirred Up Natives Initial event ###########
+
+STIRRED_UP_NATIVES_INITIAL_MIN_MILITARY = 45
+
+
+def _sunGetContext(kTriggeredData):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	iAchieve = gc.getInfoTypeForString("ACHIEVE_COLONIAL_CAVALRY")
-	#CyInterface().addImmediateMessage("iAchieve "+str(iAchieve), "")
-	if player.isAchieveGained(iAchieve):
-		return True
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) <= AttitudeTypes.ATTITUDE_FURIOUS:
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def _sunHasNearbyBorder(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return False
+
+	iPlayer = player.getID()
+
+	for dx in range(-2, 3):
+		for dy in range(-2, 3):
+			plot = plotXY(nativeCity.getX(), nativeCity.getY(), dx, dy)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.getOwner() == iPlayer:
+				if plotDistance(nativeCity.getX(), nativeCity.getY(), plot.getX(), plot.getY()) <= 2:
+					return True
+
 	return False
+
+
+def _sunGetMilitaryPresence(player):
+	if player.isNone():
+		return 0
+
+	iCount = 0
+
+	aMilitaryProfessions = [
+		gc.getInfoTypeForString("PROFESSION_COLONIAL_MILITIA"),
+		gc.getInfoTypeForString("PROFESSION_LINE_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_LIGHT_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_LINE_INFANTRY"),
+		gc.getInfoTypeForString("PROFESSION_DRAGOON"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_DRAGOON"),
+		gc.getInfoTypeForString("PROFESSION_HEAVY_CAVALRY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_CAVALRY"),
+		gc.getInfoTypeForString("PROFESSION_LIGHT_ARTILLERY"),
+		gc.getInfoTypeForString("PROFESSION_HEAVY_ARTILLERY"),
+		gc.getInfoTypeForString("PROFESSION_ROYAL_ARTILLERY"),
+	]
+
+	aMilitaryUnitClasses = [
+		gc.getInfoTypeForString("UNITCLASS_MORTAR"),
+		gc.getInfoTypeForString("UNITCLASS_HESSIAN"),
+		gc.getInfoTypeForString("UNITCLASS_CONTINENTAL_GUARD"),
+		gc.getInfoTypeForString("UNITCLASS_CONQUISTADOR"),
+		gc.getInfoTypeForString("UNITCLASS_MOUNTED_CONQUISTADOR"),
+	]
+
+	(unit, iter) = player.firstUnit()
+	while unit:
+		if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
+			if unit.getProfession() in aMilitaryProfessions:
+				iCount += 1
+			elif unit.getUnitClassType() in aMilitaryUnitClasses:
+				iCount += 1
+
+			if iCount >= STIRRED_UP_NATIVES_INITIAL_MIN_MILITARY:
+				return iCount
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return iCount
+
+
+def canTriggerStirredUpNativesInitial(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _sunGetContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if not _sunHasNearbyBorder(player, nativeCity):
+		return False
+
+	if _sunGetMilitaryPresence(player) < STIRRED_UP_NATIVES_INITIAL_MIN_MILITARY:
+		return False
+
+	return True
+    
 
 def canTriggerStirredUpNativesHorses(argsList):
 	kTriggeredData = argsList[0]
