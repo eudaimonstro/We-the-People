@@ -173,6 +173,7 @@
 		<Italian>Ci auguriamo molti anni di pace tra l'Impero [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] e quello [CT_CIV_ADJ:1].</Italian>
 		<Spanish>Deseamos muchos años de paz entre el imperio de los [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT] y el de los [CT_CIV_ADJ:3].</Spanish>
 		<Russian>Может быть, мы поладим. Может быть.</Russian>
+		<Hungarian>Talán majd kijövünk egymással. Talán.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_2</Tag>
@@ -182,6 +183,7 @@
 		<Italian>Che la pace sia con te per sempre.</Italian>
 		<Spanish>Que la paz sea eterna.</Spanish>
 		<Russian>Посмотрим, как будут развиваться события, губернатор [CT_NAME].</Russian>
+		<Hungarian>Meglátjuk, hogyan alakulnak a dolgok, [CT_NAME] Kormányzó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_3</Tag>
@@ -191,6 +193,7 @@
 		<Italian>Lunga vita e prosperità!</Italian>
 		<Spanish>Que todos tengamos una vida larga y próspera.</Spanish>
 		<Russian>Исторический момент, [CT_NAME]. Если повезет, вы сможете рассказать об этом своим детям.</Russian>
+		<Hungarian>Jelentős pillanat, [CT_NAME]. Ha szerencséd van, mesélhetsz majd róla a gyermekeidnek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_4</Tag>
@@ -200,6 +203,7 @@
 		<Italian>Che la pace possa regnare finché non ci sarà più spazio per espandersi!</Italian>
 		<Spanish>¡Que esta paz dure hasta que no tengamos más espacio por el que expandirnos!</Spanish>
 		<Russian>Хорошего дня, [CT_NAME]. Но будьте начеку. Исследование этого мира может быть опасным.</Russian>
+		<Hungarian>Kellemes napot kívánok, [CT_NAME]! De légy résen! A világ felfedezése veszélyes lehet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_5</Tag>
@@ -209,6 +213,7 @@
 		<Italian>Aspetto con ansia la pace con te, [CT_NAME].</Italian>
 		<Spanish>Esperamos disfrutar de muchos años de paz con vosotros, [CT_NAME].</Spanish>
 		<Russian>Возможно, мы даже подружимся, [CT_NAME]. Возможно...</Russian>
+		<Hungarian>Talán majd kijövünk egymással, [CT_NAME]. Talán.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_6</Tag>
@@ -218,6 +223,7 @@
 		<Italian>Meraviglioso!</Italian>
 		<Spanish>¡Fantástico!</Spanish>
 		<Russian>Посмотрим, что принесет будущее, [CT_NAME].</Russian>
+		<Hungarian>Meglátjuk, mit hoz a jövő, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_7</Tag>
@@ -227,6 +233,7 @@
 		<Italian>[CT_NAME], sediamo tutti in cerchio e cantiamo "Kumbaya" per celebrare questo grande evento!</Italian>
 		<Spanish>¡[CT_NAME], sentémonos formando un corro y cantemos el "Kumbayá" para celebrar este gran acontecimiento!</Spanish>
 		<Russian>Хорошо, [CT_NAME], можешь идти. Но не сомневайся, что мы будем следить за тобой.</Russian>
+		<Hungarian>Jó, akkor most elmehetsz, [CT_NAME]! Ne legyen kétséged afelől, hogy szemmel tartunk téged!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_8</Tag>
@@ -236,6 +243,7 @@
 		<Italian>Schiavi! Preparate un banchetto per celebrare la pace tra i nostri grandi imperi!</Italian>
 		<Spanish>¡Lacayos! ¡Preparad un festín para celebrar la paz entre nuestros grandes imperios!</Spanish>
 		<Russian>Ну что же, ладно. Но предупреждаю — мы будем следить за каждым вашим шагом.</Russian>
+		<Hungarian>Nos, akkor rendben. Figyelmeztetlek - minden mozdulatodat figyelni fogjuk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_9</Tag>
@@ -245,6 +253,7 @@
 		<Italian>Hai la nostra gratitudine.</Italian>
 		<Spanish>Tenéis nuestra gratitud.</Spanish>
 		<Russian>Посмотрим, как долго это будет работать.</Russian>
+		<Hungarian>Meglátjuk, meddig fog ez működni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_10</Tag>
@@ -254,6 +263,7 @@
 		<Italian>Possa la pace regnare in eterno.</Italian>
 		<Spanish>Así dure mil años la paz.</Spanish>
 		<Russian>Вы свободны и можете идти, [CT_NAME].</Russian>
+		<Hungarian>Szabadon elvonulhatsz, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_11</Tag>
@@ -263,6 +273,7 @@
 		<Italian>Non esiste una via per la pace. La pace è la via.</Italian>
 		<Spanish>No existe un camino hacia la paz. La paz es el camino.</Spanish>
 		<Russian>Посмотрим, чего стоит твое слово.</Russian>
+		<Hungarian>Majd meglátjuk, mennyit ér a szavad.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_12</Tag>
@@ -272,6 +283,7 @@
 		<Italian>Hai preso una saggia decisione.</Italian>
 		<Spanish>Habéis tomado la decisión correcta.</Spanish>
 		<Russian>Надеюсь, вы честный человек, [CT_NAME].</Russian>
+		<Hungarian>Remélem, becsületes ember vagy, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_13</Tag>
@@ -281,6 +293,7 @@
 		<Italian>Eccellente!</Italian>
 		<Spanish>¡Magnífico!</Spanish>
 		<Russian>Отлично!</Russian>
+		<Hungarian>Rendben van.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_14</Tag>
@@ -290,6 +303,7 @@
 		<Italian>Devo applaudire alla tua saggezza.</Italian>
 		<Spanish>Aplaudimos vuestro juicio.</Spanish>
 		<Russian>Быть по сему.</Russian>
+		<Hungarian>Hát legyen!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_15</Tag>
@@ -299,6 +313,7 @@
 		<Italian>Meraviglioso.</Italian>
 		<Spanish>Maravilloso.</Spanish>
 		<Russian>Хорошо.</Russian>
+		<Hungarian>Legyen így!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_16</Tag>
@@ -308,6 +323,7 @@
 		<Italian>Eccellente! Uniamoci per distruggere qualcun altro!</Italian>
 		<Spanish>¡Magnífico! ¡Ahora unámonos y destruyamos a otros!</Spanish>
 		<Russian>Отлично! Это приемлимо.</Russian>
+		<Hungarian>Tökéletes! Megegyeztünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_17</Tag>
@@ -317,6 +333,7 @@
 		<Italian>Hai più buon senso di quanto sembri, [CT_NAME].</Italian>
 		<Spanish>Tenéis más sentido común del que parece, [CT_NAME].</Spanish>
 		<Russian>Да будет так, [CT_NAME].</Russian>
+		<Hungarian>Akkor hát rendben van, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_18</Tag>
@@ -326,6 +343,7 @@
 		<Italian>Una pace onorevole, [CT_NAME], ecco di cosa si tratta.</Italian>
 		<Spanish>Paz con honor, [CT_NAME], no hay más.</Spanish>
 		<Russian>Вы пока свободны, [CT_NAME].</Russian>
+		<Hungarian>Egyelőre háborítatlanul távozhatsz, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_19</Tag>
@@ -335,6 +353,7 @@
 		<Italian>Non sei così stupido come sembri, [CT_NAME]. Ne sono lieto.</Italian>
 		<Spanish>No sois tan imprudente como parecíais en un principio, [CT_NAME]. Nos complacéis.</Spanish>
 		<Russian>Мы постараемся найти общий язык, [CT_NAME].</Russian>
+		<Hungarian>Igyekszünk majd kijönni egymással, [CT_NAME]. A további intézkedésig.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PEACE_20</Tag>
@@ -344,6 +363,7 @@
 		<Italian>Possa la pace durare finché non ci sarà nessun altro da conquistare!</Italian>
 		<Spanish>¡Que la paz dure hasta que no nos quede nada más que conquistar!</Spanish>
 		<Russian>Остерегайтесь здешнего солнца, [CT_NAME]. Его свет беспощаден. Как и некоторые обитатели этого мира.</Russian>
+		<Hungarian>Óvakodj a naptól, [CT_NAME]. Fénye könyörtelen. Akárcsak e világ néhány lakója.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_1</Tag>
@@ -353,6 +373,7 @@
 		<Italian>Assolutamente no.</Italian>
 		<Spanish>Ni hablar.</Spanish>
 		<Russian>Ни за что!</Russian>
+		<Hungarian>Nem lehet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_2</Tag>
@@ -362,6 +383,7 @@
 		<Italian>Non finché anche l'ultimo guerriero [CT_CIV_ADJ:1] non verrà annientato!</Italian>
 		<Spanish>¡No hasta que el último guerrero [CT_CIV_ADJ:1] quede reducido a polvo!</Spanish>
 		<Russian>Только после того, как последний [CT_CIV_ADJ] воин превратится в пыль!</Russian>
+		<Hungarian>Addig nem, amíg az utolsó [CT_CIV_ADJ] harcos is meg nem hal!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_3</Tag>
@@ -371,6 +393,7 @@
 		<Italian>Mai!</Italian>
 		<Spanish>¡Jamás!</Spanish>
 		<Russian>Никогда!</Russian>
+		<Hungarian>Soha!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_4</Tag>
@@ -380,6 +403,7 @@
 		<Italian>Non ci sarà pace, [CT_NAME].</Italian>
 		<Spanish>No habrá paz, [CT_NAME].</Spanish>
 		<Russian>Мира не будет, [CT_NAME].</Russian>
+		<Hungarian>Nem lesz béke, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_5</Tag>
@@ -389,6 +413,7 @@
 		<Italian>Pace? Ah, scordatela!</Italian>
 		<Spanish>¿Paz? ¡Ja! Olvidadlo.</Spanish>
 		<Russian>Мир? Ха-ха Забудь об этом.</Russian>
+		<Hungarian>Béke? Ugyan már! Felejtsd el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_6</Tag>
@@ -398,6 +423,7 @@
 		<Italian>È troppo tardi, [CT_NAME]. Accetta la tua punizione con onore!</Italian>
 		<Spanish>Demasiado tarde para eso, [CT_NAME]. ¡Aceptad vuestro castigo con valentía!</Spanish>
 		<Russian>Слишком поздно для этого, [CT_NAME]. Прими свое наказание, как подобает мужчине!</Russian>
+		<Hungarian>Ehhez már túl késő, [CT_NAME]! Viseld férfiként a büntetésedet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_1</Tag>
@@ -407,6 +433,7 @@
 		<Italian>Salve, [CT_NAME]. Di cosa vuoi parlare?</Italian>
 		<Spanish>Hola, [CT_NAME]. ¿De qué queréis hablar?</Spanish>
 		<Russian>[CT_NAME], какое дело привело тебя ко мне?</Russian>
+		<Hungarian>Helló, [CT_NAME]! Mit kívánsz megbeszélni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_2</Tag>
@@ -416,6 +443,7 @@
 		<Italian>Saluti. Cosa può fare l'umile popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:4][COLOR_REVERT] per il potente [CT_CIV_SHORT:2]?</Italian>
 		<Spanish>Saludos. ¿Qué puede hacer la humilde tierra de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] por la poderosa nación de [CT_CIV_SHORT]?</Spanish>
 		<Russian>Приветствую. Что могут смиренные [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] сделать для могучих [CT_CIV_SHORT]?</Russian>
+		<Hungarian>Üdvözlet! Mivel lehet a szerény [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] a hatalmas [CT_CIV_SHORT] segítségére?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_3</Tag>
@@ -425,6 +453,7 @@
 		<Italian>Salve! Posso essere d'aiuto?</Italian>
 		<Spanish>Saludos. ¿En qué podemos ayudaros?</Spanish>
 		<Russian>Приветствую. Чем мы можем быть полезны?</Russian>
+		<Hungarian>Üdvözöllek! Miben lehetünk a segítségedre?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_4</Tag>
@@ -434,6 +463,7 @@
 		<Italian>Do il benvenuto a [CT_NAME], un grande amico. Come posso aiutarti?</Italian>
 		<Spanish>Os saludamos, amigable [CT_NAME]. ¿En qué podemos ayudaros?</Spanish>
 		<Russian>Добро пожаловать, друг [CT_NAME]. Чем мы можем быть полезны?</Russian>
+		<Hungarian>Isten hozottt barátom, [CT_NAME]! Miben lehetek a segítségedre?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_5</Tag>
@@ -443,6 +473,7 @@
 		<Italian>Salve di nuovo!</Italian>
 		<Spanish>Hola otra vez.</Spanish>
 		<Russian>Приятно видеть вас снова!</Russian>
+		<Hungarian>Üdvözöllek ismét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_6</Tag>
@@ -452,6 +483,7 @@
 		<Italian>Buongiorno a te, [CT_NAME].</Italian>
 		<Spanish>Buenos días tengáis, [CT_NAME].</Spanish>
 		<Russian>Добрый день, [CT_NAME].</Russian>
+		<Hungarian>Üdvözöllek ismét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_7</Tag>
@@ -461,6 +493,7 @@
 		<Italian>Allora, che succede?</Italian>
 		<Spanish>¿Qué se cuece?</Spanish>
 		<Russian>Так, что происходит?</Russian>
+		<Hungarian>Nos, mi a helyzet?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_8</Tag>
@@ -470,6 +503,7 @@
 		<Italian>Salve, [CT_NAME]. Cosa posso fare per te?</Italian>
 		<Spanish>Hola, [CT_NAME]. ¿Qué puedo hacer por vos?</Spanish>
 		<Russian>Здравствуйте, [CT_NAME]. Что я могу для вас сделать?</Russian>
+		<Hungarian>Helló, [CT_NAME]! Mit tehetek érted?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_9</Tag>
@@ -479,6 +513,7 @@
 		<Italian>Cos'hai in mente?</Italian>
 		<Spanish>¿Qué se os ofrece?</Spanish>
 		<Russian>О чем задумались?</Russian>
+		<Hungarian>Mit forgatsz a fejedben?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_10</Tag>
@@ -488,6 +523,7 @@
 		<Italian>A cosa devo il piacere della tua compagnia?</Italian>
 		<Spanish>¿A qué debemos el placer de vuestra compañía?</Spanish>
 		<Russian>Чем обязан вашему визиту?</Russian>
+		<Hungarian>Minek köszönhetem a társaságod?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_11</Tag>
@@ -497,6 +533,7 @@
 		<Italian>Saluti, [CT_NAME], come possiamo essere utili?</Italian>
 		<Spanish>Saludos, [CT_NAME]. ¿En qué puedo serviros?</Spanish>
 		<Russian>Приветствую, [CT_NAME]. Чем мы можем быть вам полезны?</Russian>
+		<Hungarian>Üdvözöllek, [CT_NAME]! Mivel szolgálhatok?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_12</Tag>
@@ -506,6 +543,7 @@
 		<Italian>Ti do il benvenuto nella mia casa, [CT_NAME].</Italian>
 		<Spanish>Os doy la bienvenida a mi morada, [CT_NAME].</Spanish>
 		<Russian>Добро пожаловать в мой дом, [CT_NAME].</Russian>
+		<Hungarian>Isten hozott, [CT_NAME], az otthonomban!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_13</Tag>
@@ -515,6 +553,7 @@
 		<Italian>Salve, [CT_NAME], leader del potente Impero [CT_CIV_SHORT:4].</Italian>
 		<Spanish>Hola, [CT_NAME], líder de la poderosa tierra de [CT_CIV_SHORT].</Spanish>
 		<Russian>Привет, [CT_NAME], лидер могущественных [CT_CIV_SHORT].</Russian>
+		<Hungarian>Üdvözöllek, [CT_NAME], a hatalmas [CT_CIV_SHORT] vezetőjét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_14</Tag>
@@ -524,6 +563,7 @@
 		<Italian>E cosa porta i [CT_CIV_SHORT] alla mia umile dimora?</Italian>
 		<Spanish>¿Qué trae a [CT_CIV_SHORT] a mi humilde morada?</Spanish>
 		<Russian>По какому поводу меня беспокоят [CT_CIV_SHORT]?</Russian>
+		<Hungarian>Mi szél hozta [CT_CIV_SHORT] vezetőjét hozzám?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_15</Tag>
@@ -533,6 +573,7 @@
 		<Italian>Come può l'[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] aiutare [CT_CIV_SHORT:2]?</Italian>
 		<Spanish>¿En qué puede ayudar el [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] a la poderosa tierra de [CT_CIV_SHORT]?</Spanish>
 		<Russian>Как [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] могут помочь могущественным [CT_CIV_SHORT]?</Russian>
+		<Hungarian>Hogyan kérheti [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] segítségét a hatalmas [CT_CIV_SHORT]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_16</Tag>
@@ -542,6 +583,7 @@
 		<Italian>E a cosa devo il piacere della tua compagnia?</Italian>
 		<Spanish>¿Y a qué debemos el placer de vuestra compañía?</Spanish>
 		<Russian>Чем я обязан вашему обществу?</Russian>
+		<Hungarian>És minek köszönhetem a megtisztelő társaságod örömét?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_1</Tag>
@@ -550,7 +592,8 @@
 		<German>Nun?</German>
 		<Italian>Quindi?</Italian>
 		<Spanish>¿Y bien?</Spanish>
-		<Russian>Ну?</Russian>
+		<Russian>Ну?</Russian>>
+		<Hungarian>Pont most?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_2</Tag>
@@ -560,6 +603,7 @@
 		<Italian>Cos'è?</Italian>
 		<Spanish>¿De qué se trata?</Spanish>
 		<Russian>Что это?</Russian>
+		<Hungarian>Mi van?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_3</Tag>
