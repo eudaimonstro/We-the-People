@@ -8746,64 +8746,391 @@ def canTriggerStirredUpNativesInitial(argsList):
 		return False
 
 	return True
-    
+ 
+
+######## Stirred Up Natives Horses event ###########
+
+STIRRED_UP_NATIVES_HORSES_YIELD = "YIELD_HORSES"
+STIRRED_UP_NATIVES_HORSES_DELIVERY_AMOUNT = 100
+STIRRED_UP_NATIVES_HORSES_IMMEDIATE_AMOUNT = 50
+
+
+def _sunHorsesKeyActive():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_ACTIVE]]"
+
+
+def _sunHorsesKeyCompleted():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_COMPLETED]]"
+
+
+def _sunHorsesKeyTarget():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_TARGET="
+
+
+def _sunHorsesKeyNativePlayer():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_NATIVE_PLAYER="
+
+
+def _sunHorsesKeyNativeCity():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_NATIVE_CITY="
+
+
+def _sunHorsesKeyPlotX():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_PLOT_X="
+
+
+def _sunHorsesKeyPlotY():
+	return "[[WTP_STIRRED_UP_NATIVES_HORSES_PLOT_Y="
+
+
+def _sunHorsesData(player):
+	if player.isNone():
+		return ""
+
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+
+	return szData
+
+
+def _sunHorsesHas(player, key):
+	return key in _sunHorsesData(player)
+
+
+def _sunHorsesAdd(player, key):
+	szData = _sunHorsesData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _sunHorsesRemove(player, key):
+	szData = _sunHorsesData(player)
+	if key in szData:
+		player.setScriptData(szData.replace(key, ""))
+
+
+def _sunHorsesGetNumber(player, key):
+	szData = _sunHorsesData(player)
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _sunHorsesSetNumber(player, key, iValue):
+	szData = _sunHorsesData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			szData = szData[:iStart] + szData[iEnd + 2:]
+
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _sunHorsesRemoveNumber(player, key):
+	szData = _sunHorsesData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			player.setScriptData(szData[:iStart] + szData[iEnd + 2:])
+
+
+def _sunHorsesScaledAmount(iBaseAmount):
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, iBaseAmount * Speed.getStoragePercent() / 100)
+
+
+def _sunGetHorsesContext(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if not _sunHasNearbyBorder(player, nativeCity):
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
 
 def canTriggerStirredUpNativesHorses(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
+	player, nativePlayer, nativeCity = _sunGetHorsesContext(kTriggeredData)
+	if player is None:
 		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
+
+	if _sunHorsesHas(player, _sunHorsesKeyCompleted()):
 		return False
-	if city.isNone():
+
+	if _sunHorsesHas(player, _sunHorsesKeyActive()):
 		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
-	eEvent1 = gc.getInfoTypeForString("EVENT_STIRRED_UP_NATIVES_HORSES_1")
-	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
-		return False
+
 	return True
 
-def applyStirredUpNativesHorses(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity:
-		return
-	city.changeYieldStored(iYield, quantity)
-	nativecity.changeYieldStored(iYield, -quantity)
 
-def getHelpStirredUpNativesHorses(argsList):
+def applyStirredUpNativesHorsesQuestStart(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _sunGetHorsesContext(kTriggeredData)
+	if player is None:
+		return
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_HORSES_YIELD)
+	iAmount = _sunHorsesScaledAmount(STIRRED_UP_NATIVES_HORSES_DELIVERY_AMOUNT)
+	iTarget = nativeCity.getYieldStored(iYield) + iAmount
+
+	_sunHorsesAdd(player, _sunHorsesKeyActive())
+	_sunHorsesSetNumber(player, _sunHorsesKeyTarget(), iTarget)
+	_sunHorsesSetNumber(player, _sunHorsesKeyNativePlayer(), nativePlayer.getID())
+	_sunHorsesSetNumber(player, _sunHorsesKeyNativeCity(), nativeCity.getID())
+	_sunHorsesSetNumber(player, _sunHorsesKeyPlotX(), nativeCity.getX())
+	_sunHorsesSetNumber(player, _sunHorsesKeyPlotY(), nativeCity.getY())
+
+	if player.isHuman():
+		CyInterface().addMessage(
+			kTriggeredData.ePlayer,
+			True,
+			gc.getEVENT_MESSAGE_TIME(),
+			localText.getText("TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_TARGET_MARKER", (nativeCity.getNameKey(),)),
+			"",
+			InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+			"",
+			ColorTypes(8),
+			nativeCity.getX(),
+			nativeCity.getY(),
+			True,
+			True
+		)
+
+
+def isExpiredStirredUpNativesHorses(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return True
+
+	if not _sunHorsesHas(player, _sunHorsesKeyActive()):
+		return True
+
+	iExpireTurns = event.getGenericParameter(1)
+	if iExpireTurns < 1:
+		iExpireTurns = 20
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + iExpireTurns:
+		return False
+
+	iRequiredNativePlayer = _sunHorsesGetNumber(player, _sunHorsesKeyNativePlayer())
+	if iRequiredNativePlayer >= 0:
+		nativePlayer = gc.getPlayer(iRequiredNativePlayer)
+		if not nativePlayer.isNone() and nativePlayer.isNative():
+			iAttitude = event.getGenericParameter(2)
+			if iAttitude == 0:
+				iAttitude = -5
+
+			player.AI_changeAttitudeExtra(nativePlayer.getID(), iAttitude)
+			nativePlayer.AI_changeAttitudeExtra(player.getID(), iAttitude)
+
+	_sunHorsesRemove(player, _sunHorsesKeyActive())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyTarget())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyNativePlayer())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyNativeCity())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyPlotX())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyPlotY())
+
+	return True
+
+
+def canDoStirredUpNativesHorsesImmediate(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _sunGetHorsesContext(kTriggeredData)
+	if player is None:
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_HORSES_YIELD)
+	iAmount = _sunHorsesScaledAmount(STIRRED_UP_NATIVES_HORSES_IMMEDIATE_AMOUNT)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return False
+
+	return True
+
+
+def applyStirredUpNativesHorsesImmediate(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunGetHorsesContext(kTriggeredData)
+	if player is None:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_HORSES_YIELD)
+	iAmount = _sunHorsesScaledAmount(STIRRED_UP_NATIVES_HORSES_IMMEDIATE_AMOUNT)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return
+
+	city.changeYieldStored(iYield, -iAmount)
+	nativeCity.changeYieldStored(iYield, iAmount)
+
+
+def canTriggerStirredUpNativesHorsesDone(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if not _sunHorsesHas(player, _sunHorsesKeyActive()):
+		return False
+
+	iRequiredNativePlayer = _sunHorsesGetNumber(player, _sunHorsesKeyNativePlayer())
+	if iRequiredNativePlayer < 0:
+		return False
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return False
+
+	if nativePlayer.getID() != iRequiredNativePlayer:
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	iRequiredNativeCity = _sunHorsesGetNumber(player, _sunHorsesKeyNativeCity())
+	if iRequiredNativeCity < 0:
+		return False
+
+	nativeCity = nativePlayer.getCity(iRequiredNativeCity)
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	iTarget = _sunHorsesGetNumber(player, _sunHorsesKeyTarget())
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_HORSES_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return False
+
+	return True
+
+
+def applyStirredUpNativesHorsesDone(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return
+
+	if not _sunHorsesHas(player, _sunHorsesKeyActive()):
+		return
+
+	iRequiredNativePlayer = _sunHorsesGetNumber(player, _sunHorsesKeyNativePlayer())
+	if iRequiredNativePlayer < 0:
+		return
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return
+
+	if nativePlayer.getID() != iRequiredNativePlayer:
+		return
+
+	iRequiredNativeCity = _sunHorsesGetNumber(player, _sunHorsesKeyNativeCity())
+	if iRequiredNativeCity < 0:
+		return
+
+	nativeCity = nativePlayer.getCity(iRequiredNativeCity)
+	if nativeCity is None or nativeCity.isNone():
+		return
+
+	iTarget = _sunHorsesGetNumber(player, _sunHorsesKeyTarget())
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_HORSES_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_sunHorsesRemove(player, _sunHorsesKeyActive())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyTarget())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyNativePlayer())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyNativeCity())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyPlotX())
+	_sunHorsesRemoveNumber(player, _sunHorsesKeyPlotY())
+	_sunHorsesAdd(player, _sunHorsesKeyCompleted())
+
+
+def getHelpStirredUpNativesHorsesQuestStart(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	player, nativePlayer, nativeCity = _sunGetHorsesContext(kTriggeredData)
+	if player is None:
+		return u""
+
+	iAmount = _sunHorsesScaledAmount(STIRRED_UP_NATIVES_HORSES_DELIVERY_AMOUNT)
+	iTurns = event.getGenericParameter(1)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_QUEST_HELP",
+		(iAmount, iTurns, nativeCity.getNameKey())
+	)
+
+def getHelpStirredUpNativesHorsesImmediate(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _sunGetHorsesContext(kTriggeredData)
+	if player is None:
+		return u""
+
 	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_HORSES")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey()))
-	return szHelp
+	if city.isNone():
+		return u""
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_HORSES_YIELD)
+	iAmount = _sunHorsesScaledAmount(STIRRED_UP_NATIVES_HORSES_IMMEDIATE_AMOUNT)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_IMMEDIATE_HELP",
+		(iAmount, gc.getYieldInfo(iYield).getDescription(), city.getNameKey())
+	)
+
+
+######## Stirred Up Natives Muskets event ###########
 
 def canTriggerStirredUpNativesMuskets(argsList):
 	kTriggeredData = argsList[0]

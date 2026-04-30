@@ -6402,27 +6402,81 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_1</Tag>
-		<English>Yes, I understand that. As our towns spread out our troops can be very intimidating. We need more settlers anyway. Send the troops to the barracks and give the Natives the horses as a sign of goodwill. The discharged soldiers will become part of the colony in other ways.</English>
-		<German>Ja, das verstehe ich. Wir machen uns hier langsam ziemlich breit und unsere Truppen sind ja auch sehr einschüchternd. Nun gut, wir brauchen sowieso noch einige Siedler. Schickt die Truppe in die Kaserne und schenkt den Indianern als Zeichen des guten Willens die Pferde. Die Soldaten können sich in der Kolonie anders nützlich machen.</German>
-		<Russian>Да, я понимаю их беспокойство. Мы начинаем здесь понемногу расширяться, а наша кавалерия выглядит довольно устрашающе. Что ж, нам все равно не хватает рабочих рук. Отправьте солдат пока в казармы, мы найдем им применение чуть позже, а лошадей отдайте индейцам в знак доброй воли.</Russian>
+		<English>Tell them we will deliver [COLOR_HIGHLIGHT_TEXT]horses[COLOR_REVERT] to their village. If they see that our strength can also serve [COLOR_HIGHLIGHT_TEXT]friendship[COLOR_REVERT], this tension may yet be resolved peacefully.</English>
+		<German>Sagt ihnen, dass wir [COLOR_HIGHLIGHT_TEXT]Pferde[COLOR_REVERT] in ihr Dorf liefern werden. Wenn sie sehen, dass unsere Stärke auch der [COLOR_HIGHLIGHT_TEXT]Freundschaft[COLOR_REVERT] dienen kann, lässt sich diese Spannung vielleicht noch friedlich beilegen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_2</Tag>
-		<English>So. All right, I admit it's a serious situation. But we can't just give them all the horses. It's ridiculous. They'll laugh at us. The troops stay where they are. The Natives will have to leave without them.</English>
-		<German>Soso. Nun gut, eine ernste Situation. Aber wir können Ihnen ja nicht einfach die ganzen Pferde überlassen. Man würde über uns spotten. Die Truppe bleibt wo sie ist. Die Indianer sollen ohne sie abziehen.</German>
-		<Russian>Непростая ситуация, но мы не можем просто так отдать им всех лошадей. За кого они нас принимают? Войска останутся на своих местах, а индейцам передайте - пусть уходят.</Russian>
+		<English>Give them a [COLOR_HIGHLIGHT_TEXT]smaller gift [COLOR_REVERT]from our own stables at once. It is not everything they asked for, but it should [COLOR_HIGHLIGHT_TEXT]calm[COLOR_REVERT] them for now.</English>
+		<German>Gebt ihnen sofort ein [COLOR_HIGHLIGHT_TEXT]kleineres Geschenk[COLOR_REVERT] aus unseren eigenen Ställen. Es ist nicht alles, was sie verlangt haben, aber es sollte sie fürs Erste [COLOR_HIGHLIGHT_TEXT]beruhigen[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_3</Tag>
+		<English>So. All right, I admit it's a [COLOR_HIGHLIGHT_TEXT]serious situation[COLOR_REVERT]. But we can't just give them all the horses. It's ridiculous. They'll laugh at us. The troops stay where they are and the Natives will have to leave without them.</English>
+		<German>Soso. Nun gut, eine [COLOR_HIGHLIGHT_TEXT]ernste Situation[COLOR_REVERT]. Aber wir können Ihnen ja nicht einfach die ganzen Pferde überlassen. Man würde über uns spotten. Die Truppe bleibt wo sie ist und die Indianer sollen ohne sie abziehen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_STIRRED_UP_NATIVES_HORSES_DONE</Tag>
+		<English>The requested horses have reached the Native village. The chiefs are satisfied, and relations with the tribe improve.</English>
+		<German>Die geforderten Pferde haben das Indianerdorf erreicht. Die Häuptlinge sind zufrieden, und die Beziehungen zu diesem Stamm verbessern sich.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_DONE</Tag>
+		<English>Excellent, then everyone can relax again. Let’s hope the Indians will lay off for now, too.</English>
+		<German>Ausgezeichnet, dann können sich ja alle wieder beruhigen. Hoffen wir, dass auch die Indianer erst mal Ruhe geben.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_WN_1</Tag>
-		<English>Some of the mounted troops of the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have been disbanded and are ready to become settlers.</English>
-		<German>Ein Teil der berittenen Truppen des [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreichs wurde aufgelöst und soll nun zu Siedlern werden.</German>
-		<Russian>Некоторые отряды конных войск [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] были расформированы и теперь должны стать поселенцами.</Russian>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have promised to deliver horses to a nearby Native village.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat zugesagt, Pferde an ein nahegelegenes Indianerdorf zu liefern.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_WN_2</Tag>
-		<English>The atmosphere between the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] empire and some of the Natives is deteriorating.</English>
-		<German>Die Stimmung zwischen dem [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich und einigen Ureinwohnern verschlechtert sich.</German>
-		<Russian>Отношения между империей [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] и некоторыми индейцами ухудшаются.</Russian>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have sent a smaller gift of horses to calm a nearby Native village, though not without some resentment.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat ein kleineres Geschenk an Pferden geschickt, um ein nahegelegenes Indianerdorf zu beruhigen, wenn auch nicht ohne Verstimmung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_WN_3</Tag>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have refused the Native demand for horses, worsening relations with the tribe.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat die Forderung der Indianer nach Pferden zurückgewiesen, wodurch sich die Beziehungen zu diesem Stamm verschlechtern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_WN_DONE</Tag>
+		<English>The promised horses have arrived in the Native village, easing tensions with the tribe.</English>
+		<German>Die versprochenen Pferde sind im Indianerdorf angekommen und entspannen die Lage mit diesem Stamm.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_QUEST_HELP</Tag>
+		<English>Deliver [COLOR_HIGHLIGHT_TEXT]%d1 horses within %d2 turns[COLOR_REVERT] to the selected Native village [COLOR_HIGHLIGHT_TEXT]%s3_city[COLOR_REVERT].</English>
+		<German>Liefert [COLOR_HIGHLIGHT_TEXT]innerhalb von %d2 Runden %d1 Pferde[COLOR_REVERT] in das ausgewählte Indianerdorf [COLOR_HIGHLIGHT_TEXT]%s3_city[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_IMMEDIATE_HELP</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%d1 horses[COLOR_REVERT] will be taken from the storage in [COLOR_HIGHLIGHT_TEXT]%s3_city[COLOR_REVERT] and given to the Native village.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]%d1 Pferde[COLOR_REVERT] werden aus dem Lager in [COLOR_HIGHLIGHT_TEXT]%s3_city[COLOR_REVERT] entnommen und dem Indianerdorf übergeben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_HORSES_TARGET_MARKER</Tag>
+		<English>The requested horses must be delivered to [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT].</English>
+		<German>Die geforderten Pferde müssen nach [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT] geliefert werden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FAIL_STIRRED_UP_NATIVES_HORSES</Tag>
+		<English>The promised horse delivery was not completed.</English>
+		<German>Die zugesagte Lieferung der Pferde wurde nicht abgeschlossen.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_STIRRED_UP_NATIVES_MUSKETS_1</Tag>
