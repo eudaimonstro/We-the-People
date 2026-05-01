@@ -1133,6 +1133,7 @@
 		<Italian>Questa proposta non va bene per noi.</Italian>
 		<Spanish>Esta propuesta no va con nosotros.</Spanish>
 		<Russian>К сожалению, это предложение нам не подходит.</Russian>
+		<Hungarian>Sajnos ez a javaslat számunkra nem megfelelő.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_4</Tag>
@@ -1142,6 +1143,7 @@
 		<Italian>No, sul serio. Piantala di cincischiare, qual è la tua offerta?</Italian>
 		<Spanish>No, de verdad. Basta de tonterías, ¿cuál es vuestra oferta?</Spanish>
 		<Russian>Нет, серьёзно. Перестаньте дурачиться: что вы предлагаете?</Russian>
+		<Hungarian>Na ne, most komolyan! Hagyd abba a hülyéskedést: mi az ajánlatod?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_5</Tag>
@@ -1151,6 +1153,7 @@
 		<Italian>Non è abbastanza, [CT_NAME].</Italian>
 		<Spanish>Con esto no basta, [CT_NAME] de nuestros amores.</Spanish>
 		<Russian>Этого недостаточно, друг [CT_NAME].</Russian>
+		<Hungarian>Ez nem elég jó, [CT_NAME] barátom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_6</Tag>
@@ -1160,6 +1163,7 @@
 		<Italian>È la tua ultima offerta?</Italian>
 		<Spanish>¿Es vuestra última oferta?</Spanish>
 		<Russian>Это ваше последнее предложение?</Russian>
+		<Hungarian>Ez az utolsó ajánlatod?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_7</Tag>
@@ -1169,6 +1173,7 @@
 		<Italian>Mi spiace comunicarti che il popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] non può accettare la tua offerta.</Italian>
 		<Spanish>Me temo que vuestra oferta no resulta aceptable para el pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT].</Spanish>
 		<Russian>Боюсь, ваше предложение неприемлемо для [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT].</Russian>
+		<Hungarian>Attól tartok, hogy az ajánlatod nem elfogadható a büszke [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] nép számára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_8</Tag>
@@ -1178,6 +1183,7 @@
 		<Italian>Non si può fare, spiacente.</Italian>
 		<Spanish>No puede ser, camarada.</Spanish>
 		<Russian>Не могу, мой друг.</Russian>
+		<Hungarian>Nem tehetem, barátom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_9</Tag>
@@ -1187,6 +1193,7 @@
 		<Italian>Non possiamo permetterci di essere così generosi, [CT_NAME]. Riprova.</Italian>
 		<Spanish>No nos podemos permitir ser tan generosos, [CT_NAME]. Volved a intentarlo.</Spanish>
 		<Russian>Невозможно.</Russian>
+		<Hungarian>Lehetetlen!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_REJECT_10</Tag>
@@ -1196,6 +1203,7 @@
 		<Italian>Non credo. Dovrai fare meglio di così.</Italian>
 		<Spanish>Ni en broma. Tendréis que mejorarlo.</Spanish>
 		<Russian>Я так не думаю. Вам придется предложить что-то поинтереснее.</Russian>
+		<Hungarian>Nem hiszem, hogy ez így jó lesz. Ennél jobbat kell mondanod.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_1</Tag>
@@ -1205,6 +1213,7 @@
 		<Italian>Rifiutiamo la tua proposta. No, grazie.</Italian>
 		<Spanish>Rechazamos vuestra propuesta. No, gracias.</Spanish>
 		<Russian>Нет, спасибо.</Russian>
+		<Hungarian>Nem, köszönöm!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_2</Tag>
@@ -1214,6 +1223,7 @@
 		<Italian>Scordatelo.</Italian>
 		<Spanish>Olvidadlo.</Spanish>
 		<Russian>Забудь об этом.</Russian>
+		<Hungarian>Felejtsd el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_3</Tag>
@@ -1223,6 +1233,7 @@
 		<Italian>Rifiutiamo la tua risibile offerta.</Italian>
 		<Spanish>Rechazamos vuestra irrisoria propuesta.</Spanish>
 		<Russian>Ты смеёшься над нами?</Russian>
+		<Hungarian>Ez nevetséges!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_4</Tag>
@@ -1231,7 +1242,7 @@
 		<German>Für wie dumm haltet Ihr mich eigentlich, [CT_NAME]?</German>
 		<Italian>Credi che sia una persona così ingenua, [CT_NAME]?</Italian>
 		<Spanish>¿Tan inconsciente creéis que soy, [CT_NAME]?</Spanish>
-		<Russian>Вы думаете, я настолько доверчив, [CT_NAME]?</Russian>
+		<Hungarian>Szerinted ennyire ostoba vagyok, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_5</Tag>
@@ -1241,6 +1252,7 @@
 		<Italian>La tua generosità non mi entusiasma. Scordatelo.</Italian>
 		<Spanish>Vuestra generosidad no nos abruma precisamente. Olvidadlo.</Spanish>
 		<Russian>Забудь...</Russian>
+		<Hungarian>Ez nem jó!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_6</Tag>
@@ -1250,6 +1262,7 @@
 		<Italian>È del tutto inaccettabile.</Italian>
 		<Spanish>¡Esto es completamente inaceptable!</Spanish>
 		<Russian>Ни за что.</Russian>
+		<Hungarian>Semmi esetre sem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_7</Tag>
@@ -1259,6 +1272,7 @@
 		<Italian>Con chi credi di avere a che fare, [CT_NAME]?</Italian>
 		<Spanish>¿Con quién creéis que estáis tratando, [CT_NAME]?</Spanish>
 		<Russian>Как ты думаешь, с кем ты имеешь дело, [CT_NAME]?</Russian>
+		<Hungarian>Mit gondolsz, kivel tárgyalsz, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_8</Tag>
@@ -1268,6 +1282,7 @@
 		<Italian>La tua offerta è un insulto nei confronti [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:3][COLOR_REVERT].</Italian>
 		<Spanish>Vuestra propuesta es un insulto a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT].</Spanish>
 		<Russian>Ваше предложение оскорбительно!</Russian>
+		<Hungarian>Az ajánlatod sértő!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_9</Tag>
@@ -1277,6 +1292,7 @@
 		<Italian>Sono solo chiacchiere senza senso.</Italian>
 		<Spanish>Esto no es hablar en serio.</Spanish>
 		<Russian>Я оскорблен вашим предложением.</Russian>
+		<Hungarian>Megsértett az ajánlatod.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_REJECT_10</Tag>
@@ -1286,6 +1302,7 @@
 		<Italian>Smettila di farmi perdere tempo. Fa' un'offerta importante o sparisci.</Italian>
 		<Spanish>Dejad de hacernos perder el tiempo. Haced una propuesta razonable o largaos.</Spanish>
 		<Russian>Хватит тратить мое время. Сделайте разумное предложение или уходите.</Russian>
+		<Hungarian>Ne pazarold az időmet! Tegyél egy ésszerű ajánlatot vagy menj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_1</Tag>
@@ -1295,6 +1312,7 @@
 		<Italian>Siamo felici che tu abbia accettato la nostra offerta.</Italian>
 		<Spanish>Nos satisface que hayáis aceptado nuestra oferta.</Spanish>
 		<Russian>Мы рады, что вы приняли наше предложение.</Russian>
+		<Hungarian>Örülünk, hogy elfogadtad az ajánlatunkat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_2</Tag>
@@ -1304,6 +1322,7 @@
 		<Italian>È meraviglioso che tu abbia accettato.</Italian>
 		<Spanish>Es fantástico que hayáis aceptado.</Spanish>
 		<Russian>Очень хорошо.</Russian>
+		<Hungarian>Nagyon jó!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_3</Tag>
@@ -1313,6 +1332,7 @@
 		<Italian>Sono felice che reputi l'offerta accettabile, [CT_NAME]</Italian>
 		<Spanish>Nos alegramos de que nuestra propuesta os parezca aceptable, [CT_NAME]</Spanish>
 		<Russian>Я рад, что вы нашли предложение приемлемым, [CT_NAME].</Russian>
+		<Hungarian>Örülök, hogy elfogadhatónak találtad az ajánlatot, [CT_NAME]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_4</Tag>
@@ -1322,6 +1342,7 @@
 		<Italian>Meraviglioso!</Italian>
 		<Spanish>¡Maravilloso!</Spanish>
 		<Russian>Хороший. Так и быть.</Russian>
+		<Hungarian>Jól van. Akkor legyen így!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_5</Tag>
@@ -1331,6 +1352,7 @@
 		<Italian>Una scelta saggia, [CT_NAME].</Italian>
 		<Spanish>Habéis tomado la decisión correcta, [CT_NAME].</Spanish>
 		<Russian>Вы сделали мудрый выбор, [CT_NAME].</Russian>
+		<Hungarian>Bölcsen döntöttél, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_6</Tag>
@@ -1340,6 +1362,7 @@
 		<Italian>Stupendo! Festeggiamo!</Italian>
 		<Spanish>¡Fantástico! ¡Vamos a celebrarlo!</Spanish>
 		<Russian>Здорово!</Russian>
+		<Hungarian>Kiváló!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_7</Tag>
@@ -1349,6 +1372,7 @@
 		<Italian>È un piacere fare affari con te.</Italian>
 		<Spanish>Es un placer hacer negocios con vosotros.</Spanish>
 		<Russian>С вами приятно иметь дело.</Russian>
+		<Hungarian>Öröm veled üzletelni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_8</Tag>
@@ -1358,6 +1382,7 @@
 		<Italian>Eccellente!</Italian>
 		<Spanish>¡Magnífico!</Spanish>
 		<Russian>Отлично!</Russian>
+		<Hungarian>Nagyszerű!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_9</Tag>
@@ -1367,6 +1392,7 @@
 		<Italian>È un bene che abbiamo trovato un accordo.</Italian>
 		<Spanish>Nos alegra que hayamos podido llegar a un acuerdo.</Spanish>
 		<Russian>Я рад, что мы смогли прийти к соглашению.</Russian>
+		<Hungarian>Örülök, hogy sikerült megegyeznünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_GLAD_10</Tag>
@@ -1376,6 +1402,7 @@
 		<Italian>Cha-CHING!</Italian>
 		<Spanish>¡Cha-CHING!</Spanish>
 		<Russian>Хорошо.</Russian>
+		<Hungarian>Jól van.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_1</Tag>
@@ -1385,6 +1412,7 @@
 		<Italian>Va bene, siamo d'accordo.</Italian>
 		<Spanish>Entonces de acuerdo. Aceptamos.</Spanish>
 		<Russian>Мы согласны.</Russian>
+		<Hungarian>Megegyeztünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_2</Tag>
@@ -1394,6 +1422,7 @@
 		<Italian>Stai cominciando a mostrare un po' di buon senso, [CT_NAME]. Forse c'è ancora speranza per te.</Italian>
 		<Spanish>Empezáis a mostrar algo de juicio, [CT_NAME]. Quizás aún tengáis alguna esperanza.</Spanish>
 		<Russian>Кажется, рассудок еще не покинул тебя, [CT_NAME]. Возможно, для ты не безнадёжен.</Russian>
+		<Hungarian>Kezdesz némi értelmet mutatni, [CT_NAME]. Talán van még remény a számodra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_3</Tag>
@@ -1403,6 +1432,7 @@
 		<Italian>Fatto.</Italian>
 		<Spanish>Trato hecho.</Spanish>
 		<Russian>По рукам.</Russian>
+		<Hungarian>Legyen így!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_4</Tag>
@@ -1412,6 +1442,7 @@
 		<Italian>Eccellente. Forse non sei una persona stupida come sembra.</Italian>
 		<Spanish>Excelente. Quizá no seáis tan idiota como parecéis.</Spanish>
 		<Russian>Отлично. Возможно, вы не так глупы, как кажетесь.</Russian>
+		<Hungarian>Kiváló! Talán nem is vagy olyan ostoba, mint amilyennek látszol.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_5</Tag>
@@ -1421,6 +1452,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] ti ringraziano. Adesso puoi andare.</Italian>
 		<Spanish>La poderosa tierra de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] os da las gracias. Ya podéis marcharos.</Spanish>
 		<Russian>Могущественные [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] благодарят вас. Теперь можете идти..</Russian>
+		<Hungarian>A hatalmas [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] köszöni neked. Most elmehetsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_6</Tag>
@@ -1430,6 +1462,7 @@
 		<Italian>Grazie per la collaborazione.</Italian>
 		<Spanish>Gracias por vuestra cooperación.</Spanish>
 		<Russian>Спасибо за ваше сотрудничество.</Russian>
+		<Hungarian>Köszönjük együttműködésed.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_7</Tag>
@@ -1439,6 +1472,7 @@
 		<Italian>Ti ringraziamo.</Italian>
 		<Spanish>Os lo agradecemos.</Spanish>
 		<Russian>Мы благодарим Вас.</Russian>
+		<Hungarian>Köszönjük neked!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_8</Tag>
@@ -1448,6 +1482,7 @@
 		<Italian>È tutto per il momento.</Italian>
 		<Spanish>Eso es todo de momento.</Spanish>
 		<Russian>На данный момент это все.</Russian>
+		<Hungarian>Ez minden egyelőre.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_9</Tag>
@@ -1457,6 +1492,7 @@
 		<Italian>Bene, tutto OK.</Italian>
 		<Spanish>Muy bien. Trato hecho.</Spanish>
 		<Russian>Отлично, мы селали это.</Russian>
+		<Hungarian>Jól van. Végeztünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_GLAD_10</Tag>
@@ -1466,6 +1502,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] ringrazia te e la tua piccola e insignificante colonia.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] os lo agradece a vos y a vuestra insignificante colonia.</Spanish>
 		<Russian>Спасибо. Это приятный жест.</Russian>
+		<Hungarian>Köszönöm! Ez egy kedves gesztus.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_1</Tag>
@@ -1475,6 +1512,7 @@
 		<Italian>Ci spiace che non reputi la nostra offerta degna di considerazione.</Italian>
 		<Spanish>Sentimos que no consideréis razonable nuestra propuesta.</Spanish>
 		<Russian>Мы сожалеем, что вы не считаете наше предложение разумным.</Russian>
+		<Hungarian>Sajnáljuk, hogy nem tartod ésszerűnek az ajánlatunkat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_2</Tag>
@@ -1484,6 +1522,7 @@
 		<Italian>Peccato. Pensavi a qualcosa di diverso?</Italian>
 		<Spanish>Qué pena. ¿Tenéis en mente otra cosa?</Spanish>
 		<Russian>Очень жаль. Вы имеете в виду что-то другое?</Russian>
+		<Hungarian>Kár. Valami másra gondoltál?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_3</Tag>
@@ -1493,6 +1532,7 @@
 		<Italian>Allora, sentiamo la tua offerta.</Italian>
 		<Spanish>Entonces, escuchemos vuestra propuesta.</Spanish>
 		<Russian>Тогда давай послушаем твое предложение.</Russian>
+		<Hungarian>Akkor halljuk az ajánlatodat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_4</Tag>
@@ -1502,6 +1542,7 @@
 		<Italian>Bene, perché non metti le carte in tavola?</Italian>
 		<Spanish>De acuerdo. ¿Por qué no ponéis algo sobre la mesa?</Spanish>
 		<Russian>Хорошо. Почему бы вам самим не сделать предложение?</Russian>
+		<Hungarian>Rendben. Miért nem teszel valamit az asztalra?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_5</Tag>
@@ -1511,6 +1552,7 @@
 		<Italian>Bene, vuoi fare una controfferta?</Italian>
 		<Spanish>¿Queréis hacer otra propuesta?</Spanish>
 		<Russian>Ну что, хочешь сделать встречное предложение?</Russian>
+		<Hungarian>Nos, nem akarsz ellenjavaslatot tenni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_6</Tag>
@@ -1520,6 +1562,7 @@
 		<Italian>Bene, sentiamo la tua controfferta.</Italian>
 		<Spanish>Muy bien, oigamos vuestra propuesta.</Spanish>
 		<Russian>Хорошо: давайте выслушаем ваше встречное предложение.</Russian>
+		<Hungarian>Rendben, halljuk az ellenjavaslatodat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_7</Tag>
@@ -1529,6 +1572,7 @@
 		<Italian>È deplorevole.</Italian>
 		<Spanish>Es una pena.</Spanish>
 		<Russian>Прискорбно.</Russian>
+		<Hungarian>Ez sajnálatos.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_8</Tag>
@@ -1538,6 +1582,7 @@
 		<Italian>Che sfortuna.</Italian>
 		<Spanish>Es una lástima.</Spanish>
 		<Russian>Это достойно сожаления.</Russian>
+		<Hungarian>Ez szomorú.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_9</Tag>
@@ -1547,6 +1592,7 @@
 		<Italian>Oh, beh, magari la prossima volta.</Italian>
 		<Spanish>Oh, vaya. Quizá la próxima vez.</Spanish>
 		<Russian>Ну что ж. Возможно, в следующий раз.</Russian>
+		<Hungarian>Hát igen. Talán majd legközelebb.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_SORRY_10</Tag>
@@ -1556,6 +1602,7 @@
 		<Italian>Forse ti va di suggerire qualcosa, allora.</Italian>
 		<Spanish>Bueno, quizá queráis sugerirnos algo...</Spanish>
 		<Russian>Что ж, тогда, возможно, вы захотите что-нибудь предложить.</Russian>
+		<Hungarian>Hát, akkor talán javasolhatnál valamit.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_1</Tag>
@@ -1565,6 +1612,7 @@
 		<Italian>Bene, allora sentiamo la tua proposta!</Italian>
 		<Spanish>Bueno, ¡entonces sugerid algo!</Spanish>
 		<Russian>В таком случае предложите что-нибудь сами!</Russian>
+		<Hungarian>Nos, akkor javasolj valamit!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_2</Tag>
@@ -1574,6 +1622,7 @@
 		<Italian>Un classico. Allora sentiamo la tua brillante idea.</Italian>
 		<Spanish>Qué típico. Oigamos vuestra brillante idea, pues.</Spanish>
 		<Russian>А вы упрямы! Давайте послушаем ваше предложение.</Russian>
+		<Hungarian>Makacskodsz! Halljuk a javaslatodat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_3</Tag>
@@ -1583,6 +1632,7 @@
 		<Italian>Mi stai annoiando, [CT_NAME].</Italian>
 		<Spanish>Nos irritáis, [CT_NAME].</Spanish>
 		<Russian>Ты меня раздражаешь, [CT_NAME].</Russian>
+		<Hungarian>Makacskodsz! Halljuk a javaslatodat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_4</Tag>
@@ -1592,6 +1642,7 @@
 		<Italian>Sei una persona incredibilmente cocciuta, [CT_NAME].</Italian>
 		<Spanish>Vuestra tozudez es increíble, [CT_NAME].</Spanish>
 		<Russian>Вы невероятно упрямы, [CT_NAME].</Russian>
+		<Hungarian>Hihetetlenül makacs vagy, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_5</Tag>
