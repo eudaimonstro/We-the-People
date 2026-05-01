@@ -8691,7 +8691,15 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 
 						if (itMessage != m_mapQuestMessages.end())
 						{
-							gDLL->getInterfaceIFace()->addQuestMessage(getID(), itMessage->second, iID);
+							CvTalkingHeadMessage questMessage(
+								kTriggeredData.m_iTurn + 1,
+								iID,
+								itMessage->second.GetCString(),
+								NULL,
+								MESSAGE_TYPE_QUEST);
+
+							addMessage(questMessage);
+							gDLL->getInterfaceIFace()->dirtyTurnLog(getID());
 						}
 					}
 				}
