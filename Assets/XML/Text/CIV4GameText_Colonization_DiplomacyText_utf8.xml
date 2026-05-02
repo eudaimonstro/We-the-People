@@ -1652,6 +1652,7 @@
 		<Italian>Non è una mossa intelligente da fare, [CT_NAME], trattare in questo modo chi ti è superiore.</Italian>
 		<Spanish>[CT_NAME], hay que ser muy corto de miras para tratar de este modo a vuestros superiores.</Spanish>
 		<Russian>Вы удивительно недальновидны, [CT_NAME], раз так поступаете с теми, кто выше вас.</Russian>
+		<Hungarian>Figyelemre méltóan rövidlátó vagy, [CT_NAME], hogy így bánsz a nálad jobbakkal.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_6</Tag>
@@ -1661,6 +1662,7 @@
 		<Italian>Presumo che tu abbia un'idea migliore, quindi...</Italian>
 		<Spanish>¿Hemos de suponer que tenéis algo mejor en mente?</Spanish>
 		<Russian>Я полагаю, вы имеете в виду что-то получше?</Russian>
+		<Hungarian>Gondolom, valami jobbra gondoltál?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_7</Tag>
@@ -1670,6 +1672,7 @@
 		<Italian>E allora piantala di farmi perdere tempo, fai una controfferta o sparisci.</Italian>
 		<Spanish>Entonces, dejad de hacernos perder el tiempo. Haced otra propuesta o largaos.</Spanish>
 		<Russian>Хватит тратить мое время. Либо делайте встречное предложение, либо уходите.</Russian>
+		<Hungarian>Ne pazarold az időmet! Vagy tegyél ellenjavaslatot, vagy menj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_8</Tag>
@@ -1679,6 +1682,7 @@
 		<Italian>Sentiamo la tua idea, allora.</Italian>
 		<Spanish>Oigamos vuestra idea, entonces.</Spanish>
 		<Russian>Что же, давайте послушаем вашу идею.</Russian>
+		<Hungarian>Akkor halljuk az ötletedet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_9</Tag>
@@ -1688,6 +1692,7 @@
 		<Italian>Allora fai una proposta.</Italian>
 		<Spanish>¡Entonces poned algo sobre la mesa!</Spanish>
 		<Russian>Тогда сделайте встречное предложение!</Russian>
+		<Hungarian>Akkor tegyél valamit az asztalra!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_SORRY_10</Tag>
@@ -1697,6 +1702,7 @@
 		<Italian>Per caso [CT_CIV_SHORT:2] vuole fare una controfferta?</Italian>
 		<Spanish>¿La insignificante tierra de [CT_CIV_SHORT] desea hacer otra propuesta?</Spanish>
 		<Russian>У вас есть предложение получше?</Russian>
+		<Hungarian>Van jobb javaslatod?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TRY_THIS_DEAL_1</Tag>
@@ -1706,6 +1712,7 @@
 		<Italian>Che ne pensi?</Italian>
 		<Spanish>¿Qué os parece este trato?</Spanish>
 		<Russian>Как вам такое предложение?</Russian>
+		<Hungarian>Hogy hangzik ez az ajánlat?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TRY_THIS_DEAL_2</Tag>
@@ -1715,6 +1722,7 @@
 		<Italian>Cosa pensi di questo affare, [CT_NAME]?</Italian>
 		<Spanish>¿Qué pensáis de este trato, [CT_NAME]?</Spanish>
 		<Russian>Что вы думаете об этой сделке, [CT_NAME]?</Russian>
+		<Hungarian>Mit gondol erről az ajánlatról, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TRY_THIS_DEAL_3</Tag>
@@ -1724,6 +1732,7 @@
 		<Italian>Trovi interessante questa offerta?</Italian>
 		<Spanish>¿Encontráis esta oferta tentadora?</Spanish>
 		<Russian>Вы не находите это предложение заманчивым?</Russian>
+		<Hungarian>Csábítónak találod ezt az ajánlatot?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TRY_THIS_DEAL_4</Tag>
@@ -1733,6 +1742,7 @@
 		<Italian>Ecco la mia offerta.</Italian>
 		<Spanish>Ésta es nuestra propuesta.</Spanish>
 		<Russian>Вот мое предложение.</Russian>
+		<Hungarian>Íme az ajánlatom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TRY_THIS_DEAL_5</Tag>
@@ -1742,6 +1752,7 @@
 		<Italian>Siamo certi che considererete le condizioni vantaggiose...</Italian>
 		<Spanish>No nos negaréis que el trato es justo...</Spanish>
 		<Russian>Я уверен, вы согласитесь, что эта честная сделка.</Russian>
+		<Hungarian>Biztos egyetértesz azzal, hogy ez az ajánlat tisztességes.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TRY_THIS_DEAL_6</Tag>
@@ -1751,6 +1762,7 @@
 		<Italian>E questa è la mia ultima offerta.</Italian>
 		<Spanish>Y ésta es nuestra última oferta.</Spanish>
 		<Russian>И это мое последнее предложение.</Russian>
+		<Hungarian>És ez az utolsó ajánlatom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_NO_DEAL_1</Tag>
@@ -1760,6 +1772,7 @@
 		<Italian>Non vedo un accordo possibile.</Italian>
 		<Spanish>Nos parece imposible llegar a un acuerdo.</Spanish>
 		<Russian>Я не понимаю, как это возможно.</Russian>
+		<Hungarian>Nem értem, hogyan lenne lehetséges az üzlet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_NO_DEAL_2</Tag>
@@ -1769,6 +1782,7 @@
 		<Italian>Queste sono solo chiacchiere da bar. Non credo si possa fare.</Italian>
 		<Spanish>Esto no es hablar en serio. No creemos que sea posible.</Spanish>
 		<Russian>Бессмысленный разговор. Я не думаю, что это возможно.</Russian>
+		<Hungarian>Ez csak ostoba beszéd. Nem hiszem, hogy ez megvalósítható.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_NO_DEAL_3</Tag>
@@ -1778,6 +1792,7 @@
 		<Italian>Sono spiacente di comunicarti che non è un accordo possibile.</Italian>
 		<Spanish>Sentimos decir que un trato así es imposible.</Spanish>
 		<Russian>Мне очень жаль, но это совершенно исключено!</Russian>
+		<Hungarian>Szörnyen sajnálom, de erről szó sem lehet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_NO_DEAL_4</Tag>
@@ -1787,6 +1802,7 @@
 		<Italian>Non si può fare, [CT_NAME].</Italian>
 		<Spanish>Eso es imposible, [CT_NAME].</Spanish>
 		<Russian>Это невозможно, [CT_NAME].</Russian>
+		<Hungarian>Ez nem lehetséges, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_NO_DEAL_5</Tag>
@@ -1796,6 +1812,7 @@
 		<Italian>Non vedo come potremmo fare uno scambio del genere.</Italian>
 		<Spanish>No alcanzamos a ver cómo podríamos acordar un trato así.</Spanish>
 		<Russian>Я не понимаю, почему мы должны ввязываться в такую сделку.</Russian>
+		<Hungarian>Nem értem, miért kellene belemennünk egy ilyen üzletbe?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_NO_DEAL_6</Tag>
@@ -1805,6 +1822,7 @@
 		<Italian>Non possiamo farlo.</Italian>
 		<Spanish>No podemos hacerlo.</Spanish>
 		<Russian>Мы не можем этого сделать.</Russian>
+		<Hungarian>Ezt nem tehetjük meg.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_NO_DEAL_1</Tag>
@@ -1814,6 +1832,7 @@
 		<Italian>È impossibile.</Italian>
 		<Spanish>Es imposible.</Spanish>
 		<Russian>Это невозможно.</Russian>
+		<Hungarian>Ez nem lehetséges.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_NO_DEAL_2</Tag>
@@ -1823,6 +1842,7 @@
 		<Italian>Non diciamo stupidaggini. È una offerta impossibile da accettare.</Italian>
 		<Spanish>No seáis idiota. Esto es imposible.</Spanish>
 		<Russian>Не будь глупцом. Это невозможно сделать.</Russian>
+		<Hungarian>Ne légy ostoba! Ezt nem lehet megtenni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_NO_DEAL_3</Tag>
@@ -1832,6 +1852,7 @@
 		<Italian>Non farmi perdere tempo con queste assurdità!</Italian>
 		<Spanish>No nos hagáis perder el tiempo con cosas imposibles.</Spanish>
 		<Russian>Не тратьте мое время на глупости!</Russian>
+		<Hungarian>Ne pazarold az időmet lehetetlenségekre!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_NO_DEAL_4</Tag>
@@ -1841,6 +1862,7 @@
 		<Italian>Cosa diamine stai dicendo? È una cosa impossibile.</Italian>
 		<Spanish>¿De qué estáis hablando? Esto no es posible.</Spanish>
 		<Russian>О чем ты говоришь? Это невозможно.</Russian>
+		<Hungarian>Miről beszélsz? Ez nem lehetséges.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_NO_DEAL_5</Tag>
@@ -1850,6 +1872,7 @@
 		<Italian>Stai scherzando vero? Impossibile.</Italian>
 		<Spanish>¿Bromeáis? ¡Esto no es posible!</Spanish>
 		<Russian>Вы шутите? Это невозможно!</Russian>
+		<Hungarian>Most viccelsz? Ezt nem lehet összehozni!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_NO_DEAL_6</Tag>
@@ -1859,6 +1882,7 @@
 		<Italian>Non credo che sia un accordo fattibile.</Italian>
 		<Spanish>Un trato así no es posible de ningún modo.</Spanish>
 		<Russian>Подобная сделка невозможна.</Russian>
+		<Hungarian>Kizárt dolog, hogy egy ilyen üzlet létrejöjjön.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_OFFER_PEACE_1</Tag>
@@ -1868,6 +1892,7 @@
 		<Italian>È giunta forse l'ora di mettere fine a questi spargimenti di sangue?</Italian>
 		<Spanish>¿No es hora de que termine este derramamiento de sangre?</Spanish>
 		<Russian>Может быть, пора положить конец всему этому кровопролитию?</Russian>
+		<Hungarian>Talán véget kellene vetni ennek a vérontásnak?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_OFFER_DEAL_1</Tag>
@@ -1877,6 +1902,7 @@
 		<Italian>Salve, [CT_NAME]! Che ne pensi di questo scambio?</Italian>
 		<Spanish>¡Saludos, [CT_NAME]! ¿Qué os parece este trato?</Spanish>
 		<Russian>Приветствую, [CT_NAME]! Что вы думаете об этой сделке?</Russian>
+		<Hungarian>Üdvözlet, [CT_NAME]! Mit gondolsz erről az ajánlatról?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_OFFER_DEAL_2</Tag>
@@ -1886,6 +1912,7 @@
 		<Italian>La pacifica popolazione [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:4][COLOR_REVERT] vuole commerciare equamente con [CT_CIV_SHORT:2]. Che ne pensi?</Italian>
 		<Spanish>El pacífico pueblo de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] quiere hacer un trato justo con [CT_CIV_SHORT]. ¿Qué os parece?</Spanish>
 		<Russian>Миролюбивые жители [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] стремятся к справедливой торговле с [CT_CIV_SHORT]. Как насчет этого?</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] békeszerető népe tisztességes kereskedelemre törekszik [CT_CIV_SHORT] népével. Mit szóltok hozzá?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_OFFER_DEAL_3</Tag>
@@ -1895,6 +1922,7 @@
 		<Italian>Ti suona bene, [CT_NAME]?</Italian>
 		<Spanish>¿Qué os parece esto, [CT_NAME]?</Spanish>
 		<Russian>Как вам такое предложение, [CT_NAME]?</Russian>
+		<Hungarian>Hogy tetszene ez neked, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_OFFER_DEAL_4</Tag>
@@ -1904,6 +1932,7 @@
 		<Italian>Cosa pensi di questo affare, [CT_NAME]?</Italian>
 		<Spanish>¿Qué pensáis de este trato, [CT_NAME]?</Spanish>
 		<Russian>Что вы думаете об этой сделке, [CT_NAME]?</Russian>
+		<Hungarian>Mit gondolsz erről az üzletről, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_OFFER_DEAL_5</Tag>
@@ -1913,6 +1942,7 @@
 		<Italian>Cosa ne pensi di questa proposta, [CT_NAME]?</Italian>
 		<Spanish>¿Qué pensáis de esta propuesta, [CT_NAME]?</Spanish>
 		<Russian>Что вы думаете об этом предложении, [CT_NAME]?</Russian>
+		<Hungarian>Mit gondolsz erről a javaslatról, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_OFFER_DEAL_6</Tag>
@@ -1922,6 +1952,7 @@
 		<Italian>Facciamo un affare!</Italian>
 		<Spanish>¡Hagamos un trato!</Spanish>
 		<Russian>Давай заключим эту сделку!</Russian>
+		<Hungarian>Egyezzünk meg!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_OFFER_DEAL_1</Tag>
@@ -1931,6 +1962,7 @@
 		<Italian>[CT_NAME], ti sto facendo un'offerta che non puoi rifiutare.</Italian>
 		<Spanish>[CT_NAME], os voy a hacer una oferta que no podréis rechazar.</Spanish>
 		<Russian>[CT_NAME], я делаю тебе предложение, от которого ты не сможешь отказаться.</Russian>
+		<Hungarian>[CT_NAME], olyan ajánlatot teszek, amit nem utasíthatsz vissza!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_OFFER_DEAL_2</Tag>
@@ -1940,6 +1972,7 @@
 		<Italian>Dammi un dimostrazione della tua intelligenza, [CT_NAME]. Accetta queste condizioni!</Italian>
 		<Spanish>Mostrad algo de inteligencia para variar, [CT_NAME]. ¡Aceptad este trato!</Spanish>
 		<Russian>Подумайте, [CT_NAME], и примите это предложение!</Russian>
+		<Hungarian>A változatosság kedvéért mutass némi intelligenciát, [CT_NAME]. Fogadd el ezt az ajánlatot!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_OFFER_DEAL_3</Tag>
@@ -1949,6 +1982,7 @@
 		<Italian>L'[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] ti offre questa possibilità di commercio. Ti suggerisco di accettarla!</Italian>
 		<Spanish>El [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] os ofrece este intercambio. ¡Os sugiero que lo aceptéis!</Spanish>
 		<Russian>Мы предлагаем вам эту сделку. Я считаю, вам стоит согласиться!</Russian>
+		<Hungarian>Ezt a cserét kínáljuk neked. Javaslom, hogy fogadd el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_OFFER_DEAL_4</Tag>
@@ -1958,6 +1992,7 @@
 		<Italian>Ecco la nostra offerta: prendere o lasciare!</Italian>
 		<Spanish>Ésta es nuestra oferta. ¡Lo tomáis o lo dejáis!</Spanish>
 		<Russian>Вот наше предложение. Бери или уходи!</Russian>
+		<Hungarian>Íme az ajánlatunk. Fogadd el vagy felejtsd el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_OFFER_DEAL_5</Tag>
@@ -1967,6 +2002,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] offre questo accordo alla tua piccola e insignificante colonia.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] ofrece el siguiente trato a vuestra desagradable e ínfima colonia.</Spanish>
 		<Russian>Вот что [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] предлагают вашей незначительной колонии.</Russian>
+		<Hungarian>Segíthetek? Talán ezzel az ajánlattal?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_OFFER_DEAL_6</Tag>
@@ -1976,6 +2012,7 @@
 		<Italian>Ecco l'affare.</Italian>
 		<Spanish>Éste es el trato.</Spanish>
 		<Russian>Это наше предложение.</Russian>
+		<Hungarian>Íme az ajánlat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_CANCEL_DEAL_1</Tag>
@@ -1985,6 +2022,7 @@
 		<Italian>Temo che questo accordo non ci vada più bene.</Italian>
 		<Spanish>Nos tememos que este trato ya no nos conviene.</Spanish>
 		<Russian>Боюсь, эта сделка нас больше не интересует.</Russian>
+		<Hungarian>Attól tartok, hogy ez az üzlet már nem válik hasznunkra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_CANCEL_DEAL_2</Tag>
@@ -1994,6 +2032,7 @@
 		<Italian>Mi spiace, [CT_NAME], ma questo accordo non ci sta più bene.</Italian>
 		<Spanish>Lo sentimos, [CT_NAME], pero este trato ya no nos es útil.</Spanish>
 		<Russian>Извините, [CT_NAME], но эта сделка больше не будет для нас выгодна.</Russian>
+		<Hungarian>Sajnálom, [CT_NAME], de ez a megállapodás már nem válik hasznunkra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_CANCEL_DEAL_3</Tag>
@@ -2003,6 +2042,7 @@
 		<Italian>Sfortunatamente, le cose belle prima o poi finiscono. È il caso del nostro accordo.</Italian>
 		<Spanish>Por desgracia, todo lo bueno se acaba. Incluyendo este trato.</Spanish>
 		<Russian>Все хорошее когда-нибудь заканчивается, к сожалению. Включая эту сделку.</Russian>
+		<Hungarian>Sajnálom, [CT_NAME], de ez a megállapodás már nem válik hasznunkra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_CANCEL_DEAL_4</Tag>
@@ -2012,6 +2052,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] non può più permettersi questo accordo, [CT_NAME].</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] ya no se puede permitir este trato, [CT_NAME].</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] больше не могут позволить себе эту сделку, [CT_NAME].</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] már nem engedheti meg magának ezt az üzletet, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_CANCEL_DEAL_5</Tag>
@@ -2021,6 +2062,7 @@
 		<Italian>È ora di concludere questo accordo.</Italian>
 		<Spanish>Es hora de dar por terminado este trato, camarada.</Spanish>
 		<Russian>Пришло время положить конец этой сделке, друг.</Russian>
+		<Hungarian>Itt az ideje, hogy véget vessünk ennek a megállapodásnak, barátom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FR_CANCEL_DEAL_6</Tag>
@@ -2030,6 +2072,7 @@
 		<Italian>Se non ti dispiace, [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:2][COLOR_REVERT] gradirebbe annullare questo accordo.</Italian>
 		<Spanish>Si no os importa, a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] le gustaría cancelar este trato.</Spanish>
 		<Russian>Если вы не возражаете, [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] хотят отменить эту сделку.</Russian>
+		<Hungarian>Ha nem bánod, [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] szeretné megszűntetni ezt az üzletet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_CANCEL_DEAL_1</Tag>
@@ -2039,6 +2082,7 @@
 		<Italian>La popolazione [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:2][COLOR_REVERT] non è più interessata a questo affare, [CT_NAME].</Italian>
 		<Spanish>Al pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] ya no le interesa este trato, [CT_NAME].</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] больше не заинтересованы в этой сделке, [CT_NAME].</Russian>
+		<Hungarian>Már nem érdeke a büszke [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] embereknek ez az üzlet, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_CANCEL_DEAL_2</Tag>
@@ -2048,6 +2092,7 @@
 		<Italian>L'accordo è terminato.</Italian>
 		<Spanish>Este trato se ha acabado.</Spanish>
 		<Russian>Эта сделка анулирована.</Russian>
+		<Hungarian>Ennek az üzletnek vége.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_CANCEL_DEAL_3</Tag>
@@ -2057,6 +2102,7 @@
 		<Italian>Abbiamo intenzione di interrompere questo accordo, [CT_NAME].</Italian>
 		<Spanish>Vamos a poner fin a este trato, [CT_NAME].</Spanish>
 		<Russian>Мы прекращаем эту сделку, [CT_NAME].</Russian>
+		<Hungarian>Véget vetünk ennek az üzletnek, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_CANCEL_DEAL_4</Tag>
@@ -2066,6 +2112,7 @@
 		<Italian>Siamo stanchi di questo accordo. E anche di te, onestamente.</Italian>
 		<Spanish>Estamos hartos de este trato. Y de vosotros también, francamente.</Spanish>
 		<Russian>Мы устали от этой сделки. И от тебя тоже, честно говоря.</Russian>
+		<Hungarian>Elegünk van ebből az üzletből. És őszintén szólva belőled is!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_CANCEL_DEAL_5</Tag>
@@ -2075,6 +2122,7 @@
 		<Italian>Abbiamo intenzione di concludere questo accordo con effetto immediato, [CT_NAME].</Italian>
 		<Spanish>Damos por finalizado este trato, [CT_NAME], desde ahora mismo.</Spanish>
 		<Russian>Мы немедленно расторгаем эту сделку, [CT_NAME].</Russian>
+		<Hungarian>Azonnali hatállyal felmondjuk ezt az üzletet, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_CANCEL_DEAL_6</Tag>
@@ -2084,6 +2132,7 @@
 		<Italian>Questo accordo non ci soddisfa più. Annullato.</Italian>
 		<Spanish>Este trato ya no se ajusta a nuestras necesidades. Queda cancelado.</Spanish>
 		<Russian>Эта сделка нам больше не подходит. Она отменена.</Russian>
+		<Hungarian>Ez az üzlet már nem felel meg az igényeinknek. Töröltük.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_1</Tag>
@@ -2093,6 +2142,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] ti ringrazia da parte del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]!</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] os da las gracias en nombre del agradecido pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]!</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] благодарит вас от имени признательных [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] людей!</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] a hálás [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] nép nevében köszönetet mond!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_2</Tag>
@@ -2102,6 +2152,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] riconosce la tua amicizia. Grazie.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] se congratula de vuestra amistad. Gracias.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] признательны за ваше дружеское расположение. Спасибо.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] elfogadja barátságodat. Köszönöm!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_3</Tag>
@@ -2111,6 +2162,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] riconosce gentilmente la tua amicizia, [CT_NAME].</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] agradece amablemente vuestra amistad, [CT_NAME].</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] благодарят вас за дружбу, [CT_NAME].</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] elfogadja barátságodat. Köszönöm!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_4</Tag>
@@ -2120,6 +2172,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] saluta la piccola nazione [CT_CIV_SHORT:4].</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] saluda a su amiga, la pequeña nación de [CT_CIV_SHORT].</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] приветствуют своего друга, маленькую нацию [CT_CIV_SHORT].</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] üdvözli barátját, az aprócska [CT_CIV_SHORT] nemzetet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_5</Tag>
@@ -2129,6 +2182,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] ti saluta, [CT_NAME]!</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] os saluda, [CT_NAME]!</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] приветствуют вас, [CT_NAME]!</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] tiszteleg előtted, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_6</Tag>
@@ -2138,6 +2192,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] ti ringrazia, [CT_NAME].</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] os da las gracias, [CT_NAME].</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] благодарят вас, [CT_NAME].</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] köszöni neked, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_7</Tag>
@@ -2147,6 +2202,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] ringrazia la generosità e l'onestà di [CT_NAME]!</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] os da las gracias, [CT_NAME], prodigio de buen hacer y generosidad!</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] благодарят вас, честный и щедрый [CT_NAME]!</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] köszöni neked, tisztességes és nagylelkű [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_8</Tag>
@@ -2156,6 +2212,7 @@
 		<Italian>[CT_NAME], il mio popolo ti ringrazia.</Italian>
 		<Spanish>[CT_NAME], mi pueblo os da las gracias.</Spanish>
 		<Russian>[CT_NAME], мои люди благодарят вас.</Russian>
+		<Hungarian>[CT_NAME], népem köszöni neked.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_9</Tag>
@@ -2165,6 +2222,7 @@
 		<Italian>Eccellente, siamo soddisfatti! Sediamoci e beviamoci una tazza di tè, ti va?</Italian>
 		<Spanish>¡Magnífico! Nos complace sobremanera. Sentémonos a tomar una taza de té, ¿de acuerdo?</Spanish>
 		<Russian>Отлично! Я очень доволен. Давай сядем и выпьем вкусного чая?</Russian>
+		<Hungarian>Kiváló! Nagyon elégedett vagyok. Üljünk le és igyunk egy csésze teát, rendben?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_10</Tag>
@@ -2174,6 +2232,7 @@
 		<Italian>Una decisione saggia, dobbiamo rinforzare i nostri legami.</Italian>
 		<Spanish>Buena decisión. Debemos estrechar lazos... ¡o lo que sea!</Spanish>
 		<Russian>Хорошее решение. Нам нужно налаживать отношения!</Russian>
+		<Hungarian>Jó döntés. Szorosabb köteléket kell kialakítanunk - vagy ilyesmi!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_11</Tag>
@@ -2183,6 +2242,7 @@
 		<Italian>Io [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], signore del poderoso [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT], offro i miei più sinceri ringraziamenti al mio caro amico, [CT_NAME].</Italian>
 		<Spanish>Nos, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], gobernante del poderoso [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT], ofrecemos nuestro más sincero agradecimiento a [CT_NAME], nuestro gran amigo.</Spanish>
 		<Russian>Я, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], безраздельно властвующий над могущественной [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT], настоящим хочу выразить искреннюю благодарность [CT_NAME] за дружбу.</Russian>
+		<Hungarian>Hálásan hajtom meg a fejem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_12</Tag>
@@ -2192,6 +2252,7 @@
 		<Italian>Siamo felici di aver concluso questa trattativa amichevolmente, [CT_NAME].</Italian>
 		<Spanish>Nos alegramos de que este acuerdo haya concluido amistosamente, [CT_NAME].</Spanish>
 		<Russian>Я рад, что мы заключили это соглашение полюбовно, [CT_NAME].</Russian>
+		<Hungarian>Örülök, hogy ezt a megállapodást békésen megkötöttük, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_13</Tag>
@@ -2201,6 +2262,7 @@
 		<Italian>Sono così felice che le nostre due nazioni possano superare delle rivalità così insignificanti! Saremo un esempio per il futuro!</Italian>
 		<Spanish>¡Nos alegramos mucho de que nuestras dos naciones puedan sobreponerse a rivalidades insignificantes! ¡Que esto sirva de ejemplo para todo el mundo!</Spanish>
 		<Russian>Я так счастлив, что наши две нации могут подняться выше такого мелкого соперничества! Мы покажем пример, которому будет следовать весь мир!</Russian>
+		<Hungarian>Annyira örülök, hogy nemzeteink képesek felülemelkedni az ilyen kicsinyes rivalizáláson! Példát fogunk mutatni, amit az egész világ követni fog!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_14</Tag>
@@ -2210,6 +2272,7 @@
 		<Italian>Siamo DECISAMENTE soddisfatti di aver raggiunto un accordo equo, [CT_NAME]!</Italian>
 		<Spanish>¡Nos alegramos mucho de haber llegado a un acuerdo justo, [CT_NAME]!</Spanish>
 		<Russian>Я так рад, что мы смогли прийти к справедливому соглашению, [CT_NAME]!</Russian>
+		<Hungarian>Annyira örülök, hogy sikerült tisztességes megállapodásra jutnunk, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_15</Tag>
@@ -2219,6 +2282,7 @@
 		<Italian>Lo apprezziamo moltissimo, [CT_NAME]. Ti ringrazio a nome del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]!</Italian>
 		<Spanish>Apreciamos este gesto, camarada [CT_NAME]. ¡Gracias en nombre de toda la civilización [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:2][COLOR_REVERT]!</Spanish>
 		<Russian>Я ценю это, друг [CT_NAME]. Спасибо от всех [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]!</Russian>
+		<Hungarian>Annyira örülök, hogy sikerült tisztességes megállapodásra jutnunk, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_16</Tag>
@@ -2228,6 +2292,7 @@
 		<Italian>Mi inchino davanti a te in nome della nostra amicizia, [CT_NAME]!</Italian>
 		<Spanish>¡Nos inclinamos ante vos como muestra de nuestra amistad, [CT_NAME]!</Spanish>
 		<Russian>Я преклоняюсь перед тобой в знак дружбы, [CT_NAME]!</Russian>
+		<Hungarian>Barátsággal hajolok meg előtted, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_17</Tag>
@@ -2237,6 +2302,7 @@
 		<Italian>Mi congratulo per il tuo buon senso, [CT_NAME].</Italian>
 		<Spanish>Os felicitamos por vuestro sentido común, [CT_NAME].</Spanish>
 		<Russian>Восхищаюсь вашим здравомыслием, [CT_NAME].</Russian>
+		<Hungarian>Gratulálok a józan eszedhez, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_18</Tag>
@@ -2246,6 +2312,7 @@
 		<Italian>Ti ringrazio. Immagino che avrai altri affari urgenti da sbrigare...</Italian>
 		<Spanish>Os damos las gracias. Y ahora, seguro que tenéis asuntos más urgentes en otro lugar...</Spanish>
 		<Russian>Я благодарю тебя. Я уверен, что у вас есть неотложные дела в другом месте. Не смею задерживать...</Russian>
+		<Hungarian>Köszönöm! Most már biztos vagyok benne, hogy máshol van sürgős dolgod.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_20</Tag>
@@ -2255,6 +2322,7 @@
 		<Italian>Io, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], dominatore di troppi luoghi per menzionarli ora, ringrazio [CT_NAME]!</Italian>
 		<Spanish>Nos, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], gobernante de demasiados lugares como para enumerarlos, por la presente damos las gracias a [CT_NAME].</Spanish>
 		<Russian>Я, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], правитель слишком многих мест, чтобы их упоминать, настоящим благодарю моего хорошего друга [CT_NAME]!</Russian>
+		<Hungarian>Én, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], túl sok hely uralkodója, hogy mind megemlítsem, ezúton mondok köszönetet neked, [CT_NAME], jó barátom!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_21</Tag>
@@ -2264,6 +2332,7 @@
 		<Italian>È stato un piacere fare affari con te, [CT_NAME].</Italian>
 		<Spanish>Ha sido un placer negociar con vos, [CT_NAME].</Spanish>
 		<Russian>Было приятно иметь с вами дело, [CT_NAME].</Russian>
+		<Hungarian>Öröm volt veled üzletelni, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_22</Tag>
@@ -2273,6 +2342,7 @@
 		<Italian>È un bene che possiamo trattare alla pari, [CT_NAME].</Italian>
 		<Spanish>Nos alegramos de que podamos colaborar de igual a igual, [CT_NAME].</Spanish>
 		<Russian>Я ценю возможность общаться с вами на равных, [CT_NAME].</Russian>
+		<Hungarian>Jó, hogy egyenrangú félként találkozhatunk, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_23</Tag>
@@ -2282,6 +2352,7 @@
 		<Italian>Siamo contenti di aver parlato con te [CT_NAME]. Strano, siete culturalmente inferiori, ma il temperamento è grande.</Italian>
 		<Spanish>Nos ha gustado hablar con vos, [CT_NAME]. Es raro, ya que sois muy inferior, pero la personalidad hace mucho.</Spanish>
 		<Russian>Нам было приятно поговорить с вами, [CT_NAME]. Хотя это и странно, учитывая твою неполноценность. Однако твой темперамент компенсирует многие недостатки.</Russian>
+		<Hungarian>Örültünk a beszélgetésnek, [CT_NAME]! Furcsa, hiszen annyira alárendelt vagy, de a személyiség sokat nyom a latba.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_24</Tag>
@@ -2291,6 +2362,7 @@
 		<Italian>Sei il vento che mi fa volare, [CT_NAME]!</Italian>
 		<Spanish>¡Sois el viento bajo nuestras alas, [CT_NAME]!</Spanish>
 		<Russian>Ты ветер, который позволяет мне летать, [CT_NAME]!</Russian>
+		<Hungarian>Te vagy a szél a szárnyaim alatt, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_THANKS_25</Tag>
