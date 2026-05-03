@@ -6486,27 +6486,164 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_1</Tag>
-		<English>Yes, I understand that. As our towns spread out our soldiers can be very intimidating. We need more settlers anyway. Send the troops to the barracks and give the Natives the muskets as a sign of goodwill. Discharged soldiers will be a valued part of the colony.</English>
-		<German>Ja, das verstehe ich. Wir machen uns hier langsam ziemlich breit und unsere Truppen sind ja auch sehr einschüchternd. Nun gut, wir brauchen sowieso noch einige Siedler. Schickt die Truppe in die Kaserne und schenkt den Indianern als Zeichen des guten Willens die Musketen. Die Soldaten können sich in der Kolonie anders nützlich machen.</German>
-		<Russian>Давайте не будем нервировать наших соседей. Солдаты могут быть полезны и в качестве рабочей силы. Распустите один отряд, а их мушкеты передайте индейцам в знак нашего дружеского к ним расположения.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_2</Tag>
-		<English>So. All right, I admit it's a serious situation. But we can't just give them all the muskets. It's ridiculous. They'll laugh at us. The troops stay where they are. The Natives will have to leave without them.</English>
-		<German>Soso. Nun gut, eine ernste Situation. Aber wir können Ihnen ja nicht einfach die ganzen Musketen überlassen. Man würde über uns spotten. Die Truppe bleibt wo sie ist. Die Indianer sollen ohne sie abziehen.</German>
-		<Russian>Неслыханная дерзость! Может быть нам ещё и пушки им отдать? Пусть убираются прочь!</Russian>
+		<English>Tell them we shall deliver [COLOR_HIGHLIGHT_TEXT]muskets[COLOR_REVERT] to their village as a token of our good faith. Let them see that the strength of our arms may serve not only war, but also [COLOR_HIGHLIGHT_TEXT]peace and friendship[COLOR_REVERT].</English>
+		<German>Sagt ihnen, dass wir ihrem Dorf [COLOR_HIGHLIGHT_TEXT]Musketen[COLOR_REVERT] als Zeichen unseres guten Willens liefern werden. Sie sollen erkennen, dass die Stärke unserer Waffen nicht nur dem Krieg, sondern auch [COLOR_HIGHLIGHT_TEXT]Frieden und Freundschaft[COLOR_REVERT] dienen kann.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_WN_1</Tag>
-		<English>Some of the infantry troops of the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have been disbanded and are now to become settlers.</English>
-		<German>Ein Teil der Infanterietruppen des [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreichs wurde aufgelöst und soll nun zu Siedlern werden.</German>
-		<Russian>Некоторые пехотные отряды [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] были расформированы и теперь должны стать поселенцами.</Russian>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have promised to deliver muskets to a nearby Native village.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat zugesagt, Musketen an ein nahegelegenes Indianerdorf zu liefern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_2</Tag>
+		<English>Give them a [COLOR_HIGHLIGHT_TEXT]smaller gift [COLOR_REVERT]from our own depot at once. It is not everything they asked for, but it should [COLOR_HIGHLIGHT_TEXT]calm[COLOR_REVERT] them for now.</English>
+		<German>Gebt ihnen sofort ein [COLOR_HIGHLIGHT_TEXT]kleineres Geschenk[COLOR_REVERT] aus unseren eigenem Magazin. Es ist nicht alles, was sie verlangt haben, aber es sollte sie fürs Erste [COLOR_HIGHLIGHT_TEXT]beruhigen[COLOR_REVERT].</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_WN_2</Tag>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have sent a smaller gift of horses to calm a nearby Native village, though not without some resentment.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat ein kleineres Geschenk an Musketen geschickt, um ein nahegelegenes Indianerdorf zu beruhigen, wenn auch nicht ohne Verstimmung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_3</Tag>
+		<English>This demand is outrageous. We will not surrender our muskets to satisfy frightened tribesmen. Let them return home empty-handed.</English>
+		<German>Diese Forderung ist ungeheuerlich. Wir werden unsere Musketen nicht herausgeben, nur um ängstliche Stammeskrieger zu besänftigen. Sie sollen mit leeren Händen heimkehren.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_WN_3</Tag>
 		<English>The atmosphere between the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] empire and some of the Natives is deteriorating significantly.</English>
 		<German>Die Stimmung zwischen dem [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich und einigen Ureinwohnern verschlechtert sich erheblich.</German>
 		<Russian>Отношения между империей [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] и некоторыми индейцами ухудшаются.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_STIRRED_UP_NATIVES_MUSKETS_DONE</Tag>
+		<English>The requested muskets have reached the Native village.</English>
+		<German>Die geforderten Musketen haben das Indianerdorf erreicht.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_DONE</Tag>
+		<English>The tribe gratefully accepts the muskets. Their fear fades, and respect for our generosity grows.</English>
+		<German>Der Stamm nimmt die Musketen dankbar an. Seine Sorge weicht, und der Respekt für unsere Großzügigkeit wächst.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_WN_DONE</Tag>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have delivered muskets to a nearby Native tribe, improving relations.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat einem benachbarten Indianerstamm Musketen übergeben und dadurch die Beziehungen verbessert.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FAIL_STIRRED_UP_NATIVES_MUSKETS</Tag>
+		<English>The promised muskets were never delivered. The tribe feels deceived and angered.</English>
+		<German>Die versprochenen Musketen wurden niemals geliefert. Der Stamm fühlt sich getäuscht und ist erzürnt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_QUEST_HELP</Tag>
+		<English>Deliver [COLOR_HIGHLIGHT_TEXT]%d1 Muskets within %d2 turns[COLOR_REVERT] to the selected Native village [COLOR_HIGHLIGHT_TEXT]%s3_city[COLOR_REVERT].</English>
+		<German>Liefert [COLOR_HIGHLIGHT_TEXT]innerhalb von %d2 Runden %d1 Musketen[COLOR_REVERT] in das ausgewählte Indianerdorf [COLOR_HIGHLIGHT_TEXT]%s3_city[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_IMMEDIATE_HELP</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%d1 Muskets[COLOR_REVERT] will immediately be taken from [COLOR_HIGHLIGHT_TEXT]%s2_city[COLOR_REVERT].</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]%d1 Musketen[COLOR_REVERT] werden sofort aus [COLOR_HIGHLIGHT_TEXT]%s2_city[COLOR_REVERT] entnommen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_DONE_HELP</Tag>
+		<English>Relations with the tribe improve by [COLOR_POSITIVE_TEXT]+%d1[COLOR_REVERT].</English>
+		<German>Die Beziehungen zu diesem Stamm verbessern sich um [COLOR_POSITIVE_TEXT]+%d1[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_TARGET_MARKER</Tag>
+		<English>The requested muskets must be delivered to %s1_city.</English>
+		<German>Die geforderten Musketen müssen nach %s1_city geliefert werden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_LAND_RETURN</Tag>
+		<English>Milord, emissaries from a nearby Native village have come before us in growing anger. They claim that our settlements have steadily swallowed lands their tribe has hunted, cultivated, and called home for generations. They now demand [COLOR_HIGHLIGHT_TEXT]justice for their lost lands[COLOR_REVERT].</English>
+		<German>Milord, Abgesandte eines nahen Indianerdorfes sind empört. Sie beklagen, dass wir Land besetzen, auf denen ihr Stamm seit Generationen jagt, lebt und Felder bestellt. Nun fordern sie [COLOR_HIGHLIGHT_TEXT]Gerechtigkeit für ihr verlorenes Land[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_LAND_RETURN_2</Tag>
+		<English>Milord, envoys from a neighboring Native tribe have come bearing grave complaints. They speak of ancestral hunting grounds and sacred places now lying within our borders, and ask whether we intend to rule as [COLOR_HIGHLIGHT_TEXT]neighbors in peace[COLOR_REVERT] or as conquerors without restraint.</English>
+		<German>Milord, Gesandte eines benachbarten Indianerstammes klagen über Landraub. Sie sprechen von angestammten Jagdgründen und heiligen Orten, die nun innerhalb unserer Grenzen liegen, und fragen, ob wir als [COLOR_HIGHLIGHT_TEXT]friedliche Nachbarn[COLOR_REVERT] herrschen wollen — oder als Eroberer ohne Maß und Mäßigung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_LAND_RETURN_3</Tag>
+		<English>Milord, angry voices rise from a nearby Native village. They accuse our settlers of taking more land each season — fields, forests, and rivers their people have long called their own — and now demand [COLOR_HIGHLIGHT_TEXT]restitution for what was seized[COLOR_REVERT].</English>
+		<German>Milord, zornige Stimmen erheben sich aus einem nahegelegenen Indianerdorf. Sie werfen unseren Siedlern vor, mit jeder Jahreszeit mehr Land an sich zu reißen — Felder, Wälder und Flüsse, die ihr Volk seit jeher als die seinen betrachtet — und fordern nun [COLOR_HIGHLIGHT_TEXT]Wiedergutmachung für das Genommene[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_1</Tag>
+		<English>They have reason to be bitter. Return part of the disputed land to the tribe as a sign of goodwill. Better a smaller border than a greater war.</English>
+		<German>Ihr Zorn ist verständlich. Gebt dem Stamm einen Teil des umstrittenen Landes zurück, als Zeichen unseres guten Willens. Besser eine kleinere Grenze als ein größerer Krieg.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_2</Tag>
+		<English>We shall keep the land, yet offer generous compensation. Gold may soothe wounds where borders cannot be redrawn.</English>
+		<German>Wir behalten das Land, doch bieten großzügige Entschädigung an. Gold mag Wunden lindern, wo Grenzen nicht neu gezogen werden können.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_3</Tag>
+		<English>The land is ours by right of toil, blood, and settlement. We shall yield nothing to these demands.</English>
+		<German>Dieses Land gehört uns durch Mühe, Blut und Besiedlung. Wir werden ihren Forderungen keinen Zollbreit nachgeben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_WN_1</Tag>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have returned contested lands to a neighboring tribe, greatly improving relations.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat umstrittenes Land an einen benachbarten Stamm zurückgegeben und dadurch die Beziehungen deutlich verbessert.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_WN_2</Tag>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have compensated a neighboring tribe with gold, but resentment over the lost lands remains.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat einen benachbarten Stamm mit Gold entschädigt, doch der Groll über das verlorene Land bleibt bestehen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_WN_3</Tag>
+		<English>The [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] have refused Native demands for restitution, sharply worsening relations.</English>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich hat die Forderungen der Indianer nach Wiedergutmachung zurückgewiesen, wodurch sich die Beziehungen deutlich verschlechtern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_HELP_PLOTS</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%d1 land plots[COLOR_REVERT] will be returned to the Native tribe.</English>
+		<German>[COLOR_POSITIVE_TEXT]%d1 Landfelder[COLOR_REVERT] werden an den Indianerstamm zurückgegeben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_HELP_REFUSE</Tag>
+		<English>Relations with the tribe worsen by [COLOR_NEGATIVE_TEXT]-%d1[COLOR_REVERT].</English>
+		<German>Die Beziehungen zu diesem Stamm verschlechtern sich um [COLOR_NEGATIVE_TEXT]-%d1[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_PLOTS_RETURNED</Tag>
+		<English>[ICON_BULLET]%d1 disputed land plots have been returned to the %s2. No sooner have the settlers left than the Indians burn everything to the ground.</English>
+		<German>[ICON_BULLET]%d1 umstrittene Landfelder wurden an die %s2 zurückgegeben. Kaum sind die Siedler abgezogen brennen die Indianer alles nieder.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_LAND_RETURN_MAINTAIN</Tag>
+		<English>Relations with %s1 have worsened because the returned land was reclaimed.</English>
+		<German>Die Beziehungen zu %s1 haben sich verschlechtert, weil das zurückgegebene Land wieder beansprucht wurde.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_STIRRED_UP_NATIVES_LANDGRABBING_1</Tag>

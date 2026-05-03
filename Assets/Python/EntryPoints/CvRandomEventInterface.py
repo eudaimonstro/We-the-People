@@ -2023,7 +2023,7 @@ def spawnOwnPlayerUnitInEurope(argsList):
 	# profession mapping
 	professionMap = {
 		gc.getInfoTypeForString("UNITCLASS_CHRISTIAN_MISSIONARY"): gc.getInfoTypeForString("PROFESSION_MISSIONARY"),
-		gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER"): gc.getInfoTypeForString("PROFESSION_SCOUT"),
+		gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER"): gc.getInfoTypeForString("PROFESSION_NATIVE_TRADER"),
 	}
 
 	for i in range(iNumUnits):
@@ -9132,64 +9132,802 @@ def getHelpStirredUpNativesHorsesImmediate(argsList):
 
 ######## Stirred Up Natives Muskets event ###########
 
+STIRRED_UP_NATIVES_MUSKETS_YIELD = "YIELD_MUSKETS"
+STIRRED_UP_NATIVES_MUSKETS_DELIVERY_AMOUNT = 100
+STIRRED_UP_NATIVES_MUSKETS_IMMEDIATE_AMOUNT = 50
+
+
+def _sunMusketsKeyActive():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_ACTIVE]]"
+
+
+def _sunMusketsKeyCompleted():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_COMPLETED]]"
+
+
+def _sunMusketsKeyTarget():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_TARGET="
+
+
+def _sunMusketsKeyNativePlayer():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_NATIVE_PLAYER="
+
+
+def _sunMusketsKeyNativeCity():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_NATIVE_CITY="
+
+
+def _sunMusketsKeyPlotX():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_PLOT_X="
+
+
+def _sunMusketsKeyPlotY():
+	return "[[WTP_STIRRED_UP_NATIVES_MUSKETS_PLOT_Y="
+
+
+def _sunMusketsData(player):
+	if player.isNone():
+		return ""
+
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+
+	return szData
+
+
+def _sunMusketsHas(player, key):
+	return key in _sunMusketsData(player)
+
+
+def _sunMusketsAdd(player, key):
+	szData = _sunMusketsData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _sunMusketsRemove(player, key):
+	szData = _sunMusketsData(player)
+	if key in szData:
+		player.setScriptData(szData.replace(key, ""))
+
+
+def _sunMusketsGetNumber(player, key):
+	szData = _sunMusketsData(player)
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _sunMusketsSetNumber(player, key, iValue):
+	szData = _sunMusketsData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			szData = szData[:iStart] + szData[iEnd + 2:]
+
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _sunMusketsRemoveNumber(player, key):
+	szData = _sunMusketsData(player)
+
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			player.setScriptData(szData[:iStart] + szData[iEnd + 2:])
+
+
+def _sunMusketsScaledAmount(iBaseAmount):
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, iBaseAmount * Speed.getStoragePercent() / 100)
+
+
+def _sunGetMusketsContext(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	if not _sunHasNearbyBorder(player, nativeCity):
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
 def canTriggerStirredUpNativesMuskets(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
+	player, nativePlayer, nativeCity = _sunGetMusketsContext(kTriggeredData)
+	if player is None:
 		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
+
+	if _sunMusketsHas(player, _sunMusketsKeyCompleted()):
 		return False
-	if city.isNone():
+
+	if _sunMusketsHas(player, _sunMusketsKeyActive()):
 		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
-	eEvent1 = gc.getInfoTypeForString("EVENT_STIRRED_UP_NATIVES_MUSKETS_1")
-	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
-		return False
+
 	return True
 
-def applyStirredUpNativesMuskets(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
+
+def applyStirredUpNativesMusketsQuestStart(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity:
+	player, nativePlayer, nativeCity = _sunGetMusketsContext(kTriggeredData)
+	if player is None:
 		return
-	city.changeYieldStored(iYield, quantity)
-	nativecity.changeYieldStored(iYield, -quantity)
 
-def getHelpStirredUpNativesMuskets(argsList):
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_MUSKETS_YIELD)
+	iAmount = _sunMusketsScaledAmount(STIRRED_UP_NATIVES_MUSKETS_DELIVERY_AMOUNT)
+	iTarget = nativeCity.getYieldStored(iYield) + iAmount
+
+	_sunMusketsAdd(player, _sunMusketsKeyActive())
+	_sunMusketsSetNumber(player, _sunMusketsKeyTarget(), iTarget)
+	_sunMusketsSetNumber(player, _sunMusketsKeyNativePlayer(), nativePlayer.getID())
+	_sunMusketsSetNumber(player, _sunMusketsKeyNativeCity(), nativeCity.getID())
+	_sunMusketsSetNumber(player, _sunMusketsKeyPlotX(), nativeCity.getX())
+	_sunMusketsSetNumber(player, _sunMusketsKeyPlotY(), nativeCity.getY())
+
+	if player.isHuman():
+		CyInterface().addMessage(
+			kTriggeredData.ePlayer,
+			True,
+			gc.getEVENT_MESSAGE_TIME(),
+			localText.getText("TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_TARGET_MARKER", (nativeCity.getNameKey(),)),
+			"",
+			InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+			"",
+			ColorTypes(8),
+			nativeCity.getX(),
+			nativeCity.getY(),
+			True,
+			True
+		)
+
+
+def canDoStirredUpNativesMusketsImmediate(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _sunGetMusketsContext(kTriggeredData)
+	if player is None:
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_MUSKETS_YIELD)
+	iAmount = _sunMusketsScaledAmount(STIRRED_UP_NATIVES_MUSKETS_IMMEDIATE_AMOUNT)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return False
+
+	return True
+
+
+def applyStirredUpNativesMusketsImmediate(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunGetMusketsContext(kTriggeredData)
+	if player is None:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_MUSKETS_YIELD)
+	iAmount = _sunMusketsScaledAmount(STIRRED_UP_NATIVES_MUSKETS_IMMEDIATE_AMOUNT)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return
+
+	city.changeYieldStored(iYield, -iAmount)
+	nativeCity.changeYieldStored(iYield, iAmount)
+
+
+def isExpiredStirredUpNativesMuskets(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return True
+
+	if not _sunMusketsHas(player, _sunMusketsKeyActive()):
+		return True
+
+	iExpireTurns = event.getGenericParameter(1)
+	if iExpireTurns < 1:
+		iExpireTurns = 20
+
+	if CyGame().getGameTurn() < kTriggeredData.iTurn + iExpireTurns:
+		return False
+
+	iRequiredNativePlayer = _sunMusketsGetNumber(player, _sunMusketsKeyNativePlayer())
+	if iRequiredNativePlayer >= 0:
+		nativePlayer = gc.getPlayer(iRequiredNativePlayer)
+		if not nativePlayer.isNone() and nativePlayer.isNative():
+			iAttitude = event.getGenericParameter(2)
+			if iAttitude == 0:
+				iAttitude = -5
+
+			player.AI_changeAttitudeExtra(nativePlayer.getID(), iAttitude)
+			nativePlayer.AI_changeAttitudeExtra(player.getID(), iAttitude)
+
+	_sunMusketsRemove(player, _sunMusketsKeyActive())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyTarget())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyNativePlayer())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyNativeCity())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyPlotX())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyPlotY())
+
+	return True
+
+
+def canTriggerStirredUpNativesMusketsDone(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if not _sunMusketsHas(player, _sunMusketsKeyActive()):
+		return False
+
+	iRequiredNativePlayer = _sunMusketsGetNumber(player, _sunMusketsKeyNativePlayer())
+	if iRequiredNativePlayer < 0:
+		return False
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return False
+
+	if nativePlayer.getID() != iRequiredNativePlayer:
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	iRequiredNativeCity = _sunMusketsGetNumber(player, _sunMusketsKeyNativeCity())
+	if iRequiredNativeCity < 0:
+		return False
+
+	nativeCity = nativePlayer.getCity(iRequiredNativeCity)
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	iTarget = _sunMusketsGetNumber(player, _sunMusketsKeyTarget())
+	if iTarget < 0:
+		return False
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_MUSKETS_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return False
+
+	return True
+
+
+def applyStirredUpNativesMusketsDone(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return
+
+	if not _sunMusketsHas(player, _sunMusketsKeyActive()):
+		return
+
+	iRequiredNativePlayer = _sunMusketsGetNumber(player, _sunMusketsKeyNativePlayer())
+	if iRequiredNativePlayer < 0:
+		return
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return
+
+	if nativePlayer.getID() != iRequiredNativePlayer:
+		return
+
+	iRequiredNativeCity = _sunMusketsGetNumber(player, _sunMusketsKeyNativeCity())
+	if iRequiredNativeCity < 0:
+		return
+
+	nativeCity = nativePlayer.getCity(iRequiredNativeCity)
+	if nativeCity is None or nativeCity.isNone():
+		return
+
+	iTarget = _sunMusketsGetNumber(player, _sunMusketsKeyTarget())
+	if iTarget < 0:
+		return
+
+	iYield = gc.getInfoTypeForString(STIRRED_UP_NATIVES_MUSKETS_YIELD)
+	if nativeCity.getYieldStored(iYield) < iTarget:
+		return
+
+	_sunMusketsRemove(player, _sunMusketsKeyActive())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyTarget())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyNativePlayer())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyNativeCity())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyPlotX())
+	_sunMusketsRemoveNumber(player, _sunMusketsKeyPlotY())
+	_sunMusketsAdd(player, _sunMusketsKeyCompleted())
+
+
+def getHelpStirredUpNativesMusketsQuestStart(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey()))
-	return szHelp
 
-getHelpNativeAttackCity = get_simple_help("TXT_KEY_EVENT_NATIVES_ATTACK_HELP")
+	player, nativePlayer, nativeCity = _sunGetMusketsContext(kTriggeredData)
+	if player is None:
+		return u""
+
+	iAmount = _sunMusketsScaledAmount(STIRRED_UP_NATIVES_MUSKETS_DELIVERY_AMOUNT)
+	iTurns = event.getGenericParameter(1)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_QUEST_HELP",
+		(iAmount, iTurns, nativeCity.getNameKey())
+	)
+
+
+def getHelpStirredUpNativesMusketsImmediate(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _sunGetMusketsContext(kTriggeredData)
+	if player is None:
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return u""
+
+	iAmount = _sunMusketsScaledAmount(STIRRED_UP_NATIVES_MUSKETS_IMMEDIATE_AMOUNT)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_IMMEDIATE_HELP",
+		(iAmount, city.getNameKey())
+	)
+
+
+def getHelpStirredUpNativesMusketsDone(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_MUSKETS_DONE_HELP",
+		(1,)
+	)
+
+
+######## Native Land Return Event ###########
+
+NATIVE_LAND_RETURN_MIN_OWNED_PLOTS = 3
+NATIVE_LAND_RETURN_PLOTS_TO_RETURN = 2
+NATIVE_LAND_RETURN_RADIUS = 2
+NATIVE_LAND_RETURN_BASE_GOLD = 1000
+NATIVE_LAND_RETURN_LOCK_TURNS = 30
+
+
+def _nlrCompletedKey():
+	return "[[WTP_NATIVE_LAND_RETURN_COMPLETED]]"
+
+
+def _nlrLockKeyX(iIndex):
+	return "[[WTP_NATIVE_LAND_RETURN_LOCK_X_%d=" % iIndex
+
+
+def _nlrLockKeyY(iIndex):
+	return "[[WTP_NATIVE_LAND_RETURN_LOCK_Y_%d=" % iIndex
+
+
+def _nlrLockKeyOwner(iIndex):
+	return "[[WTP_NATIVE_LAND_RETURN_LOCK_OWNER_%d=" % iIndex
+
+
+def _nlrLockKeyCity(iIndex):
+	return "[[WTP_NATIVE_LAND_RETURN_LOCK_CITY_%d=" % iIndex
+
+
+def _nlrLockKeyUntil(iIndex):
+	return "[[WTP_NATIVE_LAND_RETURN_LOCK_UNTIL_%d=" % iIndex
+
+
+def _nlrData(player):
+	if player.isNone():
+		return ""
+
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+
+	return szData
+
+
+def _nlrHas(player, key):
+	return key in _nlrData(player)
+
+
+def _nlrAdd(player, key):
+	szData = _nlrData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _nlrGetNumber(player, key):
+	szData = _nlrData(player)
+
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _nlrRemoveNumber(player, key):
+	szData = _nlrData(player)
+
+	while True:
+		iStart = szData.find(key)
+		if iStart == -1:
+			break
+
+		iEnd = szData.find("]]", iStart)
+		if iEnd == -1:
+			break
+
+		szData = szData[:iStart] + szData[iEnd + 2:]
+
+	player.setScriptData(szData)
+
+
+def _nlrSetNumber(player, key, iValue):
+	_nlrRemoveNumber(player, key)
+
+	szData = _nlrData(player)
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _nlrClearReturnedPlot(player, iIndex):
+	_nlrRemoveNumber(player, _nlrLockKeyX(iIndex))
+	_nlrRemoveNumber(player, _nlrLockKeyY(iIndex))
+	_nlrRemoveNumber(player, _nlrLockKeyOwner(iIndex))
+	_nlrRemoveNumber(player, _nlrLockKeyCity(iIndex))
+	_nlrRemoveNumber(player, _nlrLockKeyUntil(iIndex))
+
+
+def _nlrClearAllReturnedPlots(player):
+	for iIndex in range(NATIVE_LAND_RETURN_PLOTS_TO_RETURN):
+		_nlrClearReturnedPlot(player, iIndex)
+
+
+def _nlrScaledGold():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, NATIVE_LAND_RETURN_BASE_GOLD * Speed.getStoragePercent() / 100)
+
+
+def _nlrContext(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isHuman() or player.isNative():
+		return (None, None, None)
+
+	if _nlrHas(player, _nlrCompletedKey()):
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def _nlrPlots(player, nativeCity):
+	aPlots = []
+
+	for iDX in range(-NATIVE_LAND_RETURN_RADIUS, NATIVE_LAND_RETURN_RADIUS + 1):
+		for iDY in range(-NATIVE_LAND_RETURN_RADIUS, NATIVE_LAND_RETURN_RADIUS + 1):
+			plot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.isWater() or plot.isCity():
+				continue
+
+			if plot.getOwner() == player.getID():
+				aPlots.append(plot)
+
+	return aPlots
+
+
+def _nlrForcePlotToNative(player, nativePlayer, plot):
+	if player.isNone() or nativePlayer.isNone():
+		return
+
+	if plot is None or plot.isNone():
+		return
+
+	if plot.isCity():
+		return
+
+	iPlayer = player.getID()
+	iNative = nativePlayer.getID()
+
+	try:
+		plot.setCulture(iPlayer, 0, True)
+	except:
+		try:
+			plot.setCulture(iPlayer, 0)
+		except:
+			pass
+
+	try:
+		plot.changeCulture(iNative, 1000, True)
+	except:
+		try:
+			plot.changeCulture(iNative, 1000)
+		except:
+			pass
+
+	plot.setOwner(iNative)
+
+
+def _nlrSaveReturnedPlot(player, iIndex, plot, nativePlayer, nativeCity):
+	_nlrSetNumber(player, _nlrLockKeyX(iIndex), plot.getX())
+	_nlrSetNumber(player, _nlrLockKeyY(iIndex), plot.getY())
+	_nlrSetNumber(player, _nlrLockKeyOwner(iIndex), nativePlayer.getID())
+	_nlrSetNumber(player, _nlrLockKeyCity(iIndex), nativeCity.getID())
+	_nlrSetNumber(player, _nlrLockKeyUntil(iIndex), CyGame().getGameTurn() + NATIVE_LAND_RETURN_LOCK_TURNS)
+
+
+def _nlrMaintainReturnedPlots(player):
+	if player.isNone():
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+
+	for iIndex in range(NATIVE_LAND_RETURN_PLOTS_TO_RETURN):
+		iX = _nlrGetNumber(player, _nlrLockKeyX(iIndex))
+		iY = _nlrGetNumber(player, _nlrLockKeyY(iIndex))
+		iOwner = _nlrGetNumber(player, _nlrLockKeyOwner(iIndex))
+		iCity = _nlrGetNumber(player, _nlrLockKeyCity(iIndex))
+		iUntil = _nlrGetNumber(player, _nlrLockKeyUntil(iIndex))
+
+		if iX < 0 or iY < 0 or iOwner < 0 or iCity < 0 or iUntil < 0:
+			continue
+
+		# Lock expired: apply penalty to the original native owner and stop touching the plots.
+		if iCurrentTurn >= iUntil:
+			nativePlayer = gc.getPlayer(iOwner)
+
+			if not nativePlayer.isNone() and nativePlayer.isNative() and nativePlayer.isAlive():
+				nativePlayer.AI_changeAttitudeExtra(player.getID(), -4)
+
+				if player.isHuman():
+					CyInterface().addMessage(
+						player.getID(),
+						True,
+						gc.getEVENT_MESSAGE_TIME(),
+						localText.getText(
+							"TXT_KEY_EVENT_NATIVE_LAND_RETURN_MAINTAIN",
+							(nativePlayer.getCivilizationDescription(0),)
+						),
+						"",
+						InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+						"",
+						gc.getInfoTypeForString("COLOR_RED"),
+						iX,
+						iY,
+						True,
+						True
+					)
+
+			_nlrClearAllReturnedPlots(player)
+			return False
+
+		plot = CyMap().plot(iX, iY)
+		if plot is None or plot.isNone():
+			_nlrClearReturnedPlot(player, iIndex)
+			continue
+
+		if plot.isCity():
+			_nlrClearReturnedPlot(player, iIndex)
+			continue
+
+		nativePlayer = gc.getPlayer(iOwner)
+		if nativePlayer.isNone() or not nativePlayer.isNative() or not nativePlayer.isAlive():
+			_nlrClearAllReturnedPlots(player)
+			return False
+
+		nativeCity = nativePlayer.getCity(iCity)
+		if nativeCity is None or nativeCity.isNone():
+			_nlrClearAllReturnedPlots(player)
+			return False
+
+		# Keep returned plots under native ownership and suppress European culture during lock period.
+		_nlrForcePlotToNative(player, nativePlayer, plot)
+
+	return False
+
+
+def canTriggerNativeLandReturn(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nlrContext(kTriggeredData)
+	if player is None:
+		return False
+
+	return len(_nlrPlots(player, nativeCity)) >= NATIVE_LAND_RETURN_MIN_OWNED_PLOTS
+
+
+def canDoNativeLandReturnPlots(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nlrContext(kTriggeredData)
+	if player is None:
+		return False
+
+	return len(_nlrPlots(player, nativeCity)) >= NATIVE_LAND_RETURN_PLOTS_TO_RETURN
+
+
+def _nlrMoveUnits(player, sourcePlot):
+	targetPlot = None
+
+	for iRadius in range(1, 6):
+		for iDX in range(-iRadius, iRadius + 1):
+			for iDY in range(-iRadius, iRadius + 1):
+				plot = plotXY(sourcePlot.getX(), sourcePlot.getY(), iDX, iDY)
+
+				if plot is None or plot.isNone():
+					continue
+
+				if plot.isWater():
+					continue
+
+				if plot.getOwner() != player.getID():
+					continue
+
+				targetPlot = plot
+				break
+
+			if targetPlot is not None:
+				break
+
+		if targetPlot is not None:
+			break
+
+	if targetPlot is None:
+		return
+
+	aUnits = []
+
+	for i in range(sourcePlot.getNumUnits()):
+		unit = sourcePlot.getUnit(i)
+		if not unit.isNone() and unit.getOwner() == player.getID():
+			aUnits.append(unit)
+
+	for unit in aUnits:
+		unit.setXY(targetPlot.getX(), targetPlot.getY())
+
+
+def applyNativeLandReturnPlots(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nlrContext(kTriggeredData)
+	if player is None:
+		return
+
+	iReturned = 0
+
+	for plot in _nlrPlots(player, nativeCity):
+		if iReturned >= NATIVE_LAND_RETURN_PLOTS_TO_RETURN:
+			break
+
+		_nlrMoveUnits(player, plot)
+
+		CyEngine().triggerEffect(
+			gc.getInfoTypeForString("EFFECT_CITY_FIRE"),
+			plot.getPoint()
+		)
+
+		if plot.getImprovementType() != -1:
+			plot.setImprovementType(-1)
+
+		_nlrForcePlotToNative(player, nativePlayer, plot)
+		_nlrSaveReturnedPlot(player, iReturned, plot, nativePlayer, nativeCity)
+
+		iReturned += 1
+
+	if iReturned > 0:
+		_nlrAdd(player, _nlrCompletedKey())
+
+
+def canDoNativeLandReturnGold(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nlrContext(kTriggeredData)
+	if player is None:
+		return False
+
+	return player.getGold() >= _nlrScaledGold()
+
+
+def applyNativeLandReturnGold(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nlrContext(kTriggeredData)
+	if player is None:
+		return
+
+	iGold = _nlrScaledGold()
+	if player.getGold() < iGold:
+		return
+
+	player.changeGold(-iGold)
+	nativePlayer.changeGold(iGold)
+	_nlrAdd(player, _nlrCompletedKey())
+
+
+def applyNativeLandReturnRefuse(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nlrContext(kTriggeredData)
+	if player is None:
+		return
+
+	_nlrAdd(player, _nlrCompletedKey())
+
+
+def canTriggerNativeLandReturnMaintain(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isAlive():
+		return False
+
+	return _nlrMaintainReturnedPlots(player)
+
+
+def getHelpNativeLandReturnPlots(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_LAND_RETURN_HELP_PLOTS",
+		(NATIVE_LAND_RETURN_PLOTS_TO_RETURN,)
+	)
+
+
+def getHelpNativeLandReturnRefuse(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_LAND_RETURN_HELP_REFUSE",
+		(4,)
+	)
 
 ######## Initial Native Trade Event ###########
 
