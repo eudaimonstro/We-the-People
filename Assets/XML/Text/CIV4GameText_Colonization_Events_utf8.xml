@@ -6688,6 +6688,92 @@
 		<Russian>Отношения между империей [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] и некоторыми индейцами улучшаются.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_LANDGRABBING_GOLD_HELP</Tag>
+		<English>Pay %d1 gold to the %s2 as compensation.</English>
+		<German>Zahlt %d1 Gold als Entschädigung an die %s2.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_SACRED_GROUNDS_1</Tag>
+		<English>The elders of a nearby tribe declare that one of your newly claimed territories lies upon sacred ground. They demand that the place be respected and given back to the tribe.</English>
+		<German>Die Ältesten eines nahegelegenen Stammes erklären, dass eines Eurer neu beanspruchten Gebiete auf heiligem Boden liegt. Sie verlangen, dass dieser Ort geachtet und dem Stamm zurückgegeben wird.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_1</Tag>
+		<English>Return the sacred ground for a time and honour their traditions. This will help our relationship. </English>
+		<German>Gebt den heiligen Boden den Indianern zurück und achtet ihre Bräuche. Das wird unseren Beziehungen helfen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_2</Tag>
+		<English>For heaven’s sake, pay the savages some compensation and tear down our buildings. But then there must be peace.</English>
+		<German>Zahlt den Wilden um Himmels Willen eine Entschädigung und entfernt unsere Bauten. Dann muss aber Ruhe sein.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_3</Tag>
+		<English>Refuse their claim. The land now serves the colony. Furthermore, all the graves and memorials have already been destroyed.</English>
+		<German>Weist ihren Anspruch zurück. Das Land dient nun der Kolonie. Außerdem wurden bereits alle Gräber und Gedenkstätten zerstört.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_LN_1</Tag>
+		<English>The sacred land has been returned to the nearby tribe. A burial site is established there, and [COLOR_HIGHLIGHT_TEXT]relations improve[COLOR_REVERT] for a time.</English>
+		<German>Heiliger Boden wurde an den nahegelegenen Stamm zurückgegeben. Dort wurde eine Begräbnisstätte wiedererrichtet, und die [COLOR_HIGHLIGHT_TEXT]Beziehungen verbessern sich[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_LN_2</Tag>
+		<English>Compensation has been offered to the nearby tribe for settling upon sacred land. The site is cleared, yet relations remain strained.</English>
+		<German>Dem nahegelegenen Stamm wurde für die Besiedlung heiligen Landes eine Entschädigung angeboten. Der Ort wurde geräumt, doch die Beziehungen bleiben belastet.</German>
+		<Russian/>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_LN_3</Tag>
+		<English>The demands of the nearby tribe have been refused. [COLOR_HIGHLIGHT_TEXT]Tensions rise[COLOR_REVERT], and open conflict follows.</English>
+		<German>Die Forderungen des nahegelegenen Stammes wurden zurückgewiesen. Die [COLOR_HIGHLIGHT_TEXT]Spannungen nehmen zu[COLOR_REVERT], und offener Krieg droht.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_RETURN_HELP</Tag>
+		<English>[ICON_BULLET]One sacred plot is returned to the natives for [COLOR_HIGHLIGHT_TEXT]%d1 turns[COLOR_REVERT]. Relations improve and you gain [COLOR_HIGHLIGHT_TEXT]%d2 religious father points[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Ein heiliger Plot wird für [COLOR_HIGHLIGHT_TEXT]%d1 Runden[COLOR_REVERT] an die Ureinwohner zurückgegeben. Die Beziehungen verbessern sich und Ihr erhaltet [COLOR_HIGHLIGHT_TEXT]%d2 Religions-Gründerväterpunkte[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_COMPENSATION_HELP</Tag>
+		<English>[ICON_BULLET]If an improvement stands upon the sacred ground, it will be destroyed.</English>
+		<German>[ICON_BULLET]Falls auf dem heiligen Boden eine Modernisierung steht, wird sie zerstört.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_REFUSE_HELP</Tag>
+		<English>[ICON_BULLET]Hostile natives will attack the chosen settlement immediately.</English>
+		<German>[ICON_BULLET]Feindliche Ureinwohner greifen die ausgewählte Siedlung sofort an.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_MAINTAIN</Tag>
+		<English>Native Sacred Grounds Maintain</English>
+		<German>Heiliger Boden der Ureinwohner Verwaltung</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_SACRED_GROUNDS_MAINTAIN</Tag>
+		<English>Native Sacred Grounds Maintain</English>
+		<German>Heiliger Boden der Ureinwohner Verwaltung</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_RELATIONS_WORSEN</Tag>
+		<English>Though peace was made for a time, the people of %s1 have not forgotten the desecration of their sacred lands. Old grievances now kindle fresh resentment.</English>
+		<German>Obwohl für eine Zeit Frieden herrschte, hat das Volk von %s1 die Entweihung seines heiligen Landes nicht vergessen. Alte Kränkungen nähren nun neuen Groll.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVES_ATTACK_HELP</Tag>
 		<English>The Natives will [COLOR_FONT_GOLD]attack[COLOR_REVERT] the colony. Only recommended if the space around the colony is not occupied by any unit.</English>
 		<German>Die Indianer werden die Siedlung [COLOR_FONT_GOLD]angreifen[COLOR_REVERT]. Nur zu empfehlen, wenn der Platz rund um die Kolonie nicht von irgendeiner Einheit besetzt ist.</German>

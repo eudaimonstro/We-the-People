@@ -9929,6 +9929,773 @@ def getHelpNativeLandReturnRefuse(argsList):
 		(4,)
 	)
 
+
+######## Stirred Up Natives Landgrabbing event ###########
+
+STIRRED_UP_NATIVES_LANDGRABBING_MIN_OWNED_PLOTS = 5
+STIRRED_UP_NATIVES_LANDGRABBING_RADIUS = 2
+STIRRED_UP_NATIVES_LANDGRABBING_BASE_GOLD = 4000
+
+
+def _sunLandgrabbingScaledGold():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, STIRRED_UP_NATIVES_LANDGRABBING_BASE_GOLD * Speed.getStoragePercent() / 100)
+
+
+def _sunLandgrabbingContext(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return (None, None, None)
+
+	if not player.isPlayable():
+		return (None, None, None)
+
+	if player.isNative():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone():
+		return (None, None, None)
+
+	if not nativePlayer.isNative():
+		return (None, None, None)
+
+	if not nativePlayer.isAlive():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def _sunLandgrabbingPlots(player, nativeCity):
+	aPlots = []
+
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return aPlots
+
+	iPlayer = player.getID()
+
+	for iDX in range(-STIRRED_UP_NATIVES_LANDGRABBING_RADIUS, STIRRED_UP_NATIVES_LANDGRABBING_RADIUS + 1):
+		for iDY in range(-STIRRED_UP_NATIVES_LANDGRABBING_RADIUS, STIRRED_UP_NATIVES_LANDGRABBING_RADIUS + 1):
+			plot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+
+			if plot is None or plot.isNone():
+				continue
+
+			if plotDistance(nativeCity.getX(), nativeCity.getY(), plot.getX(), plot.getY()) > STIRRED_UP_NATIVES_LANDGRABBING_RADIUS:
+				continue
+
+			if plot.isWater():
+				continue
+
+			if plot.isCity():
+				continue
+
+			if plot.getOwner() == iPlayer:
+				aPlots.append(plot)
+
+	return aPlots
+
+
+def canTriggerStirredUpNativesLandgrabbing(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return False
+
+	return len(_sunLandgrabbingPlots(player, nativeCity)) >= STIRRED_UP_NATIVES_LANDGRABBING_MIN_OWNED_PLOTS
+
+
+def canDoStirredUpNativesLandgrabbing(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return False
+
+	return len(_sunLandgrabbingPlots(player, nativeCity)) >= STIRRED_UP_NATIVES_LANDGRABBING_MIN_OWNED_PLOTS
+
+
+def canDoStirredUpNativesLandgrabbingGold(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if len(_sunLandgrabbingPlots(player, nativeCity)) < STIRRED_UP_NATIVES_LANDGRABBING_MIN_OWNED_PLOTS:
+		return False
+
+	return player.getGold() >= _sunLandgrabbingScaledGold()
+
+
+def _sunLandgrabbingSpawnHostileAdjacentToCity(city, iHostileUnitClass):
+	if city is None or city.isNone():
+		return None
+
+	if iHostileUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	iUnitType = barbCiv.getCivilizationUnits(iHostileUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+
+			pUnit = barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if pUnit is not None and not pUnit.isNone():
+				return pUnit
+
+	return None
+
+
+def applyStirredUpNativesLandgrabbingAttack(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return
+
+	if len(_sunLandgrabbingPlots(player, nativeCity)) < STIRRED_UP_NATIVES_LANDGRABBING_MIN_OWNED_PLOTS:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
+	cityPlot = city.plot()
+	if cityPlot is None or cityPlot.isNone():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+
+	for i in range(iNumHostiles):
+		hostileUnit = _sunLandgrabbingSpawnHostileAdjacentToCity(city, iHostileUnitClass)
+
+		if hostileUnit is not None and not hostileUnit.isNone():
+			if hostileUnit.canMoveInto(cityPlot, True, False, False):
+				hostileUnit.attack(cityPlot, False)
+
+
+def applyStirredUpNativesLandgrabbingGold(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return
+
+	if len(_sunLandgrabbingPlots(player, nativeCity)) < STIRRED_UP_NATIVES_LANDGRABBING_MIN_OWNED_PLOTS:
+		return
+
+	iGold = _sunLandgrabbingScaledGold()
+	if player.getGold() < iGold:
+		return
+
+	player.changeGold(-iGold)
+	nativePlayer.changeGold(iGold)
+
+
+def getHelpStirredUpNativesLandgrabbingGold(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_LANDGRABBING_GOLD_HELP",
+		(_sunLandgrabbingScaledGold(), nativePlayer.getCivilizationDescription(0))
+	)
+
+
+######## Native Sacred Grounds Event ###########
+
+NATIVE_SACRED_GROUNDS_MIN_OWNED_PLOTS = 5
+NATIVE_SACRED_GROUNDS_RADIUS = 2
+NATIVE_SACRED_GROUNDS_BASE_LOCK_TURNS = 40
+NATIVE_SACRED_GROUNDS_BASE_RELIGION_POINTS = 300
+NATIVE_SACRED_GROUNDS_BURIAL_IMPROVEMENT = "IMPROVEMENT_GOODY_HUT"
+
+
+def _nsgScaledTurns():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, NATIVE_SACRED_GROUNDS_BASE_LOCK_TURNS * Speed.getGrowthPercent() / 100)
+
+
+def _nsgScaledReligionPoints():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
+	return max(1, NATIVE_SACRED_GROUNDS_BASE_RELIGION_POINTS * Speed.getFatherPercent() / 100 * Handicap.getFatherPercent() / 100)
+
+
+def _nsgData(player):
+	if player.isNone():
+		return ""
+	szData = player.getScriptData()
+	if szData is None:
+		return ""
+	return szData
+
+
+def _nsgHas(player, key):
+	return key in _nsgData(player)
+
+
+def _nsgAdd(player, key):
+	szData = _nsgData(player)
+	if key not in szData:
+		player.setScriptData(szData + key)
+
+
+def _nsgRemove(player, key):
+	szData = _nsgData(player)
+	if key in szData:
+		player.setScriptData(szData.replace(key, ""))
+
+
+def _nsgGetNumber(player, key):
+	szData = _nsgData(player)
+	iStart = szData.find(key)
+	if iStart == -1:
+		return -1
+	iStart += len(key)
+	iEnd = szData.find("]]", iStart)
+	if iEnd == -1:
+		return -1
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _nsgSetNumber(player, key, iValue):
+	szData = _nsgData(player)
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			szData = szData[:iStart] + szData[iEnd + 2:]
+	player.setScriptData(szData + "%s%d]]" % (key, iValue))
+
+
+def _nsgRemoveNumber(player, key):
+	szData = _nsgData(player)
+	iStart = szData.find(key)
+	if iStart != -1:
+		iEnd = szData.find("]]", iStart)
+		if iEnd != -1:
+			player.setScriptData(szData[:iStart] + szData[iEnd + 2:])
+
+
+def _nsgCompletedKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_COMPLETED]]"
+
+
+def _nsgReturnedKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_RETURNED]]"
+
+
+def _nsgLockXKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_LOCK_X="
+
+
+def _nsgLockYKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_LOCK_Y="
+
+
+def _nsgLockOwnerKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_LOCK_OWNER="
+
+
+def _nsgLockCityKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_LOCK_CITY="
+
+
+def _nsgLockUntilKey():
+	return "[[WTP_NATIVE_SACRED_GROUNDS_LOCK_UNTIL="
+
+
+def _nsgContext(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	if _nsgHas(player, _nsgCompletedKey()):
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isAlive() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity is None or nativeCity.isNone():
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def _nsgIsSacredPlot(plot):
+	if plot is None or plot.isNone():
+		return False
+	if plot.getBonusType() != -1:
+		return True
+	if plot.isRiver():
+		return True
+	return False
+
+
+def _nsgPlots(player, nativeCity):
+	aPlots = []
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return aPlots
+
+	iPlayer = player.getID()
+
+	for iDX in range(-NATIVE_SACRED_GROUNDS_RADIUS, NATIVE_SACRED_GROUNDS_RADIUS + 1):
+		for iDY in range(-NATIVE_SACRED_GROUNDS_RADIUS, NATIVE_SACRED_GROUNDS_RADIUS + 1):
+			plot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if plot is None or plot.isNone():
+				continue
+			if plotDistance(nativeCity.getX(), nativeCity.getY(), plot.getX(), plot.getY()) > NATIVE_SACRED_GROUNDS_RADIUS:
+				continue
+			if plot.isWater():
+				continue
+			if plot.isCity():
+				continue
+			if plot.getOwner() != iPlayer:
+				continue
+			aPlots.append(plot)
+
+	return aPlots
+
+
+def _nsgSacredPlots(player, nativeCity):
+	aPlots = []
+	for plot in _nsgPlots(player, nativeCity):
+		if _nsgIsSacredPlot(plot):
+			aPlots.append(plot)
+	return aPlots
+
+
+def _nsgBestSacredPlot(player, nativeCity, bPreferImprovement):
+	aPlots = _nsgSacredPlots(player, nativeCity)
+	if len(aPlots) == 0:
+		return None
+
+	if bPreferImprovement:
+		for plot in aPlots:
+			if plot.getImprovementType() != -1:
+				return plot
+
+	for plot in aPlots:
+		if plot.getBonusType() != -1:
+			return plot
+
+	return aPlots[0]
+
+
+def canTriggerNativeSacredGrounds(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nsgContext(kTriggeredData)
+	if player is None:
+		return False
+
+	if len(_nsgPlots(player, nativeCity)) < NATIVE_SACRED_GROUNDS_MIN_OWNED_PLOTS:
+		return False
+
+	if len(_nsgSacredPlots(player, nativeCity)) < 1:
+		return False
+
+	return True
+
+
+def canDoNativeSacredGrounds(argsList):
+	return canTriggerNativeSacredGrounds(argsList)
+
+
+def _nsgFindNearestOwnPlot(player, sourcePlot):
+	if player.isNone() or sourcePlot is None or sourcePlot.isNone():
+		return None
+
+	iPlayer = player.getID()
+
+	for iRange in range(1, 8):
+		for iDX in range(-iRange, iRange + 1):
+			for iDY in range(-iRange, iRange + 1):
+				plot = plotXY(sourcePlot.getX(), sourcePlot.getY(), iDX, iDY)
+				if plot is None or plot.isNone():
+					continue
+				if plot.getOwner() != iPlayer:
+					continue
+				if plot.isWater():
+					continue
+				if plot.isImpassable():
+					continue
+				return plot
+
+	return None
+
+
+def _nsgMoveUnits(player, plot):
+	if player.isNone() or plot is None or plot.isNone():
+		return
+
+	targetPlot = _nsgFindNearestOwnPlot(player, plot)
+	if targetPlot is None or targetPlot.isNone():
+		return
+
+	iPlayer = player.getID()
+	aUnits = []
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+		if unit.isNone():
+			continue
+		if unit.getOwner() == iPlayer:
+			aUnits.append(unit)
+
+	for unit in aUnits:
+		if not unit.isNone():
+			unit.setXY(targetPlot.getX(), targetPlot.getY(), False, True, True)
+
+
+def _nsgForcePlotToNative(plot, player, nativePlayer, bRemoveImprovement):
+	if plot is None or plot.isNone():
+		return
+	if player.isNone() or nativePlayer.isNone():
+		return
+
+	if bRemoveImprovement and plot.getImprovementType() != -1:
+		plot.setImprovementType(-1)
+
+	plot.setCulture(player.getID(), 0, True)
+	plot.setCulture(nativePlayer.getID(), 10000, True)
+	plot.setOwner(nativePlayer.getID())
+
+
+def _nsgSaveLock(player, plot, nativePlayer, nativeCity):
+	if player.isNone() or plot is None or plot.isNone():
+		return
+
+	_nsgSetNumber(player, _nsgLockXKey(), plot.getX())
+	_nsgSetNumber(player, _nsgLockYKey(), plot.getY())
+	_nsgSetNumber(player, _nsgLockOwnerKey(), nativePlayer.getID())
+	_nsgSetNumber(player, _nsgLockCityKey(), nativeCity.getID())
+	_nsgSetNumber(player, _nsgLockUntilKey(), CyGame().getGameTurn() + _nsgScaledTurns())
+
+
+def _nsgClearLock(player):
+	_nsgRemoveNumber(player, _nsgLockXKey())
+	_nsgRemoveNumber(player, _nsgLockYKey())
+	_nsgRemoveNumber(player, _nsgLockOwnerKey())
+	_nsgRemoveNumber(player, _nsgLockCityKey())
+	_nsgRemoveNumber(player, _nsgLockUntilKey())
+
+
+def applyNativeSacredGroundsReturn(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nsgContext(kTriggeredData)
+	if player is None:
+		return
+
+	plot = _nsgBestSacredPlot(player, nativeCity, False)
+	if plot is None or plot.isNone():
+		return
+
+	_nsgMoveUnits(player, plot)
+	_nsgForcePlotToNative(plot, player, nativePlayer, True)
+
+	iBurial = gc.getInfoTypeForString(NATIVE_SACRED_GROUNDS_BURIAL_IMPROVEMENT)
+	if iBurial != -1:
+		plot.setImprovementType(iBurial)
+
+	_nsgSaveLock(player, plot, nativePlayer, nativeCity)
+	_nsgAdd(player, _nsgCompletedKey())
+	_nsgAdd(player, _nsgReturnedKey())
+
+	iReligion = gc.getInfoTypeForString("FATHER_POINT_RELIGION")
+	if iReligion != -1:
+		gc.getTeam(player.getTeam()).changeFatherPoints(iReligion, _nsgScaledReligionPoints())
+
+
+def applyNativeSacredGroundsCompensation(argsList):
+	kTriggeredData = argsList[0]
+	player, nativePlayer, nativeCity = _nsgContext(kTriggeredData)
+	if player is None:
+		return
+
+	plot = _nsgBestSacredPlot(player, nativeCity, True)
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getImprovementType() != -1:
+		plot.setImprovementType(-1)
+
+	_nsgAdd(player, _nsgCompletedKey())
+
+
+def _nsgSpawnHostileAdjacentToCity(city, iHostileUnitClass):
+	if city is None or city.isNone():
+		return None
+
+	if iHostileUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return None
+
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	iUnitType = barbCiv.getCivilizationUnits(iHostileUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			pLoop = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if pLoop is None or pLoop.isNone():
+				continue
+			if pLoop.isWater():
+				continue
+			if pLoop.isImpassable():
+				continue
+			if pLoop.isPeak():
+				continue
+			if pLoop.isCity():
+				continue
+			if pLoop.isUnit():
+				continue
+
+			pUnit = barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				pLoop.getX(),
+				pLoop.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if pUnit is not None and not pUnit.isNone():
+				return pUnit
+
+	return None
+
+
+def applyNativeSacredGroundsRefuse(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _nsgContext(kTriggeredData)
+	if player is None:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
+	cityPlot = city.plot()
+	if cityPlot is None or cityPlot.isNone():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 1
+
+	for i in range(iNumHostiles):
+		hostileUnit = _nsgSpawnHostileAdjacentToCity(city, iHostileUnitClass)
+		if hostileUnit is not None and not hostileUnit.isNone():
+			if hostileUnit.canMoveInto(cityPlot, True, False, False):
+				hostileUnit.attack(cityPlot, False)
+
+	_nsgAdd(player, _nsgCompletedKey())
+
+
+def canTriggerNativeSacredGroundsMaintain(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	_nsgMaintainLockedPlot(player)
+
+	return False
+
+
+def _nsgCheckBurialViolation(player, nativePlayer, plot):
+	iBurial = gc.getInfoTypeForString(NATIVE_SACRED_GROUNDS_BURIAL_IMPROVEMENT)
+	if iBurial == -1:
+		return False
+
+	if not _nsgHas(player, _nsgReturnedKey()):
+		return False
+
+	if plot.getImprovementType() == iBurial:
+		return False
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+		if unit.isNone():
+			continue
+
+		violator = gc.getPlayer(unit.getOwner())
+		if violator.isNone():
+			continue
+		if not violator.isPlayable() or violator.isNative():
+			continue
+
+		if not gc.getTeam(nativePlayer.getTeam()).isAtWar(violator.getTeam()):
+			gc.getTeam(nativePlayer.getTeam()).declareWar(
+				violator.getTeam(),
+				False,
+				WarPlanTypes.WARPLAN_TOTAL
+			)
+
+		_nsgRemove(player, _nsgReturnedKey())
+		_nsgClearLock(player)
+		return True
+
+	return False
+
+
+def _nsgMaintainLockedPlot(player):
+	if player.isNone():
+		return
+
+	iX = _nsgGetNumber(player, _nsgLockXKey())
+	iY = _nsgGetNumber(player, _nsgLockYKey())
+	iNative = _nsgGetNumber(player, _nsgLockOwnerKey())
+	iCity = _nsgGetNumber(player, _nsgLockCityKey())
+	iUntil = _nsgGetNumber(player, _nsgLockUntilKey())
+
+	if iX < 0 or iY < 0 or iNative < 0 or iUntil < 0:
+		return
+
+	nativePlayer = gc.getPlayer(iNative)
+	if nativePlayer.isNone() or not nativePlayer.isAlive():
+		_nsgRemove(player, _nsgReturnedKey())
+		_nsgClearLock(player)
+		return
+
+	nativeCity = nativePlayer.getCity(iCity)
+	if nativeCity is None or nativeCity.isNone():
+		_nsgRemove(player, _nsgReturnedKey())
+		_nsgClearLock(player)
+		return
+
+	if CyGame().getGameTurn() >= iUntil:
+		if _nsgHas(player, _nsgReturnedKey()):
+			nativePlayer.AI_changeAttitudeExtra(player.getID(), -4)
+			_nsgRemove(player, _nsgReturnedKey())
+
+			CyInterface().addMessage(
+				player.getID(),
+				True,
+				20,
+				localText.getText(
+					"TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_RELATIONS_WORSEN",
+					(nativeCity.getNameKey(),)
+				),
+				None,
+				InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT,
+				None,
+				ColorTypes(7),
+				-1,
+				-1,
+				False,
+				False
+			)
+
+		_nsgClearLock(player)
+		return
+
+	plot = CyMap().plot(iX, iY)
+	if plot is None or plot.isNone():
+		_nsgRemove(player, _nsgReturnedKey())
+		_nsgClearLock(player)
+		return
+
+	if _nsgCheckBurialViolation(player, nativePlayer, plot):
+		return
+
+	_nsgForcePlotToNative(plot, player, nativePlayer, False)
+
+
+def getHelpNativeSacredGroundsReturn(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_RETURN_HELP",
+		(_nsgScaledTurns(), _nsgScaledReligionPoints())
+	)
+
+
+def getHelpNativeSacredGroundsCompensation(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_COMPENSATION_HELP",
+		()
+	)
+
+
+def getHelpNativeSacredGroundsRefuse(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_SACRED_GROUNDS_REFUSE_HELP",
+		()
+	)
+
+
 ######## Initial Native Trade Event ###########
 
 ######## Initial Trade With Natives ###########
