@@ -4021,6 +4021,7 @@
 		<Italian>Non importa...</Italian>
 		<Spanish>No importa...</Spanish>
 		<Russian>Забудь про это...</Russian>
+		<Hungarian>Hagyjuk...</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_PROPOSAL_1</Tag>
@@ -4030,6 +4031,7 @@
 		<Italian>Vorremmo fare un'offerta commerciale.</Italian>
 		<Spanish>Nos gustaría proponeros un intercambio.</Spanish>
 		<Russian>Мы хотим сделать торговое предложение...</Russian>
+		<Hungarian>Szeretnénk egy kereskedelmi ajánlatot tenni...</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_COMPLETE_DEAL_1</Tag>
@@ -4039,6 +4041,7 @@
 		<Italian>Cosa chiedi in cambio per concludere l'affare?</Italian>
 		<Spanish>¿Qué hace falta para que este trato llegue a buen puerto?</Spanish>
 		<Russian>Как помочь состояться этой сделке?</Russian>
+		<Hungarian>Hogyan válhatna valóra ez az üzlet?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FISH_FOR_DEAL_1</Tag>
@@ -4048,15 +4051,17 @@
 		<Italian>Cosa puoi darmi in cambio di questo?</Italian>
 		<Spanish>¿Qué nos dais por esto?</Spanish>
 		<Russian>Что ты можешь предложить мне за это?</Russian>
+		<Hungarian>Mit adsz ezért cserébe?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_SUGGEST_PEACE_1</Tag>
-		<English>Lets stop this pointless fighting and declare peace!</English>
+		<English>Let's stop this pointless fighting and declare peace!</English>
 		<French>Mettons fin à cette guerre inutile et faisons la paix !</French>
 		<German>Lasst uns dieses sinnlose Kämpfen beenden und Frieden schließen!</German>
 		<Italian>Interrompiamo questi combattimenti senza senso e dichiariamo la pace!</Italian>
 		<Spanish>¡Detengamos esta lucha absurda y hagamos las paces!</Spanish>
 		<Russian>Прекратим эту бессмысленную войну и объявим мир!</Russian>
+		<Hungarian>Hagyjuk abba ezt az értelmetlen harcot és hirdessünk békét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_OFFER_PEACE_1</Tag>
@@ -4066,6 +4071,7 @@
 		<Italian>Seppelliamo l'ascia di guerra. Qual è il prezzo della pace?</Italian>
 		<Spanish>Enterremos el hacha de guerra. ¿Qué precio tiene la paz?</Spanish>
 		<Russian>Давайте зароем топор войны. Какова цена мира?</Russian>
+		<Hungarian>Ássuk el a csatabárdot! Mi az ára a békének?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CURRENT_DEALS_1</Tag>
@@ -4075,6 +4081,7 @@
 		<Italian>Che accordi abbiamo in comune?</Italian>
 		<Spanish>¿Qué tratos tenemos actualmente?</Spanish>
 		<Russian>Какие общие дела у нас есть сейчас?</Russian>
+		<Hungarian>Mik a jelenlegi közös üzleteink?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ASK_1</Tag>
@@ -4084,6 +4091,7 @@
 		<Italian>Avresti un po' di questi, in nome della nostra amicizia?</Italian>
 		<Spanish>¿Podríais darles esto a unos buenos amigos?</Spanish>
 		<Russian>Не могли бы вы пожертвовать этим ради хорошего друга?</Russian>
+		<Hungarian>Meg tudnád ezt adni egy jó barátodnak?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_DEMAND_1</Tag>
@@ -4093,6 +4101,7 @@
 		<Italian>Ti chiediamo di darci questo tributo.</Italian>
 		<Spanish>Exigimos que nos deis esto como tributo.</Spanish>
 		<Russian>Мы требуем, чтобы вы отдали это нам в качестве дани!</Russian>
+		<Hungarian>Követeljük, hogy ezt add át nekünk tiszteletünk jeléül!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_DEMAND_TEAM_1</Tag>
@@ -4102,6 +4111,7 @@
 		<Italian>Tornerà sicuramente utile...</Italian>
 		<Spanish>Seguro que nos vendrá muy bien...</Spanish>
 		<Russian>Это наверняка пригодится.</Russian>
+		<Hungarian>Ez biztosan jól jönne.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACCEPT_OFFER_1</Tag>
@@ -4111,6 +4121,7 @@
 		<Italian>Sembra un affare!</Italian>
 		<Spanish>¡Parece que hay trato!</Spanish>
 		<Russian>Отличная сделка!!!</Russian>
+		<Hungarian>Úgy hangzik, mint egy jó üzlet!!!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REJECT_OFFER_1</Tag>
@@ -4120,6 +4131,7 @@
 		<Italian>Non succederà.</Italian>
 		<Spanish>Ni en broma.</Spanish>
 		<Russian>Этого не будет.</Russian>
+		<Hungarian>Ez nem fog megtörténni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_RENEGOTIATE_1</Tag>
@@ -4129,6 +4141,7 @@
 		<Italian>Vuoi negoziare di nuovo?</Italian>
 		<Spanish>¿Os importaría renegociar?</Spanish>
 		<Russian>Может пересмотрим условия?</Russian>
+		<Hungarian>Szeretnéd átbeszélni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NO_RENEGOTIATE_1</Tag>
@@ -4138,6 +4151,7 @@
 		<Italian>Abbastanza onesto. (Esci)</Italian>
 		<Spanish>Ya está bien. (Salir)</Spanish>
 		<Russian>Справедливо. (Уйти)</Russian>
+		<Hungarian>Elég tisztességes. (Kilépés)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_GIVE_HELP_1</Tag>
@@ -4147,6 +4161,7 @@
 		<Italian>Certo! Siamo sempre felici di aiutare.</Italian>
 		<Spanish>¡Claro! ¡Siempre estamos dispuestos a ayudar!</Spanish>
 		<Russian>Конечно! Мы всегда рады помочь!</Russian>
+		<Hungarian>Persze! Mindig szívesen segítünk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REFUSE_HELP_1</Tag>
@@ -4156,6 +4171,7 @@
 		<Italian>Mi spiace, ma questo non è un giardino di rose.</Italian>
 		<Spanish>Lo sentimos, pero esto tampoco es un jardín de rosas.</Spanish>
 		<Russian>Извини, но нет.</Russian>
+		<Hungarian>Sajnálom - nem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACCEPT_DEMAND_1</Tag>
@@ -4165,6 +4181,7 @@
 		<Italian>Bene, se insisti...</Italian>
 		<Spanish>Bueno, si insistís...</Spanish>
 		<Russian>Ну, если вы настаиваете...</Russian>
+		<Hungarian>Sajnálom - nem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REJECT_DEMAND_1</Tag>
@@ -4174,6 +4191,7 @@
 		<Italian>Ignoriamo le tue vuote minacce!</Italian>
 		<Spanish>¡No cederemos ante vuestras amenazas vacías!</Spanish>
 		<Russian>Мы смеемся над вашими пустыми угрозами!</Russian>
+		<Hungarian>Visszautasítjuk üres fenyegetéseidet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CONVERT_1</Tag>
@@ -4183,6 +4201,7 @@
 		<Italian>D'accordo. Ci convertiremo alla religione [COLOR_SELECTED_TEXT][OUR_STATE_RELIGION:2][COLOR_REVERT] immediatamente. (Conversione religiosa)</Italian>
 		<Spanish>Aceptamos. Nos convertiremos al [COLOR_SELECTED_TEXT][OUR_STATE_RELIGION][COLOR_REVERT] de inmediato. (Convertirse a una religión)</Spanish>
 		<Russian>Я согласен. Мы немедленно примем религию [COLOR_SELECTED_TEXT][OUR_STATE_RELIGION][COLOR_REVERT]. (сменить религию)</Russian>
+		<Hungarian>Egyetértek. Azonnal felvesszük [COLOR_SELECTED_TEXT][OUR_STATE_RELIGION][COLOR_REVERT] vallást. (Vallás Felvétele)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NO_CONVERT_1</Tag>
@@ -4192,6 +4211,7 @@
 		<Italian>La nostra gente non abbandonerà mai le proprie credenze.</Italian>
 		<Spanish>Nuestro pueblo nunca renunciará a sus creencias.</Spanish>
 		<Russian>Наш народ никогда не откажется от своих убеждений.</Russian>
+		<Hungarian>A mi népünk soha nem fogja feladni a hitét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_JOIN_WAR_1</Tag>
@@ -4201,6 +4221,7 @@
 		<Italian>Che questa guerra abbia inizio! (Dichiara guerra)</Italian>
 		<Spanish>¡Que empiece esta guerra! (Declarar la guerra)</Spanish>
 		<Russian>Давайте начнем эту войну! (Объявить войну)</Russian>
+		<Hungarian>A mi népünk soha nem fogja feladni a hitét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NO_JOIN_WAR_1</Tag>
@@ -4210,6 +4231,7 @@
 		<Italian>Mi spiace, ma in questo momento non siamo in grado di affrontare una guerra.</Italian>
 		<Spanish>Lo sentimos, pero ahora no nos podemos permitir una guerra.</Spanish>
 		<Russian>Извините, но мы не можем позволить себе войну прямо сейчас.</Russian>
+		<Hungarian>Sajnálom - nem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_STOP_TRADING_1</Tag>
@@ -4219,6 +4241,7 @@
 		<Italian>Hai ragione, anche noi non li sopportiamo più! (Annulla gli accordi)</Italian>
 		<Spanish>Estáis en lo cierto, a nosotros también nos perjudican. (Cancelar tratos)</Spanish>
 		<Russian>Вы правы, мы их тоже терпеть не можем! (Отменить сделки)</Russian>
+		<Hungarian>Igazad van, mi sem állhatjuk ki őket! (Megállapodások Megszűntetése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NO_STOP_TRADING_1</Tag>
@@ -4228,6 +4251,7 @@
 		<Italian>Mi spiace, ma non possiamo voltar loro le spalle.</Italian>
 		<Spanish>Lo sentimos, pero ahora no podemos echarnos atrás.</Spanish>
 		<Russian>Извините, но мы не можем просто так отвернуться от них.</Russian>
+		<Hungarian>Sajnálom, de nem fordíthatunk hátat nekik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_SOMETHING_ELSE_1</Tag>
@@ -4237,6 +4261,7 @@
 		<Italian>Parliamo d'altro...</Italian>
 		<Spanish>Hablemos de otra cosa...</Spanish>
 		<Russian>Давайте обсудим еще что-нибудь...</Russian>
+		<Hungarian>Beszéljünk valami másról...</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ATTITUDE_1</Tag>
@@ -4246,6 +4271,7 @@
 		<Italian>Che ne pensi di...</Italian>
 		<Spanish>¿Qué pensáis de...</Spanish>
 		<Russian>Что вы думаете о...</Russian>
+		<Hungarian>Mi a véleményed róla:</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ATTITUDE_PLAYER_1</Tag>
@@ -4254,6 +4280,7 @@
 		<German>%s1 ...</German>
 		<Italian>%s1...</Italian>
 		<Spanish>...%s1?</Spanish>
+		<Hungarian>%s1</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TARGET_1</Tag>
@@ -4263,6 +4290,7 @@
 		<Italian>Perché non attacchi...</Italian>
 		<Spanish>¿Por qué no atacáis...</Spanish>
 		<Russian>Почему бы вам не напасть на...</Russian>
+		<Hungarian>Mi lenne, ha megtámadnád:</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TARGET_CITY_1</Tag>
@@ -4271,6 +4299,7 @@
 		<German>%s1 ...</German>
 		<Italian>%s1...</Italian>
 		<Spanish>...%s1?</Spanish>
+		<Hungarian>%s1</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_EXIT_1</Tag>
@@ -4280,6 +4309,7 @@
 		<Italian>Addio... (Esci)</Italian>
 		<Spanish>Adiós... (Salir)</Spanish>
 		<Russian>Прощайте! (Уйти)</Russian>
+		<Hungarian>Viszlát! (Kilépés)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_1</Tag>
@@ -4289,6 +4319,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è il flagello del nostro pianeta! (Tono furioso)</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es un azote para el mundo! (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Сердце его испорчено, душа его нечиста. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? A szíve romlott, a lelke tisztátalan (Dühös).</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_2</Tag>
@@ -4298,6 +4329,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è un serpente a sonagli! Non mi fido di [NUM1:lui:lei]! (Tono furioso)</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es una serpiente en el Edén! ¡No os fiéis de [NUM1:él:ella]! (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я скорее проглотил бы живого червя, чем стал бы разговаривать с этим человеком. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Inkább lenyelek egy élő galandférget, minthogy még egy szót váltsak ezzel az emberrel. (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_3</Tag>
@@ -4307,6 +4339,7 @@
 		<Italian>Nemmeno io mi fido di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]! (Tono furioso)</Italian>
 		<Spanish>Ni nos gusta %s1 ni confiamos en [NUM1:él:ella]. (Furiosa)</Spanish>
 		<Russian>Не смей даже произносить имя этого ублюдка в моем присутствии! (В ярости)</Russian>
+		<Hungarian>Ne merészeld a jelenlétemben kimondani annak a szemétládának a nevét! (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_4</Tag>
@@ -4316,6 +4349,7 @@
 		<Italian>Una persona decisamente malvagia! (Tono furioso)</Italian>
 		<Spanish>¡Es canalla a más no poder! (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] — злая тень, падающая на этот мир. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] egy gonosz árnyék, amely erre a világra vetül. (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_5</Tag>
@@ -4325,6 +4359,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è [NUM1:una schifosa disonesta:uno schifoso disonesto]! (Tono furioso)</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es [NUM1:un cretino embustero:una cretina embustera]! (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Всякий раз, когда я слышу это имя, я чувствую запах скунса. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Furcsa. Amikor ezt a nevet hallom, mindig bűzt érzek. (Dühös).</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_6</Tag>
@@ -4334,6 +4369,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] ha chiuso con me! (Tono furioso)</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] está [NUM1:muerto:muerta] para mí! (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Пусть он скоро встретит своего Создателя. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Találkozzon minél hamarabb a Teremtőjével! (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_7</Tag>
@@ -4343,6 +4379,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è una persona veramente cattiva. (Tono furioso)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es muy mala persona. (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] — злобный демон. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] egy rosszindulatú démon. (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_8</Tag>
@@ -4352,6 +4389,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? [NUM1:Un babbuino traditore:Una babbuina traditrice]. (Tono furioso)</Italian>
 		<Spanish>¿[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Es [NUM1:un:una] chimpancé [NUM1:traicionero:traicionera] y cobarde. (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Трусливый, но опасный. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Gyáva, de veszélyes. (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_9</Tag>
@@ -4361,6 +4399,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] non vale lo sterco di un cane. (Tono furioso)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] no vale ni una boñiga pinchada en un palo. (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] — грязь под ногтями россомахи. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] piszok a körmöm alatt. (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FURIOUS_10</Tag>
@@ -4370,6 +4409,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è il male assoluto! (Tono furioso)</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es el mal encarnado! (Furiosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я молюсь каждый день, чтобы с ним случилось какое-нибудь несчастье. (В ярости)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Naponta imádkozom, hogy valami szerencsétlenség érje. (Dühös)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_1</Tag>
@@ -4379,6 +4419,7 @@
 		<Italian>Il comportamento di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] ci sta letteralmente irritando! (Tono infastidito)</Italian>
 		<Spanish>¡Cada vez nos irrita más el comportamiento de [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]! (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я не люблю его. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Nem kedvelem őt. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_2</Tag>
@@ -4388,6 +4429,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è una persona estremamente fastidiosa. (Tono infastidito)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es una persona tremendamente fastidiosa. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Его люди берут от этого мира больше, чем заслуживают. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Az ő népe többet vesz el ettől a világtól, mint amennyit megérdemel. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_3</Tag>
@@ -4397,6 +4439,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] sta mettendo a dura prova la mia pazienza. (Tono infastidito)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] pone a prueba mi paciencia. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Слишком самонадеянный. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy nagyképű ember. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_4</Tag>
@@ -4406,6 +4449,7 @@
 		<Italian>Ad essere sinceri, [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] non mi piace molto. (Tono infastidito)</Italian>
 		<Spanish>La verdad es que no apreciamos mucho a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Грубый парень. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy durva gazember (Bosszús).</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_5</Tag>
@@ -4415,6 +4459,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è più [NUM1:noioso:noiosa] di quanto valga. (Tono infastidito)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] no trae más que problemas. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Мои люди рассказывают все больше и больше историй о нем. И все они не хорошие. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? A népem egyre több történetet mesél róla. Ezek nem szép történetek. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_6</Tag>
@@ -4424,6 +4469,7 @@
 		<Italian>Credo che il mondo potrebbe essere un posto migliore senza la presenza di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono infastidito)</Italian>
 		<Spanish>Creo que el mundo estaría mejor sin [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Недавно мне приснилось, что он умер. Когда я проснулся, светило солнце и пели птицы. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Nemrég azt álmodtam, hogy meghalt. Amikor felébredtem, sütött a nap és a madarak énekeltek. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_7</Tag>
@@ -4433,6 +4479,7 @@
 		<Italian>Non ho una grande considerazione di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono infastidito)</Italian>
 		<Spanish>No tenemos muy buena opinión de [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT], que digamos. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Вы его друг? Надеюсь, что нет. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? A te barátod? Remélem nem az. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_8</Tag>
@@ -4442,6 +4489,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è esattamente come dovrebbe essere. (Tono infastidito)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] no es trigo limpio. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Мне вообще не нравится, когда упоминают его имя. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Nem jobb, mint amilyennek lennie kellene. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_9</Tag>
@@ -4451,6 +4499,7 @@
 		<Italian>Secondo me dice solo un sacco di baggianate. (Tono infastidito)</Italian>
 		<Spanish>En nuestra opinión, esa persona es todo palabras huecas. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я иногда так зову своего младшего сына. Тогда он знает, что он был плохим. (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Néha így hívom a legkisebb fiamat. Akkor tudja, hogy rossz volt (Bosszús).</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_ANNOYED_10</Tag>
@@ -4460,6 +4509,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è come il mal di schiena. (Tono infastidito)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es una mosca cojonera. (Molesta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я давно не думал о нем. Это было прекрасное время. Зачем ты напомнил мне о нем? (Раздраженно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Már hosszú ideje nem gondoltam rá. Jó hosszú ideje. (Bosszús)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_1</Tag>
@@ -4470,6 +4520,7 @@
 		<Spanish>No estamos muy seguros de qué pensar de [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Ну, я знаю его. Но я не знаю его хорошо. (Осторожно)</Russian>
 	</TEXT>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Nos, én ismerem őt. De nem ismerem jól. (Óvatos)</Hungarian>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_2</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? I'm sure he has plans. I'd just like to know what they are. (Cautious)</English>
@@ -4478,6 +4529,7 @@
 		<Italian>Credo che [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] sia una persona a posto. (Tono cauto)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] no es un problema para nosotros, suponemos. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Уверен, у него есть планы. Я просто хотел бы знать, какие они. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Biztos vagyok benne, hogy vannak tervei. Csak szeretném tudni, mik azok. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_3</Tag>
@@ -4487,6 +4539,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] ha la sua utilità. (Tono cauto)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] cumple su papel. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я слышал хорошие вещи о нем. Но и плохие тоже. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Jó dolgokat hallottam róla. De rosszat is. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_4</Tag>
@@ -4496,6 +4549,7 @@
 		<Italian>Non ho problemi con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono cauto)</Italian>
 		<Spanish>No tenemos problemas con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я не враг ему, но и он не мой друг. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Nem vagyok ellenséges vele, de nem is a barátom. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_5</Tag>
@@ -4505,6 +4559,7 @@
 		<Italian>Credo che [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] sia in gamba. (Tono cauto)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] no es un problema para nosotros, suponemos. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Человека сложно оценить. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Az embert nehéz megítélni. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_6</Tag>
@@ -4514,6 +4569,7 @@
 		<Italian>Ad essere sinceri, non so ancora cosa pensare di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono cauto)</Italian>
 		<Spanish>No sabemos qué pensar de [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT], para ser sinceros. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Ну... Хм... Я не знаю. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Hát... Nem is tudom. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_7</Tag>
@@ -4523,6 +4579,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è una persona a posto, almeno finché [NUM1:gli:le] terrai gli occhi addosso. (Tono cauto)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] no es un problema siempre que no [NUM1:lo:la] perdáis de vista. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Вы можете сказать о нем что-нибудь интересное? Нет? Хм... И я нет. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Van valami érdekes mondanivalód róla? Nem? Hmm. Nekem sincs. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_8</Tag>
@@ -4532,6 +4589,7 @@
 		<Italian>Ci fidiamo di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. Qualche volta. (Tono cauto)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] nos parece de fiar. A veces. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я хотел бы знать, что он задумал. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Szeretném tudni, hogy mire készül. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_9</Tag>
@@ -4541,6 +4599,7 @@
 		<Italian>Non so cosa pensare di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono cauto)</Italian>
 		<Spanish>No sabemos qué opinión forjarnos de [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Непонятный мужчина. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy rejtéjes ember. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_CAUTIOUS_10</Tag>
@@ -4550,6 +4609,7 @@
 		<Italian>Con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] ho adottato una strategia di "attesa". (Tono cauto)</Italian>
 		<Spanish>Respecto a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT], nuestra política es mantenernos a la expectativa. (Cauta)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я много слышал о нем. Некоторые вещи заслуживают доверия, другие не очень. (Осторожно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Sokat hallottam róla. Néhány dolog hitelt érdemlő, mások nem annyira. (Óvatos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_1</Tag>
@@ -4559,6 +4619,7 @@
 		<Italian>Noi andiamo abbastanza d'accordo con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono contento)</Italian>
 		<Spanish>Nos llevamos bien con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Amable)</Spanish>
 		<Russian>Пока что [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] ни в чем не виноват. (Довольный)</Russian>
+		<Hungarian>Eddig [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] nem volt bűnös semmiben. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_2</Tag>
@@ -4568,6 +4629,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è [NUM1:un caro amico:una cara amica]. (Tono contento)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es [NUM1:nuestro amigo:nuestra amiga]. (Amable)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Не могу сказать ничего плохого о нем. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Semmi negatívumot nem tudok róla mondani. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_3</Tag>
@@ -4577,6 +4639,7 @@
 		<Italian>Niente da dire da parte nostra! (Tono contento)</Italian>
 		<Spanish>¡Ninguna queja al respecto! (Amable)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Пока он производит приятное впечатление. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Eddig jó benyomást kelt. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_4</Tag>
@@ -4586,6 +4649,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Una brava persona per guardarti le spalle. (Tono contento)</Italian>
 		<Spanish>¿[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Es una buena persona. (Amable)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Дружелюбный, рассудительный. С ним легко найти общий язык. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Barátságos, ésszerű. Könnyű vele kijönni. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_5</Tag>
@@ -4595,6 +4659,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] ci ha sempre trattati bene. (Tono contento)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] se ha portado bien con nosotros. (Amable)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] всегда хорошо относился к нам. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] mindig jól viselkedett velünk. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_6</Tag>
@@ -4604,6 +4669,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Mi piace. (Tono contento)</Italian>
 		<Spanish>¿[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Nos cae bien. (Amable)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Он нам нравится. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Mindig is rendes volt hozzánk. Legalábbis eddig. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_7</Tag>
@@ -4613,6 +4679,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è meglio di molti altri. (Tono contento)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es mejor que la mayoría. (Amable)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Праведный человек По крайней мере, это мое первое впечатление. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy igaz ember. Legalábbis ez az első benyomásom. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_8</Tag>
@@ -4622,6 +4689,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] non ha problemi con noi. (Tono contento)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] tiene un trato impecable con nosotros. (Amable)</Spanish>
 		<Russian>Я не могу жаловаться на [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Довольный)</Russian>
+		<Hungarian>Nem panaszkodhatok [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] cselekedetei miatt. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_9</Tag>
@@ -4631,15 +4699,17 @@
 		<Italian>%s1 è [NUM1:un grande sovrano:una grande sovrana] ed è una garanzia per il suo popolo! (Tono contento)</Italian>
 		<Spanish>¡%s1 es [NUM1:un buen:una buena] dirigente y un orgullo para su pueblo! (Amable)</Spanish>
 		<Russian>Мы хорошо ладим друг с другом. (Довольный)</Russian>
+		<Hungarian>Jól kijövünk egymással. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_PLEASED_10</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? The man is doing well. (Pleased)</English>
+		<English>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? That man is doing well. (Pleased)</English>
 		<French>Je m'entends très bien avec [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Favorable)</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Der Mann beträgt sich gut. (Erfreut)</German>
 		<Italian>Andiamo molto d'accordo con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Tono contento)</Italian>
 		<Spanish>Nos llevamos bien con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Amable)</Spanish>
 		<Russian>Я очень хорошо лажу с [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]. (Довольный)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Az az ember helyesen cselekszik. (Elégedett)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_1</Tag>
@@ -4649,6 +4719,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è [NUM1:un nostro caro amico:una nostra cara amica]. (Tono amichevole)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es [NUM1:un amigo de confianza:una amiga de confianza]. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Брат по духу. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy lelki társ. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_2</Tag>
@@ -4658,6 +4729,7 @@
 		<Italian>Mi fido ciecamente di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]! (Tono amichevole)</Italian>
 		<Spanish>¡Le confiaríamos la vida a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]! (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Дар этому миру от Создателя. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? A Teremtő ajándéka ennek a világnak. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_3</Tag>
@@ -4667,6 +4739,7 @@
 		<Italian>Una grande amicizia ci lega. (Tono amichevole)</Italian>
 		<Spanish>Gozamos de una gran amistad. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Один из самых храбрых и порядочных людей, которых я знаю. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Az egyik legbátrabb és legrendesebb ember, akit ismerek. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_4</Tag>
@@ -4676,6 +4749,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è [NUM1:un vero amico:una vera amica]. (Tono amichevole)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es [NUM1:un amigo:una amiga] de verdad. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я уважаю этого прекрасного человека. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Tisztelem őt. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_5</Tag>
@@ -4685,6 +4759,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è sempre [NUM1:stato un amico:stata un'amica] fedele. (Tono amichevole)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es para nosotros [NUM1:un amigo:una amiga] fiel. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Человек, который проявляет мудрость и порядочность. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy olyan ember, aki bölcsességet és tisztességességet mutat. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_6</Tag>
@@ -4694,6 +4769,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è sempre [NUM1:stato un amico:stata un'amica] fedele. (Tono amichevole)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es para nosotros [NUM1:un amigo:una amiga] fiel. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Человек чести. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy becsületes ember. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_7</Tag>
@@ -4703,6 +4779,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è [NUM1:un vecchio amico:una vecchia amica]. (Tono amichevole)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es [NUM1:un viejo:una vieja] colega [NUM1:nuestro:nuestra]. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я считаю, что мне повезло, что он мой друг. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Szerencsésnek tartom magam, hogy a barátom. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_8</Tag>
@@ -4712,6 +4789,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] è un'amicizia sulla quale contare e una piacevole compagnia. (Tono amichevole)</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] es [NUM1:un amigo:una amiga] fiel y [NUM1:un compañero:una compañera] excepcional. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Благородный человек. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy nemes ember. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_9</Tag>
@@ -4721,6 +4799,7 @@
 		<Italian>Mi fido di [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] completamente! (Tono amichevole)</Italian>
 		<Spanish>¡[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] nos cae bien y tenemos plena confianza en [NUM1:él:ella]! (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Человек с большим сердцем. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Egy nemes ember. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_PLAYER_FRIENDLY_10</Tag>
@@ -4730,6 +4809,7 @@
 		<Italian>Sarebbe difficile trovare amicizie migliori. (Tono amichevole)</Italian>
 		<Spanish>Es difícil de encontrar una amistad mejor. (Amistosa)</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Я дорожу им, как братом. (Дружелюбно)</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]? Úgy becsülöm őt, mintha a testvérem lenne. (Barátságos)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_1</Tag>
@@ -4739,6 +4819,7 @@
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] sono un pericolo per tutti. Unisciti a noi e li toglieremo di mezzo.</Italian>
 		<Spanish>[NUM1:El:La:Los:Las] [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] son una amenaza para todos nosotros. Uníos a nosotros para borrarlos del mapa.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] угрожают спокойствию во всем мире. Мы должны остановить их, пока не случилось что-то плохое. Ты с нами, [CT_NAME]?</Russian>
+		<Hungarian>Az aljas [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] emberek veszélyeztetik e világ békéjét. Meg kell leckéztetnünk őket, mielőtt valami rosszabb történik. Velünk vagy, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_2</Tag>
@@ -4748,6 +4829,7 @@
 		<Italian>Vuoi darci una mano a distruggere i malvagi %s1?</Italian>
 		<Spanish>¿Os importaría ayudarnos a destruir [NUM1:al malvado:a la malvada:a los malvados:a las malvadas] %s1:3?</Spanish>
 		<Russian>Не желаете помочь нам уничтожить злого %s1:2?</Russian>
+		<Hungarian>Segítesz nekünk elpusztítani a gonosz %s1 népet?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_3</Tag>
@@ -4757,6 +4839,7 @@
 		<Italian>Salve, [CT_NAME]. I fastidiosi %s1 devono essere distrutti, non sei d'accordo?</Italian>
 		<Spanish>Saludos, [CT_NAME]. [NUM1:El molesto:La molesta:Los molestos:Las molestas] %s1:3 [NUM1:debe ser destruido:debe ser destruida: deben ser destruidos:deben ser destruidas], ¿no os parece?</Spanish>
 		<Russian>Приветствую, [CT_NAME]. Вам не кажется, что этих проклятых %s1 следует истребить?</Russian>
+		<Hungarian>Üdvözlet, [CT_NAME]! Az idegesítő %s1 népet el kell pusztítani, nem gondolod?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_4</Tag>
@@ -4766,6 +4849,7 @@
 		<Italian>[CT_NAME], chiediamo urgentemente l'aiuto del[CT_CIV_SHORT:2] per la nostra crociata contro i %s1!</Italian>
 		<Spanish>[CT_NAME], solicitamos urgentemente la ayuda de la poderosa nación de [CT_CIV_SHORT] en nuestra cruzada contra [NUM1:el:la:los:las] %s1:3.</Spanish>
 		<Russian>[CT_NAME], мы просим могущественных [CT_CIV_SHORT] помочь в нашем крестовом походе против %s1:2!</Russian>
+		<Hungarian>[CT_NAME]: Sürgősen kérjük a hatalmas [CT_CIV_SHORT] birodalom segítségét a hitvány %s1 nép elleni keresztes hadjáratunkban!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_5</Tag>
@@ -4775,6 +4859,7 @@
 		<Italian>I traditori %s1 devono essere puniti per le loro offese nei confronti delle altre civiltà, [CT_NAME]! Possiamo contare sul tuo aiuto?</Italian>
 		<Spanish>¡Hemos de castigar [NUM1:al traicionero:a la traicionera:a los traicioneros:a las traicioneras] %s1:3 por sus ofensas contra la civilización, [CT_NAME]! Suponemos que podemos contar con vuestra ayuda, ¿no?</Spanish>
 		<Russian>Коварный %s1:2 должен понести наказание за свои преступления против цивилизации, [CT_NAME]! Я полагаю, мы можем рассчитывать на вашу помощь?</Russian>
+		<Hungarian>A áruló %s1 embereket meg kell büntetni a civilizáció ellen elkövetett bűneiért, [CT_NAME]! Számíthatunk a segítségedre?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_6</Tag>
@@ -4784,6 +4869,7 @@
 		<Italian>I malvagi %s1 stanno complottando contro noi tutti, [CT_NAME]! Distruggiamoli assieme!</Italian>
 		<Spanish>¡[NUM1:El repugnante:La repugnante:Los repugnantes:Las repugnantes] %s1:3 están conspirando contra todos nosotros, [CT_NAME]! ¡Destruyámoslos juntos!</Spanish>
 		<Russian>Мерзкие %s1:2 замышляют заговор против всех нас, [CT_NAME]! Уничтожим их вместе!</Russian>
+		<Hungarian>A gonosz %s1 emberek mindannyiunk ellen szövetkeznek, [CT_NAME]! Pusztítsuk el őket együtt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_WAR_KING_VS_COLONY</Tag>
@@ -4791,6 +4877,7 @@
 		<French>Ces colonies [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] déloyales et ingrates menacent l'ordre tenu de droit divin. En déclarant leur indépendance, ils se sont retournés contre Nous, leur Souverain légitime. Ils injurient, frappent et volent nos sujets loyaux qui Nous sont restés fidèles. Ils attaquent et tuent les soldats royaux envoyés pour les protéger. [CT_NAME], vous battrez vous à nos côtés pour mater cette rébellion ? Aidez-nous à rétablir l'ordre et le calme dans les colonies.</French>
 		<German>Die illoyalen [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] Kolonien bedrohen die durch Gott gegebene Ordnung dieser Welt. Indem sie ihre Unabhängigkeit erklärt haben, haben sie sich gegen Uns, ihren rechtmäßigen Monarchen, gewendet. Nun bringen sie ihren Nachbarn, die immer noch loyal zur Krone stehen, Unterdrückung und Leid. Sie wagen es sogar königliche Soldaten zu töten, die zu deren Schutz geschickt wurden. [CT_NAME], werdet ihr uns beistehen um diesen Ungehorsam zu beenden und wieder Frieden und Stabilität in die Kolonien zu bringen?</German>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] колонии угрожают данному Богом порядку в этом мире. Провозгласив свою независимость, они восстали против Нас, своего праведного монарха. Теперь они приносят боль и страдания своим собратьям, которые по-прежнему верны короне и даже осмеливаются убивать королевских солдат, посланных для защиты лояльных Короне колонистов. [CT_NAME], поддержите ли вы Нас, чтобы положить конец этому недопустимому неподчинению и вернуть мир и стабильность в колонии?</Russian>
+		<Hungarian>Ezek a hűtlen, hálátlan [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT] kolóniák veszélyeztetik e világ Isten adta rendjét. Függetlenségük kinyilvánításával ellenünk, jogos uralkodójuk ellen fordultak. Sértegetik, verik és kirabolják a tisztességes, a Koronához még mindig hűséges alattvalókat. Megtámadják és meggyilkolják a védelmükre küldött királyi katonákat. [CT_NAME], mellénk állsz, hogy elnyomjuk ezt az engedetlenséget? Segíts Nekünk visszahozni a békét és a stabilitást a gyarmatokra!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_STOP_TRADING_1</Tag>
@@ -4800,6 +4887,7 @@
 		<Italian>Questo atteggiamento non può più essere tollerato; ti chiediamo di annullare i tuoi accordi con [NUM1:il vile:la vile:i vili:le vili] [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT]!</Italian>
 		<Spanish>Ya no podemos permitirnos ser tolerantes. ¡Os exigimos que canceléis vuestro trato con [NUM1:el vil:la vil:los viles:las viles] [COLOR_HIGHLIGHT_TEXT]%s1:3[COLOR_REVERT]!</Spanish>
 		<Russian>Вы открыли свои границы для [COLOR_HIGHLIGHT_TEXT]%s1:2[COLOR_REVERT]? Разве ты не знаешь, что их мужчины коварны, их женщины безнравственны, а их дети бездушны? Изгоните этих существ со своей земли!</Russian>
+		<Hungarian>Megnyitottad a határaidat a hitvány [COLOR_HIGHLIGHT_TEXT]%s1:2[COLOR_REVERT] emberek előtt? Nem tudod, hogy a férfijaik fondorlatosak, a nőik erkölcstelenek, a gyermekeik pedig lelketlenek? Űzd ki őket a földedről!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_OFFER_CITY_1</Tag>
@@ -4809,6 +4897,7 @@
 		<Italian>Vorremmo offrirti questo insediamento in segno di rispetto.</Italian>
 		<Spanish>Nos gustaría ofreceros este asentamiento como muestra de respeto.</Spanish>
 		<Russian>Мы хотели бы предложить это поселение в знак нашего уважения.</Russian>
+		<Hungarian>Szeretnénk felajánlani ezt a települést a tiszteletünk jeléül.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_PENN_1</Tag>
@@ -4818,6 +4907,7 @@
 		<Italian>Saluti, gentile signore, mi chiamo [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Rappresento la civiltà [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] e auspico tra di noi una convivenza pacifica.</Italian>
 		<Spanish>Saludos, amable señor, me llamo [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Represento a los [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT] y espero que ambos pueblos coexistamos pacíficamente.</Spanish>
 		<Russian>Приветствую тебя, дорогой друг. Меня зовут [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Я представляю [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT] и надеюсь, что мы сможем мирно сосуществовать.</Russian>
+		<Hungarian>Üdvözlet, kedves [CT_NAME] testvér! Tavaszias nap a mai, nem igaz? Langyos szellő, fehér bárányfelhők az égen - úgy tűnik, ez az Édenkert. A földi béke egy ígéret, amely Pennsylvaniában valóra válhat. Bemutatkoztam már? Én [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a szabadság és a testvériség paradicsomává fogom tenni ezt az Új Világot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BOLIVAR_1</Tag>
@@ -4827,6 +4917,7 @@
 		<Italian>Sono contento di incontrarti, [CT_NAME]! Ti offro un trattato di pace... e ti suggerisco di accettarlo.</Italian>
 		<Spanish>Hola, amigo! Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Me alegro mucho de conoceros, [CT_NAME]. Os ofrezco un tratado de paz. Os sugiero que lo aceptéis.</Spanish>
 		<Russian>Рад познакомиться с вами, [CT_NAME]! Я предлагаю вам мирный договор и... Я предлагаю вам принять его.</Russian>
+		<Hungarian>Örömmel üdvözöllek Téged és kíséreted, [CT_NAME]! Barátom, messziről jöhettél. Fáradtnak tűnsz. Hadd segítsek és mutassam meg az utat. Erre, mindig a napfelkelte felé. Onnan jöttél. Oda kell visszatérned.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CHAMPLAIN_1</Tag>
@@ -4836,6 +4927,7 @@
 		<Italian>Il popolo della civiltà [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] ti dà il benvenuto. Non vedo l'ora che ci sia tra di noi una pace duratura. Cosa rispondi?</Italian>
 		<Spanish>El pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] os da la bienvenida. Espero que haya una paz duradera entre ambos. ¿Y vos?</Spanish>
 		<Russian>Бонжур, месье. Quel plaisir! Приветствую вас. Будьте нашим гостем столько, сколько нам будет угодно. Кстати, мои индейские друзья уже поприветствовали вас? Наверное, нет - ваш скальп все ещё при вас. Будьте с ними повежливее, если не хотите с ним расстаться. Ха-ха-ха! Простите мои шутки. И главное, смейтесь над ними и я замолвлю за вас словечко перед туземцами.</Russian>
+		<Hungarian>Bonjour, monsieur! Quel plaisir! Üdvözöllek! Legyél a vendégünk, ameddig csak akarjuk. Az indián barátaim üdvözöltek már téged? Nos, nem hiszem. Még mindig megvan a skalpod a parókád alatt. Jobb félni, mint megijedni, nem? Bocsásd meg a vicceimet és mindenekelőtt nevess rajtuk! Errefelé szólhatok egy jó szót az érdekedben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_DONCK_1</Tag>
@@ -4845,6 +4937,7 @@
 		<Italian>Sono onorato di incontrarti, grande [CT_NAME]! Come può aiutarti, oggi, la civiltà [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]?</Italian>
 		<Spanish>Es un honor conocer al gran [CT_NAME]. ¿En qué pueden ayudaros hoy los [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]?</Spanish>
 		<Russian>Сердечно приветствую! Позвольте мне засвидетельствовать вам свое почтение, мистер. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], юрист, натуралист и избранный представитель [COLOR_HIGHLIGHT_TEXT]голландской[COLOR_REVERT] экспедиции. Должен признаться, красоты этого Нового Света опьяняют меня.</Russian>
+		<Hungarian>Hartelijk welkom! Engedd meg, hogy kifejezzem tiszteletemet, Mijnheer! [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] vagyok, ügyvéd, természettudós és a [COLOR_HIGHLIGHT_TEXT]Holland[COLOR_REVERT] expedíció választott képviselője. Be kell vallanom, hogy ennek az Újvilágnak a szépségei megrészegítenek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_FRONTENAC_1</Tag>
@@ -4854,6 +4947,7 @@
 		<Italian>È un piacere incontrarti, [CT_NAME]. Ora troviamoci un angolino e discutiamo del futuro di questo Nuovo Mondo.</Italian>
 		<Spanish>Es un placer conoceros, [CT_NAME]. Y ahora vayamos a algún sitio a hablar del futuro del Nuevo Mundo.</Spanish>
 		<Russian>Добрый день, [CT_NAME]. Я уверен, что на этой огромной земле достаточно места для двух важных людей. Для меня и для моего Короля. Не стой у меня на пути, парень. А теперь уходите, пока я вас не арестовал. Скажи своему господину, что Новый Свет находится под протекторатом французского Короля, а я, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], являюсь его верным губернатором.</Russian>
+		<Hungarian>Bonjour, [CT_NAME]! Biztos vagyok benne, hogy van elég hely ezen a hatalmas földön két fontos embernek. Nekem és a királyomnak. Ne állj az utamba, fiam! Most pedig távozz, mielőtt letartóztatlak! Mondd meg az uradnak, hogy az Újvilág a francia király protektorátusa; és én, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], az ő hűséges kormányzója vagyok.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HERNAN_CORTES_1</Tag>
@@ -4863,6 +4957,7 @@
 		<Italian>Salve, amico. Il mio nome è [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], ma puoi chiamarmi Hernán. Basta che non mi chiami troppo tardi per la cena.</Italian>
 		<Spanish>Hola, amigo. Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], pero podéis llamarme Hernán. Pero no me llaméis tarde para la cena.</Spanish>
 		<Russian>Буэнас диас, незнакомец. Разрешите представиться: [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], конкистадор, наемник удачи и охотник за сокровищами. Я иду к королю-богу этого языческого царства, чтобы забрать то, что принадлежит мне по праву: его честь и сокровища. Не стой у меня на пути!</Russian>
+		<Hungarian>Buenas dias, idegen! Engedd meg, hogy bemutatkozzam: [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], hódító, szerencselovag és kincsvadász. Úton vagyok e pogány birodalom istenkirályához, hogy tiszteletét fejezze ki nekem és megajándékozzon. Ne állj az utamba!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_STUYVESANT_1</Tag>
@@ -4872,6 +4967,7 @@
 		<Italian>Saluti, sono [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Anche se di sicuro lo sapevi già. Ora andiamo a parlare di qualcosa di importante... me.</Italian>
 		<Spanish>Saludos, yo soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Aunque seguro que vos ya lo sabíais. Y ahora hablemos de algo importante... de mí.</Spanish>
 		<Russian>Глупый крестьянин, что ты здесь делаешь? Нет, не говори мне свое имя. Можешь даже не доставать из кармана верительные грамоты своего сюзерена. Просто послушай меня немного, а потом уходи. Моё имя [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] и я собираюсь стать администратором этого Нового Мира. И я уже устал от вас.</Russian>
+		<Hungarian>Domme boer, mit keresel itt? Ne, ne mondd meg a neved! Tartsd a zsebedben az uralkodói engedélyed! Csak hallgass meg egy pillanatra, aztán már mehetsz is. Én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], én leszek ennek az Új Világnak az adminisztrátora és máris elegem van belőled.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_WASHINGTON_1</Tag>
@@ -4881,6 +4977,7 @@
 		<Italian>Salve, sono il generale [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. È un onore incontrarti.</Italian>
 		<Spanish>Hola, soy el general [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Es un honor conoceros.</Spanish>
 		<Russian>Добро пожаловать, сэр! Меня зовут [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Я получил известие с моей родины, что вы тоже направляетесь в Новый Свет. Для меня большая честь познакомиться с вами, сэр. Я немедленно отправлю гонца в Европу с хорошими новостями о том, что вы благополучно пережили опасный переход и что вы скоро вернетесь в свою страну.</Russian>
+		<Hungarian>Üdvözöllek, Nemesuram! A nevem [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Azt a hírt kaptam hazámból, hogy te is úton vagy az Újvilágba. Megtiszteltetés, hogy megismerhetlek. Azonnal küldök egy hírnököt Európába a jó hírrel, hogy épségben túlélted a veszélyes átkelést; és hogy hamarosan visszatérsz hazádba.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AGUEYBANA_1</Tag>
@@ -4890,6 +4987,7 @@
 		<Italian>Salve, viaggiatore che arriva dal grande mare. Sono il cacique [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] della tribù [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Dividiamoci questa terra e diventiamo amici.</Italian>
 		<Spanish>Hola, viajero del Gran Mar. Soy el cacique [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] de la tribu [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:2][COLOR_REVERT]. Compartamos esta tierra y seamos amigos.</Spanish>
 		<Russian>Твоё каноэ размером с кита. Приехав издалека, путник, ты, должно быть, проголодался. Проходи и съешь немного нашей каши из маниоки. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], вождь [COLOR_HIGHLIGHT_TEXT]Араваков[COLOR_REVERT]. Смейся с нами, танцуй с нами и отдыхай с нами. Если ты нам не враг, мы будем тебе другом.</Russian>
+		<Hungarian>Akkora a kenud, mint egy bálna. Olyen messziről jöttél, utazó, biztos éhes lehetsz. Gyere és egyél a tápiókakásánkból! Én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], az [COLOR_HIGHLIGHT_TEXT]Aravakok[COLOR_REVERT] főnöke. Nevess velünk, táncolj velünk és aludj közöttünk! Ha nem vagy ellenségünk, mi a barátaid leszünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CUNHAMBEBE_1</Tag>
@@ -4899,6 +4997,7 @@
 		<Italian>Saluti, viso pallido. Io, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT], ti do il benvenuto. Facciamo festa in tuo onore.</Italian>
 		<Spanish>Hola, rostro pálido. Yo, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] del pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] os doy la bienvenida. Daremos un festín en vuestro honor.</Spanish>
 		<Russian>Воистину, ты выглядишь странно, путник. На твоем лице растут волосы, твоя кожа бела, как соль, а твой взгляд неподвижен. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], вождь [COLOR_HIGHLIGHT_TEXT]Тупи[COLOR_REVERT]. Если вы желаете торговать с нами, я приветствую вас. Если в вашем сердце поселился злой дух, наши духовые ружья изгонят его из вашего тела, а ваша плоть сгорит на нашем огне.</Russian>
+		<Hungarian>Valóban, furcsán nézel ki, utazó. A hajad az arcodból nő, a bőröd fehér, mint a só, és a tekinteted merev. Én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a [COLOR_HIGHLIGHT_TEXT]Tupik[COLOR_REVERT] főnöke. Ha kereskedni szeretnétek velünk, szívesen látunk benneteket. Ha gonosz szellem lakik a szívetekben, a fúvócsőveink kiűzik azt a testedből és a húsotok a tüzeinken fognak megsülni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HUAYNA_CAPAC_1</Tag>
@@ -4908,6 +5007,7 @@
 		<Italian>L'[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] dà il benvenuto alla popolazione [CT_CIV_ADJ] e alla loro guida, [CT_NAME]. Giochiamo insieme alla palla cerimoniale.</Italian>
 		<Spanish>El [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] le da la bienvenida al glorioso pueblo [CT_CIV_ADJ:1] y a su líder, [CT_NAME]. Si jugáis con nosotros al juego ceremonial de la pelota, nosotros haremos lo propio.</Spanish>
 		<Russian>Ты выглядишь потерянным и грустным, незнакомец. Ты притворяетешься высокопоставленным человеком, но тебя несут не в паланкине, а на спине дикого зверя. Вы не поклоняетесь ни солнцу, ни земле, только крошечному кресту. Вы не можете играть на трубах-улитках или костяных флейтах. Вы не понимаете написания узлов. Я не вижу среди вас детей, а у меня одного двести сыновей и дочерей. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], правитель [COLOR_HIGHLIGHT_TEXT]Империи Инков[COLOR_REVERT], и мне жаль тебя.</Russian>
+		<Hungarian>Elveszettnek és szomorúnak tűnsz, idegen. Úgy teszel, mintha magas rangú lennél, de nem gyaloghintón, hanem egy vadállat hátán visznek. Nem imádod sem a napot, sem a földet, csak egy apró keresztet. Nem tudsz csigatrombitán vagy csontfurulyán játszani. Nem érted a csomóírást. Nem látok köztetek gyermeket, miközben nekem egyedül kétszáz fiam és lányom van. Sajnállak téged.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_LOGAN_1</Tag>
@@ -4917,6 +5017,7 @@
 		<Italian>Salve. Mi chiamo [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], capo e protettore del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Ti considero un amico. È nel tuo migliore interesse che io non cambi mai idea.</Italian>
 		<Spanish>Hola. Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], jefe y protector del pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]. Os considero mis amigos. Y más os vale que nunca cambie de opinión.</Spanish>
 		<Russian>Незнакомец, я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], глава [COLOR_HIGHLIGHT_TEXT]Конфедерации ирокезов[COLOR_REVERT], племен Сенека, Каюга, Онондага, Онейда и Могавк. Наши братские народы вели бесконечную войну, пока пророк Деганавида и мудрый вождь Гайавата не объединили нас. В нашем союзе мы все равны и свободны. Относитесь к нам с уважением, чтобы мы также уважали вас. Я сказал.</Russian>
+		<Hungarian>Idegen, én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], az [COLOR_HIGHLIGHT_TEXT]Irokéz Konföderáció[COLOR_REVERT] feje, akit a Szeneka, Kajuga, Onondagá, Oneida és Mohauk népek választottak. Testvérnemzeteink végtelen háborúban álltak, amíg Deganawidah próféta és a bölcs Hiawatha törzsfőnök nem egyesített minket. Egyenlőek és szabadok vagyunk szövetségünkben. Bánjatok velünk tisztelettel, és akkor mi is tisztelni fogunk benneteket! Én szóltam.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MANGAS_COLORADAS_1</Tag>
@@ -4926,6 +5027,7 @@
 		<Italian>Benvenuto. Sono [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] della civiltà [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Prego che tu e il tuo popolo diate tanto valore alla pace quanto gliene diamo noi.</Italian>
 		<Spanish>Bienvenido. Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], de los [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]. Rezo porque vuestro pueblo valore la paz tanto como nosotros.</Spanish>
 		<Russian>Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Многие воины [COLOR_HIGHLIGHT_TEXT]Апачей[COLOR_REVERT] присоединились ко мне, потому что я умею охотиться. Вы легко можете стать добычей. Дарите нам щедрые подарки. Мы оставим вам достаточно, чтобы прожить. Может быть... Тебе следует больше есть, бледнолицый. Ты не выглядишь достаточно сильным, чтобы вынести много пыток.</Russian>
+		<Hungarian>Én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]. Az [COLOR_HIGHLIGHT_TEXT]Apacsok[COLOR_REVERT] sok harcosa csatlakozott hozzám, mert tudom, hogyan kell zsákmányra vadászni. Könnyen lehetsz te is zsákmány. Adjatok nekünk nagylelkű ajándékokat! Talán hagyunk nektek annyit, amiből meg tudtok élni. Többet kellene enned, sápadtarcú! Nem tűnsz elég erősnek ahhoz, hogy sok kínzást elviselj.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MONTEZUMA_1</Tag>
@@ -4935,6 +5037,7 @@
 		<Italian>Sono il leader del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT], il grande e potente [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT]! Ti do il benvenuto nel mio impero e ti offro la pace. Ma ti avverto: non fare l'errore di considerare quest'offerta come un segno di debolezza, o ti farò condurre all'altare sacrificale.</Italian>
 		<Spanish>Soy el gran y poderoso [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], líder del pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]. Os doy la bienvenida a mi imperio y os ofrezco la paz. Pero os prevengo: no toméis mi oferta de paz como una muestra de debilidad o no tendré más remedio que llevaros a mi altar.</Spanish>
 		<Russian>Ты, должно быть, протеже богов, раз они позволили тебе высадиться на моих берегах. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], властитель [COLOR_HIGHLIGHT_TEXT]Империи Ацтеков[COLOR_REVERT]. Тринадцать детей-рабов были принесены им в жертву этим утром на Алтаре Солнца, чтобы ваши намерения могли быть раскрыты мне - к сожалению, напрасно. Сейчас я пощажу вас, но не принимайте мою осторожность за слабость.</Russian>
+		<Hungarian>Biztosan az istenek pártfogoltja vagy, mert megengedték, hogy partra szállj a partjaimon. Tizenhárom rabszolgagyereket áldoztak fel nekik ma reggel a Nap oltárán, hogy feltáruljanak előttem a szándékaid - sajnos hiába. Most megkímélem az életedet, de óvatosságomat ne téveszd össze gyengeséggel!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_OCONOSTOTA_1</Tag>
