@@ -14062,6 +14062,33 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 {
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eEventTrigger);
 
+	switch (kTrigger.getRequiredColonialStatus())
+	{
+	case COLONIAL_STATUS_COLONIAL:
+		if (getParent() == NO_PLAYER || isInRevolution())
+		{
+			return NULL;
+		}
+		break;
+
+	case COLONIAL_STATUS_IN_REVOLUTION:
+		if (!isInRevolution())
+		{
+			return NULL;
+		}
+		break;
+
+	case COLONIAL_STATUS_INDEPENDENT:
+		if (getParent() != NO_PLAYER)
+		{
+			return NULL;
+		}
+		break;
+
+	default:
+		break;
+	}
+
 	// expire quest events, which allowed this event trigger to fire
 	{
 		const InfoArray<EventTypes>& array = kTrigger.getPrereqEvents();
