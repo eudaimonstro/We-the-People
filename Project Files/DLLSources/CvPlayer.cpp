@@ -14065,7 +14065,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 	switch (kTrigger.getRequiredColonialStatus())
 	{
 	case COLONIAL_STATUS_COLONIAL:
-		if (getParent() == NO_PLAYER || isInRevolution())
+		if (getParent() == NO_PLAYER || isInRevolution() || checkIndependence())
 		{
 			return NULL;
 		}
@@ -14079,7 +14079,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		break;
 
 	case COLONIAL_STATUS_INDEPENDENT:
-		if (getParent() != NO_PLAYER)
+		if (!checkIndependence())
 		{
 			return NULL;
 		}
