@@ -24827,8 +24827,8 @@
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>4</iGenericParameter3>
-			<iGenericParameter4>4</iGenericParameter4>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_GOVERNOR_2</Type>
