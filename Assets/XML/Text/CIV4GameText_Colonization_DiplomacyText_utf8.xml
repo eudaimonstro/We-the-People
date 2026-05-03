@@ -3141,6 +3141,7 @@
 		<Italian>Credo che [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:2][COLOR_REVERT] abbia bisogno del tuo aiuto, [CT_NAME]. Siamo certi che non ci deluderai.</Italian>
 		<Spanish>Creo que [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] necesita vuestra ayuda, [CT_NAME]. Sin duda, no vais a decepcionarnos.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] нуждаются в вашей помощи, [CT_NAME]. Уверен, вы нас не разочаруете.</Russian>
+		<Hungarian>Úgy látom, [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] a segítségedre szorul, [CT_NAME]. Biztos vagyok benne, hogy nem fogsz csalódást okozni nekünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_ASK_FOR_HELP_3</Tag>
@@ -3150,6 +3151,7 @@
 		<Italian>Malgrado sia difficile da credere, possiedi qualcosa che potrebbe farci comodo.</Italian>
 		<Spanish>Por difícil que resulte de creer, tenéis algo que podría irnos bien.</Spanish>
 		<Russian>Как бы трудно в это ни было поверить, у вас есть кое-что, что нам бы очень пригодилось.</Russian>
+		<Hungarian>Bármilyen nehéz is elhinni, valójában van valami, ami hasznos lenne a számunkra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_ASK_FOR_HELP_4</Tag>
@@ -3159,6 +3161,7 @@
 		<Italian>In questo momento, il tuo intervento è necessario per riguadagnare l'amicizia del[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:2][COLOR_REVERT], [CT_NAME].</Italian>
 		<Spanish>Vuestra ayuda en estos momentos difíciles hará mucho para que recuperéis la amistad de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT], [CT_NAME].</Spanish>
 		<Russian>Ваша помощь в этот жизненно важный момент поможет восстановить дружбу [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT], [CT_NAME].</Russian>
+		<Hungarian>A segítséged ebben a létfontosságú időszakban sokat segít [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] felé fennálló barátságod visszaszerzésében, [CT_NAME]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_ASK_FOR_HELP_5</Tag>
@@ -3168,6 +3171,7 @@
 		<Italian>Malgrado le differenze, credo che le nostre due nazioni abbiano molto in comune. Per esempio, voi avete qualcosa che a noi serve.</Italian>
 		<Spanish>Pese a nuestras diferencias, creo que nuestras dos naciones tienen mucho en común. Por ejemplo, eso que vosotros tenéis, nosotros lo necesitamos.</Spanish>
 		<Russian>Несмотря на наши различия, я считаю, что у наших двух народов много общего. Например, у вас то, то нам нужно.</Russian>
+		<Hungarian>Különbségeink ellenére úgy gondolom, hogy a nemzeteinkben sok a közös. Például neked ez van és nekünk szükségünk van rá.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FUR_ASK_FOR_HELP_6</Tag>
@@ -3177,6 +3181,7 @@
 		<Italian>[CT_NAME], potremmo avere bisogno del tuo aiuto. Non deluderci.</Italian>
 		<Spanish>Nos iría bien vuestra ayuda, [CT_NAME]. No nos decepcionéis.</Spanish>
 		<Russian>Нам может понадобиться ваша помощь, [CT_NAME]. Не разочаровывайте нас.</Russian>
+		<Hungarian>Igénybe tudnánk venni a segítségedet, [CT_NAME]. Ne okozz nekünk csalódást!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_WEAKER_1</Tag>
@@ -3186,6 +3191,7 @@
 		<Italian>Che peccato.</Italian>
 		<Spanish>Menuda decepción.</Spanish>
 		<Russian>Вы разочаровали нас...</Russian>
+		<Hungarian>Milyen kiábrándító.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_WEAKER_2</Tag>
@@ -3195,6 +3201,7 @@
 		<Italian>Bene, maledizione.</Italian>
 		<Spanish>Caca de la vaca...</Spanish>
 		<Russian>Ну, черт возьми.</Russian>
+		<Hungarian>Hát, a fenébe is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_WEAKER_3</Tag>
@@ -3204,6 +3211,7 @@
 		<Italian>Non sei una persona molto generosa, [CT_NAME].</Italian>
 		<Spanish>En verdad, no sois una persona muy desprendida, [CT_NAME].</Spanish>
 		<Russian>Вы действительно не очень щедрый человек, [CT_NAME].</Russian>
+		<Hungarian>Te tényleg nem vagy túl adakozó ember, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_WEAKER_4</Tag>
@@ -3213,6 +3221,7 @@
 		<Italian>Molto bene, meglio che per il momento non diciamo nulla a riguardo.</Italian>
 		<Spanish>Muy bien. No diremos nada más al respecto, de momento.</Spanish>
 		<Russian>Очень хорошо. Мы не будем больше ничего говорить об этом. Пока...</Russian>
+		<Hungarian>Te tényleg nem vagy túl adakozó ember, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_WEAKER_5</Tag>
@@ -3222,6 +3231,7 @@
 		<Italian>Hai fatto una scelta stupida, [CT_NAME].</Italian>
 		<Spanish>Habéis obrado estúpidamente, [CT_NAME].</Spanish>
 		<Russian>Вы сделали глупый выбор, [CT_NAME].</Russian>
+		<Hungarian>Ostobán döntöttél, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_WEAKER_6</Tag>
@@ -3231,6 +3241,7 @@
 		<Italian>Perfetto. L'avidità sarà la causa della tua caduta, [CT_NAME].</Italian>
 		<Spanish>Muy bien. Pero la avaricia será vuestra perdición, [CT_NAME].</Spanish>
 		<Russian>Очень хорошо. Но жадность погубит тебя, [CT_NAME].</Russian>
+		<Hungarian>Rendben van! De a kapzsiság lesz a végső bukásod, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_EQUAL_1</Tag>
@@ -3240,6 +3251,7 @@
 		<Italian>Ce ne ricorderemo, [CT_NAME].</Italian>
 		<Spanish>No olvidaremos esto, [CT_NAME].</Spanish>
 		<Russian>Мы запомним это, [CT_NAME].</Russian>
+		<Hungarian>Emlékezni fogunk erre, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_EQUAL_2</Tag>
@@ -3249,6 +3261,7 @@
 		<Italian>Come sei miope.</Italian>
 		<Spanish>No hemos visto una persona más corta de miras.</Spanish>
 		<Russian>Как недальновидно с твоей стороны.</Russian>
+		<Hungarian>Milyen rövidlátó vagy.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_EQUAL_3</Tag>
@@ -3258,6 +3271,7 @@
 		<Italian>Non è molto carino da parte tua, [CT_NAME].</Italian>
 		<Spanish>Esto no es muy amable por vuestra parte, [CT_NAME].</Spanish>
 		<Russian>Это не очень мило с твоей стороны, [CT_NAME].</Russian>
+		<Hungarian>Ez nem túl kedves tőled, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_EQUAL_4</Tag>
@@ -3267,6 +3281,7 @@
 		<Italian>Ce ne ricorderemo.</Italian>
 		<Spanish>No lo olvidaremos.</Spanish>
 		<Russian>Мы это запомним.</Russian>
+		<Hungarian>Erre emlékezni fogunk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_EQUAL_5</Tag>
@@ -3276,6 +3291,7 @@
 		<Italian>Sei una persona stolta.</Italian>
 		<Spanish>Sois idiota hasta la médula.</Spanish>
 		<Russian>Это довольно глупо с твоей стороны!</Russian>
+		<Hungarian>Ez elég nagy ostobaság tőled!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_EQUAL_6</Tag>
@@ -3285,6 +3301,7 @@
 		<Italian>Mi aspettavo di meglio da te, [CT_NAME].</Italian>
 		<Spanish>Esperábamos algo más de vos, [CT_NAME].</Spanish>
 		<Russian>Я ожидал от тебя большего, [CT_NAME].</Russian>
+		<Hungarian>Jobbat vártam tőled, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_STRONGER_1</Tag>
@@ -3294,6 +3311,7 @@
 		<Italian>Spero non te ne pentirai, [CT_NAME].</Italian>
 		<Spanish>Esperamos que no lleguéis a arrepentiros de esto, [CT_NAME].</Spanish>
 		<Russian>Надеюсь, ты не пожалеешь об этом, [CT_NAME].</Russian>
+		<Hungarian>Remélem, nem fogod megbánni, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_STRONGER_2</Tag>
@@ -3303,6 +3321,7 @@
 		<Italian>Molto bene. Così sia.</Italian>
 		<Spanish>Muy bien. Queda sobre vuestra conciencia.</Spanish>
 		<Russian>Хорошо. На ваш страх и риск!</Russian>
+		<Hungarian>Rendben van! A te felelősséged.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_STRONGER_3</Tag>
@@ -3312,6 +3331,7 @@
 		<Italian>Come desideri.</Italian>
 		<Spanish>Como gustéis.</Spanish>
 		<Russian>Как хочешь.</Russian>
+		<Hungarian>Ahogy szeretnéd.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_STRONGER_4</Tag>
@@ -3321,6 +3341,7 @@
 		<Italian>Ricorda che prima o poi tutti i nodi vengono al pettine...</Italian>
 		<Spanish>Recordad, quien siembra vientos...</Spanish>
 		<Russian>Помните, что посеешь, то и пожнешь.</Russian>
+		<Hungarian>Ne feledd: egyszer fenn, máskor lenn!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_STRONGER_5</Tag>
@@ -3330,6 +3351,7 @@
 		<Italian>Ottimo. Chissà se vi aiuteremo quando avrete bisogno...</Italian>
 		<Spanish>Muy bien. Ya veremos si os ayudamos cuando lo necesitéis.</Spanish>
 		<Russian>Отлично. Посмотрим, сможем ли мы помочь вам, когда вам это будет нужно.</Russian>
+		<Hungarian>Szép! Majd nézd meg, hogy segítünk-e, ha szükséged van rá!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_HELP_REFUSED_STRONGER_6</Tag>
@@ -3339,6 +3361,7 @@
 		<Italian>Un vero peccato, per entrambi.</Italian>
 		<Spanish>Es una lástima. Para ambos, me temo.</Spanish>
 		<Russian>Какая жалость. Это навредит нам обоим.</Russian>
+		<Hungarian>Ez nagyon rossz. Attól tartok, mindkettőnknek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_1</Tag>
@@ -3348,6 +3371,7 @@
 		<Italian>Vogliamo il seguente tributo!</Italian>
 		<Spanish>¡Exigimos lo siguiente como tributo!</Spanish>
 		<Russian>Мы требуем это в качестве дани!</Russian>
+		<Hungarian>Tiszteletdíjként a következőt követeljük!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_2</Tag>
@@ -3357,6 +3381,7 @@
 		<Italian>[CT_NAME], soddisfa le nostre richieste, altrimenti te ne pentirai amaramente.</Italian>
 		<Spanish>[CT_NAME], haced lo que os exigimos o ateneos a las consecuencias.</Spanish>
 		<Russian>[CT_NAME], выполни наши требования или пострадаешь от последствий.</Russian>
+		<Hungarian>[CT_NAME], teljesítsd a követeléseinket vagy viseld a következményeket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_3</Tag>
@@ -3366,6 +3391,7 @@
 		<Italian>Faresti una cosa saggia a darci ciò che vogliamo.</Italian>
 		<Spanish>Sería prudente por vuestra parte que nos dierais lo que queremos.</Spanish>
 		<Russian>Было бы мудро с вашей стороны дать нам то, что мы хотим.</Russian>
+		<Hungarian>Bölcs dolog lenne, ha megadnád nekünk, amit akarunk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_4</Tag>
@@ -3375,6 +3401,7 @@
 		<Italian>Dacci ciò che vogliamo o preparati a essere distrutto.</Italian>
 		<Spanish>Dadnos lo que queremos o disponeos a ser destruidos.</Spanish>
 		<Russian>Лучше подчинись нашему требованию...</Russian>
+		<Hungarian>Jobb, ha teljesíted a követelésünket...</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_5</Tag>
@@ -3384,6 +3411,7 @@
 		<Italian>Ricorri a tutta la tua saggezza, [CT_NAME], e dacci ciò che vogliamo.</Italian>
 		<Spanish>Sed razonable, [CT_NAME], y aceptad nuestras exigencias.</Spanish>
 		<Russian>Будь мудр, [CT_NAME], и подчинись нашим требованиям.</Russian>
+		<Hungarian>Légy bölcs, [CT_NAME], és engedj a követeléseinknek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_1</Tag>
@@ -3393,6 +3421,7 @@
 		<Italian>Possiamo farla facile o difficile. Quale preferisci?</Italian>
 		<Spanish>Podemos hacerlo por las buenas o por las malas. ¿Qué preferís?</Spanish>
 		<Russian>Мы можем сделать это простым способом или трудным. Какой ты предпочитаешь?</Russian>
+		<Hungarian>Választhatjuk a könnyebb utat vagy a nehezebbet is. Melyik tetszik jobban?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_2</Tag>
@@ -3402,6 +3431,7 @@
 		<Italian>In nome della nostra lunga amicizia, [CT_NAME], perché non ci fai questo piccolo dono?</Italian>
 		<Spanish>En aras de nuestra larga amistad, [CT_NAME], ¿no nos haríais este pequeño regalo?</Spanish>
 		<Russian>Ради нашей долгой дружбы, [CT_NAME], не подаришь ли ты нам этот небольшой подарок?</Russian>
+		<Hungarian>Hosszú barátságunk kedvéért, [CT_NAME], nem adnád nekünk ezt a kis ajándékot?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_3</Tag>
@@ -3411,6 +3441,7 @@
 		<Italian>Venerabile [CT_NAME], i tuoi vecchi amici e alleati hanno bisogno del tuo aiuto. Li aiuterai?</Italian>
 		<Spanish>Camarada [CT_NAME], necesitamos vuestra ayuda. ¿No contribuiréis a nuestra duradera amistad y alianza?</Spanish>
 		<Russian>Друг [CT_NAME], нам нужна помощь. Неужели вы не поможете своему давнему другу и союзнику?</Russian>
+		<Hungarian>[CT_NAME] barátom, segítségre van szükségünk. Segítesz régi barátodnak és szövetségesednek?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_4</Tag>
@@ -3420,6 +3451,7 @@
 		<Italian>Dacci ciò che vogliamo, [CT_NAME], altrimenti ce lo verremo a prendere.</Italian>
 		<Spanish>Dadnos lo que queremos, [CT_NAME], o iremos y lo cogeremos.</Spanish>
 		<Russian>Дайте нам то, что мы хотим, [CT_NAME], прежде чем мы придем и возьмем это силой.</Russian>
+		<Hungarian>Add meg nekünk, amit akarunk, [CT_NAME], mielőtt eljövünk és elvesszük!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_5</Tag>
@@ -3429,6 +3461,7 @@
 		<Italian>Questo è ciò che vogliamo, [CT_NAME]. La nostra lunga amicizia vale sicuramente di più.</Italian>
 		<Spanish>Esto es lo que necesitamos, [CT_NAME]. ¡Seguro que conservar nuestra amistad vale mucho más!</Spanish>
 		<Russian>Вот что нам нужно, [CT_NAME]. Конечно, наша неизменная дружба стоит гораздо больше!</Russian>
+		<Hungarian>Erre van szükségünk, [CT_NAME]. Bizonyára ennél sokkal többet ér a folyamatos barátságunk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_6</Tag>
@@ -3438,6 +3471,7 @@
 		<Italian>L'[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] ti sarà molto grato se la tua nazione terribilmente vulnerabile darà ciò che desideriamo.</Italian>
 		<Spanish>El [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] os estaría muy agradecido si vuestro país, terriblemente vulnerable, nos diera lo que queremos.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] были бы очень признательны, если бы ваша беззащитная страна дала нам то, что мы хотим.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] nagyon hálás lenne, ha a te borzasztóan sebezhető országod megadná nekünk, amit akarunk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_7</Tag>
@@ -3447,6 +3481,7 @@
 		<Italian>La nostra prolungata amicizia fornisce molti benefici, [CT_NAME]. Possibile che non meriti nemmeno un piccolo tributo in cambio?</Italian>
 		<Spanish>Nuestra amistad os proporciona constantes beneficios, [CT_NAME]. ¿No creéis que vale la pena este pequeño tributo a cambio?</Spanish>
 		<Russian>Наша постоянная дружба приносит много пользы, [CT_NAME]. Неужто она не стоит этой малости в ответ?</Russian>
+		<Hungarian>Folyamatos barátságunk számos előnnyel jár, [CT_NAME]. Biztosan megéri ezt a kis elismerést cserébe, ugye?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_8</Tag>
@@ -3456,6 +3491,7 @@
 		<Italian>Anticipa i soldi, [CT_NAME], per favore...</Italian>
 		<Spanish>Pagadlo ahora mismo, [CT_NAME]. Por favor...</Spanish>
 		<Russian>Заплати прямо сейчас, [CT_NAME].</Russian>
+		<Hungarian>Fizesd ezt ki előre, [CT_NAME]! Kérlek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_1</Tag>
@@ -3465,6 +3501,7 @@
 		<Italian>Per l'onore [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:3][COLOR_REVERT] dobbiamo chiederti di fare una piccola donazione.</Italian>
 		<Spanish>El honor de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] exige que os pidamos una pequeña donación.</Spanish>
 		<Russian>Честь [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] требует, чтобы вы сделали нам небольшое пожертвование.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] becsületére való tekintettel arra kérünk, hogy ajánlj fel nekünk egy kis adományt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_2</Tag>
@@ -3474,6 +3511,7 @@
 		<Italian>Per il bene di questa amicizia, dovresti prendere in considerazione la possibilità di farci un piccolo omaggio.</Italian>
 		<Spanish>Por el bien de nuestra amistad, tal vez queráis pensar en ofrecernos un pequeño donativo.</Spanish>
 		<Russian>Ради дружбы, вы могли бы подумать о том, чтобы сделать нам небольшой подарок.</Russian>
+		<Hungarian>A barátság kedvéért talán megfontolhatnád, hogy adj nekünk egy kis ajándékot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_3</Tag>
@@ -3483,6 +3521,7 @@
 		<Italian>Accetta le nostre richieste, [CT_NAME], o preparati a combattere!</Italian>
 		<Spanish>Acceded a nuestras exigencias, [CT_NAME], ¡o disponeos a luchar!</Spanish>
 		<Russian>Соглашайтесь на наши требования, [CT_NAME], или приготовьтесь к бою!</Russian>
+		<Hungarian>Egyezz bele a követeléseinkbe, [CT_NAME], vagy készülj fel a harcra!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_4</Tag>
@@ -3492,6 +3531,7 @@
 		<Italian>Sappi che [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:2][COLOR_REVERT] è amico e alleato di [CT_CIV_SHORT:3]. Ora, riguardo i nostri affari...</Italian>
 		<Spanish>Sabed que [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] está al lado de [CT_CIV_SHORT] como nación amiga e igual. Y ahora, respecto a lo que os pedimos a cambio...</Spanish>
 		<Russian>Вы знаете, что [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] здесь как друг и партнер [CT_CIV_SHORT]. А теперь пару слов о нашем гонораре...</Russian>
+		<Hungarian>Tudjátok, hogy [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] barátként és egyenrangú félként áll [CT_CIV_SHORT] mellett. Most pedig - ami a díjazásunkat illeti...</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_5</Tag>
@@ -3501,6 +3541,7 @@
 		<Italian>La pace con l'[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] ha un prezzo, [CT_NAME]. Pagherai?</Italian>
 		<Spanish>La paz con el [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] tiene un precio, [CT_NAME]. ¿Lo vais a pagar?</Spanish>
 		<Russian>Мир с нами имеет свою цену, [CT_NAME]. Вы будете платить?</Russian>
+		<Hungarian>A velünk való békének ára van, [CT_NAME]. Fizetsz érte?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_7</Tag>
@@ -3510,6 +3551,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] ha bisogno di questa risorsa, [CT_NAME]. Ce la darai di tua spontanea volontà oppure dovremo combattere?</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] necesita esto, [CT_NAME]. ¿Nos lo daréis o tendremos que luchar por ello?</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] нуждается в этом, [CT_NAME]. Ты отдашь его нам добровольно или нам прийти с оружием?</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] igényt tart erre, [CT_NAME]. Megadjod nekünk vagy meg kell harcolnunk érte?</Hungarian>>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_1</Tag>
@@ -3519,6 +3561,7 @@
 		<Italian>Pensaci bene, [CT_NAME]: se ci darai il tributo, la nostra amicizia proseguirà. In caso contrario, dovremo seriamente rivalutare il nostro rapporto.</Italian>
 		<Spanish>Pensadlo bien, [CT_NAME], si nos rendís tributo, nuestra amistad perdurará. Si no, tendremos que replantearnos nuestra relación.</Spanish>
 		<Russian>Хорошо подумай, [CT_NAME]: если ты отдашь нам дань, наша дружба продолжится. В противном случае нам придется пересмотреть наши отношения.</Russian>
+		<Hungarian>Gondold át jól, [CT_NAME]: ha fizetsz nekünk, barátságunk folytatódni fog. Ha nem, akkor komolyan át kell értékelnünk a kapcsolatunkat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_2</Tag>
@@ -3528,6 +3571,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:1][COLOR_REVERT] richiede il pagamento di un tributo.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] exige que le paguéis tributo.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] требуют от вас отдать дань уважения.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] azt követeli, hogy adózz neki!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_3</Tag>
@@ -3537,6 +3581,7 @@
 		<Italian>Dacci ciò che vogliamo o ti distruggeremo.</Italian>
 		<Spanish>Dadnos lo que queremos o seréis destruidos.</Spanish>
 		<Russian>Дайте нам то, что мы хотим, или будешь уничтожен.</Russian>
+		<Hungarian>Add meg nekünk, amit akarunk, vagy pusztulj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_4</Tag>
@@ -3546,6 +3591,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:2][COLOR_REVERT] chiede che tu riconosca la sua superiorità con un piccolo gesto.</Italian>
 		<Spanish>La poderosa tierra de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] exige que reconozcáis su superioridad con una pequeña muestra de aprecio.</Spanish>
 		<Russian>Могущественные [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] требуют от вас подношения в знак покорности.</Russian>
+		<Hungarian>A hatalmas [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] azt követeli, hogy egy apró jelképpel ismerd el felsőbbrendűségét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_6</Tag>
@@ -3555,6 +3601,7 @@
 		<Italian>Il tempo scarseggia e anche la memoria del [CT_CIV_SHORT:2] se dovessi rifiutare questo gesto di rispetto.</Italian>
 		<Spanish>Se acaba el tiempo, como se acabará el recuerdo de [CT_CIV_SHORT] si nos negáis esta pequeña muestra de aprecio.</Spanish>
 		<Russian>Время уходит, и для [CT_CIV_SHORT] останется совсем немного, если вы откажетесь отдать мне эту дань в знак уважения.</Russian>
+		<Hungarian>Az idő rövid és [CT_CIV_SHORT] emléke is rövid lesz, ha megtagadod tőlem a tiszteletnek e jelét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_7</Tag>
@@ -3564,6 +3611,7 @@
 		<Italian>Mi chiedo se ti andrebbe di offrirci un piccolo dono, [CT_NAME], per onorare la vecchia amicizia tra [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT:2][COLOR_REVERT] e la tua debole gente.</Italian>
 		<Spanish>Me pregunto si nos haríais un pequeño regalo, [CT_NAME], en honor a la eterna amistad entre la poderosa civilización de [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] y vuestro pueblo débil e indefenso.</Spanish>
 		<Russian>Не могли бы вы сделать нам небольшой подарок, [CT_NAME], в честь вечной дружбы между могущественными [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] и вашим слабым и беззащитным народом?</Russian>
+		<Hungarian>Vajon megfontolnád-e, hogy adj nekünk egy kis ajándékot, [CT_NAME], a hatalmas [COLOR_HIGHLIGHT_TEXT][OUR_CIV_SHORT][COLOR_REVERT] és a te gyenge és védtelen néped közötti időtlen barátság tiszteletére?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_8</Tag>
@@ -3573,6 +3621,7 @@
 		<Italian>Se vuoi allungare la vita della tua nazione, ti suggerisco di soddisfare le nostre richieste.</Italian>
 		<Spanish>En aras de la supervivencia de vuestro país, os sugiero que atendáis nuestras exigencias.</Spanish>
 		<Russian>Ради выживания вашей страны я предлагаю вам выполнить наши требования.</Russian>
+		<Hungarian>Az országod további fennmaradása érdekében javaslom, hogy teljesítsd a követeléseinket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_WEAKER_1</Tag>
@@ -3582,6 +3631,7 @@
 		<Italian>Molto bene, ti auguro di non pentirti della decisione [CT_NAME].</Italian>
 		<Spanish>Muy bien. Espero que no os arrepintáis de esta decisión, [CT_NAME].</Spanish>
 		<Russian>Очень хорошо. Я надеюсь, что вы не пожалеете об этом решении, [CT_NAME].</Russian>
+		<Hungarian>Rendben van! Remélem nem fogod megbánni ezt a döntést, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_WEAKER_2</Tag>
@@ -3591,6 +3641,7 @@
 		<Italian>In futuro faresti meglio a ricordati chi sono i tuoi veri amici [CT_NAME].</Italian>
 		<Spanish>En el futuro, será mejor que recordéis quiénes son vuestros amigos, [CT_NAME].</Spanish>
 		<Russian>На будущее вам лучше запомнить, кто ваши друзья, [CT_NAME].</Russian>
+		<Hungarian>A jövőben jobb lesz, ha emlékszel arra, hogy kik a barátaid, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_WEAKER_3</Tag>
@@ -3600,6 +3651,7 @@
 		<Italian>Ci hai delusi ancora una volta, [CT_NAME]. Ci auguriamo che non si ripeta più.</Italian>
 		<Spanish>Volvéis a decepcionarnos, [CT_NAME]. Os recomiendo que no dejéis que se repita.</Spanish>
 		<Russian>Ты снова меня разочаровал, [CT_NAME]. Следи, чтобы это больше не повторилось.</Russian>
+		<Hungarian>Ismét csalódást okoztál nekem, [CT_NAME]. Jobb lenne, ha vigyáznál, hogy ez többé ne forduljon elő!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_WEAKER_4</Tag>
@@ -3609,6 +3661,7 @@
 		<Italian>Non è molto gentile da parte tua, se posso dire la mia.</Italian>
 		<Spanish>Vaya, si se me permite, esto no es muy amable por vuestra parte.</Spanish>
 		<Russian>Если вы спросите меня, на мой взгляд это не очень мило с вашей стороны.</Russian>
+		<Hungarian>Nos, ez nem túl szép, ha engem kérdezel.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_WEAKER_5</Tag>
@@ -3618,6 +3671,7 @@
 		<Italian>Che peste vi colga!</Italian>
 		<Spanish>Maldita sea, ¡otro intento frustrado!</Spanish>
 		<Russian>Чёрт возьми, ещё одна неудачная попытка!</Russian>
+		<Hungarian>Nem sokáig folytathatjuk ezt így.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_WEAKER_6</Tag>
@@ -3627,6 +3681,7 @@
 		<Italian>Sei arrogante, [CT_NAME]. Un giorno la pagherai molto cara.</Italian>
 		<Spanish>Sois arrogante, [CT_NAME]. Algún día eso os llevará a la destrucción.</Spanish>
 		<Russian>Ты слишком высокомерен, [CT_NAME]. Когда-нибудь это приведет к тебя к гибели.</Russian>
+		<Hungarian>Te arrogáns vagy, [CT_NAME]! Ez egy nap a vesztedet fogja okozni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_EQUAL_1</Tag>
@@ -3636,6 +3691,7 @@
 		<Italian>La tua testardaggine ti porterà alla distruzione, [CT_NAME].</Italian>
 		<Spanish>Esa terquedad estúpida será vuestra perdición, [CT_NAME].</Spanish>
 		<Russian>Глупое упрямство приводит к гибели, [CT_NAME].</Russian>
+		<Hungarian>Az ostoba makacsság a vesztedet fogja okozni, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_EQUAL_2</Tag>
@@ -3645,6 +3701,7 @@
 		<Italian>Molto bene, così sia.</Italian>
 		<Spanish>Muy bien. Queda sobre vuestra conciencia.</Spanish>
 		<Russian>Что ж! В конце концов, вы должны знать, что делаете!</Russian>
+		<Hungarian>Rendben van! A fejeddel játszol.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_EQUAL_3</Tag>
@@ -3654,6 +3711,7 @@
 		<Italian>Non credo tu abbia realizzato con chi stai parlando, [CT_NAME]. Ti suggerisco di riconsiderare la tua posizione, e alla svelta!</Italian>
 		<Spanish>Creo que no os dais cuenta de con quién estáis hablando, [CT_NAME]. Os sugiero que lo reconsideréis, ¡y rápido!</Spanish>
 		<Russian>Не думаю, что вы понимаете, с кем имеете дело, [CT_NAME]. Я предлагаю вам передумать, и быстро!</Russian>
+		<Hungarian>Nem hiszem, hogy felfogtad, kivel van dolgod, [CT_NAME]. Javaslom, hogy gondold át, méghozzá gyorsan!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_EQUAL_4</Tag>
@@ -3663,6 +3721,7 @@
 		<Italian>Stai giocando con la vita della tua gente, [CT_NAME]. Siete pronti a pagare il prezzo della sconfitta?</Italian>
 		<Spanish>Jugáis con la vida de vuestro pueblo, [CT_NAME]. ¿Seguro que queréis pagar ese precio si perdéis?</Spanish>
 		<Russian>Вы рискуете жизнями своих людей, [CT_NAME]. Готовы ли вы заплатить эту цену, если вы проиграете?</Russian>
+		<Hungarian>A néped életével játszol, [CT_NAME]. Kész vagy megfizetni az árat, ha veszítesz?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_EQUAL_5</Tag>
@@ -3672,6 +3731,7 @@
 		<Italian>Bene. La prossima volta non sarò così gentile.</Italian>
 		<Spanish>Muy bien. ¡La próxima vez no os lo pediré tan amablemente!</Spanish>
 		<Russian>Отлично. В следующий раз я не буду просить так вежливо!</Russian>
+		<Hungarian>Rendben. Legközelebb nem kérem ilyen szépen!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_EQUAL_6</Tag>
@@ -3681,6 +3741,7 @@
 		<Italian>Stai giocando col fuoco, [CT_NAME]. Attenzione a non bruciarti.</Italian>
 		<Spanish>Estáis jugando con fuego, [CT_NAME]. Procurad no quemaros.</Spanish>
 		<Russian>Вы играете с огнём, [CT_NAME]. Смотрите не обожгитесь.</Russian>
+		<Hungarian>A tűzzel játszol, [CT_NAME]. Vigyázz, nehogy megégesd magad!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_STRONGER_1</Tag>
@@ -3690,6 +3751,7 @@
 		<Italian>Te ne pentirai, miserabile creatura!</Italian>
 		<Spanish>¡Os arrepentiréis de esto, miserable criatura!</Spanish>
 		<Russian>Вы пожалеете об этом!</Russian>
+		<Hungarian>Ezt meg fogod bánni!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_STRONGER_2</Tag>
@@ -3699,6 +3761,7 @@
 		<Italian>Stai mettendo a dura prova la mia pazienza, [CT_NAME]!</Italian>
 		<Spanish>¡Ponéis a prueba mi paciencia, [CT_NAME]!</Spanish>
 		<Russian>Ты испытываешь мое терпение, [CT_NAME]!</Russian>
+		<Hungarian>Próbára teszed a türelmemet, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_STRONGER_3</Tag>
@@ -3708,6 +3771,7 @@
 		<Italian>Molto bene. Ti suggerisco di chiamare a raccolta i tuoi soldati, [CT_NAME]. Ne avrai bisogno.</Italian>
 		<Spanish>Muy bien. Os recomiendo que empecéis a movilizar a vuestros soldaditos, [CT_NAME]. Vais a necesitarlos en breve.</Spanish>
 		<Russian>Очень хорошо. Я советую вам собрать свои войска, [CT_NAME]. Они понадобится вам очень скоро.</Russian>
+		<Hungarian>Rendben van. Javaslom, hogy kezdd el besorozni a katonákat, [CT_NAME]. Hamarosan szükséged lesz rájuk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_STRONGER_4</Tag>
@@ -3717,6 +3781,7 @@
 		<Italian>Dovresti ragionare prima di perdere la pazienza, [CT_NAME], perché potrebbero esserci delle gravi conseguenze.</Italian>
 		<Spanish>Deberíais cuidaros de no enojar a vuestros superiores, [CT_NAME], porque puede traer consecuencias desagradables.</Spanish>
 		<Russian>Это будет иметь последствия.</Russian>
+		<Hungarian>Ennek lesznek következményei!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_STRONGER_5</Tag>
@@ -3726,6 +3791,7 @@
 		<Italian>Folle! Sai che potrei schiacciarti come un chicco d'uva?</Italian>
 		<Spanish>¡Idiota! ¿No sois conscientes de que os aplastaré como a cucarachas?</Spanish>
 		<Russian>Не разумное решение.</Russian>
+		<Hungarian>Nem volt bölcs döntés.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_REJECTED_POWER_STRONGER_6</Tag>
@@ -3736,6 +3802,7 @@
 		<Spanish>¡Cómo osáis negaros a estas peticiones tan razonables! ¡Os arrepentiréis de esto, os lo prometo!</Spanish>
 		<Russian>Вы пожалеете об этом, я обещаю!</Russian>
 	</TEXT>
+		<Hungarian>Meg fogod bánni, ígérem!</Hungarian>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_DENIED_1</Tag>
 		<English>You should choose your side carefully.</English>
@@ -3744,6 +3811,7 @@
 		<Italian>Dovresti scegliere attentamente con chi schierarti.</Italian>
 		<Spanish>Debéis escoger con más esmero en qué bando estáis.</Spanish>
 		<Russian>Хорошо подумайте, на чьей стороне вы хотите быть.</Russian>
+		<Hungarian>Körültekintően kell megválasztani melyik oldalra állsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_DENIED_2</Tag>
@@ -3753,6 +3821,7 @@
 		<Italian>Molto bene. Più bottino per noi.</Italian>
 		<Spanish>Muy bien. ¡Más saquearemos!</Spanish>
 		<Russian>Очень хорошо. Это просто означает, что для нас будет больше добычи!</Russian>
+		<Hungarian>Rendben. Ez csak még több zsákmányt jelent számunkra!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_DENIED_3</Tag>
@@ -3762,6 +3831,7 @@
 		<Italian>Davvero? Non sapevo della tua timidezza.</Italian>
 		<Spanish>¿De verdad? ¡No tenía ni idea de que fuerais tan tímidos!</Spanish>
 		<Russian>Серьёзно? Я и не подозревал, что ты такой робкий!</Russian>
+		<Hungarian>Tényleg? Nem is tudtam, hogy ilyen félénk vagy!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_DENIED_4</Tag>
@@ -3771,6 +3841,7 @@
 		<Italian>Molto deludente.</Italian>
 		<Spanish>Qué decepcionante.</Spanish>
 		<Russian>Я очень разочарован!</Russian>
+		<Hungarian>Milyen kiábrándító.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_DENIED_5</Tag>
@@ -3780,6 +3851,7 @@
 		<Italian>Spero che tu sappia cosa stai facendo, [CT_NAME].</Italian>
 		<Spanish>Espero que sepáis lo que hacéis, [CT_NAME].</Spanish>
 		<Russian>Надеюсь, ты знаешь, что делаешь, [CT_NAME].</Russian>
+		<Hungarian>Remélem, tudod, mit csinálsz, [CT_NAME].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_JOIN_DENIED_6</Tag>
@@ -3789,6 +3861,7 @@
 		<Italian>Ce ne ricorderemo, [CT_NAME]!</Italian>
 		<Spanish>¡No olvidaremos esto, [CT_NAME]!</Spanish>
 		<Russian>Мы запомним это, [CT_NAME]!</Russian>
+		<Hungarian>Erre emlékezni fogunk, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_STOP_DENIED_1</Tag>
@@ -3798,6 +3871,7 @@
 		<Italian>Non la prenderemo alla leggera, [CT_NAME]!</Italian>
 		<Spanish>¡No pasaremos esto por alto, [CT_NAME]!</Spanish>
 		<Russian>Мы очень плохо к этому относимся, [CT_NAME]!</Russian>
+		<Hungarian>Ezt nem fogjuk félvállról venni, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_WORST_ENEMY_1</Tag>
@@ -3807,6 +3881,7 @@
 		<Italian>Attenzione al nostro più pericoloso nemico - [COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY:2][COLOR_REVERT]! Non possiamo fidarci di loro.</Italian>
 		<Spanish>¡Cuidado con el [COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY][COLOR_REVERT], nuestro peor enemigo! No conviene fiarse.</Spanish>
 		<Russian>Остерегайтесь нашего злейшего врага - [COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY][COLOR_REVERT]! Им нельзя доверять.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY][COLOR_REVERT] a legnagyobb ellenségünk! Vigyázz velük! Nem lehet bennük megbízni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_WORST_ENEMY_TRADING_1</Tag>
@@ -3816,6 +3891,7 @@
 		<Italian>Vorremmo che la smettessi di commerciare con il nostro nemico giurato - [COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY:2][COLOR_REVERT]!</Italian>
 		<Spanish>Os sugerimos que dejéis de comerciar con el [COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY][COLOR_REVERT], nuestro enemigo más acérrimo.</Spanish>
 		<Russian>Мы призываем вас прекратить торговать с нашим заклятым врагом - [COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY][COLOR_REVERT]!</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_WORST_ENEMY][COLOR_REVERT] a legrosszabb ellenségünk. Arra bátorítunk téged, hogy ne kereskedj velük!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_SOMETHING_ELSE_1</Tag>
@@ -3825,6 +3901,7 @@
 		<Italian>Di cos'altro vuoi discutere?</Italian>
 		<Spanish>¿De qué más queréis hablar?</Spanish>
 		<Russian>Что еще вы хотели бы обсудить?</Russian>
+		<Hungarian>Miről szeretnél még beszélni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_ATTITUDE_1</Tag>
@@ -3834,6 +3911,7 @@
 		<Italian>Sì?</Italian>
 		<Spanish>¿Sí?</Spanish>
 		<Russian>Да?</Russian>
+		<Hungarian>Igen?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TARGET_1</Tag>
@@ -3843,6 +3921,7 @@
 		<Italian>Dove dovremmo attaccare?</Italian>
 		<Spanish>¿Dónde debemos atacar?</Spanish>
 		<Russian>Где мы должны атаковать?</Russian>
+		<Hungarian>Hol támadjunk?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TARGET_CITY_1</Tag>
@@ -3852,6 +3931,7 @@
 		<Italian>Faremo del nostro meglio!</Italian>
 		<Spanish>¡Lo haremos lo mejor que podamos!</Spanish>
 		<Russian>Мы сделаем все возможное!</Russian>
+		<Hungarian>Megteszünk minden tőlünk telhetőt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_WELL_1</Tag>
@@ -3861,6 +3941,7 @@
 		<Italian>Quindi?</Italian>
 		<Spanish>¿Y bien?</Spanish>
 		<Russian>И?</Russian>
+		<Hungarian>Nos?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_WAR_RESPONSE_1</Tag>
@@ -3870,6 +3951,7 @@
 		<Italian>Così sia.</Italian>
 		<Spanish>Así sea.</Spanish>
 		<Russian>Быть по сему.</Russian>
+		<Hungarian>Hát legyen!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_PEACE_1</Tag>
@@ -3879,6 +3961,7 @@
 		<Italian>Nella nostra epoca regnerà la pace!</Italian>
 		<Spanish>¡Que reine la paz en nuestro tiempo!</Spanish>
 		<Russian>Да будет мир!</Russian>
+		<Hungarian>Legyen béke közöttünk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_PROPOSE_1</Tag>
@@ -3888,6 +3971,7 @@
 		<Italian>Accetterai questa proposta?</Italian>
 		<Spanish>¿Queréis aceptar este trato?</Spanish>
 		<Russian>Вы согласны?</Russian>
+		<Hungarian>Elfogadnád ezt az ajánlatot?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACCEPT_1</Tag>
@@ -3897,6 +3981,7 @@
 		<Italian>Accettiamo la tua offerta.</Italian>
 		<Spanish>Aceptamos vuestra propuesta.</Spanish>
 		<Russian>Мы принимаем ваше предложение.</Russian>
+		<Hungarian>Elfogadjuk az ajánlatod.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REJECT_1</Tag>
@@ -3906,6 +3991,7 @@
 		<Italian>Mi spiace, ma non possiamo accettare una proposta del genere.</Italian>
 		<Spanish>Lo sentimos, no podemos aceptar un trato así.</Spanish>
 		<Russian>Извините, такое предложение нам не подходит.</Russian>
+		<Hungarian>Sajnáljuk, de ilyen üzletet nem tudunk elfogadni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_OFFER_1</Tag>
@@ -3915,6 +4001,7 @@
 		<Italian>Cosa vuoi in cambio?</Italian>
 		<Spanish>¿Qué queréis por esto?</Spanish>
 		<Russian>Что вы хотите за это?</Russian>
+		<Hungarian>Mit kérsz ezért?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_GIFT_1</Tag>
@@ -3924,6 +4011,7 @@
 		<Italian>Ti prego, accetta questo dono.</Italian>
 		<Spanish>Por favor, aceptad este regalo.</Spanish>
 		<Russian>Пожалуйста, примите этот дар.</Russian>
+		<Hungarian>Kérlek, fogadd el ezt az ajándékot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NEVERMIND_1</Tag>
