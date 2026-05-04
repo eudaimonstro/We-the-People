@@ -5041,21 +5041,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_OCONOSTOTA_1</Tag>
-		<English>Paleface, I am [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], the war chief of the [COLOR_HIGHLIGHT_TEXT]Cherokee[COLOR_REVERT]. My people number more than any others across this land. Our enemies fear us, and our friends enjoy our protection. Will you trade with us and fight by our side?</English>
+		<English>Paleface, I am [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], the war chief of the [COLOR_HIGHLIGHT_TEXT]Cherokee[COLOR_REVERT]. My people outnumber all others across this land. Enemies fear us, and our friends enjoy our protection. Will you trade with us and fight by our side?</English>
 		<French>Visage pâle, je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], chef de guerre des [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]. Mon peuple est plus nombreux que tous les autres dans ces contrées. Nos ennemis nous craignent, et nos amis sont heureux de notre protection.  Allez-vous commercer avec nous et vous battre à nos côtés ?</French>
 		<German>Bleichgesicht, ich bin [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], der Kriegshäuptling der [COLOR_HIGHLIGHT_TEXT]Cherokee[COLOR_REVERT]. Mein Volk zählt mehr Köpfe als jedes andere in diesem Land. Unsere Feinde fürchten uns, und unsere Freunde genießen unseren Schutz. Wollt Ihr mit uns Handel treiben und an unserer Seite kämpfen?</German>
 		<Italian>Sono [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], capo del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Commerciamo e consolidiamo la nostra amicizia.</Italian>
 		<Spanish>Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], jefe del pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]. Comerciemos y estrechemos nuestros lazos de amistad.</Spanish>
 		<Russian>Бледнолицый, я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], военачальник [COLOR_HIGHLIGHT_TEXT]Чероки[COLOR_REVERT]. Мой народ насчитывает больше воинов, чем любой другой на этой земле. Наши враги боятся нас, а наши друзья пользуются нашей защитой. Будете ли вы торговать с нами и сражаться на нашей стороне?</Russian>
+		<Hungarian>Sápadtarcú, én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a [COLOR_HIGHLIGHT_TEXT]Cserokik[COLOR_REVERT] vezére. Az én népem számosabb, mint bárki más ezen a földön. Ellenségeink félnek tőlünk, barátaink pedig élvezik védelmünket. Akarsz-e velünk kereskedni és az oldalunkon harcolni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SITTING_BULL_1</Tag>
-		<English>Paleface, I am [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], chief and medicine man of the [COLOR_HIGHLIGHT_TEXT]Sioux[COLOR_REVERT]. The buffalo is sacred to my people. Its meat nourishes us, its hide warms us, and its sinews serve us as yarn. From its ribs we build sledges in winter. From its children we strip the tender skin to swaddle our own children in. Spare our buffalo in the hunt, and we will spare you.</English>
+		<English>Paleface, I am [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], chief and medicine man of the [COLOR_HIGHLIGHT_TEXT]Sioux[COLOR_REVERT]. The buffalo is sacred to my people. Its meat nourishes us, its hide warms us, and its sinews serve us as yarn. From its ribs we build sleds in winter. From its children we strip the tender skin to swaddle our children. Spare our buffalo in the hunt, and we will spare you.</English>
 		<French>Visage pâle, je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], chef et grand guérisseur des [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]. Le bison est sacré pour notre peuple. Sa chair nous nourrit, sa peau nous protège du froid, et ses tendons nous permettent de coudre. En hiver, de ses côtes nous créons de traineaux. De ses enfants nous tirons un cuir souple qui nous permet de garder les notres à corps. Épargnez nos bisons dans la chasse, et nous vous épargnerons.</French>
 		<German>Bleichgesicht, ich bin [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], Häuptling und Medizinmann der [COLOR_HIGHLIGHT_TEXT]Sioux[COLOR_REVERT]. Der Büffel ist meinem Volk heilig. Sein Fleisch nährt uns, sein Fell wärmt uns, und seine Sehnen dienen uns als Garn. Aus seinen Rippen bauen wir im Winter Schlitten. Seinen Kindern ziehen wir die zarte Haut ab, um unsere eigenen Kinder darin zu windeln. Verschont unsere Büffel bei der Jagd, und wir werden Euch verschonen.</German>
 		<Italian>Saluti, sono [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] della civiltà [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Sediamoci davanti al fuoco e parliamo.</Italian>
 		<Spanish>Saludos. Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], de los [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]. Sentémonos alrededor de la hoguera y hablemos.</Spanish>
 		<Russian>Бледнолицый, я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], вождь и знахарь племени [COLOR_HIGHLIGHT_TEXT]Сиу[COLOR_REVERT]. Бизон является священным для моего народа. Его мясо питает нас, его шкура согревает нас, а его сухожилия служат нам пряжей. Из его рёбер зимой мы строим санки. Мы сдираем с его детей нежную кожу, чтобы пеленать в нее наших собственных детей. Пощадите его на охоте и мы пощадим вас.</Russian>
+		<Hungarian>Sápadtarcú, én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a [COLOR_HIGHLIGHT_TEXT]Sziúk[COLOR_REVERT] törzsfőnöke és gyógyítója. A bölény szent a népem számára. Húsa táplál minket, bőre melegít minket, és inai fonalként szolgálnak nekünk. Bordáiból télen szánkókat építünk. Gyermekeiről lecsupaszítjuk a zsenge bőrt, hogy a saját gyermekeinket bebugyolálhassuk. Kíméljétek meg a bölényeinket a vadászatok során, és mi is megkímélünk titeket.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CHIEF_JOSEPH_1</Tag>
@@ -5065,6 +5067,7 @@
 		<Italian>Saluti, sono [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] della civiltà [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Sediamoci davanti al fuoco e parliamo.</Italian>
 		<Spanish>Saludos. Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], de los [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]. Sentémonos alrededor de la hoguera y hablemos.</Spanish>
 		<Russian>Бледнолицый, я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], глава [COLOR_HIGHLIGHT_TEXT]Не-персе[COLOR_REVERT]. Лосось - святыня для моего народа. Его мясо питает нас и обеспечивает нас круглый год. Не забирайте у нас нашу рыбу и мы вас пощадим. Мы также разводим сильных и выносливых лошадей. Оставьте наших лошадей в покое и мы будем мирно встречать вас у наших костров.</Russian>
+		<Hungarian>Sápadtarcú, én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a [COLOR_HIGHLIGHT_TEXT]Nez Percék[COLOR_REVERT] törzsfőnöke. A lazac szent a népem számára. Húsa táplál minket és egész évben ellát minket. Ne vegyétek el tőlünk a halainkat és mi megkímélünk titeket. Erős és kitartó lovakat is tenyésztünk. Hagyjátok békén a lovainkat és mi békésen fogadunk titeket a tábortüzünknél.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_PENN_1</Tag>
@@ -5074,6 +5077,7 @@
 		<Italian>Mi dispiace, ma ora non ho tempo per umiliarti. Forse potrei trovarne più tardi.</Italian>
 		<Spanish>Lo siento, pero ahora no tengo tiempo ni para menospreciaros. Quizá más tarde.</Spanish>
 		<Russian>Ты меня сильно разочаровал, брат [CT_NAME]. Я надеялся найти в тебе родственную душу, которая, как и я, будет бороться за добродетель и свободу. Но ты оказался негодяем.</Russian>
+		<Hungarian>Sápadtarcú, én vagyok [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a [COLOR_HIGHLIGHT_TEXT]Nez Percék[COLOR_REVERT] törzsfőnöke. A lazac szent a népem számára. Húsa táplál minket és egész évben ellát minket. Ne vegyétek el tőlünk a halainkat és mi megkímélünk titeket. Erős és kitartó lovakat is tenyésztünk. Hagyjátok békén a lovainkat és mi békésen fogadunk titeket a tábortüzünknél.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_BOLIVAR_1</Tag>
@@ -5083,15 +5087,17 @@
 		<Italian>Senti, sono molto occupato. Perché non prendi i bambini e te ne torni al circolo?</Italian>
 		<Spanish>Mirad, estoy muy ocupado. ¿Por qué no os lleváis a los niños y os volvéis al club?</Spanish>
 		<Russian>Я очень занят, сеньор [CT_NAME]. Мы можем поговорить в другой раз. Или нет.</Russian>
+		<Hungarian>Nagyon elfoglalt vagyok, Senor [CT_NAME]. Beszélhetünk máskor is. Vagy nem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_CHAMPLAIN_1</Tag>
-		<English>You again, Monsieur [CT_NAME]! And you're still wearing your scalp, I see. Well, come back when that has changed.</English>
+		<English>You again, Monsieur [CT_NAME]! You still have your scalp, I see. Well, come back when that has changed.</English>
 		<French>Encore vous, Monsieur [CT_NAME]! Vous êtes toujours pourvu de votre scalp. Je vois. Et bien, revenez me voir quand cela aura changé.</French>
 		<German>Ihr schon wieder, Monsieur [CT_NAME]! Und Ihr tragt immer noch Euren Skalp, wie ich sehe. Nun, kommt wieder, wenn sich das geändert hat.</German>
 		<Italian>Pur non avendo intenzione di offenderti, anche se lo faccio non importa. Semplicemente non ho tempo da perdere con te. Addio.</Italian>
 		<Spanish>Aunque no pretendo ofenderos, si lo hago no me importa. Simplemente es que no tengo tiempo que perder con vos. Adiós.</Spanish>
 		<Russian>Опять вы, мсье [CT_NAME]! И ты все еще носишь скальп, как я вижу. Ну, возвращайся, когда все изменится.</Russian>
+		<Hungarian>Már megint te, Monsieur [CT_NAME]! És látom, még mindig viseled a skalpodat. Nos, akkor gyere vissza, ha ez megváltozott.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_DONCK_1</Tag>
@@ -5101,15 +5107,17 @@
 		<Italian>Ho paura che non sia conveniente parlarti in questo momento.</Italian>
 		<Spanish>Me temo que no me sería ventajoso hablar con vos en este momento.</Spanish>
 		<Russian>Мистер [CT_NAME], этот Новый Свет — находка для каждого человека благородного духа, ценящего красоту и порядочность. Значит не для тебя.</Russian>
+		<Hungarian>Mijnheer [CT_NAME], ez az Új Világ egy isteni ajándék minden nemes lelkű ember számára, aki értékeli a szépséget és a tisztességet. Tehát nem neked.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_FRONTENAC_1</Tag>
-		<English>[CT_NAME], I am a busy man. Bore someone else, please, lad. Au revoir.</English>
+		<English>[CT_NAME], I am a busy man. Bore someone else, please. Au revoir.</English>
 		<French>[CT_NAME], je suis un homme occupé. Allez ennuyer quelq'un d'autre, je vous en prie. Au revoir.</French>
 		<German>[CT_NAME], ich bin ein vielbeschäftigter Mann. Langweilt bitte jemand anderen, Bursche. Au revoir.</German>
 		<Italian>Non ho tempo di parlare con te dei primitivi problemi della tua primitiva colonia.</Italian>
 		<Spanish>No tengo tiempo para hablar con vos de los problemas atrasados de vuestra atrasada colonia.</Spanish>
 		<Russian>[CT_NAME], я занятой человек. Займите своими разговорами кого-нибудь другого, пожалуйста. До свидания.</Russian>
+		<Hungarian>Mijnheer [CT_NAME], ez az Új Világ egy isteni ajándék minden nemes lelkű ember számára, aki értékeli a szépséget és a tisztességet. Tehát nem neked.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_HERNAN_CORTES_1</Tag>
@@ -5119,6 +5127,7 @@
 		<Italian>Ora userò la mia incredibile conoscenza della tattica per ignorarti.</Italian>
 		<Spanish>Ahora utilizaré mi astuto conocimiento de la táctica para hacer caso omiso de vos.</Spanish>
 		<Russian>Карамба! Вы крадете мое время, сеньор [CT_NAME]. Собирайте чемоданы и покидайте эту часть мира!</Russian>
+		<Hungarian>Caramba! Már megint te! Ellopod az időmet, Senor [CT_NAME]. Pakolj össze és hagyd el a világnak ezt a részét!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_STUYVESANT_1</Tag>
@@ -5128,6 +5137,7 @@
 		<Italian>Mi dispiace, ora non ho tempo di parlare con le persone poco importanti.</Italian>
 		<Spanish>Lo siento, ahora mismo no tengo tiempo para hablar con los pequeños pueblos.</Spanish>
 		<Russian>Мистер [CT_NAME], извините, но сейчас у меня нет времени разговаривать с мальчиками на побегушках.</Russian>
+		<Hungarian>Mijnheer [CT_NAME], sajnálom, de most nincs időm a kifutófiúkkal beszélgetni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_WASHINGTON_1</Tag>
@@ -5137,6 +5147,7 @@
 		<Italian>Mi dispiace, ma il mio dovere mi impone di essere altrove, in questo momento.</Italian>
 		<Spanish>Lo siento, pero ahora mismo el deber me reclama en otro sitio.</Spanish>
 		<Russian>Сэр, я сожалею. Извините, но мое время слишком дорого для вашей болтовни.</Russian>
+		<Hungarian>Uram, őszintén bánom és rettenetesen sajnálom, de az időm túl értékes ahhoz, hogy a fecsegéseidre pazaroljam.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_AGUEYBANA_1</Tag>
@@ -5146,6 +5157,7 @@
 		<Italian>Forse dovresti tornartene da dove vieni, non ho intenzione di parlarti.</Italian>
 		<Spanish>Quizá deberíais volver por donde habéis venido. No quiero hablar con vos.</Spanish>
 		<Russian>Пожалуйста, вернитесь туда, откуда пришли, [CT_NAME]. Вы несете несчастья в наш мир.</Russian>
+		<Hungarian>Kérlek, térj vissza oda, ahonnan jöttél, [CT_NAME]! Szerencsétlenséget hozol a világunkra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_CUNHAMBEBE_1</Tag>
@@ -5156,6 +5168,7 @@
 		<Spanish>No tengo tiempo para hablar con vos. Tengo que ir a comer.</Spanish>
 		<Russian>Можете разговаривать с камнями, с реками или с небом, если хотите. Но не со мной.</Russian>
 	</TEXT>
+		<Hungarian>Beszélj a kövekhez, a folyókhoz vagy az éghez, ha akarsz. De ne hozzám!</Hungarian>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_HUAYNA_CAPAC_1</Tag>
 		<English>Your presence dishonours me. Get out!</English>
@@ -5164,15 +5177,17 @@
 		<Italian>È una perdita di tempo parlare con gli stolti. Sparisci.</Italian>
 		<Spanish>Hablar con idiotas es una pérdida de tiempo. Marchaos.</Spanish>
 		<Russian>Твоё присутствие позорит меня. Убирайся!</Russian>
+		<Hungarian>A jelenléted meggyaláz engem. Kifelé!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_LOGAN_1</Tag>
-		<English>You want to talk, [CT_NAME]? No. You better act quick and get out of here.</English>
+		<English>You want to talk, [CT_NAME]? No. Get out of here. And be quick about it.</English>
 		<French>Vous voulez parler ? C'est un peu tard pour ça.</French>
 		<German>Ihr wollt reden, [CT_NAME]? Nein. Handelt lieber und verschwindet aus dieser Welt.</German>
 		<Italian>Vuoi parlare? È un po' troppo tardi per farlo.</Italian>
 		<Spanish>¿Ahora queréis hablar? Es un poco tarde para eso.</Spanish>
 		<Russian>Хочешь поговорить, [CT_NAME]? Нет. Тебе лучше уйти отсюда и сделать это как можно быстрее.</Russian>
+		<Hungarian>Akarsz beszélni, [CT_NAME]? Nem. Jobb, ha gyorsan cselekszel és eltűnsz innen!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_MANGAS_COLORADAS_1</Tag>
@@ -5182,6 +5197,7 @@
 		<Italian>A questo punto le parole non possono risolvere nulla.</Italian>
 		<Spanish>A estas alturas, las palabras no pueden resolver nada.</Spanish>
 		<Russian>У нас нет ничего общего, [CT_NAME]. Я воин, а не болтун. Ты болтун, а не воин. Уходи.</Russian>
+		<Hungarian>Nincs semmi közös bennünk, [CT_NAME]. Én harcos vagyok, nem társalgó. Te egy társalgó vagy, nem harcos. Menj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_MONTEZUMA_1</Tag>
@@ -5191,6 +5207,7 @@
 		<Italian>Perché non ne discuti con la lama cerimoniale, [CT_NAME]?</Italian>
 		<Spanish>Decídselo al cuchillo ceremonial, [CT_NAME].</Spanish>
 		<Russian>Если хочешь поговорить, иди к Алтарю Солнца, [CT_NAME]. Ты можешь сказать последнее слово Первосвященнику, прежде чем он вырежет тебе сердце!</Russian>
+		<Hungarian>Ha beszélgetni szeretnél, menj a Nap oltárához, [CT_NAME]. Mondhatsz még egy utolsó szót a főpapnak, mielőtt kivágja a szívedet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_OCONOSTOTA_1</Tag>
@@ -5200,6 +5217,7 @@
 		<Italian>Non meriti fiducia e nemmeno la mia attenzione.</Italian>
 		<Spanish>No sois de fiar y no os merecéis mi atención.</Spanish>
 		<Russian>[CT_NAME], ты не знаешь ни добродетели, ни доблести. Уходи.</Russian>
+		<Hungarian>[CT_NAME], nem ismered sem az erényt, sem a bátorságot. Menj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_SITTING_BULL_1</Tag>
@@ -5209,6 +5227,7 @@
 		<Italian>Non parlo coi bugiardi. Ora sgomma.</Italian>
 		<Spanish>Yo no hablo con mentirosos. Y ahora, ¡largo!</Spanish>
 		<Russian>Бледнолицый, мой знахарь сказал, что ты говоришь раздвоенным языком. Я верю ему. Я тебе не верю.</Russian>
+		<Hungarian>Sápadtarcú, a gyógyítóm azt mondja, hogy villás nyelvvel beszélsz. Én neki hiszek. Neked nem hiszek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_CHIEF_JOSEPH_1</Tag>
@@ -5218,15 +5237,17 @@
 		<Italian>Paleface, tu rubi i nostri cavalli e cacci nei nostri terreni di caccia. È meglio che tu te ne vada prima che i miei guerrieri comincino a darti la caccia.</Italian>
 		<Spanish>Cara pálida, robas nuestros caballos y cazas en nuestros cotos de caza. Será mejor que te vayas de aquí antes de que mis guerreros empiecen a cazarte.</Spanish>
 		<Russian>Бледнолицый, ты крадешь наших лошадей и охотишься в наших охотничьих угодьях. Убирайся отсюда, пока мои воины не начали охоту на тебя.</Russian>
+		<Hungarian>Sápadtarcú, ellopod a lovainkat és a területeinken vadászol. Tűnj innen, mielőtt a harcosaim vadászni kezdenek rád!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_PENN_1</Tag>
-		<English>Mister, you are a bully. I do not negotiate with bullies. I will go to church instead and ask the Lord most high for forgiveness for your sins.</English>
+		<English>Sir, you are a bully. I do not negotiate with bullies. I will go to church instead and ask the Lord Most High to forgive your sins.</English>
 		<French>Monsieur, vous êtes un tyran. Je ne négocie pas avec les tyrans. Je vais plutôt aller à l'église et prier le Seigneur, le Très-Haut, pour qu'il pardonne vos pêchés.</French>
 		<German>Mister, Ihr seid ein Tyrann. Und mit Tyrannen verhandele ich nicht. Ich werde stattdessen in die Kirche gehen und den Höchsten Herrn um Vergebung für Eure Sünden bitten.</German>
 		<Italian>Le nostre colonie saranno in pace solo dopo aver estirpato la tua tirannia!</Italian>
 		<Spanish>¡Nuestras colonias solo conocerán la paz con la erradicación de vuestra tiranía!</Spanish>
 		<Russian>Мистер, вы хулиган. Я не веду переговоров с хулиганами. Вместо этого я пойду в церковь и попрошу у Господа прощения за твои грехи.</Russian>
+		<Hungarian>Sápadtarcú, ellopod a lovainkat és a területeinken vadászol. Tűnj innen, mielőtt a harcosaim vadászni kezdenek rád!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_BOLIVAR_1</Tag>
@@ -5236,6 +5257,7 @@
 		<Italian>Pace? Señor [CT_NAME], ci sarà la pace quando ti arrenderai!</Italian>
 		<Spanish>¿Paz? ¡Señor [CT_NAME], la tendremos cuando os rindáis!</Spanish>
 		<Russian>Мир? Сеньор [CT_NAME], мир будет, когда вы сдадитесь!</Russian>
+		<Hungarian>Béke? Senor [CT_NAME], béke lesz, ha megadod magad!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_CHAMPLAIN_1</Tag>
@@ -5245,6 +5267,7 @@
 		<Italian>Non mi ricordo mai la frase esatta, ma mi pare che abbia a che fare con qualcosa che si deve ghiacciare.</Italian>
 		<Spanish>He olvidado la frase, pero tiene algo que ver con irse adonde hace mucho calor.</Spanish>
 		<Russian>Месье [CT_NAME], вы же не думаете, что я вас пощажу? Собирайте вещи и возвращайтесь на свои корабли. По крайней мере, спасёте свои скальпы.</Russian>
+		<Hungarian>Monsieur [CT_NAME], ugye nem gondolod komolyan, hogy megkegyelmezzek neked? Pakold össze a holmid és menj vissza a hajóidra! Legalább a skalpjaitokat megtartjátok!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_DONCK_1</Tag>
@@ -5254,15 +5277,17 @@
 		<Italian>Non mi fido di te o del tuo popolo. La pace chiaramente non è contemplabile.</Italian>
 		<Spanish>No confío en vos ni en vuestro pueblo. Obviamente, la paz no es una opción.</Spanish>
 		<Russian>Мистер, мне кажется, ты говоришь о мире и мечтаешь об убийстве. Убирайся отсюда, [CT_NAME]!</Russian>
+		<Hungarian>Mijnheer, úgy látom, hogy te békéről beszélsz és gyilkosságról álmodsz. Tűnj innen, [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_FRONTENAC_1</Tag>
-		<English>[CT_NAME], je regrette. I regret, but you will probably not leave this New World alive. Pray to your Lord, lad, that your end will be merciful.</English>
+		<English>[CT_NAME], je regrette. I regret, but you will probably not leave this New World alive. Pray to your Lord, boy, that your end will be merciful.</English>
 		<French>CT_NAME], je regrette. Je regrette, mais vous ne réchapperez de ce Nouveau Monde vivant. Priez donc votre Seigneur, que votre fin soit miséricordieuse.</French>
 		<German>[CT_NAME], je regrette. Ich bedaure, aber Ihr werdet diese Neue Welt wohl nicht mehr lebend verlassen. Betet zu Eurem Herrn, Bursche, dass Euer Ende gnädig sein wird.</German>
 		<Italian>Penso che sarebbe meglio semplicemente distruggerti.</Italian>
 		<Spanish>Creo que sería mucho mejor destruiros.</Spanish>
 		<Russian>[CT_NAME], сожалею. Сожалею, но ты, наверное, не покинешь этот Новый Свет живым. Молись своему Господу, парень, чтобы твой конец был быстрым.</Russian>
+		<Hungarian>[CT_NAME], je regrette. Sajnálom, de valószínűleg nem fogod élve elhagyni ezt az Új Világot. Imádkozz az Uradhoz, fiam, hogy a véged kegyes legyen!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_HERNAN_CORTES_1</Tag>
@@ -5272,33 +5297,37 @@
 		<Italian>Sapevo che mi avresti pregato di stipulare una pace, alla fine, ma non ci sarà pace fino alla tua resa.</Italian>
 		<Spanish>Sabía que, tarde o temprano, suplicaríais la paz. Pero no habrá paz hasta que os rindáis.</Spanish>
 		<Russian>Я знал, что в какой-то момент ты будешь просить мира. Но нищие, воры и бродяги мне ни к чему. Убирайтесь прочь, сеньор [CT_NAME]!</Russian>
+		<Hungarian>Tudtam, hogy egyszer majd békéért fogsz könyörögni. De nem tudok mit kezdeni a koldusokkal, tolvajokkal és kóborlókkal. Hordd el magad, Senor [CT_NAME]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_STUYVESANT_1</Tag>
-		<English>Mijnheer, you take me. What a wretched figure you make, standing there and begging me to spare you. Perhaps God will one day grant you mercy. I cannot.</English>
+		<English>Mijnheer, you surprise me. What a wretched figure you make, standing there begging me to spare you. Perhaps one day God will grant you mercy. I cannot.</English>
 		<French>Mijnheer, vous me sidérez. Vous avez l'air si pathétique quand vous me suppliez de vous épargnez. Peut-être que Dieu vous fera miséricorde un jour. Moi non..</French>
 		<German>Mijnheer, Ihr dauert mich. Welch elende Gestalt gebt Ihr ab, wie Ihr da steht und mich anfleht, Euch zu verschonen. Vielleicht wird Gott Euch einst Gnade gewähren. Ich kann es nicht.</German>
 		<Italian>Fai pena, quando elemosini la pace. Penso che ti libererò semplicemente dalla tua miseria.</Italian>
 		<Spanish>Dais tanta pena cuando mendigáis la paz... Creo que me limitaré a poner fin a vuestro sufrimiento.</Spanish>
 		<Russian>Мистер, ты раздражаешь меня. Что за жалкое зрелище ты представляешь, стоя здесь и умоляя меня пощадить тебя. Возможно, однажды Бог помилует тебя. Я не могу.</Russian>
+		<Hungarian>Mijnheer, te ugratsz engem! Micsoda nyomorult alak vagy, ahogy ott állsz és könyörögsz, hogy kegyelmezzek meg neked. Talán Isten egy nap majd megkegyelmez neked. Én nem tudok.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_WASHINGTON_1</Tag>
-		<English>Sir, take a stand! Your plea for peace steals your dignity. We will meet again on the battlefield. Please do not run away then. I could not forgive myself for shooting you in the back.</English>
+		<English>Stand up for yourself! This plea for peace is beneath your dignity. We will meet again on the battlefield. Please don't run away. I could never forgive myself for shooting you in the back.</English>
 		<French>Monsieur, faites face ! Votre plaidoyer pour la paix est encore moins digne que vous ne l'êtes. Nous nous reverrons sur le champ de bataille. Ne fuyez pas cette fois, je vous prie. Je ne me pardonnerais pas de vous tirer dans le dos.</French>
 		<German>Sir, nehmt gefälligst Haltung an! Euer Flehen um Frieden stiehlt Euch die Würde. Wir sehen uns auf dem Schlachtfeld wieder. Bitte lauft dann nicht gleich davon. Ich könnte es mir nicht verzeihen, Euch in den Rücken zu schießen.</German>
 		<Italian>Ho fatto una solenne promessa di sconfiggerti. Non posso far finta di niente.</Italian>
 		<Spanish>Hice la solemne promesa de derrotaros. Es una promesa que no puedo olvidar.</Spanish>
 		<Russian>Сэр, встаньте! Ваша мольба о мире крадет ваше достоинство. Мы встретимся снова на поле боя. Но пожалуйста, не пытайтесь убежать снова. Я не смогу простить себя за то, что придётся выстрелить тебе в спину.</Russian>
+		<Hungarian>Állj ki magadért! A békéért való könyörgésed elveszi a méltóságod. A csatatéren még találkozunk! Kérlek, ne fuss el akkor! Nem tudnám megbocsátani magamnak, hogy hátba lőttelek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_AGUEYBANA_1</Tag>
-		<English>I dreamt last night that a child would wake me. It carried your head in its hand, [CT_NAME], and your blood dripped on the earth. There is no reason for me to stop the war. I am sure that this prophecy will come true.</English>
+		<English>I dreamed last night that a child wakened me, carrying your head in its hand, [CT_NAME], as your blood dripped onto the earth. There's no reason for me to stop this war! I know the prophecy will come true.</English>
 		<French>Je ne peux pas perdre, alors je n'ai aucune raison de faire la paix.</French>
 		<German>Weißer Mann, mir träumte letzte Nacht, ein Kind würde mich wecken. Es hielt Euren Kopf in der Hand, [CT_NAME], und Euer Blut tropfte auf die Erde. Es gibt für mich keinen Grund, den Krieg zu beenden. Ich bin mir sicher, dass diese Prophezeiung wahr werden wird.</German>
 		<Italian>Non posso perdere, quindi non c'è ragione di firmare una pace.</Italian>
 		<Spanish>No puedo perder, así que no hay motivo para firmar la paz.</Spanish>
 		<Russian>Прошлой ночью мне приснилось, что меня разбудил ребенок. Он нес в руке твою голову, [CT_NAME], и твоя кровь капала на землю. У меня нет причин останавливать войну. Я уверен, что это пророчество сбудется.</Russian>
+		<Hungarian>Azt álmodtam az éjjel, hogy egy gyermek ébresztett fel. A kezében tartotta a fejedet, [CT_NAME], és a véred a földre csöpögött. Nincs okom arra, hogy leállítsam a háborút. Biztos vagyok benne, hogy ez a jóslat valóra fog válni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_CUNHAMBEBE_1</Tag>
@@ -5308,24 +5337,27 @@
 		<Italian>Vuoi che facciamo pace? La sola idea mi fa passare la fame.</Italian>
 		<Spanish>¿Y ahora queréis que hagamos las paces? Con solo pensar en ello se me revuelven las tripas.</Spanish>
 		<Russian>Ты хочешь мира, [CT_NAME]? Твоя трусость наполняет мое сердце печалью. Я пришлю к тебе одну из моих жен, чтобы утешить тебя. Я надеюсь, что это укрепит вас достаточно, чтобы снова стать достойным противником для меня.</Russian>
+		<Hungarian>Békét akarsz, [CT_NAME]? Gyávaságod szomorúsággal tölti el a szívemet. Elküldöm neked az egyik feleségemet, hogy megvigasztaljon. Remélem, ez eléggé megerősít ahhoz, hogy ismét méltó ellenfelem legyél.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_HUAYNA_CAPAC_1</Tag>
-		<English>This war will last until the gods are tired of it. And now be silent, [CT_NAME]! And disappear!</English>
+		<English>This war will last until the gods tire of it. Now be silent, [CT_NAME]! And disappear!</English>
 		<French>Suppliez et implorez tant que vous voudrez, [CT_NAME], cela ne vous servira à rien. La guerre continuera jusqu'à ce que les dieux s'en lassent.</French>
 		<German>Dieser Krieg wird so lange dauern, bis die Götter seiner überdrüssig sind. Und jetzt schweigt, [CT_NAME]! Und verschwindet!</German>
 		<Italian>Puoi piangere e supplicare, [CT_NAME], ma non servirà a nulla. La guerra finirà solamente quando gli dei si saranno stancati.</Italian>
 		<Spanish>Podéis rogar y suplicar cuanto queráis, [CT_NAME], pero no os servirá de nada. La guerra seguirá hasta que los dioses se cansen de ella.</Spanish>
 		<Russian>Эта война будет длиться до тех пор, пока Боги не устанут от нее. А теперь замолчи, [CT_NAME]! И исчезни!</Russian>
+		<Hungarian>Ez a háború addig fog tartani, amíg az istenek bele nem unnak. És most hallgass, [CT_NAME]! És tűnj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_LOGAN_1</Tag>
-		<English>No, paleface. We will not leave the warpath. Only when your scalp hangs in my teepee will I take my men home to their children and wives.</English>
+		<English>No, paleface. We will not abandon the warpath. Only when your scalp hangs in my teepee will I take my men home to their children and wives.</English>
 		<French>La paix ? Jamais !</French>
 		<German>Nein, Bleichgesicht. Wir werden den Kriegspfad nicht verlassen. Erst wenn Euer Skalp in meinem Wigwam hängt, werde ich meine Männer heim zu ihren Kindern und Weibern holen.</German>
 		<Italian>Pace? Mai!</Italian>
 		<Spanish>¿Paz? ¡Jamás!</Spanish>
 		<Russian>Нет, бледнолицый. Мы не сойдем с тропы войны. Только когда твой скальп будет украшать мой вигвам, я отведу своих людей домой к их детям и женам.</Russian>
+		<Hungarian>Nem, sápadtarcú! Nem hagyjuk el a hadiösvényt! Csak akkor viszem haza az embereimet a gyermekeikhez és a feleségeikhez, ha a skalpod a sátramban lóg.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_MANGAS_COLORADAS_1</Tag>
@@ -5335,6 +5367,7 @@
 		<Italian>Dopo le atrocità che hai commesso non può esserci alcuna pace!</Italian>
 		<Spanish>Después de las atrocidades que habéis cometido, no puede haber paz.</Spanish>
 		<Russian>Я бы доверился россомахе, а не тебе, бледнолицый. Вы крадете нашу землю. Вы убиваете всех животных. Вы рубите все деревья. Зло живет в вашем сердце.</Russian>
+		<Hungarian>Bármelyik menyétben jobban bíznék, mint benned, sápadtarcú. Ellopjátok a földünket. Megöltök minden állatot. Kivágjátok az összes fát. A gonoszság lakozik a szívetekben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_MONTEZUMA_1</Tag>
@@ -5343,7 +5376,8 @@
 		<German>Ihr sprecht mich an. Kenne ich Euch? In meinen Augen seht Ihr alle gleich aus. Weiße Männer mit wilden Augen und einem gehetzten Blick. Kommt mit, ich führe Euch zum Sonnenaltar. Dort wartet Eure Bestimmung auf Euch. Ihr wollt nicht? Dann verschwindet, solange Ihr es noch könnt.</German>
 		<Italian>No, non abbiamo ancora sacrificato abbastanza guerrieri [CT_CIV_ADJ:3] per placare l'infinita sete di sangue degli dei. Prova più tardi.</Italian>
 		<Spanish>No. Aún no hemos sacrificado bastantes guerreros [CT_CIV_ADJ:3] para aplacar la insaciable sed de sangre de los dioses. Intentadlo más tarde.</Spanish>
-		<Russian>Ты говоришь со мной. Я тебя знаю? Вы все для меня одинаковые. Белые люди с дикими глазами и затравленным взглядом. Пойдем со мной. Я отведу тебя к Алтарю Солнца. Твоя судьба ждет тебя там. Не хочешь? Тогда уходи, пока еще можешь.</Russian>
+        <Russian>Ты говоришь со мной. Я тебя знаю? Вы все для меня одинаковые. Белые люди с дикими глазами и затравленным взглядом. Пойдем со мной. Я отведу тебя к Алтарю Солнца. Твоя судьба ждет тебя там. Не хочешь? Тогда уходи, пока еще можешь.</Russian>
+		<Hungarian>Te hozzám beszélsz. Ismerlek-e téged? Nekem mind egyformák vagytok. Fehér emberek, vad szemekkel és vadászó tekintettel. Gyertek velem! Elvezetlek benneteket a Nap oltárához. A végzetetek ott vár rátok. Nem akarod? Akkor tűnj el, amíg még tudsz!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_OCONOSTOTA_1</Tag>
@@ -5353,15 +5387,17 @@
 		<Italian>Non ci sarà pace!</Italian>
 		<Spanish>No habrá paz.</Spanish>
 		<Russian>Бледнолицый, эта война будет продолжаться до тех пор, пока ты не встретишься со своими предками.</Russian>
+		<Hungarian>Sápadtarcú, ez a háború addig fog tartani, amíg az őseiddel nem sétálsz!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_SITTING_BULL_1</Tag>
-		<English>Be brave and accept your fate, [CT_NAME]. You will die in this land, a stranger, far from home. The wolves will tear your corpse to pieces.</English>
+		<English>Be brave and accept your fate, [CT_NAME]. You are going to die in this land, a stranger, far from home. Wolves will devour your corpse.</English>
 		<French>Cette guerre prendra fin quand je le déciderai et pas avant.</French>
 		<German>Seid tapfer und nehmt Euer Schicksal an, [CT_NAME]. Ihr werdet in diesem Land sterben, als Fremder, fern der Heimat. Die Wölfe werden Euren Leichnam zerreißen.</German>
 		<Italian>Questa guerra finirà quando io deciderò di farla finire, e non un secondo prima.</Italian>
 		<Spanish>Esta guerra terminará cuando yo decida que ha terminado y ni un segundo antes.</Spanish>
 		<Russian>Будь смелым и прими свою судьбу, [CT_NAME]. Ты умрешь на этой чужой земле, вдали от дома. Волки разорвут твой труп на куски.</Russian>
+		<Hungarian>Légy bátor és fogadd el a sorsodat, [CT_NAME]! Meghalsz ezen a földön, idegenként, távol az otthonodtól! A farkasok fogják darabokra tépni a holttestedet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_CHIEF_JOSEPH_1</Tag>
@@ -5371,15 +5407,17 @@
 		<Italian>Sii coraggioso e accetta il tuo destino, [NOME_CT]. Hai avuto tutte le opportunità per porre fine a questa guerra sanguinosa e fumare la pipa con noi, ma continui a fare la guerra. Non ci può essere pace.</Italian>
 		<Spanish>Sé valiente y acepta tu destino, [CT_NAME]. Tuviste todas las oportunidades para poner fin a esta sangrienta guerra y fumar la pipa con nosotros, pero sigues haciendo la guerra. No puede haber paz.</Spanish>
 		<Russian>Будь смелым и прими свою судьбу, [CT_NAME]. У вас были все возможности закончить эту кровавую войну и выкурить трубку мира вместе с нами, но вы продолжаете вести войну. Мира быть не может.</Russian>
+		<Hungarian>Légy bátor és fogadd el a sorsodat, [CT_NAME]. Minden lehetőséged megvolt arra, hogy véget vess ennek a véres háborúnak és velünk együtt szívd a békepipát, de te tovább háborúzol. Nem lehet béke!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_PENN_1</Tag>
-		<English>Welcome here among friends, brother [CT_NAME]. My delectation at your arrival is too much to hide. What brings you to me? And above all, would you like a cup of tea?</English>
+		<English>Welcome here among friends, brother [CT_NAME]. My delectation at your arrival is too much to hide. What brings you to me? Above all, would you like a cup of tea?</English>
 		<French>J'ai peine à cacher la joie que me vaut votre venue. De quels sujets d'extrême importance souhaitez-vous discuter ?</French>
 		<German>Willkommen bei Freunden, Bruder [CT_NAME]. My delectation at your arrival is too much to hide. Was führt Euch zu mir? Und vor allem: Möchtet Ihr eine Tasse Tee?</German>
 		<Italian>Il mio diletto al tuo arrivo è troppo grande per essere nascosto. Di quali importantissimi argomenti vogliamo dissertare?</Italian>
 		<Spanish>Mi deleite por vuestra llegada es demasiado grande para ocultarlo. ¿Sobre qué temas de primordial importancia vamos a disertar?</Spanish>
 		<Russian>Добро пожаловать к друзьям, брат [CT_NAME]. Мой восторг по поводу вашего приезда слишком велик, чтобы его скрывать. Что привело тебя ко мне? И самое главное, не хотите ли чашечку чая?</Russian>
+		<Hungarian>Üdvözöllek itt, barátok között, [CT_NAME] testvér! Az érkezésed felett érzett örömöm túl nagy ahhoz, hogy elrejtsem. Mi szél hozott hozzám? És mindenekelőtt, kérsz egy csésze teát?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_BOLIVAR_1</Tag>
@@ -5389,6 +5427,7 @@
 		<Italian>È bello parlare con una persona che capisce l'importanza dell'azione. Parliamo di come possiamo rafforzare le nostre colonie.</Italian>
 		<Spanish>Es bueno hablar con alguien que entiende la importancia de los actos. Charlemos sobre cómo podemos fortalecer nuestras colonias.</Spanish>
 		<Russian>Добро пожаловать, сеньор. Снимите оружие, отошлите своих телохранителей и расслабьтесь. Доверьтесь мне. Я хорошо отношусь к тебе. На данный момент.</Russian>
+		<Hungarian>Bienvenidos, Senor! Tedd le a fegyvert, küldd el a testőreidet és pihenj! Bízz meg bennem! Jó szándékkal fordulok feléd. Legalábbis jelenleg.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_CHAMPLAIN_1</Tag>
@@ -5398,6 +5437,7 @@
 		<Italian>Ditemi voi se quello non è, tra i presenti, il mio prediletto! Vediamo come puoi venire in contro alle mie esigenze.</Italian>
 		<Spanish>¡Pero si es mi persona más querida en toda la sala! Veamos cómo podemos satisfacer nuestras respectivas necesidades.</Spanish>
 		<Russian>Нет никого, кого я бы предпочел видеть здесь, кроме вас, месье. Что я могу сделать для вас? И что вы можете сделать для меня?..</Russian>
+		<Hungarian>Nincs senki, akit szívesebben látnék itt, mint téged, Monsieur. Mit tehetek érted? És te mit tehetsz értem...?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_DONCK_1</Tag>
@@ -5407,6 +5447,7 @@
 		<Italian>Mi rallegra vedere che hai il tempo per venirmi a trovare. Cosa dobbiamo fare oggi?</Italian>
 		<Spanish>Estoy encantado de que hayáis conseguido sacar el tiempo para venir a verme. ¿Qué tenemos hoy en la agenda?</Spanish>
 		<Russian>Мистер, я рад, что ты находишь время для разговоров в кругу друзей. Присядем там на берегу реки, послушаем успокаивающий шум водопада и красноречие моих слов.</Russian>
+		<Hungarian>Mijnheer, örülök, hogy időt szakítasz egy baráti vitára. Üljünk le oda a folyópartra, hallgassuk a vízesés nyugtató hangját és a beszédem ékesszólását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_FRONTENAC_1</Tag>
@@ -5416,6 +5457,7 @@
 		<Italian>Salve amico, beviamo qualcosa e parliamo di questo Nuovo Mondo.</Italian>
 		<Spanish>Hola, amigo. Tomemos una copa y hablemos de este Nuevo Mundo.</Spanish>
 		<Russian>Бонжур, месье! Добро пожаловать. Не так много людей, к которым я отношусь с уважением. Ты почти один из них.</Russian>
+		<Hungarian>Bonjour, Monsieur! Örülök, hogy látlak! Nem sok emberrel bánok tisztelettel. Te majdnem közéjük tartozol.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HERNAN_CORTES_1</Tag>
@@ -5425,15 +5467,17 @@
 		<Italian>Finalmente parlo con un degno avversario. Cosa può fare [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] per te?</Italian>
 		<Spanish>Por fin consigo hablar con un adversario digno. ¿Qué puede hacer el [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] por vos?</Spanish>
 		<Russian>Сеньор, приветствую вас. Садись и расскажи мне о своих приключениях. Удалось ли вам захватить богатую добычу в этом Новом Свете?</Russian>
+		<Hungarian>Senor, üdvözöllek téged! Ülj le és mesélj a kalandjaidról! Sikerült gazdag zsákmányt szerezned az Újvilágban?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_STUYVESANT_1</Tag>
-		<English>Mijnheer, this conversation is an honour for me! I'm sure even more so for you.</English>
+		<English>Mijnheer, this conversation honours me! For you even more so, I'm sure.</English>
 		<French>J'ai du mal à me rendre compte, mais ça doit être un honneur indicible de discuter avec moi.</French>
 		<German>Mijnheer, dieses Gespräch ist mir eine Ehre! Und Euch sicher erst recht.</German>
 		<Italian>Non riesco a immaginare quale onore sia parlare con me.</Italian>
 		<Spanish>No alcanzo a imaginar qué gran honor ha de ser venir a hablar conmigo.</Spanish>
 		<Russian>Мистер, этот разговор - честь для меня! Уверен, для вас тем более.</Russian>
+		<Hungarian>Mijnheer, ez a beszélgetés megtiszteltetés számomra! Biztos vagyok benne, hogy neked még nagyobb.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_WASHINGTON_1</Tag>
@@ -5443,6 +5487,7 @@
 		<Italian>È bello vederti, amico. Quali affari ci attendono oggi?</Italian>
 		<Spanish>Es un placer veros, amigo. ¿Qué asunto tenemos para hoy?</Spanish>
 		<Russian>Добро пожаловать, господин губернатор. Пожалуйста, проходите, располагайтесь. Без лишних слов, давайте перейдем к сути вашего визита. Как ваши дела нынче?</Russian>
+		<Hungarian>Üdvözöllek Kormányzó! Kérlek, foglalj helyet! Minden további nélkül térjünk rá a látogatásod lényegére! Mi a mai nap témája?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_CUNHAMBEBE_1</Tag>
@@ -5452,6 +5497,7 @@
 		<Italian>Ah, il mio grande amico è venuto a trovarmi in questo meraviglioso giorno. Come esserti d'aiuto il popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]?</Italian>
 		<Spanish>Ah, mi gran amigo ha venido a verme en este maravilloso día. ¿En qué puede ayudaros el [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]?</Spanish>
 		<Russian>Ах! Какая радость видеть моего хорошего друга в этот чудесный день!</Russian>
+		<Hungarian>Látogatásod örömmel tölti el a szívemet. Néhány emberemnek voltak aggályai, amikor itt kikötöttetek, de ritkán fordult elő, hogy az idegenek ilyen gyorsan barátoknak bizonyultak volna.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AGUEYBANA_1</Tag>
@@ -5461,6 +5507,7 @@
 		<Italian>Ah, il mio grande amico è venuto a trovarmi in questo meraviglioso giorno. Come esserti d'aiuto il popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]?</Italian>
 		<Spanish>Ah, mi gran amigo ha venido a verme en este maravilloso día. ¿En qué puede ayudaros el [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]?</Spanish>
 		<Russian>Ваш визит радует мое сердце. У некоторых из моих людей были опасения, когда вы высадились здесь. Но редко, когда незнакомцы так быстро оказывались друзьями.</Russian>
+		<Hungarian>Látogatásod örömmel tölti el a szívemet. Néhány emberemnek voltak aggályai, amikor itt kikötöttetek, de ritkán fordult elő, hogy az idegenek ilyen gyorsan barátoknak bizonyultak volna.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HUAYNA_CAPAC_1</Tag>
@@ -5470,6 +5517,7 @@
 		<Italian>Io, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], ti do il benvenuto, [CT_NAME], leader dell'[CT_EMPIRE]. Parliamo della lenta agonia dei nostri nemici! Gradisci un criceto affumicato?</Italian>
 		<Spanish>Nos, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], os damos la bienvenida, [CT_NAME], líder del [CT_EMPIRE]. ¡Hablemos de la muerte lenta y dolorosa de nuestros enemigos! ¿Os apetece una cobaya ahumada?</Spanish>
 		<Russian>Я, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], приветствую вас, [CT_NAME]. Садись у моих ног. Могу я предложить вам освежиться? Бренди из агавы? Жареная шиншилла? Девушка-рабыня?</Russian>
+		<Hungarian>Én, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], üdvözöllek téged, [CT_NAME]! Foglalj helyet a lábamnál! Megkínálhatlak egy kis frissítővel? Agave pálinkát? Sült csincsillát? Egy rabszolgalányt?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_LOGAN_1</Tag>
