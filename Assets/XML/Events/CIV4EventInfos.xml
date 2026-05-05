@@ -3527,9 +3527,9 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>100</iGold>
+			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>100</iRandomGold>
+			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
@@ -3564,13 +3564,13 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>SetBonus</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonCanDo>CanApplyBonus</PythonCanDo>
+			<PythonHelp>getHelpBonus</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter1>BONUS_SILVER</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -5521,9 +5521,9 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>NONE</UnitClass>
-			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>0</bDisbandUnit>
+			<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
+			<iNumFreeUnits>1</iNumFreeUnits>
+			<bDisbandUnit>1</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -5558,7 +5558,7 @@
 			<PythonCanDo/>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>1000</iAIValue>
+			<iAIValue>500</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
@@ -5643,9 +5643,9 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>NONE</UnitClass>
-			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>0</bDisbandUnit>
+			<UnitClass>UNITCLASS_INDENTURED_SERVANT</UnitClass>
+			<iNumFreeUnits>1</iNumFreeUnits>
+			<bDisbandUnit>1</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -6428,7 +6428,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -6448,7 +6448,7 @@
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
 			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
+			<iRevoltTurns>3</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -6468,15 +6468,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToCity</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
             <PythonHelp/>
             <HelpText>TXT_KEY_EVENT_PREACHER_AND_HARLOT_1_HELP</HelpText>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>600</iAIValue>
-			<iGenericParameter1>UNITCLASS_MILITIA</iGenericParameter1>
-			<iGenericParameter2>1</iGenericParameter2>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
@@ -6490,7 +6490,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -6498,8 +6498,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PREACHER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -6509,8 +6509,29 @@
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CHURCH</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>2</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CATHEDRAL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>2</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_GREAT_CATHEDRAL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>2</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_MINSTER</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>2</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>3</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -6530,15 +6551,15 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToCity</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
             <HelpText>TXT_KEY_EVENT_PREACHER_AND_HARLOT_2_HELP</HelpText>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>600</iAIValue>
-			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
-			<iGenericParameter2>1</iGenericParameter2>
+			<iAIValue>100</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
@@ -22830,7 +22851,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -22849,7 +22870,33 @@
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CHAPEL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CHURCH</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CATHEDRAL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_GREAT_CATHEDRAL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_MINSTER</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
 			<iRevoltTurns>0</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>

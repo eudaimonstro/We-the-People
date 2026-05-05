@@ -453,7 +453,7 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>500</iMinTreasury>
+			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -471,7 +471,6 @@
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_CHAPEL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CHURCH</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_GREAT_CATHEDRAL</BuildingClass>
@@ -509,7 +508,7 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
+			<iMinTurn>30</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_SLAVE_HUNTER_OFFERS_SERVICE</Type>
@@ -832,7 +831,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -884,7 +883,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>hasSilverBonus</PythonCanDo>
+			<PythonCanDo>hasNoBonus</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -2387,10 +2386,10 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerPrisonerOfWarAtMonastery</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
-			<PythonCallback/>
+			<PythonCallback>applyPrisonerOfWarAtMonasteryCooldown</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_PRISONER_OF_WAR_AT_FORT</Type>
@@ -2462,10 +2461,10 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerPrisonerOfWarAtFort</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
-			<PythonCallback/>
+			<PythonCallback>applyPrisonerOfWarAtFortCooldown</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_NATIVE_TRADER_ATTACKED</Type>
@@ -11512,7 +11511,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -11534,6 +11533,7 @@
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TAVERN</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_SALOON</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
@@ -12020,7 +12020,7 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>0</iMinTreasury>
+			<iMinTreasury>500</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>

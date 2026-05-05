@@ -927,10 +927,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PRISONER_OF_WAR_AT_MONASTERY_2</Tag>
-		<English>We cannot allow that. This prisoner must serve the sentence for his deeds.</English>
-		<French>Nous ne le permettons pas. Ce prisonnier doit purger sa peine pour ses méfaits.</French>
-		<German>Wir können dies nicht erlauben. Der Gefangene muss die Strafe für seine Taten absitzen.</German>
-		<Russian>Мы не можем этого допустить. Этот заключенный должен отбыть наказание за свои деяния.</Russian>
+		<English>As a gesture of goodwill towards the Church, we will allow him to join our nation. But he must atone for his guilt by performing drudgery.</English>
+		<German>Als Zeichen des guten Willens gegenüber der Kirche werden wir ihm erlauben sich unserer Nation anzuschließen. Aber er muss seine Schuld durch Fronarbeit ableisten.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_PRISONER_OF_WAR_AT_FORT</Tag>
@@ -955,10 +954,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PRISONER_OF_WAR_AT_FORT_2</Tag>
-		<English>We cannot allow that. This prisoner must serve the sentence for his deeds.</English>
-		<French>Nous ne le permettons pas. Ce prisonnier doit purger sa peine pour ses méfaits.</French>
-		<German>Wir können dies nicht erlauben. Der Gefangene muss die Strafe für seine Taten absitzen.</German>
-		<Russian>Мы не можем этого допустить. Этот заключенный должен отбыть наказание за свои деяния.</Russian>
+		<English>Since the officer is pleading on his behalf, we shall grant him his release – despite his actions. However, he must work off his debt through hard labour in our colony.</English>
+		<German>Da der Offizier so für ihn bittet, werden wir seine Freilassung erlauben - trotz seiner Taten. Aber er muss seine Schuld in unserer Kolonie durch Frondienst abarbeiten.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NATIVE_TRADER_ATTACKED</Tag>
@@ -1427,17 +1425,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PREACHER_AND_HARLOT_1_HELP</Tag>
-		<English>The citizens revolt due to your decision to protect the harlot.</English>
-		<French>Les gens des beaux quartiers se révoltent suite à votre décision de protéger la prostituée.</French>
-		<German>Die Bürger werden aufgrund eurer Entscheidung, die Hure zu beschützen, revoltieren.</German>
-		<Russian>Горожане бунтуют из-за вашего решения защитить шлюху.</Russian>
+		<English>[ICON_BULLET]The citizens revolt due to your decision to protect the harlot.</English>
+		<French>[ICON_BULLET]Les gens des beaux quartiers se révoltent suite à votre décision de protéger la prostituée.</French>
+		<German>[ICON_BULLET]Die Bürger werden aufgrund eurer Entscheidung, die Hure zu beschützen, revoltieren.</German>
+		<Russian>[ICON_BULLET]Горожане бунтуют из-за вашего решения защитить шлюху.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PREACHER_AND_HARLOT_2_HELP</Tag>
-		<English>The poor from the lower district are outraged that you condemn the harlot. They revolt.</English>
-		<French>Les pauvres des bas quartiers sont outrés par la condamnation de la prostituée. Ils se révolent.</French>
-		<German>Die Armen aus dem Unterviertel werden darüber aufgebracht sein, dass ihr die Hure verurteilt, und revoltieren.</German>
-		<Russian>Бедняки из нижнего округа возмущены тем, что вы осуждаете блудницу. На улицах полно бунтовщиков.</Russian>
+		<English>[ICON_BULLET]The poor from the lower district are outraged that you condemn the harlot. They revolt.</English>
+		<French>[ICON_BULLET]Les pauvres des bas quartiers sont outrés par la condamnation de la prostituée. Ils se révolent.</French>
+		<German>[ICON_BULLET]Die Armen aus dem Unterviertel werden darüber aufgebracht sein, dass ihr die Hure verurteilt, und revoltieren.</German>
+		<Russian>[ICON_BULLET]Бедняки из нижнего округа возмущены тем, что вы осуждаете блудницу. На улицах полно бунтовщиков.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_HUNTER_OFFERS_SERVICE</Tag>

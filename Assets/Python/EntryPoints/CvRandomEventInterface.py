@@ -5787,6 +5787,207 @@ def TriggerChance(argsList):
 		return True
 	return False
 
+
+######## Prisoner of War at Monastery ###########
+
+PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_PREFIX = "[[WTP_PRISONER_OF_WAR_AT_MONASTERY_SOFT_READY_TURN="
+PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_SUFFIX = "]]"
+
+def _getPrisonerOfWarAtMonasterySoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setPrisonerOfWarAtMonasterySoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		PRISONER_OF_WAR_AT_MONASTERY_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+
+def _startPrisonerOfWarAtMonasterySoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setPrisonerOfWarAtMonasterySoftCooldownReadyTurn(
+		player,
+		CyGame().getGameTurn() + _scaleTurnsByGameSpeed(15)
+	)
+
+
+def _isPrisonerOfWarAtMonasterySoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getPrisonerOfWarAtMonasterySoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def canTriggerPrisonerOfWarAtMonastery(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isPrisonerOfWarAtMonasterySoftCooldownActive(player):
+		return False
+
+	return True
+
+
+def applyPrisonerOfWarAtMonasteryCooldown(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	_startPrisonerOfWarAtMonasterySoftCooldown(player)
+
+
+######## Prisoner of War at Fort ###########
+
+PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_PREFIX = "[[WTP_PRISONER_OF_WAR_AT_FORT_SOFT_READY_TURN="
+PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_SUFFIX = "]]"
+
+def _getPrisonerOfWarAtFortSoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setPrisonerOfWarAtFortSoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szMarker = "%s%d%s" % (
+		PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		PRISONER_OF_WAR_AT_FORT_SOFT_COOLDOWN_SUFFIX
+	)
+
+	szData += szMarker
+	player.setScriptData(szData)
+
+
+def _startPrisonerOfWarAtFortSoftCooldown(player):
+	if player.isNone():
+		return
+
+	_setPrisonerOfWarAtFortSoftCooldownReadyTurn(
+		player,
+		CyGame().getGameTurn() + _scaleTurnsByGameSpeed(15)
+	)
+
+
+def _isPrisonerOfWarAtFortSoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getPrisonerOfWarAtFortSoftCooldownReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def canTriggerPrisonerOfWarAtFort(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isPrisonerOfWarAtFortSoftCooldownActive(player):
+		return False
+
+	return True
+
+
+def applyPrisonerOfWarAtFortCooldown(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	_startPrisonerOfWarAtFortSoftCooldown(player)
+    
+    
 ######## ORLANTH EVENTS ########
 
 def canTriggerKingFurious(argsList):
