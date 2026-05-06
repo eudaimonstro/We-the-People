@@ -5527,6 +5527,7 @@
 		<Italian>È bello avere notizie da [CT_EMPIRE]. A cosa debbo quest'onore?</Italian>
 		<Spanish>Es un placer oír al [CT_EMPIRE]. ¿A qué debo este honor?</Spanish>
 		<Russian>Присаживайся у костра, друг. Хотя мы и знаем, что вы не можете сравниться с великим вождем Гайаватой в мудрости и пророком Деганавидой в предвидении, мы относимся к вам с уважением.</Russian>
+		<Hungarian>Én, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], üdvözöllek téged, [CT_NAME]! Foglalj helyet a lábamnál! Megkínálhatlak egy kis frissítővel? Agave pálinkát? Sült csincsillát? Egy rabszolgalányt?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MANGAS_COLORADAS_1</Tag>
@@ -5536,15 +5537,17 @@
 		<Italian>È sempre bello avere notizie degli amici. Sediamoci e parliamo.</Italian>
 		<Spanish>Siempre es un placer oír al [CT_EMPIRE]. Sentémonos y hablemos.</Spanish>
 		<Russian>Пыль на голове, бледное лицо, усталость в глазах. Сядьте у костра. Подкрепитесь кашей и дичью.</Russian>
+		<Hungarian>Por van a fejeden, sápadtarcú, és fáradtság a szemedben. Ülj le a tűz mellé! Erősítsd meg magad zabkásával és vaddal!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MONTEZUMA_1</Tag>
-		<English>I knew that you would come. My high priests have recognised today, through the blood of a sacrifice, that you are on your way to me. I have had some refreshments prepared. I hope you will find the food agreeable.</English>
+		<English>I knew you would come. My high priests predicted, through a blood sacrifice, that you were on your way to me today. I have had refreshments prepared. I hope you find the food agreeable.</English>
 		<French>Comme toujours, je suis honoré de votre présence. J'espère que vous avez apporté quelques victimes à sacrifier, je suis à court.</French>
 		<German>Ich wusste, dass Ihr kommen würdet. Meine Hohepriester haben heute im Herzblut eines Opfers erkannt, dass Ihr auf dem Wege zu mir seid. Ich habe einige Erfrischungen vorbereiten lassen. Ich hoffe, Euren Eingeweiden wird die Kost bekömmlich sein.</German>
 		<Italian>Come sempre, vengo onorato dalla tua presenza. Spero che tu abbia portato le tue vittime sacrificali, perché io le ho finite.</Italian>
 		<Spanish>Me honra vuestra presencia, como siempre. Espero que hayáis traído vuestros propios sacrificios, que yo me he quedado sin ninguno.</Spanish>
 		<Russian>Я знал, что ты придешь. Мои Первосвященники прознали сегодня через кровь жертвы, что вы на пути ко мне. Я приготовил несколько закусок. Надеюсь, что вы найдете еду приятной.</Russian>
+		<Hungarian>Tudtam, hogy el fogsz jönni. Főpapjaim ma egy áldozat vérén keresztül felismerték, hogy úton vagy hozzám. Készítettem némi frissítőt. Remélem, kellemesnek találod majd az ételt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_OCONOSTOTA_1</Tag>
@@ -5554,6 +5557,7 @@
 		<Italian>Benvenuto, amico! Parliamo e commerciamo.</Italian>
 		<Spanish>Bienvenido, amigo. Hablemos y negociemos.</Spanish>
 		<Russian>Добро пожаловать! Расскажи мне о своих похождениях, белый человек. А после этого давай торговать.</Russian>
+		<Hungarian>Üdvözöllek! Mesélj a tapasztalataidról és kereskedjünk utána!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_SITTING_BULL_1</Tag>
@@ -5563,22 +5567,25 @@
 		<Italian>Benvenuto, amico mio! Sei davvero saggio a cercare consiglio presso chi è migliore di te.</Italian>
 		<Spanish>Bienvenido, amigo mío. Sin duda hacéis bien en buscar el consejo de vuestros superiores.</Spanish>
 		<Russian>Приветствую тебя, бледнолицый. Вы действительно мудры, когда ищете совета у тех, кто лучше вас. Какие подарки вы нам принесли? Вы не видели бизонов по пути сюда?</Russian>
+		<Hungarian>Üdvözöllek, sápadtarcú! Tárt karokkal üdvözöllek! Milyen ajándékokat hoztál nekünk? Láttál bölényt idefelé jövet?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_CHIEF_JOSEPH_1</Tag>
-		<English>I greet you, paleface. I welcome you with open hands. What do you want in our village today? Shall we teach you how to fish for salmon? Would you prefer to buy horses from us?</English>
+		<English>I greet you, paleface. I welcome you with open arms. What do you want in our village today? Shall we teach you how to fish for salmon? Would you rather buy horses from us?</English>
 		<French>Welcome, my friend! Nice to see you again in our village. Do you want to learn fishing from us or do you like trading horses with us?</French>
 		<German>Ich grüße Euch, Bleichgesicht. Ich empfange Euch mit offenen Händen. Was wollt Ihr heute in unserem Dorf? Sollen wir Euch vielleicht beibringen, wie man Lachse richtig fischt? Oder wollt Ihr uns Pferde abkaufen?</German>
 		<Russian>Приветствую тебя, бледнолицый. Что ты хочешь сегодня в нашей деревне? Научить вас ловить лосося? Или хотите купить у нас лошадей?</Russian>
+		<Hungarian>Üdvözöllek, sápadtarcú! Tárt karokkal üdvözöllek! Mit akarsz ma a falunkban? Megtanítsunk lazacot halászni? Vagy inkább lovakat szeretnél venni tőlünk?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_PENN_1</Tag>
-		<English>This New World shall be a haven of freedom, I have sworn. I also grant you, brother [CT_NAME], freedom to speak. And myself the freedom to clean my nails during your lecture. My toenails.</English>
+		<English>This New World shall be a haven of freedom. I have sworn. I grant you, brother [CT_NAME], freedom to speak. And grant myself the freedom to clean my nails during your lecture. My toenails.</English>
 		<French>Mes concitoyens me demandent d'écouter ce que vous avez à dire, même si je sais que ça n'aura aucun intérêt.</French>
 		<German>Diese Neue Welt soll ein Hort der Freiheit sein, habe ich geschworen. Auch Euch, Bruder [CT_NAME], billige ich Redefreiheit zu. Und mir selber die Freiheit, mir während Eures Vortrages die Nägel zu säubern. Die Fußnägel.</German>
 		<Italian>È volere dei miei elettori che ascolti ciò che hai da dire, a prescindere da quanto io pensi che sia insulso.</Italian>
 		<Spanish>Es la voluntad de mis constituyentes oír lo que tengáis que decir, por muy insulso que yo sepa que va a ser.</Spanish>
 		<Russian>Я поклялся, что этот Новый Свет будет гаванью свободы. И тебе, брат [CT_NAME], я даю свободу слова. А я свободен чистить ногти во время твоей речи. Ногти на ногах.</Russian>
+		<Hungarian>Ez az Új Világ a szabadság kikötője lesz, megesküdtem rá. Neked is megadom a lehetőséget, [CT_NAME] testvér, hogy szabadon beszélhess. Nekem pedig a szabadságot, hogy az előadásod alatt megtisztítsam a körmeimet. A lábkörmeimet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_BOLIVAR_1</Tag>
@@ -5588,6 +5595,7 @@
 		<Italian>Coraggio, dimmi quello che vuoi. Vediamo se soffocherà il disprezzo che provo per te.</Italian>
 		<Spanish>Adelante, decidme lo que queréis. Veremos si eso acaba con el desdén que siento hacia vos.</Spanish>
 		<Russian>Скажите мне спокойно, что вы хотите сказать, сеньор [CT_NAME]. Не торопись. И, пожалуйста, не возражайте, если я тем временем позову своего тюремщика. У меня новый гость для него.</Russian>
+		<Hungarian>Mondd el nyugodtan, amit mondani akarsz, Senor [CT_NAME]. Csak nyugodtan. És kérlek, ne bánd, ha időközben idehívom a börtönőrömet. Új vendégem van a számára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CHAMPLAIN_1</Tag>
@@ -5597,6 +5605,7 @@
 		<Italian>Ditemi voi se quello non è, tra i presenti, la mia spina nel fianco! Vediamo come puoi venire in contro alle mie esigenze.</Italian>
 		<Spanish>¡Pero si es mi persona menos querida en toda la sala! Veamos cómo podéis satisfacer mis necesidades.</Spanish>
 		<Russian>[CT_NAME], присаживайся. Какой ты растрепанный! Я пошлю за местным парикмахером, чтобы он позаботился о твоей голове. А пока сложи оружие. Ты мой гость. Не бойся. Закрой глаза и начинай говорить.</Russian>
+		<Hungarian>[CT_NAME], foglalj helyet! Milyen ziláltan nézel ki! Hívok egy helyi fodrászt, hogy gondozza a skalpodat. Addig is, tedd le a fegyvert! A vendégem vagy. Ne fél! Csukd be a szemed és kezdj el beszélni!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_DONCK_1</Tag>
@@ -5606,6 +5615,7 @@
 		<Italian>Avanti, parla: farò finta di ascoltare.</Italian>
 		<Spanish>Adelante, hablad. Yo haré ver que os escucho.</Spanish>
 		<Russian>Мистер, делитесь со мной своими мыслями и предложениями без стеснения. А я пока посмотрю свои путевые заметки.</Russian>
+		<Hungarian>Mijnheer, oszd meg velem gondolataidat és javaslataidat kendőzetlenül! Addig is átnézem az utazási jegyzeteimet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_FRONTENAC_1</Tag>
