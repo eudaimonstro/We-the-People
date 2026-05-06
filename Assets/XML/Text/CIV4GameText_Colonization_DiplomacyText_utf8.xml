@@ -5625,6 +5625,7 @@
 		<Italian>Che coincidenza: stavo giusto compilando una lista di cose di te che mi piacciono. È alquanto corta. Cosa vuoi?</Italian>
 		<Spanish>Qué coincidencia, justo estaba haciendo una lista de las cosas que me gustan de vos. Una lista muy corta, la verdad. ¿Qué queréis?</Spanish>
 		<Russian>[CT_NAME], ты бездельник, бродяга и нарушитель спокойствия. И самое главное, ты не француз! Чего ты хочешь, парень?</Russian>
+		<Hungarian>[CT_NAME], te egy semmirekellő, egy csavargó és egy bajkeverő vagy. És mindenekelőtt, nem vagy francia! Mit akarsz, fiam?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HERNAN_CORTES_1</Tag>
@@ -5634,6 +5635,7 @@
 		<Italian>Non sei abbastanza furbo per fregarmi. Attento: non reagisco bene agli inganni.</Italian>
 		<Spanish>Os falta astucia para engañarme. Os lo advierto: las triquiñuelas no son de mi agrado.</Spanish>
 		<Russian>Сеньор, говорите, что хотите, но сначала присядьте. Вы выглядите измученным. Можете преклонить колени здесь, у моих ног.</Russian>
+		<Hungarian>Senor, mondd el, amit mondani szeretnél, de előbb ülj le! Kimerültnek tűnsz. Térdelj ide a lábamhoz!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_STUYVESANT_1</Tag>
@@ -5643,6 +5645,7 @@
 		<Italian>La mia disponibilità ad avere a che fare con i rifiuti della società come te è una vera testimonianza dell'ottima qualità del mio carattere.</Italian>
 		<Spanish>Mi buena disposición para hablar con la escoria de la sociedad, como vos, es todo un testimonio de mi gran calidad como persona.</Spanish>
 		<Russian>Мистер, позвольте мне выразиться так мягко и вежливо, как это уместно. Ваше поведение безоговорочно доказывает, что вы мразь.</Russian>
+		<Hungarian>Mijnheer, hadd fogalmazzak olyan finoman és udvariasan, ahogyan az helyénvaló. A viselkedésed minden kétséget kizáróan bizonyítja, hogy söpredék vagy.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_WASHINGTON_1</Tag>
@@ -5652,6 +5655,7 @@
 		<Italian>Non ho tempo per chi non conosce il significato di lealtà, dovere e onore, quindi datti una mossa.</Italian>
 		<Spanish>No tengo tiempo para aquellos que no comprenden el significado de la lealtad, el honor y el deber; así que sed breve.</Spanish>
 		<Russian>Мистер [CT_NAME], переходите к делу. У меня есть дела поважнее, чем тратить свое время на болтовню с вами. Я ценю вежливую беседу, только когда встречаю джентльмена.</Russian>
+		<Hungarian>Mister [CT_NAME], térjünk a lényegre! Jobb dolgom is van annál, minthogy az időmet fecsegésre pazaroljam veled. Csak akkor értékelem az udvarias beszélgetést, ha úriemberrel találkozom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_AGUEYBANA_1</Tag>
@@ -5661,6 +5665,7 @@
 		<Italian>Guarda un po' se non è il peggior rifiuto che ci abbia consegnato la marea. Cosa vuoi?</Italian>
 		<Spanish>Vaya, si es la peor cosa que ha traído el Gran Mar. ¿Qué queréis?</Spanish>
 		<Russian>По воле судьбы Великое Море иногда выбрасывает на наши берега мусор. Такой же мусор, как и ты.</Russian>
+		<Hungarian>A sors úgy hozza, hogy a Nagy-tenger néha szemetet mos partjainkra. Olyan szemetet, mint te.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CUNHAMBEBE_1</Tag>
@@ -5670,6 +5675,7 @@
 		<Italian>Qualsiasi cosa tu voglia, sbrigati. Il pranzo si raffredda.</Italian>
 		<Spanish>Sea lo que sea, sed breve. Se me está enfriando el almuerzo.</Spanish>
 		<Russian>Ты как раз вовремя. Мы проголодались.</Russian>
+		<Hungarian>Épp időben érkeztél. A törzsem éhes.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HUAYNA_CAPAC_1</Tag>
@@ -5679,6 +5685,7 @@
 		<Italian>Rimango sempre senza parole quando vedo che gli dei ti hanno concesso ancora di vivere, [CT_NAME]. Perché sei qui?</Italian>
 		<Spanish>El que los dioses os permitan seguir viviendo nos deja infinitamente perplejos, [CT_NAME]. ¿A qué habéis venido?</Spanish>
 		<Russian>Я всегда удивляюсь, как боги позволяют тебе жить так долго, [CT_NAME]. Зачем ты здесь?</Russian>
+		<Hungarian>Épp időben érkeztél. A törzsem éhes.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_LOGAN_1</Tag>
@@ -5688,15 +5695,17 @@
 		<Italian>Ti sei avviato lungo un cammino che porterà alla tua distruzione. Prova pure a cercare di spiegarti.</Italian>
 		<Spanish>Habéis hollado una senda que os llevará a la destrucción. Intentad explicaros como queráis.</Spanish>
 		<Russian>Великий Военный Совет нашей Конфедерации уже обсуждает твою судьбу, [CT_NAME]. Подчинившись его мудрому решению, в момент смерти ты проявишь больше достоинства, чем за всю свою предыдущую жизнь.</Russian>
+		<Hungarian>Szövetségünk Nagy Háborús Tanácsa már tárgyal a sorsodról, [CT_NAME]. Engedelmeskedj a bölcs tanácsának és halálod pillanatában több méltóságot fogsz mutatni, mint egész eddigi életedben!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MANGAS_COLORADAS_1</Tag>
-		<English>[CT_NAME], you come at the right time. Come with me to the stake.</English>
+		<English>[CT_NAME], you arrive at the right moment. Come with me to the stake.</English>
 		<French>[CT_NAME], vous êtes à la bonne heure. Venez avec moi au poteau de torture</French>
 		<German>[CT_NAME], Ihr kommt zur rechten Zeit. Kommt mit zum Marterpfahl.</German>
 		<Italian>Spero che tu sia qui per cercare di espiare le tue azioni.</Italian>
 		<Spanish>Espero que hayáis venido a intentar enmendar vuestros actos.</Spanish>
 		<Russian>[CT_NAME], вы как раз вовремя. Пойдёмте со мной. Вот тот костёр мы приготовили специально для вас.</Russian>
+		<Hungarian>[CT_NAME], a megfelelő időben jöttél. Gyere velem a máglyához!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MONTEZUMA_1</Tag>
@@ -5706,15 +5715,17 @@
 		<Italian>Dimmi, [CT_NAME], cosa ha fatto [CT_CIV_SHORT:2] perché gli dei si siano adirati a tal punto da fornire loro un leader come te?</Italian>
 		<Spanish>Decidnos, [CT_NAME], ¿qué ha hecho [CT_CIV_SHORT] para enojar a los dioses y que os convirtieran en su líder?</Spanish>
 		<Russian>До сих пор мы щадили тебя, [CT_NAME]. Но теперь тебя ждет Алтарь Солнца. Твое сердце будет биться в моих руках.</Russian>
+		<Hungarian>Eddig megkíméltünk téged, [CT_NAME]. Most a Nap oltára vár rád! A szíved a kezemben fog dobogni!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_OCONOSTOTA_1</Tag>
-		<English>Look around you. There on the horizon the sun rises from the sea in the morning until behind the great peaks it covers its face again in the evening. The vast land between belongs to my people. Not yours.</English>
+		<English>Look around you. There on the horizon the sun rises from the sea in the morning. In the evening behind the great peaks it covers its face again. The vast land between belongs to my people. Not yours.</English>
 		<French>Regardez autour de vous. Tout ce que le soleil touche de son lever le matin dans la mer à son coucher le soir derrière les hauts sommets appartient à mon peuple. Pas au vôtre..</French>
 		<German>Blickt umher, Weißer Mann. Dort am Horizont steigt die Sonne morgens aus dem Meer, und dort hinter den großen Gipfeln verhüllt sie am Abend wieder ihr Antlitz. Das weite Land dazwischen gehört meinem Volk. Nicht Eurem.</German>
 		<Italian>Non meriti la mia attenzione. Considerati fortunato.</Italian>
 		<Spanish>No os merecéis mi atención. Consideraos afortunado.</Spanish>
 		<Russian>Оглянись вокруг, белый человек. Там, на горизонте, по утрам солнце поднимается из моря, а вечером скрывает свой лик за высокими горами. Обширные земли между ними принадлежат моему народу. Не твоему.</Russian>
+		<Hungarian>Nézz körül! Ott a horizonton a Nap reggel felkel a tengerből, míg a nagy hegycsúcsok mögött este újra el nem takarja arcát. A köztük lévő hatalmas föld az én népemé. Nem a tiéd!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_SITTING_BULL_1</Tag>
@@ -5724,6 +5735,7 @@
 		<Italian>Cosa potresti mai dire di minimamente interessante per me?</Italian>
 		<Spanish>¿Y qué podéis decir que tenga el más mínimo interés para mí?</Spanish>
 		<Russian>Бледнолицый, ты говоришь раздвоенным языком, сердце твое наполнено ядом, а бизоны разбегаются, завидев тебя. Ты здесь не нужен!</Russian>
+		<Hungarian>Sápadtarcú, villás nyelvvel beszélsz, szívedből méreg csöpög és elűzöd a bölényt. Nem vagy itt szívesen látott vendég!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CHIEF_JOSEPH_1</Tag>
@@ -5733,6 +5745,7 @@
 		<Italian>Cosa potresti mai dire di minimamente interessante per me?</Italian>
 		<Spanish>¿Y qué podéis decir que tenga el más mínimo interés para mí?</Spanish>
 		<Russian>Бледнолицый, своей чёрной злобой ты распугал наших лошадей, а лосось ушел из наших рек. Тебе нет места на этой земле.</Russian>
+		<Hungarian>Sápadtarcú, villás nyelvvel beszélsz, szívedből méreg csöpög és elűzöd a bölényt. Nem vagy itt szívesen látott vendég!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_PENN_1</Tag>
@@ -5742,6 +5755,7 @@
 		<Italian>La misura di ogni grande uomo o nazione è data da come tratta i deboli. Ci aiuterai nell'ora del bisogno?</Italian>
 		<Spanish>La prueba de ser un gran hombre o una gran nación está en cómo se trata a los necesitados. ¿Nos ayudaréis en tiempos de necesidad?</Spanish>
 		<Russian>Каждый человек и каждый народ проявляют истинное величие тем, как они относятся к нуждающимся братьям своим. Поможете ли вы нам в это непростое время?</Russian>
+		<Hungarian>Sápadtarcú, villás nyelvvel beszélsz, szívedből méreg csöpög és elűzöd a bölényt. Nem vagy itt szívesen látott vendég!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_BOLIVAR_1</Tag>
@@ -5751,6 +5765,7 @@
 		<Italian>Il [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] abbiamo urgente bisogno, per favore aiutaci.</Italian>
 		<Spanish>El [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] tiene una terrible necesidad. Ayudadnos, por favor.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] очень нуждаются в помощи. Пожалуйста помогите нам.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] nagy szükségben van. Kérlek, segíts nekünk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_CHAMPLAIN_1</Tag>
@@ -5760,42 +5775,47 @@
 		<Italian>Per favore dacci quello che chiediamo. In cambio posso offrirti la mia gratitudine.</Italian>
 		<Spanish>Por favor, dadnos lo que os pedimos. A cambio, os ofrezco mi gratitud.</Spanish>
 		<Russian>Месье, я взываю к вашему великодушию. К вашей добродетели. Откройте свое сердце - и свой кошелек.</Russian>
+		<Hungarian>Kedves barátom! Nagylelkűségedet kérem. Légy erényes, nyisd ki a szíved - és a pénztárcádat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_DONCK_1</Tag>
-		<English>Mijnheer, my expedition was not as fortunate as yours. But your undeserved good fortune need not shame you. Help us generously, and everything will fall into place.</English>
+		<English>Mijnheer, my expedition was not as fortunate as yours. But your undeserved wealth need not shame you. Help us generously, and everything will fall into place.</English>
 		<French>Pourriez-vous aider mon peuple ? Nous vous rendrions la pareille si le vent venait à tourner.</French>
 		<German>Mijnheer, meiner Expedition war der launische Zufall nicht im selben Maße hold wie der Eurigen. Doch muss Euch Euer unverdientes Glück nicht beschämen. Helft uns großzügig, und alles kommt ins rechte Lot.</German>
 		<Italian>Puoi aiutare il mio popolo? Noi ti aiuteremmo, se le nostre posizioni fossero invertite.</Italian>
 		<Spanish>¿Podéis ayudar a mi pueblo, por favor? Os ayudaremos si alguna vez cambian las tornas.</Spanish>
 		<Russian>Мистер, моя экспедиция была не такой удачливой, как твоя. Но твое незаслуженное везение не должно тебя стыдить. Твоя щедрая помощь поможет все расставить на свои места.</Russian>
+		<Hungarian>Az én expedícióm nem volt olyan szerencsés, mint a tiéd. De a meg nem érdemelt szerencsédet nem kell szégyellned. Segíts nagylelkűen és minden a helyére kerül!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_FRONTENAC_1</Tag>
-		<English>Prove to us that first impressions can be deceptive. Help us unselfishly - and we will consider maybe tipping our hats to you a little bit. Under certain circumstances, mind you.</English>
+		<English>Prove to us that first impressions can be deceptive. Help us unselfishly - and we will consider maybe tipping our hats to you a little bit. Only under certain circumstances, mind you.</English>
 		<French>Pour faire simple, aidez-nous !</French>
 		<German>Beweist uns, dass der erste Eindruck täuschen kann. Helft uns uneigennützig - und wir ziehen in Betracht, möglicherweise vielleicht ein kleines bisschen vor Euch den Hut zu ziehen. Unter Umständen, wohlgemerkt.</German>
 		<Italian>Te lo chiedo nella maniera più semplice: per favore aiutaci.</Italian>
 		<Spanish>Dicho sencillamente: ayudadnos, por favor.</Spanish>
 		<Russian>Докажите нам, что первое впечатление может быть обманчивым. Помогите нам бескорыстно - и мы подумаем, может быть, немного приподнимем перед вами шляпу. Имейте в виду, при определенных обстоятельствах.</Russian>
+		<Hungarian>Bizonyítsd be, hogy az első benyomás csalóka lehet! Segíts nekünk önzetlenül - és mi megfontoljuk, hogy egy kicsit megemeljük a kalapunkat előtted. Bizonyos körülmények között, ezt ne feledd!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_HERNAN_CORTES_1</Tag>
-		<English>Señor, I appeal to your chivalry. My followers are suffering hardship and I am not in a position to alleviate it. Will you help me?</English>
+		<English>Señor, I appeal to your chivalry. My followers suffer hardship and I am in no position to alleviate it. Will you help me?</English>
 		<French>Le plus simple serait de vous demander de nous aider en espérant que votre bonne volonté fera le reste.</French>
 		<German>Señor, ich appelliere an Eure Ritterlichkeit. Meine Gefolgsleute leiden Not, und ich bin nicht in der Lage, sie zu lindern. Wollt Ihr mir dabei helfen?</German>
 		<Italian>La strategia più semplice per me è chiederti quello che ci serve e sperare nella tua buona volontà.</Italian>
 		<Spanish>La estrategia más sencilla para mí es pediros lo que necesitamos y rezar porque vuestra buena voluntad se imponga.</Spanish>
 		<Russian>Сеньор, я обращаюсь к вашему благородству. Мои последователи в нужде и я не в силах помочь им. Не могли бы вы помочь мне исправить это?</Russian>
+		<Hungarian>Senor, a lovagiasságodda apellálok. A híveim szenvednek a nehézségektől és én nem vagyok abban a helyzetben, hogy enyhítsek rajtuk. Segítenél nekem?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_STUYVESANT_1</Tag>
-		<English>You seem to be doing quite well, Mijnheer [CT_NAME]. Your success should be recognized, even if such unearned prosperity is a mockery of decency. Well, I will be generous. I grant you an opportunity to help others. Me, that is.</English>
+		<English>You seem to be doing quite well, Mijnheer [CT_NAME]. Your success must be recognized, even if such unearned prosperity mocks decency. Well, I will be generous. I grant you an opportunity to help others. Me, that is.</English>
 		<French>Il est rare qu'une personne de ma stature se retrouve dans le besoin, alors considérez que c'est un honneur de m'aider.</French>
 		<German>Euch scheint es ja recht gut zu gehen, Mijnheer [CT_NAME]. Es sei Euch gegönnt, auch wenn solch unverdienter Wohlstand dem Anstand spottet. Nun, ich will mich großzügig zeigen. Ich gewähre Euch eine Gelegenheit, anderen zu helfen. Also mir.</German>
 		<Italian>È raro che una persona della mia grandezza abbia bisogno, quindi dovresti essere onorato della mia richiesta.</Italian>
 		<Spanish>Raro es que una persona de mi talla llegue a encontrarse en una necesidad, así que debéis sentiros honrado de ayudarme.</Spanish>
 		<Russian>Кажется, у тебя все хорошо, Мистер [CT_NAME]. Твой успех должен быть признан, даже если такое незаслуженное процветание является насмешкой над порядочностью. Что ж, буду великодушен. Я предоставляю тебе возможность помогать другим. То есть мне.</Russian>
+		<Hungarian>Úgy tűnik, elég jól boldogulsz, [CT_NAME]. A sikeredet el kell ismerni, még akkor is, ha ez a meg nem érdemelt jólét a tisztesség megcsúfolása. Nos, nagylelkű leszek. Lehetőséget adok neked, hogy segíts másokon. Vagyis nekem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_WASHINGTON_1</Tag>
@@ -5805,6 +5825,7 @@
 		<Italian>Anche se non siamo potenti come voi, siamo alleati fedeli. Aiutaci nell'ora del bisogno.</Italian>
 		<Spanish>Aunque no somos tan poderosos como vosotros, somos aliados leales. Por favor, asistidnos en tiempos de necesidad.</Spanish>
 		<Russian>Хоть мы и не так могущественны, как вы, мы могли бы быть верными союзниками. Пожалуйста, поддержите нас в трудные времена, и мы будем рядом с вами, когда вы будете нуждаться в нас.</Russian>
+		<Hungarian>Még ha nem is vagyunk olyan erősek, mint te, hűséges szövetségesek lehetünk. Kérlek, állj mellénk a nehéz időkben és mi is melléd állunk, amikor szükséged lesz ránk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AGUEYBANA_1</Tag>
@@ -5814,6 +5835,7 @@
 		<Italian>Il più grande dono che si possono fare degli amici è la carità. Aiutaci, per favore.</Italian>
 		<Spanish>El mayor servicio que pueden prestarse los amigos es la caridad. Ayudadnos, por favor.</Spanish>
 		<Russian>Докажите, что в вашем сердце есть доброта. Дайте нам немного из того, что у вас есть в изобилии.</Russian>
+		<Hungarian>Bizonyítsd be, hogy a szívedben van kedvesség! Adj nekünk abból, ami bőségesen rendelkezésedre áll!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_CUNHAMBEBE_1</Tag>
@@ -5823,6 +5845,7 @@
 		<Italian>Abbiamo bisogno di aiuto ma non abbiamo altro da offrirti se non il cibo sulle nostre tavole. Dacci quello che vogliamo e ti inviteremo al prossimo ricevimento.</Italian>
 		<Spanish>Estamos necesitados, pero no podemos ofreceros más que comida en nuestra mesa. Dadnos lo que precisamos, por favor, y me aseguraré de invitaros a nuestra próxima velada.</Spanish>
 		<Russian>Будь милосерден, белый человек. Мы нуждаемся, но нам нечего предложить, кроме нашей превосходной еды. Пожалуйста, дай нам то, что нам нужно и я приглашу тебя на наш следующий пир.</Russian>
+		<Hungarian>Bizonyítsd be, hogy a szívedben van kedvesség! Adj nekünk abból, ami bőségesen rendelkezésedre áll!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_HUAYNA_CAPAC_1</Tag>
@@ -5832,6 +5855,7 @@
 		<Italian>Dacci quello che vogliamo, [CT_NAME], è il volere degli dei.</Italian>
 		<Spanish>Dadnos lo que queremos, [CT_NAME]. Es la voluntad de los dioses.</Spanish>
 		<Russian>В последнее время боги не были добры к нам. Мой когда-то могучий народ теперь познал нищету и голод. Помогите нам, [CT_NAME], ибо жрецы говорят, на то есть воля богов.</Russian>
+		<Hungarian>Az istenek nem voltak kegyesek hozzánk az utóbbi időben. Egykor hatalmas népem most a szegénységet és az éhséget ismeri. Jó leszel velünk, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_LOGAN_1</Tag>
@@ -5841,6 +5865,7 @@
 		<Italian>La mia tribù ha bisogno di aiuto, potete aiutarci?</Italian>
 		<Spanish>Mi tribu está necesitada. ¿Podrá ayudarnos el [COLOR_HIGHLIGHT_TEXT][CT_EMPIRE][COLOR_REVERT]?</Spanish>
 		<Russian>Моё племя в нужде. Поделитесь с нами своими запасами и наши внуки расскажут своим внукам о доброте [COLOR_HIGHLIGHT_TEXT][CT_EMPIRE][COLOR_REVERT].</Russian>
+		<Hungarian>A törzsem szükséget szenved. Oszd meg velünk a készleteidet és az unokáink elmesélik majd az unokáiknak a te jótéteményeidet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_MANGAS_COLORADAS_1</Tag>
@@ -5850,6 +5875,7 @@
 		<Italian>Gli spiriti mi hanno parlato della tua generosità. Spero che non si sbagliassero.</Italian>
 		<Spanish>Los espíritus me han hablado de vuestra generosidad. Espero que no se hayan equivocado.</Spanish>
 		<Russian>Будь щедрым, белый человек. Это принесет вам наше уважение. Даже если это не кажется тебе большой ценностью, потому что ты считаешь нас слабыми.</Russian>
+		<Hungarian>Légy nagylelkű! Ezzel kivívod a tiszteletünket. Bár lehet, hogy ez nem sokat ér neked, amíg gyengének tartasz minket.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_MONTEZUMA_1</Tag>
@@ -5859,6 +5885,7 @@
 		<Italian>Gli dei richiedono un sacrificio, [CT_NAME]. Affinché la tua civiltà possa continuare a esistere, ti consiglio di farlo.</Italian>
 		<Spanish>Los dioses exigen un sacrificio, [CT_NAME]. Si vuestra civilización quiere vivir largo tiempo, os recomendamos que lo realicéis.</Spanish>
 		<Russian>Боги требуют жертв, [CT_NAME]. Если твой народ хочет остаться в памяти потомков, я советую тебе выполнить мои требования.</Russian>
+		<Hungarian>Nehéz idők sújtják népemet, [CT_NAME]. Te enyhíthetnéd a nyomorúságukat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_OCONOSTOTA_1</Tag>
@@ -5868,15 +5895,17 @@
 		<Italian>Dammi quello che voglio e gli spiriti veglieranno su di te.</Italian>
 		<Spanish>Dadnos lo que queremos y los espíritus velarán por vosotros.</Spanish>
 		<Russian>Дай мне то, что я прошу, и будь уверен в благодарности моего народа.</Russian>
+		<Hungarian>Add meg, amit kérek és biztos lehetsz népem hálájában.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_SITTING_BULL_1</Tag>
-		<English>It has been a long time since my people saw a herd of buffalo. We have no more leather or hides, and our children walk barefoot. Our pots are empty and our women are thin. Can you help us, [CT_NAME]?</English>
+		<English>It has been a long time since my people saw a buffalo herd. We have no leather or hides, and our children walk barefoot. Our pots are empty and our women are thin. Can you help us, [CT_NAME]?</English>
 		<French>Voudriez-vous partager votre richesse avec vos amis et alliés, [CT_NAME] ?</French>
 		<German>Lange ist mein Volk auf keine Büffelherde mehr gestoßen. Wir haben kein Leder und keine Häute mehr, und unsere Kinder laufen barfuß. Unsere Töpfe sind leer und unsere Weiber dürr. Könnt Ihr uns helfen, [CT_NAME]?</German>
 		<Italian>Vuoi condividere un po' delle tue ricchezze con i tuoi buoni amici e alleati, [CT_NAME]?</Italian>
 		<Spanish>¿Os importaría compartir parte de vuestras riquezas con vuestros buenos amigos y aliados, [CT_NAME]?</Spanish>
 		<Russian>Прошло много времени с тех пор, как мой народ последний раз видел стадо бизонов. У нас больше нет ни кожи, ни шкур, а наши дети ходят босиком. Наши горшки пусты и наши женщины похудели. Не могли бы вы нам помочь, [CT_NAME]?</Russian>
+		<Hungarian>A népem már régen nem látott bölénycsordát. Nincs többé állatbőrünk és a gyermekeink mezítláb járnak. A fazekaink üresek és az asszonyaink soványak. Tudsz nekünk segíteni, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_CHIEF_JOSEPH_1</Tag>
@@ -5884,6 +5913,7 @@
 		<French>Nos enfants et nos anciens meurent de vérole, nos rivières sont vide de saumon cette année et nos chevaux n'ont rien à paître. Pouvez vous nous aider, [CT_NAME]?</French>
 		<German>Unsere Kinder und Alten sterben an Pocken, die Flüsse führen kaum Lachse in diesem Jahr und unsere Pferde brauchen dringend Futter. Könnt Ihr uns helfen, [CT_NAME]?</German>
 		<Russian>Наши дети и старики умирают от оспы, в наших реках в этом году нет лосося, а наши лошади голодают. Не могли бы вы нам помочь, [CT_NAME]?</Russian>
+		<Hungarian>Gyermekeink és öregjeink himlőben halnak meg, folyóinkban idén nincs lazac, lovaink éheznek. Tudsz nekünk segíteni, [CT_NAME]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_PENN_1</Tag>
@@ -5893,42 +5923,47 @@
 		<Italian>Non sono il tipo di persona che chiede la carità, ma credo che il nostro rapporto diplomatico dipenda dalla tua capacità di aiutare le mie colonie.</Italian>
 		<Spanish>Nunca he sido de la clase de persona que mendiga, pero me temo que nuestras buenas relaciones dependen de vuestra capacidad para ayudar a mis colonias.</Spanish>
 		<Russian>Я никогда не был тем человеком, который просит милостыню, но я думаю, что будущее наших отношений может зависеть от вашей готовности помочь моим колониям.</Russian>
+		<Hungarian>Szemtől szembe beszélek hozzád, testvér [CT_NAME]. Segítsük egymást!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_BOLIVAR_1</Tag>
-		<English>My people need what you have. How about giving it to them and showing that you are a man of reason?</English>
+		<English>My people need what you have. Give it to them. Show you are a man of reason.</English>
 		<French>Mon peuple a besoin de ce que vous avez. Accédez à nos demandes et vous prouverez votre volonté à trouver une solution pacifique aux problèmes.</French>
 		<German>Mein Volk braucht, was Ihr habt. Wie wäre es, wenn Ihr es ihm gebt und zeigt, dass Ihr ein Mann der Vernunft seid?</German>
 		<Italian>La mia gente ha bisogno di quello che hai. Che ne dici di darglielo e mostrare così di essere interessato a una soluzione pacifica dei problemi?</Italian>
 		<Spanish>Mi pueblo necesita lo que tenéis. ¿Qué tal si se lo dais y demostráis así vuestro interés en resolver pacíficamente los problemas?</Spanish>
 		<Russian>Моим людям нужно то, что есть у вас. Как насчет того, чтобы дать им это и показать, что вы разумный человек?</Russian>
+		<Hungarian>A népemnek szüksége van arra, amid van. Mi lenne, ha megadnád nekik és megmutatnád, hogy te egy értelmes ember vagy?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_CHAMPLAIN_1</Tag>
-		<English>Monsieur [CT_NAME], you are a lucky man! You have access to my heart and thus have a good standing with my Indian friends. Respect! You know what you have to do to keep your scalp. Speaking of which, what is it worth to you?</English>
+		<English>Monsieur [CT_NAME], you are a lucky man! You have access to my heart and thus have a good standing with my Native friends. Respect! You understand what you have to do to keep your scalp. Speaking of that, what's it worth to you?</English>
 		<French>Vous aviez oublié que c'était l'anniversaire de ma colonie? Ce n'est rien. Offrez-nous ce que nous voulons en cadeau.</French>
 		<German>Monsieur [CT_NAME], Ihr seid ein glücklicher Mensch! Ihr habt Zugang zu meinem Herzen und damit auch einen guten Stand bei meinen indianischen Freunden. Respekt! Ihr wisst, was Ihr tun müsst, um Euren Skalp zu behalten. Apropos: was ist Euch das wert?</German>
 		<Italian>Ti sei dimenticato dell'anniversario della mia colonia? Non ti preoccupare. Come dono potresti darci quello che chiediamo.</Italian>
 		<Spanish>¿Habéis olvidado que es el aniversario de mi colonia? Bueno, no pasa nada. Como regalo nos podríais dar lo que os pedimos.</Spanish>
 		<Russian>Месье [CT_NAME], вам повезло! Я всегда относился к вам хорошо и поэтому у вас такие хорошие отношения с моими индейскими друзьями. Позвольте высказать вам свое восхищение! Кстати, знаете, что вам нужно сделать, чтобы сохранить свой скальп в целости?</Russian>
+		<Hungarian>Monsieur [CT_NAME], te egy szerencsés ember vagy! Hozzáférésed van a szívemhez és így jó hírnévre teszel szert indián barátaim körében. Tiszteletem! Tudod, mit kell tenned, hogy megőrizd a skalpodat. Ha már itt tartunk, mennyit ér neg neked?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_DONCK_1</Tag>
-		<English>Don't thank me, Mijnheer. It's only right that I have illustrated your chivalry in the most glowing colours in my travel journal. It's demonstrated, isn't it, by the gold and goods you intend to give us today?</English>
+		<English>Don't thank me, Mijnheer. It's only right that in my travel journal I illustrate your chivalry in the most glowing colours. It's proven, is it not, by the gold and goods you intend to give us today?</English>
 		<French>Nous sommes dans le besoin, mais nous n'avons pas de quoi négocier. Soyez généreux et donnez-nous ce que nous voulons.</French>
 		<German>Dankt mir nicht, Mijnheer. Dass ich in meinem Reisejournal Eure Ritterlichkeit in den glühendsten Farben illustriert habe, habt Ihr Euch doch verdient. Durch das Gold und die Waren, die Ihr uns heute schenken wollt, nicht wahr?</German>
 		<Italian>Abbiamo bisogno di aiuto, ma non abbiamo niente da scambiare. Spero che trovi nel tuo cuore la volontà di donarci quello che ci serve.</Italian>
 		<Spanish>Estamos necesitados, pero no tenemos excedentes que poder intercambiar. Por favor, buscad en vuestro corazón la voluntad para ayudarnos.</Spanish>
 		<Russian>Не благодари меня, Мистер. Думаю, это правильно, что в моем путевом дневнике я описал ваше благородство в самых ярких красках. Доказательством будут служить золото и товары, которые вы отдадите нам сегодня. Не так ли?</Russian>
+		<Hungarian>Ne nekem köszönd, Mijnheer! Csak egyszerűen így helyes, hogy a legcsillogóbb színekkel illusztráltam lovagias viselkedésedet az útinaplómban. Ezt bizonyítja az arany és a javak, amiket ma nekünk adni szándékozol, ugye?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_FRONTENAC_1</Tag>
-		<English>Even if you are of dubious origin and character, lad, we could do business. But do not think that by this contract you will also earn our respect.</English>
+		<English>Even though you are of dubious origin and character, lad, we can do business. Only do not think that by this contract you also earn our respect.</English>
 		<French>Monsieur [CT_NAME], nous avons besoin d'aide. Si vous nous aidez, je suis sûr que nous vous retournerons la pareille dans l'avenir.</French>
 		<German>Auch wenn Ihr zweifelhafter Herkunft und Charakters seid, Bursche, könnten wir ins Geschäft kommen. Doch glaubt nicht, dass Ihr mit diesem contrat auch unseren Respekt erwerbt.</German>
 		<Italian>Abbiamo bisogno di aiuto. Se ce lo fornisci sono sicuro che, se in futuro dovessi avere bisogno, ti restituiremmo il favore.</Italian>
 		<Spanish>Si nos ayudáis, seguro que os devolveremos el favor en el futuro.</Spanish>
 		<Russian>Даже если ты сомнительного происхождения и характера, парень, мы могли бы иметь дело. Но не думай, что этим контрактом ты завоюешь наше уважение.</Russian>
+		<Hungarian>Még ha kétes származású és jellemű is vagy, fiam, akkor is üzletelhetnénk. De ne hidd, hogy ezzel a szerződéssel a tiszteletünket is kiérdemled!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_HERNAN_CORTES_1</Tag>
@@ -5938,6 +5973,7 @@
 		<Italian>I nostri eserciti si equivalgono, ma sono sicuro che in una battaglia vincerei io. Affinché ciò non accada, ti chiedo di soddisfare le nostre richieste.</Italian>
 		<Spanish>Nuestros ejércitos están a la par, aunque creo que yo ganaría si lucharan. Así que, para que esto no ocurra, os pido que satisfagáis mis exigencias.</Spanish>
 		<Russian>Наши армии равны по силе, но я верю, что выиграю битву. Чтобы не испытать этого позора, рекомендую выполнить наши требования.</Russian>
+		<Hungarian>A seregeink kiegyenlítettek, de úgy vélem, egy csatában én győznék. Hogy ez ne történjen meg, arra kérlek, hogy teljesítsd a követeléseinket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_STUYVESANT_1</Tag>
@@ -5947,24 +5983,27 @@
 		<Italian>I bisogni della tua colonia non sono pari a quelli della mia, quindi assicurati di darci quello che chiediamo.</Italian>
 		<Spanish>Es obvio que las necesidades de vuestra colonia no son las mismas que las de la mía, así que no dejéis de darnos lo que necesitamos.</Spanish>
 		<Russian>Мистер, у тебя есть кое-что, что может пригодиться моим деловым партнерам. А у нас есть кое-что, чего не хватает тебе.</Russian>
+		<Hungarian>Mijnheer, van valamid, amit a kereskedőtársaim jól tudnának használni. Nekünk pedig van valamink, ami neked hiányzik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_WASHINGTON_1</Tag>
-		<English>I would like to continue this peace between us. Please give us what we ask for.</English>
+		<English>I want this peace between us to continue. Please give us what we ask.</English>
 		<French>J'aimerais poursuivre cette paix entre nous. Donnez-nous ce que nous voulons.</French>
 		<German>Ich würde gerne den Frieden mit Euch wahren. Gebt uns bitte, was wir brauchen.</German>
 		<Italian>Vorrei che la pace tra di noi continuasse. Per favore, dacci quello che chiediamo.</Italian>
 		<Spanish>Me encantaría que nuestros dos pueblos siguiesen en paz. Por favor, dadnos lo que os pedimos.</Spanish>
 		<Russian>Я хотел бы сохранить этот мир между нами. Пожалуйста, дайте нам то, что мы просим.</Russian>
+		<Hungarian>Szeretném megőrizni ezt a békét közöttünk. Kérlek, add meg nekem, amit kérek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AGUEYBANA_1</Tag>
-		<English>The difference between peace and war is often the answer to simple questions such as "Will you help us?"</English>
+		<English>The difference between peace and war is often the answer to a simple question like "Will you help us?"</English>
 		<French>La différence entre la guerre et la paix se trouve souvent dans la réponse à de simples questions. Comme par exemple: "voulez-vous nous aider?"</French>
 		<German>Der Unterschied zwischen Krieg und Frieden liegt oft in der Antwort auf einfache Fragen. Zum Beispiel: "Werdet Ihr uns helfen, Weißer Mann?"</German>
 		<Italian>La differenza tra guerra e pace è spesso la risposta a semplici domande. Come, per esempio: ci aiuterai?</Italian>
 		<Spanish>La diferencia entre la paz y la guerra suele estar en cómo se responde a las preguntas sencillas, preguntas como: "¿Nos ayudaréis?"</Spanish>
 		<Russian>Разница между миром и войной часто заключается в ответе на простые вопросы, такие как «Вы поможете нам?»</Russian>
+		<Hungarian>A béke és a háború közötti különbség gyakran az olyan egyszerű kérdésekre adott válaszokban rejlik, mint például: "Segítesz nekünk?"</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_CUNHAMBEBE_1</Tag>
@@ -5974,15 +6013,17 @@
 		<Italian>La mia tribù ha bisogno di aiuto. Se vuoi essere invitato a cena, dacci una mano.</Italian>
 		<Spanish>Mi tribu necesita ayuda. Si queréis que os invite a comer, ayudadnos, por favor.</Spanish>
 		<Russian>Моё племя нуждается в помощи. Если оказавшись в такой же ситуации, вы не захотите получить отказ, то, пожалуйста, помогите.</Russian>
+		<Hungarian>A törzsemnek segítségre van szüksége. Ha szeretnéd, hogy meghívjunk a következő lakomára, akkor kérlek, segíts!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_HUAYNA_CAPAC_1</Tag>
-		<English>[CT_NAME], I see that you are still exercising your right to hospitality in our country. Where are your own gifts of hospitality?</English>
+		<English>[CT_NAME], I see that you still exercise your right to hospitality in our country. Where are your own gifts of hospitality?</English>
 		<French>J'ai déjà sacrifié de nombreux ennemis, [CT_NAME]. Donnez-moi ce que je veux ou vous serez ma prochaine victime.</French>
 		<German>[CT_NAME], wie ich sehe, nehmt Ihr noch immer Euer Gastrecht in unserem Land wahr. Nun, wo sind Eure Gastgeschenke?</German>
 		<Italian>Ho sacrificato molti nemici, [CT_NAME]. Dammi ciò di cui ho bisogno, altrimenti la prossima volta toccherà a te.</Italian>
 		<Spanish>Hemos sacrificado a muchos enemigos, [CT_NAME]. Dadnos lo que queremos o seréis los siguientes.</Spanish>
 		<Russian>Я принес в жертву много врагов, [CT_NAME]. Дай мне то, что я хочу, иначе в следующий раз придет твоя очередь.</Russian>
+		<Hungarian>[CT_NAME], látom, hogy még mindig élsz a vendéglátás jogával a földünkön. Hol vannak a vendégszereted ajándékai?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_LOGAN_1</Tag>
@@ -5992,6 +6033,7 @@
 		<Italian>Vengo in pace alla ricerca di aiuto. Cosa mi rispondi?</Italian>
 		<Spanish>Vengo en son de paz a pedir ayuda. ¿Qué me decís?</Spanish>
 		<Russian>Я пришел с миром, чтобы попросить о помощи. Что скажешь, бледнолицый?</Russian>
+		<Hungarian>Békével jöttem, hogy segítséget kérjek. Mit szólsz hozzá?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MANGAS_COLORADAS_1</Tag>
@@ -6001,6 +6043,7 @@
 		<Italian>Ti abbiamo dato tanto, senza volere nulla in cambio... fino a ora.</Italian>
 		<Spanish>Hasta ahora os hemos dado mucho y no os hemos pedido nada a cambio.</Spanish>
 		<Russian>Мы давали вам многое и ничего не попросили для себя... до сих пор.</Russian>
+		<Hungarian>Sokat adtunk neked és semmit sem kértünk cserébe... egészen mostanáig.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MONTEZUMA_1</Tag>
@@ -6010,6 +6053,7 @@
 		<Italian>L'[COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] ti richiede una piccola donazione, [CT_NAME]. Altrimenti, se preferisci, combatteremo finché una delle due nazioni non sarà distrutta.</Italian>
 		<Spanish>El [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] os pide una pequeña donación, [CT_NAME]. O, si lo preferís, podemos combatir hasta que una de las dos naciones quede destruida.</Spanish>
 		<Russian>Я уже принес в жертву своим богам сердца многих врагов, [CT_NAME]. Однако я предполагаю, что вы хотите быть нашим другом.</Russian>
+		<Hungarian>Már sok ellenségem szívét feláldoztam isteneimnek, [CT_NAME]. Feltételezem azonban, hogy a barátunk kívánsz lenni.</Hungarian>>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_OCONOSTOTA_1</Tag>
@@ -6019,6 +6063,7 @@
 		<Italian>Provaci la tua amicizia dandoci quello che vogliamo.</Italian>
 		<Spanish>Por favor, haced honor a nuestra amistad dándonos lo que queremos.</Spanish>
 		<Russian>Докажите своё дружеское расположение к нам, [CT_NAME]. Дайте нам то, что мы просим.</Russian>
+		<Hungarian>Bizonyítsd be a barátságodat, [CT_NAME]. Add meg nekünk, amit kérünk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SITTING_BULL_1</Tag>
@@ -6028,15 +6073,17 @@
 		<Italian>Per il bene della duratura amicizia tra i nostri grandi popoli ti chiedo ciò di cui abbiamo bisogno come segno di riconoscimento.</Italian>
 		<Spanish>En aras de la amistad entre nuestros dos grandes pueblos, solicito la muestra de aprecio siguiente.</Spanish>
 		<Russian>Вы охотитесь на наших бизонов, [CT_NAME]. Что ж, мы не хотим мелочиться. Но вы, конечно, тоже не станете, не так ли?</Russian>
+		<Hungarian>A mi bölényeinkre vadászol, [CT_NAME]. Nos, nem akarunk kicsinyesek lenni. De biztosan te sem, ugye?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_CHIEF_JOSEPH_1</Tag>
-		<English>You hunt our fish and elk, [CT_NAME]. Well, we don't want to be petty. But you certainly don't either, do you?</English>
+		<English>You hunt our fish and elk, [CT_NAME]. Well, we don't want to be petty. Neither do you.</English>
 		<French>Au nom de l'amitié qui lie nos grands peuples, j'exige que vous nous donniez ceci en gage d'estime.</French>
 		<German>Ihr jagt unsere Fische und Wapitis, [CT_NAME]. Nun, wir wollen nicht kleinlich sein. Aber Ihr doch gewiss auch nicht, oder?</German>
 		<Italian>Per il bene della duratura amicizia tra i nostri grandi popoli ti chiedo ciò di cui abbiamo bisogno come segno di riconoscimento.</Italian>
 		<Spanish>En aras de la amistad entre nuestros dos grandes pueblos, solicito la muestra de aprecio siguiente.</Spanish>
 		<Russian>Ты охотишься на наших рыб и лосей, [CT_NAME]. Что ж, их хватит на всех, хвала Богам. Но ты, конечно, тоже не станешь жадничать, не так ли?</Russian>
+		<Hungarian>A mi halainkra és jávorszarvasainkra vadászol, [CT_NAME]. Nos, nem akarunk kicsinyesek lenni. De biztosan te sem, ugye?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_PENN_1</Tag>
@@ -6055,6 +6102,7 @@
 		<Italian>Non sei nelle condizioni di negoziare. Dai al mio popolo ciò che chiede.</Italian>
 		<Spanish>No estáis en posición de negociar. Dadle a mi pueblo lo que quiere.</Spanish>
 		<Russian>Вы не в том положении, чтобы торговаться. Дайте моим людям то, что они хотят.</Russian>
+		<Hungarian>Nem vagy tárgyalási helyzetben. Add meg a népemnek, amit akarnak!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_CHAMPLAIN_1</Tag>
@@ -6064,6 +6112,7 @@
 		<Italian>Non mettere in imbarazzo la tua colonia. Dacci ciò che chiediamo, conscio di aver fatto la cosa giusta.</Italian>
 		<Spanish>Por favor, no pongáis en evidencia a vuestra colonia. Haced lo más inteligente y dadnos lo que queremos.</Spanish>
 		<Russian>Месье [CT_NAME], мне больно видеть вас на коленях. Какие гордые мечты были у вас, когда вы пришли в этот Новый Свет! Но, по крайней мере, ваш скальп всё ещё при вас. Будьте умнее и дайте нам то, что мы хотим и наши индейские друзья не разлучат ваши головы с волосами.</Russian>
+		<Hungarian>Monsieur [CT_NAME], szomorúan látom, hogy térdelsz. Milyen büszke álmaid voltak, amikor ebbe az Új Világba jöttél! De legalább a skalpod megvan. Egyelőre. Mit ér ez meg neked?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_DONCK_1</Tag>
