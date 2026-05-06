@@ -7090,6 +7090,7 @@
 		<Italian>Addio! I cincillà arrostiti erano una prelibatezza.</Italian>
 		<Spanish>¡Adiós! Las chinchillas asadas eran una delicia.</Spanish>
 		<Russian>В Европе бусы и колокольчики - дешевые безделушки. Меня восхищает ваше бисерное искусство и танцовщицы джингла. Могу я принести вам еще?</Russian>
+		<Hungarian>Európában a gyöngyök és a csengettyűk olcsó csecsebecsék. Itt a gyöngyművészeitek és a csilingelő táncosaitok lenyűgöznek. Hozhatok még nektek?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_15</Tag>
@@ -7099,6 +7100,7 @@
 		<Italian>Temo di dover andare avanti. Vi prego di scusarmi per non aver provato le vostre sanguisughe al vapore.</Italian>
 		<Spanish>Me temo que tengo que seguir adelante. Por favor, discúlpeme por no probar sus sanguijuelas al vapor.</Spanish>
 		<Russian>Пожалуйста, извините меня за то, что я не попробовал ваши пиявки на пару. В Европе мы едим только угря.</Russian>
+		<Hungarian>Kérlek bocsássátok meg, hogy nem kóstoltam meg a párolt piócát. Európában csak angolnát eszünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_16</Tag>
@@ -7108,6 +7110,7 @@
 		<Italian>Addio! E grazie per avermi permesso di partecipare al vostro rituale di fertilità ieri sera al chiaro di luna. Un'esperienza stimolante!</Italian>
 		<Spanish>¡Adiós! Y gracias por permitirme participar en su ritual de fertilidad anoche a la luz de la luna. ¡Una experiencia estimulante!</Spanish>
 		<Russian>Прощайте! И спасибо, что разрешили мне участвовать в вашем ритуале плодородия прошлой ночью при лунном свете. Интересный опыт!</Russian>
+		<Hungarian>Viszlát! Köszönöm a holdfényben rendezett termékenységi rituálét. Élénkítő élmény volt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_17</Tag>
@@ -7117,6 +7120,7 @@
 		<Italian>Grazie per la vostra ospitalità, uomini! E anche voi donne. La nuova amicizia tra i nostri popoli darà sicuramente i suoi frutti. Al più tardi tra nove mesi.</Italian>
 		<Spanish>¡Gracias por su hospitalidad, hombres! Y a ustedes, mujeres, también. La nueva amistad entre nuestros pueblos seguramente dará sus frutos. En nueve meses a más tardar.</Spanish>
 		<Russian>Спасибо за ваше гостеприимство, мужчины! И вы, женщины, тоже. Новая дружба между нашими народами, несомненно, принесет свои плоды. Самое позднее через девять месяцев.</Russian>
+		<Hungarian>Köszönöm, hölgyeim, a vendégszeretetüket! Csak hogy tudjátok, ha gyermek fog születni, akkor azért nem én vagyok a felelős. Vándorlásra születtem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_18</Tag>
@@ -7126,6 +7130,7 @@
 		<Italian>La visita con voi è stata un'esperienza indimenticabile! Soprattutto il decotto di funghi che il vostro sciamano mi ha offerto. Ma ora devo purtroppo continuare a volare!</Italian>
 		<Spanish>¡La visita con ustedes fue una experiencia inolvidable! Especialmente la decocción de hongos que su chamán me ofreció. Pero ahora, lamentablemente, debo seguir volando.</Spanish>
 		<Russian>Визит к вам оставил незабываемые впечатления! Тот грибной отвар, который дал мне ваш шаман, он бесподобен! Теперь я должен лететь!</Russian>
+		<Hungarian>Felejthetetlen élmény volt a nálatok tett látogatás! Az a gombafőzet, amit a sámánod adott nekem! Mostantól már repülnöm kell!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_19</Tag>
@@ -7135,6 +7140,7 @@
 		<Italian>Grazie per la splendida festa! Mi scuso per aver bevuto così tanta della vostra birra di mais ieri sera. Vi prego di credere che stavo solo scherzando sulle intenzioni del nostro popolo nei vostri confronti.</Italian>
 		<Spanish>¡Gracias por el espléndido festín! Me disculpo por haber bebido tanto de su cerveza de maíz anoche. Por favor, creed que sólo estaba bromeando sobre las intenciones de nuestro pueblo hacia el vuestro.</Spanish>
 		<Russian>Спасибо за прекрасный праздник! Я извиняюсь за то, что вчера вечером выпил так много твоего кукурузного пива. Пожалуйста, поверьте, что я просто пошутил о намерениях наших людей по отношению к вам.</Russian>
+		<Hungarian>Köszönöm a pompás lakomát! Elnézést kérek, amiért tegnap este olyan sokat ittam a kukoricasörötökből. Kérlek higgyétek el, hogy csak vicceltem a népünk szándékaival kapcsolatban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_20</Tag>
@@ -7144,6 +7150,7 @@
 		<Italian>Grazie per il vostro generoso benvenuto! E per i molti regali - il copricapo di piume d'aquila, i mocassini di perline e i due schiavi.</Italian>
 		<Spanish>Gracias por su generosa acogida. Y por los numerosos regalos: el tocado de plumas de águila, los mocasines de cuentas y los dos esclavos.</Spanish>
 		<Russian>Спасибо за ваш щедрый прием. И за многочисленные подарки: головной убор из орлиных перьев, расшитые бисером мокасины и двух рабынь.</Russian>
+		<Hungarian>Ez az ország mostantól az otthonom lesz. Egyáltalán lehet bárhol igazi otthon? Skóciában és Írországban a földesuraink úgy gondolják, hogy az emberek nélkül több a haszon.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_GIFT_SHIP_1</Tag>
@@ -7153,6 +7160,7 @@
 		<Italian>È un po' difficile fare affari con voi quando non avete navi da trasporto. Vi daremo una nuova nave. Nel frattempo, per coprire le spese che la tua disgrazia impone alla corona, la tua aliquota fiscale è %d1_new_rate%%. Puoi baciare il nostro anello e poi partire.</Italian>
 		<Spanish>Es un poco difícil hacer negocios con usted cuando no tiene barcos de transporte. Te daremos una nueva nave. Mientras tanto, para cubrir los gastos que su desgracia impone a la corona, su tasa de impuestos es %d1_new_rate%%. Puedes besar nuestro anillo y luego partir.</Spanish>
 		<Russian>Немного сложно вести дела, когда у вас нет торговых кораблей. Мы дадим вам такой корабль. Между тем, чтобы покрыть расходы, которые ваше несчастье возлагает на Корону, Нам придется увеличить налоговую ставку до %d1_new_rate%%. Вы можете поцеловать Наше кольцо и уйти.</Russian>
+		<Hungarian>Kicsit nehéz üzletet kötni, ha nincsenek szállítóhajóid. Adunk neked egy új hajót. Eközben, hogy fedezzük azokat a kiadásokat, amiket a szerencsétlenséged a Koronára ró, az adó mértéke mostantól %d1_new_rate%% lesz. Megcsókolhatod a gyűrűnket és távozhatsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_GIFT_SHIP_1</Tag>
@@ -7162,6 +7170,7 @@
 		<Italian>Grazie, Vostra Maestà. E vi prego di essere così gentili da perdonarmi per la mia goffaggine.</Italian>
 		<Spanish>Gracias, Su Majestad. Y, por favor, tenga la amabilidad de perdonarme por mi torpeza.</Spanish>
 		<Russian>Благодарю вас, Ваше Величество. Пожалуйста, будьте так добры, простите мою неуклюжесть.</Russian>
+		<Hungarian>Köszönöm, Felség! Kérem, legyen kegyes megbocsátani ügyetlenségemet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_1</Tag>
@@ -7171,6 +7180,7 @@
 		<Italian>Si congratuli, governatore. La corona si mostra graziosa e ti concede l'opportunità di compiacere il tuo re. %d1[ICON_GOLD] dovrebbe essere sufficiente.</Italian>
 		<Spanish>Sea felicitado, Gobernador. La corona se muestra graciosa y le concede la oportunidad de complacer a su rey. %d1[ICON_GOLD] debería ser suficiente.</Spanish>
 		<Russian>Губернатор, у вас появилась уникальная возможность угодить Вашему Королю. %d1[ICON_GOLD] будет достаточно, чтобы ненадолго забыть о вашей связи с пиратами.</Russian>
+		<Hungarian>Gratulálok, Kormányzó! A Korona kegyesnek mutatkozik és lehetőséget ad számodra, hogy a Királyod kedvében járj. %d1[ICON_GOLD] elég lesz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_2</Tag>
@@ -7180,6 +7190,7 @@
 		<Italian>C'è grande angoscia e tristezza nella vostra patria. Recentemente, diverse navi della nostra marina sono naufragate o si sono arenate in una forte tempesta. Ci aspettiamo che tu assista la Corona in questo momento difficile e che doni %d1[ICON_GOLD] alla ricostruzione della Marina Reale.</Italian>
 		<Spanish>Hay una gran angustia y tristeza en su patria. Recientemente, varios barcos de nuestra armada han naufragado o han quedado varados en una fuerte tormenta. Esperamos que ayudes a la Corona en estos momentos difíciles y dones %d1[ICON_GOLD] a la reconstrucción de la Marina Real.</Spanish>
 		<Russian>Губернатор, великая печаль постигла нашу страну. Недавно несколько кораблей Нашего флота потерпели крушение или сели на мель во время сильного шторма. Мы ожидаем, что вы поможете Короне в это трудное время и пожертвуете %d1[ICON_GOLD] на восстановление Королевского флота.</Russian>
+		<Hungarian>Nehézségek és nagy bánat van a hazádban. A közelmúltban haditengerészetünk több hajója hajótörést szenvedett vagy megfeneklett egy súlyos viharban. Elvárjuk, hogy segítsd a Koronát ebben a nehéz időszakban és adományozz %d1[ICON_GOLD]-at a Királyi Haditengerészet újjáépítésére.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_3</Tag>
@@ -7189,6 +7200,7 @@
 		<Italian>Le malelingue all'interno del nostro governo suggeriscono che la vostra lealtà alla Corona non è più quella che era quando siete partiti per il Nuovo Mondo. Mandate Vostra Maestà %d1[ICON_GOLD] a chiudere le bocche larghe dei vostri critici.</Italian>
 		<Spanish>Lenguas maliciosas dentro de Nuestro Gobierno insinúan que tu lealtad a la Corona ya no es lo que era cuando partiste al Nuevo Mundo. Enviad a Vuestra Majestad %d1[ICON_GOLD] para que cierre las bocas sueltas de vuestros críticos.</Spanish>
 		<Russian>Злые языки в Нашем Правительстве намекают, что ваша верность Короне уже не та, что была, когда вы уехали в Новый Свет. Пришлите Нашему Величеству %d1[ICON_GOLD], чтобы Мы могли заткнуть рты вашим критикам.</Russian>
+		<Hungarian>Kormányunkon belüli rosszindulatú hangok arról szólnak, hogy a Korona iránti hűséged már nem olyan erős, mint amikor az Újvilágba indultál. Küldj el Felséges Királyod számára %d1[ICON_GOLD]-at, hogy elhallgattassa a kritikusok száját.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_4</Tag>
@@ -7198,6 +7210,7 @@
 		<Italian>Sarete lieti di sapere che Vostra Maestà vi offre ancora una volta la possibilità di dimostrare la vostra fedeltà. Dai al nostro tesoriere %d1[ICON_GOLD], inginocchiati e bacia il Nostro anello. E poi lasciaci riposare - questo lavoro senza fine per il tuo beneficio ci ha esaurito.</Italian>
 		<Spanish>Os complacerá saber que Su Majestad os ofrece de nuevo la oportunidad de demostrar vuestra lealtad. Entrega a nuestro tesorero %d1[ICON_GOLD], arrodíllate y besa Nuestro anillo. Y luego déjanos descansar: este interminable trabajo en tu beneficio nos ha agotado.</Spanish>
 		<Russian>Вам наверняка будет приятно услышать, что Наше Величество в очередной раз предлагает вам возможность доказать свою лояльность. Встаньте на колени и поцелуйте Наше кольцо. Да, и не забудьте передать казначею %d1[ICON_GOLD], как знак вашей искренной преданности.</Russian>
+		<Hungarian>Örömmel hallod majd, hogy Felséges Királyod ismét lehetőséget kínál neked, hogy bizonyítsd a hűséged. Adj át a kincstárnokunknak %d1[ICON_GOLD]-at, térdelj le és csókold meg a gyűrűnket! Aztán hagyj minket pihenni - ez az érted végzett megterhelő munka kimerített bennünket.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_5</Tag>
@@ -7207,6 +7220,7 @@
 		<Italian>Puoi baciare il nostro anello con sigillo per la piccola somma di %d1[ICON_GOLD]. No, non ringraziarci. Bacia l'anello e ritirati.</Italian>
 		<Spanish>Puedes besar nuestro anillo de sello por la pequeña cuota de %d1[ICON_GOLD]. No, no nos des las gracias. Sólo besa el anillo y retírate.</Spanish>
 		<Russian>Вы можете поцеловать Наш перстень с этим прекрасным камнем. И не забудьте про уплату взноса за аудиенцию с вашим обожаемым монархом (сущие пустяки, всего лишь %d1[ICON_GOLD]). Нет, не благодарите Нас. Просто поцелуйте кольцо и уходите.</Russian>
+		<Hungarian>Megcsókolhatod a pecsétgyűrűnket csekély %d1[ICON_GOLD]-ért. Nem, ne köszönd meg Nekünk! Csak csókold meg a gyűrűt és távozz!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_6</Tag>
@@ -7216,6 +7230,7 @@
 		<Italian>Oggi siamo di buon umore Royally. Solo perché! Per nessuna ragione! Un sentimento di felicità confonde la nostra mente e il nostro cuore è pieno d'amore per i nostri sudditi. Compresi voi! Perché non ci mandate %d1[ICON_GOLD] per mantenere la situazione così?</Italian>
 		<Spanish>Hoy estamos de buen humor. ¡Sólo porque sí! Por ninguna razón. Un sentimiento de felicidad aturde Nuestra mente, y Nuestro corazón está lleno de amor por Nuestros súbditos. ¡Incluido tú! ¿Por qué no nos envías %d1[ICON_GOLD] para que siga siendo así?</Spanish>
 		<Russian>У Нас сегодня чертовски хорошее настроение (надеюсь, Кардинал не услышит этого). Да, просто так! Без причины! Чувство счастья застилает Наш разум и Наше сердце наполняется любовью ко всем Нашим подданным. Включая вас! Кстати, почему бы вам не передать Нашему казначею %d1[ICON_GOLD], чтобы так и оставалось дальше?</Russian>
+		<Hungarian>Ma királyi jó hangulatban vagyunk. Csak mert! Csak úgy! A boldogság érzése megbabonázza elménket és szívünk tele van szeretettel alattvalóink iránt. Beleértve téged is! Miért nem küldesz Nekünk %d1[ICON_GOLD]-at, hogy ez így is maradjon?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_7</Tag>
@@ -7225,6 +7240,7 @@
 		<Italian>Tutta l'Europa parla del nuovo re di Sassonia e dello splendore che sta dando al suo piccolo paese. Ha costruito un canile e un palazzo di piacere sul bellissimo Elba, e si dice che questi edifici siano di squisito splendore. Mandaci %d1[ICON_GOLD], affinché possiamo strappare a questo Cretino i suoi architetti!</Italian>
 		<Spanish>Toda Europa habla del nuevo rey de Sajonia y del esplendor que está dando a su pequeño país. Ha construido una perrera y un palacio de recreo en el hermoso Elba, y se dice que estos edificios son de un esplendor exquisito. Envíanos %d1[ICON_GOLD], para que podamos arrancarle a este cretino sus arquitectos.</Spanish>
 		<Russian>Вся Европа говорит только о новом короле Саксонии. О том, сколько он тратит на свою маленькую страну. Он построил псарню и Дворец удовольствий на прекрасной реке Эльбе. Не скрою, здания великолепные. Срочно пришлите Нам %d1[ICON_GOLD], дабы привлечь Наших архитекторов на строительство более изысканных шедевров архитектуры!</Russian>
+		<Hungarian>Egész Európa az új Szász Királyról beszél, arról, hogy mennyit költ kis országára. Épített egy kennelt és egy örömpalotát a gyönyörű Elba partján. Az épületek pompásak. Küldjél nekünk %d1[ICON_GOLD]-at, hogy el tudjuk csalogatni az építészeket ettől a bolondtól!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_8</Tag>
@@ -7234,6 +7250,7 @@
 		<Italian>I nostri contadini a casa hanno avuto i loro raccolti rovinati. Stanno morendo di fame. I loro bambini stanno morendo. Una situazione terribile! È necessario un aiuto immediato. Mandaci %d1[ICON_GOLD] per rinforzare le guardie del palazzo.</Italian>
 		<Spanish>Nuestros agricultores en casa han visto arruinadas sus cosechas. Se están muriendo de hambre. Sus hijos están muriendo. Una situación terrible. Se necesita ayuda inmediata. Envíanos a %d1[ICON_GOLD] para reforzar a los guardias del palacio.</Spanish>
 		<Russian>Наши фермеры из-за длительной засухи (или заморозков?) на родине лишились урожая. Они голодают. Их дети умирают. Ужасная ситуация! Нужна срочная помощь! Немедленно отправьте нам %d1[ICON_GOLD] для усиления дворцовой стражи.</Russian>
+		<Hungarian>Otthoni gazdáinknak tönkrement a termésük. Éheznek. A gyermekeik haldokolnak. Szörnyű helyzet! Azonnali segítségre van szükség! Küldj nekünk %d1[ICON_GOLD]-at, hogy megerősítsük a palotaőrséget!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_9</Tag>
@@ -7243,6 +7260,7 @@
 		<Italian>Puoi baciare il nostro anello con sigillo per la misera somma di %d1[ICON_GOLD].</Italian>
 		<Spanish>Puedes besar nuestro anillo de sello por la mísera suma de %d1[ICON_GOLD].</Spanish>
 		<Russian>Мы рады видеть вас в полном здравии. Можете поцеловать Наш изумительный перстень с прекрасным камнем из ваших ничтожных колоний. Да, и занесите казначею %d1[ICON_GOLD] для организации сегодняшнего бала в честь вашего приезда.</Russian>
+		<Hungarian>Megcsókolhatod a pecsétgyűrűnket csekély %d1[ICON_GOLD]-ért.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ASK_FOR_GOLD_10</Tag>
@@ -7252,6 +7270,7 @@
 		<Italian>La tua fama di esploratore di lidi esotici impressiona i nostri sudditi, che ci hanno chiesto di dare il tuo nome alla grande piazza del mercato della capitale. Siamo felici di soddisfare questa richiesta! Inviaci %d1[ICON_GOLD] per le spese amministrative.</Italian>
 		<Spanish>Tu fama de explorador de costas exóticas impresiona a nuestros súbditos, y nos han pedido que le pongamos tu nombre al gran mercado de la capital. Estaremos encantados de atender esta petición. Envíenos %d1[ICON_GOLD] para las tasas administrativas.</Spanish>
 		<Russian>Ваша слава исследователя экзотических берегов производит впечатление на Наших подданных, и они попросили Нас назвать в вашу честь большую рыночную площадь столицы Нашего государства. Мы с радостью выполним эту просьбу. Немедленно передайте казначею %d1[ICON_GOLD] для оплаты административных расходов.</Russian>
+		<Hungarian>Az egzotikus partok felfedezőjeként szerzett hírneved lenyűgözte alattvalóinkat és arra kértek bennünket, hogy a főváros nagy piacterét nevezzük el rólad. Örömmel teszünk eleget ennek a kérésnek. Küldj %d1[ICON_GOLD]-at az adminisztrációs díjak fedezésére!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_GIVE_GOLD_1</Tag>
@@ -7261,6 +7280,7 @@
 		<Italian>Vostra Maestà, è un onore. (Soddisfare la domanda, l'aliquota massima diminuisce)</Italian>
 		<Spanish>Su Majestad, es un honor. (Satisfacer la demanda, la tasa máxima de impuestos disminuye)</Spanish>
 		<Russian>Ваше Величество, это большая честь для меня. (Заплатить требуемую сумму, максимальная налоговая ставка снижается)</Russian>
+		<Hungarian>Felség, ez megtiszteltetés. (A kérés teljesítése, a maximális adókulcs csökken)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_GIVE_GOLD_2</Tag>
@@ -7270,6 +7290,7 @@
 		<Italian>Solo così poco? Grazie, Vostra Maestà. (Soddisfare la domanda, l'aliquota massima diminuisce)</Italian>
 		<Spanish>¿Sólo tan poco? Gracias, Su Majestad. (Satisfacer la demanda, la tasa máxima de impuestos disminuye)</Spanish>
 		<Russian>Всего-то? Ваше Величество, казна колоний в Вашем распоряжении. (Заплатить требуемую сумму, максимальная налоговая ставка снижается)</Russian>
+		<Hungarian>Csak ilyen keveset? Köszönöm, Felség! (A kérés teljesítése, a maximális adókulcs csökken)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_GIVE_GOLD_3</Tag>
@@ -7279,6 +7300,7 @@
 		<Italian>Sono il più umile suddito di Vostra Maestà. (Soddisfare la domanda, l'aliquota massima diminuisce)</Italian>
 		<Spanish>Soy el más humilde súbdito de Su Majestad. (Satisfacer la demanda, la tasa máxima de impuestos disminuye)</Spanish>
 		<Russian>Я покорнейший подданный Вашего Величества. (Заплатить требуемую сумму, максимальная налоговая ставка снижается)</Russian>
+		<Hungarian>Felséged legszerényebb alattvalója vagyok. (A kérés teljesítése, a maximális adókulcs csökken)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_GIVE_GOLD_4</Tag>
@@ -7288,6 +7310,7 @@
 		<Italian>Il vostro desiderio è un ordine, Vostra Maestà. (Soddisfare la domanda, l'aliquota massima diminuisce)</Italian>
 		<Spanish>Su deseo es mi orden, Su Majestad. (Satisfacer la demanda, la tasa máxima de impuestos disminuye)</Spanish>
 		<Russian>Ваше Величество, Ваше желание для меня закон! (Заплатить требуемую сумму, максимальная налоговая ставка снижается)</Russian>
+		<Hungarian>Kívánsága parancs, Felség. (A kérés teljesítése, a maximális adókulcs csökken)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_GIVE_GOLD_5</Tag>
@@ -7297,6 +7320,7 @@
 		<Italian>Sì, Vostra Maestà! Certamente! Con piacere. (Soddisfare la domanda, l'aliquota massima diminuisce)</Italian>
 		<Spanish>¡Sí, Su Majestad! ¡Por supuesto! Con mucho gusto. (Satisfacer la demanda, la tasa máxima de impuestos disminuye)</Spanish>
 		<Russian>Да, ваше величество! Конечно! С превеликим удовольствием! (Заплатить требуемую сумму, максимальная налоговая ставка снижается)</Russian>
+		<Hungarian>Igen, Felség! Természetesen! Örömmel. (A kérés teljesítése, a maximális adókulcs csökken)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REFUSE_GOLD_1</Tag>
@@ -7306,6 +7330,7 @@
 		<Italian>No, Vostra Maestà! Paghiamo già le tasse. Questo è sufficiente. (Fai arrabbiare il re, il tasso massimo di tasse aumenta)</Italian>
 		<Spanish>¡No, Su Majestad! Ya pagamos impuestos. Eso es suficiente. (Enojar al rey, aumenta la tasa máxima de impuestos)</Spanish>
 		<Russian>Нет, Ваше Величество! Мы уже платим налоги. Этого достаточно. (Разгневать Короля, максимальная ставка налога увеличивается)</Russian>
+		<Hungarian>Nem, Felség! Már fizetünk adót. Ennyi épp elég. (A király felbosszantása, a maximális adókulcs emelkedik)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REFUSE_GOLD_2</Tag>
@@ -7315,6 +7340,7 @@
 		<Italian>Vostra Maestà, voi mi confondete con San Nicola. (Fai arrabbiare il re, il tasso massimo di tasse aumenta)</Italian>
 		<Spanish>Su Majestad, me confunde con San Nicolás. (Enojar al rey, aumenta la tasa máxima de impuestos)</Spanish>
 		<Russian>Ваше Величество, Вы путаете меня с Золотой антилопой. (Разгневать Короля, максимальная ставка налога увеличивается)</Russian>
+		<Hungarian>Felség, Ön összekever engem Szent Miklóssal. (A király felbosszantása, a maximális adókulcs emelkedik)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REFUSE_GOLD_3</Tag>
@@ -7324,6 +7350,7 @@
 		<Italian>Forse dovreste fare economia, Vostra Maestà? (Fai arrabbiare il re, il tasso massimo di tasse aumenta)</Italian>
 		<Spanish>¿Quizás debería economizar, Su Majestad? (Enojar al rey, aumenta la tasa máxima de impuestos)</Spanish>
 		<Russian>Возможно, Вам следует быть более экономным, Ваше Величество.(Разгневать Короля, максимальная ставка налога увеличивается)</Russian>
+		<Hungarian>Talán takarékoskodnia kellene, Felség. (A király felbosszantása, a maximális adókulcs emelkedik)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REFUSE_GOLD_4</Tag>
@@ -7333,6 +7360,7 @@
 		<Italian>Forse un'altra volta. Non ora. (Fai arrabbiare il re, il tasso massimo di tasse aumenta)</Italian>
 		<Spanish>Tal vez en otro momento. Ahora no. (Enojar al rey, aumenta la tasa máxima de impuestos)</Spanish>
 		<Russian>Может быть, в другой раз. Не сейчас.(Разгневать Короля, максимальная ставка налога увеличивается)</Russian>
+		<Hungarian>Talán majd máskor. De most nem. (A király felbosszantása, a maximális adókulcs emelkedik)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REFUSE_GOLD_5</Tag>
@@ -7342,6 +7370,7 @@
 		<Italian>Con tutto il rispetto, Vostra Maestà - non se ne parla! (Fai arrabbiare il re, il tasso massimo di tasse aumenta)</Italian>
 		<Spanish>Con respeto, Su Majestad, ¡de ninguna manera! (Enojar al rey, aumenta la tasa máxima de impuestos)</Spanish>
 		<Russian>При всем уважении, Ваше Величество, ни за что!(Разгневать Короля, максимальная ставка налога увеличивается)</Russian>
+		<Hungarian>Tisztelettel, Felség - szó sem lehet róla! (A király felbosszantása, a maximális adókulcs emelkedik)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ACCEPT_GOLD_1</Tag>
@@ -7351,6 +7380,7 @@
 		<Italian>Vi sarà concessa una ricompensa. Vai alla cucina del palazzo e chiedi gli avanzi della colazione reale.</Italian>
 		<Spanish>Se te concederá una recompensa. Ve a la cocina del palacio y pide las sobras del desayuno real.</Spanish>
 		<Russian>Вам будет предоставлена награда. Можете пройти на дворцовую кухню и попросить остатки королевского завтрака.</Russian>
+		<Hungarian>Jutalomban részesülsz. Menj a palota konyhájára és kérj a Királyi reggeli maradékából.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ACCEPT_GOLD_2</Tag>
@@ -7360,6 +7390,7 @@
 		<Italian>I nostri complimenti! Conosci il tuo grado. Saggia decisione.</Italian>
 		<Spanish>¡Nuestras felicitaciones! Ya conoces tu rango. Sabia decisión.</Spanish>
 		<Russian>Наши поздравления! Ты знаешь своё место. Мудрое решение.</Russian>
+		<Hungarian>Elismerésünk! Tudod mi a rangod. Bölcs döntés.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ACCEPT_GOLD_3</Tag>
@@ -7369,6 +7400,7 @@
 		<Italian>Rispetto! Che decisione saggia!</Italian>
 		<Spanish>¡Respeto! ¡Qué sabia decisión!</Spanish>
 		<Russian>Поздравляю! Это было мудрое решение!</Russian>
+		<Hungarian>Elismerésünk! Milyen bölcs döntés!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ACCEPT_GOLD_4</Tag>
