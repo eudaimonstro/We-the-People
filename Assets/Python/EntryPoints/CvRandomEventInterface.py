@@ -3336,19 +3336,64 @@ def getHelpTailwind(argsList):
 				szHelp = localText.getText("TXT_KEY_EVENT_TAILWIND_HELP_1", (event.getGenericParameter(1), unit.getName()))
 	return szHelp
 
-######## RUNAWAY - Entlaufene Pferde ###########
 
+######## RUNAWAY - Runaway horses ###########
+
+def _runAwayNativeCityBordersPlayerTerritory(city, nativecity):
+	if city.isNone() or nativecity.isNone():
+		return False
+
+	iPlayer = city.getOwner()
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			loopPlot = plotXY(nativecity.getX(), nativecity.getY(), iDX, iDY)
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() != iPlayer:
+				continue
+
+			workingCity = loopPlot.getWorkingCity()
+			if workingCity is None or workingCity.isNone():
+				continue
+
+			if workingCity.getOwner() == city.getOwner() and workingCity.getID() == city.getID():
+				return True
+
+	return False
+ 
 def canTriggerRunAway(argsList):
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
+
+	if player.isNative():
 		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
 	if city.isNone():
 		return False
+
+	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if player2.isNone():
+		return False
+
+	if not player2.isNative():
+		return False
+
+	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativecity.isNone():
+		return False
+
+	if not _runAwayNativeCityBordersPlayerTerritory(city, nativecity):
+		return False
+
 	# Read Parameter 1 from the first event and check if enough yield is stored in city
 	eEvent1 = gc.getInfoTypeForString("EVENT_RUNAWAY_1")
 	event1 = gc.getEventInfo(eEvent1)
@@ -3357,10 +3402,11 @@ def canTriggerRunAway(argsList):
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
 
-	if city.getYieldStored(iYield) < -quantity*2 :
+	if city.getYieldStored(iYield) < -quantity*2:
 		return False
-	return True
 
+	return True
+ 
 def applyRunAway1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
@@ -3400,6 +3446,98 @@ def getHelpRunAway1(argsList):
 	if event.getGenericParameter(1) <> 0 :
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey()))
+	return szHelp
+
+
+def canDoRunAway3(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if player2.isNone():
+		return False
+
+	if not player2.isNative():
+		return False
+
+	iCompensation = event.getGenericParameter(2)
+
+	# Native tribe must be able to afford compensation
+	if player2.getGold() < iCompensation:
+		return False
+
+	return True
+
+def applyRunAway3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone() or player2.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if city.isNone() or nativecity.isNone():
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+	iAmount = event.getGenericParameter(1)
+	iCompensation = event.getGenericParameter(2)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return
+
+	if player2.getGold() < iCompensation:
+		return
+
+	city.changeYieldStored(iYield, -iAmount)
+	nativecity.changeYieldStored(iYield, iAmount)
+
+	player2.changeGold(-iCompensation)
+	player.changeGold(iCompensation)
+
+def getHelpRunAway3(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+
+	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+	iCompensation = event.getGenericParameter(2)
+
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent()/100
+
+	szHelp = ""
+
+	if event.getGenericParameter(1) <> 0:
+		szHelp = localText.getText(
+			"TXT_KEY_EVENT_YIELD_LOOSE",
+			(quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+		)
+
+		szHelp += "\n" + localText.getText(
+			"TXT_KEY_EVENT_YIELD_GAIN",
+			(quantity, gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey())
+		)
+
+	szHelp += "\n" + localText.getText(
+		"TXT_KEY_EVENT_RUNAWAY_3_HELP",
+		(iCompensation,)
+	)
+
 	return szHelp
 
 ######## Terra X Quest ###########

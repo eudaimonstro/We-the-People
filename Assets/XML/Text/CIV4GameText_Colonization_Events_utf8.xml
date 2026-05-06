@@ -1818,6 +1818,18 @@
 		<Russian>В городе [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] лошади ускакали в пустошь. Наши [COLOR_HIGHLIGHT_TEXT]%s1_civ[COLOR_REVERT] соседи из [COLOR_SELECTED_TEXT]%s6_city[COLOR_REVERT] подозреваются в угоне лошадей.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_RUNAWAY_3</Tag>
+		<English>Accept the loss, but insist on fair compensation.</English>
+		<German>Den Verlust hinnehmen, aber auf angemessene Entschädigung bestehen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_RUNAWAY_3_HELP</Tag>
+		<English>[ICON_BULLET]Receive %d1[ICON_GOLD] in compensation.</English>
+		<German>[ICON_BULLET]Erhaltet %d1[ICON_GOLD] als Entschädigung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_TERRAX_1</Tag>
 		<English>Milord, astonishing news has reached us from the Old World. At the coronation feast of the Habsburg Emperor, the rulers of Europe were all gathered together. As the wine flowed, they bragged and teased each other. One word led to another and finally a bet was made: the first ruler with the most new towns in the interior of the New World will win. Our own King promises us rich rewards if we help Him win the bet!</English>
 		<French>Sire, du Vieux Monde nous parvient une nouvelle étonnante : lors de la fête du couronnement de l'empereur Habsburg, les souverains d'Europe ont festoyé ensemble au banquet. Le vin coule à flot, ils se vantent et se taquinent. Un mot a mené à un autre et finalement un pari a été fait : Pour la Majesté qui réussit la première à fonder de nombreuses nouvelles villes à l'intérieur du Nouveau Monde, les autres Altesses doivent embrasser son cul nu. Sa Majesté nous a promis de riches récompenses si nous l'aidons à gagner le pari !</French>
