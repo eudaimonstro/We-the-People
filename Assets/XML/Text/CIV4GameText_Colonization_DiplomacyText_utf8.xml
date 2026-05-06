@@ -6548,6 +6548,7 @@
 		<Italian>Siamo lieti di vedere che le colonie si crogiolano nella prosperità. Ma in Europa il popolo sta soffrendo. Perciò, da buoni cristiani, donerete sicuramente la piccola somma di %d1[ICON_GOLD] alla Chiesa Madre affinché siano aiutati.</Italian>
 		<Spanish>Nos complace ver que las colonias gozan de prosperidad. Pero en Europa la gente está sufriendo. Por lo tanto, como buenos cristianos, seguramente donarán la pequeña suma de %d1[ICON_GOLD] a la Iglesia Madre para que puedan ser ayudados.</Spanish>
 		<Russian>Мы рады видеть, что колонии богатеют и процветают, но в Европе люди страдают. Ну а поскольку вы хорошие христиане, вы наверняка хотели бы сделать пожертвование %d1[ICON_GOLD] для Святой Церкви, чтобы мы могли помочь нуждающимся.</Russian>
+		<Hungarian>Örömmel látjuk, hogy a gyarmatok gazdagodnak, de Európában az emberek szenvednek. Ezért, mivel te jó keresztény vagy, biztosan szeretnél %d1[ICON_GOLD] adományt adni Anyaszentegyházadnak, hogy segíthessünk rajtuk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_CHURCH_FAVOUR</Tag>
@@ -6557,6 +6558,7 @@
 		<Italian>Come può la Santa Madre Chiesa sostenere i buoni cristiani nelle colonie? (Il sostegno richiede una donazione di %d1[ICON_GOLD])</Italian>
 		<Spanish>¿Cómo puede la Santa Madre Iglesia apoyar a los buenos cristianos de las colonias? (El apoyo requiere una donación de %d1[ICON_GOLD])</Spanish>
 		<Russian>Чем может помочь Святая Церковь добрым христианам наших заморских колоний? (Милость потребует пожертвования в размере %d1[ICON_GOLD])</Russian>
+		<Hungarian>Mit tehet az Anyaszentegyház a gyarmatok jó keresztényeinek megsegítésére? (A szívességhez %d1[ICON_GOLD] adományra lesz szükség)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_SMUGGLERS</Tag>
@@ -6566,6 +6568,7 @@
 		<Italian>Abbiamo sentito voci che i contrabbandieri del Nuovo Mondo vendono la loro merce nei nostri porti, commettendo crimini inaccettabili contro la Corona. Questi criminali devono essere presi! Vi ordiniamo di indagare su queste voci e di arrestare i contrabbandieri.[NEWLINE](Nota: reclutare contrabbandieri costa %d1_gold[ICON_GOLD])</Italian>
 		<Spanish>Hemos oído rumores de que contrabandistas del Nuevo Mundo están vendiendo sus mercancías en nuestros puertos, cometiendo crímenes inaceptables contra la Corona. ¡Hay que atrapar a estos criminales! Te ordenamos que investigues estos rumores y detengas a los contrabandistas.[NEWLINE](Nota: Reclutar contrabandistas cuesta %d1_gold[ICON_GOLD])</Spanish>
 		<Russian>До Нас дошли слухи, что контрабандисты продают свои товары из Нового Света в Наших портах, совершая тем самым неприемлемое преступление против Короны. Эти преступники должны быть пойманы! Мы приказываем вам расследовать эти слухи и задержать контрабандистов.[NEWLINE](СОВЕТ: наем контрабандистов будет стоить %d1_gold[ICON_GOLD])</Russian>
+		<Hungarian>Hallottunk olyan pletykákat, hogy csempészek az Újvilágból származó áruikkal házalnak kikötőinkben és ezzel elfogadhatatlan bűncselekményt követnek el a Korona ellen. Ezeket a bűnözőket el kell kapni! Megparancsoljuk, hogy vizsgáld ki ezeket a pletykákat és fogd el a csempészeket![NEWLINE](TIPP: A csempészek felbérlése %d1_gold[ICON_GOLD]-ba kerül)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_PIRATES</Tag>
@@ -6573,6 +6576,7 @@
 		<French>Plusieurs rapports de notre flotte signalent la présence de pirates le long des routes maritimes vers nos colonies. Cela doit cesser ! Que ces pirates soient mis dans notre camp ou éliminer.[NEWLINE](NOTE: engager les pirates coûtera %d1_gold[ICON_GOLD], les soudoyer coûtera 10%% de ce montant)</French>
 		<German>Wir haben alarmierende Berichte über Sichtungen von Piraten auf den Handelsrouten zu Unseren Kolonien erhalten. Ihr müsst sofort handeln. Eliminiert dieses Gesindel oder zieht es notfalls auf Unsere Seite.[NEWLINE](Hinweis: Anheuern kostet %d1_gold[ICON_GOLD], Bestechen nur 10%% dieser Summe)</German>
 		<Russian>Мы слышали тревожные сообщения о появлении пиратов на путях к Нашим колониям. Необходимо принять срочные меры! Либо уничтожьте их, либо переманите на свою сторону.[NEWLINE](СОВЕТ: наем будет стоить %d1_gold[ICON_GOLD], взятка составит только 10%% от этой суммы)</Russian>
+		<Hungarian>Riasztó hírek érkeztek kalózokról akik a kolóniáinkra vezető útvonalakon portyáznak. Cselekedni kell! Vagy pusztítsd el őket, vagy állítsd át őket a mi oldalunkra![NEWLINE](TIPP: A felbérlés %d1_gold[ICON_GOLD]-ba kerül, a megvesztegetés ennek csak a 10%-a)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DONATE_CONTINENTAL_GUARD</Tag>
@@ -6580,13 +6584,15 @@
 		<French>L'expérience témoigne que vous êtes un ami de nos colonies. C'est pourquoi nous offrons à votre fière et grandissante nation quelques-uns de nos meilleurs officiers pour entraîner votre élite militaire.[NEWLINE](NOTE: l'entraînement coûtera %d1_gold[ICON_GOLD])</French>
 		<German>Ihr habt Euch als Freund Unserer Kolonien erwiesen. Daher bieten Wir an, Euch einige Unserer erfahrensten Offiziere zu schicken, damit Ihr eine militärische Elite ausbilden könnt.[NEWLINE](Hinweis: Training kostet %d1_gold[ICON_GOLD])</German>
 		<Russian>Вы доказали, что являетесь другом Наших колоний. Поэтому Мы предлагаем вам некоторых из Наших самых опытных офицеров для обучения военной элиты.[NEWLINE](ПОДСКАЗКА: обучение будет стоить %d1_gold[ICON_GOLD])</Russian>
+		<Hungarian>Bebizonyosodott, hogy a kolóniáink barátja vagy. Ezért felajánlunk neked legtapasztaltabb tisztjeink közül néhányat, hogy kiképezzenek számodra egy katonai elitet.[NEWLINE](TIPP: A kiképzés %d1_gold[ICON_GOLD]-ba kerül)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DONATE_MORTAR</Tag>
-		<English>We have just concluded a costly war and now must sell some of Our surplus weapons. Since you have been a friend of Our colonies, We coul sell one to you.[NEWLINE](HINT: A mortar will cost %d1_gold[ICON_GOLD])</English>
+		<English>We have just concluded a costly war and now must sell some of Our surplus weapons. Since you have been a friend of Our colonies, We could sell one to you.[NEWLINE](HINT: A mortar will cost %d1_gold[ICON_GOLD])</English>
 		<French>Nous venons de mettre fin à une guerre fort coûteuse et nous devons vendre nos surplus militaires. Comme vous êtes montrés amical à notre égard et celui de nos colonies, nous vous proposons la vente de quelques équipements militaires.[NEWLINE](HINT: l'unité de mortier vous coûtera %d1_gold[ICON_GOLD])</French>
 		<German>Wir haben erst vor Kurzem einen kostspieligen Krieg beendet und planen, Kriegsgerät zu verkaufen. Da Ihr ein Freund Unserer Kolonien zu sein scheint, bieten Wir Euch dieses an.[NEWLINE](Hinweis: Mörser kostet %d1_gold[ICON_GOLD])</German>
 		<Russian>Мы только что завершили крайне дорогостоящую войну и теперь вынуждены продавать излишки оружия. Поскольку вы дружите с Нашими колониями, Мы можем продать вам что-нибудь из армейских запасов.[NEWLINE](ПОДСКАЗКА: [COLOR_HIGHLIGHT_TEXT]Мортира[COLOR_REVERT] будет стоить %d1_gold[ICON_GOLD])</Russian>
+		<Hungarian>Éppen most fejeztünk be egy költséges háborút és most el kell adnunk a felesleges fegyvereink egy részét. Mivel te a gyarmataink barátja vagy, eladhatunk neked egyet.[NEWLINE](TIPP: Egy ágyú %d1_gold[ICON_GOLD]-ba kerül)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_RANGERS</Tag>
@@ -6594,6 +6600,7 @@
 		<French>Une pétition provenant de vos colonies à l'intérieur des terres est arrivée à notre court. Elles demandent l'envoi de troupes royales pour assurer leur sécurité. Ces incapables ne peuvent-ils pas protéger leurs maisons seuls ?[NEWLINE](NOTE: l'entraînement de gardes-forestiers coûtera %d1_gold[ICON_GOLD])</French>
 		<German>Die Siedler aus Unseren überseeischen Besitzungen in Amerika haben Uns eine Petition übersandt. Sie rufen nach königlichen Truppen, um ihre Besitzungen zu schützen. Diese faulen Narren sollen ihre Ländereien gefälligst selbst beschützen![NEWLINE](Hinweis: Rekrutierung und Ausrüstung von Rangern kostet %d1_gold[ICON_GOLD])</German>
 		<Russian>Переселенцы из Наших заморских владений в Америке прислали Нам петицию. Они призывают Королевские войска для защиты своих владений. Неужели эти ленивые дураки не в состоянии защитить свои же земли собственными силами?![NEWLINE](ПОДСКАЗКА: обучение и оснащение [COLOR_HIGHLIGHT_TEXT]Рейнджеров[COLOR_REVERT] будет стоить %d1_gold[ICON_GOLD])</Russian>
+		<Hungarian>Az amerikai tengerentúli birtokaink telepesei petíciót küldtek nekünk. Királyi csapatokat kérnek birtokaik védelmére. Hagyjuk, hadd védjék meg maguk a földjeiket![NEWLINE](TIPP: A Járőrök kiképzése és felszerelése %d1_gold[ICON_GOLD]-ba kerül)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_CONQUISTADORS</Tag>
@@ -6601,6 +6608,7 @@
 		<French>Nos sujets entendent parler de votre guerre contre les païens indigènes qui vous entourent. Guidés par la seule vraie volonté divine d'amener l'or des païens en des maisn chrétiennes, certains conquistadors se sont portés volontaires pour rejoindre votre commandement.[NEWLINE]Pour le montant raisonnable de %d1_gold[ICON_GOLD], nous nous chargerons de les équiper et de vous les amener.</French>
 		<German>Gerüchte über Euren Krieg gegen die teuflischen, heidnischen Wilden machen überall die Runde. Geführt von Gottes wahrem und gerechtem Willen, das Gold dieser Wilden in christliche Hände zu bringen, möchten sich einige Konquistadoren Unserer Sache anschließen und unter Unserem Banner gegen die Wilden kämpfen.[NEWLINE]Für den geringen Betrag in Gold von %d1_gold[ICON_GOLD] werden wir ihre Ausrüstung und ihre Passage in die Neue Welt bezahlen.</German>
 		<Russian>Слухи о вашей войне против дьявольских дикарей достигли самых глухих мест Европы. Ведомые истинной и праведной волей Бога передать золото язычников в руки христиан, [COLOR_HIGHLIGHT_TEXT]конкистадоры[COLOR_REVERT] желают присоединиться к Нашему делу и сражаться с язычниками под Нашим командованием.[NEWLINE]За небольшую плату в %d1_gold[ICON_GOLD] Мы оплатим их снаряжение и перевозку в Новый Свет.</Russian>
+		<Hungarian>Az ördögi vademberek elleni háborúdról szóló pletykák mindenfelé keringenek. Isten igaz és igazságos akaratától vezérelve, hogy a pogányok aranyát keresztény kézbe hozza, Konkvisztádorok kívánnak csatlakozni hozzánk és a parancsnokságunk alatt harcolni a pogányok ellen.[NEWLINE]Mindössze %d1_gold[ICON_GOLD]-ért felszereljük és az Újvilágba utaztatjuk őket.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GET_REV_SUPPORT</Tag>
@@ -6608,6 +6616,7 @@
 		<French>Notre Majesté, [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT], est impressionné par votre quête d'indépendance et souhaite vous soutenir dans vos combats..</French>
 		<German>Unser Herrscher, der [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT], ist beeindruckt von Eurem Bestreben nach Unabhängigkeit und wünscht, Euren Kampf zu unterstützen.</German>
 		<Russian>Наш повелитель, [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT], впечатлен вашим стремлением к независимости и желает поддержать вашу борьбу.</Russian>
+		<Hungarian>Uralkodónk, [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT], le van nyűgözve a függetlenségi törekvésed miatt és támogatni kívánja küzdelmedet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_EUROPE_WAR</Tag>
@@ -6615,6 +6624,7 @@
 		<French>Il est de Notre plaisir de déclarer la guerre à [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT]. Nous vous ordonnons de d'attaquer toutes ses colonies au Nouveau Monde.</French>
 		<German>Uns hat beliebt, dem [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] den Krieg zu erklären. Von Euch erwarten Wir, dass Ihr seine Kolonien in der Neuen Welt angreift!</German>
 		<Russian>Нам было угодно объявить войну [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT]. Мы ожидаем, что вы атакуете его колонии в Новом Свете!</Russian>
+		<Hungarian>Örömünkre szolgált, hogy hadat üzenhettünk [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] számára. Elvárjuk, hogy támadd meg a gyarmatait az Újvilágban!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_EUROPE_PEACE</Tag>
@@ -6622,6 +6632,7 @@
 		<French>Le [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] Nous a demandé que vous cessiez votre guerre contre les colonies de son royaume. Comme Nous craignons pour Notre réputation, il est de Notre plaisir qu'il en soit ainsi. Si vous le souhaitez, Nous vous enverrons un diplomaté apprécié de ses pairs ainsi qu'un prélat de haut rang pour mener à bien les négociations. </French>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] hat Uns gebeten, dass Ihr den Krieg mit seinen Kolonien beendet. Da wir um Unseren Ruf fürchten, wünschen Wir, dass dem so geschieht. Wenn Ihr es wünscht, schicken Wir Euch einen bekannten Diplomaten und einen weisen Mann der Kirche zur Unterstützung der Verhandlungen.</German>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] попросил Нас положить конец войне с его колониями. Поскольку на кону Наша репутация, Мы желаем, чтобы это произошло. Если нужно, Мы пришлем к вам уважаемого дипломата вместе с его секретарём для помощи в переговорах.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] arra kért minket, hogy fejezzük be a gyarmatai elleni háborút. Mivel féltjük a hírnevünket, azt kívánjuk, hogy ez meg is történjen. Ha kívánod, küldünk neked egy köztiszteletben álló diplomatát az Egyház egyik hűséges szolgjávával együtt, hogy segítsen a tárgyalásokban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_STEALING_IMMIGRANT</Tag>
@@ -6629,6 +6640,7 @@
 		<French>Selon nos agents localisés en [COLOR_HIGHLIGHT_TEXT]%s1_country[COLOR_REVERT], certains sujets préfèrent immigrer vers nos colonies plutôt que celles de leur pays. Nous pourrons les convaincre totalement en échange de la modique somme de %d2_gold[ICON_GOLD].</French>
 		<German>Unsere Agenten in [COLOR_HIGHLIGHT_TEXT]%s1_country[COLOR_REVERT] berichten, dass es dort Leute gibt, die eventuell lieber in Unsere Kolonien auswandern würden, als in die Kolonien ihres Vaterlandes. Um diese ganz zu überzeugen, würde ein Betrag von %d2_gold[ICON_GOLD] anfallen.</German>
 		<Russian>Наши агенты в [COLOR_HIGHLIGHT_TEXT]%s1_country[COLOR_REVERT] сообщают Нам, что есть люди, которые раздумывают, колонии какой страны выбрать для эмиграции. Небольшой подарок в %d2_gold[ICON_GOLD] убедит их выбрать Наши поселения.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1_country[COLOR_REVERT]i ügynökeink szerint vannak olyan emberek, akik azon gondolkodnak, hogy inkább a mi gyarmatainkra vándorolnának ki, mintsem az anyaországuk gyarmataira. Mindössze %d2_gold[ICON_GOLD]-ért teljesen meg lehetne őket erről győzni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_STEALING_IMMIGRANT_YES</Tag>
@@ -6636,6 +6648,7 @@
 		<French>Nous nous sentons obligés d'aider ces hommes à accomplir leur rêve, votre Majesté.</French>
 		<German>Wir fühlen uns verpflichtet, diesen Leuten zu helfen, ihre Träume zu erfüllen, Eure Majestät.</German>
 		<Russian>Мы чувствуем себя обязанными помочь этим людям осуществить их мечты, Ваше Величество.</Russian>
+		<Hungarian>Felség, kötelességünknek érezzük, hogy segítsük ezeket az embereket álmaik megvalósításában.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_STEALING_IMMIGRANT_NO</Tag>
@@ -6643,6 +6656,7 @@
 		<French>Nous ne risquerons pas de détériorer nos relations avec nos voisins, votre Majesté.</French>
 		<German>Wir möchten lieber nicht die guten Beziehungen zu unseren Nachbarn gefährden, Eure Majestät.</German>
 		<Russian>Мы предпочли бы не рисковать хорошими отношениями с нашими соседями, Ваше Величество.</Russian>
+		<Hungarian>Felség, nem szeretnénk kockáztatni a szomszédainkkal való jó kapcsolatokat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_BUY_UNITS_1</Tag>
@@ -6652,6 +6666,7 @@
 		<Italian>Vostra Maestà, potreste risparmiare qualche militare per la nostra protezione?</Italian>
 		<Spanish>Su Majestad, ¿podría disponer de algunos militares para nuestra protección?</Spanish>
 		<Russian>Ваше Величество, не могли бы Вы дать нам какой-нибудь военный отряд для обороны поселений?</Russian>
+		<Hungarian>Felség, tudna nélkülözni néhány katonát a védelmünkre?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_BUY_UNITS_1</Tag>
@@ -6661,6 +6676,7 @@
 		<Italian>%d1[ICON_GOLD] copriranno i costi di un'unità [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT].</Italian>
 		<Spanish>%d1[ICON_GOLD] cubrirá el coste de [NUM2:un:una:unos:unas] [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT].</Spanish>
 		<Russian>%d1[ICON_GOLD] покроет расходы на [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT].</Russian>
+		<Hungarian>%d1[ICON_GOLD] fedezi egy [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT] költségeit.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACCEPT_BUY_UNITS_1</Tag>
@@ -6670,6 +6686,7 @@
 		<Italian>Grazie. Mi sento molto più al sicuro, ora.</Italian>
 		<Spanish>Gracias. Ahora me siento mucho más seguro.</Spanish>
 		<Russian>Благодарю вас, ваше величество. Теперь я чувствую себя в большей безопасности.</Russian>
+		<Hungarian>Köszönöm, Felség! Most már sokkal nagyobb biztonságban érzem magam.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REJECT_BUY_UNIS_1</Tag>
@@ -6679,6 +6696,7 @@
 		<Italian>Vi proteggeremo solo quando lo riterremo opportuno. Ora potete ritirarvi.</Italian>
 		<Spanish>Sólo os protegeremos cuando lo consideremos oportuno. Ahora podéis retiraros.</Spanish>
 		<Russian>Мы будем защищать вас только тогда, когда сочтем нужным. Теперь вы можете удалиться.</Russian>
+		<Hungarian>Csak akkor fogunk megvédeni téged, amikor azt jónak látjuk. És most távozhatsz!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ASK_TO_BUY_USED_SHIP</Tag>
@@ -6686,6 +6704,7 @@
 		<French>Sa majesté pourrait-elle nous aider à acquérir un navire de seconde main à bon prix?</French>
 		<German>Könnte Ihre Majestät uns helfen günstig ein gebrauchtes Schiffe zu erwerben?</German>
 		<Russian>Ваше Величество, не могли бы Вы помочь нам приобрести подержанный корабль по сходной цене?</Russian>
+		<Hungarian>Felséged tudna segíteni nekünk abban, hogy jó áron jussunk egy használt hajóhoz?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_OFFERS_USED_SHIP</Tag>
@@ -6693,6 +6712,7 @@
 		<French>Nous connaissons un armateur prêt à vendre un navire de classe %s3_unit for %d1[ICON_GOLD]. Nous pouvons mener cette affaire à bien.</French>
 		<German>Wir kennen einen Schiffshändler, der ein Schiff des Typs %s3_unit für %d1[ICON_GOLD] verkaufen möchte.</German>
 		<Russian>Мы знаем одного торговца кораблями, который хочет продать [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] за %d1[ICON_GOLD]. Мы могли бы устроить эту сделку.</Russian>
+		<Hungarian>Ismerünk egy hajókereskedőt, akinél van egy eladó %s3_unit %d1[ICON_GOLD]-ért. El tudjuk intézni ezt az üzletet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_REFUSES_TO_OFFER_USED_SHIP</Tag>
@@ -6700,6 +6720,7 @@
 		<French>Nous n'avons guère cure de ce genre d'affaire en ce moment. Demandez quelque temps plus tard.</French>
 		<German>Im Moment können wir mit solch Lapalien nicht belästigt werden. Vielleicht können wir aber in einigen Monaten helfen.</German>
 		<Russian>В настоящее время Мы заняты более важными делами и не можем ничем вам помочь. Рады были увидеть вас в добром здравии.</Russian>
+		<Hungarian>Jelenleg nem tudunk ilyen ügyekkel foglalkozni. Néhány hónap múlva gyere vissza!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACCEPT_BUY_USED_SHIP</Tag>
@@ -6707,6 +6728,7 @@
 		<French>Sire, nous vous remercions. Nous apprécions votre aide et achèterons bien volontiers ce navire.</French>
 		<German>Danke Eure Majestät. Wir schätzen eure Unterstätzung und erwerben das Schiff gerne.</German>
 		<Russian>Благодарю вас, Ваше Величество. Мы ценим Вашу поддержку и с радостью выкупим этот чудесный корабль.</Russian>
+		<Hungarian>Köszönöm, Felség! Nagyra értékelem a támogatását és szívesen megvásárolom a hajót.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ASK_FOREIGN_KING_BUY_IMMIGRANTS</Tag>
@@ -6714,13 +6736,15 @@
 		<French>Sa majesté pourrait-elle nous aider à recruter des travailleurs qualifiés pour notre colonies? Nous paieront un bon prix.</French>
 		<German>Könnte Ihre Majestät uns helfen willige und fähige Arbeiter für unsere Kolonie zu suchen? Wir bezahlen auch einen guten Preis.</German>
 		<Russian>Ваше Величество, не поможете ли нам нанять квалифицированных рабочих для нашей колонии? Мы заплатим хорошую цену.</Russian>
+		<Hungarian>Felséged segítene nekünk szakképzett munkásokat felvenni a kolóniánkba? Jó árat fogunk fizetni értük.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FOREIGN_KING_OFFERS_IMMIGRANTS</Tag>
-		<English>We heard of a [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] looking for a new home and for %d1[ICON_GOLD] we might arrange their passage.</English>
+		<English>We heard of a [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] looking for a new home. For %d1[ICON_GOLD] we might arrange their passage.</English>
 		<French>Nous avons entendu parler d'un [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] cherchant un nouveau chez-soi et nous pourrions arranger sa venue pour %d1[ICON_GOLD] </French>
 		<German>Wir haben von einem [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] gehört, der eine neue Heimat sucht und für %d1[ICON_GOLD] könnten wir ihre Überfahrt arrangieren.</German>
 		<Russian>Мы слышали, что [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] ищет возможность перебраться в колонии и за скромную сумму в %d1[ICON_GOLD] мы готовы ему в этом помочь.</Russian>
+		<Hungarian>Hallottuk, hogy egy [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] új otthont keres és %d1[ICON_GOLD]-ért talán megszervezhetjük az utazását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FOREIGN_KING_REFUSES_IMMIGRANTS</Tag>
@@ -6728,6 +6752,7 @@
 		<French>Nous n'avons guère cure de ce genre d'affaire en ce moment. Demandez quelque temps plus tard</French>
 		<German>Im Moment können wir mit solch Lapalien nicht belästigt werden. Vielleicht können wir aber in einigen Monaten helfen.</German>
 		<Russian>В настоящее время Мы заняты более важными делами и не можем ничем вам помочь. Рады были увидеть вас в добром здравии.</Russian>
+		<Hungarian>Jelenleg nem tudunk ilyen ügyekkel foglalkozni. Néhány hónap múlva gyere vissza!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACCEPT_FOREIGN_IMMIGRANTS</Tag>
@@ -6735,15 +6760,17 @@
 		<French>Sire, nous vous remercions. Nous apprécions votre aide et recruterons bien volontiers ces travailleurs.</French>
 		<German>Danke Eure Majestät. Wir schätzen eure Unterstätzung und werben die Arbeiter freudig an.</German>
 		<Russian>Спасибо, Ваше Величество. Мы ценим Вашу поддержку и с удовольствием наймем этого опытного работника.</Russian>
+		<Hungarian>Köszönöm, Felség! Nagyra értékelem a támogatását és örömmel alkalmazom a munkásokat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_REVIVE_1</Tag>
-		<English>Fate does not seem to be favourably disposed towards you. But breathe a sigh of relief. New emigrants are waiting for you in the home port. Do not disappoint Us! To cover the expenses of the Crown, We shall raise your tax rate to %d1_new_rate%%. You may thank Us for this mercy.</English>
+		<English>Fate does not seem to be favourably disposed towards you. Now breathe a sigh of relief. New emigrants are waiting for you in the home port. Do not disappoint Us! To cover the expenses of the Crown, We shall raise your tax rate to %d1_new_rate%%. You may thank Us for this mercy.</English>
 		<French>Le destin ne semble pas être favorablement disposé à votre égard. Mais poussez un soupir de soulagement. De nouveaux émigrants vous attendent dans le port d'attache. Ne nous décevez pas ! Pour couvrir les dépenses de la Couronne, Nous augmenterons votre taux d'imposition à %d1_new_rate%%. Vous pouvez Nous remercier pour cette clémence.</French>
 		<German>Das Schicksal scheint Euch nicht wohlgesonnen zu sein. Doch atmet auf. Im Heimathafen warten neue Auswanderer auf Euch. Enttäuscht Uns nicht! Zur Deckung der Unkosten der Krone geruhen Wir, Euren Steuersatz auf %d1_new_rate%% zu erhöhen. Und nun dankt Uns für diese Gnade.</German>
 		<Italian>Il destino non sembra essere disposto favorevolmente nei tuoi confronti. Ma tirate un sospiro di sollievo. Nuovi emigranti vi aspettano nel porto d'origine. Non deludeteci! Per coprire le spese della Corona, aumenteremo la vostra aliquota fiscale a %d1_new_rate%%. Potete ringraziarci per questa misericordia.</Italian>
 		<Spanish>El destino no parece ser favorable para ti. Pero respira con alivio. Nuevos emigrantes te esperan en el puerto de origen. No nos decepcionéis. Para cubrir los gastos de la Corona, aumentaremos su tasa de impuestos a %d1_new_rate%%. Podéis darnos las gracias por esta misericordia.</Spanish>
 		<Russian>Судьба, похоже, не благосклонна к вам. Но можете вздохнуть с облегчением. Новые эмигранты ждут вас в европейском порту. Не разочаровывайте Нас больше! Чтобы покрыть расходы Короны, Мы поднимем вашу налоговую ставку до %d1_new_rate%%. Вы можете поблагодарить Нас за эту милость.</Russian>
+		<Hungarian>Úgy tűnik, a sors nem kedvez neked. De fellélegezhetsz! Új kivándorlók várnak rád a hazai kikötőben. Ne okozz csalódást Nekünk! A Korona költségeinek fedezésére az adókulcsot %d1_new_rate%%-ra emeljük. Megköszönheted Nekünk ezt a nagy kegyet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_REVIVE_2</Tag>
@@ -6753,15 +6780,17 @@
 		<Italian>La fortuna non vi favorisce, mio signore, ma è la vostra fortuna che Noi lo facciamo. Torna in Europa. Noi riequipaggeremo la vostra spedizione. Nel frattempo la tua aliquota è aumentata a %d1_new_rate%%. Ora ringraziate Noi per questa misericordia.</Italian>
 		<Spanish>La fortuna no os favorece, mi señor, pero es vuestra suerte que Nosotros lo hagamos. Regresa a Europa. Volveremos a equipar su expedición. Mientras tanto, su tasa de impuestos se eleva a %d1_new_rate%%. Ahora agradézcanos por esta misericordia.</Spanish>
 		<Russian>Судьба не благоволит вам, мой губернатор. Однако вам повезло, что Мы проявляем к вам Нашу благосклонность. Возвращайтесь в Европу. Мы переоснастим вашу экспедицию. Между тем, ваша налоговая ставка повышена до %d1_new_rate%%. А теперь можете поблагодарите Нас за эту милость.</Russian>
+		<Hungarian>A szerencse nem kedvez neked, de Mi igen. Térj vissza Európába! Újra felszereljük az expedíciódat. Addig is az adókulcsodat %d1_new_rate%%-ra emeljük. Most pedig köszönd meg nekünk ezt a nagy kegyet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_REVIVE_3</Tag>
-		<English>Death and suffering seem to be your companions. Well, We grant you another chance. Come back to Europe and start a new expedition. Meanwhile, if you succeed, We will tax all your future trade at %d1_new_rate%%. You have only yourself to blame!</English>
+		<English>Death and suffering seem to be your companions. Well, We grant you another chance. Come back to Europe and start a new expedition. If you succeed, We will tax all your future trade at %d1_new_rate%%. You have only yourself to blame!</English>
 		<French>La mort et la souffrance semblent être vos compagnons. Nous vous accordons une autre chance. Revenez en Europe et lancez une nouvelle expédition. En attendant, si vous réussissez, Nous taxerons tous vos futurs échanges à %d1_new_rate%%. Vous ne pouvez vous en prendre qu'à vous-même !</French>
 		<German>Tod und Leid scheinen Eure Gefährten zu sein. Nun, Wir gewähren Euch noch eine Chance. Kommt zurück nach Europa und startet eine neue Expedition. Solltet Ihr Erfolg haben, werden wir indes all Eure zukünftigen Handelsgeschäfte mit Steuern von %d1_new_rate%% belasten. Das habt Ihr Euch selber zuzuschreiben!</German>
 		<Italian>La morte e la sofferenza sembrano essere tue compagne. Bene, ti concediamo un'altra possibilità. Torna in Europa e inizia una nuova spedizione. Nel frattempo, se avrete successo, tasseremo tutti i vostri futuri commerci al %d1_new_rate%%. Dovete biasimare solo voi stessi!</Italian>
 		<Spanish>La muerte y el sufrimiento parecen ser tus compañeros. Bueno, te concedemos otra oportunidad. Vuelve a Europa y comienza una nueva expedición. Mientras tanto, si tienes éxito, gravaremos todo tu comercio futuro a %d1_new_rate%%. ¡Sólo puedes culparte a ti mismo!</Spanish>
 		<Russian>Смерть и страдания кажутся вашими спутниками. Что ж, Мы предоставляем вам еще один шанс. Возвращайтесь в Европу и готовьтесь к новой экспедиции. Да, кстати, теперь Мы будем облагать налогом всю вашу будущую торговлю в размере %d1_new_rate%%. И вы должны винить в этом только себя!</Russian>
+		<Hungarian>Úgy tűnik, a halál és a szenvedés a társaid. Nos, adunk neked még egy esélyt. Térj vissza Európába és indíts új expedíciót! Addig is, ha sikerrel jársz, minden jövőbeli kereskedelmedet %d1_new_rate%% adó fogja terhelni. Csak magadat hibáztathatod!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REVIVE_1</Tag>
@@ -6771,15 +6800,17 @@
 		<Italian>Vostra Maestà, vi ringrazio umilmente</Italian>
 		<Spanish>Su Majestad, le agradezco humildemente</Spanish>
 		<Russian>Ваше Величество, я смиренно благодарю вас</Russian>
+		<Hungarian>Felség, alázatosan köszönöm!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TREASURE_TRANSPORT_1</Tag>
-		<English>A treasure! Well, well. This New World seems to have riches. A Royal Galleon can ferry the valuables home. Leave the find to the Crown, you will receive %d2[ICON_GOLD] from Us instantly, and you can get back to your daily business.</English>
+		<English>A treasure! Well, well. This New World seems to have riches. A Royal Galleon can ferry the valuables home. Leave the find to the Crown. You will receive %d2[ICON_GOLD] from Us instantly, and you can get back to your daily business.</English>
 		<French>Un trésor ! Eh bien, eh bien. Ce Nouveau Monde semble avoir des richesses. Un galion royal peut transporter les objets de valeur chez vous. Laissez la découverte à la Couronne, vous recevrez %d2[ICON_GOLD] de notre part instantanément, et vous pourrez vaquer à vos occupations quotidiennes.</French>
 		<German>Ein Schatz! Sieh an. Diese Neue Welt scheint über gewisse Reichtümer zu verfügen. Nun, eine Königliche Galeone kann die Pretiosen in die Heimat überführen. Überlasst den Fund der Krone, und Ihr erhaltet von Uns stante pede %d2[ICON_GOLD] und könnt Euch danach wieder Eurem Tagesgeschäft widmen.</German>
 		<Italian>Un tesoro! Bene, bene. Questo Nuovo Mondo sembra avere ricchezze. Un galeone reale può traghettare gli oggetti di valore a casa. Lascia il ritrovamento alla Corona, riceverai %d2[ICON_GOLD] da Noi all'istante, e potrai tornare ai tuoi affari quotidiani.</Italian>
 		<Spanish>Ein Schatz! Sieh an, sieh an. Diese Neue Welt scheint Reichtümer zu haben. Eine königliche Galeone kann die Kostbarkeiten nach Hause transportieren. Überlasst den Fund der Krone, Ihr erhaltet sofort %d2[ICON_GOLD] von Uns, und Ihr könnt Euch wieder Eurem Tagesgeschäft widmen.</Spanish>
 		<Russian>Настоящее сокровище! Так так, кажется, этот Новый Свет полон несметных богатств. Королевский галеон сможет доставить эти драгоценности домой быстро и безопасно. Можете доверить находку Короне. Вы немедленно получите от Нас %d2[ICON_GOLD] и сможете вернуться к своим повседневным делам.</Russian>
+		<Hungarian>Egy kincs! Nocsak, nocsak. Úgy tűnik, ez az Új Világ gazdag. Egy Királyi Galleon haza tudja szállítani ezt a kincset. Bízd a Koronára az egész ügyet, azonnal kapsz tőlünk %d2[ICON_GOLD]-t és visszatérhetsz a napi teendőidhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TREASURE_TRANSPORT_2</Tag>
@@ -6789,6 +6820,7 @@
 		<Italian>La ricchezza può essere un peso. Credeteci - sappiamo di cosa stiamo parlando. Liberatevi dai gingilli terreni e tirerete un sospiro di sollievo. Prendi %d2[ICON_GOLD] per coprire le spese della tua caccia al tesoro, e ci sbarazzeremo della tua scoperta.</Italian>
 		<Spanish>La riqueza puede ser una carga. Créanos: sabemos de lo que hablamos. Libérate de las baratijas terrenales y respirarás aliviado. Toma %d2[ICON_GOLD] para cubrir los gastos de tu búsqueda del tesoro, y nosotros nos encargaremos de tu hallazgo.</Spanish>
 		<Russian>Богатство может быть тяжким бременем. Мы знаем, о чем говорим. Освободитесь от этих побрякушек и вздохнете с облегчением. Возьмите %d2[ICON_GOLD], чтобы покрыть расходы на поиски, а Мы избавим вас от этого непомерного груза.</Russian>
+		<Hungarian>A gazdagság teher lehet. Tudjuk, miről beszélünk. Szabadulj meg a földi csecsebecséktől és fellélegezhetsz! Íme %d2[ICON_GOLD], hogy fedezze a kincskeresésed költségeit, és Mi majd elintézzük a kincs szállítását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_TREASURE_TRANSPORT_3</Tag>
@@ -6798,6 +6830,7 @@
 		<Italian>Sembra che tu abbia fatto un ricco bottino. Lascia fare a noi. Un galeone reale porterà il tesoro a casa. Dopo aver dedotto la nostra commissione del %d1%%, riceverai la metà del suo valore, cioè %d2[ICON_GOLD], come compenso del cercatore.</Italian>
 		<Spanish>Parece que has hecho un buen botín. Déjalo en nuestras manos. Un galeón real llevará el tesoro a casa. Después de deducir nuestra comisión de %d1%%, recibirás la mitad de su valor, es decir, %d2[ICON_GOLD], como comisión de búsqueda.</Spanish>
 		<Russian>Вы обнаружили богатую добычу. Однако, предоставьте завершить это дело Нам. Королевский галеон отвезет сокровища домой. После вычета Нашей комиссии в размере %d1%% вы получите половину ее стоимости, с которой вам, кстати, еще нужно будет заплатить налоги, причитающиеся Нам. Таким образом, у вас останется %d2[ICON_GOLD], щедрая плата за поиск сокровищ.</Russian>
+		<Hungarian>Gazdag zsákmányt fedeztél fel. Hagyd ránk! Egy Királyi Gálya hazaszállítja a kincset. A szerény %d1%%-os jutalékunk levonása után megkapod az érték felét, amely után még meg kell fizetned a nekünk járó adót, így tehát marad %d2[ICON_GOLD], ami egy bőkezű díj.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TREASURE_TRANSPORT_ACCEPT_1</Tag>
@@ -6807,6 +6840,7 @@
 		<Italian>Acconsento volentieri, Vostra Maestà.</Italian>
 		<Spanish>Consiento con gusto, Su Majestad.</Spanish>
 		<Russian>С превеликой радостью, Ваше Величество!</Russian>
+		<Hungarian>Örömmel beleegyezem, Felség.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TREASURE_TRANSPORT_ACCEPT_2</Tag>
@@ -6816,6 +6850,7 @@
 		<Italian>Grazie per il vostro sostegno, Vostra Maestà!</Italian>
 		<Spanish>¡Gracias por su apoyo, Su Majestad!</Spanish>
 		<Russian>Благодарю Вас за поддержку, Ваше Величество!</Russian>
+		<Hungarian>Köszönöm a támogatását, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TREASURE_TRANSPORT_ACCEPT_3</Tag>
@@ -6825,6 +6860,7 @@
 		<Italian>Un'idea meravigliosa, Vostra Maestà!</Italian>
 		<Spanish>¡Una idea maravillosa, Su Majestad!</Spanish>
 		<Russian>Замечательная идея, Ваше Величество!</Russian>
+		<Hungarian>Csodálatos ötlet, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TREASURE_TRANSPORT_REJECT_1</Tag>
@@ -6834,6 +6870,7 @@
 		<Italian>Mi perdoni, Sua Maestà, ma ho altri piani.</Italian>
 		<Spanish>Perdóneme, Su Majestad, pero tengo otros planes.</Spanish>
 		<Russian>Прошу простить, Ваше Величество, но у меня другие планы.</Russian>
+		<Hungarian>Bocsásson meg, Felség, de más terveim vannak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TREASURE_TRANSPORT_REJECT_2</Tag>
@@ -6843,6 +6880,7 @@
 		<Italian>Grazie, Vostra Maestà, ma no grazie.</Italian>
 		<Spanish>Gracias, Su Majestad, pero no gracias.</Spanish>
 		<Russian>Благодарю вас, Ваше Величество, но нет, спасибо.</Russian>
+		<Hungarian>Köszönöm, Felség, de nem szeretném.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_TREASURE_TRANSPORT_REJECT_3</Tag>
@@ -6852,6 +6890,7 @@
 		<Italian>Lei è un uomo saggio, Vostra Maestà! Lo sono anch'io.</Italian>
 		<Spanish>Es usted un hombre sabio, Su Majestad. Yo también lo soy.</Spanish>
 		<Russian>Вы мудрый человек, Ваше Величество! Но и я умею считать...</Russian>
+		<Hungarian>Ön bölcs ember, Felség! Ahogy én is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KISS_PINKY_1</Tag>
@@ -6861,6 +6900,7 @@
 		<Italian>Ci degniamo di aumentare le vostre tasse da %d1_old_rate%% a %d2_new_rate%%. Puoi baciare il nostro anello in un consenso silenzioso.</Italian>
 		<Spanish>Nos dignamos a subir sus impuestos de %d1_old_rate%% a %d2_new_rate%%. Puedes besar nuestro anillo en señal de consentimiento silencioso.</Spanish>
 		<Russian>Мы принимаем решение поднять ваши налоги с %d1_old_rate%% до %d2_new_rate%%. Поцелуй Наше кольцо в безмолвном согласии.</Russian>
+		<Hungarian>Úgy döntöttünk, hogy az adót %d1_old_rate%%-ról %d2_new_rate%%-ra emeljük. Csókold meg a gyűrűnket néma beleegyezésként!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KISS_PINKY_2</Tag>
@@ -6870,6 +6910,7 @@
 		<Italian>Da %d1_old_rate%% a %d2_new_rate%% aumentiamo le tue tasse, [NOME_CT]. Perché sappiate che siete lontani, ma non così lontani che la nostra mano non vi raggiunga. E ora bacia l'anello che lo adorna.</Italian>
 		<Spanish>De %d1_old_rate%% a %d2_new_rate%% subimos tus impuestos, [CT_NAME]. Porque sabed que estáis lejos, pero no lo suficiente como para que Nuestra mano no os alcance. Y ahora besa el anillo que lo adorna.</Spanish>
 		<Russian>Мы повышаем ваши налоги с %d1_old_rate%% до %d2_new_rate%%, [CT_NAME]. Ты далеко, но не настолько, чтобы быть недосягаемым для Нашей руки. Теперь можешь поцеловать кольцо, которое её украшает.</Russian>
+		<Hungarian>%d1_old_rate%%-ról %d2_new_rate%%-ra emeljük az adót, [CT_NAME]. Messze vagy, de nem elég messze ahhoz, hogy ne érjen el hozzád a kezünk. Most csókold meg a díszes gyűrűmet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KISS_PINKY_3</Tag>
@@ -6879,6 +6920,7 @@
 		<Italian>D'ora in poi, invece di pagarci le tasse %d1_old_rate%%, potete pagarci %d2_new_rate%%, [CT_NAME]. Sappiamo che ci ami e ti concediamo gentilmente l'opportunità di dimostrarlo. Ringrazia e bacia il nostro anello.</Italian>
 		<Spanish>A partir de ahora, en lugar de pagarnos %d1_old_rate%% de impuestos, puede pagarnos %d2_new_rate%%, [CT_NAME]. Sabemos que nos amas y te damos la oportunidad de demostrarlo. Da las gracias y besa Nuestro anillo.</Spanish>
 		<Russian>Нам радостно видеть, что доходы Наших колоний под вашим руководством процветают. Мы считаем, что налоговая ставка в %d1_old_rate%% унизительна.. унизительно мала. И Мы с радостью сообщаем вам, [CT_NAME], что теперь она будет составлять %d2_new_rate%%. Можете поблагодарить Нас и поцеловать кольцо.</Russian>
+		<Hungarian>Mostantól kezdve ahelyett, hogy %d1_old_rate%% adót fizetnél nekünk, %d2_new_rate%% adót fogsz fizetni, [CT_NAME]. Tudjuk, hogy szeretsz Minket és kegyesen megadjuk neked a lehetőséget, hogy ezt ki is mutasd. Adj hálát és csókold meg gyűrűnket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KISS_PINKY_4</Tag>
@@ -6888,6 +6930,7 @@
 		<Italian>D'ora in poi pagherai noi %d2_new_rate%% invece di %d1_old_rate%% di tasse, [NOME_TC]. Sorpreso? Ti eri dimenticato di noi? Beh, non ti avevamo dimenticato. E ora bacia il nostro anello.</Italian>
 		<Spanish>A partir de ahora pagará %d2_new_rate%% en lugar de %d1_old_rate%% de impuestos, [CT_NAME]. ¿Sorprendido? ¿Te has olvidado de nosotros? Bueno, no nos habíamos olvidado de ti. Y ahora besa nuestro anillo.</Spanish>
 		<Russian>С этого момента ты будешь платить Нам налог с продаж в %d2_new_rate%% вместо %d1_old_rate%%, [CT_NAME]. Удивлен? Неужели ты забыл о Нас? Что ж, Мы о тебе не забыли. А теперь поцелуй Наше кольцо.</Russian>
+		<Hungarian>Mostantól %d1_old_rate%% helyett %d2_new_rate%% adót fizetsz nekünk, [CT_NAME]. Meglepődtél? Elfelejtettél minket? Nos, mi nem feledkeztünk meg rólad. Most csókold meg a gyűrűnket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KISS_PINKY_5</Tag>
@@ -6897,6 +6940,7 @@
 		<Italian>D'ora in poi pagherete %d2_new_rate%% di tasse invece di %d1_old_rate%%, [CT_NAME]. Perché la generosità è una virtù. E ora bacia il nostro anello.</Italian>
 		<Spanish>A partir de ahora pagas %d2_new_rate%% impuestos en lugar de su %d1_old_rate%%, [CT_NAME]. Porque la generosidad es una virtud. Y ahora besa nuestro anillo.</Spanish>
 		<Russian>Отныне ты платишь налог с продаж в %d2_new_rate%% вместо прежних %d1_old_rate%%, [CT_NAME]. Щедрость — это добродетель. Теперь поцелуй Наше кольцо и можешь заниматься своими делами.</Russian>
+		<Hungarian>Mostantól %d2_new_rate%% adót fizetsz az eddigi %d1_old_rate%% helyett, [CT_NAME]. A nagylelkűség erény. Most csókold meg a gyűrűnket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KISS_PINKY_1</Tag>
@@ -6906,6 +6950,7 @@
 		<Italian>Sono il fedele suddito di Vostra Maestà</Italian>
 		<Spanish>Soy el leal súbdito de Su Majestad</Spanish>
 		<Russian>Я верный подданный Вашего Величества.</Russian>
+		<Hungarian>Felséged hűséges alattvalója vagyok.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_1</Tag>
@@ -6915,6 +6960,7 @@
 		<Italian>Vi ringrazio per la vostra ospitalità. Anche se siete pagani, potete avere qualcosa di umano in voi.</Italian>
 		<Spanish>Le agradezco su hospitalidad. Aunque sean paganos, pueden tener algo de humano.</Spanish>
 		<Russian>Спасибо вам за ваше гостеприимство. Даже если вы язычники, в вас может быть что-то человеческое.</Russian>
+		<Hungarian>Misszionáriusaink cölibátusban élnek, de ez egy szerencsétlen félreértés. Rosszul értelmezik amit olvasnak. Jézus valójában azt mondja a tanítványainak, hogy ünnepeljenek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_2</Tag>
@@ -6924,6 +6970,7 @@
 		<Italian>Grazie! Anche per il fatto che la figlia del capo mi ha reso felice con il suo fascino.</Italian>
 		<Spanish>¡Gracias! También por el hecho de que la hija del jefe me hizo feliz con su encanto.</Spanish>
 		<Russian>Спасибо! Очаровательная дочка вождя меня очень порадовала. Пока ее мать не нашла нас.</Russian>
+		<Hungarian>Köszönöm! A főnök bájos lánya nagyon boldoggá tett. Amíg az anyja ránk nem talált.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_3</Tag>
@@ -6933,6 +6980,7 @@
 		<Italian>Addio, amici! Non perderò mai di vista il vostro destino. Almeno non finché non sarò oltre la prossima collina.</Italian>
 		<Spanish>¡Adiós, amigos! Nunca perderé de vista vuestro destino. Al menos no hasta que esté en la siguiente cima.</Spanish>
 		<Russian>Я хочу выучить ваш язык, чтобы остаться здесь навсегда. То, как ты живешь, прекрасно. Чем дальше я путешествую, тем меньше мне хочется возвращаться.</Russian>
+		<Hungarian>Meg akarom tanulni a nyelveteket, hogy örökre itt maradhassak. Csodálatos, ahogyan ti éltek. Minél messzebbre utazom, annál kevésbé akarok visszamenni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_4</Tag>
@@ -6942,6 +6990,7 @@
 		<Italian>Grazie per il vostro benvenuto! Ma ora, purtroppo, devo andare avanti.</Italian>
 		<Spanish>¡Gracias por su acogida! Pero ahora, por desgracia, debo seguir adelante.</Spanish>
 		<Russian>Спасибо за ваш прием! Но, к сожалению, сейчас мне нужно двигаться дальше.</Russian>
+		<Hungarian>Ha tényleg sikeresek leszünk, akkor mindannyian visszamehetünk Európába. Nos, a "vissza" talán nem a megfelelő szó számotokra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_5</Tag>
@@ -6951,6 +7000,7 @@
 		<Italian>Addio! Vi terrò nelle mie preghiere.</Italian>
 		<Spanish>¡Adiós! Te mantendré en mis oraciones.</Spanish>
 		<Russian>Мне жаль говорить, что мы здесь, чтобы убить вас, поработить, ассимилировать или изолировать вас. Вся печаль в том, что поселенцы не будут сожалеть об этом...</Russian>
+		<Hungarian>Sajnálom, hogy azt kell mondanom, azért vagyunk itt, hogy megöljünk, rabszolgasorba taszítsunk, asszimiláljunk és elszigeteljünk titeket. A különbség az, hogy a telepesek nem fognak ezen sajnálkozni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_6</Tag>
@@ -6960,6 +7010,7 @@
 		<Italian>Addio, pagano! Parlerò di voi al Grande Padre Saggio dell'Est.</Italian>
 		<Spanish>¡Adiós, pagano! Le hablaré de ti al Gran Padre Sabio de Oriente.</Spanish>
 		<Russian>Ваши дети такие дикие и свободные, они делают все, что хотят, и никогда не подвергаются наказанию. Нашим миссионерам это не нравится.</Russian>
+		<Hungarian>A gyermekeitek olyan vadak és szabadok, azt csinálnak, amit akarnak és soha nem büntetitek meg őket. A misszionáriusaink ezt utálják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_7</Tag>
@@ -6969,6 +7020,7 @@
 		<Italian>Addio! Guardatevi dagli altri uomini bianchi. Sono i messaggeri degli dei malvagi. Uccideteli se si avvicinano.</Italian>
 		<Spanish>¡Adiós! Tengan cuidado con otros hombres blancos. Son los mensajeros de los dioses del mal. Mátenlos si se acercan.</Spanish>
 		<Russian>Прощайте! Остерегайтесь других белых людей. Это посланники злых богов. Убейте их, если они приблизятся.</Russian>
+		<Hungarian>Viszlát! Óvakodjatok a többi fehér embertől! Ők a gonosz istenek hírnökei. Öljétek meg őket, ha a közeletekbe jönnek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_8</Tag>
@@ -6978,6 +7030,7 @@
 		<Italian>Addio! E grazie per avermi permesso di riempire la mia bottiglia d'acqua.</Italian>
 		<Spanish>¡Adiós! Y gracias por dejarme llenar mi botella de agua.</Spanish>
 		<Russian>Я ищу Фонтан Молодости. Я хочу крепкого здоровья, но в основном мне нужно забыть все то тяжкое, чему я научился в течении своей жизни.</Russian>
+		<Hungarian>A Fiatalság Forrását keresem. Kirobbanó jó egészséget akarok, de főleg el kell felejtenem mindazt a nehézséget, amit később tanultam az élettől.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_9</Tag>
@@ -6987,6 +7040,7 @@
 		<Italian>Ora mi sto riprendendo, grazie al vostro sciamano che ha avuto l'abilità di bruciare la mia ferita con un carbone caldo.</Italian>
 		<Spanish>Ahora me estoy recuperando, gracias a tu chamán que tuvo la habilidad de cauterizar mi herida con un carbón caliente.</Spanish>
 		<Russian>В Европе нам сказали, что это Terra Nullius – пустая земля. Как ты вообще можешь быть здесь? Возможно, ты не настоящий.</Russian>
+		<Hungarian>Európában azt mondták nekünk, hogy ez a Terra Nullius - az Üres Föld. Hogy lehet egyáltalán itt lenni? Talán nem is léteztek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_10</Tag>
@@ -6996,6 +7050,7 @@
 		<Italian>Addio! Vi prego di credere che la mia danza selvaggia e nuda di ieri sera non era quello che sembrava. Una puntura di vespa! Ecco cos'era! Una puntura di vespa.</Italian>
 		<Spanish>¡Adiós! Por favor, creed que mi salvaje baile desnudo de anoche no era lo que parecía. ¡Una picadura de avispa! ¡Eso es lo que fue! Una picadura de avispa.</Spanish>
 		<Russian>Прощайте! Пожалуйста, поверь, что мой дикий голый танец прошлой ночью был не тем, чем он выглядел. Укус осы! Вот что это было! Осиный укус.</Russian>
+		<Hungarian>Viszlát! Kérlek higgyétek el, hogy a tegnap esti vad meztelen táncom nem az volt, aminek látszott. Megcsípett egy darázs! Így volt! Egy darázscsípés.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_11</Tag>
@@ -7005,6 +7060,7 @@
 		<Italian>Addio! E grazie per il purè di vermi della farina. Erano... (ahem)... un'esperienza insolita.</Italian>
 		<Spanish>¡Adiós! Y gracias por el puré de gusanos de la harina. Eran... (ejem)... una experiencia inusual.</Spanish>
 		<Russian>Вы были добры ко мне, так что я скажу вам кое-что. Будьте осторожны в городах. Те стены и пушки, которые угрожают врагам, также могут быть использованы для управления всеми внутри.</Russian>
+		<Hungarian>Jók voltatok hozzám, úgyhogy mondok nektek valamit. Legyetek óvatosak a városokban! Azok a falak és fegyverek, amelyek az ellenséget fenyegetik, arra is használhatók, hogy mindenkit irányítsanak, aki bent van.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_12</Tag>
@@ -7014,6 +7070,7 @@
 		<Italian>Addio. Non dimenticherò mai la vostra festa in mio onore! Soprattutto le locuste alla brace.</Italian>
 		<Spanish>Adiós. ¡Nunca olvidaré tu fiesta en mi honor! Especialmente las langostas asadas.</Spanish>
 		<Russian>Прощайте. Я никогда не забуду праздник в мою честь! У жареной саранчи был ореховый привкус.</Russian>
+		<Hungarian>Viszlát! Soha nem felejtem el a tiszteletemre rendezett lakomát! A grillezett sáskáknak dió íze volt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_13</Tag>
@@ -7023,6 +7080,7 @@
 		<Italian>Addio! A proposito, ho ancora qualche coda di lontra fritta come spuntino.</Italian>
 		<Spanish>¡Adiós! Por cierto, todavía tengo unas cuantas colas de nutria fritas como aperitivo.</Spanish>
 		<Russian>Я здесь, потому что я жажду приключений. Я когда-то работал в банке, был организатором займа. И довольно скоро мне это все наскучило. В ваших краях можно погибнуть от чего угодно, но только не от скуки. Меня ждут приключения, прощайте!</Russian>
+		<Hungarian>Azért vagyok itt, mert kalandra vágyom. Régebben egy bankban dolgoztam. Hitelügyintéző voltam. Most ezüstöt olvasztok golyókká.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHIEF_GOODY_14</Tag>
