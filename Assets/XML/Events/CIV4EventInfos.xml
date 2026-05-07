@@ -24463,7 +24463,7 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>0</iGold>
+			<iGold>-200</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
@@ -24500,10 +24500,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyExperiencedSailors2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpExperiencedSailors2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>10</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>

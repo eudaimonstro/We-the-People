@@ -3815,7 +3815,7 @@ def applyRuins5(argsList):
 	iUnitClassType = CvUtil.findInfoTypeNum('UNITCLASS_CARRIER')
 	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
 	if iUnitType != -1:
-		player.initUnit(iUnitType, 0, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
+		player.initUnit(iUnitType, ProfessionTypes.NO_PROFESSION, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
 
 def getHelpRuins5(argsList):
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_CARRIER'))
@@ -19928,3 +19928,190 @@ def doTriggerHappyHunting(argsList):
 		return
 
 	_startHappyHuntingCooldown(player, 50)
+
+
+######## Failed Trader Daughter ###########
+
+def canTriggerFailedTraderDaughter(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Must be the exact plot that triggered the event
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Must stand on the city plot
+	if plot.getX() != city.getX():
+		return False
+	if plot.getY() != city.getY():
+		return False
+
+	return True
+
+######## Failed Trader Revenge ###########
+
+def canTriggerFailedTraderRevenge(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_FAILED_TRADER"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Must be the exact plot that triggered the event
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Must stand on the city plot
+	if plot.getX() != city.getX():
+		return False
+	if plot.getY() != city.getY():
+		return False
+
+	return True
+
+######## Experienced Sailors ###########
+
+def canTriggerExperiencedSailors(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.getX() != city.getX():
+		return False
+	if plot.getY() != city.getY():
+		return False
+
+	return True
+
+######## Experienced Sailors ###########
+
+def applyExperiencedSailors2(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	iNav1 = gc.getInfoTypeForString("PROMOTION_NAVIGATION1")
+	iNav2 = gc.getInfoTypeForString("PROMOTION_NAVIGATION2")
+	iNav3 = gc.getInfoTypeForString("PROMOTION_NAVIGATION3")
+
+	if iNav1 == -1 or iNav2 == -1 or iNav3 == -1:
+		return
+
+	if not unit.isHasPromotion(iNav1):
+		unit.setHasRealPromotion(iNav1, True)
+	elif not unit.isHasPromotion(iNav2):
+		unit.setHasRealPromotion(iNav2, True)
+	elif not unit.isHasPromotion(iNav3):
+		unit.setHasRealPromotion(iNav3, True)
+
+def getHelpExperiencedSailors2(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return u""
+
+	iNav1 = gc.getInfoTypeForString("PROMOTION_NAVIGATION1")
+	iNav2 = gc.getInfoTypeForString("PROMOTION_NAVIGATION2")
+	iNav3 = gc.getInfoTypeForString("PROMOTION_NAVIGATION3")
+
+	iPromotion = -1
+
+	if iNav1 != -1 and not unit.isHasPromotion(iNav1):
+		iPromotion = iNav1
+	elif iNav2 != -1 and not unit.isHasPromotion(iNav2):
+		iPromotion = iNav2
+	elif iNav3 != -1 and not unit.isHasPromotion(iNav3):
+		iPromotion = iNav3
+
+	if iPromotion == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_EXPERIENCED_SAILORS_2_HELP",
+		(gc.getPromotionInfo(iPromotion).getTextKey(),)
+	)

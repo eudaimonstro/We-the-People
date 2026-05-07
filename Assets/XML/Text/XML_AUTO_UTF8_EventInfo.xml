@@ -696,10 +696,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_EXPERIENCED_SAILORS_2</Tag>
-		<English>The crews of our ship are experienced enough. We don't need to hire such scum.</English>
-		<French>Les équipages de nos navires disposent de suffisamment d'expérience. Nous n'avons pas besoin d'embaucher ces brigands.</French>
-		<German>Die Mannschaften unserer Schiffe sind erfahren genug. Wir brauchen solchen Abschaum nicht auf unseren Schiffen.</German>
-		<Russian>Экипаж нашего корабля достаточно опытный. А это отребье может завербоваться хоть к пиратам.</Russian>
+		<English>Hire them – but not as sailors, rather as shipyard workers. They are to help clean the hull of the ship and remove the fouling.</English>
+		<German>Heuert sie an - aber nicht als Seeleute, sondern als Werftarbeiter. Sie sollen helfen bei dem Schiff den Rumpf zu säubern und den Bewuchs entfernen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EXPERIENCED_SAILORS_2_HELP</Tag>
+		<English>[ICON_BULLET]The ship gains the [COLOR_HIGHLIGHT_TEXT]promotion %s1[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Das Schiff erhält die [COLOR_HIGHLIGHT_TEXT]Beförderung %s1[COLOR_REVERT].</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FAMINE_1</Tag>

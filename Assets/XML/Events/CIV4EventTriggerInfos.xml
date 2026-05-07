@@ -12309,11 +12309,11 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>0</iMinTreasury>
+			<iMinTreasury>500</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -12373,7 +12373,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerExperiencedSailors</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -39395,7 +39395,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerPirates</PythonCanDo>
+			<PythonCanDo>canTriggerFailedTraderDaughter</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -39476,7 +39476,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerPirates</PythonCanDo>
+			<PythonCanDo>canTriggerFailedTraderRevenge</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>

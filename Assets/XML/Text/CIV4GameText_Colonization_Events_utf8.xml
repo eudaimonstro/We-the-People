@@ -2549,7 +2549,7 @@
 		<Tag>TXT_KEY_EVENTTRIGGER_SALT_RESOURCE</Tag>
 		<English>European settlers have discovered a huge salt deposit near [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</English>
 		<French>Des colons européens ont décovert un immense dépôt de sel près de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</French>
-		<German>Europäische Siedler haben grosse Salzvorkommen in der Gegend um [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</German>
+		<German>Europäische Siedler haben grosse Salzvorkommen in der Gegend um [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] entdeckt.</German>
 		<Russian>Огромное месторождение соли было обнаружено колонистами недалеко от [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
