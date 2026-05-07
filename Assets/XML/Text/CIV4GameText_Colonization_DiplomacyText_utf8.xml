@@ -7410,6 +7410,7 @@
 		<Italian>Splendido. Non lo dimenticheremo in fretta. Ora potete andarvene, Signore... come avete detto che vi chiamate?</Italian>
 		<Spanish>Espléndido. No lo olvidaremos en un instante. Ahora puede marcharse, Señor... ¿cómo se llamaba?</Spanish>
 		<Russian>Великолепно. Мы всегда помним о тебе. Теперь можешь уйти, ...Господи! Как, говоришь, тебя зовут?</Russian>
+		<Hungarian>Pompás! Ezt egyhamar nem fogjuk elfelejteni. Most már elmehetsz... hogy is hívnak?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_ACCEPT_GOLD_5</Tag>
@@ -7419,6 +7420,7 @@
 		<Italian>Come sei virtuoso. Nostra nipote pregherà per la vostra salvezza nella cappella del palazzo, come per quella del suo pesce rosso morto ieri sera.</Italian>
 		<Spanish>Qué virtuoso eres. Nuestra sobrina nieta rezará por tu salvación en la capilla de palacio, como por la de su pez de colores que murió anoche.</Spanish>
 		<Russian>Какой добродетельный поступок. Мы это ценим. Наша внучатая племянница будет молиться о спасении вашей души в дворцовой часовне, как и о спасении своей золотой рыбки, умершей прошлой ночью.</Russian>
+		<Hungarian>Milyen erényes vagy. A nagynénénk imádkozni fog az üdvösségedért a palota kápolnájában, akárcsak az aranyhaláért, aki tegnap este meghalt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_KING_REFUSE_GOLD_1</Tag>
@@ -7428,6 +7430,7 @@
 		<Italian>Sfidate una richiesta della Corona? Che follia! Che arroganza! Sei fuori di testa, ragazzo?</Italian>
 		<Spanish>¿Desafías una demanda de la Corona? ¡Qué locura! ¡Qué arrogancia! ¿Estás loco, muchacho?</Spanish>
 		<Russian>Вы игнорируете требование Короны?! Что за высокомерие! Какое безумие! Вы в своем уме?!</Russian>
+		<Hungarian>Szembeszállsz a Korona követelésével? Micsoda ostobaság! Micsoda önteltség! Elment az eszed, barátom?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_ACCEPTED_GOLD_1</Tag>
@@ -7437,6 +7440,7 @@
 		<Italian>Grazie, vostra maestà.</Italian>
 		<Spanish>Gracias, Majestad.</Spanish>
 		<Russian>Спасибо, Ваше Величество.</Russian>
+		<Hungarian>Köszönöm, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_KING_REFUSED_GOLD_1</Tag>
@@ -7446,6 +7450,7 @@
 		<Italian>Arrivederci</Italian>
 		<Spanish>Adiós</Spanish>
 		<Russian>До свидания</Russian>
+		<Hungarian>Viszlát!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FOUND_CITY_NO_FOOD_1</Tag>
@@ -7455,6 +7460,7 @@
 		<Italian>Questa posizione non ha una produzione di cibo rilevante, quindi dovrai usare contadini o pescatori per sostenere la popolazione. Sei sicuro di volerti insediare qui?</Italian>
 		<Spanish>Este lugar carece de una producción de alimentos importante, así que tendréis que usar Agricultores o Pescadores para alimentar a la población. ¿Seguro que queréis estableceros aquí?</Spanish>
 		<Russian>Вы уверены, что хотите поселиться здесь? В этом бесплодном месте поселенцы могут голодать. Вы действительно хотите основать здесь город?</Russian>
+		<Hungarian>Biztos, hogy itt akarsz letelepedni? A telepesek éhen halhatnak ezen a kopár helyen. Tényleg várost akarsz itt alapítani?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_NO_FOOD_NO_1</Tag>
@@ -7464,15 +7470,17 @@
 		<Italian>Non me n'ero reso conto. Grazie!</Italian>
 		<Spanish>No me había dado cuenta. Gracias.</Spanish>
 		<Russian>Я этого не знал. Спасибо!</Russian>
+		<Hungarian>Ezt nem tudtam. Köszönöm!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_NO_FOOD_YES_1</Tag>
-		<English>Food is not everything. I know what I'm doing.</English>
+		<English>Food isn't everything. I know what I'm doing.</English>
 		<French>Il n'y a pas que la nourriture dans la vie. Je sais ce que je fais.</French>
 		<German>Nahrung ist nicht alles. Ich weiß, was ich tue.</German>
 		<Italian>Il cibo non è tutto. So quello che faccio.</Italian>
 		<Spanish>La comida no lo es todo. Sé lo que hago.</Spanish>
 		<Russian>Еда это еще не все. Я знаю, что делаю.</Russian>
+		<Hungarian>Az élelem nem minden. Tudom, mit csinálok.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FOUND_CITY_INLAND_1</Tag>
@@ -7482,6 +7490,7 @@
 		<Italian>A questa posizione manca un accesso al mare. Dovrai costruire colonne di carovane per trasportare i beni verso un porto da cui poi inviarli in Europa. Sei sicuro di volerti insediare qui?</Italian>
 		<Spanish>Este sitio carece de salida al mar. Tendréis que construir Caravanas de carromatos para llevar las mercancías a un puerto y, allí, embarcarlas a Europa. ¿Seguro que queréis estableceros aquí?</Spanish>
 		<Russian>Это место не имеет выхода к океану. Вам придется строить транспорт, чтобы перевозить товары в порт, а уже оттуда отправлять их в Европу. Вы уверены, что хотите поселиться здесь?</Russian>
+		<Hungarian>Ez a hely nem rendelkezik óceánhoz való hozzáféréssel. Szekereket kell építened, hogy az árukat egy kikötőbe szállítsd és onnan elszállítsd őket Európába. Biztos, hogy itt akarsz letelepedni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_INLAND_YES_1</Tag>
@@ -7491,6 +7500,7 @@
 		<Italian>Sì, le ricchezze sono nell'entroterra!</Italian>
 		<Spanish>Sí, tierra dentro se encuentran las riquezas.</Spanish>
 		<Russian>Да, в глубине этих мест находятся несметные богатства!</Russian>
+		<Hungarian>Igen, a szárazföld belsejében rejlik a gazdagság!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_INLAND_NO_1</Tag>
@@ -7500,6 +7510,7 @@
 		<Italian>Hai ragione, dovremmo insediarci lungo la costa.</Italian>
 		<Spanish>Tenéis razón. Mejor será colonizar la costa.</Spanish>
 		<Russian>Вы правы. Нам следует поселиться у побережья.</Russian>
+		<Hungarian>Igaza van. A part mentén kellene letelepednünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_BUY_2</Tag>
@@ -7509,6 +7520,7 @@
 		<Italian>Accettiamo il vostro prezzo. (Costruisci insediamento, acquista terra)</Italian>
 		<Spanish>Aceptamos el precio que pedís. (Fundar asentamiento, comprar tierra)</Spanish>
 		<Russian>Нас устраивает эта цена. (Основать поселение, выкупив землю)</Russian>
+		<Hungarian>Elfogadjuk a kért árat. (Település alapítása, Földterület vásárlása)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_TAKE_2</Tag>
@@ -7518,6 +7530,7 @@
 		<Italian>Questa terra ci appartiene di diritto. (Costruisci insediamento, fai arrabbiare i nativi)</Italian>
 		<Spanish>Esta tierra nos pertenece por derecho. (Fundar asentamiento, enojar a los Nativos)</Spanish>
 		<Russian>Эта земля принадлежит нам по праву. (Основать поселение, разозлив индейцев)</Russian>
+		<Hungarian>Ez a föld jogosan a miénk. (Település alapítása, Indiánok feldühítése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_CITY_BUY_2</Tag>
@@ -7527,6 +7540,7 @@
 		<Italian>Mi sembra giusto. (Comprare la terra)</Italian>
 		<Spanish>Me parece justo. (Comprar tierra)</Spanish>
 		<Russian>Звучит справедливо. (Купить землю)</Russian>
+		<Hungarian>Ez tisztességesen hangzik. (Földterület vásárlása)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_CITY_TAKE_2</Tag>
@@ -7536,6 +7550,7 @@
 		<Italian>Chiunque può raccontare storie del genere. (Confiscare la terra, far arrabbiare i nativi)</Italian>
 		<Spanish>Cualquiera puede contar historias así. (Confiscar tierras, enfurecer a los nativos)</Spanish>
 		<Russian>Такие истории может сочинить каждый. (Конфисковать землю, разозлив индейцев)</Russian>
+		<Hungarian>Bárki tud ilyen történeteket mesélni. (Földterület elkobzása, Indiánok feldühítése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_MERC</Tag>
@@ -7545,6 +7560,7 @@
 		<Italian>Eccellente, possiamo fare buon uso dei vostri guerrieri! (Assumere mercenari)</Italian>
 		<Spanish>¡Excelente, podemos hacer buen uso de sus guerreros! (Contratar mercenarios)</Spanish>
 		<Russian>Отлично, мы найдем применение вашим воинам! (Нанять индейцев)</Russian>
+		<Hungarian>Kiváló, jól hasznosíthatjuk a harcosaitokat! (Zsoldosok felbérlése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_MERC_CHEAP</Tag>
@@ -7554,6 +7570,7 @@
 		<Italian>È un sacco di oro per gente così inesperta. Vi daremo la metà. (Reclutamento di mercenari a metà prezzo, 50% di possibilità di penalità di relazione di -1)</Italian>
 		<Spanish>Es mucho oro para unos tipos tan inexpertos. Te daremos la mitad. (Reclutar mercenarios a mitad de precio, 50% de posibilidades de penalización por relación de -1)</Spanish>
 		<Russian>Это слишком много для таких неопытных воинов. Мы дадим вам половину того, что вы просите. (Нанять индейцев за полцены, 50% вероятность штрафа к отношениям в -1)</Russian>
+		<Hungarian>Ez túl sok tapasztalatlan harcosokért. Mi ennek a felét tudjuk adni. (Zsoldosok felbérlése féláron, 50%-os valószínűséggel -1 kapcsolati büntetés)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_MERC_CANNOT</Tag>
@@ -7563,6 +7580,7 @@
 		<Italian>Un'offerta amichevole! Ma non al momento. (Non reclutare mercenari)</Italian>
 		<Spanish>¡Una oferta amistosa! Pero no en este momento. (No reclutar mercenarios)</Spanish>
 		<Russian>Чудесное предложение! Но не сейчас. (Отказаться от наемников)</Russian>
+		<Hungarian>Baráti ajánlat! De jelenleg nem. (Nem bérled fel a zsoldosokat)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_NATIVE_SLAVE</Tag>
@@ -7572,6 +7590,7 @@
 		<Italian>Eccellente, possiamo usare più lavoratori! (Comprare schiavi)</Italian>
 		<Spanish>Excelente, ¡podemos usar más trabajadores! (Comprar esclavos)</Spanish>
 		<Russian>Отлично! Нам действительно нужно больше рабочих. (Купить рабов)</Russian>
+		<Hungarian>Nagyszerű! Tényleg szükségünk van még több munkásra. (Rabszolgák vásárlása)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_NATIVE_SLAVE_CANNOT</Tag>
@@ -7581,6 +7600,7 @@
 		<Italian>Una buona offerta! Ma non al momento. (Non comprare schiavi)</Italian>
 		<Spanish>¡Una buena oferta! Pero no en este momento. (No compre esclavos)</Spanish>
 		<Russian>Хорошее предложение! Но не сейчас. (Не покупайте рабов)</Russian>
+		<Hungarian>Jó ajánlat! De jelenleg nem. (Nem vásárolsz rabszolgákat)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_AFRICAN_SLAVES</Tag>
@@ -7590,6 +7610,7 @@
 		<Italian>Un'offerta molto generosa, che accettiamo con gratitudine, Vostra Maestà. Ci farebbe comodo qualche altro lavoratore. (Comprare schiavi)</Italian>
 		<Spanish>Una oferta muy generosa, que aceptamos con gratitud, Su Majestad. Nos vendrían bien más trabajadores. (Compra de esclavos)</Spanish>
 		<Russian>Очень щедрое предложение, которое мы с благодарностью принимаем, Ваше Величество. В колониях всегда требуется много рабочей силы. (Купить рабов)</Russian>
+		<Hungarian>Rendkívül nagylelkű ajánlat, amit hálásan elfogadunk, Felség. Mindig szükség van több munkaerőre. (Rabszolgák vásárlása)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_AFRICAN_SLAVES_CANNOT</Tag>
@@ -7599,6 +7620,7 @@
 		<Italian>Ci dispiace non essere in grado di raccogliere l'oro per loro ora, Vostra Maestà.</Italian>
 		<Spanish>Lamentamos no poder reunir el oro para ellos ahora, Su Majestad.</Spanish>
 		<Russian>Мы сожалеем, что не имеем сейчас столько золота, Ваше Величество.</Russian>
+		<Hungarian>Sajnáljuk, hogy nem tudjuk most előteremteni az aranyat, Felség.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_PRISONS</Tag>
@@ -7608,6 +7630,7 @@
 		<Italian>Questa è un'idea brillante e un'offerta molto generosa, Vostra Maestà!</Italian>
 		<Spanish>¡Es una idea brillante y una oferta muy generosa, Su Majestad!</Spanish>
 		<Russian>Это великолепная идея и очень щедрое предложение, Ваше Величество!</Russian>
+		<Hungarian>Ez egy ragyogó ötlet és egy nagyon nagylelkű ajánlat, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_PRISONS_CANT_AFFORD</Tag>
@@ -7617,6 +7640,7 @@
 		<Italian>Ci dispiace non essere in grado di raccogliere l'oro per loro ora, Vostra Maestà.</Italian>
 		<Spanish>Lamentamos no poder reunir el oro para ellos ahora, Su Majestad.</Spanish>
 		<Russian>Сожалеем, Ваше Величество, но сейчас мы не можем себе этого позволить.</Russian>
+		<Hungarian>Sajnáljuk, hogy nem tudjuk most előteremteni az aranyat, Felség.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_NOBLE</Tag>
@@ -7626,6 +7650,7 @@
 		<Italian>Pagheremo il suo passaggio e lo prenderemo sotto la nostra custodia, Vostra Maestà!</Italian>
 		<Spanish>¡Pagaremos su pasaje y lo pondremos bajo nuestra custodia, Su Majestad!</Spanish>
 		<Russian>Мы оплатим его проезд и возьмем его под свою опеку, Ваше Величество!</Russian>
+		<Hungarian>Kifizetjük az útját és a gondját viseljük, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_NOBLE_CANT_AFFORD</Tag>
@@ -7635,6 +7660,7 @@
 		<Italian>Ci dispiace non essere in grado di raccogliere l'oro per lui ora, Vostra Maestà.</Italian>
 		<Spanish>Lamentamos no poder reunir el oro para él ahora, Su Majestad.</Spanish>
 		<Russian>Мы сожалеем, что не можем собрать для него золото сейчас, Ваше Величество.</Russian>
+		<Hungarian>Sajnáljuk, hogy nem tudjuk most előteremteni neki az aranyat, Felség.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_BISHOP</Tag>
@@ -7644,6 +7670,7 @@
 		<Italian>Accettiamo con gratitudine l'offerta della nostra Madre Chiesa, Vostra Eminenza.</Italian>
 		<Spanish>Aceptamos con agradecimiento el ofrecimiento de nuestra Madre Iglesia, Su Eminencia.</Spanish>
 		<Russian>Мы с благодарностью принимаем предложение Святой Церкви, Ваше Высокопреосвященство.</Russian>
+		<Hungarian>Hálásan elfogadjuk Anyaszentegyházunk felajánlását, Eminenciád.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_BISHOP_CANT_AFFORD</Tag>
@@ -7653,6 +7680,7 @@
 		<Italian>Ci dispiace non essere in grado di raccogliere l'oro per lui ora, Vostra Maestà.</Italian>
 		<Spanish>Lamentamos no poder reunir el oro para él ahora, Su Majestad.</Spanish>
 		<Russian>Мы сожалеем, что не можем собрать для него золото сейчас, Ваше Высокопреосвященство.</Russian>
+		<Hungarian>Sajnáljuk, hogy nem tudjuk most előteremteni neki az aranyat, Eminenciás uram.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_PAY_CHURCH_DEMAND</Tag>
@@ -7662,6 +7690,7 @@
 		<Italian>Siamo felici di donare alla causa, Vostra Eminenza.</Italian>
 		<Spanish>Estamos contentos de donar a la causa, Su Eminencia.</Spanish>
 		<Russian>Мы рады сделать пожертвование на это богоугодное дело, Ваше Высокопреосвященство.</Russian>
+		<Hungarian>Örömmel adakozunk az ügy érdekében, Eminenciás uram.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REFUSE_CHURCH_DEMAND</Tag>
@@ -7671,6 +7700,7 @@
 		<Italian>Ci dispiace di non poter raccogliere l'oro per questo in questo momento, Vostra Eminenza.</Italian>
 		<Spanish>Lamentamos no poder reunir el oro para esto en este momento, Su Eminencia.</Spanish>
 		<Russian>К сожалению, наша казна пуста, Ваше Высокопреосвященство.</Russian>
+		<Hungarian>Sajnáljuk, Eminenciás uram, hogy jelenleg nem tudunk aranyat előteremteni erre a célra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REQUEST_CHURCH_FAVOUR</Tag>
@@ -7680,6 +7710,7 @@
 		<Italian>Vorremmo chiedere un favore alla nostra Madre Chiesa, Vostra Eminenza.</Italian>
 		<Spanish>Nos gustaría pedir un favor a nuestra Madre Iglesia, Su Eminencia.</Spanish>
 		<Russian>Мы хотели бы попросить об одолжении у Святой Церкви, Ваше Высокопреосвященство.</Russian>
+		<Hungarian>Szeretnénk egy szívességet kérni Anyaszentegyházunktól, Eminenciás uram.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHURCH_FAVOUR_KING</Tag>
@@ -7689,6 +7720,7 @@
 		<Italian>Potresti parlare per la nostra causa al [COLOR_HIGHLIGHT_TEXT]nostro Re[COLOR_REVERT]?</Italian>
 		<Spanish>¿Podría hablar por nuestra causa a [COLOR_HIGHLIGHT_TEXT]nuestro Rey[COLOR_REVERT]?</Spanish>
 		<Russian>Не могли бы вы замолвить слово о верном почитателе Церкви перед [COLOR_HIGHLIGHT_TEXT]нашим Королем[COLOR_REVERT]?</Russian>
+		<Hungarian>Megtenné, hogy az érdekünkben beszél a [COLOR_HIGHLIGHT_TEXT]Királyunkkal[COLOR_REVERT]?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHURCH_FAVOUR_EUROPEAN</Tag>
@@ -7698,6 +7730,7 @@
 		<Italian>Potresti parlare per la nostra causa al [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]?</Italian>
 		<Spanish>¿Podría hablar por nuestra causa en [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]?</Spanish>
 		<Russian>Не могли бы вы уладить кое-какие дела с [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]?</Russian>
+		<Hungarian>Megtenné, hogy az érdekünkben szól pár szót [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] számára?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_CHURCH_FAVOUR_FOUNDING_FATHERS</Tag>
@@ -7707,6 +7740,7 @@
 		<Italian>Potresti mettere una buona parola con personalità note per unirsi al nostro congresso?</Italian>
 		<Spanish>¿Podría hablar con personalidades conocidas para que se unan a nuestro congreso?</Spanish>
 		<Russian>Не могли бы вы замолвить словечко перед выдающимися личностями, чтобы они присоединились к нашему Конгрессу?</Russian>
+		<Hungarian>Megtenné, hogy szól pár szót a prominens személyiségeknek, hogy csatlakozzanak a Kongresszusunkhoz?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_SPOKE_FAVOUR_KING</Tag>
@@ -7716,6 +7750,7 @@
 		<Italian>Sua Eminenza ha parlato al [COLOR_HIGHLIGHT_TEXT]vostro Re[COLOR_REVERT] in vostro favore.</Italian>
 		<Spanish>Su Eminencia ha hablado con [COLOR_HIGHLIGHT_TEXT]su Rey[COLOR_REVERT] en su nombre.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]Его Высокопреосвященство[COLOR_REVERT] улучшил отношение [COLOR_HIGHLIGHT_TEXT]вашего Короля[COLOR_REVERT] к колониям.</Russian>
+		<Hungarian>Őeminenciája beszélt a [COLOR_HIGHLIGHT_TEXT]Királyoddal[COLOR_REVERT] az érdekedben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_SPOKE_FAVOUR_EUROPEAN</Tag>
@@ -7725,6 +7760,7 @@
 		<Italian>Sua Eminenza ha parlato con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] a vostro nome.</Italian>
 		<Spanish>Su Eminencia ha hablado con [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] en su nombre.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]Его Высокопреосвященство[COLOR_REVERT] говорил с [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] от вашего имени.</Russian>
+		<Hungarian>Őeminenciája szólt pár szót [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] számára az érdekedben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NOT_ACQUIRE_SMUGGLERS</Tag>
@@ -7734,6 +7770,7 @@
 		<Italian>Daremo la caccia a questi criminali nel vostro nome, Vostra Maestà!</Italian>
 		<Spanish>¡Cazaremos a estos criminales en su nombre, Su Majestad!</Spanish>
 		<Russian>Мы выследим этих преступников и предадим справедливому суду, Ваше Величество!</Russian>
+		<Hungarian>Felséged nevében levadásszuk ezeket a bűnözőket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_SMUGGLERS</Tag>
@@ -7743,6 +7780,7 @@
 		<Italian>Grazie per questo suggerimento, um avvertimento, Vostra Maestà. Agiremo di conseguenza. (Assumere contrabbandieri)</Italian>
 		<Spanish>Gracias por esta pista, um advertencia, Su Majestad. Actuaremos en consecuencia. (Contratar contrabandistas)</Spanish>
 		<Russian>Спасибо за этот намек, гм предупреждение, Ваше Величество. Мы поступим соответственно. (Нанять контрабандистов)</Russian>
+		<Hungarian>Köszönöm ezt a célzást, um figyelmeztetést, Felség. Ennek megfelelően fogunk cselekedni. (Csempészek felfogadása)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_PIRATES</Tag>
@@ -7752,6 +7790,7 @@
 		<Italian>Daremo loro lettere di marca e li lasceremo combattere in nome di Vostra Maestà!</Italian>
 		<Spanish>¡Les daremos cartas de porte y les dejaremos luchar en nombre de Su Majestad!</Spanish>
 		<Russian>Мы выдадим им каперские грамоты, и пусть они сражаются во имя Вашего Величества!</Russian>
+		<Hungarian>Kalózkodási engedélyt adunk nekik és hagyjuk, hogy Felséged nevében harcoljanak!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_BRIBE_PIRATES</Tag>
@@ -7761,6 +7800,7 @@
 		<Italian>Li corromperemo per lasciare le nostre navi in pace, Vostra Maestà!</Italian>
 		<Spanish>¡Los sobornaremos para que dejen nuestros barcos en paz, Su Majestad!</Spanish>
 		<Russian>Мы дадим им взятку, чтобы они оставили наши корабли в покое, Ваше Величество!</Russian>
+		<Hungarian>Megvesztegetjük őket, hogy hagyják békén a hajóinkat, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NOT_ACQUIRE_PIRATES</Tag>
@@ -7770,6 +7810,7 @@
 		<Italian>Daremo la caccia a questi criminali nel vostro nome, Vostra Maestà!</Italian>
 		<Spanish>¡Cazaremos a estos criminales en su nombre, Su Majestad!</Spanish>
 		<Russian>Мы выследим этих преступников и предадим справедливому суду, Ваше Величество!</Russian>
+		<Hungarian>Felséged nevében levadásszuk ezeket a bűnözőket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_CONTINENTAL_GUARD</Tag>
@@ -7779,6 +7820,7 @@
 		<Italian>Accettiamo con gratitudine la vostra offerta, Vostra Maestà!</Italian>
 		<Spanish>¡Aceptamos con gratitud su oferta, Su Majestad!</Spanish>
 		<Russian>С благодарностью принимаем ваше предложение, Ваше Величество!</Russian>
+		<Hungarian>Hálásan elfogadjuk ajánlatát, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NOT_ACQUIRE_CONTINENTAL_GUARD</Tag>
@@ -7788,6 +7830,7 @@
 		<Italian>Temo che non possiamo permettercelo, Vostra Maestà!</Italian>
 		<Spanish>¡Me temo que no podemos permitirnos eso, Su Majestad!</Spanish>
 		<Russian>Боюсь, мы не можем себе этого позволить, Ваше Величество!</Russian>
+		<Hungarian>Attól tartok, ezt nem engedhetjük meg magunknak, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_MORTAR</Tag>
@@ -7797,6 +7840,7 @@
 		<Italian>Accettiamo con gratitudine la vostra offerta, Vostra Maestà!</Italian>
 		<Spanish>¡Aceptamos con gratitud su oferta, Su Majestad!</Spanish>
 		<Russian>Мы с благодарностью принимаем Ваше предложение, Ваше Величество!</Russian>
+		<Hungarian>Hálásan elfogadjuk ajánlatát, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NOT_ACQUIRE_MORTAR</Tag>
@@ -7806,6 +7850,7 @@
 		<Italian>Temo che non possiamo permettercelo, Vostra Maestà!</Italian>
 		<Spanish>¡Me temo que no podemos permitirnos eso, Su Majestad!</Spanish>
 		<Russian>Боюсь, мы не можем себе этого позволить, Ваше Величество!</Russian>
+		<Hungarian>Attól tartok, ezt nem engedhetjük meg magunknak, Felség!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_RANGERS</Tag>
@@ -7815,6 +7860,7 @@
 		<Italian>Che idea geniale, Vostra Maestà! (Rangers del treno)</Italian>
 		<Spanish>¡Qué idea tan brillante, Su Majestad! (Guardias del tren)</Spanish>
 		<Russian>Какая блестящая идея, Ваше Величество! (нанять Рейнджеров)</Russian>
+		<Hungarian>Micsoda zseniális ötlet, Felség! (Járőrök kiképzése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NOT_ACQUIRE_RANGERS</Tag>
@@ -7824,6 +7870,7 @@
 		<Italian>Vostra Maestà, vi assicuro che le colonie sono sufficientemente protette. Non abbiamo bisogno di altre truppe.</Italian>
 		<Spanish>Su Majestad, le aseguro que las colonias están suficientemente protegidas. No necesitamos más tropas.</Spanish>
 		<Russian>Ваше Величество, уверяю вас, что колонии достаточно защищены. Нам не нужны дополнительные войска.</Russian>
+		<Hungarian>Felség, biztosíthatom, hogy a gyarmatok kellő védelemben részesülnek. Nincs szükségünk több katonára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_ACQUIRE_CONQUISTADORS</Tag>
@@ -7833,6 +7880,7 @@
 		<Italian>Daremo il benvenuto a questi coraggiosi combattenti in nome della cristianità, Vostra Maestà! (Noleggia i conquistatori)</Italian>
 		<Spanish>¡Daremos la bienvenida a estos valientes combatientes en nombre de la cristiandad, Su Majestad! (Contratar conquistadores)</Spanish>
 		<Russian>Мы приветствуем этих храбрых бойцов во имя христианства, Ваше Величество! (нанять Конкистадоров)</Russian>
+		<Hungarian>A kereszténység nevében üdvözöljük ezeket a bátor harcosokat, Felség! (Konkvisztádorok felbérlése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_NOT_ACQUIRE_CONQUISTADORS</Tag>
@@ -7842,6 +7890,7 @@
 		<Italian>Vostra Maestà, purtroppo non possiamo permetterci questi mercenari al momento.</Italian>
 		<Spanish>Su Majestad, desafortunadamente no podemos permitirnos estos mercenarios en este momento.</Spanish>
 		<Russian>Ваше Величество, к сожалению, в данный момент мы не можем позволить себе этих наемников.</Russian>
+		<Hungarian>Felség, sajnos jelenleg nem engedhetjük meg magunknak ezeknek a zsoldosoknak a felbérlését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REV_NEED_LAND</Tag>
@@ -7851,15 +7900,17 @@
 		<Italian>Ringraziate il vostro sovrano e ditegli che abbiamo bisogno di più forze di terra. (Ottenere truppe)</Italian>
 		<Spanish>Agradezca a su soberano y dígale que necesitamos más fuerzas terrestres. (Consigue tropas)</Spanish>
 		<Russian>Поблагодари своего государя и скажи ему, что нам нужно больше сухопутных войск. (Получить войска)</Russian>
+		<Hungarian>Köszönd meg uralkodódnak és mondd meg neki, hogy több szárazföldi csapatra van szükségünk. (Csapatok érkeznek)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_REV_NEED_SEA</Tag>
-		<English>Thank your sovereign and tell him we need stronger naval forces. (Get warships)</English>
+		<English>Thank your sovereign and tell him we need a stronger navy. (Get warships)</English>
 		<French>Remerciez votre souverain et dites-lui que nous avons besoin de forces navales plus fortes. (Obtenir des navires de guerre)</French>
 		<German>Dankt Eurem Herrscher und richtet ihm aus, dass wir stärkere Kriegsschiffe gebrauchen können. (Kriegsschiffe bekommen)</German>
 		<Italian>Ringraziate il vostro sovrano e ditegli che abbiamo bisogno di forze navali più forti. (Ottenere navi da guerra)</Italian>
 		<Spanish>Agradece a tu soberano y dile que necesitamos fuerzas navales más fuertes. (Conseguir buques de guerra)</Spanish>
 		<Russian>Поблагодари своего государя и скажи ему, что нам нужны более сильные военно-морские силы. (Получить военные корабли)</Russian>
+		<Hungarian>Köszönd meg uralkodódnak és mondd meg neki, hogy jobb tengeri haderőre van szükségünk. (Hadihajók érkeznek)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_EUROPE_WAR_YES</Tag>
@@ -7869,6 +7920,7 @@
 		<Italian>Come desiderate, Vostra Maestà! (Dichiarare la guerra, l'aliquota fiscale massima diminuisce)</Italian>
 		<Spanish>¡Como desee, Su Majestad! (Declarar la guerra, el tipo impositivo máximo disminuye)</Spanish>
 		<Russian>Как Вам будет угодно, Ваше Величество! (Объявить войну, максимальная ставка налога снижается)</Russian>
+		<Hungarian>Ahogy kívánja, Felség! (Háború indítása, a maximális adókulcs csökken)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_EUROPE_WAR_YES_BUT</Tag>
@@ -7878,6 +7930,7 @@
 		<Italian>In linea di principio, Vostra Maestà. Se ci sosterrete. (Dichiarare guerra, ottenere truppe)</Italian>
 		<Spanish>En principio, Su Majestad. Si nos apoyas. (Declarar la guerra, conseguir tropas)</Spanish>
 		<Russian>В принципе, мы не против, Ваше Величество. Но нам нужна военная помощь. (Объявить войну, получить войска)</Russian>
+		<Hungarian>Szívesen megtenném, Felség, ha Ön támogat minket. (Háború indítása, Csapatok érkeznek)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_EUROPE_WAR_NO</Tag>
@@ -7887,6 +7940,7 @@
 		<Italian>Mi dispiace, Vostra Maestà. Non sembra appropriato in questo momento. (La relazione con l'altra nazione migliora, l'aliquota fiscale massima aumenta)</Italian>
 		<Spanish>Lo siento, Su Majestad. No parece apropiado en este momento. (La relación con otra nación mejora, el tipo impositivo máximo aumenta)</Spanish>
 		<Russian>Сожалею, Ваше Величество. В настоящее время это не кажется уместным. (Отношения с другой нацией улучшаются, максимальная ставка налога увеличивается)</Russian>
+		<Hungarian>Sajnálom, Felség. Ez most nem tűnik helyesnek. (A többi nemzettel való kapcsolat javul, a maximális adókulcs emelkedik)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_EUROPE_PEACE_YES</Tag>
@@ -7896,6 +7950,7 @@
 		<Italian>Come desiderate, Vostra Maestà! (Guerra è finita, diplomatici vengono inviati)</Italian>
 		<Spanish>¡Como desee, Su Majestad! (Se termina la guerra, se envían diplomáticos)</Spanish>
 		<Russian>Как пожелаете, Ваше Величество! (Война заканчивается, в колонии отправлены дипломаты)</Russian> 
+		<Hungarian>Ahogy óhajtja, Felség! (A háború véget ér, diplomaták küldése)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_EUROPE_PEACE_NO</Tag>
@@ -7905,6 +7960,7 @@
 		<Italian>Mi dispiace, Vostra Maestà. Non sembra appropriato in questo momento. (Re deluso)</Italian>
 		<Spanish>Lo siento, Su Majestad. No parece apropiado en este momento. (Rey decepcionado)</Spanish>
 		<Russian>Сожалею, Ваше Величество. В настоящее время это не кажется нам уместным. (Король разочарован)</Russian>
+		<Hungarian>Sajnálom, Felség. Ez most nem tűnik helyénvalónak. (A Király csalódott lesz)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>USER_DIPLO_FOUND_CITY_CANCEL_2</Tag>
@@ -7914,6 +7970,7 @@
 		<Italian>Fammici pensare. (Non costruire l'insediamento)</Italian>
 		<Spanish>Dejad que lo piense. (No fundar asentamiento)</Spanish>
 		<Russian>Дайте нам время подумать об этом. (Не основывать поселение)</Russian>
+		<Hungarian>Hadd gondolkozzam el rajta. (Nem alapítasz települést)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_PACAL_1</Tag>
@@ -7923,6 +7980,7 @@
 		<Italian>Salve. Mi chiamo [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], capo e protettore del popolo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Ti considero un amico. È nel tuo migliore interesse che io non cambi mai idea.</Italian>
 		<Spanish>Hola. Soy [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], jefe y protector del pueblo [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]. Os considero mis amigos. Y más os vale que nunca cambie de opinión.</Spanish>
 		<Russian>Я не знаю тебя и я не уверен, что хочу с тобой встречаться впредь. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], правитель [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:2][COLOR_REVERT]. Слава моего народа теперь просто легенда. Чужеземцы разрушили наши города, украли наших детей и осквернили наших дочерей. Чужеземцы вроде тебя.</Russian>
+		<Hungarian>Nem ismerlek és nem is biztos, hogy meg akarlak ismerni. Én [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] vagyok, a bátor [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:2][COLOR_REVERT] nép uralkodója. Népem dicsősége már csak emlék. Idegen harcosok lerombolták városainkat, ellopták gyermekeinket és megerőszakolták lányainkat. Idegenek, mint te.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_PACAL_1</Tag>
@@ -7932,6 +7990,7 @@
 		<Italian>Senti, sono molto occupato. Perché non prendi i bambini e te ne torni al circolo?</Italian>
 		<Spanish>Mirad, estoy muy ocupado. ¿Por qué no os lleváis a los niños y os volvéis al club?</Spanish>
 		<Russian>Я очень занят. Приходи в другой раз.</Russian>
+		<Hungarian>Nagyon elfoglalt vagyok. Gyere vissza máskor!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_PACAL_1</Tag>
@@ -7941,6 +8000,7 @@
 		<Italian>Pace? Ci sarà la pace quando ti arrenderai!</Italian>
 		<Spanish>¿Paz? ¡La tendremos cuando os rindáis!</Spanish>
 		<Russian>Мир? Ты приходишь с распростертыми руками, но ты весь вспотел. Почему ты так нервничаешь? Я не доверяю тебе.</Russian>
+		<Hungarian>Béke? Tárt karokkal jössz, de izzadsz. Miért vagy ilyen ideges? Nem bízom benned.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_PACAL_1</Tag>
@@ -7950,6 +8010,7 @@
 		<Italian>È bello parlare con una persona che capisce l'importanza dell'azione. Parliamo di come possiamo rafforzare le nostre colonie.</Italian>
 		<Spanish>Es bueno hablar con alguien que entiende la importancia de los actos. Charlemos sobre cómo podemos fortalecer nuestras colonias.</Spanish>
 		<Russian>Хорошо поговорить с кем-то, кто понимает важность действий. Давайте поговорим о том, как мы можем укрепить наши отношения.</Russian>
+		<Hungarian>Lépj be palotámba és frissülj fel!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_PACAL_1</Tag>
@@ -7959,6 +8020,7 @@
 		<Italian>È bello parlare con una persona che capisce l'importanza dell'azione. Parliamo di come possiamo rafforzare le nostre colonie.</Italian>
 		<Spanish>Es bueno hablar con alguien que entiende la importancia de los actos. Charlemos sobre cómo podemos fortalecer nuestras colonias.</Spanish>
 		<Russian>Я знаю таких, как ты. Прелестные слова твои обманчивы, но злоба и жадность блестят в глазах твоих.</Russian>
+		<Hungarian>Ismerem a fajtádat. Bájos szavaid elvarázsolnak, de szemedben gonoszság és kapzsiság csillog.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_PACAL_1</Tag>
@@ -7968,6 +8030,7 @@
 		<Italian>Abbiamo urgente bisogno, per favore aiutaci.</Italian>
 		<Spanish>El [COLOR_HIGHLIGHT_TEXT][OUR_EMPIRE][COLOR_REVERT] tiene una terrible necesidad. Ayudadnos, por favor.</Spanish>
 		<Russian>У моего народа есть слава, но нет богатства. Это хорошая возможность для вас проявить как добродетель, так и щедрость.</Russian>
+		<Hungarian>Népemnek dicsősége van, de gazdagsága nincs. Itt a lehetőség számodra, hogy erényt és nagylelkűséget is mutass.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_PACAL_1</Tag>
@@ -7977,6 +8040,7 @@
 		<Italian>Ti sei dimenticato dell'anniversario della mia colonia? Non ti preoccupare. Come dono potresti darci quello che chiediamo.</Italian>
 		<Spanish>¿Habéis olvidado que es el aniversario de mi colonia? Bueno, no pasa nada. Como regalo nos podríais dar lo que os pedimos.</Spanish>
 		<Russian>Добро пожаловать. Сделай глоток родниковой воды и посмотри на это ожерелье из изящных раковин. А теперь покажи, какие дары ты принес.</Russian>
+		<Hungarian>Üdvözlet! Igyál egy korty forrásvizet és vedd el ezt a kecses formájú kagylókból álló nyakláncot. Most pedig add nekem a te ajándékodat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_PACAL_1</Tag>
@@ -7986,6 +8050,7 @@
 		<Italian>Non sei nelle condizioni di negoziare. Dai al mio popolo ciò che chiede.</Italian>
 		<Spanish>No estáis en posición de negociar. Dadle a mi pueblo lo que quiere.</Spanish>
 		<Russian>Убирайся. Не возвращайся, пока не будешь готов подчиниться мне, ничтожество.</Russian>
+		<Hungarian>Kifelé! Ne gyere vissza, amíg készen nem állsz arra, hogy behódolj nekem, te semmirekellő!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_DE_SA_1</Tag>
