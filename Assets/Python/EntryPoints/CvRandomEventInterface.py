@@ -3703,81 +3703,158 @@ def canTriggerAntiPirate(argsList):
 
 ######## RUM BLOSSOM ###########
 
+def _rumBlossomNativeCityBordersPlayerCity(city, nativecity):
+	if city.isNone() or nativecity.isNone():
+		return False
+
+	iPlayer = city.getOwner()
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			loopPlot = plotXY(nativecity.getX(), nativecity.getY(), iDX, iDY)
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() != iPlayer:
+				continue
+
+			workingCity = loopPlot.getWorkingCity()
+			if workingCity is None or workingCity.isNone():
+				continue
+
+			if workingCity.getOwner() == city.getOwner() and workingCity.getID() == city.getID():
+				return True
+
+	return False
+
+
+def _getRumBlossomData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return (None, None, None, None)
+
+	if not player.isPlayable():
+		return (None, None, None, None)
+
+	if player.isNative():
+		return (None, None, None, None)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return (None, None, None, None)
+
+	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if player2.isNone():
+		return (None, None, None, None)
+
+	if not player2.isNative():
+		return (None, None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(player2.getTeam()):
+		return (None, None, None, None)
+
+	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativecity.isNone():
+		return (None, None, None, None)
+
+	if not _rumBlossomNativeCityBordersPlayerCity(city, nativecity):
+		return (None, None, None, None)
+
+	return (player, city, player2, nativecity)
+
+
 def canTriggerRumBlossom(argsList):
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
+
+	player, city, player2, nativecity = _getRumBlossomData(kTriggeredData)
+	if player is None:
 		return False
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
-		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
+
 	eEvent1 = gc.getInfoTypeForString("EVENT_RUM_BLOSSOM_1")
 	event1 = gc.getEventInfo(eEvent1)
+
 	iYield = gc.getInfoTypeForString("YIELD_RUM")
 	quantity = event1.getGenericParameter(1)
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+
+	if city.getYieldStored(iYield) < -quantity:
 		return False
+
 	return True
+
 
 def applyRumBlossom1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	player, city, player2, nativecity = _getRumBlossomData(kTriggeredData)
+	if player is None:
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_RUM")
 	quantity = event.getGenericParameter(1)
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
+
 	if city.getYieldStored(iYield) < -quantity:
 		return
+
 	city.changeYieldStored(iYield, quantity)
 	nativecity.changeYieldStored(iYield, -quantity)
+
 
 def getHelpRumBlossom1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	player, city, player2, nativecity = _getRumBlossomData(kTriggeredData)
+	if player is None:
+		return u""
+
 	iYield = gc.getInfoTypeForString("YIELD_RUM")
 	quantity = event.getGenericParameter(1)
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
+
 	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey()))
+
+	if event.getGenericParameter(1) <> 0:
+		szHelp = localText.getText(
+			"TXT_KEY_EVENT_YIELD_LOOSE",
+			(quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+		)
+		szHelp += "\n" + localText.getText(
+			"TXT_KEY_EVENT_YIELD_GAIN",
+			(-quantity, gc.getYieldInfo(iYield).getChar(), nativecity.getNameKey())
+		)
+
 	return szHelp
+
 
 def canApplyRumBlossom3(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() or player2.isNone() :
+
+	player, city, player2, nativecity = _getRumBlossomData(kTriggeredData)
+	if player is None:
 		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from event and check if enough yield is stored in city
+
 	iYield = gc.getInfoTypeForString("YIELD_RUM")
 	quantity = event.getGenericParameter(1)
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+
+	if city.getYieldStored(iYield) < -quantity:
 		return False
+
 	return True
 
 ######## Ruins Quest ###########
@@ -6710,56 +6787,111 @@ def getHelpWineTheft1(argsList):
 
 ######## LUXURY GOODS ###########
 
-def canTriggerLuxuryGoods(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() :
+def canTriggerLuxuryGoodsCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
 		return False
+
 	if not player.isPlayable():
 		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
 	if city.isNone():
 		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
+
+	iYield = gc.getInfoTypeForString("YIELD_LUXURY_GOODS")
+
 	eEvent1 = gc.getInfoTypeForString("EVENT_LUXURY_GOODS_1")
 	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_LUXURY_GOODS")
 
 	quantity = event1.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < -quantity:
 		return False
+
+	return True
+
+def canApplyLuxuryGoods1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_LUXURY_GOODS")
+
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent()/100
+
+	if city.getYieldStored(iYield) < -quantity:
+		return False
+
 	return True
 
 def applyLuxuryGoods1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_LUXURY_GOODS")
 
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+
+	if city.getYieldStored(iYield) < -quantity:
 		return
+
 	city.changeYieldStored(iYield, quantity)
+
 
 def getHelpLuxuryGoods1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return u""
+
 	iYield = gc.getInfoTypeForString("YIELD_LUXURY_GOODS")
+
 	szHelp = ""
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+
+	if event.getGenericParameter(1) <> 0:
+		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+
 	return szHelp
 
 ######## Cattle and Sheep ###########
@@ -20115,3 +20247,188 @@ def getHelpExperiencedSailors2(argsList):
 		"TXT_KEY_EVENT_EXPERIENCED_SAILORS_2_HELP",
 		(gc.getPromotionInfo(iPromotion).getTextKey(),)
 	)
+
+######## Rotten Meat ###########
+
+def canTriggerRottenMeat(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	# The event text says the butcher arrived in the harbour.
+	if not city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+		return False
+
+	return True
+
+######## Event Jade ###########
+
+def canTriggerJadeCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone():
+		return False
+
+	iMine = gc.getInfoTypeForString("IMPROVEMENT_MINE")
+	iDeepMine = gc.getInfoTypeForString("IMPROVEMENT_DEEP_MINE")
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			plot = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.getOwner() != player.getID():
+				continue
+
+			if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) > 2:
+				continue
+
+			iImprovement = plot.getImprovementType()
+			if iImprovement == iMine or iImprovement == iDeepMine:
+				return True
+
+	return False
+
+######## Lost Ship ###########
+
+LOST_SHIP_1_SOFT_COOLDOWN_PREFIX = "[[WTP_LOST_SHIP_1_SOFT_READY_TURN="
+LOST_SHIP_1_SOFT_COOLDOWN_SUFFIX = "]]"
+
+
+def _getLostShip1SoftCooldownReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(LOST_SHIP_1_SOFT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(LOST_SHIP_1_SOFT_COOLDOWN_PREFIX)
+	iEnd = szData.find(LOST_SHIP_1_SOFT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setLostShip1SoftCooldownReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(LOST_SHIP_1_SOFT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(LOST_SHIP_1_SOFT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(LOST_SHIP_1_SOFT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		LOST_SHIP_1_SOFT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		LOST_SHIP_1_SOFT_COOLDOWN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _startLostShip1SoftCooldown(player):
+	if player.isNone():
+		return
+
+	iReadyTurn = CyGame().getGameTurn() + _scaleTurnsByGameSpeed(30)
+	_setLostShip1SoftCooldownReadyTurn(player, iReadyTurn)
+
+
+def _isLostShip1SoftCooldownActive(player):
+	if player.isNone():
+		return False
+
+	return _getLostShip1SoftCooldownReadyTurn(player) > CyGame().getGameTurn()
+
+
+def canTriggerLostShip1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isLostShip1SoftCooldownActive(player):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.getTerrainType() != gc.getInfoTypeForString("TERRAIN_COAST"):
+		return False
+
+	if plot.isCity():
+		return False
+
+	return True
+
+
+def applyLostShip1(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	_startLostShip1SoftCooldown(player)

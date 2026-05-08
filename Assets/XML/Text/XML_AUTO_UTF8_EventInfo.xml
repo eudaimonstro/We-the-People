@@ -8,6 +8,12 @@
 		<Russian>Каждый заслуживает второго шанса. Пусть работает по своей профессии, а мы уладим его проблему с властями.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_HIDE_BUTCHER</Tag>
+		<English>We could really do with any worker. But he should change jobs so that the bailiffs can't track him down so easily.</English>
+		<German>Wir können jeden Handwerker gut gebrauchen. Aber er sollte den Beruf wechseln, damit ihn die Büttel nicht so schnell aufspüren können.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_ADMIRAL_1_1</Tag>
 		<English>Ah, what the heck! He was at sea for a such a long time. He needs to enjoy his time onshore. Our storage is absolutely full. However, we need to keep an eye on him.</English>
 		<French>Ah, peu importe ! Il était en mer pendant si longtemps, qu'il profite de sa permission. Nos entrepôts en débordent. Toutrefois, nous allons le garder à l'oeil, il vaut mieux.</French>

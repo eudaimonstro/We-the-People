@@ -11538,7 +11538,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
+			<iAttitudeModifier>1</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -11569,7 +11569,7 @@
 			<bTeam>0</bTeam>
 			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
-			<bDeclareWar>1</bDeclareWar>
+			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
@@ -11600,8 +11600,8 @@
 			<iRouteChange>0</iRouteChange>
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
-			<iOurAttitudeModifier>-1</iOurAttitudeModifier>
-			<iAttitudeModifier>-1</iAttitudeModifier>
+			<iOurAttitudeModifier>-2</iOurAttitudeModifier>
+			<iAttitudeModifier>-2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -17931,6 +17931,67 @@
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
+			<Type>EVENT_HIDE_BUTCHER</Type>
+			<Description>TXT_KEY_EVENT_HIDE_BUTCHER</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>-300</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>UNITCLASS_TANNER</UnitClass>
+			<iNumFreeUnits>1</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback/>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp/>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>600</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
 			<Type>EVENT_REFUSE_BUTCHER</Type>
 			<Description>TXT_KEY_EVENT_REFUSE_BUTCHER</Description>
 			<LocalInfoText/>
@@ -17980,16 +18041,16 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyKingPleased</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpKingPleased</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>10</iAIValue>
+			<iAIValue>100</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_DESPERATE_CONQUISTADORES_1</Type>
@@ -22263,7 +22324,33 @@
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
 			<iRevoltTurns>0</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
@@ -22286,7 +22373,7 @@
 			<ClearEvents/>
 			<PythonCallback>applyLuxuryGoods1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
+			<PythonCanDo>canApplyLuxuryGoods1</PythonCanDo>
 			<PythonHelp>getHelpLuxuryGoods1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -29323,7 +29410,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyLostShip1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>

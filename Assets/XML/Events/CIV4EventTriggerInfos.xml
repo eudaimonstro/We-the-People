@@ -3387,7 +3387,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -3415,7 +3415,7 @@
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
@@ -3444,7 +3444,7 @@
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
 			<PythonCanDo>isPlayable</PythonCanDo>
-			<PythonCanDoCity/>
+			<PythonCanDoCity>canTriggerJadeCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
 		</EventTriggerInfo>
@@ -8146,7 +8146,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -8169,6 +8169,8 @@
 			</UnitTriggerConditions>
 			<BuildingsRequired>
 				<BuildingClass>BUILDINGCLASS_BUTCHERS_HOUSE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUTCHERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_SLAUGHTERHOUSE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -8180,6 +8182,7 @@
 			<RoutesRequired/>
 			<Events>
 				<Event>EVENT_ACCEPT_BUTCHER</Event>
+				<Event>EVENT_HIDE_BUTCHER</Event>
 				<Event>EVENT_REFUSE_BUTCHER</Event>
 			</Events>
 			<PrereqEvents/>
@@ -8198,7 +8201,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerRottenMeat</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -11275,8 +11278,8 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerLuxuryGoods</PythonCanDo>
-			<PythonCanDoCity/>
+			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDoCity>canTriggerLuxuryGoodsCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
 		</EventTriggerInfo>
@@ -15527,7 +15530,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/Achievements/bad_surprise.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>100</iWeight>
+			<iWeight>200</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -15545,10 +15548,6 @@
 					<UnitClass>UNITCLASS_MERCHANTMAN</UnitClass>
 					<UnitClass>UNITCLASS_BRIGANTINE</UnitClass>
 					<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
-					<UnitClass>UNITCLASS_SMUGGLING_SHIP</UnitClass>
-					<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-					<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-					<UnitClass>UNITCLASS_PIRATE_CUTTER</UnitClass>
 					<UnitClass>UNITCLASS_CARRACK</UnitClass>
 					<UnitClass>UNITCLASS_CARAVELA_REDONDA</UnitClass>
 					<UnitClass>UNITCLASS_GALLEON</UnitClass>
@@ -15559,11 +15558,6 @@
 					<UnitClass>UNITCLASS_CORVETTE</UnitClass>
 					<UnitClass>UNITCLASS_NAVAL_BRIG</UnitClass>
 					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-					<UnitClass>UNITCLASS_ROYAL_FRIGATE</UnitClass>
-					<UnitClass>UNITCLASS_SHIP_OF_THE_LINE</UnitClass>
-					<UnitClass>UNITCLASS_ROYAL_SHIP_OF_THE_LINE</UnitClass>
-					<UnitClass>UNITCLASS_COLONIAL_MAN_O_WAR</UnitClass>
-					<UnitClass>UNITCLASS_ROYAL_MAN_O_WAR</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -15603,7 +15597,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo/>
+			<PythonCanDo>canTriggerLostShip1</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
