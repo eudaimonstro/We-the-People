@@ -2756,6 +2756,11 @@
 		<Russian>Несколько человек из диких мест пришли в наш форт, чтобы купить припасы. Они знают местность и могут быть нам очень полезны.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_MAN_FROM_THE_WILDERNESS_HELP</Tag>
+		<English>[ICON_BULLET]A [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] appears at the fort.</English>
+		<German>[ICON_BULLET]Im Fort erscheint eine Einheit [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT].</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_MONASTERY_TRADING_FOOD</Tag>
 		<English>After a long hard winter Natives have come to a monastery to buy food.</English>
 		<French>Après un hiver long et vigoureux, des indigènes sont venues au Monastère pour acheter de la nourriture.</French>

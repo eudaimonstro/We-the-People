@@ -20421,3 +20421,89 @@ def applyLostShip1(argsList):
 		return
 
 	_startLostShip1SoftCooldown(player)
+
+
+######## Man from the Wilderness ###########
+
+def canTriggerManFromTheWilderness(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# hard bind to trigger plot
+	if not unit.at(kTriggeredData.iPlotX, kTriggeredData.iPlotY):
+		return False
+
+	iImprovement = plot.getImprovementType()
+	if iImprovement not in (
+		gc.getInfoTypeForString("IMPROVEMENT_FORT"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_FORT"),
+	):
+		return False
+
+	return True
+
+def applyManFromTheWildernessUnit(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	iUnitClass = event.getGenericParameter(1)
+	if iUnitClass == -1:
+		return
+
+	iProfession = event.getGenericParameter(2)
+	if iProfession == -1:
+		iProfession = ProfessionTypes.NO_PROFESSION
+
+	iUnitType = gc.getCivilizationInfo(
+		player.getCivilizationType()
+	).getCivilizationUnits(iUnitClass)
+
+	if iUnitType == -1:
+		return
+
+	player.initUnit(
+		iUnitType,
+		iProfession,
+		kTriggeredData.iPlotX,
+		kTriggeredData.iPlotY,
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+def getHelpManFromTheWildernessUnit(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	iUnitClass = event.getGenericParameter(1)
+	if iUnitClass == -1:
+		return u""
+
+	UnitClassInfo = gc.getUnitClassInfo(iUnitClass)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_MAN_FROM_THE_WILDERNESS_HELP",
+		(UnitClassInfo.getTextKey(),)
+	)
