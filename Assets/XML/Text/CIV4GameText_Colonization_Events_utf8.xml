@@ -885,24 +885,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_LOST_TRIBE_1</Tag>
-		<English>Our imaginative scout has come up with a fairy tale. One evening in dense jungle he got lost. As the night deepened he heard muffled drumming from a hidden ravine.[PARAGRAPH:2]He crawled closer, only to discover a camp of naked warrior women leaping around a fire, wild as young she-wolves. Silver-tipped clubs flashed in the flickering firelight as the Amazons brandished them to the beat of the drums. Then they caught sight of him. Suddenly he felt like a rabbit facing the wolves. He fled.</English>
-		<French>Un scout raconte un conte de fées. Dans la jungle la plus profonde, il s'est perdu un soir. La morosité s'abattit sur le monde alors qu'un tambour étouffé retentissait depuis un ravin caché.[PARAGRAPH:2]Il se mit à marcher et regarda un camp de guerrières nues sautant autour d'un feu, sauvages comme de jeunes loups. Des massues en bois à pointe d'argent scintillaient dans la lumière vacillante, et les amazones les maniaient au rythme des sons. Quand ils l'ont aperçu, la convoitise de la chasse a brillé dans leurs yeux, et il s'est enfui.</French>
-		<German>Märchenhaftes berichtet ein Späher. Im tiefsten Urwald habe er sich eines Abends verlaufen. Düsternis senkte sich über die Welt, als ein dumpfes Trommeln aus einer verborgenen Schlucht erklang.[PARAGRAPH:2]Er pirschte sich an und blickte hinab auf ein Lager nackter Kriegerinnen, die um ein Feuer sprangen, wild wie junge Wölfinnen. Im flackernden Lichtschein blitzten silberbeschlagene Holzkeulen, die die Amazonen im Rhythmus der Klänge schwangen. Als sie ihn erblickten, funkelte die Jagdlust in ihren Augen, und er floh.</German>
+		<English>Our imaginative scout has come up with a fairy tale. One evening in dense jungle he got lost. As the night deepened he heard muffled drumming from a hidden ravine.[NEWLINE][NEWLINE]He crawled closer, only to discover a camp of naked warrior women leaping around a fire, wild as young she-wolves. Silver-tipped clubs flashed in the flickering firelight as the Amazons brandished them to the beat of the drums. Then they caught sight of him. Suddenly he felt like a rabbit facing the wolves. He fled.</English>
+		<French>Un scout raconte un conte de fées. Dans la jungle la plus profonde, il s'est perdu un soir. La morosité s'abattit sur le monde alors qu'un tambour étouffé retentissait depuis un ravin caché.[NEWLINE][NEWLINE]Il se mit à marcher et regarda un camp de guerrières nues sautant autour d'un feu, sauvages comme de jeunes loups. Des massues en bois à pointe d'argent scintillaient dans la lumière vacillante, et les amazones les maniaient au rythme des sons. Quand ils l'ont aperçu, la convoitise de la chasse a brillé dans leurs yeux, et il s'est enfui.</French>
+		<German>Märchenhaftes berichtet ein Späher. Im tiefsten Urwald habe er sich eines Abends verlaufen. Düsternis senkte sich über die Welt, als ein dumpfes Trommeln aus einer verborgenen Schlucht erklang.[NEWLINE][NEWLINE]Er pirschte sich an und blickte hinab auf ein Lager nackter Kriegerinnen, die um ein Feuer sprangen, wild wie junge Wölfinnen. Im flackernden Lichtschein blitzten silberbeschlagene Holzkeulen, die die Amazonen im Rhythmus der Klänge schwangen. Als sie ihn erblickten, funkelte die Jagdlust in ihren Augen, und er floh.</German>
 		<Russian>Наш молодой разведчик рассказал удивительную историю, похожую на сказку. Однажды вечером он заблудился и долго плутал в густых джунглях. Когда сгустилась ночь, он услышал приглушенный барабанный бой из скрытого деревьями ущелья.[ПАРАГРАФ: 2] Он подполз ближе и обнаружил лагерь обнаженных женщин-воительниц, прыгающих вокруг костра, диких, как молодые волчицы. Шипастые дубинки с серебряными наконечниками сверкали в мерцающем свете костра, когда амазонки размахивали ими под бой барабанов. Парень решил подобраться поближе, чтобы получше всё рассмотреть, и тут они его заметили. Взгляды воительниц не сулили ничего хорошего и он сбежал.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_LOST_TRIBE_4_HELP</Tag>
-		<English>[ICON_BULLET]The [COLOR_UNIT_TEXT]%s2:1_unit (%s1:1_unit)[COLOR_REVERT] is promoted to [COLOR_UNIT_TEXT]%s3:1_unit[COLOR_REVERT].</English>
-		<French>[ICON_BULLET]L'unité [COLOR_UNIT_TEXT]%s2:1_unit (%s1:1_unit)[COLOR_REVERT] a été promu en tant que [COLOR_UNIT_TEXT]%s3:1_unit[COLOR_REVERT].</French>
-		<German>[ICON_BULLET]Der [COLOR_UNIT_TEXT]%s2:1_unit (%s1:1_unit)[COLOR_REVERT] wird zu einem [COLOR_UNIT_TEXT]%s3:1_unit[COLOR_REVERT] befördert.</German>
-		<Russian>[ICON_BULLET][COLOR_UNIT_TEXT]%s2:1_unit (%s1:1_unit)[COLOR_REVERT] повышен до [COLOR_UNIT_TEXT]%s3:1_unit[COLOR_REVERT].</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_LOST_TRIBE_4B_HELP</Tag>
-		<English>[COLOR_WARNING_TEXT](Not available if an [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_WARNING_TEXT] is already working for you.)[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT](Indisponible si une unité [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_WARNING_TEXT] travaille déjà pour vous.)[COLOR_REVERT]</French>
-		<German>[COLOR_WARNING_TEXT](Nicht verfügbar, wenn bereits ein [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_WARNING_TEXT] in Euren Diensten steht.)[COLOR_REVERT]</German>
-		<Russian>[COLOR_WARNING_TEXT](Недоступно, если [COLOR_UNIT_TEXT]%s1:1_unit[COLOR_WARNING_TEXT] уже работает на вас.)[COLOR_REVERT]</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_PRISONER_OF_WAR_AT_MONASTERY</Tag>

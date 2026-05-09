@@ -3033,61 +3033,50 @@ def getHelpDiscoveryBraveFellows3(argsList):
 
 def canTriggerLostTribe(argsList):
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	eScout = gc.getInfoTypeForString("PROFESSION_SCOUT")
-	if unit.getProfession() != eScout:
+
+	if player.isNative():
 		return False
-	# Read parameter 3 from the event as random chance
-	if TriggerChance(argsList):
-		return True
-	return False
 
-def canDoLostTribe4(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	(unit, iter) = player.firstUnit()
-	while (unit):
-		if unit.getUnitClassType() == CvUtil.findInfoTypeNum('UNITCLASS_SCOUT'):
-			return False
-		(unit, iter) = player.nextUnit(iter)
-	return True
-
-def getHelpLostTribe4(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
 	unit = player.getUnit(kTriggeredData.iUnitId)
-	szHelp = getHelpChangeFatherPoints(argsList)
-	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_SCOUT'))
-	UnitClass2 = gc.getUnitClassInfo(unit.getUnitClassType())
-	UnitProf1 = gc.getProfessionInfo(unit.getProfession())
-	szHelp += "\n" + localText.getText("TXT_KEY_EVENT_LOST_TRIBE_4_HELP", (UnitClass2.getTextKey(), UnitProf1.getTextKey(), UnitClass.getTextKey()))
-	if not canDoLostTribe4(argsList):
-		szHelp += "\n\n" + localText.getText("TXT_KEY_EVENT_LOST_TRIBE_4B_HELP", (UnitClass.getTextKey(),))
-	return szHelp
+	if unit.isNone():
+		return False
 
-def applyLostTribe4(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	ChangeFatherPoints(argsList)
-	iUnitClassType = CvUtil.findInfoTypeNum('UNITCLASS_SCOUT')
-	iProfession = CvUtil.findInfoTypeNum("PROFESSION_SCOUT")
-	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
-	if iUnitType != -1:
-		player.initUnit(iUnitType, iProfession, kTriggeredData.iPlotX, kTriggeredData.iPlotY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH, 0)
-	(unitnew, iter) = player.firstUnit()
-	while (unitnew):
-		if unitnew.getUnitClassType() == CvUtil.findInfoTypeNum('UNITCLASS_SCOUT'):
-			break
-		(unitnew, iter) = player.nextUnit(iter)
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	unitnew.convert(unit)
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_SCOUT"):
+		return False
+
+	if unit.getProfession() != gc.getInfoTypeForString("PROFESSION_SCOUT"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	# Hard check: exact trigger plot
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	# Hard check: unit is really still on that plot stack
+	if unit.at(kTriggeredData.iPlotX, kTriggeredData.iPlotY) == False:
+		return False
+
+	if plot.getFeatureType() not in (
+		gc.getInfoTypeForString("FEATURE_JUNGLE"),
+		gc.getInfoTypeForString("FEATURE_MANGROVE"),
+		gc.getInfoTypeForString("FEATURE_TROPICAL_GROVES"),
+	):
+		return False
+
+	return TriggerChance(argsList)
+
 
 ######## Pacific Quest ###########
 
