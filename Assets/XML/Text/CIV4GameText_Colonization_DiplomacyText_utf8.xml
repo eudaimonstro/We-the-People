@@ -6093,6 +6093,7 @@
 		<Italian>Detesto gli spargimenti di sangue, ma temo che se non mi dai ciò che chiedo sarò costretto a fare un'eccezione.</Italian>
 		<Spanish>Odio derramar sangre, pero me temo que, si no me dais lo que os pido, seré capaz de hacer una excepción.</Spanish>
 		<Russian>Я ненавижу кровопролитие, брат [CT_NAME]. Мир на Земле! - это мой священный обет. Молю тебя: помоги мне в этот час не стать клятвопреступником. Соблазн велик.</Russian>
+		<Hungarian>Gyűlölöm a vérontást, [CT_NAME] testvérem. Béke a földön! – ez a szent fogadalmam. Könyörgöm neked: segíts nekem ebben a nehéz órában, hogy ne szegjem meg az eskümet! Nagy a kísértés. </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BOLIVAR_1</Tag>
