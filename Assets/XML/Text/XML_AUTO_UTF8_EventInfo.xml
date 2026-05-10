@@ -2608,6 +2608,12 @@
 		<Russian>Это не просто шалость, это кража! Пошлите солдат, чтобы поймать этих преступников. Они будут строго наказаны!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_WINE_THEFT_2_HELP</Tag>
+		<English>[ICON_BULLET]%d1 %s2 appear near the settlement.</English>
+		<German>[ICON_BULLET]%d1 %s2 erscheinen nahe der Siedlung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_WINTER_1</Tag>
 		<English>Send as many furs and coats to Europe as we can spare.</English>
 		<French>Envoyez autant de fourrures et de manteaux vers l'Europe que nous sommes en mesure d'offrir.</French>
@@ -2623,9 +2629,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WITCHTRIAL_2</Tag>
-		<English>A grave accusation that must be taken seriously! Impound them, and send for a learned expert from Europe to deliberate the matter.</English>
+		<English>A grave accusation that must be taken seriously! Impound them, and send for a cleric to deliberate the matter.</English>
 		<French>Une accusation aussi grave doit être prise sérieusement ! Gardez les à vue, et envoyez un expert d'Europe pour délibérer sur le sujet.</French>
-		<German>Eine schwere Anschuldigung, die aber ernst genommen werden muss. Nehmt sie vorläufig fest und schickt nach einem Experten aus Europa um den Sachverhalt zu klären.</German>
+		<German>Eine schwere Anschuldigung, die aber ernst genommen werden muss. Nehmt sie vorläufig fest und schickt nach einem Geistlichen um den Sachverhalt zu klären.</German>
 		<Russian>Серьезное обвинение, к которому следует отнестись серьезно! Арестуйте их и пошлите за образованным экспертом из Европы для обсуждения этого вопроса.</Russian>
 	</TEXT>
 	<TEXT>

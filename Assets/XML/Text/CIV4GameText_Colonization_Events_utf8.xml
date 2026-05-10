@@ -1125,6 +1125,12 @@
 		<Russian>Это семейное дело. Мы не имеем права вмешиваться.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_MILKMAID_IN_NEED_3</Tag>
+		<English>We don’t want any trouble in the town. We should try to reach an amicable settlement with the young woman’s family.</English>
+		<German>Wir wollen keinen Aufruhr in der Stadt. Wir sollten versuchen uns mit der Familie des Mädchens gütlich zu einigen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_MILKMAID_IN_NEED_HELP</Tag>
 		<English>Criminals will attack the city.</English>
 		<French>Des criminels vont attaquer la ville.</French>
@@ -1154,9 +1160,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HERDER_IN_NEED_HELP</Tag>
-		<English>Wolves attack the pigpen.</English>
+		<English>[COLOR_HIGHLIGHT_TEXT]Wolves[COLOR_REVERT] attack the pigpen.</English>
 		<French> Des loups attaquent la porcherie.</French>
-		<German>Wölfe greifen den Stall an.</German>
+		<German>[COLOR_HIGHLIGHT_TEXT]Wölfe[COLOR_REVERT] greifen den Stall an.</German>
 		<Russian>Волки атакуют свинарник.</Russian>
 	</TEXT>
 	<TEXT>
@@ -2486,7 +2492,7 @@
 		<Tag>TXT_KEY_EVENT_TRIGGER_WINE_PLANTS</Tag>
 		<English>A European vintager offers to sell us his best grapevines. Of course he wants be paid in gold.</English>
 		<French>Un vigneron européen propose de vendre l'un de ses meilleurs cépages. Il demande de l'or en contrepartie.</French>
-		<German>Ein Winzer aus Europa bietet uns seine besten Rebstöcke zum Kauf. Er verlangt dafür natürlich gold.</German>
+		<German>Ein Winzer aus Europa bietet uns seine besten Rebstöcke zum Kauf. Er verlangt dafür natürlich Gold.</German>
 		<Russian>Европейский виноградарь предлагает продать нам свои лучшие виноградные лозы. И конечно, он хочет, чтобы ему платили золотом.</Russian>
 	</TEXT>
 	<TEXT>
@@ -6687,12 +6693,6 @@
 		<English>The atmosphere between the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] empire and some of the Natives has improved.</English>
 		<German>Die Stimmung zwischen dem [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Königreich und einigen Ureinwohnern hat sich verbessert.</German>
 		<Russian>Отношения между империей [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] и некоторыми индейцами улучшаются.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_STIRRED_UP_NATIVES_LANDGRABBING_GOLD_HELP</Tag>
-		<English>Pay %d1 gold to the %s2 as compensation.</English>
-		<German>Zahlt %d1 Gold als Entschädigung an die %s2.</German>
-		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_SACRED_GROUNDS_1</Tag>

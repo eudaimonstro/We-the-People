@@ -3442,7 +3442,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyWashedOutCooldown</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -3466,7 +3466,7 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>-20</iGold>
+			<iGold>-200</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
@@ -3503,7 +3503,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyWashedOutCooldown</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -6918,12 +6918,12 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlot</PythonCallback>
+			<PythonCallback>applyMilkmaidInNeed1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp>getHelpMilkmaidInNeed</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>300</iAIValue>
+			<iAIValue>200</iAIValue>
 			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
@@ -6949,6 +6949,67 @@
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType/>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback/>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp/>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>300</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_MILKMAID_IN_NEED_3</Type>
+			<Description>TXT_KEY_EVENT_MILKMAID_IN_NEED_3</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>-500</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>UNITCLASS_MILK_MAID</UnitClass>
+			<iNumFreeUnits>1</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -7040,14 +7101,13 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>spawnBarbarianUnitAdjacentToPlotAndFriendlyOnSamePlot</PythonCallback>
+			<PythonCallback>applyHerderInNeed1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
-			<HelpText>TXT_KEY_EVENT_HERDER_IN_NEED_HELP</HelpText>
+			<PythonHelp>getHelpHerderInNeed</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>300</iAIValue>
-			<iGenericParameter1>UNITCLASS_WOLF</iGenericParameter1>
+			<iGenericParameter1>UNITCLASS_WOLF_COMBAT</iGenericParameter1>
 			<iGenericParameter2>1</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>UNITCLASS_HERDER</iGenericParameter4>
@@ -13501,7 +13561,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -13521,7 +13581,7 @@
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
 			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
+			<iRevoltTurns>2</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -13543,7 +13603,7 @@
 			<ClearEvents/>
 			<PythonCallback/>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
+			<PythonCanDo>canApplyWitchTrial1</PythonCanDo>
 			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
@@ -13670,8 +13730,8 @@
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>1</iGenericParameter1>
-			<iGenericParameter2>50</iGenericParameter2>
-			<iGenericParameter3>50</iGenericParameter3>
+			<iGenericParameter2>100</iGenericParameter2>
+			<iGenericParameter3>100</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -22183,7 +22243,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -22229,7 +22289,7 @@
 			<PythonHelp>getHelpWineTheft1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>-50</iGenericParameter1>
+			<iGenericParameter1>50</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -22244,7 +22304,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -22252,8 +22312,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_CRIMINAL</UnitClass>
-			<iNumFreeUnits>2</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -22284,14 +22344,14 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyWineTheft2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpWineTheft2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>500</iAIValue>
-			<iGenericParameter1>0</iGenericParameter1>
-			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter1>UNITCLASS_REVOLTING_CRIMINAL</iGenericParameter1>
+			<iGenericParameter2>2</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
@@ -94612,7 +94672,7 @@
 			<PythonCallback>applyStirredUpNativesLandgrabbingGold</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo>canDoStirredUpNativesLandgrabbingGold</PythonCanDo>
-			<PythonHelp>getHelpStirredUpNativesLandgrabbingGold</PythonHelp>
+			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>

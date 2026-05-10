@@ -6723,56 +6723,157 @@ def canApplyBeerRobbery3(argsList):
 
 ######## WINE THEFT ###########
 
-def canTriggerWineTheft(argsList):
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone():
+def canTriggerWineTheftCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
 		return False
-	if not player.isPlayable():
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
 		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
+
+	iYield = gc.getInfoTypeForString("YIELD_WINE")
+
 	eEvent1 = gc.getInfoTypeForString("EVENT_WINE_THEFT_1")
 	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_WINE")
+
 	quantity = event1.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < quantity:
 		return False
+
 	return True
 
 def applyWineTheft1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_WINE")
 
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < quantity:
 		return
-	city.changeYieldStored(iYield, quantity)
+
+	city.changeYieldStored(iYield, -quantity)
 
 def getHelpWineTheft1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return u""
+
 	iYield = gc.getInfoTypeForString("YIELD_WINE")
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-	return szHelp
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if quantity == 0:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_YIELD_LOOSE",
+		(-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+	)
+
+def applyWineTheft2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	iEnemyClass = event.getGenericParameter(1)
+	iAmount = event.getGenericParameter(2)
+
+	if iEnemyClass == -1 or iAmount <= 0:
+		return
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return
+
+	iEnemyType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iEnemyClass)
+	if iEnemyType == -1:
+		return
+
+	for i in range(iAmount):
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				plot = plotXY(city.getX(), city.getY(), iDX, iDY)
+				if plot is None or plot.isNone():
+					continue
+				if plot.isWater():
+					continue
+				if plot.isPeak():
+					continue
+				if plot.isImpassable():
+					continue
+				if plot.isCity():
+					continue
+				if plot.isUnit():
+					continue
+
+				barbPlayer.initUnit(
+					iEnemyType,
+					ProfessionTypes.NO_PROFESSION,
+					plot.getX(),
+					plot.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+				break
+
+def getHelpWineTheft2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	iUnitClass = event.getGenericParameter(1)
+	iAmount = event.getGenericParameter(2)
+
+	if iUnitClass == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_WINE_THEFT_2_HELP",
+		(iAmount, gc.getUnitClassInfo(iUnitClass).getTextKey())
+	)
 
 ######## LUXURY GOODS ###########
 
@@ -10596,20 +10697,6 @@ def applyStirredUpNativesLandgrabbingGold(argsList):
 
 	player.changeGold(-iGold)
 	nativePlayer.changeGold(iGold)
-
-
-def getHelpStirredUpNativesLandgrabbingGold(argsList):
-	kTriggeredData = argsList[0]
-
-	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
-	if player is None:
-		return u""
-
-	return localText.getText(
-		"TXT_KEY_EVENT_STIRRED_UP_NATIVES_LANDGRABBING_GOLD_HELP",
-		(_sunLandgrabbingScaledGold(), nativePlayer.getCivilizationDescription(0))
-	)
-
 
 ######## Native Sacred Grounds Event ###########
 
@@ -18870,7 +18957,109 @@ def getHelpLandtransportAttack(argsList):
 
 ######## Milkmaid in Need ###########
 
-hasCattleBonus = has_plot_this_bonus("BONUS_CATTLE")
+def canTriggerMilkmaidInNeedCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	trigger = gc.getEventTriggerInfo(eTrigger)
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			plot = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.getOwner() != player.getID():
+				continue
+
+			if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) > 2:
+				continue
+
+			iImprovement = plot.getImprovementType()
+
+			for i in range(trigger.getNumImprovementsRequired()):
+				if iImprovement == trigger.getImprovementRequired(i):
+					return True
+
+	return False
+
+
+def applyMilkmaidInNeed1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	iEnemyClass = event.getGenericParameter(1)
+	iAmount = event.getGenericParameter(2)
+
+	if iEnemyClass == -1 or iAmount <= 0:
+		return
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return
+
+	iEnemyType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iEnemyClass)
+	if iEnemyType == -1:
+		return
+
+	for i in range(iAmount):
+		enemyUnit = None
+
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				loopPlot = plotXY(city.getX(), city.getY(), iDX, iDY)
+				if loopPlot is None or loopPlot.isNone():
+					continue
+				if loopPlot.isWater():
+					continue
+				if loopPlot.isImpassable():
+					continue
+				if loopPlot.isPeak():
+					continue
+				if loopPlot.isCity():
+					continue
+				if loopPlot.isUnit():
+					continue
+
+				enemyUnit = barbPlayer.initUnit(
+					iEnemyType,
+					ProfessionTypes.NO_PROFESSION,
+					loopPlot.getX(),
+					loopPlot.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+				break
+
+			if enemyUnit is not None:
+				break
+
+		if enemyUnit is not None and not enemyUnit.isNone():
+			if enemyUnit.canMoveInto(city.plot(), True, False, False):
+				enemyUnit.attack(city.plot(), False)
 
 getHelpMilkmaidInNeed = get_simple_help("TXT_KEY_EVENT_MILKMAID_IN_NEED_HELP")
 
@@ -18880,7 +19069,162 @@ getHelpWhaleAttack = get_simple_help("TXT_KEY_WHALE_ATTACK_HELP")
 
 ######## Pig Herder in Need ###########
 
-hasPigBonus = has_plot_this_bonus("BONUS_PIG")
+def canTriggerHerderInNeedCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	trigger = gc.getEventTriggerInfo(eTrigger)
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			plot = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.getOwner() != player.getID():
+				continue
+
+			if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) > 2:
+				continue
+
+			iImprovement = plot.getImprovementType()
+
+			for i in range(trigger.getNumImprovementsRequired()):
+				if iImprovement == trigger.getImprovementRequired(i):
+					return True
+
+	return False
+
+
+def _getHerderInNeedImprovementPlot(city, player, trigger):
+	if city.isNone() or player.isNone():
+		return None
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			plot = plotXY(city.getX(), city.getY(), iDX, iDY)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.getOwner() != player.getID():
+				continue
+
+			if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) > 2:
+				continue
+
+			iImprovement = plot.getImprovementType()
+
+			for i in range(trigger.getNumImprovementsRequired()):
+				if iImprovement == trigger.getImprovementRequired(i):
+					return plot
+
+	return None
+
+
+def applyHerderInNeed1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
+
+	targetPlot = _getHerderInNeedImprovementPlot(city, player, trigger)
+	if targetPlot is None or targetPlot.isNone():
+		return
+
+	iEnemyClass = event.getGenericParameter(1)
+	iEnemyAmount = event.getGenericParameter(2)
+	iFriendlyClass = event.getGenericParameter(4)
+
+	defenderUnit = None
+	if iFriendlyClass != -1:
+		iFriendlyType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iFriendlyClass)
+
+		if iFriendlyType != -1:
+			defenderUnit = player.initUnit(
+				iFriendlyType,
+				ProfessionTypes.NO_PROFESSION,
+				city.getX(),
+				city.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+	if defenderUnit is None or defenderUnit.isNone():
+		return
+
+	if iEnemyClass == -1 or iEnemyAmount <= 0:
+		return
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return
+
+	iEnemyType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iEnemyClass)
+	if iEnemyType == -1:
+		return
+
+	for i in range(iEnemyAmount):
+		hostileUnit = None
+
+		for iDX in range(-1, 2):
+			for iDY in range(-1, 2):
+				if iDX == 0 and iDY == 0:
+					continue
+
+				spawnPlot = plotXY(city.getX(), city.getY(), iDX, iDY)
+				if spawnPlot is None or spawnPlot.isNone():
+					continue
+				if spawnPlot.isWater():
+					continue
+				if spawnPlot.isPeak():
+					continue
+				if spawnPlot.isImpassable():
+					continue
+				if spawnPlot.isCity():
+					continue
+				if spawnPlot.isUnit():
+					continue
+
+				hostileUnit = barbPlayer.initUnit(
+					iEnemyType,
+					ProfessionTypes.NO_PROFESSION,
+					spawnPlot.getX(),
+					spawnPlot.getY(),
+					UnitAITypes.NO_UNITAI,
+					DirectionTypes.DIRECTION_SOUTH,
+					0
+				)
+				break
+
+			if hostileUnit is not None:
+				break
+
+		if hostileUnit is not None and not hostileUnit.isNone():
+			if hostileUnit.canMoveInto(city.plot(), True, False, False):
+				hostileUnit.attack(city.plot(), False)
+
+
+getHelpHerderInNeed = get_simple_help("TXT_KEY_EVENT_HERDER_IN_NEED_HELP")
 
 # adjacent Plot
 def spawnBarbarianUnitAdjacentToPlotAndFriendlyOnSamePlot(argsList):
@@ -20507,3 +20851,125 @@ def getHelpManFromTheWildernessUnit(argsList):
 		"TXT_KEY_EVENT_MAN_FROM_THE_WILDERNESS_HELP",
 		(UnitClassInfo.getTextKey(),)
 	)
+
+######## Witch Trial ###########
+
+def canApplyWitchTrial1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	return True
+
+######## PLANTS ###########
+
+def canTriggerPlants(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.getBonusType() != -1:
+		return False
+
+	# Plot must be inside this exact city's workable radius
+	if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) > 2:
+		return False
+
+	return True
+
+######## Washed Out ###########
+
+WASHED_OUT_BASE_COOLDOWN_TURNS = 50
+
+def _washedOutScaledCooldown():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, WASHED_OUT_BASE_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100)
+
+
+def canTriggerWashedOut(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if _isWashedOutCooldownActive(player):
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.getRouteType() not in (
+		gc.getInfoTypeForString("ROUTE_ROAD"),
+		gc.getInfoTypeForString("ROUTE_COUNTRY_ROAD"),
+		gc.getInfoTypeForString("ROUTE_PLASTERED_ROAD"),
+	):
+		return False
+
+	return True
+
+
+def applyWashedOutCooldown(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	_startWashedOutCooldown(player)
+
+
+def _isWashedOutCooldownActive(player):
+	return CyGame().getGameTurn() < _getWashedOutReadyTurn(player)
+
+
+def _getWashedOutReadyTurn(player):
+	szData = player.getScriptData()
+	szKey = "WASHED_OUT_READY_TURN="
+
+	for part in szData.split(";"):
+		if part.startswith(szKey):
+			return int(part[len(szKey):])
+
+	return 0
+
+
+def _startWashedOutCooldown(player):
+	iReadyTurn = CyGame().getGameTurn() + _washedOutScaledCooldown()
+
+	szKey = "WASHED_OUT_READY_TURN="
+	szData = player.getScriptData()
+	parts = []
+
+	for part in szData.split(";"):
+		if part and not part.startswith(szKey):
+			parts.append(part)
+
+	parts.append(szKey + str(iReadyTurn))
+	player.setScriptData(";".join(parts))
