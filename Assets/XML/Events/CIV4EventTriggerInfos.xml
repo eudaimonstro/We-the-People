@@ -1906,7 +1906,7 @@
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired>
-					<UnitClass>UNITCLASS_CONVERTED_NATIVE</UnitClass>
+					<UnitClass>UNITCLASS_RANGER</UnitClass>
 					<UnitClass>UNITCLASS_VETERAN</UnitClass>
 					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
 					<UnitClass>UNITCLASS_SCOUT</UnitClass>
@@ -1935,7 +1935,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -1949,7 +1949,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerAtTheSword</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>

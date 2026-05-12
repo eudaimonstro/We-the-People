@@ -20973,3 +20973,81 @@ def _startWashedOutCooldown(player):
 
 	parts.append(szKey + str(iReadyTurn))
 	player.setScriptData(";".join(parts))
+
+######## At the sword ###########
+
+AT_THE_SWORD_BASE_COOLDOWN_TURNS = 30
+
+def _atTheSwordScaledCooldown():
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	return max(1, AT_THE_SWORD_BASE_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100)
+
+
+def canTriggerAtTheSword(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if _isAtTheSwordCooldownActive(player):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	return True
+
+
+def applyAtTheSwordCooldown(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	_startAtTheSwordCooldown(player)
+
+
+def _isAtTheSwordCooldownActive(player):
+	return CyGame().getGameTurn() < _getAtTheSwordReadyTurn(player)
+
+
+def _getAtTheSwordReadyTurn(player):
+	szData = player.getScriptData()
+	szKey = "AT_THE_SWORD_READY_TURN="
+
+	for part in szData.split(";"):
+		if part.startswith(szKey):
+			return int(part[len(szKey):])
+
+	return 0
+
+
+def _startAtTheSwordCooldown(player):
+	iReadyTurn = CyGame().getGameTurn() + _atTheSwordScaledCooldown()
+
+	szKey = "AT_THE_SWORD_READY_TURN="
+	szData = player.getScriptData()
+	parts = []
+
+	for part in szData.split(";"):
+		if part and not part.startswith(szKey):
+			parts.append(part)
+
+	parts.append(szKey + str(iReadyTurn))
+	player.setScriptData(";".join(parts))
