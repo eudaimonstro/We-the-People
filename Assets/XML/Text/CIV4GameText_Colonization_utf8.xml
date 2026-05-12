@@ -414,7 +414,7 @@
 		<Italian>-----------------------[NEWLINE][COLOR_HIGHLIGHT_TEXT]Produzione[COLOR_REVERT] finale : %d1%F2_Icon</Italian>
 		<Spanish>-----------------------[NEWLINE][COLOR_HIGHLIGHT_TEXT]Producción[COLOR_REVERT] final : %d1 %F2_Icon</Spanish>
 		<Russian>-----------------------[NEWLINE]Итого [COLOR_HIGHLIGHT_TEXT]Производство[COLOR_REVERT] : %d1%F2_Icon</Russian>
-		<Hungarian>-----------------------[NEWLINE]Összes [COLOR_HIGHLIGHT_TEXT]Termelés[COLOR_REVERT]: %d1[ICON_PRODUCTION]</Hungarian>
+		<Hungarian>-----------------------[NEWLINE]Összes [COLOR_HIGHLIGHT_TEXT]Termelés[COLOR_REVERT]: %d1%F2_Icon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHOOSE_GOODS</Tag>
@@ -592,7 +592,7 @@
 		<Italian>[ICON_BULLET]Richiede %d1_Quantity %F2_Icon %s3_yield_name</Italian>
 		<Spanish>[ICON_BULLET]Requiere %d1_Quantity de %F2_Icon %s3_yield_name</Spanish>
 		<Russian>[ICON_BULLET]Требуется : %d1_Quantity %F2_Icon %s3_yield_name</Russian>
-		<Hungarian>[ICON_BULLET]%d1_Quantity %F2_Icon szükséges</Hungarian>
+		<Hungarian>[ICON_BULLET]%d1_Quantity %F2_Icon %s3_yield_name</Hungarian>
 	</TEXT>
 <!-- ZorG. colopedia. unit equipment. END -->
 	<TEXT>
