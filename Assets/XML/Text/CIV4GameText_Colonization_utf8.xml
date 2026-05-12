@@ -612,6 +612,7 @@
 		<German>Vorräte</German>
 		<Italian>Riserve</Italian>
 		<Spanish>Reservas</Spanish>
+		<Hungarian>Raktározott</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCREEN_NET</Tag>
@@ -620,6 +621,7 @@
 		<German>Netto</German>
 		<Italian>Netto</Italian>
 		<Spanish>Neto</Spanish>
+		<Hungarian>Nettó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROFESSION_OUTPUT</Tag>
@@ -629,6 +631,7 @@
 		<Italian>%d1%F2 per cittad</Italian>
 		<Spanish>%d1%F2 por ciudadano</Spanish>
 		<Russian>%d1%F2 на работника</Russian>
+		<Hungarian>%d1%F2 Lakosonként</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_OUTPUT_BY_RESOURCE</Tag>
@@ -670,6 +673,7 @@
 		<Italian>Il prezzo di [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] in %s2_civ è salito a %d3[ICON_GOLD]</Italian>
 		<Spanish>El precio [NUM1:del:de la:de los:de las] [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] en %s2_civ ha subido a %d3[ICON_GOLD].</Spanish>
 		<Russian>Цена на [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] в %s2_civ поднялась до %d3[ICON_GOLD]</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Áremelkedés![COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] ára %s2_civ piacán %d3[ICON_GOLD] lett.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PRICE_FALL</Tag>
@@ -679,6 +683,7 @@
 		<Italian>Il prezzo di [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] in %s2_civ è sceso a %d3[ICON_GOLD]</Italian>
 		<Spanish>El precio [NUM1:del:de la:de los:de las] [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] en %s2_civ ha bajado a %d3[ICON_GOLD].</Spanish>
 		<Russian>Цена на [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] в %s2_civ упала до %d3[ICON_GOLD]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Árcsökkenés![COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] ára %s2_civ piacán %d3[ICON_GOLD] lett.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUY_AND_SELL_YIELD</Tag>
@@ -688,6 +693,7 @@
 		<Italian>Europe	 [TAB]Vendere: %d1_Price[ICON_GOLD] / Comperare: %d2_Price[ICON_GOLD]</Italian>
 		<Spanish>Europe	 [TAB]Vender: %d1_Price[ICON_GOLD] / Comprar: %d2_Price[ICON_GOLD]</Spanish>
 		<Russian>Европа	   Прод. : %d1_Price[ICON_GOLD] / Куп. : %d2_Price[ICON_GOLD]</Russian>
+		<Hungarian>Európa  [TAB]Eladás : %d1_Price[ICON_GOLD] / Vétel : %d2_Price[ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUY_AND_SELL_YIELD_AFRICA</Tag>
@@ -697,6 +703,7 @@
 		<Italian>Africa	  [TAB]Vendere: %d1_Price[ICON_GOLD] / Comperare: %d2_Price[ICON_GOLD]</Italian>
 		<Spanish>África	  [TAB]Vender: %d1_Price[ICON_GOLD] / Comprar: %d2_Price[ICON_GOLD]</Spanish>
 		<Russian>Африка	  Прод. : %d1_Price[ICON_GOLD] / Куп. : %d2_Price[ICON_GOLD]</Russian>
+		<Hungarian>Afrika  [TAB]Eladás : %d1_Price[ICON_GOLD] / Vétel : %d2_Price[ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUY_AND_SELL_YIELD_PORT_ROYAL</Tag>
@@ -706,6 +713,7 @@
 		<Italian>Port Royal	 [TAB]Vendere: %d1_Price[ICON_GOLD] / Comperare: %d2_Price[ICON_GOLD]</Italian>
 		<Spanish>Port Royal	 [TAB]Vender: %d1_Price[ICON_GOLD] / Comprar: %d2_Price[ICON_GOLD]</Spanish>
 		<Russian>Порт Ройал  Прод. : %d1_Price[ICON_GOLD] / Куп. : %d2_Price[ICON_GOLD]</Russian>
+		<Hungarian>Port Royal[TAB]Eladás : %d1_Price[ICON_GOLD] / Vétel : %d2_Price[ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_TAX_RATE</Tag>
@@ -715,6 +723,7 @@
 		<Italian>Percentuale tasse : %d1%% (%d2%%)</Italian>
 		<Spanish>Carga impositiva : %d1%% (%d2%%)</Spanish>
 		<Russian>Ставка налога : %d1%% (max. %d2%%)</Russian>
+		<Hungarian>Adókulcs : %d1%% (max. %d2%%)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_BRIBE_RATE</Tag>
@@ -724,12 +733,14 @@
 		<Italian>Percentuale tasse : %d1%%</Italian>
 		<Spanish>Carga impositiva : %d1%%</Spanish>
 		<Russian>Ставка налога : %d1%%</Russian>
+		<Hungarian>Adókulcs : %d1%%</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_BRIBE_RATE_FLAT</Tag>
 		<English>Our tax rate is like our ships, firmly docked!</English>
 		<French>Notre taxe est arrimée solide à quai, comme nos navires ! Elle ne prendra pas le large !</French>
 		<Russian>Наш процент с торговых сделок надежно закреплен, как и наши корабли у причалов! В отличии от настроения Короля, он всегда постоянный!</Russian>
+		<Hungarian>Az adókulcsunk olyan, mint a hajóink: szilárdan le van kötve!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TAX_RATE_LOWERED</Tag>
@@ -739,6 +750,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] ha abbassato la tua percentuale di tasse da %d2_old_rate%% a %d3_new_rate%%</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] ha reducido vuestra carga impositiva de %d2_old_rate%% a %d3_new_rate%%.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] понизил ставку налога для вас с %d2_old_rate%% до %d3_new_rate%%</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] csökkentette az adókulcsodat %d2_old_rate%%-ról %d3_new_rate%%-ra</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TAX_RATE_CHANGED</Tag>
@@ -748,6 +760,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] ha aumentato la tua percentuale di tasse dal %d2_old_rate%% al %d3_new_rate%%</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] ha subido vuestra carga impositiva de %d2_old_rate%% a %d3_new_rate%%.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] повысил ставку налога для вас с %d2_old_rate%% до %d3_new_rate%%</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] megemelte az adókulcsodat %d2_old_rate%%-ról %d3_new_rate%%-ra</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BOSTON_TEA_PARTY</Tag>
@@ -757,6 +770,7 @@
 		<Italian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]Bellicosi coloni %s1_civ_adjective hanno distrutto tutte le partite di %s3_yield per protestare con l'eccessiva tassazione senza rappresentanza !</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]¡Los enojados colonos %s1:3_civ_adjective destruyen todos los cargamentos de %s3_yield en protesta por los impuestos excesivos sin representantes !</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]Разгневанные %s1_civ_adjective уничтожают все запасы [COLOR_FONT_CREAM]%s3_yield[COLOR_REVERT] в знак протеста против чрезмерного налогообложения без представительства в Парламенте!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]Dühös %s1_civ_adjective telepesek megsemmisítették a teljes %s3_yield szállítmányt, hogy tiltakozzanak a hátuk mögött megszavazott túl magas adók miatt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODS_LOST</Tag>
@@ -766,6 +780,7 @@
 		<Italian>[COLOR_WARNING_TEXT]%s3_city : [COLOR_REVERT]%d1_number%F2_yield_icon distrutti a causa della limitata capienza dei depositi</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]%s3_city : [COLOR_REVERT]¡Se [NUM1:ha:han] perdido %d1_number %F2_yield_icon debido la capacidad de almacenamiento limitada !</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s3_city : [COLOR_REVERT]%d1_number%F2_yield_icon было потеряно из-за ограниченной емкости хранилища !</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s3_city : [COLOR_REVERT]%d1_number%F2_yield_icon megsemmisült a korlátozott raktárkapacitás miatt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_YIELD_STORAGE</Tag>
@@ -775,6 +790,7 @@
 		<Italian>[ICON_BULLET]%D1 deposito beni</Italian>
 		<Spanish>[ICON_BULLET]%D1 mercancías almacenadas</Spanish>
 		<Russian>[ICON_BULLET]%D1 к вместимости склада</Russian>
+		<Hungarian>[ICON_BULLET]%D1 áru elraktározva</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IN_BOUND</Tag>
@@ -784,6 +800,7 @@
 		<Italian>In arrivo</Italian>
 		<Spanish>Entrantes</Spanish>
 		<Russian>Прибывает</Russian>
+		<Hungarian>Érkező</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_OUTBOUND</Tag>
@@ -793,6 +810,7 @@
 		<Italian>In partenza</Italian>
 		<Spanish>Salientes</Spanish>
 		<Russian>Отплывает</Russian>
+		<Hungarian>Kiutazó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IN_PORT</Tag>
@@ -802,6 +820,7 @@
 		<Italian>In porto</Italian>
 		<Spanish>En puerto</Spanish>
 		<Russian>В порту</Russian>
+		<Hungarian>Kikötőben</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HIRE</Tag>
@@ -810,6 +829,7 @@
 		<German>Erwerben</German>
 		<Italian>Acquista</Italian>
 		<Spanish>Comprar</Spanish>
+		<Hungarian>Vásárlás</Hungarian>
 	</TEXT>
 	<!--<TEXT> should we use this tag?
 		<Tag>TXT_KEY_CHIEF_GOODY_GOLD</Tag>
@@ -818,15 +838,17 @@
 		<German>Bitte gebt Eurem Häuptling als Zeichen unserer Freundschaft diese Perlen (im Wert von %d1_value[ICON_GOLD]).</German>
 		<Italian>Dai queste perline (del valore di %d1_value[ICON_GOLD]) al tuo capo come segno della nostra amicizia.</Italian>
 		<Spanish>Por favor, dad estos abalorios (por valor de %d1_value [ICON_GOLD]) a vuestro jefe como prueba de nuestra amistad.</Spanish>
+		<Hungarian>Kérlek, vidd el ezeket a gyöngyöket (%d1_value[ICON_GOLD] értékben) a törzsfőnöködnek, barátságunk jelképeként.</Hungarian>
 	</TEXT>-->
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_GOODY_SOME_GOLD</Tag>
-		<English>Take this talisman, it will protect you on your journeys. (Rock crystal worth %d1_value[ICON_GOLD] presented)</English>
+		<English>Take this talisman. It will protect you on your journeys. (Rock crystal worth %d1_value[ICON_GOLD] presented)</English>
 		<French>Veuillez donner ces perles (d'une valeur de %d1_value[ICON_GOLD]) à votre chef en gage d'amitié.</French>
 		<German>Nehmt diesen Talisman, er wird Euch auf Euren Reisen schützen. (Bergkristall im Wert von %d1_value[ICON_GOLD] überreicht)</German>
 		<Italian>Dai queste perline (del valore di %d1_value[ICON_GOLD]) al tuo capo come segno della nostra amicizia.</Italian>
 		<Spanish>Por favor, dad estos abalorios (por valor de %d1_value[ICON_GOLD]) a vuestro jefe como prueba de nuestra amistad.</Spanish>
 		<Russian>Возьмите этот талисман, он защитит вас в ваших путешествиях. (Получен горный хрусталь стоимостью %d1_value[ICON_GOLD])</Russian>
+		<Hungarian>Vedd magadhoz ezt a talizmánt, megvéd téged az utazásaid során! (%d1_value[ICON_GOLD] értékű hegyikristályt adnak át)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_GOODY_MUCH_GOLD</Tag>
@@ -836,6 +858,7 @@
 		<Italian>Dai queste perline (del valore di %d1_value[ICON_GOLD]) al tuo capo come segno della nostra amicizia.</Italian>
 		<Spanish>Por favor, dad estos abalorios (por valor de %d1_value[ICON_GOLD]) a vuestro jefe como prueba de nuestra amistad.</Spanish>
 		<Russian>Примите это ожерелье в знак нашего гостеприимства. (Получено жемчужное ожерелье стоимостью %d1_value[ICON_GOLD])</Russian>
+		<Hungarian>Fogadd el ezt a nyakláncot vendégszeretetünk jeléül! (%d1_value[ICON_GOLD] értékű gyöngy nyakláncot adnak át)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_GOODY_TREASURE</Tag>
@@ -845,15 +868,17 @@
 		<Italian>Dai queste perline (del valore di %d1_value[ICON_GOLD]) al tuo capo come segno della nostra amicizia.</Italian>
 		<Spanish>Por favor, dad estos abalorios (por valor de %d1_value[ICON_GOLD]) a vuestro jefe como prueba de nuestra amistad.</Spanish>
 		<Russian>Примите это и поднесите в дар своим богам, да будут они благосклонны ко всем нам. (Получены драгоценные камни и золотые сосуды на сумму %d1_value[ICON_GOLD]).</Russian>
+		<Hungarian>Fogadd ezt felajánlásként isteneidnek! (Drágakövek és aranyedények %d1_value[ICON_GOLD] értékben)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_GOODY_SCOUT</Tag>
-		<English>Allow us to season your Scout.</English>
+		<English>Allow us to season your scout.</English>
 		<French>Permettez-nous d'abreuver votre Eclaireur.</French>
 		<German>Erlaubt uns, Euren Kundschafter zu unterweisen.</German>
 		<Italian>Permettici di addestrare il tuo scout.</Italian>
 		<Spanish>Permitidnos entrenar a vuestro Batidor.</Spanish>
 		<Russian>Позволь нам обучить твоего Разведчика.</Russian>
+		<Hungarian>Hadd képezzük ki Felderítődet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_GOODY_MAP</Tag>
@@ -863,6 +888,7 @@
 		<Italian>Sistematevi e riposatevi. Fumatevi una pipa e lasciatevi raccontare delle storie sulla nostra patria per rinfrescare il vostro spirito.</Italian>
 		<Spanish>Acomódate y descansa. Fume una pipa y deje que le contemos historias sobre nuestra patria para refrescar su espíritu.</Spanish>
 		<Russian>Садитесь рядом и отдохните. Выкурите трубку и позвольте нам рассказать вам истории о нашей земле. И пусть ваш дух наполняется энергией жизни.</Russian>
+		<Hungarian>Ülj le és pihenj! Szívd el velünk a békepipát, és mesélünk neked a hazánkról, hogy felfrissítsük a lelked.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_FAILED_MISSIONARY</Tag>
@@ -870,6 +896,7 @@
 		<French>Au printemps derniers, un de vos hommes-corbeaux. Mais il s'est montré rustre et a insulté les esprits de nos ancêtres. Nous avons donc du le tabasser et le ligoter. Prenez-le avec vous(Recevez un missionnaire désabusé).</French>
 		<German>Im letzten Frühjahr kam bereits einer eurer Schwarzroben zu uns. Aber er war unhöflich und beleidigte die Geister unserer Ahnen. Wir mussten ihn schlagen und fesseln. Nehmt ihn mit euch. (Desillusionierten Missionar erhalten)</German>
 		<Russian>Буквально прошлой весной к нам пришла одна из ваших черных мантий. Но он был груб и к тому же оскорблял наших предков. Так что нам пришлось немного побить его и связать. Возьми его с собой, пока он еще жив. (Забрать разочаровавшегося миссионера)</Russian>
+		<Hungarian>Éppen tavaly tavasszal érkezett hozzánk az egyik fekete palástosod. De goromba volt és megsértette őseink szellemét. Ezért meg kellett vernünk és kötöznünk. Vidd magaddal! (Kapsz egy Hitehagyott Misszionáriust)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_FAILED_TRADER</Tag>
@@ -877,6 +904,7 @@
 		<French>Au printemps dernier, un de vos marchands vint chez nous. Mais il chercha à vendre de l'eau méchante et nos hommes furent possedé par de mauvais esprits. Nos femmes se mirent en colère et le rossèrent. Prenez-le avec vous (Recevez unn marchand en banqueroute)</French>
 		<German>Im letzten Frühjahr kam bereits einer eurer Händler zu uns. Aber er tauschte schlechtes Wasser für unsere Güter. Unser Männer wurde von bösen Geistern bessessen. Daraufhin wurde unsere Frauen wütend and schlugen ihn. Nehmt ihn mit euch. (Gescheiterten Ureinwohnerhändler erhalten)</German>
 		<Russian>Недавно к нам приехал один из ваших торговцев. Он обменял огненную воду на наши товары и наши люди стали одержимы злыми духами. Тогда наши женщины рассердились и избили его. Забери его, пока он не лишился возможности дышать. (Получите неудачливого торговца)</Russian>
+		<Hungarian>Éppen tavaly tavasszal érkezett hozzánk az egyik kereskedőd. De gonosz vizet adott nekünk és a törzsünk férfi tagjait gonosz szellemek szállták meg. Ezért asszonyaink feldühödtek és megverték. Vidd magaddal! (Kapsz egy Bukott Kereskedőt)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHIEF_GOODY_EXPERIENCE</Tag>
@@ -886,6 +914,7 @@
 		<Italian>Lascia che i nostri guerrieri vi insegnino le nostre tecniche di combattimento, come segno di apertura tra le nostre tribù.</Italian>
 		<Spanish>Que nuestros guerreros os enseñen nuestra manera de combatir como señal de buen entendimiento entre nuestras dos tribus.</Spanish>
 		<Russian>Мы давно живем в этом мире и во многих битвах узнали, что нужно воину, чтобы здесь выжить. Мы дарим вам эти знания в надежде, что вы будете рядом с нами в будущих битвах.</Russian>
+		<Hungarian>Hosszú ideje élünk már ezen a földön és sok csatában megtanultuk, mire van szüksége egy harcosnak ahhoz, hogy itt életben maradjon. Megosztjuk veled ezt a tudást - abban a reményben, hogy a jövőbeni csatákban fegyvertársként mellettünk állsz majd.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAN_IMPROVE_LAND</Tag>
@@ -895,6 +924,7 @@
 		<Italian>[ICON_BULLET]Può migliorare la terra</Italian>
 		<Spanish>[ICON_BULLET]Puede mejorar la tierra</Spanish>
 		<Russian>[ICON_BULLET]Может строить улучшения</Russian>
+		<Hungarian>[ICON_BULLET]Képes a terep fejlesztésére</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAN_ESTABLISH_MISSIONS</Tag>
@@ -904,6 +934,7 @@
 		<Italian>[ICON_BULLET]Può fondare missioni</Italian>
 		<Spanish>[ICON_BULLET]Puede fundar misiones</Spanish>
 		<Russian>[ICON_BULLET]Может основывать миссии</Russian>
+		<Hungarian>[ICON_BULLET]Missziót létesíthet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FASTER_WORK_RATE</Tag>
@@ -913,6 +944,7 @@
 		<Italian>[ICON_BULLET]Migliora la terra il %D1%% più rapidamente</Italian>
 		<Spanish>[ICON_BULLET]Mejora la tierra un %D1%% más rápido</Spanish>
 		<Russian>[ICON_BULLET]Строит улучшения быстрее на %D1%%</Russian>
+		<Hungarian>[ICON_BULLET]%D1%%-kal gyorsabban fejleszti a terepet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MORE_GOLD_GOODIES_AND_CHIEFTAINS</Tag>
@@ -920,6 +952,7 @@
 		<French>[ICON_BULLET]%D1%% d'or en plus des huttes et des chefs de village</French>
 		<German>[ICON_BULLET]%D1%% mehr Gold von Grabstätten und Häuptlingen</German>
 		<Russian>[ICON_BULLET]на %D1%% больше золота от goodies и вождей</Russian>
+		<Hungarian>[ICON_BULLET]%D1%%-kal több arany a Törzsi Kunyhókból és Törzsfőnököktől</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BETTER_MISSION_RATE</Tag>
@@ -929,6 +962,7 @@
 		<Italian>[ICON_BULLET]Le missioni sono più efficaci del %D1%%</Italian>
 		<Spanish>[ICON_BULLET]Las misiones son un %D1%% más eficaces</Spanish>
 		<Russian>[ICON_BULLET]Работа миссий эффективнее на %D1%%</Russian>
+		<Hungarian>[ICON_BULLET]A Missziók %D1%%-kal hatékonyabbak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAN_ESTABLISH_TRADE_POST</Tag>
@@ -936,6 +970,7 @@
 		<French>[ICON_BULLET]Peut établir des comptoirs commerciaux</French>
 		<German>[ICON_BULLET]Kann Handelsposten errichten</German>
 		<Russian>[ICON_BULLET]Может основывать торговые посты</Russian>
+		<Hungarian>[ICON_BULLET]Kereskedelmi Állomást létesíthet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BETTER_TRADE_POST_RATE</Tag>
@@ -943,6 +978,7 @@
 		<French>[ICON_BULLET]Les comptoirs commerciaux sont plus efficaes de %D1%%</French>
 		<German>[ICON_BULLET]Handelsposten sind %D1%% effektiver</German>
 		<Russian>[ICON_BULLET]Работа торговых постов эффективнее на %D1%%</Russian>
+		<Hungarian>[ICON_BULLET]A Kereskedelmi Állomások %D1%%-kal hatékonyabbak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NATIVES_CONVERTED</Tag>
@@ -952,6 +988,7 @@
 		<Italian>Signore, la tua missione ha convertito un nativo a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]</Italian>
 		<Spanish>Excelencia, vuestra misión ha convertido a un Nativo en [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</Spanish>
 		<Russian>Милорд, наша мисиия в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] обратила в истинную христианскую веру одного из индейцев. Братья, вознесем хвалу нашему Господу!</Russian>
+		<Hungarian>Uram, [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] településen a missziód megtérített egy Indiánt az igaz Keresztény hitre. Dicsőség az Úrnak!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_ESTABLISHED</Tag>
@@ -961,6 +998,8 @@
 		<Italian>È stata fondata una missione [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]</Italian>
 		<Spanish>Se ha fundado una misión [COLOR_HIGHLIGHT_TEXT]%s2:2_civ_adjective[COLOR_REVERT] en [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] основали миссию в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</Russian>
+        <Russian>[COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] основали миссию в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</Russian>
+		<Hungarian>Egy [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] misszió megalapítva [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] településen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_REMOVED</Tag>
@@ -970,6 +1009,7 @@
 		<Italian>I nativi a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] hanno rinnegato la missione [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT]</Italian>
 		<Spanish>Los Nativos [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] han abandonado la misión [COLOR_HIGHLIGHT_TEXT]%s2:2_civ_adjective[COLOR_REVERT].</Spanish>
 		<Russian>В [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] индейцы сожгли миссию [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] и бросили миссионера в огонь. Он вызвал их ненависть, потому что разбил древнюю статую идола.</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] misszióját az ottani Indiánok lerombolták és a misszionáriust a tűzbe dobták. Azért váltotta ki a dühüket, mert összetört egy általuk tisztelt ősi bálvány szobrát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_POST_ESTABLISHED</Tag>
@@ -977,6 +1017,7 @@
 		<French>Un comptoir commercial [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] s'est établi à [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] </French>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]%s2:3_civ_adjective[COLOR_REVERT] Handelsposten wurde in [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] eingerichtet.</German>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] открыли торговый пост в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</Russian>
+		<Hungarian>Egy [COLOR_HIGHLIGHT_TEXT]%s2_civ_adjective[COLOR_REVERT] kereskedelmi állomás megalapítva [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] településen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_POST_REMOVED</Tag>
@@ -984,6 +1025,7 @@
 		<French>Les indigènes de [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] ont incendié le comptoir commercial [COLOR_HIGHLIGHT_TEXT]%s2:3_civ_adjective[COLOR_REVERT] avec le marchand encore dedans. Il a suscité leur haine avec ses marchandages impitoyables.</French>
 		<German>In [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] haben die Ureinwohner den [COLOR_HIGHLIGHT_TEXT]%s2:3_civ_adjective[COLOR_REVERT] Handelsposten niedergebrannt und den Händler in die Flammen geworfen. Er hatte sich ihren Hass zugezogen, da er zu stark gefeilscht hat.</German>
 		<Russian>В [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] индейцы сожгли торговый пост [COLOR_HIGHLIGHT_TEXT]%s2:3_civ_adjective[COLOR_REVERT] и бросили торговца в огонь. Он слишком часто торговался с ними по мелочам, а в последний (для него) раз начал оскорблять их предков.</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s2:3_civ_adjective[COLOR_REVERT] kereskedelmi állomását az ottani Indiánok lerombolták és a kereskedőt a tűzbe dobták. Azért váltotta ki a dühüket, mert túl keményen alkudozott.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCORE_BREAKDOWN_POPULATION</Tag>
@@ -1002,6 +1044,7 @@
 		<Italian>%d1 dal territorio (%d2_land/%d3_land_max)</Italian>
 		<Spanish>%d1 por territorio (%d2_land/%d3_land_max)</Spanish>
 		<Russian>%d1 от земли (%d2_land/%d3_land_max)</Russian>
+		<Hungarian>%d1 a területből (%d2_land/%d3_land_max)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCORE_BREAKDOWN_FATHERS</Tag>
@@ -1011,6 +1054,7 @@
 		<Italian>%d1 dai Padri Fondatori (%d2_father/%d3_father_max)</Italian>
 		<Spanish>%d1 por Padres fundadores (%d2_father/%d3_father_max)</Spanish>
 		<Russian>%d1 от Отцов Основателей (%d2_father/%d3_father_max)</Russian>
+		<Hungarian>%d1 az Alapító Atyákból (%d2_father/%d3_father_max)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCORE_BREAKDOWN_TOTAL</Tag>
@@ -1020,6 +1064,7 @@
 		<Italian>------------------------[NEWLINE]Punteggio totale = %d1[NEWLINE]Punteggio vincendo durante questo turno = %d2</Italian>
 		<Spanish>------------------------[NEWLINE]Puntuación total = %d1[NEWLINE]Puntuación por ganar este turno = %d2</Spanish>
 		<Russian>------------------------[NEWLINE]Всего очков = %d1[NEWLINE]Очков для победы на этом ходу = %d2</Russian>
+		<Hungarian>------------------------[NEWLINE]Összpontszám = %d1[NEWLINE]Pontszám a győzelemből e körben = %d2</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PERCENT_CHANGE_ALL_CITIES</Tag>
@@ -1029,6 +1074,7 @@
 		<Italian>[ICON_BULLET]%D1%% %F2 in tutti gli insediam</Italian>
 		<Spanish>[ICON_BULLET]%D1%% %F2 en todos los asentamientos</Spanish>
 		<Russian>[ICON_BULLET]%D1%% %F2 во всех поселениях</Russian>
+		<Hungarian>[ICON_BULLET]%D1%% %F2 minden településen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TAX_RATE_YIELD_INCREASE</Tag>
@@ -1038,6 +1084,7 @@
 		<Italian>[ICON_BULLET]Aumenta la produzione di %F1 della percentuale di tasse</Italian>
 		<Spanish>[ICON_BULLET]Aumenta la producción de %F1 por la carga impositiva</Spanish>
 		<Russian>[ICON_BULLET]Увеличивает производство %F1 на величину налоговой ставки</Russian>
+		<Hungarian>[ICON_BULLET]%F1 termelésnövekedés az adókulcs arányában</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_YIELD_INCREASE</Tag>
@@ -1047,6 +1094,7 @@
 		<Italian>[ICON_BULLET]%D1%F2 per [LINK=literal]%s3_building[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2 por [LINK=literal]%s3_building[\LINK]</Spanish>
 		<Russian>[ICON_BULLET]%D1%F2 для [LINK=literal]%s3_building[\LINK]</Russian>
+		<Hungarian>[ICON_BULLET]%D1%F2 / [LINK=literal]%s3_building[\LINK]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOVES_INCREASE</Tag>
@@ -1056,6 +1104,7 @@
 		<Italian>[ICON_BULLET]%D1[ICON_MOVES]per l'unità [LINK=literal]%s2_unit[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]%D1[ICON_MOVES]para [LINK=literal]%s2_unit[\LINK]</Spanish>
 		<Russian>[ICON_BULLET]%D1[ICON_MOVES]для [LINK=literal]%s2_unit[\LINK]</Russian>
+		<Hungarian>[ICON_BULLET][LINK=literal]%s2_unit[\LINK] : %D1[ICON_MOVES]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_STRENGTH_INCREASE</Tag>
@@ -1065,6 +1114,7 @@
 		<Italian>[ICON_BULLET]%D1%%[ICON_STRENGTH]per l'unità [LINK=literal]%s2_unit[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_STRENGTH][NUM2:al:a la:a los:a las] [LINK=literal]%s2_unit[\LINK]</Spanish>
 		<Russian>[ICON_BULLET]%D1%%[ICON_STRENGTH]для [LINK=literal]%s2_unit[\LINK]</Russian>
+		<Hungarian>[ICON_BULLET][LINK=literal]%s2_unit[\LINK] : %D1%%[ICON_STRENGTH]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_REBEL</Tag>
@@ -1082,6 +1132,7 @@
 		<Italian>%d1%% della popolazione supporta l'indipendenza.</Italian>
 		<Spanish>El %d1%% de la gente apoya la independencia.</Spanish>
 		<Russian>%d1%% жителей поддерживают независимость.</Russian>
+		<Hungarian>A lakosság %d1%%-a támogatja a függetlenséget.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONSTITUTION_POPUP</Tag>
@@ -1091,6 +1142,7 @@
 		<Italian>Scegli [COLOR_HIGHLIGHT_TEXT]%s1_civic[COLOR_REVERT] per la nuova costituzione.</Italian>
 		<Spanish>Por favor, elegid [NUM1:vuestro:vuestra:vuestros:vuestras] [COLOR_HIGHLIGHT_TEXT]%s1_civic[COLOR_REVERT] para vuestra nueva Constitución.</Spanish>
 		<Russian>Пожалуйста, выберите [COLOR_HIGHLIGHT_TEXT]%s1_civic[COLOR_REVERT] для вашей новой конституции.</Russian>
+		<Hungarian>Kérlek, válaszd ki, milyen [COLOR_HIGHLIGHT_TEXT]%s1_civic[COLOR_REVERT] szerepeljen új alkotmányodban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_EXTRA_POPULATION</Tag>
@@ -1100,6 +1152,7 @@
 		<Italian>[ICON_BULLET]%D1 popolazione per insediamento</Italian>
 		<Spanish>[ICON_BULLET]%D1 población por asentamiento</Spanish>
 		<Russian>[ICON_BULLET]%D1 к численности жителей на поселение</Russian>
+		<Hungarian>[ICON_BULLET]%D1 lakosság településenként</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PROFESSION_EXTRA_STRENGTH</Tag>
@@ -1109,6 +1162,7 @@
 		<Italian>[ICON_BULLET]%D1[ICON_STRENGTH] per %s2_profession</Italian>
 		<Spanish>[ICON_BULLET]%D1[ICON_STRENGTH] para %s2_profession</Spanish>
 		<Russian>[ICON_BULLET]%D1[ICON_STRENGTH] для %s2_profession</Russian>
+		<Hungarian>[ICON_BULLET]%D1[ICON_STRENGTH] %s2_profession számára</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_IMMIGRATION_CONVERSION</Tag>
@@ -1118,6 +1172,7 @@
 		<Italian>[ICON_BULLET]Converte %F1_yield d'immigrazione in %F2_yield</Italian>
 		<Spanish>[ICON_BULLET]Convierte %F1_yield de inmigración en %F2_yield</Spanish>
 		<Russian>[ICON_BULLET]Преобразует %F1_yield в %F2_yield</Russian>
+		<Hungarian>[ICON_BULLET]Bevándorlás átalakítása: %F1_yield - %F2_yield</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WORKER_SPEED</Tag>
@@ -1127,6 +1182,7 @@
 		<Italian>[ICON_BULLET]I pionieri costruiscono i miglioramenti del %D1_Mod%% più velocemente</Italian>
 		<Spanish>[ICON_BULLET]Los Pioneros construyen mejoras un %D1_Mod%% más rápido</Spanish>
 		<Russian>[ICON_BULLET]Первопроходцы строят улучшения на %D1_Mod%% быстрее</Russian>
+		<Hungarian>[ICON_BULLET]Az Utászok %D1_Mod%%-kal gyorsabban építenek fejlesztéseket</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NATIVE_BORDERS</Tag>
@@ -1136,6 +1192,7 @@
 		<Italian>[ICON_BULLET]I confini coloniali dominano i confini dei nativi</Italian>
 		<Spanish>[ICON_BULLET]Las fronteras de la colonia dominan las de los Nativos</Spanish>
 		<Russian>[ICON_BULLET]Границы колоний доминируют над границами индейских поселений</Russian>
+		<Hungarian>[ICON_BULLET]A kolóniák határai uralkodnak az őslakosok határain</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REVOLUTION_EUROPE_TRADE</Tag>
@@ -1145,6 +1202,7 @@
 		<Italian>[ICON_BULLET]Può continuare a commerciare con l'Europa</Italian>
 		<Spanish>[ICON_BULLET]Puede continuar el intercambio con Europa</Spanish>
 		<Russian>[ICON_BULLET]Можно продолжать торговать с Европой</Russian>
+		<Hungarian>[ICON_BULLET]A kereskedés Európával folytatható</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUILD_MISSIONARIES</Tag>
