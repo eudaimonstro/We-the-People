@@ -3096,12 +3096,12 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>20</iWeight>
+			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>25</iMinPopulation>
+			<iMinPopulation>1</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -3141,9 +3141,9 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
-			<bGlobal>1</bGlobal>
+			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
@@ -3155,7 +3155,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo/>
+			<PythonCanDo>canTriggerTornado</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -3725,12 +3725,12 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>200</iWeight>
+			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>3</iMinPopulation>
+			<iMinPopulation>1</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -3794,7 +3794,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -3808,7 +3808,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isHuman</PythonCanDo>
+			<PythonCanDo>canTriggerCalm</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -3826,7 +3826,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>200</iWeight>
+			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -3895,7 +3895,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -3909,7 +3909,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isHuman</PythonCanDo>
+			<PythonCanDo>canTriggerTailwind</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -5487,12 +5487,12 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>2000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>15</iMinPopulation>
+			<iMinTreasury>1000</iMinTreasury>
+			<iMinPopulation>1</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -5535,12 +5535,12 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerBookMormon</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -7380,12 +7380,12 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>10</iMinPopulation>
+			<iMinPopulation>5</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -7439,7 +7439,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>hasBisonBonus</PythonCanDo>
+			<PythonCanDo>canTriggerBisons</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -11086,12 +11086,12 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>0</iMinPopulation>
+			<iMinPopulation>10</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -12399,7 +12399,7 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>0</iMinTreasury>
+			<iMinTreasury>2000</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -12407,15 +12407,13 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_PREACHER</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>2</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
+				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
-				<iUnitDistanceWeight>-1</iUnitDistanceWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
@@ -12452,8 +12450,8 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
-			<PythonCanDoCity/>
+			<PythonCanDo/>
+			<PythonCanDoCity>canTriggerBishopAppointmentCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
 		</EventTriggerInfo>

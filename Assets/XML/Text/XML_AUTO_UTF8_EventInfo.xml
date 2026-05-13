@@ -151,6 +151,13 @@
 		<Russian>Мы знаем этого человека и он действительно достоин стать нашим духовным лидером. Скажите церковным властям, что мы оплатим все необходимые расходы, чтобы назначить его.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_BISHOP_APPOINTMENT_HELP_1</Tag>
+		<English>[ICON_BULLET]One[COLOR_HIGHLIGHT_TEXT] Preacher [COLOR_REVERT]in this city will be appointed [COLOR_HIGHLIGHT_TEXT]Bishop[COLOR_REVERT].</English>
+		<French>[ICON_BULLET]One[COLOR_HIGHLIGHT_TEXT] Preacher [COLOR_REVERT]in this city will be appointed [COLOR_HIGHLIGHT_TEXT]Bishop[COLOR_REVERT].</French>
+		<German>[ICON_BULLET]Ein[COLOR_HIGHLIGHT_TEXT] Prediger [COLOR_REVERT]in dieser Stadt wird zum [COLOR_HIGHLIGHT_TEXT]Bischof [COLOR_REVERT]ernannt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_BISHOP_APPOINTMENT_2</Tag>
 		<English>That is a lot of money for our colonies to pay. Although having a bishop will one day become necessary, we are too few right now to afford it.</English>
 		<French>Cela représente beaucoup d'argent à payer pour nos colonies. Bien qu'un évêque nous sera forcément un jour nécessaire, nous sommes encore peu nombreux et ne pouvons pas nous le permettre pour le moment.</French>
@@ -198,6 +205,12 @@
 		<French>Hallelujah, nous vivons dans la Patrie du Seigneur ! Soutenons notre prophète autant que nous le pouvons. Je vois déjà le désert fleurir.</French>
 		<German>Halleluja, wir leben wahrhaft in Gottes Reich auf Erden! Unterstützt diesen Propheten, so gut es geht. Ich sehe schon blühende Landschaften in der Wüste entstehen.</German>
 		<Russian>Аллилуйя, мы действительно живем в Божьей стране! Поддержите этого пророка, насколько это возможно. Я уже вижу, как пустыня цветет.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_BOOK_MORMON_HELP</Tag>
+		<English>[ICON_BULLET]A [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] will be built.</English>
+		<German>[ICON_BULLET]Eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] wird errichtet.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BRAVE_NATIVE_SLAVE_1</Tag>

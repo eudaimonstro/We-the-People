@@ -7685,7 +7685,7 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>-100</iGold>
+			<iGold>-500</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
@@ -7722,7 +7722,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyTornado1</PythonCallback>
+			<PythonCallback>applyTornado2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -12559,7 +12559,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>500</iGold>
@@ -12620,7 +12620,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -12712,7 +12712,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>-1000</iGold>
@@ -12729,8 +12729,8 @@
 			<UnitName/>
 			<UnitCombatPromotions/>
 			<UnitClassPromotions/>
-			<BuildingClass>BUILDINGCLASS_CATHEDRAL</BuildingClass>
-			<iBuildingChange>1</iBuildingChange>
+			<BuildingClass/>
+			<iBuildingChange/>
 			<BuildingExtraYields>
 				<BuildingExtraYield>
 					<BuildingClass>BUILDINGCLASS_CATHEDRAL</BuildingClass>
@@ -12768,10 +12768,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyBookMormon3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpBookMormon3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -16353,7 +16353,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -16414,7 +16414,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>-300</iGold>
@@ -21989,8 +21989,8 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
-			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
@@ -22035,7 +22035,7 @@
 			<PythonHelp>getHelpBeerRobbery1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>-50</iGenericParameter1>
+			<iGenericParameter1>50</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -22050,8 +22050,8 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
-			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>1</bDeclareWar>
 			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
@@ -22111,8 +22111,8 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
-			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
@@ -22167,7 +22167,7 @@
 			<PythonHelp>getHelpBeerRobbery1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
-			<iGenericParameter1>-200</iGenericParameter1>
+			<iGenericParameter1>150</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
 			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
@@ -22182,7 +22182,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -24671,13 +24671,13 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>-500</iGold>
+			<iGold>-1000</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_BISHOP</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -24708,10 +24708,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyBishopAppointment1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonCanDo>canApplyBishopAppointment1</PythonCanDo>
+			<PythonHelp>getHelpBishopAppointment1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>

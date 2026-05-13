@@ -3162,15 +3162,6 @@ def applyVolcanoDormant1(argsList):
 	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	plot.setPlotType(PlotTypes.PLOT_PEAK, True, True)
 
-######## TORNADO ###########
-
-def applyTornado1(argsList):
-	iEvent = argsList[1]
-	kTriggeredData = argsList[0]
-
-	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	plot.setFeatureType(gc.getInfoTypeForString('FEATURE_TORNADO'), 0)
-
 ######## BABY BOOM ###########
 
 def canTriggerBabyBoom(argsList):
@@ -3222,6 +3213,66 @@ def getHelpBabyBoom(argsList):
 
 ######## Flaute ###########
 
+CALM_COOLDOWN_TURNS = 30
+CALM_COOLDOWN_PREFIX = "[[WTP_CALM_READY_TURN="
+CALM_COOLDOWN_SUFFIX = "]]"
+
+
+def _getCalmCooldown(player):
+	if player.isNone():
+		return 0
+
+	szData = player.getScriptData()
+	if szData is None:
+		return 0
+
+	iStart = szData.find(CALM_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return 0
+
+	iStart += len(CALM_COOLDOWN_PREFIX)
+	iEnd = szData.find(CALM_COOLDOWN_SUFFIX, iStart)
+
+	if iEnd == -1:
+		return 0
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return 0
+
+def _setCalmCooldown(player, iTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(CALM_COOLDOWN_PREFIX)
+
+	if iStart != -1:
+		iEnd = szData.find(CALM_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(CALM_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (CALM_COOLDOWN_PREFIX, iTurn, CALM_COOLDOWN_SUFFIX)
+
+	player.setScriptData(szData)
+
+def canTriggerCalm(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if CyGame().getGameTurn() < _getCalmCooldown(player):
+		return False
+
+	return True
+
 def isValidUnitTravelStateForTravel(unit):
 	ts = unit.getUnitTravelState()
 	return (ts == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE or
@@ -3256,8 +3307,15 @@ def applyCalm(argsList):
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	turn = Speed.getStoragePercent()/100
-	if not unit.isNone() and isValidUnitTravelStateForTravel(unit):
+
+	if unit.isNone():
+		return
+
+	if isValidUnitTravelStateForTravel(unit):
 		unit.setUnitTravelTimer(unit.getUnitTravelTimer() + turn)
+
+	iCooldown = max(1, CALM_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100)
+	_setCalmCooldown(player, CyGame().getGameTurn() + iCooldown)
 
 def getHelpCalm(argsList):
 	eEvent = argsList[1]
@@ -3274,57 +3332,157 @@ def getHelpCalm(argsList):
 
 ######## Tailwind ###########
 
+TAILWIND_COOLDOWN_TURNS = 30
+TAILWIND_COOLDOWN_PREFIX = "[[WTP_TAILWIND_READY_TURN="
+TAILWIND_COOLDOWN_SUFFIX = "]]"
+
+
+def _getTailwindCooldown(player):
+	if player.isNone():
+		return 0
+
+	szData = player.getScriptData()
+	if szData is None:
+		return 0
+
+	iStart = szData.find(TAILWIND_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return 0
+
+	iStart += len(TAILWIND_COOLDOWN_PREFIX)
+	iEnd = szData.find(TAILWIND_COOLDOWN_SUFFIX, iStart)
+
+	if iEnd == -1:
+		return 0
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return 0
+
+
+def _setTailwindCooldown(player, iTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(TAILWIND_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(TAILWIND_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(TAILWIND_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (TAILWIND_COOLDOWN_PREFIX, iTurn, TAILWIND_COOLDOWN_SUFFIX)
+	player.setScriptData(szData)
+
+
+def _startTailwindCooldown(player):
+	if player.isNone():
+		return
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iCooldown = max(1, TAILWIND_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100)
+
+	_setTailwindCooldown(player, CyGame().getGameTurn() + iCooldown)
+
+
+def canTriggerTailwind(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	if CyGame().getGameTurn() < _getTailwindCooldown(player):
+		return False
+
+	return True
+
+
 def applyTailwind(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if event.getGenericParameter(1) <= 0:
+		return
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	turn = Speed.getStoragePercent()/100
-	if not unit.isNone():
-		if event.getGenericParameter(1) > 0 :
-			if (isValidUnitTravelStateForTravel(unit)):
-				if unit.getUnitTravelTimer() > turn :
-					unit.setUnitTravelTimer(unit.getUnitTravelTimer() - turn)
-				else:
-					unit.setUnitTravelTimer(1)
-			else:
-				unit.changeMoves(-60 * event.getGenericParameter(1))
+	turn = Speed.getStoragePercent() / 100
+
+	if isValidUnitTravelStateForTravel(unit):
+		if unit.getUnitTravelTimer() > turn:
+			unit.setUnitTravelTimer(unit.getUnitTravelTimer() - turn)
+		else:
+			unit.setUnitTravelTimer(1)
+	else:
+		unit.changeMoves(-60 * event.getGenericParameter(1))
+
+	_startTailwindCooldown(player)
+
 
 def canApplyTailwind(argsList):
 	eEvent = argsList[1]
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	unit = player.getUnit(kTriggeredData.iUnitId)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	turn = Speed.getStoragePercent()/100
+
 	if unit.isNone():
 		return False
-	if (isValidUnitTravelStateForPort(unit)):
+
+	if isValidUnitTravelStateForPort(unit):
 		return False
-	if (isValidUnitTravelStateForTravel(unit)):
-		if unit.getUnitTravelTimer() <= 1 :
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	turn = Speed.getStoragePercent() / 100
+
+	if isValidUnitTravelStateForTravel(unit):
+		if unit.getUnitTravelTimer() <= 1:
 			return False
+
 	return True
+
 
 def getHelpTailwind(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	unit = player.getUnit(kTriggeredData.iUnitId)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	turn = Speed.getStoragePercent()/100
-	szHelp = ""
-	if not unit.isNone():
-		if event.getGenericParameter(1) > 0 :
-			if (isValidUnitTravelStateForTravel(unit)):
-				szHelp = localText.getText("TXT_KEY_EVENT_TAILWIND_HELP_2", (turn, unit.getName()))
-			else:
-				szHelp = localText.getText("TXT_KEY_EVENT_TAILWIND_HELP_1", (event.getGenericParameter(1), unit.getName()))
-	return szHelp
 
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	turn = Speed.getStoragePercent() / 100
+
+	szHelp = ""
+
+	if not unit.isNone():
+		if event.getGenericParameter(1) > 0:
+			if isValidUnitTravelStateForTravel(unit):
+				szHelp = localText.getText(
+					"TXT_KEY_EVENT_TAILWIND_HELP_2",
+					(turn, unit.getName())
+				)
+			else:
+				szHelp = localText.getText(
+					"TXT_KEY_EVENT_TAILWIND_HELP_1",
+					(event.getGenericParameter(1), unit.getName())
+				)
+
+	return szHelp
 
 ######## RUNAWAY - Runaway horses ###########
 
@@ -5720,7 +5878,6 @@ hasTimberBonus = has_plot_this_bonus("BONUS_TIMBER")
 # 2023-11-xx : please put all relevant bonus
 hasFoodBonus = has_plot_this_bonus("BONUS_POTATO","BONUS_BANANA","BONUS_CORN")
 hasSeaFoodBonus = has_plot_this_bonus("BONUS_PEARLS","BONUS_CRAB","BONUS_FISH")
-hasBisonBonus = has_plot_this_bonus("BONUS_BISON")
 hasPumpkinBonus = has_plot_this_bonus("BONUS_PUMPKIN")
 hasTurkeyBonus = has_plot_this_bonus("BONUS_TURKEYS")
 hasGiantTreeBonus = has_plot_this_bonus("BONUS_GIANT_TREE")
@@ -6644,81 +6801,128 @@ def doPirateAttack2(argsList):
 
 def canTriggerBeerRobbery(argsList):
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
 	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	if player.isNone() or player2.isNone() :
+
+	if player.isNone() or player2.isNone():
 		return False
-	if not player.isPlayable():
+
+	if not player.isPlayable() or player.isNative():
 		return False
-	if city.isNone():
+
+	if not player2.isPlayable() or player2.isNative():
 		return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
 	eEvent1 = gc.getInfoTypeForString("EVENT_BEER_ROBBERY_1")
 	event1 = gc.getEventInfo(eEvent1)
+
 	iYield = gc.getInfoTypeForString("YIELD_BEER")
 	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
 
-	if city.getYieldStored(iYield) < -quantity :
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if quantity <= 0:
 		return False
+
+	if city.getYieldStored(iYield) < quantity:
+		return False
+
 	return True
+
 
 def applyBeerRobbery1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	city = player.getCity(kTriggeredData.iCityId)
 	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	othercity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if player.isNone() or player2.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_BEER")
 	quantity = event.getGenericParameter(1)
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity :
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if quantity <= 0:
 		return
-	city.changeYieldStored(iYield, quantity)
-	othercity.changeYieldStored(iYield, -quantity)
+
+	if city.getYieldStored(iYield) < quantity:
+		return
+
+	city.changeYieldStored(iYield, -quantity)
+
 
 def getHelpBeerRobbery1(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
 	city = player.getCity(kTriggeredData.iCityId)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	othercity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
+	if city.isNone():
+		return u""
+
 	iYield = gc.getInfoTypeForString("YIELD_BEER")
 	quantity = event.getGenericParameter(1)
+
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_GAIN", (-quantity,  gc.getYieldInfo(iYield).getChar(), othercity.getNameKey()))
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if quantity <= 0:
+		return u""
+
+	szHelp = localText.getText(
+		"TXT_KEY_EVENT_YIELD_LOOSE",
+		(-quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey())
+	)
+
 	return szHelp
+
 
 def canApplyBeerRobbery3(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
-	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() or player2.isNone() :
-		return False
-	if city.isNone():
-		return False
-	# Read Parameter 1 from event and check if enough yield is stored in city
 
-	quantity = event.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	iYield = gc.getInfoTypeForString("YIELD_BEER")
-	if city.getYieldStored(iYield) < -quantity :
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
 		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_BEER")
+	quantity = event.getGenericParameter(1)
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if quantity <= 0:
+		return False
+
+	if city.getYieldStored(iYield) < quantity:
+		return False
+
 	return True
 
 ######## WINE THEFT ###########
@@ -21051,3 +21255,359 @@ def _startAtTheSwordCooldown(player):
 
 	parts.append(szKey + str(iReadyTurn))
 	player.setScriptData(";".join(parts))
+
+######## Bisons ###########
+
+def canTriggerBisons(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.getBonusType() != gc.getInfoTypeForString("BONUS_BISON"):
+		return False
+
+	if plot.getImprovementType() not in (
+		gc.getInfoTypeForString("IMPROVEMENT_TRAPPER_HUT"),
+		gc.getInfoTypeForString("IMPROVEMENT_TRAPPER_CAMP"),
+	):
+		return False
+
+	city = plot.getWorkingCity()
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if otherPlayer.isNone():
+		return False
+
+	if not otherPlayer.isNative():
+		return False
+
+	return True
+
+######## Bishop Appointment ###########
+
+def _bishopAppointmentCityHasChurch(player, city):
+	if player.isNone() or city.isNone():
+		return False
+
+	for szBuildingClass in (
+		"BUILDINGCLASS_CHURCH",
+		"BUILDINGCLASS_CATHEDRAL",
+		"BUILDINGCLASS_GREAT_CATHEDRAL",
+		"BUILDINGCLASS_MINSTER",
+	):
+		iBuildingClass = gc.getInfoTypeForString(szBuildingClass)
+		if iBuildingClass == -1:
+			continue
+
+		iBuilding = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iBuildingClass)
+		if iBuilding != -1 and city.isHasBuilding(iBuilding):
+			return True
+
+	return False
+
+
+def _bishopAppointmentCountPreachersInCity(city):
+	if city.isNone():
+		return 0
+
+	iPreacherClass = gc.getInfoTypeForString("UNITCLASS_PREACHER")
+	iCount = 0
+
+	for i in range(city.getPopulation()):
+		unit = city.getPopulationUnitByIndex(i)
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getUnitClassType() == iPreacherClass:
+			iCount += 1
+
+	return iCount
+
+
+def _bishopAppointmentGetPreacherInCity(city):
+	if city.isNone():
+		return None
+
+	iPreacherClass = gc.getInfoTypeForString("UNITCLASS_PREACHER")
+
+	for i in range(city.getPopulation()):
+		unit = city.getPopulationUnitByIndex(i)
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getUnitClassType() == iPreacherClass:
+			return unit
+
+	return None
+
+
+def canTriggerBishopAppointmentCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	if not _bishopAppointmentCityHasChurch(player, city):
+		return False
+
+	if _bishopAppointmentCountPreachersInCity(city) < 2:
+		return False
+
+	return True
+
+
+def canApplyBishopAppointment1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	if player.getGold() < 500:
+		return False
+
+	if not _bishopAppointmentCityHasChurch(player, city):
+		return False
+
+	if _bishopAppointmentCountPreachersInCity(city) < 2:
+		return False
+
+	return True
+
+
+def applyBishopAppointment1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
+	if not _bishopAppointmentCityHasChurch(player, city):
+		return
+
+	if _bishopAppointmentCountPreachersInCity(city) < 2:
+		return
+
+	preacher = _bishopAppointmentGetPreacherInCity(city)
+	if preacher is None or preacher.isNone():
+		return
+
+	iBishopClass = gc.getInfoTypeForString("UNITCLASS_BISHOP")
+	iBishop = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iBishopClass)
+	if iBishop == -1:
+		return
+
+	city.removePopulationUnit(preacher, True, ProfessionTypes.NO_PROFESSION)
+
+	bishop = player.initUnit(
+		iBishop,
+		ProfessionTypes.NO_PROFESSION,
+		city.getX(),
+		city.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+	if bishop is None or bishop.isNone():
+		return
+
+	city.addPopulationUnit(bishop, ProfessionTypes.NO_PROFESSION)
+
+def getHelpBishopAppointment1(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_BISHOP_APPOINTMENT_HELP_1",
+		()
+	)
+    
+######## Book Mormon ###########
+
+def canTriggerBookMormon(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	workingCity = plot.getWorkingCity()
+	if workingCity is None or workingCity.isNone():
+		return False
+
+	if workingCity.getOwner() != city.getOwner():
+		return False
+
+	if workingCity.getID() != city.getID():
+		return False
+
+	return True
+
+def applyBookMormon3(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
+	iBuildingClass = gc.getInfoTypeForString("BUILDINGCLASS_CATHEDRAL")
+	if iBuildingClass == -1:
+		return
+
+	iBuilding = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iBuildingClass)
+	if iBuilding == -1:
+		return
+
+	if city.isHasBuilding(iBuilding):
+		return
+
+	city.setHasRealBuilding(iBuilding, True)
+    
+def getHelpBookMormon3(argsList):
+	player = gc.getPlayer(argsList[0].ePlayer)
+
+	iBuildingClass = gc.getInfoTypeForString("BUILDINGCLASS_CATHEDRAL")
+	if iBuildingClass == -1:
+		return u""
+
+	iBuilding = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iBuildingClass)
+	if iBuilding == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_BOOK_MORMON_HELP",
+		(gc.getBuildingInfo(iBuilding).getTextKey(),)
+	)
+
+######## Tornado ###########
+
+TORNADO_COOLDOWN_TURNS = 20
+
+def _getTornadoCooldown(player):
+
+	szKey = "[[TORNADO_READY_TURN="
+
+	scriptData = player.getScriptData()
+
+	iPos = scriptData.find(szKey)
+	if iPos == -1:
+		return 0
+
+	iStart = iPos + len(szKey)
+	iEnd = scriptData.find("]]", iStart)
+
+	if iEnd == -1:
+		return 0
+
+	return int(scriptData[iStart:iEnd])
+
+
+def _setTornadoCooldown(player, iTurn):
+
+	scriptData = player.getScriptData()
+
+	szKey = "[[TORNADO_READY_TURN="
+
+	iPos = scriptData.find(szKey)
+
+	if iPos != -1:
+		iEnd = scriptData.find("]]", iPos)
+		if iEnd != -1:
+			scriptData = scriptData[:iPos] + scriptData[iEnd + 2:]
+
+	scriptData += "[[TORNADO_READY_TURN=%d]]" % iTurn
+
+	player.setScriptData(scriptData)
+
+
+def canTriggerTornado(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	iCurrentTurn = CyGame().getGameTurn()
+
+	if iCurrentTurn < _getTornadoCooldown(player):
+		return False
+
+	return True
+
+
+def applyTornado1(argsList):
+	iEvent = argsList[1]
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+
+	if plot is not None and not plot.isNone():
+		plot.setFeatureType(gc.getInfoTypeForString('FEATURE_TORNADO'), 0)
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iCooldown = TORNADO_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100
+
+	_setTornadoCooldown(player, CyGame().getGameTurn() + iCooldown)
+
+
+def applyTornado2(argsList):
+	iEvent = argsList[1]
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+
+	if plot is not None and not plot.isNone():
+		plot.setFeatureType(gc.getInfoTypeForString('FEATURE_TORNADO'), 0)
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iCooldown = TORNADO_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100
+
+	_setTornadoCooldown(player, CyGame().getGameTurn() + iCooldown)
+    
