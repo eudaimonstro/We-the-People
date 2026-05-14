@@ -409,6 +409,12 @@
 		<Russian>Это невозможно. Разведчик должен выполнить свой долг.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_CHIEF_DAUGHTER_HELP</Tag>
+		<English>[ICON_BULLET]Some Indians will join you.</English>
+		<German>[ICON_BULLET]Einige Indianer schließen sich Euch an.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_COCA_PROBLEM_1</Tag>
 		<English>That is worrying indeed. We shall burn all these devilish plants before our good citizens are harmed.</English>
 		<French>C'est inquiétant en effet. Je donne mon autorisation pour brûler cette plante démoniaque avant que trop de nos citoyens soient atteints.</French>

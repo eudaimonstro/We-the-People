@@ -3787,11 +3787,22 @@ def applyForestFire4(argsList):
 
 def canTriggerCargoSpace(argsList):
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone() or unit.getOwner() != player.getID():
+		return False
+
 	if city.getX() == unit.getX() and city.getY() == unit.getY():
 		return True
+
 	return False
 
 def applyCargoSpace(argsList):
@@ -5714,17 +5725,24 @@ def countUnitsInCityForCityTrigger(argsList, iUnitType):
 	return iUnitsCurrent
 
 ###### Cheese Maker Event ######
+
 def CheckCheesemakerInCity(argsList):
 	ePlayer = argsList[1]
 	player = gc.getPlayer(ePlayer)
 
-	if not player.isPlayable():
+	if player.isNone():
 		return False
 
-	# you could add checks for several Units like this
+	if not player.isPlayable() or player.isNative():
+		return False
+
 	iUnitType = CvUtil.findInfoTypeNum('UNIT_CHEESE_MAKER')
+	if iUnitType == -1:
+		return False
+
 	iUnitsCurrent = countUnitsInCityForCityTrigger(argsList, iUnitType)
-	if iUnitsCurrent == 0:
+
+	if iUnitsCurrent <= 0:
 		return False
 
 	return True
@@ -9136,6 +9154,57 @@ def isNativeVillageAndHumanTrade(argsList):
 	if not iUnitsCurrent > 5:
 		return False
 	return True
+
+######## Apply Chiefs Daughter ###########
+
+def applyChiefsDaughter1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	iUnitClass = event.getGenericParameter(1)
+	if iUnitClass == -1:
+		return
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return
+
+	player.initUnit(
+		iUnitType,
+		ProfessionTypes.NO_PROFESSION,
+		kTriggeredData.iPlotX,
+		kTriggeredData.iPlotY,
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+def getHelpChiefsDaughter1(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	iUnitClass = event.getGenericParameter(1)
+	if iUnitClass == -1:
+		return u""
+
+	iActivePlayer = gc.getGame().getActivePlayer()
+	player = gc.getPlayer(iActivePlayer)
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == -1:
+		return u""
+
+	szUnit = gc.getUnitInfo(iUnitType).getDescription()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_CHIEF_DAUGHTER_HELP",
+		(szUnit,)
+	)
 
 ######## Native Training Event ###########
 
@@ -19636,33 +19705,6 @@ def isExpiredWhalingTrip(argsList):
 getHelpWhalingTripDone  = get_simple_help("TXT_KEY_EVENT_WHALING_TRIP_HELP")
 getHelpWhalingTripDone2  = get_simple_help("TXT_KEY_EVENT_WHALING_TRIP_DONE_PYTHON")
 
-######## Build Monastery Quest ###########
-
-def isNoCity(argsList):
-	pTriggeredData = argsList[0]
-	plot = gc.getMap().plot(pTriggeredData.iPlotX, pTriggeredData.iPlotY)
-	player = gc.getPlayer(pTriggeredData.ePlayer)
-	if not player.isPlayable():
-		return False
-	if plot.isCity():
-		return False
-	if gc.getPlayer(plot.getOwner()).isNative():
-		return False
-	return True
-
-def isExpiredBuildMonastery(argsList):
-	eEvent = argsList[1]
-	event = gc.getEventInfo(eEvent)
-	kTriggeredData = argsList[0]
-	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if gc.getGame().getGameTurn() >= kTriggeredData.iTurn + event.getGenericParameter(1):
-		return True
-	if not player.isPlayable():
-		return True
-	return False
-
-getHelpBuildMonasteryDone  = get_simple_help("TXT_KEY_EVENT_BUILD_MONASTERY_HELP")
-
 ######## Send Dragoons to Frontier Quest ###########
 
 def CheckAfricanSlaveInCity(argsList):
@@ -21084,7 +21126,7 @@ def canTriggerPlants(argsList):
 		return False
 
 	city = player.getCity(kTriggeredData.iCityId)
-	if city.isNone() or city.getOwner() != player.getID():
+	if city is None or city.isNone() or city.getOwner() != player.getID():
 		return False
 
 	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
@@ -21097,11 +21139,48 @@ def canTriggerPlants(argsList):
 	if plot.getBonusType() != -1:
 		return False
 
-	# Plot must be inside this exact city's workable radius
+	# Plot must be inside this exact city's radius
 	if plotDistance(city.getX(), city.getY(), plot.getX(), plot.getY()) > 2:
 		return False
 
 	return True
+
+
+def _cacaoBonusPlotBordersNativePlayer(plot, iNativePlayer):
+	if plot is None or plot.isNone():
+		return False
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			loopPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() == iNativePlayer:
+				return True
+
+	return False
+
+def canTriggerCacaoBonus(argsList):
+	kTriggeredData = argsList[0]
+
+	if not canTriggerPlants(argsList):
+		return False
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if not _cacaoBonusPlotBordersNativePlayer(plot, nativePlayer.getID()):
+		return False
+
+	return True
+
 
 ######## Washed Out ###########
 
@@ -21611,3 +21690,206 @@ def applyTornado2(argsList):
 
 	_setTornadoCooldown(player, CyGame().getGameTurn() + iCooldown)
     
+######## Build Monastery Quest ###########
+
+def _countPlayerUnitsByUnitClassOnMap(player, iUnitClass):
+	if player.isNone():
+		return 0
+
+	iCount = 0
+
+	(unit, iter) = player.firstUnit()
+	while unit:
+		if not unit.isNone():
+			if unit.getUnitClassType() == iUnitClass:
+				iCount += 1
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return iCount
+
+
+def canTriggerBuildMonasteryStart(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+
+	if plot is None or plot.isNone():
+		return False
+
+	# Replacement for isNoCity
+	if plot.isCity():
+		return False
+
+	# Must be owned by player
+	if plot.getOwner() != player.getID():
+		return False
+
+	# Plot must fully belong to player's team
+	if plot.getTeam() != player.getTeam():
+		return False
+
+	# No foreign cities adjacent
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+
+			if iDX == 0 and iDY == 0:
+				continue
+
+			loopPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.isCity():
+
+				city = loopPlot.getPlotCity()
+
+				if city is not None and not city.isNone():
+
+					if city.getOwner() != player.getID():
+						return False
+
+	# Read required unit data from first event
+	eEvent = gc.getEventTriggerInfo(
+		kTriggeredData.eTrigger
+	).getEvent(0)
+
+	event = gc.getEventInfo(eEvent)
+
+	iRequiredUnitClass = event.getGenericParameter(2)
+	iRequiredAmount = event.getGenericParameter(3)
+
+	if iRequiredUnitClass == -1 or iRequiredAmount <= 0:
+		return False
+
+	if _countPlayerUnitsByUnitClassOnMap(
+		player,
+		iRequiredUnitClass
+	) < iRequiredAmount:
+		return False
+
+	return True
+
+def isExpiredBuildMonastery(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if gc.getGame().getGameTurn() >= kTriggeredData.iTurn + event.getGenericParameter(1):
+		return True
+	if not player.isPlayable():
+		return True
+	return False
+
+getHelpBuildMonasteryDone  = get_simple_help("TXT_KEY_EVENT_BUILD_MONASTERY_HELP")
+
+######## Monastery Hiding Slaves ###########
+
+def _monasteryHidingSlavesPlotBordersOtherPlayer(plot, iOtherPlayer):
+	if plot is None or plot.isNone():
+		return False
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			loopPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() == iOtherPlayer:
+				return True
+
+	return False
+
+def canTriggerMonasteryHidingSlaves(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if otherPlayer.isNone() or not otherPlayer.isPlayable() or otherPlayer.isNative():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(otherPlayer.getTeam()):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.getImprovementType() not in (
+		gc.getInfoTypeForString("IMPROVEMENT_MONASTERY"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_MONASTERY"),
+	):
+		return False
+
+	if not _monasteryHidingSlavesPlotBordersOtherPlayer(plot, otherPlayer.getID()):
+		return False
+
+	return True
+
+######## Monastery Trading Food ###########
+
+def _monasteryTradingFoodPlotBordersNativePlayer(plot, iNativePlayer):
+	if plot is None or plot.isNone():
+		return False
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			loopPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.getOwner() == iNativePlayer:
+				return True
+
+	return False
+
+def canTriggerMonasteryTradingFood(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getImprovementType() not in (
+		gc.getInfoTypeForString("IMPROVEMENT_MONASTERY"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_MONASTERY"),
+	):
+		return False
+
+	if not _monasteryTradingFoodPlotBordersNativePlayer(plot, nativePlayer.getID()):
+		return False
+
+	return True
+
