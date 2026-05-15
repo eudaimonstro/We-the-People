@@ -657,7 +657,7 @@
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_PUMPKIN</Type>
-			<fScale>1.0</fScale>
+			<fScale>0.75</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/Pumpkin/wheat.nif</NIF>
 			<KFM>Art/Terrain/Resources/Pumpkin/Wheat.kfm</KFM>
