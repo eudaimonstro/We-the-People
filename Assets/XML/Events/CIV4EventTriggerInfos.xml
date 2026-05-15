@@ -905,7 +905,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -954,7 +954,7 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
@@ -1969,7 +1969,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -7240,20 +7240,22 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>15</iMinPopulation>
+			<iMinPopulation>5</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired/>
-				<iNumUnits>0</iNumUnits>
+				<UnitsRequired>
+					<UnitClass>UNITCLASS_CARAVEL</UnitClass>
+				</UnitsRequired>
+				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
 				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
@@ -7460,7 +7462,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -7510,7 +7512,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
-			<bGlobal>1</bGlobal>
+			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
@@ -8291,7 +8293,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -8342,13 +8344,13 @@
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
-			<bPickPlayer>0</bPickPlayer>
+			<bPickPlayer>1</bPickPlayer>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
-			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerNative>1</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
-			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
@@ -11006,7 +11008,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>1000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -11041,10 +11043,7 @@
 				</PlotTypes>
 			</PlotRequirements>
 			<FeaturesRequired/>
-			<TerrainsRequired>
-				<TerrainType>TERRAIN_MARSH</TerrainType>
-				<TerrainType>TERRAIN_SAVANNAH</TerrainType>
-			</TerrainsRequired>
+			<TerrainsRequired/>
 			<ImprovementsRequired/>
 			<RoutesRequired/>
 			<Events>
@@ -11369,7 +11368,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -11390,18 +11389,17 @@
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
-			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_RANCH</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_HORSE_MARKET</BuildingClass>
-			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
+			<BuildingsRequired/>
+			<iNumBuildings>0</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
-			<iNumPlotsRequired>0</iNumPlotsRequired>
-			<bOwnPlot>0</bOwnPlot>
+			<iNumPlotsRequired>1</iNumPlotsRequired>
+			<bOwnPlot>1</bOwnPlot>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
-			<ImprovementsRequired/>
+			<ImprovementsRequired>
+				<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
+				<ImprovementType>IMPROVEMENT_LARGE_PASTURE</ImprovementType>
+			</ImprovementsRequired>
 			<RoutesRequired/>
 			<Events>
 				<Event>EVENT_HORSE_DEAL_1</Event>
@@ -13963,7 +13961,7 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
@@ -14196,7 +14194,7 @@
 			<bOtherPlayerNative>0</bOtherPlayerNative>
 			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>0</bPickCity>
+			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>0</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
@@ -38274,7 +38272,15 @@
 			</WorldNewsTexts>
 			<TriggerTexts>
 				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT</Text>
+					<Text>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT_1</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT_2</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT_3</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>
@@ -38282,12 +38288,13 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Architect.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>-1</iWeight>
+			<iWeight>3000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>6000</iMinTreasury>
-			<iMinPopulation>20</iMinPopulation>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>3000</iMinTreasury>
+			<iMinPopulation>15</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -38304,11 +38311,12 @@
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_CARPENTER_SHOP</BuildingClass>	
 				<BuildingClass>BUILDINGCLASS_LUMBER_MILL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_WHEELWRIGHTS_WORKSHOP</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_GREAT_WHEELWRIGHTS_WORKSHOP</BuildingClass>
 			</BuildingsRequired>
-			<iNumBuildings>7</iNumBuildings>
+			<iNumBuildings>5</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
@@ -38322,7 +38330,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -38336,7 +38344,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerEccentricArchitect</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -38356,10 +38364,11 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>300</iWeight>
+			<iWeight>3000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
 			<iMinTreasury>1000</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -38389,14 +38398,13 @@
 			<ImprovementsRequired/>
 			<RoutesRequired/>
 			<Events>
+				<Event>EVENT_ARCHITECT_BAILIFF_COMMIT</Event>
 				<Event>EVENT_ARCHITECT_BAILIFF_PAY</Event>
 				<Event>EVENT_ARCHITECT_BAILIFF_NEGOTIATE</Event>
 				<Event>EVENT_ARCHITECT_BAILIFF_REFUSE</Event>
 			</Events>
-			<PrereqEvents>
-				<Event>EVENT_ECCENTRIC_ARCHITECT_1</Event>
-			</PrereqEvents>
-			<bPrereqEventPlot>1</bPrereqEventPlot>
+			<PrereqEvents/>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
@@ -38415,7 +38423,6 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_ARCHITECT_BAILIFF_FINAL</Type>
@@ -38432,10 +38439,11 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>300</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
 			<iMinTreasury>1000</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -38471,7 +38479,7 @@
 			<PrereqEvents>
 				<Event>EVENT_ARCHITECT_BAILIFF_NEGOTIATE</Event>
 			</PrereqEvents>
-			<bPrereqEventPlot>1</bPrereqEventPlot>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
@@ -38490,7 +38498,6 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_OFFICERS_WIFE</Type>

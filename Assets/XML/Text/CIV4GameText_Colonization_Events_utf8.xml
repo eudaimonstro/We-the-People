@@ -4219,7 +4219,7 @@
 		<Tag>TXT_KEY_EVENTTRIGGER_FIVE_FUR_TRAPPERS_QUEST</Tag>
 		<English>We've got a basic fur trade under way but His Majesty expects us to expand the business by hiring at least five fur trappers. If we are the first nation to do so, His Majesty offers a reward.</English>
 		<French>Nous avons un commerce de fourrure de base en cours mais Sa Majesté attend de nous que nous développions l'activité en engageant au moins cinq trappeurs de fourrure. Si nous sommes la première nation à le faire, Sa Majesté offre une récompense.</French>
-		<German>Wir haben einen grundlegenden aber florierenden Pelzhandel etabliert. Seine Majestät wünscht aber nun, dass wir den Pelzhandel deutlich ausweiten, indem wir mindestens fünf Pelzhändler anwerben. Wenn wir dies als erste Nation schaffen, verspricht Seine Majestät uns eine Belohnung.</German>
+		<German>Wir haben einen grundlegenden aber florierenden Pelzhandel etabliert. Seine Majestät wünscht aber nun, dass wir den Pelzhandel deutlich ausweiten, indem wir mindestens fünf Trapper anwerben. Wenn wir dies als erste Nation schaffen, verspricht Seine Majestät uns eine Belohnung.</German>
 		<Russian>Мы наладили добычу меха, но Его Величество ожидает, что мы расширим бизнес, наняв по крайней мере пять охотников за пушным зверем. Если мы будем первой державой, которая сделает это, Его Величество обещает достойную награду.</Russian>
 	</TEXT>
 	<TEXT>
@@ -4811,11 +4811,23 @@
 		<Russian>Ходят слухи об отправке в колонии опытного архитектора, чтобы поддержать их развитие.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT</Tag>
+		<Tag>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT_1</Tag>
 		<English>Sir, the number of colonies you manage in the New World is growing steadily, but construction is not going fast enough. His Majesty has therefore decided to send us an architect with an international reputation to oversee the construction work.</English>
 		<French>Sire, le nombre de colonies que vous gérez dans le nouveau monde croît à allure régulière, mais le bâtiment ne suit pas assez vite. Sa Majesté a donc décidé de vous envoyer un architecte très expérimenté et jouissant de la meilleure réputation pour aider à la construction au sein des colonies. </French>
 		<German>Sir, die Anzahl der Kolonien in der Neuen Welt wächst stetig, aber der Aufbau geht nicht schnell genug voran. Seine Majestät hat daher entschieden, einen erfahrenen Architekten mit höchstem Ansehen in die Kolonien zu entsenden, um den Aufbau voranzutreiben.</German>
 		<Russian>Милорд, количество управляемых вами колоний в Новом Свете неуклонно растёт, но строительство идёт недостаточно быстро. Поэтому Его Величество решил прислать к нам опытного архитектора с самой высокой репутацией для поддержки строительных работ в колониях.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT_2</Tag>
+		<English>Sir, the King is quite pleased with developments in the colonies. Nevertheless, things could move even faster – we must stay one step ahead of the other European powers. The King is inclined to send another well-trained architect to the colonies – provided you cover the costs.</English>
+		<German>Sir, der König ist recht erfreut über die Entwicklung in den Kolonien. Gleichwohl könnte es noch schneller gehen - man müsse den anderen europäischen Mächten zuvorkommen. Der König ist geneigt einen weiteren gut ausgebildeten Architekten in die Kolonien zu senden - wenn ihr die Kosten dafür tragt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_ECCENTRIC_ARCHITECT_3</Tag>
+		<English>Sir, the Crown greatly appreciates your efforts, but more is required, and above all, it must be done more quickly. Workshops, forts and, above all, residential buildings must be constructed in abundance. The Crown is willing to send you another specialist from Europe, provided you pay for the passage.</English>
+		<German>Sir, die Krone weiß Eure Antrengungen durchaus zu schätzen, aber man verlangt noch mehr und vor allem schneller. Es müssen Werkstätten, Forts und vor allem Wohnhäuser in Hülle und Fülle errichtet werden. Die Krone will euch einen weiteren Spezialisten aus Europa herüberschicken, wenn ihr die Überfahrt zahlt.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_ARCHITECT_BAILIFF</Tag>
@@ -4830,6 +4842,17 @@
 		<French>Sire, l'architecte que nous avons accueilli récemment fait du très bon travail. Hélas, il est venu avec des ennuis. Apparemment il s'est fait des ennemis en Europe et s'est retrouvé lourdement endetté. Les huissiers ont entendu qu'il travaille pour notre compte et passent nos colonies au peigne fin du nord au sud. Ils exigent que nous payions immédiatement toute sa dette, sinon ils ramènent l'homme pieds et poings liés en Europe pour y faite de la prison pour dettes.</French>
 		<German>Milord, der Architekt, den wir kürzlich in unsere Kolonie aufgenommen haben, leistet gute Arbeit. Leider hat das Ganze auch einen Haken. Offenbar hat er sich in der Alten Welt Feinde gemacht und sich hoch verschuldet. Die Büttel haben gehört, dass er für uns arbeitet und durchsuchen unsere Kolonien von Nord nach Süd. Sie verlangen, dass wir die ganze Summe sogleich bezahlen, ansonsten droht dem Mann der Schuldturm und man wird ihn in Schande nach Europa zurückbringen.</German>
 		<Russian>Милорд, архитектор, который недавно принехал к нам, хорошо справляется со своей работой. Однако, есть одна проблема: он по уши в долгах, с которыми не может расплатиться. Приставы прослышали, что он работает на нас и теперь прочесывают наши колонии вдоль и поперёк. Они требуют, чтобы мы незамедлительно выплатили всю сумму долга, иначе мужчине грозит долговая тюрьма и его с позором вернут в Европу, как только найдут.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ARCHITECT_BAILIFF_COMMIT</Tag>
+		<English>Of course, justice must be upheld. It may set back the development of the colony, but we must not break the king’s laws.</English>
+		<German>Selbstverständlich, dem Recht muss zum Siege verholfen werden. Es wirft den Ausbau der Kolonie zwar zurück, aber wir dürfen nicht gegen königliche Gesetze verstoßen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ARCHITECT_BAILIFF_COMMIT_HELP</Tag>
+		<English>[ICON_BULLET]A [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] is arrested and taken back to Europe.</English>
+		<German>[ICON_BULLET]Ein [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] wird festgenommen und nach Europa zurückgebracht.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ARCHITECT_BAILIFF_PAY</Tag>
@@ -6986,8 +7009,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_DRAGOONS_TO_FRONTIER_START</Tag>
-		<English>Milord, the local population is very worried. We have many [COLOR_HIGHLIGHT_TEXT]slaves[COLOR_REVERT] in the colony with no mounted troops who could quickly recapture them. We should station a company of [COLOR_HIGHLIGHT_TEXT]dragoons[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]cavalry[COLOR_REVERT] there.</English>
-		<German>Milord, die örtliche Bevölkerung ist in großer Sorge. Es sind viele [COLOR_HIGHLIGHT_TEXT]Sklaven[COLOR_REVERT] in der Kolonie und keine Berittenen sind in der Kolonie stationiert, um sie notfalls einfangen zu können und mehr Sicherheit zu bieten. Wir sollten lieber eine Einheit [COLOR_HIGHLIGHT_TEXT]Dragoner[COLOR_REVERT] oder [COLOR_HIGHLIGHT_TEXT]Kavallerie[COLOR_REVERT] dort stationieren.</German>
+		<English>Milord, the local population is very worried. We have many [COLOR_HIGHLIGHT_TEXT]slaves[COLOR_REVERT] in the colony with no mounted troops who could quickly recapture them. We should station a company of [COLOR_HIGHLIGHT_TEXT]veteran dragoons[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]veteran cavalry[COLOR_REVERT] there.</English>
+		<German>Milord, die örtliche Bevölkerung ist in großer Sorge. Es sind viele [COLOR_HIGHLIGHT_TEXT]Sklaven[COLOR_REVERT] in der Kolonie und keine Berittenen sind in der Kolonie stationiert, um sie notfalls einfangen zu können und mehr Sicherheit zu bieten. Wir sollten lieber eine Einheit [COLOR_HIGHLIGHT_TEXT]erfahrene Dragoner[COLOR_REVERT] oder [COLOR_HIGHLIGHT_TEXT]erfahrene Kavallerie[COLOR_REVERT] dort stationieren.</German>
 		<Russian>Милорд, местное население в большой тревоге. В колонии много [COLOR_HIGHLIGHT_TEXT]рабов[COLOR_REVERT] и нет конных войск, которые могли бы быстро поймать беглецов или усмирить мятежников. Хорошо было бы разместить там отряд [COLOR_HIGHLIGHT_TEXT]драгун[COLOR_REVERT] или [COLOR_HIGHLIGHT_TEXT]кавалерии[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>

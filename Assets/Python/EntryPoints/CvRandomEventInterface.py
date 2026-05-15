@@ -18101,10 +18101,6 @@ getHelpOfficerDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_DUEL_HELP")
 
 getHelpOfficerNoDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_NODUEL_HELP")
 
-######## Bailiffs search for Architect and attack city ###########
-
-getHelpBailiffsAttackCity = get_simple_help("TXT_KEY_EVENT_ARCHITECT_BAILIFF_HELP")
-
 ######## Buccanners attack Silver Mine ###########
 
 getHelpBuccanneersAttackMine = get_simple_help("TXT_KEY_EVENT_BUCCANNERS_ATTACK_MINE_HELP")
@@ -21892,4 +21888,324 @@ def canTriggerMonasteryTradingFood(argsList):
 		return False
 
 	return True
+
+######## Eccentric Architect ###########
+
+ECCENTRIC_ARCHITECT_COOLDOWN_TURNS = 40
+ECCENTRIC_ARCHITECT_COOLDOWN_PREFIX = "[[WTP_ECCENTRIC_ARCHITECT_READY_TURN="
+ECCENTRIC_ARCHITECT_COOLDOWN_SUFFIX = "]]"
+
+
+def _getEccentricArchitectCooldown(player):
+	if player.isNone():
+		return 0
+
+	szData = player.getScriptData()
+	if szData is None:
+		return 0
+
+	iStart = szData.find(ECCENTRIC_ARCHITECT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return 0
+
+	iStart += len(ECCENTRIC_ARCHITECT_COOLDOWN_PREFIX)
+
+	iEnd = szData.find(
+		ECCENTRIC_ARCHITECT_COOLDOWN_SUFFIX,
+		iStart
+	)
+
+	if iEnd == -1:
+		return 0
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return 0
+
+
+def _setEccentricArchitectCooldown(player, iTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(ECCENTRIC_ARCHITECT_COOLDOWN_PREFIX)
+
+	if iStart != -1:
+		iEnd = szData.find(
+			ECCENTRIC_ARCHITECT_COOLDOWN_SUFFIX,
+			iStart
+		)
+
+		if iEnd != -1:
+			iEnd += len(ECCENTRIC_ARCHITECT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		ECCENTRIC_ARCHITECT_COOLDOWN_PREFIX,
+		iTurn,
+		ECCENTRIC_ARCHITECT_COOLDOWN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def canTriggerEccentricArchitect(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	# Cooldown active
+	if CyGame().getGameTurn() < _getEccentricArchitectCooldown(player):
+		return False
+
+	# Start cooldown immediately after successful trigger
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+
+	iCooldown = max(
+		1,
+		ECCENTRIC_ARCHITECT_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100
+	)
+
+	_setEccentricArchitectCooldown(
+		player,
+		CyGame().getGameTurn() + iCooldown
+	)
+
+	return True
+
+######## Eccentric Architect BAILIFF ###########
+ 
+def removeFirstUnitClassFromCity(player, city, iUnitClass):
+	if player.isNone() or city.isNone():
+		return False
+
+	# 1) Remove unit if it is working as city population / specialist
+	for i in range(city.getPopulation()):
+		unit = city.getPopulationUnitByIndex(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getOwner() != player.getID():
+			continue
+
+		if unit.getUnitClassType() == iUnitClass:
+			city.removePopulationUnit(unit, True, ProfessionTypes.NO_PROFESSION)
+			return True
+
+	# 2) Fallback: remove unit if it stands on the city plot
+	plot = city.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getOwner() != player.getID():
+			continue
+
+		if unit.getUnitClassType() == iUnitClass:
+			unit.kill(False)
+			return True
+
+	return False
+
+def applyRemoveEccentricArchitectFromCity(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
+	iUnitClass = gc.getInfoTypeForString("UNITCLASS_ECCENTRIC_ARCHITECT")
+	if iUnitClass == -1:
+		return
+
+	removeFirstUnitClassFromCity(player, city, iUnitClass)
+
+def getHelpArchitectBailiffCommit(argsList):
+	iUnitClass = gc.getInfoTypeForString("UNITCLASS_ECCENTRIC_ARCHITECT")
+	if iUnitClass == -1:
+		return u""
+
+	UnitClass = gc.getUnitClassInfo(iUnitClass)
+
+	return localText.getText(
+		"TXT_KEY_EVENT_ARCHITECT_BAILIFF_COMMIT_HELP",
+		(UnitClass.getTextKey(),)
+	)
+
+getHelpBailiffsAttackCity = get_simple_help("TXT_KEY_EVENT_ARCHITECT_BAILIFF_HELP")
+
+def applyArchitectBailiffRefuseAttack(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
+	cityPlot = city.plot()
+	if cityPlot is None or cityPlot.isNone():
+		return
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	if iHostileUnitClass == -1:
+		return
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+	if barbPlayer.isNone():
+		return
+
+	iUnitType = gc.getCivilizationInfo(barbPlayer.getCivilizationType()).getCivilizationUnits(iHostileUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			spawnPlot = plotXY(cityPlot.getX(), cityPlot.getY(), iDX, iDY)
+			if spawnPlot is None or spawnPlot.isNone():
+				continue
+			if spawnPlot.isWater():
+				continue
+			if spawnPlot.isImpassable():
+				continue
+			if spawnPlot.isPeak():
+				continue
+			if spawnPlot.isCity():
+				continue
+			if spawnPlot.isUnit():
+				continue
+
+			hostileUnit = barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				spawnPlot.getX(),
+				spawnPlot.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if hostileUnit is not None and not hostileUnit.isNone():
+				if hostileUnit.canMoveInto(cityPlot, True, False, False):
+					hostileUnit.attack(cityPlot, False)
+
+			return
+
+######## Sick Immigrants ###########
+
+def applyCityHealthPenalty(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	city.changeCityHealth(-2)
+
+def getHelpCityHealthPenalty(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_CITY_HEALTH_PENALTY",
+		(2, city.getNameKey())
+	)
+
+######## Spoiled Grain ###########
+
+def applyCityFoodPercentLoss(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	if iFood == -1:
+		return
+
+	iStored = city.getYieldStored(iFood)
+	if iStored <= 0:
+		return
+
+	iPercent = event.getGenericParameter(1)
+
+	iLoss = (iStored * iPercent) / 100
+
+	if iLoss <= 0:
+		return
+
+	city.changeYieldStored(iFood, -iLoss)
+    
+def getHelpCityFoodPercentLoss(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return u""
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	iStored = city.getYieldStored(iFood)
+
+	iPercent = event.getGenericParameter(1)
+	iLoss = (iStored * iPercent) / 100
+
+	return localText.getText(
+		"TXT_KEY_EVENT_CITY_FOOD_PERCENT_LOST",
+		(iLoss, iPercent, city.getNameKey())
+	)
 
