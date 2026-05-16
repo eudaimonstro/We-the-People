@@ -58205,7 +58205,7 @@
 			<iImmigrationWeight>0</iImmigrationWeight>
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iMoves>1</iMoves>
+			<iMoves>2</iMoves>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>0</bCapturesShips>
 			<iCaptureShipsChanceIncrease>0</iCaptureShipsChanceIncrease>

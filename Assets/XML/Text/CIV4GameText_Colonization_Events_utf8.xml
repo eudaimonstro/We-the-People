@@ -3474,6 +3474,12 @@
 		<Russian>Мы приобретем эти невольничьи барки и станем единолично заправлять этим прибыльным делом.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_SLAVE_TRADER_QUEST_REFUSE</Tag>
+		<English>Oh no, we won’t. We won’t make money from that godless trade. We came to the New World to be free. We won’t earn our money from the slave trade.</English>
+		<German>Oh nein, das werden wir nicht. Wir werden nicht an diesem gottlosen Geschäft verdienen. Wir sind in die Neue Welt gekommen, um frei zu sein. Da werden wir nicht mit Sklavenhandel unser Geld verdienen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_SLAVE_TRADER_QUEST_DONE_1</Tag>
 		<English>Wonderful! Tell the slave overseers to be careful not to damage our property.</English>
 		<French>Merveilleux ! Dites aux contremaitres de faire attention à ne pas abîmer la « marchandise ».</French>
@@ -3735,9 +3741,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SMUGGLERS_CAUGHT</Tag>
-		<English>The officials in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] have caught some smugglers. They were buying salt and other goods from private traders in the city and selling it at high profits in Europe without paying customs.</English>
-		<French>Des officiers de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ont attrapé des contrebandiers. Ils achetaient du sel et d'autres biens à un négociant privé de la ville et les revendaient en Europe asans payer les droits de douane, et touchant ainsi de gros profits.</French>
-		<German>Die Offiziellen in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] haben einige Schmuggler geschnappt. Diese haben Salz und andere Güter von privaten Händlern gekauft und dieses dann am Zoll vorbei in Europa zu hohen Profiten verkauft.</German>
+		<English>The officials in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] have caught some smugglers. They were buying valuable goods from private traders in the city and selling it at high profits in Europe without paying customs.</English>
+		<French>Des officiers de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ont attrapé des contrebandiers. Ils achetaient des marchandises de grande valeur auprès d'un marchand privé de la ville et les revendaient en Europe sans payer de droits de douane, réalisant ainsi un bénéfice considérable.</French>
+		<German>Die Offiziellen in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] haben einige Schmuggler geschnappt. Diese haben hochwertige Güter von privaten Händlern gekauft und dieses dann am Zoll vorbei in Europa zu hohen Profiten verkauft.</German>
 		<Russian>Чиновники [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] поймали нескольких контрабандистов. Они покупали соль и другие товары у частных торговцев в городе и продавали их с высокой прибылью в Европе без уплаты таможенных пошлин.</Russian>
 	</TEXT>
 	<TEXT>
@@ -4995,6 +5001,12 @@
 		<Russian>Согласен. Для всех нас это будет благом.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_OFFICERS_WIFE_ASSIGNMENT_HELP</Tag>
+		<English>[ICON_BULLET]The officer is being assigned to a small outpost. Send him to a small fort. If you haven't built a fort yet, transfer him there as soon as you have.</English>
+		<German>[ICON_BULLET]Der Offizier wird auf einen kleinen Außenposten versetzt. Schickt ihn in ein kleines Fort. Wenn ihr noch kein Fort errichtet habt, versetzt ihn umgehend sobald ihr es errichtet habt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_OFFICERS_WIFE_ARRIVAL</Tag>
 		<English>An officer has arrived at his new post at the fort.</English>
 		<French>L'officier est arrivé à son nouveau poste au fort</French>
@@ -5016,11 +5028,10 @@
 		<Russian>Спасибо. Будем надеяться, что это избавит его и его похотливую жену от неприятностей.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_OFFICER_ARRIVAL_AT_FORT_HELP</Tag>
-		<English>[ICON_BULLET]The officer shows up for duty.</English>
-		<French>[ICON_BULLET]L'officier prend su service.</French>
-		<German>[ICON_BULLET]Der Offizier nimmt seinen Dienst auf.</German>
-		<Russian>[ICON_BULLET]Офицер приступает к исполнению своих обязанностей.</Russian>
+		<Tag>TXT_KEY_EVENT_OFFICERS_WIFE_ARRIVAL_HELP</Tag>
+		<English>[ICON_BULLET]The officer will get straight to work and work hard. Leave him at the fort and wait a while!</English>
+		<German>[ICON_BULLET]Der Offizier wird umgehend an die Arbeit gehen und hart arbeiten. Lasst ihn im Fort stehen und wartet einige Zeit ab!</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_OFFICERS_WIFE_UPGRADE</Tag>

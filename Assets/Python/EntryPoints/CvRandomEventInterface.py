@@ -5580,59 +5580,116 @@ def applyPirates1a(argsList):
 
 def canTriggerSupersitiousPirates(argsList):
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
 	city = player.getCity(kTriggeredData.iCityId)
-	if player.isNone() :
+	if city.isNone() or city.getOwner() != player.getID():
 		return False
-	if not player.isPlayable():
-		return False
-	if city.isNone():
-		return False
-	city = player.getCity(kTriggeredData.iCityId)
+
 	unit = player.getUnit(kTriggeredData.iUnitId)
-	if city.getX() == unit.getX() and city.getY() == unit.getY():
-		return True
-	return False
-	# Read Parameter 1 from the first event and check if enough yield is stored in city
-	eEvent1 = gc.getInfoTypeForString("EVENT_SUPERSTITIOUS_PIRATES_2")
-	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_RUM")
-	quantity = event1.getGenericParameter(1)
-	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
-	if city.getYieldStored(iYield) < -quantity*2 :
+	if unit.isNone() or unit.getOwner() != player.getID():
 		return False
+
+	if unit.getX() != city.getX() or unit.getY() != city.getY():
+		return False
+
+	if unit.getUnitClassType() not in (
+		gc.getInfoTypeForString("UNITCLASS_PRIVATEER"),
+		gc.getInfoTypeForString("UNITCLASS_PIRATE_CUTTER"),
+		gc.getInfoTypeForString("UNITCLASS_PIRATE_FRIGATE"),
+	):
+		return False
+
+	return True
+
+def canDoSupersitiousPirates2(argsList):
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_RUM")
+	quantity = event.getGenericParameter(1)
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	quantity = quantity * Speed.getStoragePercent() / 100
+
+	if city.getYieldStored(iYield) < -quantity:
+		return False
+
 	return True
 
 def applySupersitiousPirates2(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
 	iYield = gc.getInfoTypeForString("YIELD_RUM")
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
+	quantity = quantity * Speed.getStoragePercent() / 100
+
 	if city.getYieldStored(iYield) < -quantity:
 		return
+
 	city.changeYieldStored(iYield, quantity)
 
 def getHelpSupersitiousPirates2(argsList):
 	eEvent = argsList[1]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[0]
+
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return u""
+
 	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return u""
+
 	iYield = gc.getInfoTypeForString("YIELD_RUM")
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	quantity = quantity * Speed.getStoragePercent()/100
+	quantity = quantity * Speed.getStoragePercent() / 100
 
-	szHelp = ""
-	if event.getGenericParameter(1) <> 0 :
-		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
-	return szHelp
+	if quantity != 0:
+		return localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity, gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
+
+	return u""
+
+def applySupersitiousPirates3(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return
+
+	# Visual fire effect
+	CyEngine().triggerEffect(
+		gc.getInfoTypeForString("EFFECT_CITY_BIG_BURNING_SMOKE"),
+		city.plot().getPoint()
+	)
 
 ####### TAC Events - General Functions########
 
@@ -5894,7 +5951,7 @@ hasCocoaBonus = has_plot_this_bonus("BONUS_COCOA")
 hasMineralBonus = has_plot_this_bonus("BONUS_MINERALS")
 hasTimberBonus = has_plot_this_bonus("BONUS_TIMBER")
 # 2023-11-xx : please put all relevant bonus
-hasFoodBonus = has_plot_this_bonus("BONUS_POTATO","BONUS_BANANA","BONUS_CORN")
+hasFoodBonus = has_plot_this_bonus("BONUS_POTATO","BONUS_BEANS","BONUS_CORN","BONUS_IGUANA","BONUS_TOMATO","BONUS_PUMPKIN","BONUS_SQUASH","BONUS_MUSHROOMS")
 hasSeaFoodBonus = has_plot_this_bonus("BONUS_PEARLS","BONUS_CRAB","BONUS_FISH")
 hasPumpkinBonus = has_plot_this_bonus("BONUS_PUMPKIN")
 hasTurkeyBonus = has_plot_this_bonus("BONUS_TURKEYS")
@@ -6752,28 +6809,112 @@ def canTriggerEuroTrade(argsList):
 	return False
 
 def canTriggerPirateAttack1(argsList):
+	eTrigger = argsList[0]
 	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
 	player = gc.getPlayer(ePlayer)
-	if not player.isPlayable():
+	if player.isNone() or not player.isPlayable() or player.isNative():
 		return False
+
 	iAchieve = gc.getInfoTypeForString("ACHIEVE_TENTHOUSAND_TRADE")
-	if not player.isPlayable():
+	if not player.isAchieveGained(iAchieve):
 		return False
-	if player.isAchieveGained(iAchieve):
-		return True
-	return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	if not city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+		return False
+
+	return True
 
 def canTriggerPirateAttack2(argsList):
+	eTrigger = argsList[0]
 	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
 	player = gc.getPlayer(ePlayer)
-	if not player.isPlayable():
+	if player.isNone() or not player.isPlayable() or player.isNative():
 		return False
+
 	iAchieve = gc.getInfoTypeForString("ACHIEVE_HUNDREDTHOUSAND_TRADE")
-	if not player.isPlayable():
+	if not player.isAchieveGained(iAchieve):
 		return False
-	if player.isAchieveGained(iAchieve):
-		return True
-	return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	if not city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()):
+		return False
+
+	return True
+
+def _getPirateAttackSpawnPlot(city):
+	if city.isNone():
+		return None
+
+	iOcean = gc.getInfoTypeForString("TERRAIN_OCEAN")
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			pPlot = plotXY(city.getX(), city.getY(), iDX, iDY)
+
+			if pPlot is None or pPlot.isNone():
+				continue
+
+			if not pPlot.isWater():
+				continue
+
+			if pPlot.getTerrainType() == iOcean:
+				return pPlot
+
+	return None
+
+
+def doPirateAttack1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	pPlot = _getPirateAttackSpawnPlot(city)
+	if pPlot is None or pPlot.isNone():
+		return
+
+	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
+
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PRIVATEER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+
+def doPirateAttack2(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	pPlot = _getPirateAttackSpawnPlot(city)
+	if pPlot is None or pPlot.isNone():
+		return
+
+	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
+
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PRIVATEER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
 
 def canTriggerTavernVsChapel(argsList):
 	ePlayer = argsList[1]
@@ -6795,26 +6936,60 @@ def canTriggerTavernVsChapel(argsList):
 				return False
 	return True
 
-def doPirateAttack1(argsList):
-	iEvent = argsList[1]
-	kTriggeredData = argsList[0]
-	pPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
-	if pPlot.isNone() == False:
-		newUnit = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PRIVATEER'), -1, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-		newUnit2 = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PIRATE_CUTTER'), -1, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+######## Privateer Events ###########
 
-def doPirateAttack2(argsList):
-	iEvent = argsList[1]
+def canTriggerPrivateer(argsList):
 	kTriggeredData = argsList[0]
-	pPlot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
-	if pPlot.isNone() == False:
-		newUnit = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PIRATE_FRIGATE'), -1, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-		newUnit2 = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PIRATE_FRIGATE'), -1, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-		newUnit = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PRIVATEER'), -1, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-		newUnit2 = bPlayer.initUnit(gc.getInfoTypeForString('UNIT_PIRATE_CUTTER'), -1, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
 
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_PRIVATEER"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if not plot.isWater():
+		return False
+
+	if plot.isCity():
+		return False
+
+	return True
+
+def applyPrivateer1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_PRIVATEER"):
+		return
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return
+
+	if not plot.isWater():
+		return
+
+	unit.kill(False)
+    
 ######## BEER ROBBERY ###########
 
 def canTriggerBeerRobbery(argsList):
@@ -18095,21 +18270,11 @@ def applyFerryStationRobbers2(argsList):
 def getHelpFerryStationRobbers(argsList):
 	return localText.getText("TXT_KEY_EVENT_FERRY_STATION_ROBBERS_HELP", ())
 
-######## Officer duel ###########
-
-getHelpOfficerDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_DUEL_HELP")
-
-getHelpOfficerNoDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_NODUEL_HELP")
-
 ######## Buccanners attack Silver Mine ###########
 
 getHelpBuccanneersAttackMine = get_simple_help("TXT_KEY_EVENT_BUCCANNERS_ATTACK_MINE_HELP")
 
 getHelpMilitiaDefend = get_simple_help("TXT_KEY_EVENT_MILITIA_DEFENDS_MINE_HELP")
-
-######## Officer arrives at fort ###########
-
-getHelpOfficerAtFort = get_simple_help("TXT_KEY_EVENT_OFFICER_ARRIVAL_AT_FORT_HELP")
 
 ######## Discovery Start Event  ###########
 
@@ -22209,3 +22374,599 @@ def getHelpCityFoodPercentLoss(argsList):
 		(iLoss, iPercent, city.getNameKey())
 	)
 
+######## Farm Bandits ###########
+
+def canTriggerFarmBandits(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	# 1. Plot must have one of the defined food bonuses
+	if not hasFoodBonus(argsList):
+		return False
+
+	# 2. The linked city must have more than 60 food stored
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	iFood = gc.getInfoTypeForString("YIELD_FOOD")
+	if city.getYieldStored(iFood) <= 60:
+		return False
+
+	return True
+
+######## Officers Wife ###########
+
+getHelpOfficerDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_DUEL_HELP")
+
+getHelpOfficerNoDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_NODUEL_HELP")
+
+OFFICERS_WIFE_CITY_PREFIX = "[[WTP_OFFICERS_WIFE_CITY_ID="
+OFFICERS_WIFE_CITY_SUFFIX = "]]"
+
+OFFICERS_WIFE_TURN_PREFIX = "[[WTP_OFFICERS_WIFE_TURN="
+OFFICERS_WIFE_TURN_SUFFIX = "]]"
+
+
+def _setOfficersWifeData(player, iCityId):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	for szPrefix, szSuffix in (
+		(OFFICERS_WIFE_CITY_PREFIX, OFFICERS_WIFE_CITY_SUFFIX),
+		(OFFICERS_WIFE_TURN_PREFIX, OFFICERS_WIFE_TURN_SUFFIX),
+	):
+		iStart = szData.find(szPrefix)
+		if iStart != -1:
+			iEnd = szData.find(szSuffix, iStart)
+			if iEnd != -1:
+				iEnd += len(szSuffix)
+				szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (OFFICERS_WIFE_CITY_PREFIX, iCityId, OFFICERS_WIFE_CITY_SUFFIX)
+	szData += "%s%d%s" % (OFFICERS_WIFE_TURN_PREFIX, CyGame().getGameTurn(), OFFICERS_WIFE_TURN_SUFFIX)
+
+	player.setScriptData(szData)
+
+
+def _getOfficersWifeNumber(player, szPrefix, szSuffix):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None:
+		return -1
+
+	iStart = szData.find(szPrefix)
+	if iStart == -1:
+		return -1
+
+	iStart += len(szPrefix)
+	iEnd = szData.find(szSuffix, iStart)
+
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _getOfficersWifeCity(player):
+	return _getOfficersWifeNumber(player, OFFICERS_WIFE_CITY_PREFIX, OFFICERS_WIFE_CITY_SUFFIX)
+
+
+def _getOfficersWifeTurn(player):
+	return _getOfficersWifeNumber(player, OFFICERS_WIFE_TURN_PREFIX, OFFICERS_WIFE_TURN_SUFFIX)
+
+
+def applyOfficersWife1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	_setOfficersWifeData(player, city.getID())
+
+
+def canDoCityOfficersWifeAfterDuel(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	iStoredCityId = _getOfficersWifeCity(player)
+	if iStoredCityId == -1:
+		return False
+
+	if city.getID() != iStoredCityId:
+		return False
+
+	iStoredTurn = _getOfficersWifeTurn(player)
+	if iStoredTurn == -1:
+		return False
+
+	if CyGame().getGameTurn() < iStoredTurn + 5:
+		return False
+
+	return True
+
+
+OFFICERS_WIFE_ASSIGNMENT_CITY_PREFIX = "[[WTP_OFFICERS_WIFE_ASSIGNMENT_CITY_ID="
+OFFICERS_WIFE_ASSIGNMENT_CITY_SUFFIX = "]]"
+
+OFFICERS_WIFE_ASSIGNMENT_TURN_PREFIX = "[[WTP_OFFICERS_WIFE_ASSIGNMENT_TURN="
+OFFICERS_WIFE_ASSIGNMENT_TURN_SUFFIX = "]]"
+
+
+def _setOfficersWifeAssignmentData(player, iCityId):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	for szPrefix, szSuffix in (
+		(OFFICERS_WIFE_ASSIGNMENT_CITY_PREFIX, OFFICERS_WIFE_ASSIGNMENT_CITY_SUFFIX),
+		(OFFICERS_WIFE_ASSIGNMENT_TURN_PREFIX, OFFICERS_WIFE_ASSIGNMENT_TURN_SUFFIX),
+	):
+		iStart = szData.find(szPrefix)
+		if iStart != -1:
+			iEnd = szData.find(szSuffix, iStart)
+			if iEnd != -1:
+				iEnd += len(szSuffix)
+				szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		OFFICERS_WIFE_ASSIGNMENT_CITY_PREFIX,
+		iCityId,
+		OFFICERS_WIFE_ASSIGNMENT_CITY_SUFFIX
+	)
+
+	szData += "%s%d%s" % (
+		OFFICERS_WIFE_ASSIGNMENT_TURN_PREFIX,
+		CyGame().getGameTurn(),
+		OFFICERS_WIFE_ASSIGNMENT_TURN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _getOfficersWifeAssignmentCity(player):
+	return _getOfficersWifeNumber(
+		player,
+		OFFICERS_WIFE_ASSIGNMENT_CITY_PREFIX,
+		OFFICERS_WIFE_ASSIGNMENT_CITY_SUFFIX
+	)
+
+
+def _getOfficersWifeAssignmentTurn(player):
+	return _getOfficersWifeNumber(
+		player,
+		OFFICERS_WIFE_ASSIGNMENT_TURN_PREFIX,
+		OFFICERS_WIFE_ASSIGNMENT_TURN_SUFFIX
+	)
+
+
+def applyOfficersWife2(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return
+
+	_setOfficersWifeAssignmentData(player, city.getID())
+
+
+def canDoCityOfficersWifeAssignment(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	iStoredCityId = _getOfficersWifeAssignmentCity(player)
+	if iStoredCityId == -1:
+		return False
+
+	if city.getID() != iStoredCityId:
+		return False
+
+	iStoredTurn = _getOfficersWifeAssignmentTurn(player)
+	if iStoredTurn == -1:
+		return False
+
+	if CyGame().getGameTurn() < iStoredTurn + 5:
+		return False
+
+	return True
+
+
+OFFICERS_WIFE_ARRIVAL_TURN_PREFIX = "[[WTP_OFFICERS_WIFE_ARRIVAL_TURN="
+OFFICERS_WIFE_ARRIVAL_TURN_SUFFIX = "]]"
+
+
+def _setOfficersWifeArrivalData(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(OFFICERS_WIFE_ARRIVAL_TURN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(OFFICERS_WIFE_ARRIVAL_TURN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(OFFICERS_WIFE_ARRIVAL_TURN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		OFFICERS_WIFE_ARRIVAL_TURN_PREFIX,
+		CyGame().getGameTurn(),
+		OFFICERS_WIFE_ARRIVAL_TURN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _getOfficersWifeArrivalTurn(player):
+	return _getOfficersWifeNumber(
+		player,
+		OFFICERS_WIFE_ARRIVAL_TURN_PREFIX,
+		OFFICERS_WIFE_ARRIVAL_TURN_SUFFIX
+	)
+
+
+def applyOfficersWifeAssignment(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	_setOfficersWifeArrivalData(player)
+
+
+def getHelpOfficersWifeAssignment(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_OFFICERS_WIFE_ASSIGNMENT_HELP",
+		(5,)
+	)
+
+
+def canTriggerOfficersWifeArrival(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	iStoredTurn = _getOfficersWifeArrivalTurn(player)
+	if iStoredTurn == -1:
+		return False
+
+	if CyGame().getGameTurn() < iStoredTurn + 5:
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_BRAVE_LIEUTENANT"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.getImprovementType() not in (
+		gc.getInfoTypeForString("IMPROVEMENT_FORT"),
+	):
+		return False
+
+	return True
+
+OFFICERS_WIFE_UPGRADE_TURN_PREFIX = "[[WTP_OFFICERS_WIFE_UPGRADE_TURN="
+OFFICERS_WIFE_UPGRADE_TURN_SUFFIX = "]]"
+
+
+def _setOfficersWifeUpgradeData(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(OFFICERS_WIFE_UPGRADE_TURN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(OFFICERS_WIFE_UPGRADE_TURN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(OFFICERS_WIFE_UPGRADE_TURN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		OFFICERS_WIFE_UPGRADE_TURN_PREFIX,
+		CyGame().getGameTurn(),
+		OFFICERS_WIFE_UPGRADE_TURN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _getOfficersWifeUpgradeTurn(player):
+	return _getOfficersWifeNumber(
+		player,
+		OFFICERS_WIFE_UPGRADE_TURN_PREFIX,
+		OFFICERS_WIFE_UPGRADE_TURN_SUFFIX
+	)
+
+
+def applyOfficersWifeArrival(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	_setOfficersWifeUpgradeData(player)
+
+
+def getHelpOfficersWifeArrival(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_OFFICERS_WIFE_ARRIVAL_HELP",
+		(5,)
+	)
+
+
+def canTriggerOfficersWifeUpgrade(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	iStoredTurn = _getOfficersWifeUpgradeTurn(player)
+	if iStoredTurn == -1:
+		return False
+
+	if CyGame().getGameTurn() < iStoredTurn + 5:
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return False
+
+	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_BRAVE_LIEUTENANT"):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.getImprovementType() != gc.getInfoTypeForString("IMPROVEMENT_FORT"):
+		return False
+
+	return True
+
+####### Slave Hunter Offers Service ###########
+
+def _isPlotAdjacentToCityCulture(city, plot):
+	if city.isNone() or plot is None or plot.isNone():
+		return False
+
+	iOwner = city.getOwner()
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+
+			if iDX == 0 and iDY == 0:
+				continue
+
+			adjPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if adjPlot is None or adjPlot.isNone():
+				continue
+
+			if adjPlot.getOwner() != iOwner:
+				continue
+
+			workingCity = adjPlot.getWorkingCity()
+
+			if workingCity is None or workingCity.isNone():
+				continue
+
+			if workingCity.getOwner() == city.getOwner() and workingCity.getID() == city.getID():
+				return True
+
+	return False
+
+
+def checkRunawaySlavesOnAdjacentPlotOfCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+
+	if city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	eEvent = gc.getInfoTypeForString("EVENT_SLAVE_HUNTER_SERVICE_ACCEPT")
+	event = gc.getEventInfo(eEvent)
+
+	aUnitClasses = (
+		event.getGenericParameter(1),
+		event.getGenericParameter(2),
+		event.getGenericParameter(3),
+	)
+
+	barbarianPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
+
+	(unit, iter) = barbarianPlayer.firstUnit()
+
+	while unit:
+
+		if unit.getUnitClassType() in aUnitClasses:
+
+			plot = unit.plot()
+
+			if _isPlotAdjacentToCityCulture(city, plot):
+				return True
+
+		(unit, iter) = barbarianPlayer.nextUnit(iter)
+
+	return False
+   
+####### Slave and Plantation Owner Daughter ###########
+
+def canTriggerSlaveAndPlantationOwnerDaughter(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.getImprovementType() not in (
+		gc.getInfoTypeForString("IMPROVEMENT_PLANTATION"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_PLANTATION"),
+	):
+		return False
+
+	city = plot.getWorkingCity()
+
+	if city is None or city.isNone():
+		return False
+
+	# City must still belong to the triggering player
+	if city.getOwner() != player.getID():
+		return False
+
+	return True
+
+def doSlaveAndPlantationOwnerDaughter1(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return
+
+	plot = CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
+	if plot is None or plot.isNone():
+		return
+
+	if plot.getOwner() != player.getID():
+		return
+
+	city = plot.getWorkingCity()
+	if city is None or city.isNone():
+		return
+
+	if city.getOwner() != player.getID():
+		return
+
+	cityPlot = city.plot()
+
+	eEvent = gc.getInfoTypeForString("EVENT_SLAVE_AND_PLANATION_OWNER_DAUGHTER_1")
+	event = gc.getEventInfo(eEvent)
+
+	iUnitClass = event.getGenericParameter(1)
+	iNumUnits = event.getGenericParameter(2)
+
+	barbarianPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
+	iUnitType = gc.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
+
+	if iUnitType == UnitTypes.NO_UNIT:
+		return
+
+	for i in range(iNumUnits):
+		for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
+			spawnPlot = plotDirection(cityPlot.getX(), cityPlot.getY(), DirectionTypes(iDirection))
+
+			if spawnPlot is None or spawnPlot.isNone():
+				continue
+
+			if spawnPlot.isWater() or spawnPlot.isCity():
+				continue
+
+			unit = barbarianPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				spawnPlot.getX(),
+				spawnPlot.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if unit.isNone():
+				continue
+
+			if unit.canMoveInto(cityPlot, True, False, False):
+				unit.attack(cityPlot, False)
+
+			break
