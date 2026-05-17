@@ -2168,6 +2168,72 @@
 		<Russian>Один человек говорит, что в пустыне недалеко от [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ангел явил ему Священную Книгу, начертанную на серебряных пластинах.[NEWLINE]Эта новость распространяется по нашим колониям со скоростью лесного пожара. Почти все жители города верят ему и этой так называемой Книге Мормона. Что нам с этим делать?</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_CORRUPT_STATESMAN</Tag>
+		<English>In the [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] colonial empire, corrupt government stattesmen were caught gambling in a dive bar.</English>
+		<German>Im [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Kolonialreich wurden korrupte Staatsbeamte beim Glückspiel in einer Spelunke erwischt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_CORRUPT_STATESMAN</Tag>
+		<English>My Lord! A number of royal officials have been caught gambling in a dive, and it is said that women of easy virtue were present as well. If you do nothing, this will bring the Crown and your office into disrepute.</English>
+		<German>Milord! man hat einige königliche Verwaltungsbeamte beim Glückspiel in einer Spelunke erwischt und leichte Mädchen sollen auch dabei gewesen sein. Das Ansehen der Krone und auch Euer Amt werden dadurch beschmutzt, wenn Ihr nichts tut.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CORRUPT_STATESMAN_1</Tag>
+		<English>It’s dead simple! Bribe the innkeeper and the whores and let the matter blow over. I suspect that’s not the only thing our royal officials get up to, but we’re stuck with them.</English>
+		<German>Das ist doch ganz einfach! Bestecht den Wirt und die Huren und lasst Gras über die Sache wachsen. Ich vermute das ist nicht das Einzige, was unsere könglichen Beamten so treiben, aber wir sind auf sie angewiesen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CORRUPT_STATESMAN_2</Tag>
+		<English>You’re right, we absolutely must do something about this and send a clear message. We’ll arrest them and make an example of them. At least one of them will have to be hanged to maintain order.</English>
+		<German>Ihr habt Recht, wir müssen unbedingt etwas dagegen unternehmen und ein Zeichen setzen. Wir verhaften sie und statuieren ein Exempel. Mindestens einer von Ihnen wird hängen müssen, um die Ordnung zu wahren.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CORRUPT_STATESMAN_3</Tag>
+		<English>Oh, come on, you mustn’t take it all so seriously. First of all, they’re royal statesmen – just like us. And secondly, there’s nothing wrong with a bit of fun. Let’s just forget about it.</English>
+		<German>Ach was, ihr dürft das alles nicht so eng sehen. Erstens sind es königliche Beamte - wie wir auch. Und zweitens ist doch nichts gegen ein wenig Amüsement zu sagen. Vergessen wir die Sache.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CORRUPT_STATESMAN_REMOVE_ONE_STATESMAN</Tag>
+		<English>[ICON_BULLET]One Statesman will disappear from the city.</English>
+		<German>[ICON_BULLET]Ein Staatsmann wird aus der Stadt entfernt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_REVOLUTIONARY_MOVEMENT</Tag>
+		<English>In the [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] colonial empire, revolutionary sentiment is on the rise. People appear to be very dissatisfied with the king.</English>
+		<German>Im [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT] Kolonialreich steigen die revolutionären Tendenzen erheblich an. Man ist offenbar mit dem König sehr unzufrieden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_MOVEMENT</Tag>
+		<English>Mylord! Dissatisfaction is growing rapidly in our colonies. We must do something about this at all costs, before the mob one day tears the King’s statues from their pedestals – and us along with them, no doubt.</English>
+		<German>Milord! In unseren Kolonien steigt die Unzufriedenheit erheblich an. Wir müssen unbedingt etwas dagegen tun, bevor der Mob eines Tages die Statuen des Königs vom Sockel reißt und uns wahrscheinlich gleich mit.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_MOVEMENT_1</Tag>
+		<English>Well, what do you think we’re working towards here? We’ve been supporting this movement for a while now and will continue to do so. We should also make a donation to the war chest straight away. But for heaven’s sake, the king mustn’t find out about this.</English>
+		<German>Ja was glaubt ihr denn worauf wir hier hinarbeiten? Wir unterstützen diese Bewegung schon länger und werden das auch weiterhin tun. Wir sollten auch gleich noch was in die Kriegskasse spenden. Der König darf davon aber um himmels Willen nichts erfahren.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_MOVEMENT_2</Tag>
+		<English>You’re right, we absolutely must do something about this and send a clear message. Let’s arrest three of their ringleaders and hang them in public for sedition. Otherwise, one day it will be us whom the king arrests.</English>
+		<German>Ihr habt Recht, wir müssen unbedingt etwas dagegen unternehmen und ein Zeichen setzen. Verhaften wir drei ihrer Rädelsführer und hängen sie wegen Aufrührerei öffentlich auf. Sonst werden wir es eines Tages sein, die der König verhaftet.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_MOVEMENT_3</Tag>
+		<English>Oh, do you think so? Let’s just let things take their course for a while and see where it leads us. People tend to talk a lot over a beer in the tavern. I don’t see any need to intervene just yet. It’ll only cause trouble.</English>
+		<German>Ach, meint Ihr? Lassen wir den Dingen doch einfach noch ein wenig ihren Lauf und sehen wohin es uns führt. Die Leute reden doch viel bei einem Bier in der Taverne. Ich sehe da noch keine Notwendigkeit einzugreifen. Das gibt nur Ärger.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_THE_ROYALS</Tag>
 		<English>A royalist riot in the [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] colonies is taking place in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</English>
 		<French>Une émeute royaliste dans les colonies [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] est survenue à [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</French>

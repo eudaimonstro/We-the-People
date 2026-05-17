@@ -5073,14 +5073,6 @@ def getHelpTradeWithNativesBetrayal(argsList):
 		(UnitClass.getTextKey(), nativeCity.getNameKey(), event.getGenericParameter(1), iAmount)
 	)
 
-####### The Royals Event ########
-
-getHelpTheRoyals1  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_1PYTHON")
-getHelpTheRoyals2  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2PYTHON")
-getHelpTheRoyals3  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_3PYTHON")
-getHelpTheRoyals4  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_4PYTHON")
-getHelpTheRoyals2a = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2aPYTHON")
-
 # ============================================================
 # PIRATES
 # ============================================================
@@ -19850,6 +19842,101 @@ def CheckInfantryTheRoyals(argsList):
 
 	return False
 
+######## The Royals Events ###########
+
+def canTriggerTheRoyals(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	king = gc.getPlayer(player.getParent())
+	if king.isNone():
+		return False
+
+	if not king.isEurope():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 45:
+		return False
+
+	return True
+
+getHelpTheRoyals1  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_1PYTHON")
+getHelpTheRoyals2  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2PYTHON")
+getHelpTheRoyals3  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_3PYTHON")
+getHelpTheRoyals4  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_4PYTHON")
+getHelpTheRoyals2a = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2aPYTHON")
+
+def canTriggerRevolutionaryMovement(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	king = gc.getPlayer(player.getParent())
+	if king.isNone():
+		return False
+
+	if not king.isEurope():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 30:
+		return False
+
+	return True
+
+def _removeRandomPopulationUnitFromCity(city):
+	if city is None or city.isNone():
+		return False
+
+	if city.getPopulation() <= 0:
+		return False
+
+	iIndex = CyGame().getSorenRandNum(city.getPopulation(), "Remove random settler from city")
+	unit = city.getPopulationUnitByIndex(iIndex)
+
+	if unit is None or unit.isNone():
+		return False
+
+	city.removePopulationUnit(unit, True, ProfessionTypes.NO_PROFESSION)
+
+	return True
+
+
+def applyKingPleasedAndRemoveThreeSettlers(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		return
+
+	applyKingPleased(argsList)
+
+	for i in range(3):
+		if not _removeRandomPopulationUnitFromCity(city):
+			break
+
 ######## Whaling Trip Quest ###########
 
 def isExpiredWhalingTrip(argsList):
@@ -22970,3 +23057,133 @@ def doSlaveAndPlantationOwnerDaughter1(argsList):
 				unit.attack(cityPlot, False)
 
 			break
+
+####### Trade Fort Event ###########
+
+def canTriggerTradeFort(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone() or unit.getOwner() != player.getID():
+		return False
+
+	if unit.getUnitClassType() not in (
+		gc.getInfoTypeForString("UNITCLASS_EXPERT_TRADER"),
+		gc.getInfoTypeForString("UNITCLASS_SEASONED_TRADER"),
+	):
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getOwner() != player.getID():
+		return False
+
+	if plot.isWater() or plot.isCity():
+		return False
+
+	if plot.getImprovementType() != -1:
+		return False
+
+	return True
+
+####### Corrupt Statesman Event ###########
+
+def _countUnitClassInCityPopulation(city, iUnitClass):
+	if city is None or city.isNone():
+		return 0
+
+	iCount = 0
+
+	for i in range(city.getPopulation()):
+		unit = city.getPopulationUnitByIndex(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getUnitClassType() == iUnitClass:
+			iCount += 1
+
+	return iCount
+
+
+def _removeFirstUnitClassFromCityPopulation(city, iUnitClass):
+	if city is None or city.isNone():
+		return False
+
+	for i in range(city.getPopulation()):
+		unit = city.getPopulationUnitByIndex(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getUnitClassType() == iUnitClass:
+			city.removePopulationUnit(unit, True, ProfessionTypes.NO_PROFESSION)
+			return True
+
+	return False
+
+
+def canTriggerThreeStatesmenInCity(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city is None or city.isNone() or city.getOwner() != player.getID():
+		return False
+
+	iStatesmanClass = gc.getInfoTypeForString("UNITCLASS_STATESMAN")
+	if iStatesmanClass == -1:
+		return False
+
+	if _countUnitClassInCityPopulation(city, iStatesmanClass) < 3:
+		return False
+
+	return True
+
+
+def applyKingAngryAndRemoveOneStatesman(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone() or city.getOwner() != player.getID():
+		return
+
+	applyKingAngry(argsList)
+
+	iStatesmanClass = gc.getInfoTypeForString("UNITCLASS_STATESMAN")
+	if iStatesmanClass == -1:
+		return
+
+	if _countUnitClassInCityPopulation(city, iStatesmanClass) < 3:
+		return
+
+	_removeFirstUnitClassFromCityPopulation(city, iStatesmanClass)
+
+
+def getHelpKingAngryAndRemoveOneStatesman(argsList):
+	szHelp = getHelpKingAngry(argsList)
+
+	if szHelp:
+		szHelp += u"\n"
+
+	szHelp += localText.getText(
+		"TXT_KEY_EVENT_CORRUPT_STATESMAN_REMOVE_ONE_STATESMAN",
+		()
+	)
+
+	return szHelp

@@ -15238,7 +15238,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/achievements/firstfort.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -15252,6 +15252,7 @@
 			<UnitTriggerConditions>
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_EXPERT_TRADER</UnitClass>
+					<UnitClass>UNITCLASS_SEASONED_TRADER</UnitClass>
 				</UnitsRequired>
 				<iNumUnits>1</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
@@ -15279,19 +15280,19 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
-			<bGlobal>1</bGlobal>
+			<bGlobal>0</bGlobal>
 			<bPickPlayer>1</bPickPlayer>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerAI>0</bOtherPlayerAI>
 			<bOtherPlayerNative>0</bOtherPlayerNative>
-			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
+			<bOtherPlayerPlayable>1</bOtherPlayerPlayable>
 			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>isPlayable</PythonCanDo>
+			<PythonCanDo>canTriggerTradeFort</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -15315,11 +15316,11 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/achievements/statesman.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>0</iMinTreasury>
+			<iMinTreasury>1000</iMinTreasury>
 			<iMinPopulation>20</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -15391,10 +15392,11 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/achievements/no_smoking.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -41051,22 +41053,21 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/revolution.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>3000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>0</iMinTreasury>
-			<iMinPopulation>15</iMinPopulation>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>5000</iMinTreasury>
+			<iMinPopulation>20</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>5</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
 				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
@@ -41075,7 +41076,10 @@
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>3</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -41107,7 +41111,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>CheckInfantryTheRoyals</PythonCanDo>
+			<PythonCanDo>canTriggerTheRoyals</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -41131,27 +41135,29 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>4000</iMinTreasury>
-			<iMinPopulation>15</iMinPopulation>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>1000</iMinTreasury>
+			<iMinPopulation>5</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>5</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
+				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>3</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -41167,7 +41173,7 @@
 			<PrereqEvents>
 				<Event>EVENT_THE_ROYALS_1</Event>
 			</PrereqEvents>
-			<bPrereqEventPlot>1</bPrereqEventPlot>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
@@ -41182,7 +41188,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>CheckInfantryTheRoyals</PythonCanDo>
+			<PythonCanDo>canTriggerTheRoyals</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -41206,6 +41212,7 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
 			<iMinTreasury>4000</iMinTreasury>
 			<iMinPopulation>15</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -41214,19 +41221,20 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>5</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
+				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>3</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -41242,7 +41250,7 @@
 			<PrereqEvents>
 				<Event>EVENT_THE_ROYALS_2</Event>
 			</PrereqEvents>
-			<bPrereqEventPlot>1</bPrereqEventPlot>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
@@ -41257,7 +41265,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>CheckInfantryTheRoyals</PythonCanDo>
+			<PythonCanDo>canTriggerTheRoyals</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -41281,6 +41289,7 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
 			<iMinTreasury>2000</iMinTreasury>
 			<iMinPopulation>15</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -41289,19 +41298,20 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>5</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
+				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
 			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>3</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -41332,7 +41342,7 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>CheckInfantryTheRoyals</PythonCanDo>
+			<PythonCanDo>canTriggerTheRoyals</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -41356,7 +41366,8 @@
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>4000</iMinTreasury>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>2000</iMinTreasury>
 			<iMinPopulation>15</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -41364,12 +41375,10 @@
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>5</iNumUnits>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
+				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
@@ -41407,7 +41416,161 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>CheckInfantryTheRoyals</PythonCanDo>
+			<PythonCanDo>canTriggerTheRoyals</PythonCanDo>
+			<PythonCanDoCity/>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_CORRUPT_STATESMAN</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENTTRIGGER_CORRUPT_STATESMAN</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_CORRUPT_STATESMAN</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/Achievements/revolution.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>500</iWeight>
+			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>1000</iMinTreasury>
+			<iMinPopulation>15</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
+				<iNumUnitsGlobal>0</iNumUnitsGlobal>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+			</BuildingsRequired>
+			<iNumBuildings>3</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<bOwnPlot>1</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+			<Events>
+				<Event>EVENT_CORRUPT_STATESMAN_1</Event>
+				<Event>EVENT_CORRUPT_STATESMAN_2</Event>
+				<Event>EVENT_CORRUPT_STATESMAN_3</Event>
+			</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>1</bPrereqEventPlot>
+			<bRecurring>0</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>0</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo/>
+			<PythonCanDoCity>canTriggerThreeStatesmenInCity</PythonCanDoCity>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_REVOLUTIONARY_MOVEMENT</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENTTRIGGER_REVOLUTIONARY_MOVEMENT</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_MOVEMENT</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/EventImages/revolution.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>-1</iWeight>
+			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>2000</iMinTreasury>
+			<iMinPopulation>15</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
+				<iNumUnitsGlobal>0</iNumUnitsGlobal>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+			</BuildingsRequired>
+			<iNumBuildings>3</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<bOwnPlot>1</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+			<Events>
+				<Event>EVENT_REVOLUTIONARY_MOVEMENT_1</Event>
+				<Event>EVENT_REVOLUTIONARY_MOVEMENT_2</Event>
+				<Event>EVENT_REVOLUTIONARY_MOVEMENT_3</Event>
+			</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>1</bPrereqEventPlot>
+			<bRecurring>0</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>0</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo>canTriggerRevolutionaryMovement</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>

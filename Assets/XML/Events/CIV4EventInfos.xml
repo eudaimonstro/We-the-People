@@ -29246,7 +29246,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>-1</iAttitudeModifier>
+			<iAttitudeModifier>-2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -29276,7 +29276,7 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>-200</iGold>
+			<iGold>-500</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
@@ -29307,7 +29307,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>1</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -29346,7 +29346,7 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>1</iUnitImmobileTurns>
+			<iUnitImmobileTurns>2</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
@@ -29429,7 +29429,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>1</iAttitudeModifier>
+			<iAttitudeModifier>2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -29459,7 +29459,7 @@
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>-300</iGold>
+			<iGold>-1000</iGold>
 			<bGoldToPlayer>1</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
@@ -29551,7 +29551,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>-1</iAttitudeModifier>
+			<iAttitudeModifier>-2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
@@ -29626,7 +29626,7 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>-1</iGenericParameter3>
+			<iGenericParameter3>-2</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -92080,6 +92080,215 @@
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
+			<Type>EVENT_CORRUPT_STATESMAN_1</Type>
+			<Description>TXT_KEY_EVENT_CORRUPT_STATESMAN_1</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>-500</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback>applyKingPleased</PythonCallback>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpKingPleased</PythonHelp>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>1</iGenericParameter3>
+			<iGenericParameter4>1</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_CORRUPT_STATESMAN_2</Type>
+			<Description>TXT_KEY_EVENT_CORRUPT_STATESMAN_2</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>0</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback>applyKingAngryAndRemoveOneStatesman</PythonCallback>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpKingAngryAndRemoveOneStatesman</PythonHelp>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>100</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>-1</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_CORRUPT_STATESMAN_3</Type>
+			<Description>TXT_KEY_EVENT_CORRUPT_STATESMAN_3</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>0</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>2</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback/>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp/>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>800</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
 			<Type>EVENT_THE_ROYALS_1</Type>
 			<Description>TXT_KEY_EVENT_THE_ROYALS_1</Description>
 			<LocalInfoText/>
@@ -92108,8 +92317,34 @@
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>2</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -92169,8 +92404,34 @@
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>3</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -92223,17 +92484,43 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>3</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
-			<iMinPillage>0</iMinPillage>
-			<iMaxPillage>0</iMaxPillage>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>4</iRevoltTurns>
+			<iMinPillage>1</iMinPillage>
+			<iMaxPillage>3</iMaxPillage>
 			<iFood>0</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FeatureType>NONE</FeatureType>
@@ -92275,7 +92562,7 @@
 			<bPickCity>1</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
-			<iGold>2000</iGold>
+			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
 			<iCulture>200</iCulture>
@@ -92284,15 +92571,41 @@
 			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>6</iUnitImmobileTurns>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions/>
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
-			<iRevoltTurns>1</iRevoltTurns>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_HAPPINESS</YieldType>
+					<iExtraYield>-1</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>5</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -92333,7 +92646,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -92378,16 +92691,16 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyKingPleased</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpKingPleased</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>1000</iAIValue>
+			<iAIValue>600</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>900</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
+			<iGenericParameter3>3</iGenericParameter3>
+			<iGenericParameter4>3</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_THE_ROYALS_2a</Type>
@@ -92418,7 +92731,33 @@
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
 			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-3</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-3</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-3</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-3</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-3</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
 			<iRevoltTurns>0</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
@@ -92452,7 +92791,7 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>700</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -92518,7 +92857,7 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>500</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -92551,7 +92890,7 @@
 			<BuildingClass>BUILDINGCLASS_NEWSPAPER</BuildingClass>
 			<iBuildingChange>-1</iBuildingChange>
 			<BuildingExtraYields/>
-			<iRevoltTurns>3</iRevoltTurns>
+			<iRevoltTurns>5</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
 			<iMaxPillage>0</iMaxPillage>
 			<iFood>0</iFood>
@@ -92584,7 +92923,242 @@
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>900</iGenericParameter3>
+			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_REVOLUTIONARY_MOVEMENT_1</Type>
+			<Description>TXT_KEY_EVENT_REVOLUTIONARY_MOVEMENT_1</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>-1000</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>2</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback>applyKingAngry</PythonCallback>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpKingAngry</PythonHelp>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>500</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>-5</iGenericParameter3>
+			<iGenericParameter4>0</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_REVOLUTIONARY_MOVEMENT_2</Type>
+			<Description>TXT_KEY_EVENT_REVOLUTIONARY_MOVEMENT_2</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>0</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-5</iExtraYield>
+				</BuildingExtraYield>
+				<BuildingExtraYield>
+					<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
+					<YieldType>YIELD_BELLS</YieldType>
+					<iExtraYield>-5</iExtraYield>
+				</BuildingExtraYield>
+			</BuildingExtraYields>
+			<iRevoltTurns>3</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback>applyKingPleasedAndRemoveThreeSettlers</PythonCallback>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpKingPleased</PythonHelp>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>600</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>5</iGenericParameter3>
+			<iGenericParameter4>5</iGenericParameter4>
+		</EventInfo>
+		<EventInfo>
+			<Type>EVENT_REVOLUTIONARY_MOVEMENT_3</Type>
+			<Description>TXT_KEY_EVENT_REVOLUTIONARY_MOVEMENT_3</Description>
+			<LocalInfoText/>
+			<WorldNewsTexts/>
+			<OtherPlayerPopup/>
+			<QuestFailText/>
+			<bQuest>0</bQuest>
+			<bGlobal>0</bGlobal>
+			<bTeam>0</bTeam>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bDeclareWar>0</bDeclareWar>
+			<iGold>0</iGold>
+			<bGoldToPlayer>0</bGoldToPlayer>
+			<iRandomGold>0</iRandomGold>
+			<iCulture>0</iCulture>
+			<iHealth>0</iHealth>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
+			<bDisbandUnit>0</bDisbandUnit>
+			<iUnitExperience>0</iUnitExperience>
+			<iUnitImmobileTurns>0</iUnitImmobileTurns>
+			<UnitPromotion/>
+			<UnitName/>
+			<UnitCombatPromotions/>
+			<UnitClassPromotions/>
+			<BuildingClass>NONE</BuildingClass>
+			<iBuildingChange>0</iBuildingChange>
+			<BuildingExtraYields/>
+			<iRevoltTurns>0</iRevoltTurns>
+			<iMinPillage>0</iMinPillage>
+			<iMaxPillage>0</iMaxPillage>
+			<iFood>0</iFood>
+			<iFoodPercent>0</iFoodPercent>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
+			<ImprovementType>NONE</ImprovementType>
+			<iImprovementChange>0</iImprovementChange>
+			<RouteType>NONE</RouteType>
+			<iRouteChange>0</iRouteChange>
+			<BonusRevealed>NONE</BonusRevealed>
+			<PlotExtraYields/>
+			<iOurAttitudeModifier>0</iOurAttitudeModifier>
+			<iAttitudeModifier>0</iAttitudeModifier>
+			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
+			<iPopulationChange>0</iPopulationChange>
+			<AdditionalEvents/>
+			<EventTimes/>
+			<ClearEvents/>
+			<PythonCallback/>
+			<PythonExpireCheck/>
+			<PythonCanDo/>
+			<PythonHelp/>
+			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
+			<iAIValue>1000</iAIValue>
+			<iGenericParameter1>0</iGenericParameter1>
+			<iGenericParameter2>0</iGenericParameter2>
+			<iGenericParameter3>0</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
