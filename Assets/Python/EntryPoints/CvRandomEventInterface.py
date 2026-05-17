@@ -19700,6 +19700,91 @@ canTriggerAtCityPopulationOf20 = checkCityAbovePopulation(20)
 
 ###### Revolutionary Events Start Event ######
 
+def canTriggerRevolutionaryDrunkenSpeeches(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 25:
+		return False
+
+	return True
+
+def canTriggerRevolutionaryEventsFakeNews(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 35:
+		return False
+
+	return True
+
+def canTriggerRevolutionaryEventsStart(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 45:
+		return False
+
+	return True
+
+def canTriggerRevolutionaryEventsStartDone(argsList):
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	city = player.getCity(iCityId)
+	if city.isNone():
+		return False
+
+	iUnitType = gc.getInfoTypeForString("UNIT_NOBLE")
+	if iUnitType == -1:
+		return False
+
+	iUnitsCurrent = countUnitsInCityForCityTrigger(argsList, iUnitType)
+	if iUnitsCurrent < 1:
+		return False
+
+	return True
+
 def CheckNobleInCity(argsList):
 	ePlayer = argsList[1]
 	player = gc.getPlayer(ePlayer)
@@ -19865,7 +19950,7 @@ def canTriggerTheRoyals(argsList):
 		return False
 
 	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
-	if iRebelPercent <= 45:
+	if iRebelPercent <= 40:
 		return False
 
 	return True

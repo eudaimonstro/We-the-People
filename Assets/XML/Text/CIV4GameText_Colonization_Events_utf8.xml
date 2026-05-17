@@ -5997,9 +5997,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REVOLUTIONARY_EVENTS_FAKE_NEWS_4</Tag>
-		<English>That is high treason! Long live the King. Arrest the ringleaders. Close down the newspaper in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] as an example. That will show the others we're serious.</English>
-		<German>Das ist Hochverrat! Verhaften wir die Rädelsführer und schließen wir jedenfalls das Zeitungshaus in [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. Das wird den anderen eine Lehre sein.</German>
-		<Russian>Арестовать негодяев, распространяющих эти лживые новости про нашего обожаемого Короля, да благословит его Господь, и закрыть их мерзкую газетёнку в [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT]. Это послужит хорошим уроком для всех остальных.</Russian>
+		<English>That is high treason! Long live the King. Arrest the ringleaders. Close down the newspaper in [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] as an example. That will show the others we're serious.</English>
+		<German>Das ist Hochverrat! Verhaften wir die Rädelsführer und schließen wir jedenfalls das Zeitungshaus in [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]. Das wird den anderen eine Lehre sein.</German>
+		<Russian>Арестовать негодяев, распространяющих эти лживые новости про нашего обожаемого Короля, да благословит его Господь, и закрыть их мерзкую газетёнку в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]. Это послужит хорошим уроком для всех остальных.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_DRUNKEN_SPEECHES</Tag>
