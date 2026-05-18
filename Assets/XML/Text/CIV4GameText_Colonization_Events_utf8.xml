@@ -6069,9 +6069,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INFANTRY_MUTINY_HELP</Tag>
-		<English>The deserters are gathering nearby. They're getting ready to attack us.</English>
-		<German>Die Deserteure werden sich in der Nähe sammeln und uns vermutlich angreifen.</German>
-		<Russian>Дезертиры соберутся в отряд неподалеку и, вероятно, нападут на нас.</Russian>
+		<English>[ICON_BULLET]The deserters are gathering nearby. They're getting ready to attack us.</English>
+		<German>[ICON_BULLET]Die Deserteure werden sich in der Nähe sammeln und uns vermutlich angreifen.</German>
+		<Russian>[ICON_BULLET]Дезертиры соберутся в отряд неподалеку и, вероятно, нападут на нас.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_LIBERTY_OR_DEATH</Tag>

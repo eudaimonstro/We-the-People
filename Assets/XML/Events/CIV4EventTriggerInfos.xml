@@ -40507,6 +40507,80 @@
 			<PythonCallback/>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_REVOLUTIONARY_EVENTS_ROYAL_TROOPS</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_ROYAL_TROOPS</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_1</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>2000</iWeight>
+			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>2000</iMinTreasury>
+			<iMinPopulation>0</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired>
+					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
+				</UnitsRequired>
+				<iNumUnits>1</iNumUnits>
+				<iNumUnitsGlobal>10</iNumUnitsGlobal>
+				<bTrackUnit>1</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired/>
+			<iNumBuildings>0</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>1</iNumPlotsRequired>
+			<bOwnPlot>1</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+			<Events>
+				<Event>EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_1</Event>
+				<Event>EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_2</Event>
+				<Event>EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_3</Event>
+			</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
+			<bRecurring>0</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>0</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo>canTriggerRevolutionaryRoyalTroops</PythonCanDo>
+			<PythonCanDoCity/>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_REVOLUTIONARY_EVENTS_DRUNKEN_SPEECHES</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_DRUNKEN_SPEECHES</Text>
@@ -40828,12 +40902,13 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/revolution.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
+			<RequiredColonialStatus>COLONIAL_STATUS_IN_REVOLUTION</RequiredColonialStatus>
 			<iMinTreasury>3000</iMinTreasury>
-			<iMinPopulation>80</iMinPopulation>
+			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
@@ -40843,8 +40918,8 @@
 				<UnitsRequired>
 					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
 				</UnitsRequired>
-				<iNumUnits>15</iNumUnits>
-				<iNumUnitsGlobal>15</iNumUnitsGlobal>
+				<iNumUnits>1</iNumUnits>
+				<iNumUnitsGlobal>10</iNumUnitsGlobal>
 				<bTrackUnit>1</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
 				<iUnitDamagedWeight>0</iUnitDamagedWeight>
@@ -40867,7 +40942,7 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
+			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
 			<bPickPlayer>0</bPickPlayer>
@@ -40881,11 +40956,10 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo/>
-			<PythonCanDoCity>canDoInRevolution</PythonCanDoCity>
+			<PythonCanDo>canTriggerRevolutionaryMutinyInfantry</PythonCanDo>
+			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_REVOLUTIONARY_EVENTS_LIBERTY_OR_DEATH</Type>
@@ -40902,11 +40976,12 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/revolution.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
+			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>10000</iMinTreasury>
+			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -40923,10 +40998,8 @@
 				<iUnitDistanceWeight>0</iUnitDistanceWeight>
 				<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			</UnitTriggerConditions>
-			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_COLONIAL_CONGRESS</BuildingClass>
-			</BuildingsRequired>
-			<iNumBuildings>1</iNumBuildings>
+			<BuildingsRequired/>
+			<iNumBuildings>0</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
@@ -40937,81 +41010,6 @@
 			<Events>
 				<Event>EVENT_REVOLUTIONARY_EVENTS_LIBERTY_OR_DEATH_1</Event>
 				<Event>EVENT_REVOLUTIONARY_EVENTS_LIBERTY_OR_DEATH_2</Event>
-			</Events>
-			<PrereqEvents>
-				<Event>EVENT_REVOLUTIONARY_EVENTS_START_QUEST</Event>
-			</PrereqEvents>
-			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<bRecurring>0</bRecurring>
-			<bTeam>0</bTeam>
-			<bGlobal>0</bGlobal>
-			<bPickPlayer>0</bPickPlayer>
-			<bOtherPlayerWar>0</bOtherPlayerWar>
-			<bOtherPlayerAI>0</bOtherPlayerAI>
-			<bOtherPlayerNative>0</bOtherPlayerNative>
-			<bOtherPlayerPlayable>0</bOtherPlayerPlayable>
-			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
-			<bPickCity>1</bPickCity>
-			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
-			<bShowPlot>1</bShowPlot>
-			<bFrontPopup>0</bFrontPopup>
-			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo/>
-			<PythonCanDoCity>CheckJudgeInCity</PythonCanDoCity>
-			<PythonCanDoUnit/>
-			<PythonCallback/>
-		</EventTriggerInfo>
-		<EventTriggerInfo>
-			<Type>EVENTTRIGGER_REVOLUTIONARY_EVENTS_ROYAL_TROOPS</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_ROYAL_TROOPS</Text>
-			</WorldNewsTexts>
-			<TriggerTexts>
-				<TriggerText>
-					<Text>TXT_KEY_EVENT_TRIGGER_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_1</Text>
-					<Era>NONE</Era>
-				</TriggerText>
-			</TriggerTexts>
-			<bTutorial>0</bTutorial>
-			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
-			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>1000</iWeight>
-			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
-			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<eCivic>NONE</eCivic>
-			<iMinTreasury>2000</iMinTreasury>
-			<iMinPopulation>0</iMinPopulation>
-			<iMaxPopulation>0</iMaxPopulation>
-			<iMinMapLandmass>0</iMinMapLandmass>
-			<iMinOurLandmass>0</iMinOurLandmass>
-			<iMaxOurLandmass>-1</iMaxOurLandmass>
-			<eMinDifficulty>NONE</eMinDifficulty>
-			<UnitTriggerConditions>
-				<UnitsRequired>
-					<UnitClass>UNITCLASS_EUROPEAN_LINE_INFANTRY</UnitClass>
-				</UnitsRequired>
-				<iNumUnits>15</iNumUnits>
-				<iNumUnitsGlobal>0</iNumUnitsGlobal>
-				<bTrackUnit>1</bTrackUnit>
-				<bUnitsOnPlot>1</bUnitsOnPlot>
-				<iUnitDamagedWeight>0</iUnitDamagedWeight>
-				<iUnitDistanceWeight>0</iUnitDistanceWeight>
-				<iUnitExperienceWeight>0</iUnitExperienceWeight>
-			</UnitTriggerConditions>
-			<BuildingsRequired/>
-			<iNumBuildings>0</iNumBuildings>
-			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
-			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<bOwnPlot>0</bOwnPlot>
-			<FeaturesRequired/>
-			<TerrainsRequired/>
-			<ImprovementsRequired/>
-			<RoutesRequired/>
-			<Events>
-				<Event>EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_1</Event>
-				<Event>EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_2</Event>
-				<Event>EVENT_REVOLUTIONARY_EVENTS_ROYAL_TROOPS_3</Event>
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
@@ -41029,8 +41027,8 @@
 			<bShowPlot>1</bShowPlot>
 			<bFrontPopup>0</bFrontPopup>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo/>
-			<PythonCanDoCity>canDoNotInRevolution</PythonCanDoCity>
+			<PythonCanDo>canTriggerRevolutionaryLibertyorDeath</PythonCanDo>
+			<PythonCanDoCity>CheckJudgeInCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
 		</EventTriggerInfo>

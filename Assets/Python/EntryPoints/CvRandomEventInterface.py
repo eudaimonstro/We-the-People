@@ -19698,7 +19698,26 @@ def checkCityAbovePopulation(numPop):
 canTriggerAtCityPopulationOf10 = checkCityAbovePopulation(10)
 canTriggerAtCityPopulationOf20 = checkCityAbovePopulation(20)
 
-###### Revolutionary Events Start Event ######
+###### Revolutionary Events ######
+
+def canTriggerRevolutionaryRoyalTroops(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 20:
+		return False
+
+	return True
 
 def canTriggerRevolutionaryDrunkenSpeeches(argsList):
 	kTriggeredData = argsList[0]
@@ -19734,6 +19753,40 @@ def canTriggerRevolutionaryEventsFakeNews(argsList):
 
 	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
 	if iRebelPercent <= 35:
+		return False
+
+	return True
+
+def canTriggerRevolutionaryLibertyorDeath(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
+	if iRebelPercent <= 50:
+		return False
+
+	return True
+
+def CheckJudgeInCity(argsList):
+	ePlayer = argsList[1]
+	player = gc.getPlayer(ePlayer)
+
+	if not player.isPlayable():
+		return False
+
+	# you could add checks for several Units like this
+	iUnitType = CvUtil.findInfoTypeNum('UNIT_JUDGE')
+	iUnitsCurrent = countUnitsInCityForCityTrigger(argsList, iUnitType)
+	if iUnitsCurrent == 0:
 		return False
 
 	return True
@@ -19880,52 +19933,84 @@ def getHelpRevolution1(argsList):
 
 getHelpInfantryMutiny = get_simple_help("TXT_KEY_EVENT_INFANTRY_MUTINY_HELP")
 
-###### Liberty or Death Event ######
-def CheckJudgeInCity(argsList):
-	ePlayer = argsList[1]
-	player = gc.getPlayer(ePlayer)
+REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_PREFIX = "[[WTP_REVOLUTIONARY_MUTINY_INFANTRY_READY_TURN="
+REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_SUFFIX = "]]"
 
-	if not player.isPlayable():
-		return False
 
-	# you could add checks for several Units like this
-	iUnitType = CvUtil.findInfoTypeNum('UNIT_JUDGE')
-	iUnitsCurrent = countUnitsInCityForCityTrigger(argsList, iUnitType)
-	if iUnitsCurrent == 0:
-		return False
+def _getRevolutionaryMutinyInfantryReadyTurn(player):
+	if player.isNone():
+		return -1
 
-	return True
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
 
-def CheckInfantryTheRoyals(argsList):
+	iStart = szData.find(REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_PREFIX)
+	iEnd = szData.find(REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setRevolutionaryMutinyInfantryReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_PREFIX,
+		iReadyTurn,
+		REVOLUTIONARY_MUTINY_INFANTRY_COOLDOWN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _startRevolutionaryMutinyInfantryCooldown(player):
+	if player.isNone():
+		return
+
+	_setRevolutionaryMutinyInfantryReadyTurn(
+		player,
+		CyGame().getGameTurn() + _scaleTurnsByGameSpeed(10)
+	)
+
+
+def canTriggerRevolutionaryMutinyInfantry(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	if not player.isPlayable():
+
+	if player.isNone():
 		return False
 
-	if player.isNative():
+	iReadyTurn = _getRevolutionaryMutinyInfantryReadyTurn(player)
+	if iReadyTurn > CyGame().getGameTurn():
 		return False
 
-	king = gc.getPlayer(player.getParent())
-	if not king.isEurope():
+	if CyGame().getSorenRandNum(100, "Revolutionary Mutiny Infantry Chance") >= 10:
 		return False
 
-	if player.isInRevolution():
-		return False
+	_startRevolutionaryMutinyInfantryCooldown(player)
 
-	iUnitType = CvUtil.findInfoTypeNum('UNIT_EUROPEAN_LINE_INFANTRY')
-	iUnitsCurrent = countUnits(argsList, iUnitType)
-	if not iUnitsCurrent > 5:
-		return False
-
-	city = player.getCity(kTriggeredData.iCityId)
-	unit = player.getUnit(kTriggeredData.iUnitId)
-	if city.isNone():
-		return False
-
-	if city.getX() == unit.getX() and city.getY() == unit.getY():
-		return True
-
-	return False
+	return True
 
 ######## The Royals Events ###########
 
