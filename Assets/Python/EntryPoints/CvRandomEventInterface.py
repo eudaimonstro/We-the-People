@@ -21600,13 +21600,79 @@ def canTriggerCacaoBonus(argsList):
 	return True
 
 
-######## Washed Out ###########
+######### Washed Out ###########
 
 WASHED_OUT_BASE_COOLDOWN_TURNS = 50
+WASHED_OUT_COOLDOWN_PREFIX = "[[WTP_WASHED_OUT_READY_TURN="
+WASHED_OUT_COOLDOWN_SUFFIX = "]]"
+
 
 def _washedOutScaledCooldown():
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	return max(1, WASHED_OUT_BASE_COOLDOWN_TURNS * Speed.getGrowthPercent() / 100)
+
+
+def _getWashedOutReadyTurn(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(WASHED_OUT_COOLDOWN_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(WASHED_OUT_COOLDOWN_PREFIX)
+	iEnd = szData.find(WASHED_OUT_COOLDOWN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setWashedOutReadyTurn(player, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(WASHED_OUT_COOLDOWN_PREFIX)
+	if iStart != -1:
+		iEnd = szData.find(WASHED_OUT_COOLDOWN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(WASHED_OUT_COOLDOWN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		WASHED_OUT_COOLDOWN_PREFIX,
+		iReadyTurn,
+		WASHED_OUT_COOLDOWN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _startWashedOutCooldown(player):
+	if player.isNone():
+		return
+
+	iReadyTurn = CyGame().getGameTurn() + _washedOutScaledCooldown()
+	_setWashedOutReadyTurn(player, iReadyTurn)
+
+
+def _isWashedOutCooldownActive(player):
+	if player.isNone():
+		return False
+
+	iReadyTurn = _getWashedOutReadyTurn(player)
+	return iReadyTurn > CyGame().getGameTurn()
 
 
 def canTriggerWashedOut(argsList):
@@ -21644,36 +21710,6 @@ def applyWashedOutCooldown(argsList):
 		return
 
 	_startWashedOutCooldown(player)
-
-
-def _isWashedOutCooldownActive(player):
-	return CyGame().getGameTurn() < _getWashedOutReadyTurn(player)
-
-
-def _getWashedOutReadyTurn(player):
-	szData = player.getScriptData()
-	szKey = "WASHED_OUT_READY_TURN="
-
-	for part in szData.split(";"):
-		if part.startswith(szKey):
-			return int(part[len(szKey):])
-
-	return 0
-
-
-def _startWashedOutCooldown(player):
-	iReadyTurn = CyGame().getGameTurn() + _washedOutScaledCooldown()
-
-	szKey = "WASHED_OUT_READY_TURN="
-	szData = player.getScriptData()
-	parts = []
-
-	for part in szData.split(";"):
-		if part and not part.startswith(szKey):
-			parts.append(part)
-
-	parts.append(szKey + str(iReadyTurn))
-	player.setScriptData(";".join(parts))
 
 ######## At the sword ###########
 

@@ -29764,6 +29764,7 @@
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<RequiredColonialStatus>COLONIAL_STATUS_COLONIAL</RequiredColonialStatus>
+			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>-1</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
