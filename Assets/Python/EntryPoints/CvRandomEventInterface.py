@@ -799,7 +799,7 @@ def _isWinterSeasonNow():
 		if (October in szDate or November in szDate or December in szDate or January in szDate or February in szDate):
 			return True
 
-		# Fallback falls Monatsnamen nicht zuverlässig sind
+		# Fallback falls Monatsnamen nicht zuverlaessig sind
 		if (iCurrentTurn % 2) == 0:
 			return True
 
@@ -910,7 +910,7 @@ def canEndWinter(argsList):
 	if iCurrentTurn < iWinterTurn + iMinDuration:
 		return False
 
-	# danach zusätzlich prüfen: sind wir noch im Winter?
+	# danach zusaetzlich check: sind wir noch im Winter?
 	return not _isWinterSeasonNow()
 
 
@@ -3080,6 +3080,36 @@ def canTriggerLostTribe(argsList):
 
 ######## Pacific Quest ###########
 
+def canTriggerPacific(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	# Use the capital / first colony as practical start-side reference.
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		(city, iter) = player.firstCity(True)
+
+	if city is None or city.isNone():
+		return False
+
+	iMapWidth = CyMap().getGridWidth()
+	iMiddleX = iMapWidth / 2
+
+	# Only players whose reference colony is on the eastern half may start this quest.
+	if city.getX() <= iMiddleX:
+		return False
+
+	return True
+
 def canTriggerPacificDone(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
@@ -3089,6 +3119,49 @@ def canTriggerPacificDone(argsList):
 		return True
 	return False
 
+######## Atlantic Quest ###########
+
+def canTriggerAtlantic(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	# Use the capital / first colony as practical start-side reference.
+	city = player.getCity(kTriggeredData.iCityId)
+	if city is None or city.isNone():
+		(city, iter) = player.firstCity(True)
+
+	if city is None or city.isNone():
+		return False
+
+	iMapWidth = CyMap().getGridWidth()
+	iMiddleX = iMapWidth / 2
+
+	# Only players whose reference colony is on the western half may start this quest.
+	if city.getX() > iMiddleX:
+		return False
+
+	return True
+
+
+def canTriggerAtlanticDone(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	iAchieve = gc.getInfoTypeForString("ACHIEVE_ATLANTIC")
+
+	if player.isAchieveGained(iAchieve):
+		return True
+
+	return False
 
 ######## VOLCANO ###########
 

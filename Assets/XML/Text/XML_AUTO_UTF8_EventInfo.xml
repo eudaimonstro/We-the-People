@@ -1676,6 +1676,24 @@
 		<Russian>Мы выбираем славу и почет. Расскажите всем о том, что мы открыли западный путь в Азию!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_ATLANTIC_1</Tag>
+		<English>Hurry up, men! We will be the first to discover the route to Europe on this way.</English>
+		<German>Auf geht's, Männer! Wir werden die Ersten sein, die den Weg nach Europa auf diesem Wege entdecken!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ATLANTIC_DONE_1</Tag>
+		<English>Gold and glory! We take both!</English>
+		<German>Gold und Ruhm! Wir nehmen beides!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ATLANTIC_DONE_2</Tag>
+		<English>We prefer honour and glory. Spread the word that we have discovered the eastern route to Europe!</English>
+		<German>Ruhm und Ehre sind uns Lohn genug!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_PEASANT_WARPREP_1</Tag>
 		<English>That's bad news. We shall be prepared.</English>
 		<French>Des nouvelles bien sombres. Tenons-nous prêts.</French>
