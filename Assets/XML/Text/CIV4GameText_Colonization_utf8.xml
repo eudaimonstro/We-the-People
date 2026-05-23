@@ -2532,6 +2532,7 @@
 		<French>[ICON_BULLET]Donne un accès à l'eau douce aux terrains adjacents[SPACE]</French>
 		<German>[ICON_BULLET]Gibt angrenzenden Geländefeldern Süßwasserzugang[SPACE]</German>
 		<Russian>[ICON_BULLET]Обеспечивает соседним участкам доступ к пресной воде[SPACE]</Russian>
+		<Hungarian>[ICON_BULLET]Szomszédos területen keresztül édesvízzel érintkező terület[SPACE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_TRAIT</Tag>
@@ -2541,6 +2542,7 @@
 		<Italian>[ICON_BULLET]%D1%%%F4_Icon[TAB][TAB]per %s2_unit_or_building ([COLOR_HIGHLIGHT_TEXT]%s3_trait[COLOR_REVERT])</Italian>
 		<Spanish>[ICON_BULLET]%D1%% a la %F4_Icon[TAB][TAB]de %s2_unit_or_building ([COLOR_HIGHLIGHT_TEXT]%s3_trait[COLOR_REVERT])</Spanish>
 		<Russian>[ICON_BULLET]%D1%%%F4_Icon[TAB][TAB]для %s2_unit_or_building ([COLOR_HIGHLIGHT_TEXT]%s3_trait[COLOR_REVERT])</Russian>
+		<Hungarian>[ICON_BULLET]%D1%%%F4_Icon[TAB][TAB]%s2_unit_or_building számára ([COLOR_HIGHLIGHT_TEXT]%s3_trait[COLOR_REVERT])</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DEFENSE_MOD</Tag>
@@ -2550,6 +2552,7 @@
 		<Italian>[ICON_BULLET]%d1_Mod%% alla difesa</Italian>
 		<Spanish>[ICON_BULLET]%d1_Mod%% a la defensa</Spanish>
 		<Russian>[ICON_BULLET]%d1_Mod%% к защите</Russian>
+		<Hungarian>[ICON_BULLET]%d1_Mod%% Védelem</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SOURCE</Tag>
@@ -2559,6 +2562,7 @@
 		<Italian>Origine</Italian>
 		<Spanish>Origen</Spanish>
 		<Russian>Отправитель</Russian>
+		<Hungarian>Kiindulópont</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DESTINATION</Tag>
@@ -2568,6 +2572,7 @@
 		<Italian>Destinazione</Italian>
 		<Spanish>Destino</Spanish>
 		<Russian>Получатель</Russian>
+		<Hungarian>Cél</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD</Tag>
@@ -2577,6 +2582,7 @@
 		<Italian>Carico</Italian>
 		<Spanish>Cargamento</Spanish>
 		<Russian>Груз</Russian>
+		<Hungarian>Szállítmány</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ASSIGN_ROUTE</Tag>
@@ -2586,6 +2592,7 @@
 		<Italian>Assegna a rotta commerciale</Italian>
 		<Spanish>Asignar a ruta comercial</Spanish>
 		<Russian>Назначить на торговый путь</Russian>
+		<Hungarian>Hozzárendelés a kereskedelmi útvonalhoz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNASSIGN_ROUTE</Tag>
@@ -2595,6 +2602,7 @@
 		<Italian>Togli da rotta commerciale</Italian>
 		<Spanish>Quitar de ruta comercial</Spanish>
 		<Russian>Убрать с торгового пути</Russian>
+		<Hungarian>Eltávolítás a kereskedelmi útvonalról</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEW_TREASURE</Tag>
@@ -2604,6 +2612,7 @@
 		<Italian>Hai ottenuto un [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT]. Può essere trasportato esclusivamente da un galeone. Se non hai un galeone puoi chiedere al re di farlo trasportare per te. Spostati in un insediamento costiero e clicca sul pulsante relativo.</Italian>
 		<Spanish>Habéis logrado [NUM1:un nuevo:una nueva:unos nuevos:unas nuevas] [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT]. Esta unidad solamente puede ser transportada por un Galeón. Si carecéis de él, vuestro rey os ofrecerá transporte. Basta con llevarla a una ciudad costera y hacer clic en el botón correspondiente.</Spanish>
 		<Russian>Вы получили свое первое [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT].[NEWLINE][NEWLINE]Этот юнит может перевозить только [COLOR_UNIT_TEXT]Галеон[COLOR_REVERT]. Если у вас его нет, ваш Король может помочь с перевозкой (за "небольшую" плату). Просто переместите юнит в прибрежный город с [COLOR_HIGHLIGHT_TEXT]доком[COLOR_REVERT] и нажмите на соответствующую командную кнопку.[NEWLINE][NEWLINE]</Russian>
+		<Hungarian>Hozzájutottál az első [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT]hez.[NEWLINE][NEWLINE]Ez csak Galleonon szállítható. Ha nincs ilyen típusú hajód, Királyod elszállítja neked (csekély díj ellenében!). Csakk vidd egy olyan part menti városba, ahol van már [COLOR_HIGHLIGHT_TEXT]Móló[COLOR_REVERT] és kattints a megfelelő parancsgombra.[NEWLINE][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_STUDENT_GRADUATED</Tag>
@@ -2613,23 +2622,26 @@
 		<Italian>%s2_city : Si è diplomata una nuova unità [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] dal(la) %s3_building.</Italian>
 		<Spanish>%s2_city : En [NUM3:el:la:los:las] %s3_building se ha graduado [NUM1:un nuevo:una nueva:unos nuevos:unas nuevas] [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT].</Spanish>
 		<Russian>[COLOR_POSITIVE_TEXT]%s2_city :[COLOR_REVERT] [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] закончил обучение в [COLOR_FONT_CREAM]%s3_building[COLOR_REVERT].</Russian>
+		<Hungarian>%s2_city : Egy [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] levizsgázott a város %s3_building épületében.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHOOSE_PROMOTION</Tag>
-		<English>Choose a Promotion</English>
+		<English>Choose a promotion</English>
 		<French>Choisir une promotion</French>
 		<German>Beförderung wählen</German>
 		<Italian>Scegli una promozione</Italian>
 		<Spanish>Elegir un ascenso</Spanish>
 		<Russian>Выберите повышение</Russian>
+		<Hungarian>Válassz egy Előléptetést</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EJECT_CITIZEN</Tag>
-		<English>Eject Citizen from City</English>
+		<English>Eject citizen from city</English>
 		<French>Expulser le citoyen de la ville</French>
 		<German>Bürger aus Stadt werfen</German>
 		<Italian>Espelli il cittadino dall'insediamento</Italian>
 		<Spanish>Expulsar a un ciudadano de la ciudad</Spanish>
+		<Hungarian>Lakos eltávolítása a Városból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_STUDENT</Tag>
@@ -2639,6 +2651,7 @@
 		<Italian>Diploma fra %d1 [NUM1:turno:turni]</Italian>
 		<Spanish>Graduación en %d1 [NUM1:turno:turnos]</Spanish>
 		<Russian>Обучится через %d1 [NUM1:ход:ходов]</Russian>
+		<Hungarian>Vizsgázás %d1 kör múlva</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_GRADUATION_CHANCE</Tag>
@@ -2656,6 +2669,7 @@
 		<Italian>Inserisci la quantità di [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] da trasferire:</Italian>
 		<Spanish>Introducir la cantidad de [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] a transferir:</Spanish>
 		<Russian>Укажите количество [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] для перемещения :</Russian>
+		<Hungarian>Add meg a szállítandó [COLOR_HIGHLIGHT_TEXT]%s1_yield[COLOR_REVERT] mennyiségét :</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HELP_EDIT_IMPORTS_EXPORTS</Tag>
@@ -2665,6 +2679,7 @@
 		<Italian>Modifica importazioni\esportazioni</Italian>
 		<Spanish>Editar importaciones\exportaciones</Spanish>
 		<Russian>Изменить настройки Импорта/Экспорта</Russian>
+		<Hungarian>Importálás\Exportálás szerkesztése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HELP_EDIT_CONDENSED_IMPORTS_EXPORTS</Tag>
@@ -2674,6 +2689,7 @@
 		<Italian>Modifica beni creati e scambiati</Italian>
 		<Spanish>Edite los bienes creados y comercializados</Spanish>
 		<Russian>Изменить настройки производимых и продаваемых товаров</Russian>
+		<Hungarian>Előállított és kereskedett termékek szerkesztése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAPTURES_CARGO</Tag>
@@ -2683,6 +2699,7 @@
 		<Italian>[ICON_BULLET]Cattura il carico dei trasporti sconfitti</Italian>
 		<Spanish>[ICON_BULLET]Captura el cargamento de los transportes derrotados.</Spanish>
 		<Russian>[ICON_BULLET]Захватывает груз побежденных кораблей</Russian>
+		<Hungarian>[ICON_BULLET]Megszerzi az elfogott járművek szállítmányát</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAPTURES_SHIPS</Tag>
@@ -2690,6 +2707,7 @@
 		<French>[ICON_BULLET]Peut capturer les navires battus</French>
 		<German>[ICON_BULLET]Kann potentiell besiegte Schiffe kapern</German>
 		<Russian>[ICON_BULLET]Имеет шанс захватить побежденный корабль</Russian>
+		<Hungarian>[ICON_BULLET]Esélye van megszerezni a legyőzött hajókat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAPTURES_SHIPS_CHANCE_INCREASE</Tag>
@@ -2697,6 +2715,7 @@
 		<French>[ICON_BULLET]Chance de capturer les navires battus plus hautes de %d1%%</French>
 		<German>[ICON_BULLET]%d1%% höhere Chance besiegte Schiffe zu kapern</German>
 		<Russian>[ICON_BULLET]%d1%% к шансу захвата побежденного корабля</Russian>
+		<Hungarian>[ICON_BULLET]%d1%%-kal nagyobb esély a legyőzött hajók megszerezésére</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GIVES_PRODUCTION_WHEN_USED</Tag>
@@ -2704,6 +2723,7 @@
 		<French>[ICON_BULLET]Donne à l'utilisation %d1 [COLOR_CYAN]production[COLOR_REVERT] à une ville</French>
 		<German>[ICON_BULLET]Gibt einer Stadt %d1 [COLOR_CYAN]Produktion[COLOR_REVERT], wenn verwendet</German>
 		<Russian>[ICON_BULLET]Дает %d1 [COLOR_CYAN]продукции[COLOR_REVERT] городу при использовании</Russian>
+		<Hungarian>[ICON_BULLET]%d1 [COLOR_CYAN]Termelést[COLOR_REVERT] ad egy városnak felhasználásakor.</Hungarian>
 	</TEXT>
 <!-- ZorG. colopedia. equipment and materials for the construction of units and buildings. START -->
 	<TEXT>
@@ -2714,6 +2734,7 @@
 		<Italian>[COLOR_WARNING_TEXT]Richiede %d1%F2_yield[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requiere %d1 de %F2_yield[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Требуется %d1%F2_yield[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%d1%F2_yield szükséges[COLOR_REVERT]</Hungarian>
 	</TEXT>
 <!-- ZorG. colopedia. equipment and materials for the construction of units and buildings. END -->
 	<TEXT>
@@ -2724,6 +2745,7 @@
 		<Italian>%s2_City : Dal(la) %s3_building si è diplomata un'unità [COLOR_HIGHLIGHT_TEXT]%s1_profession[COLOR_REVERT].</Italian>
 		<Spanish>%s2_City : En [NUM3:el:la:los:las] %s3_building se ha graduado [NUM1:un nuevo:una nueva:unos nuevos:unas nuevas] [COLOR_HIGHLIGHT_TEXT]%s1_profession[COLOR_REVERT].</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_City :[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s1_profession[COLOR_REVERT] обучился в %s3_building.</Russian>
+		<Hungarian>%s2_City : Egy [COLOR_HIGHLIGHT_TEXT]%s1_profession[COLOR_REVERT] levizsgázott a város %s3_building épületében.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHOOSE_SPECIALTY</Tag>
@@ -2733,6 +2755,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Scegli una specializzazione per l'unità %s1_profession che si diploma :</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Elegir una especialidad para [NUM1:el:la:los:las] %s1_profession a graduar :</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Выберите специальность для закончившего обучения %s1_profession :</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Válassz szakterületet a levizsgázott %s1_profession számára :</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODS_RAIDED</Tag>
@@ -2742,6 +2765,7 @@
 		<Italian>[COLOR_REVERT]%s2_city : [COLOR_WARNING_TEXT]Raid %s1_civ_adjective! Hanno rubato %d3 %s4_yield!</Italian>
 		<Spanish>[COLOR_REVERT]%s2_city : [COLOR_WARNING_TEXT]¡Una incursión de los %s1:3_civ_adjective! ¡Han robado %d3 de %s4_yield!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]Нападение индейцев %s1_civ_adjective! Они успели украсть %d3 %s4_yield прежде, чем их успели прогнать!</Russian>
+		<Hungarian>[COLOR_REVERT]%s2_city : [COLOR_WARNING_TEXT]%s1_civ_adjective rajtaütés! Odalett %d3 %s4_yield![COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WEAPONS_CAPTURED</Tag>
@@ -2751,6 +2775,7 @@
 		<Italian>Raid [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! L'unità [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT] è stata sconfitta e c'è stato un furto di %d3 %s4_yield.</Italian>
 		<Spanish>¡Una incursión [COLOR_HIGHLIGHT_TEXT]%s1:3_civ_adjective[COLOR_REVERT]! Han derrotado a [NUM2:un:una:unos:unas] [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT] y han capturado %d3 de %s4_yield.</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Тревожные новости, Милорд! [COLOR_REVERT]Ваш [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT] был атакован из засады воинами [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] и потерпел поражение. Его %d3 %s4_yield были захвачены.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Súlyos hírek, Uram! [COLOR_REVERT][COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] harcosok legyőzték [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT] egységedet egy rajtaütés során és %d3 %s4_yield-t zsákmányoltak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REQUIRED_YIELD_MODIFIER</Tag>
@@ -2760,6 +2785,7 @@
 		<Italian>[ICON_BULLET]%D1%% %F2 necessari per gli edifici</Italian>
 		<Spanish>[ICON_BULLET]Se necesita un %D1%% de %F2 para edificios</Spanish>
 		<Russian>[ICON_BULLET]%D1%% %F2 требуется для строительства</Russian>
+		<Hungarian>[ICON_BULLET]%D1%% %F2 szükséges az épületekhez</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_SOLD</Tag>
@@ -2769,6 +2795,7 @@
 		<Italian>[PARAGRAPH:1]Vendita di %d1%F2 @ %d3[ICON_GOLD] per %d4[ICON_GOLD]</Italian>
 		<Spanish>[PARAGRAPH:1]Venta de %d1 %F2 a %d3[ICON_GOLD] por un total de %d4[ICON_GOLD]</Spanish>
 		<Russian>[PARAGRAPH:1]%d1%F2 продано @ %d3[ICON_GOLD]	[TAB]%d4[ICON_GOLD]</Russian>
+		<Hungarian>[PARAGRAPH:1]%d1%F2 eladva %d3[ICON_GOLD] áron [TAB]%d4[ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_TAX</Tag>
@@ -2778,6 +2805,7 @@
 		<Italian>[TAB]%d1%% tasse[TAB][TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Italian>
 		<Spanish>[TAB]Impuestos de un %d1%%[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Spanish>
 		<Russian>[TAB]%d1%% Налог[TAB][TAB][TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Russian>
+		<Hungarian>[TAB]%d1%% Adó[TAB][TAB][TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_BRIBE</Tag>
@@ -2786,6 +2814,7 @@
 		<German>[TAB]%d1%% Bestechung[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</German>
 		<Italian>[TAB]%d1%% Corruzione[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Italian>
 		<Spanish>[TAB]%d1%% Soborno[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Spanish>
+		<Hungarian>[TAB]%d1%% Megvesztegetés[TAB][TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_NET_PROFIT</Tag>
@@ -2803,6 +2832,7 @@
 		<German>[PARAGRAPH:1]%d1%F2 zu je %d3[ICON_GOLD] für insgesamt %d4[ICON_GOLD] gekauft</German>
 		<Italian>[PARAGRAPH:1]Acquisto di %d1%F2 @ %d3[ICON_GOLD] per %d4[ICON_GOLD]</Italian>
 		<Spanish>[PARAGRAPH:1]Compra de %d1 %F2 a %d3[ICON_GOLD] por un total de %d4[ICON_GOLD]</Spanish>
+		<Hungarian>[PARAGRAPH:1]%d1%F2 várárolva %d3[ICON_GOLD] áron %d4[ICON_GOLD]-ért</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TREASURE_DELIVERED</Tag>
@@ -2812,6 +2842,7 @@
 		<Italian>[PARAGRAPH:1]Valore del tesoro[TAB][TAB]%d1[ICON_GOLD]</Italian>
 		<Spanish>[PARAGRAPH:1]Valor del tesoro[TAB][TAB]%d1[ICON_GOLD]</Spanish>
 		<Russian>[PARAGRAPH:1]Ценность Сокровища[TAB][TAB]%d1[ICON_GOLD]</Russian>
+		<Hungarian>[PARAGRAPH:1]Kincs értéke[TAB][TAB]%d1[ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_COMMISSION</Tag>
@@ -2821,6 +2852,7 @@
 		<Italian>[TAB]%d1%% commissione[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Italian>
 		<Spanish>[TAB]Comisión de un %d1%%[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Spanish>
 		<Russian>[TAB]%d1%% Комиссия[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Russian>
+		<Hungarian>[TAB]%d1%% Jutalék[TAB][TAB][COLOR_WARNING_TEXT]%d2[COLOR_REVERT][ICON_GOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ADVISOR_NO_PROFESSION</Tag>
@@ -2830,6 +2862,7 @@
 		<Italian>Nessuna professione</Italian>
 		<Spanish>Sin profesión</Spanish>
 		<Russian>Нет профессии</Russian>
+		<Hungarian>Nincs Szakma</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_GROWTH</Tag>
@@ -2839,6 +2872,7 @@
 		<Italian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]L'abbondanza di cibo a ha causato un aumento della popolazione!</Italian>
 		<Spanish>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]La abundancia de Alimentos en ha comportado un aumento de población.</Spanish>
 		<Russian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Люди настолько сыты и здоровы, что рожают на свет много детей - город растет!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Az emberek olyan jól tápláltak és egészségesek, hogy sok gyermek született - a város növekszik!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SAIL</Tag>
@@ -2848,24 +2882,27 @@
 		<Italian>Fai vela per il [COLOR_HIGHLIGHT_TEXT]Nuovo Mondo[COLOR_REVERT]</Italian>
 		<Spanish>Navegar al [COLOR_HIGHLIGHT_TEXT]Nuevo Mundo[COLOR_REVERT]</Spanish>
 		<Russian>Отплыть в [COLOR_HIGHLIGHT_TEXT]Новый мир[COLOR_REVERT]</Russian>
+		<Hungarian>Elhajózás az [COLOR_HIGHLIGHT_TEXT]Újvilágba[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SELL_ALL</Tag>
-		<English>Sell All Goods</English>
+		<English>Sell all goods</English>
 		<French>Vendre toutes les marchandises</French>
 		<German>Alle Güter verkaufen</German>
 		<Italian>Vendi tutti i beni</Italian>
 		<Spanish>Vender todo</Spanish>
 		<Russian>Продать все товары в трюме</Russian>
+		<Hungarian>Minden Áru Eladása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LOAD_ALL_EUROPE</Tag>
-		<English>Load from Docks</English>
+		<English>Load from docks</English>
 		<French>Charger depuis les quais</French>
 		<German>An Docks beladen</German>
 		<Italian>Carica dal molo</Italian>
 		<Spanish>Cargar en Muelles</Spanish>
 		<Russian>Забрать эмигрантов из доков</Russian>
+		<Hungarian>Berakodás a Kikötőből</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PURCHASE_EUROPE</Tag>
@@ -2875,6 +2912,7 @@
 		<Italian>Acquista [COLOR_UNIT_TEXT]specialisti[COLOR_REVERT], [COLOR_UNIT_TEXT]navi[COLOR_REVERT] o [COLOR_UNIT_TEXT]soldati[COLOR_REVERT] dalla madrepatria</Italian>
 		<Spanish>Comprar [COLOR_UNIT_TEXT]especialistas[COLOR_REVERT], [COLOR_UNIT_TEXT]barcos[COLOR_REVERT] o [COLOR_UNIT_TEXT]Cañones[COLOR_REVERT] en la madre patria</Spanish>
 		<Russian>Купить [COLOR_UNIT_TEXT]корабли[COLOR_REVERT], нанять [COLOR_UNIT_TEXT]специалистов[COLOR_REVERT] или [COLOR_UNIT_TEXT]войска[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_UNIT_TEXT]Hajók[COLOR_REVERT], [COLOR_UNIT_TEXT]Szakemberek[COLOR_REVERT] vagy [COLOR_UNIT_TEXT]Katonák[COLOR_REVERT] vásárlása az Anyaországtól</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HURRY_IMMIGRATION</Tag>
@@ -2884,6 +2922,7 @@
 		<Italian>Accelera l'emigrazione</Italian>
 		<Spanish>Acelerar la emigración</Spanish>
 		<Russian>Ускорить эмиграцию</Russian>
+		<Hungarian>Bevándorlás Felgyorsítása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_CHANGE_PROFESSION_REFUND</Tag>
@@ -2910,6 +2949,7 @@
 		<Italian>Impossibile costruire :[SPACE]</Italian>
 		<Spanish>No se puede construir :[SPACE]</Spanish>
 		<Russian>Невозможно построить :[SPACE]</Russian>
+		<Hungarian>Nem építhető :[SPACE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_BAR_STORED</Tag>
@@ -2919,6 +2959,7 @@
 		<Italian>Riserve : %s1_comma_separated_list_of_numbers_and_symbols</Italian>
 		<Spanish>Almacenado : %s1_comma_separated_list_of_numbers_and_symbols</Spanish>
 		<Russian>Хранится : %s1_comma_separated_list_of_numbers_and_symbols</Russian>
+		<Hungarian>Elraktározva: %s1_comma_separated_list_of_numbers_and_symbols</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_BAR_PRODUCING</Tag>
@@ -2928,6 +2969,7 @@
 		<Italian>Produzione : %s1_comma_separated_list_of_numbers_and_symbols</Italian>
 		<Spanish>Producción : %s1_comma_separated_list_of_numbers_and_symbols</Spanish>
 		<Russian>Производится : %s1_comma_separated_list_of_numbers_and_symbols</Russian>
+		<Hungarian>Termelés : %s1_comma_separated_list_of_numbers_and_symbols</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CANNOT_TRAIN_WORK_NEXT</Tag>
@@ -2937,6 +2979,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]Non puoi più continuare a realizzare l'unità [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. Cosa vuoi realizzare al suo posto?</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]No podéis seguir entrenando [NUM1:al:a la:a los:a las] [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. ¿Qué queréis hacer en su lugar?</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]Невозможно продолжать производство [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT]. Чем стоит заняться вместо этого?</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]Nem folytatható egy [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] kiképzése. Mit szeretnél tenni ehelyett?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CANNOT_CONSTRUCT_WORK_NEXT</Tag>
@@ -2946,6 +2989,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]Non puoi continuare a costruire l'edificio [COLOR_BUILDING_TEXT]%s1_BldgName[COLOR_REVERT]. Cosa vuoi realizzare al suo posto?</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]No podéis construir [NUM1:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s1_BldgName[COLOR_REVERT]. ¿Qué queréis hacer en su lugar?</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]Невозможно продолжать строительство [COLOR_BUILDING_TEXT]%s1_BldgName[COLOR_REVERT]. Над чем бы вы хотели работать вместо этого?</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s2_CityName%s3[COLOR_REVERT][NEWLINE][NEWLINE]Nem folytatható egy [COLOR_BUILDING_TEXT]%s1_BldgName[COLOR_REVERT] építése. Mit szeretnél tenni ehelyett?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_REQUIRES</Tag>
@@ -2955,6 +2999,7 @@
 		<Italian>[NEWLINE] [COLOR_WARNING_TEXT](richiede %s1_list_of_comma_separated_amounts_of_yields)[COLOR_REVERT]</Italian>
 		<Spanish>[NEWLINE] [COLOR_WARNING_TEXT](requiere %s1_list_of_comma_separated_amounts_of_yields)[COLOR_REVERT]</Spanish>
 		<Russian>[NEWLINE] [COLOR_WARNING_TEXT](нет на складе: %s1_list_of_comma_separated_amounts_of_yields)[COLOR_REVERT]</Russian>
+		<Hungarian>[NEWLINE] [COLOR_WARNING_TEXT](%s1_list_of_comma_separated_amounts_of_yields szükséges)[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CHOOSE_COMLPETED_BUILD</Tag>
@@ -2964,6 +3009,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Ora hai [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] in più. Cosa vuoi finire di produrre?</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Ahora tenéis más [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT]. ¿Qué queréis que deje de producirse?</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Нужное количество [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] поступило на склад. Производство чего мы должны завершить?</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Van extra [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] a településen. Minek az építését szeretnéd befejezni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MINIMIZED_CHOOSE_YIELD_BUILD</Tag>
@@ -2973,6 +3019,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Ora hai [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] in più per terminare la produzione.</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Ahora tenéis más [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] para acabar la producción.</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Теперь у вас достаточно запасов [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] для завершения производства.</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Van extra [COLOR_UNIT_TEXT]%s1_goods[COLOR_REVERT] a településen az építés befejezéséhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_MISSING_YIELD</Tag>
@@ -2982,6 +3029,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]%s1_item richiede %s3_yield per il completamento</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE][NUM1:Un:Una:Unos:Unas] %s1_item [NUM1:aguarda:aguarda:aguardan:aguardan] %s3_yield para completarse</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Ожидаем поставки [COLOR_HIGHLIGHT_TEXT]%s3_yield[COLOR_REVERT] для завершения производства [COLOR_BUILDING_TEXT]%s1_item[COLOR_REVERT].[NEWLINE]</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT][NEWLINE][NEWLINE]Egy [COLOR_BUILDING_TEXT]%s1_item[COLOR_REVERT] befejezéséhez [COLOR_HIGHLIGHT_TEXT]%s3_yield[COLOR_REVERT] hiányzik.[NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YIELD_MODIFIER_LAND</Tag>
@@ -2991,6 +3039,7 @@
 		<Italian>[ICON_BULLET]%D1_Modifier%% produzione di %s2_list_of_icons a terra</Italian>
 		<Spanish>[ICON_BULLET]%D1_Modifier%% a la producción de %s2_list_of_icons en tierra</Spanish>
 		<Russian>[ICON_BULLET]%D1_Modifier%% к производству %s2_list_of_icons на клетках земли</Russian>
+		<Hungarian>[ICON_BULLET]%D1_Modifier%% %s2_list_of_icons termelés a szárazföldön</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YIELD_CHANGE_LAND</Tag>
@@ -3000,6 +3049,7 @@
 		<Italian>[ICON_BULLET]%D1 produzione di %s2_list_of_icons a terra</Italian>
 		<Spanish>[ICON_BULLET]%D1 a la producción de %s2_list_of_icons en tierra</Spanish>
 		<Russian>[ICON_BULLET]%D1 к производству %s2_list_of_icons на клетках земли</Russian>
+		<Hungarian>[ICON_BULLET]%D1 %s2_list_of_icons termelés a szárazföldön</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YIELD_MODIFIER_WATER</Tag>
@@ -3009,6 +3059,7 @@
 		<Italian>[ICON_BULLET]%D1_Modifier%% produzione di %s2_list_of_icons in acqua</Italian>
 		<Spanish>[ICON_BULLET]%D1_Modifier%% a la producción de %s2_list_of_icons en agua</Spanish>
 		<Russian>[ICON_BULLET]%D1_Modifier%% к производству %s2_list_of_icons на клетках воды</Russian>
+		<Hungarian>[ICON_BULLET]%D1_Modifier%% %s2_list_of_icons termelés a vízen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YIELD_CHANGE_WATER</Tag>
@@ -3018,6 +3069,7 @@
 		<Italian>[ICON_BULLET]%D1 produzione di %s2_list_of_icons in acqua</Italian>
 		<Spanish>[ICON_BULLET]%D1 a la producción de %s2_list_of_icons en agua</Spanish>
 		<Russian>[ICON_BULLET]%D1 к производству %s2_list_of_icons на клетках воды</Russian>
+		<Hungarian>[ICON_BULLET]%D1 %s2_list_of_icons termelés a vízen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEW_EUROPE_ARMY</Tag>
@@ -3027,6 +3079,7 @@
 		<Italian>Il re di %s1_civ_short è allarmato dal sentimento di ribellione in %s2_civ_short. Ha aggiunto un'unità di %s3:2_unit al corpo di spedizione reale %s4_adjective.</Italian>
 		<Spanish>El rey de %s1_civ_short está alarmado por el sentimiento de rebelión que se respira en %s2_civ_short. Ha añadido unidades de %s3_unit a la Real Fuerza Expedicionaria %s4:2_adjective.</Spanish>
 		<Russian>Король с подозрением следит за ростом колоний в Новом свете и за вашей политикой. Его Величество распорядился усилить Королевский экспедиционный корпус отрядом %s3_unit.</Russian>
+		<Hungarian>Az általad képviselt politikát és gyarmataid növekedését gyanakvással figyeli otthon, Európában a Királyod. Őfelsége elrendelte a Királyi Expedíciós Hadsereg megerősítését egy %s3_egységgel.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STARVING</Tag>
@@ -3036,6 +3089,7 @@
 		<Italian>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]I cittadini abbandonano alla ricerca di cibo[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]Los ciudadanos abandonan en busca de Alimentos[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city :[COLOR_REVERT] Жители покидают город в поисках еды</Russian>
+		<Hungarian>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]A lakosok elhagyják a települést élelem után kutatva.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STARVING_AND_REVOLTING</Tag>
@@ -3043,6 +3097,7 @@
 		<French>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]Les citoyens hurlent à la famine. Le manque de soutien des autorités pouvoir les a poussés à se rebeller[COLOR_REVERT]</French>
 		<German>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]Die Bürger hungern! Die ausbleibende Unterstützung durch die Regierung hat zu einem Aufstand geführt.[COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city :[COLOR_REVERT] Жители голодают. Отсутствие поддержки со стороны правительства побудило их к восстанию.</Russian>
+		<Hungarian>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]A lakosok éheznek. A kormány támogatásának hiánya miatt lázadásba kezdtek.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STARVING_BUT_COLONIES_PAID</Tag>
@@ -3050,6 +3105,7 @@
 		<French>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]Les citoyens hurlent à la famine. Les autorités ont dépensé en urgence %d2_gold[ICON_GOLD] pour livrer %d3_food[ICON_FOOD] à la ville.[COLOR_REVERT]</French>
 		<German>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]Die Bürger verhungern. Die Regierung hat jedoch die Ausgabe von %d2_gold[ICON_GOLD] genehmigt, um %d3_food[ICON_FOOD] in die Stadt liefern zu lassen.[COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Горожане голодают. Однако правительство предоставило экстренное финансирование в размере %d2_gold[ICON_GOLD] для доставки %d3_food[ICON_FOOD] в город.</Russian>
+		<Hungarian>[COLOR_REVERT]%s1_city : [COLOR_WARNING_TEXT]A lakosok éheznek. A kormány azonban %d2_gold[ICON_GOLD] vészhelyzeti támogatást nyújtott, hogy %d3_food[ICON_FOOD]-t szállítsanak a városba.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BELOW_MIN_SPECS_MESSAGE</Tag>
@@ -3058,6 +3114,7 @@
 		<German>Ihr Computer erfüllt nicht die Mindestanforderungen. Colonization wird mit diesem Hardware-Setup nicht laufen.</German>
 		<Italian>Il tuo computer non raggiunge i requisiti minimi. Colonization non può funzionare su questa configurazione hardware.</Italian>
 		<Spanish>El ordenador no cumple los requisitos mínimos. Colonization no funcionará con esta configuración de hardware.</Spanish>
+		<Hungarian>A számítógéped a minimális követelmények alatt van. A Colonization nem fog futni ezen a konfiguráción.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PITBOSS_VERSION</Tag>
@@ -3066,6 +3123,7 @@
 		<German>Colonization-Pitboss-Version: %s1_Version</German>
 		<Italian>Colonization Pitboss versione: %s1_Version</Italian>
 		<Spanish>Versión Pitboss de Colonization: %s1_Version</Spanish>
+		<Hungarian>Colonization Pitboss verzió: %s1_Version</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRANSPORT_PANEL</Tag>
@@ -3075,6 +3133,7 @@
 		<Italian>Trasporti</Italian>
 		<Spanish>Transportes</Spanish>
 		<Russian>Транспорты</Russian>
+		<Hungarian>Szállítmányok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GARRISON_PANEL</Tag>
@@ -3084,6 +3143,7 @@
 		<Italian>Guarnigione</Italian>
 		<Spanish>Guarnición</Spanish>
 		<Russian>Гарнизон</Russian>
+		<Hungarian>Helyőrség</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_JOIN_MOVE</Tag>
@@ -3093,6 +3153,7 @@
 		<Italian>[COLOR_WARNING_TEXT]Non può unirsi a un insediamento dopo essersi trasferito[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]No puede unirse a un asentamiento tras haber movido.[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Невозможно присоединиться к поселению после перемещения[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Nem lehet csatlakozni egy településhez, miután léptél![COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_JOIN_STARVING</Tag>
@@ -3102,6 +3163,7 @@
 		<Italian>[COLOR_WARNING_TEXT]Non c'è abbastanza cibo a disposizione per unirsi all'insediamento[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]No dispone de Alimentos suficientes para unirse al asentamiento.[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Здесь производится недостаточно еды, чтобы еще один колонист мог присоединиться к поселению[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Még nem termeltek elég élelmet ahhoz, hogy egy újabb lakos csatlakozzon a településhez.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GLOBELAYER_RESOURCES</Tag>
@@ -3111,6 +3173,7 @@
 		<Italian>Risorse bonus</Italian>
 		<Spanish>Recursos adicionales</Spanish>
 		<Russian>Бонусные ресурсы</Russian>
+		<Hungarian>Bónusz Erőforrások</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GLOBELAYER_RESOURCES_NATIVE_TRADE</Tag>
@@ -3120,6 +3183,7 @@
 		<Italian>Richieste di beni dei nativi</Italian>
 		<Spanish>Solicitud de mercancías de los Nativos</Spanish>
 		<Russian>Запросы товаров</Russian>
+		<Hungarian>Indiánok Áruigénye</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GLOBELAYER_RESOURCES_NATIVE_TRAIN</Tag>
@@ -3129,6 +3193,7 @@
 		<Italian>Addestramento presso i nativi</Italian>
 		<Spanish>Entrenamiento de Nativos</Spanish>
 		<Russian>Профессии для обучения</Russian>
+		<Hungarian>Indián Kiképzés</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOODS_LOST_SOLD</Tag>
@@ -3138,6 +3203,7 @@
 		<Italian>%s3_city : Un eccesso di %d1_number%F2_yield_icon è stato venduto per %d4[ICON_GOLD] a causa della limitata capienza dei depositi</Italian>
 		<Spanish>%s3_city : Un superávit de %d1_number%F2_yield_icon se ha vendido por %d4[ICON_GOLD] debido al límite de la capacidad de almacenamiento.</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s3_city :[COLOR_REVERT] Из-за ограниченной емкости хранилища излишки %d1_number%F2_yield_icon были проданы за %d4[ICON_GOLD].</Russian>
+		<Hungarian>%s3_city : A korlátozott raktárkapacitás miatt %d1_number%F2_yield_icon többlet értékesítve lett %d4[ICON_GOLD]-ért.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_YIELD_OVERFLOW_SELL_PERCENT</Tag>
@@ -3147,6 +3213,7 @@
 		<Italian>[ICON_BULLET]I beni che superano la capienza dei depositi vengono venduti al %d1%% del prezzo in Europa</Italian>
 		<Spanish>[ICON_BULLET]Las mercancías que sobrepasan la capacidad de almacenamiento se venden al %d1%% de su precio en Europa.</Spanish>
 		<Russian>[ICON_BULLET]Товары сверх вместимости продаются за %d1%% от цены в Европе</Russian>
+		<Hungarian>[ICON_BULLET]A raktárkapacitás feletti áruk értékesítve az Európai árak %d1%%-áért</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNLOCK_TRADESETTING</Tag>
@@ -3156,6 +3223,7 @@
 		<Italian>[ICON_BULLET]Consente la vendita automatizzata di merci attraverso le impostazioni della dogana.</Italian>
 		<Spanish>[ICON_BULLET]Permite la venta automatizada de mercancías a través de la configuración de la aduana.</Spanish>
 		<Russian>[ICON_BULLET]Позволяет автоматизировать продажу товаров через настройки таможни.</Russian>
+		<Hungarian>[ICON_BULLET]Lehetővé teszi az áruk automatikus értékesítését a Vámházi beállítások alapján.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_AUTOMATE_BUILD_HELP</Tag>
@@ -3165,6 +3233,7 @@
 		<Italian>Automatizza tutte le azioni del [COLOR_UNIT_TEXT]pioniere[COLOR_REVERT]. L'unità continuerà a lavorare fino a quando non annullerai l'automazione.</Italian>
 		<Spanish>Automatizar todas las acciones del [COLOR_UNIT_TEXT]Pionero[COLOR_REVERT]. La unidad seguirá trabajando hasta que canceléis la automatización.</Spanish>
 		<Russian>Автоматизируйте все действия [COLOR_UNIT_TEXT]первопроходца[COLOR_REVERT]. Он будет работать до тех пор, пока вы его не остановите.</Russian>
+		<Hungarian>Minden [COLOR_UNIT_TEXT]Utász[COLOR_REVERT] akció automatizálása. Az egység addig folytatja a munkát, amíg ki nem kapcsolod az automata módot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EVASION_WITH_CITY_SHORT</Tag>
@@ -3174,6 +3243,7 @@
 		<Italian>[ICON_BULLET]Probabilità di sopravvivere alla sconfitta ([COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT])</Italian>
 		<Spanish>[ICON_BULLET]Probabilidad de sobrevivir a derrota ([COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT])</Spanish>
 		<Russian>[ICON_BULLET]Шанс пережить поражение ([COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT])</Russian>
+		<Hungarian>[ICON_BULLET]Esély a túlélésre vereség esetén ([COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT])</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EVASION_WITH_CITY</Tag>
@@ -3183,6 +3253,7 @@
 		<Italian>[ICON_BULLET]Probabilità di fuggire a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] dopo aver perso una battaglia</Italian>
 		<Spanish>[ICON_BULLET]Probabilidad de escapar de [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] tras perder una batalla</Spanish>
 		<Russian>[ICON_BULLET]Шанс сбежать в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] после поражения в бою</Russian>
+		<Hungarian>[ICON_BULLET]Esélye van vesztes csatából [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] településre menekülni</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EVASION_SHORT</Tag>
@@ -3192,6 +3263,7 @@
 		<Italian>[ICON_BULLET]Probabilità di sopravvivere alla sconfitta</Italian>
 		<Spanish>[ICON_BULLET]Probabilidad de sobrevivir a derrota</Spanish>
 		<Russian>[ICON_BULLET]Шанс пережить поражение</Russian>
+		<Hungarian>[ICON_BULLET]Esély a túlélésre vereség esetén</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EVASION_BUILDINGS</Tag>
@@ -3201,6 +3273,7 @@
 		<Italian>[ICON_BULLET]Probabilità di fuggire a %s1_building_list dopo aver perso una battaglia</Italian>
 		<Spanish>[ICON_BULLET]Probabilidad de escapar de %s1_building_list tras perder una batalla</Spanish>
 		<Russian>[ICON_BULLET]Шанс сбежать в %s1_building_list после поражения в битве</Russian>
+		<Hungarian>[ICON_BULLET]Esélye van vesztes csatából egy %s1_building_list épületbe menekülni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE_OFF</Tag>
@@ -3210,6 +3283,7 @@
 		<Italian>Disattiva accentuazione</Italian>
 		<Spanish>Desactivar favorecimiento</Spanish>
 		<Russian>Выключить акценты</Russian>
+		<Hungarian>Előtérbe helyezés kikapcsolása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CLICK_TO</Tag>
@@ -3219,6 +3293,7 @@
 		<Italian>Clicca per[SPACE]</Italian>
 		<Spanish>Hacer clic en[SPACE]</Spanish>
 		<Russian>Нажмите для[SPACE]</Russian>
+		<Hungarian>Váltás:[SPACE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DESIRED_YIELD_CHANGE</Tag>
@@ -3228,6 +3303,7 @@
 		<Italian>L'insediamento [COLOR_HIGHLIGHT_TEXT]%s1_adjective[COLOR_REVERT] di [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ora desidera %s3_goods</Italian>
 		<Spanish>El asentamiento [COLOR_HIGHLIGHT_TEXT]%s1:1_adjective[COLOR_REVERT] de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ahora quiere %s3_goods.</Spanish>
 		<Russian>Поселение [COLOR_HIGHLIGHT_TEXT]%s1_adjective[COLOR_REVERT] индейцев [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] теперь нуждается в %s3_goods</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s1_adjective[COLOR_REVERT] település most %s3_goods arut keres</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HURRY_YIELD</Tag>
@@ -3237,6 +3313,7 @@
 		<Italian>[ICON_BULLET]Consuma %d1%F2_icon</Italian>
 		<Spanish>[ICON_BULLET]Consume %d1%F2_icon</Spanish>
 		<Russian>[ICON_BULLET]Будет использовано %d1%F2_icon</Russian>
+		<Hungarian>[ICON_BULLET]Fogyasztás: %d1%F2_icon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_UNPRODUCED_CITY_YIELD_SPECIFIC</Tag>
@@ -3246,6 +3323,7 @@
 		<Italian>[ICON_BULLET]%D1%F2[TAB]per mancanza di %s3_symbol_list</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2[TAB]por falta de %s3_symbol_list</Spanish>
 		<Russian>[ICON_BULLET]%D1%F2[TAB]из-за отсутствия %s3_symbol_list</Russian>
+		<Hungarian>[ICON_BULLET]%D1%F2[TAB]%s3_symbol_list hiányából</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CONSUMED_CITY_YIELD_SPECIFIC</Tag>
@@ -3255,6 +3333,7 @@
 		<Italian>[ICON_BULLET][COLOR_WARNING_TEXT]%D1%F2[COLOR_REVERT] trasformati in %s3_symbol_list</Italian>
 		<Spanish>[ICON_BULLET]Se ha convertido [COLOR_WARNING_TEXT]%D1%F2[COLOR_REVERT] en %s3_symbol_list</Spanish>
 		<Russian>[ICON_BULLET][COLOR_WARNING_TEXT]%D1%F2[COLOR_REVERT] преобразовано в %s3_symbol_list</Russian>
+		<Hungarian>[ICON_BULLET][COLOR_WARNING_TEXT]%D1%F2[COLOR_REVERT] átalakítva - %s3_symbol_list</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_EUROPE</Tag>
