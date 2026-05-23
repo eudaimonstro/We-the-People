@@ -2929,4 +2929,10 @@
 		<Tag>TXT_KEY_EVENT_NATIVE_TRADE_WAGON_DONE_6</Tag>
 		<English>TXT_KEY_EVENT_NATIVE_TRADE_WAGON_DONE_4</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUNTAIN_OF_YOUTH</Tag>
+		<English>How extraordinary! And just what we need right now. We can use anything that brings people to the New World – even if it’s just a rumour about a hot spring somewhere in the middle of nowhere!</English>
+		<German>Sehr außergewöhnlich! Und wahrlich zur rechten Zeit. Wir können alles brauchen, was die Menschen in die Neue Welt treibt - und selbst wenn es nur ein Gerücht über eine heiße Quelle irgendwo im Nirgendwo ist!</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

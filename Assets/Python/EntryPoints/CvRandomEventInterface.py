@@ -23466,3 +23466,110 @@ def getHelpKingAngryAndRemoveOneStatesman(argsList):
 	)
 
 	return szHelp
+
+######## Fountain of Youth Event ###########
+
+FOUNTAIN_OF_YOUTH_DONE_MARKER = "[[WTP_FOUNTAIN_OF_YOUTH_DONE=1]]"
+
+FOUNTAIN_OF_YOUTH_UNIT_CLASSES = (
+	"UNITCLASS_COLONIST",
+	"UNITCLASS_INDENTURED_SERVANT",
+	"UNITCLASS_EMIGRANT",
+	"UNITCLASS_FARMER",
+	"UNITCLASS_FISHERMAN",
+	"UNITCLASS_CARPENTER",
+	"UNITCLASS_BLACKSMITH",
+	"UNITCLASS_HARLOT",
+	"UNITCLASS_CHRISTIAN_MISSIONARY",
+)
+
+
+def _isFountainOfYouthDone(player):
+	if player.isNone():
+		return True
+
+	szData = player.getScriptData()
+	if szData is None:
+		return False
+
+	return szData.find(FOUNTAIN_OF_YOUTH_DONE_MARKER) != -1
+
+
+def _setFountainOfYouthDone(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	if szData.find(FOUNTAIN_OF_YOUTH_DONE_MARKER) == -1:
+		player.setScriptData(szData + FOUNTAIN_OF_YOUTH_DONE_MARKER)
+
+
+def canTriggerFountainOfYouth(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _isFountainOfYouthDone(player):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit is None or unit.isNone():
+		return False
+
+	plot = unit.plot()
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	if unit.getProfession() != gc.getInfoTypeForString("PROFESSION_SCOUT"):
+		return False
+
+	if CyGame().getSorenRandNum(100, "Fountain of Youth") >= 5:
+		return False
+
+	return True
+
+
+def applyFountainOfYouth(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	for i in range(5):
+		szUnitClass = FOUNTAIN_OF_YOUTH_UNIT_CLASSES[
+			CyGame().getSorenRandNum(len(FOUNTAIN_OF_YOUTH_UNIT_CLASSES), "Fountain of Youth unit")
+		]
+
+		iUnitClass = gc.getInfoTypeForString(szUnitClass)
+		if iUnitClass == -1:
+			continue
+
+		iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+		if iUnitType == UnitTypes.NO_UNIT:
+			continue
+
+		player.initEuropeUnit(
+			iUnitType,
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.NO_DIRECTION
+		)
+
+	_setFountainOfYouthDone(player)
