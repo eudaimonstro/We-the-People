@@ -10370,6 +10370,26 @@ void CvPlot::doMonastery()
 		setOwner(MonasteryOwner, true);
 	}
 	//WTP, ray, fix for Monasteries not Growing by giving them Culture - END
+	//WTP, Schmiddie, Monasteries generate religion points with stationed missionary - START
+	if (MonasteryOwner != NO_PLAYER)
+	{
+		int iReligionPoints = 0;
+
+		if (getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_MONASTERY"))
+		{
+			iReligionPoints = 5;
+		}
+		else if (getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_LARGE_MONASTERY"))
+		{
+			iReligionPoints = 10;
+		}
+
+		if (iReligionPoints > 0)
+		{
+			GET_TEAM(GET_PLAYER(MonasteryOwner).getTeam()).changeFatherPoints(FATHER_POINT_RELIGION, iReligionPoints);
+		}
+	}
+	//WTP, Schmiddie, Monasteries generate religion points with stationed missionary - END
 
 	bool alreadyDoneMonastery = false;
 
