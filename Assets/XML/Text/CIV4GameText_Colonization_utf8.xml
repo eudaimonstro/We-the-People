@@ -3628,7 +3628,7 @@
 		<Italian>Fonda una missione[NEWLINE]Possibilità di successo : %d1_success</Italian>
 		<Spanish>Fundar una misión[NEWLINE]Probabilidades de éxito : %d1_success</Spanish>
 		<Russian>Основать христианскую миссию в деревне индейцев[NEWLINE]Шанс успеха : %d1_success</Russian>
-		<Hungarian>Missziót szeretnék létesíteni</Hungarian>
+		<Hungarian>Missziót szeretnék létesíteni  : %d1_success</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_TRADE</Tag>
@@ -3673,7 +3673,7 @@
 		<French>Établir un comptoir de commerce [NEWLINE]Chance de réussite : %d1_success</French>
 		<German>Einen Handelsposten einrichten[NEWLINE]Erfolgschance : %d1_success</German>
 		<Russian>Попытаться установить торговый пост в деревне индейцев [NEWLINE]Шанс успеха : %d1_success</Russian>
-		<Hungarian>Kereskedelmi Állomás létesítése</Hungarian>
+		<Hungarian>Kereskedelmi Állomás létesítése : %d1_success</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_POST_FAILED</Tag>
