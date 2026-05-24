@@ -3343,6 +3343,7 @@
 		<Italian>Accesso all'Europa</Italian>
 		<Spanish>Acceso a Europa</Spanish>
 		<Russian>Путь в Европу</Russian>
+		<Hungarian>Út Európába</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOTO_EUROPE_POPUP</Tag>
@@ -3352,6 +3353,7 @@
 		<Italian>Vuoi far vela per l'Europa?</Italian>
 		<Spanish>¿Queréis navegar a Europa?</Spanish>
 		<Russian>Вы желаете плыть в Европу?</Russian>
+		<Hungarian>El akarsz hajózni Európába?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOTO_EUROPE_POPUP_YES</Tag>
@@ -3361,6 +3363,7 @@
 		<Italian>Sì, via così!</Italian>
 		<Spanish>Sí, ¡más rápido que volando!</Spanish>
 		<Russian>Да! И как можно скорее!</Russian>
+		<Hungarian>Igen, dagadjanak a vitorlák!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOTO_EUROPE_POPUP_NO</Tag>
@@ -3370,6 +3373,7 @@
 		<Italian>No, grazie.</Italian>
 		<Spanish>No, gracias</Spanish>
 		<Russian>Нет, я передумал</Russian>
+		<Hungarian>Nem, köszi.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOTO_EUROPE_POPUP_NEVER_AGAIN</Tag>
@@ -3379,15 +3383,17 @@
 		<Italian>No. Non chiedermelo più.</Italian>
 		<Spanish>No, y no me lo volváis a preguntar</Spanish>
 		<Russian>Нет и больше не напоминайте мне об этом</Russian>
+		<Hungarian>Nem, és kérlek, ne is kérdezd többé.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_UNITS_POPUP</Tag>
-		<English>You have ships waiting for orders in Europe.</English>
+		<English>You have ships in Europe waiting for orders.</English>
 		<French>Vous avez des navires en Europe en attente d'ordres.</French>
 		<German>Schiffe in Europa warten auf Eure Befehle.</German>
 		<Italian>Hai delle navi in Europa in attesa di ordini.</Italian>
 		<Spanish>Tenéis barcos aguardando órdenes en Europa.</Spanish>
 		<Russian>У вас есть корабли, ожидающие приказов в Европе</Russian>
+		<Hungarian>Hajók várnak parancsaidra Európában.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_UNITS_POPUP_OK</Tag>
@@ -3397,15 +3403,17 @@
 		<Italian>Lo so, grazie.</Italian>
 		<Spanish>Lo sé, gracias.</Spanish>
 		<Russian>Я знаю, спасибо</Russian>
+		<Hungarian>Tudom, köszönöm.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_UNITS_POPUP_NO_MORE</Tag>
-		<English>Don't remind me again !</English>
+		<English>Don't remind me again!</English>
 		<French>Pas la peine de me le rappeler !</French>
 		<German>Erinnert mich nicht noch einmal daran !</German>
 		<Italian>Non ricordarmelo più !</Italian>
 		<Spanish>¡No me lo volváis a recordar !</Spanish>
 		<Russian>Больше не напоминать</Russian>
+		<Hungarian>Ne figyelmeztess újra !</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_UNITS_POPUP_SHOW</Tag>
@@ -3415,6 +3423,7 @@
 		<Italian>Fammi dare un'occhiata.</Italian>
 		<Spanish>Dejadme que lo mire más detenidamente.</Spanish>
 		<Russian>Давайте посмотрим на них</Russian>
+		<Hungarian>Hadd nézzem meg közelebbről!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_COLONIAL_FORCES</Tag>
@@ -3424,6 +3433,7 @@
 		<Italian>Forze coloniali</Italian>
 		<Spanish>Fuerzas coloniales</Spanish>
 		<Russian>Колониальные войска</Russian>
+		<Hungarian>Gyarmati Hadsereg</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CIV_DESTROYED</Tag>
@@ -3433,6 +3443,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1:2_CivAdj[COLOR_REVERT] sconfitti!</Italian>
 		<Spanish>¡Los [COLOR_HIGHLIGHT_TEXT]%s1:3_CivAdj[COLOR_REVERT] han sido derrotados!</Spanish>
 		<Russian>[COLOR_CYAN]Исторический момент[COLOR_REVERT] : [COLOR_HIGHLIGHT_TEXT]%s1:2_CivAdj[COLOR_REVERT] побеждены!!!</Russian>
+		<Hungarian>Történelmi pillanat : A valaha nagy [COLOR_HIGHLIGHT_TEXT]%s1:2_CivAdj[COLOR_REVERT] nép kihalt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BONUS_YIELD_CHANGE</Tag>
@@ -3442,6 +3453,7 @@
 		<Italian>[ICON_BULLET]%D1 %s2_Icon da risorse bonus</Italian>
 		<Spanish>[ICON_BULLET]%D1 %s2_Icon por recursos adicionales</Spanish>
 		<Russian>[ICON_BULLET]%D1 %s2_Icon от бонусных ресурсов</Russian>
+		<Hungarian>[ICON_BULLET]%D1 %s2_Icon a Bónusz Erőforrásokból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>EUROPE_SCREEN_BUY_UNIT_LACK_FUNDS</Tag>
@@ -3451,6 +3463,7 @@
 		<Italian>Fondi insufficienti per acquistare l'unità [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] (richiede %d2[ICON_GOLD])</Italian>
 		<Spanish>No hay fondos suficientes para comprar unidades de [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] (se necesita %d2[ICON_GOLD])</Spanish>
 		<Russian>Недостаточно средств для покупки [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] (требуется %d2[ICON_GOLD])</Russian>
+		<Hungarian>[COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] megvásárlásához nincs elegendő pénzed (%d2[ICON_GOLD] szükséges)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>EUROPE_SCREEN_RECRUIT_UNIT_LACK_FUNDS</Tag>
@@ -3460,6 +3473,7 @@
 		<Italian>Fondi insufficienti per affrettare l'unità [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] (richiede %d2[ICON_GOLD])</Italian>
 		<Spanish>No hay fondos suficientes para acelerar las unidades de [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] (se necesita %d2[ICON_GOLD])</Spanish>
 		<Russian>Недостаточно средств для ускорения производства [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] (требуется %d2[ICON_GOLD])</Russian>
+		<Hungarian>[COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] azonnali előállításához nincs elegendő pénzed (%d2[ICON_GOLD] szükséges)></Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_NEEDED_FOR_PROFESSION</Tag>
@@ -3469,6 +3483,7 @@
 		<Italian>[ICON_BULLET]%d1 necessari per equipaggiare l'unità [COLOR_UNIT_TEXT]%s2:2_profession[COLOR_REVERT]</Italian>
 		<Spanish>[ICON_BULLET]Se necesita %d1 para equipar a las unidades de [COLOR_UNIT_TEXT]%s2_profession[COLOR_REVERT]</Spanish>
 		<Russian>[ICON_BULLET]%d1 нужно для экипировки [COLOR_UNIT_TEXT]%s2:2_profession[COLOR_REVERT]</Russian>
+		<Hungarian>[ICON_BULLET]%d1 szükséges [COLOR_UNIT_TEXT]%s2:2_profession[COLOR_REVERT] felszereléséhez</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_NON_CITIZEN</Tag>
@@ -3478,6 +3493,7 @@
 		<Italian>[SPACE](fuori dall'insediamento)</Italian>
 		<Spanish>[SPACE](fuera del asentamiento)</Spanish>
 		<Russian>[SPACE](вне поселения)</Russian>
+		<Hungarian>[SPACE](a településen kívül)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_GENERAL</Tag>
@@ -3487,6 +3503,7 @@
 		<Italian>Generale</Italian>
 		<Spanish>Generales</Spanish>
 		<Russian>Общая информация</Russian>
+		<Hungarian>Általános</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_DOMESTIC_MARKET</Tag>
@@ -3494,6 +3511,7 @@
 		<French>Marché local</French>
 		<German>Lokaler Markt</German>
 		<Russian>Внутренний рынок</Russian>
+		<Hungarian>Belföldi Piac</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_CITIZEN</Tag>
@@ -3503,6 +3521,7 @@
 		<Italian>Cittadini</Italian>
 		<Spanish>Ciudadanos</Spanish>
 		<Russian>Горожане</Russian>
+		<Hungarian>Lakosok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_TRADEROUTE</Tag>
@@ -3512,21 +3531,25 @@
 		<Italian>Rotte commerciali</Italian>
 		<Spanish>Rutas comerciales</Spanish>
 		<Russian>Торговые маршруты</Russian>
+		<Hungarian>Kereskedelmi Útvonalak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_TRADE_COUNT</Tag>
 		<English>Exported goods</English>
 		<Russian>Товарооборот</Russian>
+		<Hungarian>Exportált Áruk</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_CITIZEN</Tag>
 		<English>Citizens</English>
 		<Russian>Граждане</Russian>
+		<Hungarian>Lakosok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_TRADE_STATE_HELP</Tag>
 		<English>Sold: %d1[NEWLINE]Bought: %d2</English>
 		<Russian>Продано: %d1[NEWLINE]Куплено: %d2</Russian>
+		<Hungarian>Eladva: %d1[NEWLINE]Vásárolva: %d2</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GO_TO_CITY</Tag>
@@ -3536,6 +3559,7 @@
 		<Italian>Clicca per andare a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]</Italian>
 		<Spanish>Hacer clic para ir a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]</Spanish>
 		<Russian>Нажмите, чтобы перейти к [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]</Russian>
+		<Hungarian>Kattints [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] megnézéséhez</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAIN_MENU_SELECT_A_CIV_LEADER</Tag>
@@ -3545,6 +3569,7 @@
 		<Italian>Seleziona una nazione e un leader</Italian>
 		<Spanish>Seleccionar una nación y a un líder</Spanish>
 		<Russian>Выберите Нацию и Лидера</Russian>
+		<Hungarian>Válassz egy Nemzetet és egy Vezetőt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_SCREEN_VILLAGE_CHIEF</Tag>
@@ -3554,6 +3579,7 @@
 		<Italian>Capo di %s1_city - %s2_tribe</Italian>
 		<Spanish>Jefe de %s1_city (%s2_tribe)</Spanish>
 		<Russian>Вождь %s1_city - %s2_tribe</Russian>
+		<Hungarian>%s1_city falu Főnöke - %s2_tribe</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP</Tag>
@@ -3563,6 +3589,7 @@
 		<Italian>Sei entrato a [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]. Cosa vuoi fare?</Italian>
 		<Spanish>Habéis entrado en [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]. ¿Qué queréis hacer?</Spanish>
 		<Russian>Вы вошли в [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT]. Что вы хотите сделать?</Russian>
+		<Hungarian>Beléptél [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] faluba. Mit szeretnél tenni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_CHIEF</Tag>
@@ -3572,6 +3599,7 @@
 		<Italian>Chiedi di parlare con il capo</Italian>
 		<Spanish>Pido hablar con el jefe</Spanish>
 		<Russian>Просить разговора с вождем</Russian>
+		<Hungarian>Engedélyt kérnék beszélni a főnökkel</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_LEARN</Tag>
@@ -3581,6 +3609,7 @@
 		<Italian>Vivi tra i nativi</Italian>
 		<Spanish>Vivir entre los Nativos</Spanish>
 		<Russian>Жить среди индейцев</Russian>
+		<Hungarian>Az Indiánok között szeretnék élni</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_MISSION</Tag>
@@ -3599,6 +3628,7 @@
 		<Italian>Fonda una missione[NEWLINE]Possibilità di successo : %d1_success</Italian>
 		<Spanish>Fundar una misión[NEWLINE]Probabilidades de éxito : %d1_success</Spanish>
 		<Russian>Основать христианскую миссию в деревне индейцев[NEWLINE]Шанс успеха : %d1_success</Russian>
+		<Hungarian>Missziót szeretnék létesíteni</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_TRADE</Tag>
@@ -3608,6 +3638,7 @@
 		<Italian>Avvia trattative commerciali</Italian>
 		<Spanish>Negociar intercambios</Spanish>
 		<Russian>Вступить в торговые переговоры</Russian>
+		<Hungarian>Kereskedelmi tárgyalásokat folytatnék</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_NOTHING</Tag>
@@ -3617,6 +3648,7 @@
 		<Italian>Sono solo di passaggio</Italian>
 		<Spanish>Solo pasaba por aquí</Spanish>
 		<Russian>Мы просто идем мимо</Russian>
+		<Hungarian>Csak átutazóban vagyok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_NEVER</Tag>
@@ -3626,6 +3658,7 @@
 		<Italian>Niente. Non chiedermelo più!</Italian>
 		<Spanish>Nada, y no me lo volváis a preguntar</Spanish>
 		<Russian>Ничего, и пожалуйста, больше не спрашивайте!</Russian>
+		<Hungarian>Semmit, és kérlek, ne kérdezd meg többet!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TALK_NATIVES_POPUP_TRADE_POST</Tag>
@@ -3640,6 +3673,7 @@
 		<French>Établir un comptoir de commerce [NEWLINE]Chance de réussite : %d1_success</French>
 		<German>Einen Handelsposten einrichten[NEWLINE]Erfolgschance : %d1_success</German>
 		<Russian>Попытаться установить торговый пост в деревне индейцев [NEWLINE]Шанс успеха : %d1_success</Russian>
+		<Hungarian>Kereskedelmi Állomás létesítése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_POST_FAILED</Tag>
@@ -3647,6 +3681,7 @@
 		<French>Votre marchand a échoué à établir un comptoir de commerce à [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT].</French>
 		<German>Eurem Ureinwohnerhändler ist es nicht gelungen, in [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] einen Handelsposten einzurichten.</German>
 		<Russian>Наш торговец с индейцами не смог договориться об установке торгового поста в [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT]. Кажется, с него сняли скальп...</Russian>
+		<Hungarian>Az Indián kereskedőd nem tudott Kereskedelmi Állomást létesíteni [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] faluban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_POST_CREATED_TREASURE</Tag>
@@ -3654,15 +3689,17 @@
 		<French>Sire, Votre comptoir établi à [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] envoie l'argent gagné vers nos colonie. </French>
 		<German>Milord, Euer Handelsposten in [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] sendet die erwirtschafteten Reichtümer zurück in unsere Kolonie.</German>
 		<Russian>Милорд, наш торговый пост в [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] собрал достаточно прибыли и готов переправить ее в ближайшую колонию.</Russian>
+		<Hungarian>Uram, [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] faluban a Kereskedelmi Állomásod a megkeresett vagyont elküldi a kolóniánkra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MEMORY_MISSION_FAIL</Tag>
-		<English>"Your missionaries have insulted our Spirits !"</English>
+		<English>"Your missionaries have insulted our Spirits!"</English>
 		<French>"Vos missionnaires ont insulté nos Esprits !"</French>
 		<German>"Eure Missionare haben unsere Geister beleidigt !"</German>
 		<Italian>"Your missionaries have insulted our Spirits!"</Italian>
 		<Spanish>"Your missionaries have insulted our Spirits!"</Spanish>
 		<Russian>"Ваши миссионеры оскорбили наших духов !"</Russian>
+		<Hungarian>"A Misszionáriusod megsértette a Lelkünket !"</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_FAILED</Tag>
@@ -3670,6 +3707,7 @@
 		<French>Sire, votre missionnaire a échoué à établir une mission à [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT].</French>
 		<German>Milord, Eurem Missionar ist es nicht gelungen, in [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] eine Mission zu errichten.</German>
 		<Russian>Милорд, нашему миссионеру не удалось договориться с индейцами об установке миссии в [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT]. Помолимся за него, братья...</Russian>
+		<Hungarian>Uram, a Misszionáriusodnak nem sikerült missziót alapítania [COLOR_SELECTED_TEXT]%s1_CityName[COLOR_REVERT] faluban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE</Tag>
@@ -3679,6 +3717,7 @@
 		<Italian>Accentua</Italian>
 		<Spanish>Favorecer</Spanish>
 		<Russian>Акценты авто-производства</Russian>
+		<Hungarian>Fókusz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZED</Tag>
@@ -3688,6 +3727,7 @@
 		<Italian>%F1_symbol accentuato</Italian>
 		<Spanish>%F1_symbol [NUM1:favorecido:favorecida:favorecidos:favorecidas]</Spanish>
 		<Russian>%F1_symbol активирован</Russian>
+		<Hungarian>Fókuszban: %F1_symbol</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DEEMPHASIZED</Tag>
@@ -3697,6 +3737,7 @@
 		<Italian>%F1_symbol de-accentuato</Italian>
 		<Spanish>%F1_symbol [NUM1:desfavorecido:desfavorecida:desfavorecidos:desfavorecidas]</Spanish>
 		<Russian>%F1_symbol деактивирован</Russian>
+		<Hungarian>Nincs Fókuszban: %F1_symbol</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPHASIS_NEUTRAL</Tag>
@@ -3706,15 +3747,17 @@
 		<Italian>%F1_symbol neutrale</Italian>
 		<Spanish>%F1_symbol [NUM1:neutral:neutral:neutrales:neutrales]</Spanish>
 		<Russian>%F1_symbol нейтрально</Russian>
+		<Hungarian>Semleges: %F1_symbol</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_OFF_CITIZEN_AUTO</Tag>
-		<English>Turn Off citizen automation</English>
+		<English>Turn off citizen automation</English>
 		<French>Désactiver l'automatisation des citoyens</French>
 		<German>Bürgerautomatisierung ausschalten</German>
 		<Italian>Disattiva automazione cittadini</Italian>
 		<Spanish>Desactivar la automatización de los ciudadanos</Spanish>
 		<Russian>Выключить автоматическое распределение горожан на работы</Russian>
+		<Hungarian>Lakos Automatizmusának Kikapcsolása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_TRANSACTIONS</Tag>
@@ -3723,6 +3766,7 @@
 		<German>Transaktionen</German>
 		<Italian>Transazioni</Italian>
 		<Spanish>Transacciones</Spanish>
+		<Hungarian>Tranzakciók</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_WARSHIPS</Tag>
@@ -3732,6 +3776,7 @@
 		<Italian>%d1 [NUM1:nave da guerra:navi da guerra]</Italian>
 		<Spanish>%d1 [NUM1:Barco de guerra:Barcos de guerra]</Spanish>
 		<Russian>%d1 [NUM1:Военный корабль:Военные корабли]</Russian>
+		<Hungarian>%d1 Hadihajó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_SOLDIERS</Tag>
@@ -3741,6 +3786,7 @@
 		<Italian>%d1 [NUM1:soldato:soldati]</Italian>
 		<Spanish>%d1 [NUM1:Soldado:Soldados]</Spanish>
 		<Russian>%d1 [NUM1:Солдат:Солдат]</Russian>
+		<Hungarian>%d1 Katona</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_DRAGOONS</Tag>
@@ -3750,6 +3796,7 @@
 		<Italian>%d1 [NUM1:dragone:dragoni]</Italian>
 		<Spanish>%d1 [NUM1:Dragón:Dragones]</Spanish>
 		<Russian>%d1 [NUM1:Драгун:Драгун]</Russian>
+		<Hungarian>%d1 Dragonyos</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_REGULARS</Tag>
@@ -3758,6 +3805,7 @@
 		<German>%d1 [NUM1:Soldat:Soldaten]</German>
 		<Italian>%d1 [NUM1:regolare:regolari]</Italian>
 		<Spanish>%d1 [NUM1:Regular:Regulares]</Spanish>
+		<Hungarian>%d1 Közkatona</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_REGULAR_DRAGOONS</Tag>
@@ -3766,6 +3814,7 @@
 		<German>%d1 [NUM1:Dragoner:Dragoner]</German>
 		<Italian>%d1 [NUM1:dragone di carriera:dragoni di carriera]</Italian>
 		<Spanish>%d1 [NUM1:Dragón regular:Dragones regulares]</Spanish>
+		<Hungarian>%d1 Dragonyos Közkatona</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_CANNONS</Tag>
@@ -3775,6 +3824,7 @@
 		<Italian>%d1 [NUM1:cannone:cannoni]</Italian>
 		<Spanish>%d1 [NUM1:Cañón:Cañones]</Spanish>
 		<Russian>%d1 [NUM1:Пушки:Пушек]</Russian>
+		<Hungarian>%d1 Ágyú</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_ARTY</Tag>
@@ -3784,6 +3834,7 @@
 		<Italian>%d1 [NUM1:unità d'artiglieria:unità d'artiglieria]</Italian>
 		<Spanish>%d1 de [NUM1:Artillería:Artillería]</Spanish>
 		<Russian>%d1 [NUM1:Артиллерии:Артиллерии]</Russian>
+		<Hungarian>%d1 Tüzérség</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_REVOLUTION_SCREEN_VETERAN_MILITIA</Tag>
@@ -3792,6 +3843,7 @@
 		<German>%d1 [NUM1:Veteran:Veteranen] / %d2 Miliz</German>
 		<Italian>%d1 [NUM1:veterano:veterani] / %d2 milizia</Italian>
 		<Spanish>%d1 [NUM1:Veterano:Veteranos] / %d2 Milicia</Spanish>
+		<Hungarian>%d1 Veterán / %d2 Nemzetőr</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCORE_BREAKDOWN_TAX</Tag>
@@ -3801,6 +3853,7 @@
 		<Italian>%d1 della percentuale di tasse</Italian>
 		<Spanish>%d1 por carga impositiva</Spanish>
 		<Russian>%d1 от ставки налога</Russian>
+		<Hungarian>%d1 az Adókulcsból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MEMBERS</Tag>
@@ -3810,6 +3863,7 @@
 		<Italian>%s1 - %d2 [NUM2:membro:membri]</Italian>
 		<Spanish>%s1 - %d2 [NUM2:miembro:miembros]</Spanish>
 		<Russian>%s1 - %d2 [NUM2:Представитель:Представителей]</Russian>
+		<Hungarian>%s1 - %d2 Tag</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ARRIVALS_IN</Tag>
@@ -3819,6 +3873,7 @@
 		<Italian>Arr. fra %d2 [NUM2:turno:turni]</Italian>
 		<Spanish>Llegará en %d2 [NUM2:turno:turnos]</Spanish>
 		<Russian>(Прибудет через %d2 [NUM2:ход:хода])</Russian>
+		<Hungarian>(Érkezés: %d2 kör)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATEGY</Tag>
@@ -3828,6 +3883,7 @@
 		<Italian>Linee e segnali</Italian>
 		<Spanish>Líneas y señales</Spanish>
 		<Russian>Линии и знаки</Russian>
+		<Hungarian>Vonalak és Címkék</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IN_QUEUE</Tag>
@@ -3837,6 +3893,7 @@
 		<Italian>[COLOR_WARNING_TEXT]Già in costruzione[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Ya se está construyendo[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Строительство уже ведется[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Már épül[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ALARM_INVALID_INPUT</Tag>
@@ -3845,6 +3902,7 @@
 		<German>Bitte vor Aktivierung des Alarms eine gültige Zeit einstellen</German>
 		<Italian>Imposta un orario valido, prima di attivare l'allarme</Italian>
 		<Spanish>Pon una hora válida antes de activar o desactivar la alarma</Spanish>
+		<Hungarian>Kérlek, állíts be egy érvényes időt az ébresztő használata előtt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LOADSAVE_FILE_ILLEGAL_CHARACTERS</Tag>
@@ -3853,6 +3911,7 @@
 		<German>Dateinamen dürfen die folgenden Zeichen nicht enthalten:[NEWLINE]: * ? " &lt; &gt; |</German>
 		<Italian>Il nome di un file non può contenere i seguenti caratteri:[NEWLINE]: * ? " &lt; &gt; |</Italian>
 		<Spanish>Un archivo no puede contener ninguno de los caracteres siguientes:[NEWLINE]: * ? " &lt; &gt; |</Spanish>
+		<Hungarian>A fájlnév nem tartalmazhatja az alábbi karaktereket:[NEWLINE]: * ? " &lt; &gt; |</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_RATE</Tag>
@@ -3862,6 +3921,7 @@
 		<Italian>%d1%F2 per turno</Italian>
 		<Spanish>%d1%F2 por turno</Spanish>
 		<Russian>%d1%F2 за ход</Russian>
+		<Hungarian>%d1%F2 Körönként</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ROYAL_CHARTER_BODY_2</Tag>
@@ -3871,6 +3931,7 @@
 		<Italian>Nell'anno %s1_year, sua maestà reale il re di %s2_civ ti conferisce uno statuto coloniale.[NEWLINE][NEWLINE]Per la maggiore gloria della nazione il re nomina te, %s3_leader, viceré del Nuovo Mondo. Esplora queste nuove terre, colonizzale e procura ricchezze e gloria a te stesso e alla nostra grande nazione.[NEWLINE][NEWLINE][BOLD]Per ottenere una vittoria:[\BOLD][PARAGRAPH:1]Fonda la tua colonia.[PARAGRAPH:1]Dichiara l'indipendenza dalla madrepatria dopo aver ottenuto il 50%% di sentimento di ribellione in ogni insediamento.[PARAGRAPH:1]Difendi il giovane stato dall'ira della madrepatria annientandone le forze terrestri prima che scada il tempo. [PARAGRAPH:1]Devi completare la rivoluzione prima di qualsiasi altra colonia europea.</Italian>
 		<Spanish>En el año de %s1_year Su Majestad, el rey de %s2_civ, os concede una carta colonial.[NEWLINE][NEWLINE]Para mayor gloria de la nación, el rey os nombra a vos, %s3_leader, virrey del Nuevo Mundo. Explorad esta nueva tierra, civilizadla y ganad la gloria para vos y para nuestra gran nación.[NEWLINE][NEWLINE][BOLD]Para conseguir una victoria:[\BOLD][PARAGRAPH:1]Fundad vuestra colonia.[PARAGRAPH:1]Declaraos independientes de la madre patria tras conseguir un 50%% de sentimiento de rebelión en todos vuestros asentamientos.[PARAGRAPH:1]Defended vuestro incipiente país de la cólera de la madre patria acabando con todas las fuerzas terrestres de ésta antes de que se acabe el tiempo. [PARAGRAPH:1]Debéis completar vuestra revolución antes que ninguna otra colonia europea.</Spanish>
 		<Russian>Преклоните колени и слушайте, что Мы, помазанник Божий на Земле, Король %s2_civ, объявляем вам и Нашему Двору. Вы обратились к Нам с просьбой. Мы любезно удовлетворяем её. Сегодня - %s1_year - Мы позволяем вам плыть на запад, на край известного мира и дальше. Мы даём вам корабль, оружие, инструменты и несколько спутников. Если вы откроете неизведанную территорию, поднимите там Наши знамёна и объявите Нашей собственностью всю землю, её плоды и язычников, которые их пожинают. На вас возложена благочестивая обязанность проповедовать там Слово Божье и увеличивать благосостояние вашего Короля.[NEWLINE][NEWLINE]Но Мы предупреждаем вас: Нам сообщили, что в вашем сердце обитает слишком свободный дух. Это недуг, поражающий каждого исследователя. Излечите его как можно скорее или Мы будем вынуждены дать вам лекарство, которое будет неприятным для вас. Если дьявол станет побуждает вас действовать самостоятельно и отказываться уважать своего Короля, Мы пошлем за вами экспедиционный корпус, чтобы привести вас в чувство![NEWLINE][NEWLINE]Можете встать, %s3_leader.[NEWLINE][NEWLINE]Отправляйтесь в путь и да хранит вас Господь...[NEWLINE][NEWLINE][BOLD]Чтобы добиться победы:[\BOLD][NEWLINE][ICON_BULLET]Постройте свою колонию[NEWLINE][ICON_BULLET]Заявите о своей независимости от сюзерена по достижении 50%% мятежных настроений во всех ваших поселениях[NEWLINE][ICON_BULLET]Пока не истечет время, защищайте свою молодую страну от гнева Короля, уничтожив все наземные силы, отправленные им для подавления восстания[NEWLINE][ICON_BULLET]Вы должны начать вашу революцию раньше, чем любая другая европейская колония. И тогда ваше имя навсегда будет вписано в анналы истории[NEWLINE][PARAGRAPH:1]Хотя, чтобы добиться непреходящей славы, вы можете выбрать и другой путь. Захватите столько земли и столько подданных, чтобы вас уважали, как доминирующую силу Нового Света, и тогда вы также займёте свое место в анналах как герой завоеваний.</Russian>
+		<Hungarian>Térdelj le és hallgasd meg, amit Mi, a nemes %s2_civ Birodalomnak Isten által felszentelt Őfelsége, hirdetünk neked és Udvarunknak. Egy kéréssel érkeztél Hozzánk. Mi kegyesen teljesítjük kérésedet. Ma - %s1_year - megengedjük neked, hogy nyugatra hajózz, az ismert világ szélére és azon túlra. Adunk neked egy hajót, fegyvereket, szerszámokat és néhány társat. Ha idegen földeket fedezel fel, emeld fel ott magasba hazád zászlaját, és követeld Nekünk a földet, annak gyümölcseit és pogány gyermekeket, akik betakarítják azt! Az a jámbor kötelességed, hogy hirdesd ott Isten Igéjét, és növeld Királyod jólétét.[NEWLINE][NEWLINE]De figyelmeztetünk téged: Azt hallottuk, hogy túlságosan szabad szellem lakozik a szívedben. Nos, ez egy olyan betegség, amely minden felfedezőt sújt. Gyógyítsd meg gyorsan, különben olyan gyógyszert adunk neked, amely rossz ízű lesz számodra. Ha az ördög arra késztet, hogy a magad feje után menj és megtagadod a Királyodat, akkor egy Expedíciós Hadsereget küldünk utánad, hogy észre térítsünk![NEWLINE][NEWLINE]Felállhatsz, %s3_leader![NEWLINE][NEWLINE]A kalandod elkezdődhet ...[NEWLINE][NEWLINE][BOLD]A győzelem eléréséhez :[\BOLD][NEWLINE][ICON_BULLET]Alapítsd meg a kolóniádat.[NEWLINE][ICON_BULLET]Nyilvánítsd ki az anyaországodtól való függetlenségedet, miután minden településeden elérted az 50%-os Lázadó Hangulatot.[NEWLINE][ICON_BULLET]Mielőtt lejár az idő, védd meg a születendő országodat az anyaországod haragjától az összes szárazföldi seregük legyőzésével.[NEWLINE][ICON_BULLET]Minden más európai gyarmat előtt be kell fejezned a forradalmat - és akkor a neved beíródik a történelemkönyvekbe.[NEWLINE][PARAGRAPH:1]Emellett a maradandó dicsőség eléréséhez más utat is választhatsz. Szerezz annyi földet és annyi alattvalót, hogy az Újvilág uralkodó hatalmaként tiszteljenek téged - így hősként kerülsz be a történelemkönyvekbe.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_FOUNDED</Tag>
@@ -3880,6 +3941,7 @@
 		<Italian>Fondata : %s1</Italian>
 		<Spanish>Fundada : %s1</Spanish>
 		<Russian>Дата основания : %s1</Russian>
+		<Hungarian>Megalapítva : %s1</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TIME_AD</Tag>
@@ -3889,6 +3951,7 @@
 		<Italian>%d1_Date d.C.</Italian>
 		<Spanish>%d1_Date d. C.</Spanish>
 		<Russian>%d1_Date г. от Р.Х.</Russian>
+		<Hungarian>Kr. u. %d1_Date</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_POPULATION</Tag>
@@ -3898,13 +3961,15 @@
 		<Italian>[NEWLINE]Popolazione : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Italian>
 		<Spanish>[NEWLINE]Población : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Spanish>
 		<Russian>[NEWLINE]Количество жителей : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Russian>
+		<Hungarian>[NEWLINE]Lakosság : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_SLAVE_REVOLT_REDUCTION_BONUS</Tag>
-		<English>Reduction of Slave Revolts : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</English>
+		<English>Reduction of slave revolts : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</English>
 		<French>Baisse des révoltes d'esclaves : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT] </French>
 		<German>Reduktion von Sklavenaufständen : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</German>
 		<Russian>Уменьшение шанса восстания рабов : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Russian>
+		<Hungarian>Rabszolgalázadások Csökkenése : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_SLAVE_WORKER_PRODUCTION_BONUS</Tag>
@@ -3912,6 +3977,7 @@
 		<French>Hausse de la production des esclaves : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT] </French>
 		<German>Produktionsbonus für Sklaven : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</German>
 		<Russian>Бонус производства от рабов : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Russian>
+		<Hungarian>Rabszolga Termelési Bónusz : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_DEFAULT_STORAGE</Tag>
@@ -3919,6 +3985,7 @@
 		<French>Capacité d'entrepôt par bâtiments : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</French>
 		<German>Lagerkapazität durch Gebäude : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</German>
 		<Russian>Емкость хранилища от строений : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Russian>
+		<Hungarian>Épületek Raktárkapacitása : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_IMPROVEMENT_STORAGE</Tag>
@@ -3926,6 +3993,7 @@
 		<French>Capacité d'entrepôt en campagne : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</French>
 		<German>Lagerkapazität durch Geländeverbesserungen : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</German>
 		<Russian>Емкость хранилища от улучшений : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Russian>
+		<Hungarian>Fejlesztések Raktárkapacitása : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RESULTING_CITY_TOTAL_STORAGE</Tag>
@@ -3933,6 +4001,7 @@
 		<French>Capacité d'entrepôt totale : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</French>
 		<German>Resultierende Gesamtlagerkapazität : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</German>
 		<Russian>Общая емкость хранилища : [COLOR_HIGHLIGHT_TEXT]%d1[COLOR_REVERT]</Russian>
+		<Hungarian>Teljes Raktárkapacitás : [COLOR_HIGHLIGHT_TEXT]%d1%%[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHANGE_NAME_CITY</Tag>
@@ -3942,6 +4011,7 @@
 		<Italian>[NEWLINE][TAB][TAB][COLOR:140:255:40:255]&lt; Clicca &gt;[COLOR_REVERT][NEWLINE]qui per cambiare il nome</Italian>
 		<Spanish>[NEWLINE][TAB][TAB][COLOR:140:255:40:255]&lt; Haz clic &gt;[COLOR_REVERT][NEWLINE]para cambiar el nombre de la colonia</Spanish>
 		<Russian>[NEWLINE][TAB][TAB][COLOR:140:255:40:255]Нажмите[COLOR_REVERT][NEWLINE]для изменения названия колонии</Russian>
+		<Hungarian>[NEWLINE][TAB][TAB][COLOR:140:255:40:255]&lt; Kattints &gt;[COLOR_REVERT][NEWLINE]a kolónia nevének megváltoztatásához</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHANGE_NAME_UNIT</Tag>
@@ -3951,6 +4021,7 @@
 		<Italian>[COLOR:140:255:40:255]&lt; Clicca &gt;[COLOR_REVERT] qui per cambiare il nome</Italian>
 		<Spanish>[COLOR:140:255:40:255]&lt; Haz clic &gt;[COLOR_REVERT] para cambiar el nombre</Spanish>
 		<Russian>[COLOR:140:255:40:255]Нажмите[COLOR_REVERT] для изменения наименования юнита</Russian>
+		<Hungarian>[COLOR:140:255:40:255]&lt; Kattints &gt;[COLOR_REVERT] az egység nevének megváltoztatásához</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NAME_CITY</Tag>
@@ -3960,6 +4031,7 @@
 		<Italian>Come vuoi chiamare questo insediamento?</Italian>
 		<Spanish>¿Cómo quieres que se llame el asentamiento?</Spanish>
 		<Russian>Как вы хотите назвать эту колонию?</Russian>
+		 <Hungarian>Mi legyen a település neve?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IN</Tag>
@@ -3968,6 +4040,7 @@
 		<German>+</German>
 		<Italian>Entrata</Italian>
 		<Spanish>Entrada</Spanish>
+		<Hungarian>Be</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_OUT</Tag>
@@ -3976,6 +4049,7 @@
 		<German>-</German>
 		<Italian>Uscita</Italian>
 		<Spanish>Salida</Spanish>
+		<Hungarian>Ki</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IN_AND_OUT</Tag>
@@ -3984,6 +4058,7 @@
 		<German>+/-</German>
 		<Italian>I/O</Italian>
 		<Spanish>E/S</Spanish>
+		<Hungarian>B/K</Hungarian>
 	</TEXT>
 <!--		 Schmiddie - Text for New Achievement Colopedia Screen -->
 	<TEXT>
