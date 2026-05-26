@@ -16879,12 +16879,15 @@ def countUnitClassOnSpecificCityPlot(argsList, iUnitClass):
 
 	for i in range(plot.getNumUnits()):
 		loopUnit = plot.getUnit(i)
-		if loopUnit.isNone():
+
+		if not _isSpecificCityPlotUnitAllowedForUnitClassEvent(
+			loopUnit,
+			ePlayer,
+			iUnitClass
+		):
 			continue
-		if loopUnit.getOwner() != ePlayer:
-			continue
-		if loopUnit.getUnitClassType() == iUnitClass:
-			iUnitsCurrent += 1
+
+		iUnitsCurrent += 1
 
 	return iUnitsCurrent
 
@@ -17000,6 +17003,21 @@ def _removeFirstMatchingUnitClassFromSpecificCityPopulation(city, iUnitClass):
 
 	return False
 
+def _isSpecificCityPlotUnitAllowedForUnitClassEvent(loopUnit, ePlayer, iUnitClass):
+	if loopUnit.isNone():
+		return False
+
+	if loopUnit.getOwner() != ePlayer:
+		return False
+
+	if loopUnit.getUnitClassType() != iUnitClass:
+		return False
+
+	# Plot units may only count if they are regular colonists.
+	if loopUnit.getProfession() != gc.getInfoTypeForString("PROFESSION_COLONIST"):
+		return False
+
+	return True
 
 def _removeFirstMatchingUnitClassFromSpecificCityPlot(player, city, iUnitClass):
 	if player.isNone():
@@ -17014,11 +17032,12 @@ def _removeFirstMatchingUnitClassFromSpecificCityPlot(player, city, iUnitClass):
 
 	for i in range(plot.getNumUnits()):
 		loopUnit = plot.getUnit(i)
-		if loopUnit.isNone():
-			continue
-		if loopUnit.getOwner() != player.getID():
-			continue
-		if loopUnit.getUnitClassType() != iUnitClass:
+
+		if not _isSpecificCityPlotUnitAllowedForUnitClassEvent(
+			loopUnit,
+			player.getID(),
+			iUnitClass
+		):
 			continue
 
 		loopUnit.kill(False)

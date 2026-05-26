@@ -372,7 +372,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>-1</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -432,7 +432,7 @@
 			<PythonCanDoCity>canTriggerSpecificCityUnitClassFromEventParams</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>1</iMinTurn>
+			<iMinTurn>25</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_PREACHER_AND_HARLOT</Type>
@@ -12294,7 +12294,7 @@
 			<PythonCanDoCity>canTriggerSpecificCityUnitClassFromEventParams</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>55</iMinTurn>
+			<iMinTurn>30</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_DIPLOMATIC_CONNECTIONS</Type>
@@ -15149,7 +15149,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>100</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -15204,7 +15204,7 @@
 			<PythonCanDoCity>canTriggerSpecificCityUnitClassFromEventParams</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>75</iMinTurn>
+			<iMinTurn>40</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_SELL_AFRICAN_SLAVE</Type>
@@ -15221,20 +15221,20 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>200</iWeight>
+			<iWeight>300</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
 			<iMinTreasury>500</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
-			<iMaxPopulation>-1</iMaxPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
 			<iMinOurLandmass>0</iMinOurLandmass>
 			<iMaxOurLandmass>-1</iMaxOurLandmass>
 			<eMinDifficulty>NONE</eMinDifficulty>
 			<UnitTriggerConditions>
 				<UnitsRequired/>
-				<iNumUnits></iNumUnits>
+				<iNumUnits>0</iNumUnits>
 				<iNumUnitsGlobal>0</iNumUnitsGlobal>
 				<bTrackUnit>0</bTrackUnit>
 				<bUnitsOnPlot>0</bUnitsOnPlot>
@@ -43745,7 +43745,7 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>1</iMinTurn>
+			<iMinTurn>30</iMinTurn>
 		</EventTriggerInfo>
 	</EventTriggerInfos>
 </Civ4EventTriggerInfos>
