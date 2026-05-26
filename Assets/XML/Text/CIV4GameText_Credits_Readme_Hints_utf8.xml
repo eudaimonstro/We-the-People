@@ -11,6 +11,7 @@
 		<French>WTP - Crédits</French>
 		<Russian>WTP - Спасибо</Russian>
 		<German>WTP - Credits</German>
+		<Hungarian>MAN - Készítők</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_HEAD</Tag>
@@ -18,12 +19,14 @@
 		<French>We The People - Crédits</French>
 		<Russian>We The People - Благодарности</Russian>
 		<German>We The People - Credits</German>
+		<Hungarian>Mi A Nép - Készítők</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_WTP</Tag>
 		<English>[H1]"We The People" (WTP)[\H1]</English>
 		<Russian>[H1]Команда "We The People" (WTP)[\H1]</Russian>
 		<German>[H1]"We The People" (WTP)[\H1]</German>
+		<Hungarian>[H1]"Mi A Nép" (MAN)[\H1]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_SPECIAL</Tag>
@@ -32,13 +35,15 @@
 		<German>[H1]Besonderen Dank[\H1]</German>
 		<Spanish>[H1]Agradecimientos Especiales[\H1]</Spanish>
 		<Russian>[H1]Особая благодарность[\H1]</Russian>
+		<Hungarian>[H1]Külön Köszönet[\H1]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_RAR</Tag>
-		<English>[H1]"Religion and Revolution" (RaR)[\H1] has been developed by an international mod-team at CivFanatics.</English>
+		<English>[H1]"Religion and Revolution" (RaR)[\H1] has been developed by an international mod team at CivFanatics.</English>
 		<French>[H1]"Religion and Revolution" (RaR)[\H1]a été développé par une équipe internationale de moddeurs sur le site de CivFanatics.</French>
 		<Russian>[H1]"Religion and Revolution" (RaR)[\H1] разработаный международной командой моддеров CivFanatics</Russian>
 		<German>[H1]"Religion and Revolution" (RaR)[\H1] wurde von einem internationalen Mod-Team bei CivFanatics entwickelt.</German>
+		<Hungarian>[H1]"Religion and Revolution" (RaR)[\H1] egy nemzetközi mod-csapat fejlesztette ki a CivFanatics oldalon..</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_TAC</Tag>
@@ -46,6 +51,7 @@
 		<French>[H1]Nous tenons à remercier tout particulièrement les membres de l'équipe de développement du mod TAC ("The Authentic Colonization") y compris les anciens membres[\H1]</French>
 		<Russian>[H1]Особенная благодарность команде "The Authentic Colonization" (TAC), включая бывших участников:[\H1]</Russian>
 		<German>[H1]Besondere Anerkennung für "The Authentic Colonization" (TAC), einschließlich ehemaliger Mitglieder:[\H1]</German>
+		<Hungarian>[H1]Külön köszönet a "The Authentic Colonization" (TAC) egykori tagjainak:[\H1]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_MUSIC</Tag>
@@ -53,6 +59,7 @@
 		<French>[H1]Nous remercions chaleureusement Rene Osmanczyk pour a bande-son extraordinaire.[\H1]</French>
 		<Russian>[H1]Особая благодарность за наш саундтрек Rene Osmanczyk, который позволил нам использовать его фантастическую работу.[\H1]</Russian>
 		<German>[H1]Besondere Anerkennung für unseren Soundtrack geht an Rene Osmanczyk, der uns erlaubt hat, seine fantastische Arbeit zu verwenden.[\H1]</German>
+		<Hungarian>[H1]Külön köszönet a zenéért Rene Osmanczyknek, aki engedélyezte nekünk fantasztikus művének felhasználását.[\H1]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_OTHER_PROJECTS</Tag>
@@ -60,10 +67,11 @@
 		<French>[H1]Nous remercions aussi les artistes, moddeurs ou projets dont les travaux ont été inclus:[\H1]</French>
 		<Russian>[H1]Наша благодарность художникам, моддерам и сторонникам за их работу:[\H1]</Russian>
 		<German>[H1]Danksagungen an Künstler, Modder und Projekte für enthaltene Arbeiten:[\H1]</German>
+		<Hungarian>[H1]Köszönet a művészeknek, moddereknek és projekteknek a munkájukért:[\H1]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_OTHER_PROJECTS_TAC</Tag>
-		<English>[H1]Further Credits go other artists, modders and projects for work included through TAC:[\H1]
+		<English>[H1]Further credits go other artists, modders and projects for work included through TAC:[\H1]
 [ICON_BULLET] Netbandit (Netbandit's balance MOD)
 [ICON_BULLET] Dale (Age of Discovery II; Achievements v1.00)
 [ICON_BULLET] cgtextures.com (textures)
@@ -147,16 +155,37 @@
 [ICON_BULLET] Team of Fall for Heaven (рисунки пустыни)
 [ICON_BULLET] Marry Harrsch (фотографии)
 [ICON_BULLET] Aeterna (перевод на фрацузский)</Russian>
+		<Hungarian>[H1]További köszönet illeti a TAC-on bemutatott munkáikért más művészeket, moddereket és projekteket:[\H1]
+[ICON_BULLET] Netbandit (Netbandit's balance MOD)
+[ICON_BULLET] Dale (Age of Discovery II; Achievements v1.00)
+[ICON_BULLET] cgtextures.com (textúrák)
+[ICON_BULLET] the_suebian (háttérképek)
+[ICON_BULLET] cephalo (Szép Idő szkript)
+[ICON_BULLET] ledat (Félgömb szkript)
+[ICON_BULLET] Ekmek (vezetők)
+[ICON_BULLET] Mangammal (vezető modellek)
+[ICON_BULLET] Aymerick (ültetvények, bálnavadászat részei, útvonaltervezés részei)
+[ICON_BULLET] Deliverator &amp; BLU-Mod-Team (egységek)
+[ICON_BULLET] oleg153 (egységek grafikája)
+[ICON_BULLET] charle88 (egységek grafikája)
+[ICON_BULLET] Kailric (egységek grafikája, bálnavadászat részei)
+[ICON_BULLET] jdog5000 (Harci MI kód)
+[ICON_BULLET] hrochland (tornádó grafika)
+[ICON_BULLET] Fierabras ("tornádó" és "vulkán" események)
+[ICON_BULLET] Kissa (hegység grafika)
+[ICON_BULLET] Team of Fall for Heaven (sivatag grafika)
+[ICON_BULLET] Marry Harrsch (fotó)
+[ICON_BULLET] Aeterna (Frrancia Fordítás)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_END</Tag>
 		<English>And we don't want to forget to thank Firaxis and 2Kgames for their masterpiece Civ4/BtS. We use a lot of material from these games.[NEWLINE]
-The copyright of these materials belongs to the respective owners. In most cases we got permission to use their materials but in some cases we didn't. We ask these authors to contact us as to whether we can use their material. The copyright of the changes the TAC team has done to these materials belongs to TAC. The copyright of changes the RaR team has done to these materials belongs to RaR. The copyright of changes the WtP team has done to these materials belongs to WtP.[NEWLINE]
+The copyright of these materials belongs to the respective owners. In most cases we got permission to use their materials but in some cases we didn't. We ask these authors to contact us as to whether we can use their material. The copyright of the changes the TAC team has done to these materials belongs to TAC. The copyright of changes the RaR team has done to these materials belongs to RaR. The copyright of changes the WTP team has done to these materials belongs to WTP.[NEWLINE]
 The copyright of "Sid Meier's Civilisation IV: Colonization" belongs to Take Two Interactive. Sid Meier's Civilization IV: Colonization, Civ, Civilization, 2K Games, the 2K-Logo, Firaxis Games, the Firaxis game logo and Take-Two Interactive Software are registered trademarks of Take-Two Interactive Software, Inc. Developed by Firaxis Games.[NEWLINE]
 Some textures on our 3D-models have been created with images from CGTextures.com. These images may not be redistributed by default. Please visit www.cgtextures.com for more information.[NEWLINE]
 RaR is a non-commercial mod project. If you use or distribute RaR please pay attention to the copyright. We allow usage and distribution as long as RaR remains non-commercial.[NEWLINE]
 As a matter of course it is permitted to use RaR in an own mod project as long as the copyrights are not harmed, and it remains a non-commercial project. If you use RaR in an own mod project you have to make clear that you have done changes to the original TAC and to RaR. If you wish to use artwork, we could give you more information about the creators so that you can mention them in the credits of your own modification.[NEWLINE]
-You can contact TAC, RaR and WtP via CivFanatics forum (you will find the link in the readme file) or via email to writing.bull@gmx.de.[NEWLINE][NEWLINE]</English>
+You can contact TAC, RaR and WTP via CivFanatics forum (you will find the link in the readme file) or via email to writing.bull@gmx.de.[NEWLINE][NEWLINE]</English>
 		<French>Et nous n'oublions pas de remercier Firaxis et 2Kgames pour leur chef d'oeuvre Civ4/BtS. De nombreux éléments ont été repris de ces jeux.[NEWLINE]
 Les droits de reproduction de ces éléments appartiennent à leurs propriétaires respectifs. Dans la plupart des cas nous avons eu l'autorisation de les utiliser, sauf exception. Nous remercions les propriétaires de nous contacter pour nous donner ou non cette autorisation. Les droits liés à l'utilisation de TAC appartiennent à l'équipe de TAC. Les droits liés à l'utilisation de RAR appartiennent à l'équipe de RAR. Les droits liés à l'utilisation de WtP appartiennent à l'équipe de WtP.[NEWLINE]
 Les droits de reproduction de "Sid Meier's Civilisation IV: Colonization" appartiennent à Take Two Interactive. Sid Meier's Civilization IV: Colonization, Civ, Civilization, 2K Games, the 2K-Logo, Firaxis Games, the Firaxis game logo and Take-Two Interactive Software sont des marques déposées de Take-Two Interactive Software, Inc. Developé par Firaxis Games.[NEWLINE]
@@ -169,6 +198,7 @@ Vous pouvez contacter TAC, RaR et WtP via le site "CivFanatics forum" (vous trou
 		Selbstverständlich ist es erlaubt, RaR in einem eigenen Mod-Projekt zu verwenden, solange die Copyrights nicht verletzt werden und es ein nicht-kommerzielles Projekt bleibt. Wenn Sie RaR in einem eigenen Mod-Projekt verwenden, müssen Sie deutlich machen, dass Sie Änderungen an der ursprünglichen TAC und an RaR vorgenommen haben. Wenn du Artwork verwenden möchtest, können wir dir mehr Informationen über die Schöpfer geben, so dass du sie in den Credits deiner eigenen Modifikation erwähnen kannst.[NEWLINE] 
 		Du kannst TAC, RaR und WtP über das CivFanatics-Forum (den Link findest du in der Readme-Datei) oder per E-Mail an writing.bull@gmx.de kontaktieren.[NEWLINE][NEWLINE]</German>
 		<Russian>Мы также благодарны Firaxis и 2Kgames за их шедевр Civ4/BtS. Мы используем много материала из этих игр.[NEWLINE]Авторские права на эти материалы принадлежат соответствующим правообладателям. В большинстве случаев мы получили разрешение на использование их материалов, но в некоторых случаях мы этого не сделали. Мы просим этих авторов связаться с нами, чтобы узнать, можем ли мы использовать их материалы. Авторские права на изменения, внесенные командой TAC в эти материалы, принадлежат TAC. Авторские права на изменения, внесенные командой RaR в эти материалы, принадлежат RaR.Авторские права на изменения, внесенные командой WtP в эти материалы, принадлежат WtP.[NEWLINE]Авторские права на "Sid Meier's Civilization IV: Colonization" принадлежат Take Two Interactive. Sid Meier's Civilization IV: Colonization, Civ, Civilization, 2K Games, 2K-Logo, Firaxis Games, игровой логотип Firaxis и Take-Two Interactive Software являются зарегистрированными товарными знаками Take-Two Interactive Software, Inc., разработанными Firaxis Games.[NEWLINE]Некоторые текстуры на наших 3D-моделях созданы с использованием изображений с сайта CGTextures.com. Эти изображения не могут распространяться по умолчанию. Посетите сайт www.cgtextures.com для получения дополнительной информации.[NEWLINE]WtP — это некоммерческий мод-проект. Если вы используете или распространяете WtP, обратите внимание на авторские права. Мы разрешаем использование и распространение, пока WtP остается некоммерческим.[NEWLINE]Разумеется, разрешено использовать WtP в собственном мод-проекте, если не нарушаются авторские права и он остается некоммерческим проектом. Если вы используете WtP в собственном проекте мода, вы должны четко указать, что вы внесли изменения в исходный TAC, RaR и WtP. Если вы хотите использовать обложку, мы можем предоставить вам больше информации о создателях, чтобы вы могли упомянуть их в титрах своей модификации.[NEWLINE]Вы можете связаться с командой WtP через форум CivFanatics или группу ВК (ссылки есть в Readme).</Russian>
+		<Hungarian>Nem szeretnénk elfelejteni megköszönni a Firaxisnak és a 2Kgamesnek a Civ4/BtS remekművet. Sok anyagot használunk ezekből a játékokból. [NEWLINE]Ezeknek az anyagoknak a szerzői joga a megfelelő tulajdonosokat illeti. A legtöbb esetben engedélyt kaptunk az anyagok felhasználására, de néhány esetben nem. Kérjük ezeket a szerzőket, hogy vegyék fel velünk a kapcsolatot, hogy felhasználhatjuk-e az anyagukat. A TAC csapat által ezeken az anyagokon végzett változtatások szerzői joga a TAC-ot illeti. A RaR csapat által ezeken az anyagokon végzett változtatások szerzői joga a RaR-t illeti. A WTP csapat által ezeken az anyagokon végzett változtatások szerzői joga a WTP-t illeti. [NEWLINE]A „Sid Meier's Civilisation IV: Colonization” szerzői joga a Take Two Interactive-ot illeti. A Sid Meier's Civilization IV: Colonization, a Civ, a Civilization, a 2K Games, a 2K-logó, a Firaxis Games, a Firaxis játék logója és a Take-Two Interactive Software a Take-Two Interactive Software, Inc. bejegyzett védjegyei. Fejlesztette: Firaxis Games.[NEWLINE]3D-modelleink egyes textúrái a CGTextures.com webhelyről származó képek alapján készültek. Ezeket a képeket alapértelmezés szerint nem szabad terjeszteni. További információkért látogasson el a www.cgtextures.com weboldalra.[NEWLINE]A RaR egy nem kereskedelmi célú mod projekt. Ha a RaR-t használja vagy terjeszti, kérjük, vegye figyelembe a szerzői jogokat. A RaR használatát és terjesztését addig engedélyezzük, amíg a RaR nem kereskedelmi célú marad.[NEWLINE]Természetesen megengedett a RaR használata saját mod projektben, amennyiben a szerzői jogok nem sérülnek, és a projekt nem kereskedelmi célú marad. Ha a RaR-t saját mod projektben használja, akkor egyértelművé kell tennie, hogy változtatásokat hajtott végre az eredeti TAC-on és a RaR-on. Ha grafikákat szeretnél használni, további információkat adhatunk a készítőkről, hogy megemlíthesd őket a saját módosításod kreditjeiben. A TAC-kal, a RaR-ral és a WTP-vel a CivFanatics fórumon (a linket a readme fájlban találod) vagy e-mailben a writing.bull@gmx.de címen veheted fel a kapcsolatot.[NEWLINE][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_FURSTBISCHOF</Tag>
@@ -184,6 +214,7 @@ Vous pouvez contacter TAC, RaR et WtP via le site "CivFanatics forum" (vous trou
 		<German>f1rpo (Wiederholte Unterstützung beim Coden)</German>
 		<Spanish>f1rpo (ayuda repetida con código)</Spanish>
 		<Russian>f1rpo (постоянная поддержка, связанная с кодированием)</Russian>
+		<Hungarian>f1rpo (folyamatos támogatás a kódolással kapcsolatban)</Hungarian>
 	</TEXT>
 		<TEXT>
 		<Tag>TXT_KEY_CREDITS_karadoc</Tag>
@@ -191,6 +222,7 @@ Vous pouvez contacter TAC, RaR et WtP via le site "CivFanatics forum" (vous trou
 		<German>karadoc (für seinen Pathfinding Code)</German>
 		<Spanish>karadoc (por su algoritmo de búsqueda)</Spanish>
 		<Russian>karadoc (за его код поиска пути)</Russian>
+		<Hungarian>karadoc (az útkeresési kódjáért)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_FORMER_MEMBER</Tag>
@@ -199,6 +231,7 @@ Vous pouvez contacter TAC, RaR et WtP via le site "CivFanatics forum" (vous trou
 		<French>(ex-membre)</French>
 		<Spanish>(ex-miembro)</Spanish>
 		<Russian>(бывшие участники)</Russian>
+		<Hungarian>(korábbi tag)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_MELCHER_KURZER</Tag>
@@ -213,32 +246,37 @@ Vous pouvez contacter TAC, RaR et WtP via le site "CivFanatics forum" (vous trou
 		<English>Victor Meirelles (Painting: Primeira missa no Brasil)</English>
 		<French>Victor Meirelles (Peinture : Primeira missa no Brasil)</French>
 		<Russian>Victor Meirelles (Картина: Первая месса в Бразилии)</Russian>
+		<Hungarian>Victor Meirelles (Festmény: Első mise Brazíliában)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_OTHER_NAME_2</Tag>
 		<English>John Trumbull (Painting: The Death of General Warren at the Battle of Bunker Hill)</English>
 		<French>John Trumbull (Peinture : The Death of General Warren at the Battle of Bunker Hill)</French>
 		<Russian>John Trumbull (Картина: Смерть генерала Уоррена в битве при Банкер-Хилле)</Russian>
+		<Hungarian>John Trumbull (Festmény: Warren tábornok halála a Bunker Hill-i csatában)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_OTHER_NAME_3</Tag>
 		<English>George Walter Vincent Smith (Painting: New England Scenery)</English>
 		<French>George Walter Vincent Smith (Peinture : New England Scenery)</French>
 		<Russian>George Walter Vincent Smith (Картина: Пейзаж Новой Англии)</Russian>
+		<Hungarian>George Walter Vincent Smith (Festmény: New England-i táj)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CREDITS_OTHER_NAME_4</Tag>
 		<English>Clint Mansell (Main Theme)</English>
 		<French>Clint Mansell (Thème principal)</French>
 		<Russian>Clint Mansell (Главная тема)</Russian>
+		<Hungarian>>Clint Mansell (Fő téma)</Hungarian>
 	</TEXT>
 	<!-- Readme -->
 	<TEXT>
 		<Tag>TXT_KEY_README_BUTTON</Tag>
-		<English>WtP concept</English>
+		<English>WTP concept</English>
 		<French>Concept de WtP</French>
 		<German>WtP-Konzept</German>
 		<Russian>Концепция WtP</Russian>
+		<Hungarian>MaN fogalmak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_README_HEAD</Tag>
@@ -247,6 +285,7 @@ Vous pouvez contacter TAC, RaR et WtP via le site "CivFanatics forum" (vous trou
 		<German>We the People</German>
 		<Italian>We the People</Italian>
 		<Spanish>We the People</Spanish>
+		<Hungarian>Mi a Nép</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_README_TEXT</Tag>
@@ -266,6 +305,7 @@ Deshalb haben wir uns für "The Authentic Colonization" (TAC) und "Religion and 
 Viel Spass![NEWLINE]
 		</German>
 		<Russian>[H1]Добро пожаловать в мод "We the People" — WtP![\H1][NEWLINE][H2]Идея "We the People" проста: мы хотим создать самый большой и лучший CivCol-Mod![\H2][NEWLINE]Поэтому мы выбрали "The Authentic Colonization" (TAC) и "Religion and Revolution" (RaR) в качестве основы для этого проекта и добавили множество интересных функций и улучшений.[NEWLINE][NEWLINE]Наслаждайтесь![NEWLINE]</Russian>
+		<Hungarian>[H1]Üdvözlet a "Mi a Nép" – MaN oldalon![\H1][NEWLINE][H2]A "Mi a Nép" mögött álló ötlet egyszerű: a legnagyobb és legjobb CivCol-Modot akarjuk létrehozni, ami valaha volt![\H2][NEWLINE]Így a "The Authentic Colonization" (TAC) és a "Religion and Revolution" (RaR) modokat választottuk alapul ehhez a projekthez, és rengeteg remek funkcióval és fejlesztéssel egészítettük ki őket.[NEWLINE]Jó játékot![NEWLINE]</Hungarian>
 	</TEXT>
 	<!-- Hints -->
 	<TEXT>
@@ -274,6 +314,7 @@ Viel Spass![NEWLINE]
 		<French>Lorsque des mesures vigoureuses sembleront être le seul moyen qu'il reste pour ramener les américains à leur soumission légitime envers leur mère patrie, les colonies se soummettront.[NEWLINE]--- George III, Roi de Grande-Bretagne dans la période 1760-1820</French>
 		<German>Sobald energische Maßnahmen als einziges Mittel erscheinen, um die Amerikaner zu einer gebührenden Unterwerfung unter das Mutterland zu bringen, werden sich die Kolonien fügen.[NEWLINE]--- Georg III, König von Großbritannien in der Zeit von 1760-1820</German>
 		<Russian>Как только решительные меры окажутся единственным средством приведения американцев к должному подчинению метрополии, колонии подчинятся.[NEWLINE]--- Георг III, король Великобритании в период 1760-1820 гг.</Russian>
+		<Hungarian>Ha a határozott intézkedések tűnnek az egyetlen eszköznek, amellyel az Amerikaiakat az anyaországnak való megfelelő engedelmességre lehet késztetni, akkor a gyarmatok engedelmeskedni fognak. [NEWLINE]--- III. György, Nagy-Britannia királya 1760-1820 között</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_2</Tag>
@@ -281,297 +322,352 @@ Viel Spass![NEWLINE]
 		<French>Un traître est quiconque n'est pas d'accord avec moi.[NEWLINE]--- George III, Roi de Grande-Bretagne dans la période 1760-1820</French>
 		<German>Ein Verräter ist jeder, der nicht mit mir übereinstimmt.[NEWLINE]--- George III, König von Großbritannien in der Zeit von 1760-1820</German>
 		<Russian>Каждый, кто не согласен со мной, предатель.[NEWLINE]--- Георг III, король Великобритании в период 1760-1820 гг.</Russian>
+		<Hungarian>Áruló az, aki nem ért velem egyet. [NEWLINE]--- III. György, Nagy-Britannia királya 1760-1820 között</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_3</Tag>
 		<English>America owes most of its social prejudices to the exaggerated religious opinions of the different sects which were so instrumental in establishing the colonies.[NEWLINE]--- James Fenimore Cooper (1789 - 1851), novelist</English>
 		<French>L'Amérique doit la plupart de ses préjugés sociaux aux opinions religieuses si prévalentes des différentes chapelles qui furent si fondamentales à l'établissement des colonies.[NEWLINE]--- James Fenimore Cooper (1789 - 1851), romancier.</French>
 		<German>Amerika verdankt die meisten seiner sozialen Vorurteile den übertriebenen religiösen Ansichten der verschiedenen Sekten, die bei der Gründung der Kolonien so wichtig waren..[NEWLINE]--- James Fenimore Cooper (1789 - 1851), Romanautor</German>
+		<Hungarian>Amerika társadalmi előítéleteinek nagy része a különböző szekták túlzott vallási nézeteinek köszönhető, amelyek olyan fontos szerepet játszottak a kolóniák létrehozásában. [NEWLINE]--- James Fenimore Cooper (1789 - 1851), regényíró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_4</Tag>
 		<English>Slavery is no more sinful, by the Christian code, than it is sinful to wear a whole coat, while another is in tatters, to eat a better meal than a neighbour, or otherwise to enjoy ease and plenty, while our fellow creatures are suffering and in want.[NEWLINE]--- James Fenimore Cooper (1789 - 1851), novelist</English>
 		<French>L'esclavage n'est pas plus un pêché, selon le code de conduite chrétien, que ne le sont le fait de porter un manteau confortable, quand un autre est en lambeaux, de mieux manger que son voisin, ou jouir de l'abondance et d'une vie facile, quand nos frères souffrent et manquent de tout.[NEWLINE]--- James Fenimore Cooper (1789 - 1851), romancier.</French>
 		<German>Die Sklaverei ist nach dem christlichen Gesetzbuch ebenso wenig eine Sünde, wie es eine Sünde ist, einen ganzen Mantel zu tragen, während ein anderer in Fetzen liegt, eine bessere Mahlzeit als der Nachbar zu sich zu nehmen oder sich anderweitig der Bequemlichkeit und des Überflusses zu erfreuen, während unsere Mitgeschöpfe leiden und in Not sind..[NEWLINE]--- James Fenimore Cooper (1789 - 1851), Romanautor</German>
+		<Hungarian>A keresztény erkölcsi kódex szerint a rabszolgaság nem bűnösebb, mint az, hogy valaki egész kabátot visel, míg mások rongyokban járnak, hogy valaki jobb ételt eszik, mint a szomszédja, vagy hogy valaki kényelemben és bőségben él, míg embertársai szenvednek és nélkülöznek. [NEWLINE]--- James Fenimore Cooper (1789 - 1851), regényíró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_5</Tag>
 		<English>The Indian Corn, or Maiz, proves the most useful Grain in the World; and had it not been for the Fruitfulness of this Species, it would have proved very difficult to have settled some of the Plantations in America.[NEWLINE]--- John Lawson (1674 - 1711), British explorer</English>
 		<French>Le blé indien, ou maïs, s'est montré la meilleure céréale dans ce monde, et sans l'abondance et la fertilité de cette plante, l'établissement des Plantations en Amériques se serait avéré bien difficile.[NEWLINE]--- John Lawson (1674 - 1711), explorateur britannique</French>
 		<German>Der indische Mais erweist sich als das nützlichste Getreide der Welt, und ohne die Fruchtbarkeit dieser Art wäre es sehr schwierig gewesen, einige der Plantagen in Amerika zu besiedeln.[NEWLINE]--- John Lawson (1674 - 1711), Britischer Entdecker</German>
+		<Hungarian>Az indián kukorica, a világ leghasznosabb gabonája; és ha nem lett volna ez a fajta olyan termékeny, nagyon nehéz lett volna betelepíteni az amerikai ültetvényeket. [NEWLINE]--- John Lawson (1674 - 1711), brit felfedező</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_6</Tag>
 		<English>There are not enough Indians in the world to defeat the Seventh Cavalry.[NEWLINE]--- George Armstrong Custer, Seventh Cavalry Commander, prior to being massacred by the Sioux at the Battle of Little Bighorn (June 25-26, 1876)</English>
 		<French>Il n'y a pas assez d'indiens dans ce monde pour battre la Septième Cavalerie.[NEWLINE]--- George Armstrong Custer, Commandant de la Septième Cavalerie, avant de se faire massacrer avec ses troupes par les Sioux à la bataille de Little Bighorn (25-26 juin 1876)</French>
 		<German>Es gibt nicht genug Indianer auf der Welt, um die Siebte Kavallerie zu besiegen.[NEWLINE]--- George Armstrong Custer, Kommandeur der Siebten Kavallerie, bevor er in der Schlacht am Little Bighorn von den Sioux massakriert wurde (June 25-26, 1876)</German>
+		<Hungarian>A világon nincs elég indián, hogy legyőzze a Hetedik Lovasságot.[NEWLINE]--- George Armstrong Custer, a Hetedik Lovasság parancsnoka, mielőtt a sziúk lemészárolták volna a Little Bighorn-i csatában (1876. június 25-26.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_7</Tag>
 		<English>The Indians gave up the land of their own free will, and for it received brass kettles, blankets, guns, shirts, flints, tobacco, rum and many trinkets in which their simple hearts delighted.[NEWLINE]--- Patrick Gordon (1635 - 1699), Scottish explorer</English>
 		<French>Les Indiens ont cédé leurs terres de leur plein gré, et ils ont reçu en échange des bouilloires, des couvertures, des fusils, des vêtements, du tabac, du rhum, et biens des babioles qui ont ravi leur esprit simple.[NEWLINE]--- Patrick Gordon (1635 - 1699), Explorateur écossais</French>
 		<German>Die Indianer gaben das Land aus freien Stücken auf und erhielten dafür Messingkessel, Decken, Gewehre, Hemden, Feuersteine, Tabak, Rum und viele Kleinigkeiten, die ihr einfaches Herz erfreuten.[NEWLINE]--- Patrick Gordon (1635 - 1699), Schottischer Entdecker</German>
+		<Hungarian>Az indiánok saját akaratukból adták fel földjeiket, és cserébe rézüstöket, takarókat, fegyvereket, ingeket, kovaköveket, dohányt, rumot és sok apróságot kaptak, amelyek egyszerű szívüket megörvendeztették. [NEWLINE]--- Patrick Gordon (1635–1699), skót felfedező</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_8</Tag>
 		<English>It affords me sincere pleasure to be able to apprise you of the entire removal of the Cherokee Nation of Indians to their new homes west of the Mississippi.[NEWLINE]--- Martin Van Buren, 8th President of the United States</English>
 		<French>J'ai le plus grand plaisir de pouvoir vous annoncer la déportation de toute la nation indienne des Cherokees vers leur nouveau domicile à l'ouest du Mississippi.[NEWLINE]--- Martin Van Buren, 8e président des États-Unis</French>
 		<German>Es ist mir eine aufrichtige Freude, Sie über den vollständigen Umzug der Cherokee-Indianer in ihre neue Heimat westlich des Mississippi informieren zu können.[NEWLINE]--- Martin Van Buren, 8. Präsident der Vereinigten Staaten</German>
+		<Hungarian>Őszinte örömömre szolgál, hogy tájékoztathatom Önöket a cseroki indiánok teljes áttelepítéséről új otthonukba, a Mississippi folyótól nyugatra. [NEWLINE]--- Martin Van Buren, az Egyesült Államok 8. elnöke</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_9</Tag>
 		<English>We derive our authority from God and the West India Company, not from the pleasure of a few ignorant subjects.[NEWLINE]--- Peter Stuyvesant, directeur-generaal of Nieuw-Nederland in the period 1647-1664</English>
 		<French>Nous tenons notre autorité de Dieu et de la Companie des Indes Occidentales, et non du bon-vouloir d'une poignée de sujets idiots.[NEWLINE]--- Peter Stuyvesant, directeur-général de la Nouvelle-Néerlande dans la période 1647-1664</French>
 		<German>Wir leiten unsere Autorität von Gott und der Westindischen Kompanie ab, nicht vom Wohlgefallen einiger weniger unwissenden Untertanen.[NEWLINE]--- Peter Stuyvesant, Generaldirektor von Neu-Niederlande im Zeitraum von 1647-1664</German>
+		<Hungarian>Hatalmunkat Istentől és a Nyugat-indiai Társaságtól kapjuk, nem pedig néhány tudatlan alattvaló tetszésétől. [NEWLINE]--- Peter Stuyvesant, Új-Hollandia vezetője 1647-1664 között</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_10</Tag>
 		<English>We pray that the deceitful race - such hateful enemies and blasphemers of the name of Christ - be not allowed to further infect and trouble this new colony.[NEWLINE]--- Peter Stuyvesant, directeur-generaal of Nieuw-Nederland in the period 1647-1664, on Jewish citizens of Nieuw-Amsterdam</English>
 		<French>Nous prions que cette race perfide - des ennemis haineux et blasphémateurs envers le Christ - ne soit pas autorisé à infester davantage et gâter cette nouvelle colonie[NEWLINE]--- Peter Stuyvesant, directeur-général de la Nouvelle-Néerlande dans la période 1647-1664, au sujet des juifs établis à la Nouvelle-Amsterdam</French>
 		<German>Wir beten, dass die betrügerische Ethnie - diese hasserfüllten Feinde und Lästerer des Namens Christi - diese neue Kolonie nicht weiter infizieren und belästigen darf.[NEWLINE]--- Peter Stuyvesant, Generaldirektor von Neu-Niederlande im Zeitraum von 1647-1664, über jüdische Bürger von Nieuw-Amsterdam</German>
+		<Hungarian>Imádkozunk, hogy a csalárd faj – Krisztus nevét gyűlölő és szentségtörő ellenségeink – ne fertőzhesse tovább és ne zavarhassa meg ezt az új kolóniát. [NEWLINE]--- Peter Stuyvesant, Új-Hollandia vezetője 1647-1664 között, Új-Amszterdam zsidó polgárairól</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_11</Tag>
 		<English>Money is the father of luxury, lasciviousness, intrigues, trickery, lies, betrayal, insincerity – of all the world's worst behaviour. Fathers sell their children, husbands their wives, wives betray their husbands, brothers kill each other, friends are false, and all because of money. In the light of all this, tell me that we Wendat are not right in refusing to touch, or so much to look at silver?[NEWLINE]--- Kondiaronk, Wendat Chief, 1703</English>
 		<French>L'argent, la monnaie est la source de la luxure, de la débauche, des intrigues, des tromperies, des mensonges, des trahisons, et de la fausseté - des pires comportements au monde. Des pères vendent leurs enfants, des maris leur femmes, les femmes trompent leur mari, les frères s'entretuent, les amis sont faux, et tout à cause de l'argent. En voyant tout cela, dites-moi que nous, Wendats, avons tort de refuser à toucher, et même de regarder l'argent?[NEWLINE]--- Kondiaronk, chef des Wendats, 1703  </French>
 		<German>Geld ist der Vater des Luxus, der Lüsternheit, der Intrigen, des Betrugs, der Lüge, des Verrats, der Unaufrichtigkeit - des schlimmsten Verhaltens in der Welt. Väter verkaufen ihre Kinder, Ehemänner ihre Frauen, Ehefrauen betrügen ihre Männer, Brüder bringen sich gegenseitig um, Freunde sind falsch, und alles wegen des Geldes. Sagen Sie mir, dass wir Wendat in Anbetracht all dessen nicht Recht haben, wenn wir uns weigern, Silber anzufassen oder auch nur anzuschauen?[NEWLINE]--- Kondiaronk, Häuptling der Wendat, 1703</German>
+		<Hungarian>A pénz a luxus, a bujaság, az intrikák, a csalás, a hazugság, az árulás, a kétszínűség – a világ legrosszabb viselkedéseinek – atyja. Az apák eladják gyermekeiket, a férjek feleségeiket, a feleségek megcsalják férjeiket, a testvérek megölik egymást, a barátok hamisak, és mindez a pénz miatt. Mindezek fényében mondd meg nekem, hogy mi, Wendatok, nem tesszük-e jól, hogy nem nyúlunk az ezüsthöz, sőt, még csak rá sem nézünk?[NEWLINE]--- Kondiaronk, Wendat főnök, 1703</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_12</Tag>
 		<English>The attack did not succeed as well as I had hoped, no small impediment having been the loss of my right leg.[NEWLINE]--- Peter Stuyvesant, directeur-generaal of Nieuw-Nederland in the period 1647-1664</English>
 		<French>L'attaque ne réussit pas aussi bien que je ne l'avais espéré, un des coups du sort fut la perte de ma jambe droite.[NEWLINE]--- Peter Stuyvesant, directeur-général de la Nouvelle-Néerlande dans la période 1647-1664</French>
 		<German>Der Angriff verlief nicht so erfolgreich, wie ich gehofft hatte, denn der Verlust meines rechten Beins war kein geringes Hindernis.[NEWLINE]--- Peter Stuyvesant, Generaldirektor von Neu-Niederlande im Zeitraum von 1647-1664</German>
+		<Hungarian>A támadás nem volt olyan sikeres, mint reméltem, ami nem kis mértékben annak volt köszönhető, hogy elvesztettem a jobb lábamat. [NEWLINE]--- Peter Stuyvesant, Új-Hollandia vezetője 1647 és 1664 között</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_13</Tag>
 		<English>I value the blood of one Christian more than that of a hundred Indians.[NEWLINE]--- Peter Stuyvesant, directeur-generaal of Nieuw-Nederland in the period 1647-1664</English>
 		<French>J'estime davantage le sang d'un seul chrétien que celui de cent Indiens [NEWLINE]--- Peter Stuyvesant, directeur-général de la Nouvelle-Néerlande dans la période 1647-1664</French>
 		<German>Ich schätze das Blut eines einzigen Christen mehr als das von hundert Indianern.[NEWLINE]--- Peter Stuyvesant, Generaldirektor von Neu-Niederlande im Zeitraum von 1647-1664</German>
+		<Hungarian>Egy keresztény vérét többre tartom, mint száz indiánét. [NEWLINE]--- Peter Stuyvesant, Új-Hollandia vezetője 1647-1664 között</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_14</Tag>
 		<English>There are apothecaries' shops, where prepared medicines, liquids, ointments, and plasters are sold; barbers' shops, where they wash and shave the head; and restaurateurs, that furnish food and drink at a certain price.[NEWLINE]--- Hernán Cortés, Spanish conquistador, on the Aztec capital of Tenochtitlan (November 8, 1519)</English>
 		<French>Il y a des boutiques d'apothiquaires, où l'on vent des remèdes tout prêts, des liquides, des onguents, et des cataplames; des barbiers, où ils lavent et rasent la têtes, et des restaurateurs; qui fournissent nourritures et boisson à un certain prix.[NEWLINE]--- Hernán Cortés, Conquistador espagnol, au sujet de la capitale aztèque de Tenochtitlan, le 9 novembre 1519</French>
 		<German>Es gibt Apotheken, in denen zubereitete Medikamente, Flüssigkeiten, Salben und Pflaster verkauft werden, Friseurläden, in denen der Kopf gewaschen und rasiert wird, und Gastronomen, die Essen und Trinken zu einem bestimmten Preis anbieten.[NEWLINE]--- Hernán Cortés, Spanischer Eroberer, über die aztekische Hauptstadt Tenochtitlan (November 8, 1519)</German>
+		<Hungarian>Vannak patikák, ahol kész gyógyszereket, folyadékokat, kenőcsöket és tapaszokat árulnak; borbélyüzletek, ahol megmossák és megborotválják a fejet; és vendéglők, amelyek bizonyos áron ételt és italt kínálnak. [NEWLINE]--- Hernán Cortés, spanyol konkvisztádor, az Aztékok fővárosáról, Tenochtitlanról (1519. november 8.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_15</Tag>
 		<English>The city is as large as Sevilla or Córdoba; its streets, I speak of the principal ones, are very wide and straight; some of these, and all the inferior ones, are half land and half water, and are navigated by canoes.[NEWLINE]--- Hernán Cortés, Spanish conquistador, on the Aztec capital of Tenochtitlan (November 8, 1519)</English>
 		<French>La cité est aussi grande que Séville ou Cordoue; ses artères principales sont très larges et droites, et les secondaires, sont mi-rues, mi-canaux, et il y navigue des canoës.[NEWLINE]--- Hernán Cortés, Conquistador espagnol, au sujet de la capitale aztèque de Tenochtitlan, le 9 novembre 1519</French>
 		<German>Die Stadt ist so groß wie Sevilla oder Córdoba; ihre Straßen, ich spreche von den Hauptstraßen, sind sehr breit und geradlinig; einige von ihnen und alle untergeordneten sind halb Land und halb Wasser und werden mit Kanus befahren.[NEWLINE]--- Hernán Cortés, Spanischer Eroberer, über die aztekische Hauptstadt Tenochtitlan (November 8, 1519)</German>
+		<Hungarian>A város akkora, mint Sevilla vagy Córdoba; utcái, főként a főutcák, nagyon szélesek és egyenesek; ezek közül néhány, valamint az összes kisebb utca félig szárazföld, félig víz, és kenukkal lehet rajtuk közlekedni. [NEWLINE]--- Hernán Cortés, spanyol konkvisztádor, az Aztékok fővárosáról, Tenochtitlanról (1519. november 8.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_16</Tag>
 		<English>Among these temples there is one which far surpasses all the rest, whose grandeur of architectural details no human tongue is able to describe; for within its precincts, surrounded by a lofty wall, there is room enough for a town of five hundred families.[NEWLINE]--- Hernán Cortés, Spanish conquistador, on the Aztec capital of Tenochtitlan (November 8, 1519)</English>
 		<French>Parmi ces temples il y en a un qui surpasse tous les autres, dont la grandeur des détails d'architecture surpasse toute description ; En son sein, entouré d'un mur imposant, il y a assez de place pour une ville de cinq cents familles.[NEWLINE]--- Hernán Cortés, Conquistador espagnol, au sujet de la capitale aztèque de Tenochtitlan, le 9 novembre 1519</French>
 		<German>Among these temples there is one which far surpasses all the rest, whose grandeur of architectural details no human tongue is able to describe; for within its precincts, surrounded by a lofty wall, there is room enough for a town of five hundred families.[NEWLINE]--- Hernán Cortés, Spanischer Eroberer, über die aztekische Hauptstadt Tenochtitlan (November 8, 1519)</German>
+		<Hungarian>Ezek közül a templomok közül van egy, amely messze felülmúlja az összes többit, és amelynek építészeti részleteinek nagyszerűségét emberi nyelv nem képes leírni; mert magas falakkal körülvett területén elegendő hely van egy ötszáz családból álló városnak. [NEWLINE]--- Hernán Cortés, spanyol konkvisztádor, az Aztékok fővárosáról, Tenochtitlanról (1519. november 8.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_17</Tag>
 		<English>If the freedom of speech is taken away then dumb and silent we may be led, like sheep to the slaughter.[NEWLINE]--- George Washington (1732 - 1799), Commander-in-Chief of the Continental Army and first President of the United States</English>
 		<French>Si la liberté de la presse est retirée, alors nous pourrions être menés aveuglement et sans bruit comme des moutons à l'abattoir.[NEWLINE]--- George Washington (1732 - 1799), Commandeur-en-Chef de l'Armée Continentale et Premier président des États-Unis</French>
 		<German>Wenn uns die Redefreiheit genommen wird, werden wir stumm und schweigend wie Schafe zur Schlachtbank geführt.[NEWLINE]--- George Washington (1732 - 1799), Oberbefehlshaber der Kontinentalarmee und erster Präsident der Vereinigten Staaten</German>
+		<Hungarian>Ha elvesszük a szólásszabadságot, akkor némák és hallgatagok leszünk, akiket úgy vezetnek, mint a bárányokat a vágóhídra. [NEWLINE]--- George Washington (1732 - 1799), a Kontinentális Hadsereg főparancsnoka és az Egyesült Államok első elnöke</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_18</Tag>
 		<English>The marvel of all history is the patience with which men and women submit to burdens unnecessarily laid upon them by their governments.[NEWLINE]--- George Washington (1732 - 1799), Commander-in-Chief of the Continental Army and first President of the United States</English>
 		<French>Une des merveilles de l'histoire et la patience avec laquelle hommes et femmes subissent les tracas superflus que leur imposent leurs gouvernements.[NEWLINE]--- George Washington (1732 - 1799), Commandeur-en-Chef de l'Armée Continentale et Premier président des États-Unis</French>
 		<German>Das Wunder der Geschichte ist die Geduld, mit der Männer und Frauen unnötige Lasten auf sich nehmen, die ihnen von ihren Regierungen aufgebürdet werden.[NEWLINE]--- George Washington (1732 - 1799), Oberbefehlshaber der Kontinentalarmee und erster Präsident der Vereinigten Staaten</German>
+		<Hungarian>A történelem legcsodálatosabb jelensége az a türelem, amellyel a férfiak és nők alávetik magukat a kormányuk által rájuk rótt felesleges terheknek. [NEWLINE]--- George Washington (1732 - 1799), a Kontinentális Hadsereg főparancsnoka és az Egyesült Államok első elnöke</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_19</Tag>
 		<English>The alternate domination of one faction over another, sharpened by the spirit of revenge, natural to party dissension, which in different ages and countries has perpetrated the most horrid enormities, is itself a frightful despotism. But this leads at length to a more formal and permanent despotism. The disorders and miseries which result gradually incline the minds of men to seek security and repose in the absolute power of an individual; and sooner or later the chief of some prevailing faction, more able or more fortunate than his competitors, turns this disposition to the purposes of his own elevation, on the ruins of public liberty.[NEWLINE]--- George Washington (1732 - 1799), President of the United States farewell address, 1796</English>
 		<French>L'alternance au pouvoir d'une faction puis de l'autre, aiguisée par l'esprit de revanche accompagnant les désaccords entre les partis, ce qui a perpétué les pires horreurs en d'autres temps et d'autres pays, est en elle même un despotisme atroce. Mais cela mène avec le temps à un autre despotisme de droit plus permanent. Les désordres et les malheurs qui en découlent poussent peu à peu l'esprit des hommes à chercher la sécurité et la quiétude dans le pouvoir absolu d'un seul individu ; tôt ou tard le chef d'une des factions importantes, plus chanceux ou plus abile que ses concurrents, tirera parti de cette tendance pour son propre profit, sur les ruines des libertés publiques.[NEWLINE]--- George Washington (1732 - 1799), Discours d'adieu en tant que président des États-Unis, 1796</French>
 		<German>Die wechselseitige Herrschaft einer Fraktion über eine andere, verschärft durch den Rachegeist, der dem Parteienstreit eigen ist und der in verschiedenen Zeitaltern und Ländern die schrecklichsten Ungeheuerlichkeiten verübt hat, ist an sich schon ein schrecklicher Despotismus. Aber dies führt schließlich zu einem formelleren und dauerhaften Despotismus. Die Unruhen und das Elend, die sich daraus ergeben, neigen allmählich den Geist der Menschen dazu, Sicherheit und Ruhe in der absoluten Macht eines Einzelnen zu suchen; und früher oder später wendet das Oberhaupt irgendeiner vorherrschenden Fraktion, das fähiger oder glücklicher ist als seine Konkurrenten, diese Veranlagung zu den Zwecken seiner eigenen Erhebung auf den Ruinen der öffentlichen Freiheit an.[NEWLINE]--- George Washington (1732 - 1799), Abschiedsrede des Präsidenten der Vereinigten Staaten, 1796</German>
+		<Hungarian>Az egyik frakció másik feletti váltakozó uralma, amelyet a pártok közötti viszályban természetes bosszúvágy élesít, és amely különböző korokban és országokban a legszörnyűbb atrocitásokat követte el, önmagában is rettenetes despotizmus. De ez végül egy formálisabb és tartósabb despotizmushoz vezet. Az ebből fakadó zavargások és nyomorúságok fokozatosan arra késztetik az embereket, hogy biztonságot és nyugalmat keressenek egy egyén abszolút hatalmában; és előbb-utóbb valamelyik uralkodó frakció vezetője, aki tehetségesebb vagy szerencsésebb versenytársainál, ezt a hajlamot saját előmenetelének céljaira fordítja, a közszabadság romjain. [NEWLINE]--- George Washington (1732 - 1799), az Egyesült Államok elnöke búcsúbeszéde, 1796</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_20</Tag>
 		<English>Rebellion to tyrants is obedience to God.[NEWLINE]--- William Penn (1644 - 1718), Founder of Pennsylvania</English>
 		<French>La rébellion face aux tyrans est obéir à Dieu[NEWLINE]--- William Penn (1644 - 1718), Fondateur de la Pennsylvanie</French>
 		<German>Rebellion gegen Tyrannen ist Gehorsam gegenüber Gott.[NEWLINE]--- William Penn (1644 - 1718), Gründer von Pennsylvania</German>
+		<Hungarian>A zsarnokok elleni lázadás Isten iránti engedelmesség. [NEWLINE]--- William Penn (1644 - 1718), Pennsylvania alapítója</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_21</Tag>
 		<English>This land is naturally fruitful, and capable of supporting a large population, if it were judiciously allotted according to location. The air is pleasant, and more temperate than in Netherland.[NEWLINE]--- Adriaen van der Donck (c.1618 - 1655), Dutch lawyer, on Nieuw-Nederland</English>
 		<German>Dieses Land ist von Natur aus fruchtbar und könnte eine große Bevölkerung ernähren, wenn es je nach Lage vernünftig aufgeteilt würde. Die Luft ist angenehm und gemäßigter als in den Niederlanden.[NEWLINE]--- Adriaen van der Donck (c.1618 - 1655), niederländischer Rechtsanwalt, von Neu-Niederlande</German>
+		<Hungarian>Ez a föld természetesen termékeny, és képes nagy népességet eltartani, ha helyszínenként körültekintően osztják el. A levegő kellemes, és mérsékeltebb, mint Hollandiában. [NEWLINE]--- Adriaen van der Donck (kb. 1618 - 1655), holland ügyvéd, Új-Hollandiáról</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_22</Tag>
 		<English>Why does Maxixcatzin deem these people gods, who seem more like ravenous monsters thrown up by the intemperate sea to blight us, gorging themselves on gold, silver, stones and pearls; sleeping in their own clothes; and generally acting in the manner of those who would one day make cruel masters?[NEWLINE]--- Xicotencatl, Tlatoani (elder) of Tlaxcatl (almost one hundred years old), 1520</English>
 		<German>Warum hält Maxixcatzin diese Menschen für Götter, die eher wie gefräßige Ungeheuer erscheinen, die das unmäßige Meer aufgeworfen hat, um uns zu verderben, die sich an Gold, Silber, Steinen und Perlen laben, in ihren eigenen Kleidern schlafen und sich im Allgemeinen so verhalten, wie diejenigen, die eines Tages grausame Herren sein werden?[NEWLINE]--- Xicotencatl, Tlatoani (Ältester) von Tlaxcatl (fast einhundert Jahre alt), 1520</German>
+		<Hungarian>Miért tartja Maxixcatzin isteneknek ezeket az embereket, akik inkább úgy tűnnek, mint a mérhetetlen tenger által partra vetett falánk szörnyek, akik aranyat, ezüstöt, drágaköveket és gyöngyöket falnak, saját ruháikban alszanak, és általában úgy viselkednek, mint azok, akik egy nap kegyetlen urak lesznek?[NEWLINE]-- - Xicotencatl, Tlaxcatl (majdnem százéves) Tlatoanija, 1520</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_23</Tag>
 		<English>The natives are generally well-set in their limbs, slender round the waist, broad across the shoulders, and have black hair and dark eyes. They are very nimble and active, well adapted to travel on foot and to drag heavy burdens. They are divided into different tribes and languages, each tribe living generally by itself, and having one of its number as a chief, though he has not much power or distinction except in their dances or in time of wars. Among some there is not the least knowledge of God, and among others very little, though they relate very strange fables concerning Him.[NEWLINE]--- Adriaen van der Donck (c.1618 - 1655), Dutch lawyer</English>
 		<German>Die Eingeborenen sind im Allgemeinen gut gebaut, schlank in der Taille und breit in den Schultern, haben schwarzes Haar und dunkle Augen. Sie sind sehr flink und aktiv und können gut zu Fuß reisen und schwere Lasten schleppen. Sie sind in verschiedene Stämme und Sprachen unterteilt, wobei jeder Stamm im Allgemeinen für sich lebt und einen Häuptling aus seinen Reihen hat, der jedoch außer bei ihren Tänzen oder in Kriegszeiten nicht viel Macht oder Ansehen genießt. Die einen wissen nicht das Geringste von Gott, die anderen nur sehr wenig, obwohl sie sehr seltsame Fabeln über ihn erzählen.[NEWLINE]--- Adriaen van der Donck (c.1618 - 1655), niederländischer Rechtsanwalt</German>
+		<Hungarian>Az indiánok általában jól megtermett testalkatúak, karcsú derékúak, széles vállúak, fekete hajúak és sötét szeműek. Nagyon fürgék és aktívak, jól alkalmazkodnak a gyalogos utazáshoz és a nehéz terhek cipeléséhez. Különböző törzsekre és nyelvekre oszlanak, minden törzs általában önállóan él, és egyik tagját főnöknek választja, bár ő nem rendelkezik nagy hatalommal vagy megkülönböztető jelekkel, kivéve a táncok vagy a háborúk idején. Néhányuknak nincs a legcsekélyebb ismerete sem Istenről, másoknak pedig nagyon kevés, bár nagyon furcsa meséket adnak elő róla. [NEWLINE]--- Adriaen van der Donck (kb. 1618 - 1655), holland ügyvéd</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_24</Tag>
 		<English>A state too expensive in itself, or by virtue of its dependencies, ultimately falls into decay; its free government is transformed into a tyranny; it disregards the principles which it should preserve, and finally degenerates into despotism. The distinguishing characteristic of small republics is stability: the character of large republics is mutability.[NEWLINE]--- Simón Bolívar, Latin American Revolutionary, "Letter from Jamaica" (Summer 1815)</English>
 		<German>Ein Staat, der an sich oder aufgrund seiner Abhängigkeiten zu teuer ist, verfällt schließlich; seine freie Regierung verwandelt sich in eine Tyrannei; er missachtet die Grundsätze, die er bewahren sollte, und entartet schließlich zur Despotie. Das Kennzeichen der kleinen Republiken ist die Stabilität, das der großen Republiken die Veränderlichkeit.[NEWLINE]--- Simón Bolívar, Lateinamerikanischer Revolutionär, "Brief aus Jamaika" (Summer 1815)</German>
+		<Hungarian>Egy állam, amely önmagában vagy függőségei miatt túl drága, végül hanyatlásba kerül; szabad kormánya zsarnoksággá alakul; figyelmen kívül hagyja azokat az elveket, amelyeket meg kellene őriznie, és végül despotizmussá degenerálódik. A kis köztársaságok megkülönböztető jellemzője a stabilitás, a nagy köztársaságoké pedig a változékonyság. [NEWLINE]--- Simón Bolívar, latin-amerikai forradalmár, „Levél Jamaikából” (1815 nyara)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_25</Tag>
 		<English>Colombians! My last wish is for the happiness of the patria. If my death contributes to the end of partisanship and the consolidation of the union, I shall be lowered in peace into my grave.[NEWLINE]--- Simón Bolívar, Latin American Revolutionary, "Final proclamation to the people of Colombia" (December 8, 1830)</English>
 		<German>Kolumbianer! Mein letzter Wunsch ist das Glück des Vaterlandes. Wenn mein Tod zur Beendigung der Parteilichkeit und zur Konsolidierung der Union beiträgt, werde ich in Frieden in mein Grab gesenkt werden.[NEWLINE]--- Simón Bolívar, Lateinamerikanischer Revolutionär, "Abschlussproklamation an das kolumbianische Volk" (December 8, 1830)</German>
+		<Hungarian>Kolumbiaiak! Utolsó kívánságom a hazám boldogsága. Ha halálom hozzájárul a pártpolitika megszűnéséhez és az unió megszilárdulásához, békében fogok nyugodni síromban. [NEWLINE]--- Simón Bolívar, latin-amerikai forradalmár, „Utolsó kiáltvány a kolumbiai néphez” (1830. december 8.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_26</Tag>
 		<English>I have fulfilled the sacred promises which I made Peru; I have witnessed the assembly of its representatives; the enemy's force threatens the independence of no place that wishes to be free, and that possesses the means of being so. A numerous army, under the direction of warlike chiefs, is ready to march in a few days to put an end to the war. Nothing is left for me to do, but to offer you my sincerest thanks, and to promise, that if the liberties of the Peruvians shall ever be attacked, I shall claim the honor of accompanying them to defend their freedom like a citizen.[NEWLINE]--- José de San Martín, Latin American Revolutionary, "Resignation address to the Peruvian Congress" (September 22, 1820)</English>
 		<German>Ich habe die heiligen Versprechen erfüllt, die ich Peru gegeben habe; ich war Zeuge der Versammlung seiner Vertreter; die feindliche Macht bedroht die Unabhängigkeit keines Ortes, der frei sein will und die Mittel dazu besitzt. Ein zahlreiches Heer unter der Führung von kriegerischen Häuptlingen ist bereit, in wenigen Tagen loszumarschieren, um dem Krieg ein Ende zu setzen. Es bleibt mir nichts anderes übrig, als Ihnen meinen aufrichtigen Dank auszusprechen und zu versprechen, dass ich, wenn die Freiheiten der Peruaner jemals angegriffen werden, die Ehre haben werde, sie zu begleiten, um ihre Freiheit wie ein Bürger zu verteidigen.[NEWLINE]--- José de San Martín, Lateinamerikanischer Revolutionär, "Rücktrittsrede vor dem peruanischen Kongress" (September 22, 1820)</German>
+		<Hungarian>Teljesítettem a szent ígéretet, amelyet Perunak tettem; tanúja voltam képviselőinek gyűlésének; az ellenséges erők nem fenyegetik a szabadságot kívánó és ahhoz szükséges eszközökkel rendelkező országok függetlenségét. A harcias vezérek irányítása alatt álló, nagyszámú hadsereg néhány napon belül készen áll a menetelésre, hogy véget vessen a háborúnak. Nincs más teendőm, mint hogy őszinte köszönetemet fejezzem ki Önöknek, és megígérjem, hogy ha a peruiak szabadságát valaha is megtámadják, megtiszteltetésnek fogom tekinteni, hogy polgárként kísérjem őket szabadságuk védelmében. [NEWLINE]--- José de San Martín, latin-amerikai forradalmár, „Lemondó beszéd a perui kongresszus előtt” (1820. szeptember 22.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_27</Tag>
 		<English>From this moment on, Peru is free and independent by the general will of its people and by the justice of its cause that God defends. Long live the nation! Long live the freedom! Long live the independence![NEWLINE]--- "Peruvian Declaration of Independence" (July 28, 1821)</English>
 		<German>Von diesem Moment an ist Peru frei und unabhängig durch den allgemeinen Willen seines Volkes und durch die Gerechtigkeit seiner Sache, die Gott verteidigt. Es lebe die Nation! Lang lebe die Freiheit! Lang lebe die Unabhängigkeit![NEWLINE]--- "Die peruanische Unabhängigkeitserklärung" (July 28, 1821)</German>
+		<Hungarian>Ettől a pillanattól kezdve Peru szabad és független, népe általános akaratának és Isten által védett igazságos ügyének köszönhetően. Éljen a nemzet! Éljen a szabadság! Éljen a függetlenség![NEWLINE]--- „Perui függetlenségi nyilatkozat” (1821. július 28.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_28</Tag>
 		<English>The Indians were totally deprived of their freedom and were put into the harshest, fiercest, most horrible servitude and captivity which no one who has not seen it can understand. Even beasts enjoy more freedom when they are allowed to graze in the field.[NEWLINE]--- Bartolomé de Las Casas, "History of the Indies" (1561)</English>
 		<German>Die Indianer wurden vollständig ihrer Freiheit beraubt und in die härteste, grausamste und schrecklichste Knechtschaft und Gefangenschaft versetzt, die niemand verstehen kann, der sie nicht gesehen hat. Selbst Tiere genießen mehr Freiheit, wenn sie auf der Weide grasen dürfen.[NEWLINE]--- Bartolomé de Las Casas, "Geschichte der Indigenen" (1561)</German>
+		<Hungarian>Az indiánokat teljesen megfosztották szabadságuktól és a legkeményebb, legkegyetlenebb, legszörnyűbb szolgaságba és fogságba vetették őket, amit senki sem érthet meg, aki nem látta. Még az állatok is nagyobb szabadságot élveznek, amikor a mezőn legelhetnek. [NEWLINE]--- Bartolomé de Las Casas, "Az indiánok története" (1561)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_29</Tag>
 		<English>Broken spears lie in the roads;[NEWLINE]We have torn our hair in our grief.[NEWLINE]The houses are roofless now, and their walls[NEWLINE]Are red with blood.[NEWLINE]--- Nahuatl poem (16th century)</English>
 		<German>Zerbrochene Speere liegen auf den Straßen;[NEWLINE]Wir haben uns in unserem Kummer die Haare ausgerissen.[NEWLINE]Die Häuser haben kein Dach mehr, und ihre Wände[NEWLINE]sind rot von Blut.[NEWLINE]--- Nahuatl-Gedicht (16th century)</German>
+		<Hungarian>Törött lándzsák hevernek az utakon;[NEWLINE]Fájdalmunkban tépjük a hajunkat.[NEWLINE]A házak tető nélkül maradtak[NEWLINE]Falaik vérrel borítottak.[NEWLINE]--- Nahuatl vers (16. század)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_30</Tag>
 		<English>Who could conquer Tenochtitlán? Who could shake the foundation of heaven?[NEWLINE]--- Nahuatl poem (15th century)</English>
 		<German>Wer könnte Tenochtitlán erobern? Wer könnte das Fundament des Himmels erschüttern?[NEWLINE]--- Nahuatl-Gedicht (15. Jahrhundert)</German>
+		<Hungarian>Ki tudná meghódítani Tenochtitlán városát? Ki tudná megrengetni az ég alapjait?[NEWLINE]--- Nahuatl vers (15. század)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_31</Tag>
 		<English>Who can doubt that gunpowder against the infidels is incense for the Lord?[NEWLINE]--- Gonzalo Fernández de Oviedo y Valdés, Spanish conquistador, "General and Natural History of the Indies" (1526)</English>
 		<German>Wer kann daran zweifeln, dass Schießpulver gegen die Ungläubigen Weihrauch für den Herrn ist?[NEWLINE]--- Gonzalo Fernández de Oviedo y Valdés, spanischer Eroberer, "Allgemeine und natürliche Geschichte der Indischen Inseln" (1526)</German>
+		<Hungarian>Ki kételkedhet abban, hogy a hitetlenek ellen használt puskapor az Úrnak való tömjén?[NEWLINE]--- Gonzalo Fernández de Oviedo y Valdés, spanyol konkvisztádor, "Az Indiánok általános és természeti története” (1526)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_32</Tag>
 		<English>The Inca asked Fray Vicente who had told him so. Fray Vicente responded that the Gospel had told him, the book. Atahualpa said, "Give me the book, so that it will tell me." So he gave it to him and he took it in his hands and began to look through the pages of the book. The Inca said, "Well, why doesn't it tell me? The book doesn't even talk to me!" Speaking with great majesty, seated in his throne, the Inca Atahualpa threw the book down from his hands. Don Francisco Pizarro and Don Diego de Almagro shouted and said, "Out, knights, against these infidels who are against our Christianity, and for our Emperor and King let us have at them!"[NEWLINE]--- Felipe Guamán Poma de Ayala, "The First New Chronicle and Good Government" (1615), on the conquest of the Incan Empire</English>
 		<German>Der Inka fragte Fray Vicente, wer ihm das gesagt habe. Fray Vicente antwortete, das Evangelium habe es ihm gesagt, das Buch. Atahualpa sagte: "Gib mir das Buch, damit es mir etwas sagt." Er gab es ihm, nahm es in die Hand und begann in den Seiten des Buches zu blättern. Der Inka sagte: "Nun, warum sagt es mir nichts? Das Buch spricht nicht einmal zu mir!" Mit einer majestätischen Rede warf der Inka Atahualpa, der auf seinem Thron saß, das Buch aus seinen Händen. Don Francisco Pizarro und Don Diego de Almagro riefen: "Raus, Ritter, gegen diese Ungläubigen, die gegen unser Christentum sind, und für unseren Kaiser und König, lasst uns über sie herfallen!"[NEWLINE]--- Felipe Guamán Poma de Ayala, "Die erste neue Chronik und gute Regierung" (1615), über die Eroberung des Inkareiches</German>
+		<Hungarian>Az inka megkérdezte Fray Vicente-től, ki mondta ezt neki. Fray Vicente azt válaszolta, hogy az Evangélium, a könyv. Atahualpa azt mondta: „Add ide a könyvet, hogy elmondja nekem.” Így hát odaadta neki, ő pedig a kezébe vette, és elkezdte lapozgatni a könyvet. Az inka így szólt: „Nos, miért nem mondja el nekem? A könyv nem is beszél hozzám!” Nagy méltósággal, trónján ülve, az inka Atahualpa ledobta a könyvet a kezéből. Don Francisco Pizarro és Don Diego de Almagro felkiáltottak, és azt mondták: „Kifelé, lovagok, ezek ellen a hitetlenek ellen, akik kereszténységünk ellen vannak, és császárunk és királyunkért támadjuk meg őket!”[NEWLINE]--- Felipe Guamán Poma de Ayala, „Az első új krónika és a jó kormányzás” (1615), az Inka Birodalom meghódításáról</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_33</Tag>
 		<English>We never bring lawsuits against one another. And why do we never bring lawsuits? Well, because we made a decision neither to accept or make use of money. And why do we refuse to allow money into our communities? The reason is this: we are determined not to have laws – because, since the world was a world, our ancestors have been able to live contentedly without them.[NEWLINE]--- Kondiaronk, Wendat Chief, 1703</English>
 		<German>Wir verklagen uns nie gegenseitig. Und warum verklagen wir uns nie? Nun, weil wir eine Entscheidung getroffen haben, weder Geld anzunehmen noch es zu nutzen. Und warum weigern wir uns, Geld in unsere Gemeinschaften zu lassen? Der Grund ist folgender: Wir sind entschlossen, keine Gesetze zu haben - weil unsere Vorfahren, seit es die Welt gibt, zufrieden ohne sie leben konnten.[NEWLINE]--- Kondiaronk, Wendat-Häuptling, 1703</German>
+		<Hungarian>Soha nem indítunk pert egymás ellen. És miért nem indítunk pert? Nos, mert úgy döntöttünk, hogy nem fogadunk el és nem használunk pénzt. És miért nem engedjük be a pénzt a közösségeinkbe? Az ok a következő: elhatároztuk, hogy nem lesznek törvényeink – mert a világ kezdete óta őseink boldogan éltek törvények nélkül. [NEWLINE]--- Kondiaronk, Wendat főnök, 1703</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_34</Tag>
 		<English>All Christians have a duty toward missions so long as any heathen exists. Christians will be called severely to account if they content themselves merely in carrying on in trading with the heathen.[NEWLINE]--- Hans Egede (1686 - 1758), Danish Lutheran Missionary</English>
 		<German>Alle Christen haben die Pflicht, zu missionieren, solange es noch Heiden gibt. Christen werden streng zur Rechenschaft gezogen werden, wenn sie sich damit begnügen, mit den Heiden Handel zu treiben.[NEWLINE]--- Hans Egede (1686 - 1758), dänischer lutherischer Missionar</German>
+		<Hungarian>Minden kereszténynek kötelessége a missziós munka, amíg csak egyetlen pogány is létezik. A keresztények szigorúan számon lesznek kérve, ha csupán a pogányokkal való kereskedelemmel elégednek meg. [NEWLINE]--- Hans Egede (1686 - 1758), Dán Evangélikus Misszionárius</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_35</Tag>
 		<English>These natives are a very good people; for when they saw that I would not remain, they supposed that I was afraid of their bows; and, taking their arrows, they broke them in pieces and threw them into the fire.[NEWLINE]--- Henry Hudson, English explorer, on the Algonquian natives of the Hudson River (September 4, 1609)</English>
 		<German>Diese Eingeborenen sind ein sehr gutes Volk; denn als sie sahen, dass ich nicht bleiben wollte, meinten sie, ich hätte Angst vor ihren Bögen; und indem sie ihre Pfeile nahmen, zerbrachen sie sie in Stücke und warfen sie ins Feuer.[NEWLINE]--- Henry Hudson, Englisher Entdecker, über die Algonquian-Eingeborenen am Hudson River (4. September 1609)</German>
+		<Hungarian>Ezek az indiánok nagyon jó emberek, mert amikor látták, hogy nem maradok, azt hitték, hogy félek az íjaiktól, ezért fogták a nyilaikat, összetörték őket, és a tűzbe dobták. [NEWLINE]--- Henry Hudson, angol felfedező, a Hudson-folyó algonkin indiánjairól (1609. szeptember 4.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_36</Tag>
 		<English>At this time, they (the Muisca) stripped the heir to his skin, and anointed him with a sticky earth on which they placed gold dust so that he was completely covered with this metal. They placed him on the raft ... and at his feet they placed a great heap of gold and emeralds for him to offer to his God. In the raft with him went four principal subject chiefs, decked in plumes, crowns, bracelets, pendants and ear rings all of gold. They, too, were naked, and each one carried his offering ... when the raft reached the centre of the lagoon, they raised a banner as a signal for silence.[NEWLINE]--- Juan Rodríguez Freyle, "El Carnero" (1638), on the Muisca natives</English>
 		<German> Zu dieser Zeit zogen sie (die Muisca) den Erben bis auf die Haut aus und salbten ihn mit einer klebrigen Erde, auf die sie Goldstaub legten, so dass er ganz mit diesem Metall bedeckt war. Sie setzten ihn auf das Floß ... und zu seinen Füßen legten sie einen großen Haufen Gold und Smaragde, die er seinem Gott opfern sollte. Auf dem Floß befanden sich auch vier Oberhäuptlinge, die mit Federn, Kronen, Armbändern, Anhängern und Ohrringen aus Gold geschmückt waren. Auch sie waren nackt, und jeder trug seine Opfergabe ... als das Floß die Mitte der Lagune erreichte, hissten sie ein Banner als Zeichen der Ruhe.[NEWLINE]--- Juan Rodríguez Freyle, "El Carnero" (1638), über die Muisca-Eingeborenen</German>
+		<Hungarian>Ekkor (a muiszkák) levetkőztették az örököst, és ragadós földdel kenték be, amelyre aranyport szórtak, hogy teljesen beborítsa ez a fém. A tutajra helyezték... és a lábához egy nagy halom aranyat és smaragdot tettek, hogy felajánlhassa azokat istenének. A tutajon vele utazott négy főnök, tollakkal, koronákkal, karkötőkkel, medálokkal és fülbevalókkal díszítve, mind aranyból. Ők is meztelenek voltak, és mindegyikük vitt magával áldozatot... amikor a tutaj elérte a lagúna közepét, zászlót emeltek, jelezve, hogy csendet kell tartani. [NEWLINE]--- Juan Rodríguez Freyle, „El Carnero” (1638), a muisca indiánokról</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_37</Tag>
 		<English>The Great Montezuma was about forty years old, of good height and well proportioned, slender, and spare of flesh, not very swarthy, but of the natural colour and shade of an Indian. He did not wear his hair long, but so as just to cover his ears, his scanty black beard was well shaped and thin. His face was somewhat long, but cheerful, and he had good eyes and showed in his appearance and manner both tenderness and, when necessary, gravity. He was very neat and clean and bathed once every day in the afternoon.[NEWLINE]--- Bernal Díaz del Castillo, "The Discovery and Conquest of Mexico" (1568)</English>
 		<German>Der Große Montezuma war etwa vierzig Jahre alt, von guter Größe und wohlproportionierter Gestalt, schlank und sparsam im Körperbau, nicht sehr dunkelhäutig, sondern von der natürlichen Farbe und Schattierung eines Indianers. Er trug sein Haar nicht lang, sondern so, dass es gerade seine Ohren bedeckte, und sein spärlicher schwarzer Bart war gut geformt und dünn. Sein Gesicht war etwas lang, aber fröhlich, er hatte gute Augen und zeigte in seiner Erscheinung und seinem Verhalten sowohl Zärtlichkeit als auch, wenn nötig, Ernsthaftigkeit. Er war sehr ordentlich und sauber und badete jeden Tag einmal am Nachmittag.[NEWLINE]--- Bernal Díaz del Castillo, "Die Entdeckung und Eroberung Mexikos" (1568)</German>
+		<Hungarian>A nagy Montezuma körülbelül negyven éves volt, jó magasságú és arányos testalkatú, karcsú és vékony testű, nem túl sötét bőrű, hanem az indiánok természetes színével és árnyalatával. Haja nem volt hosszú, csak éppen eltakarta a fülét, ritka fekete szakálla pedig jól formázott és vékony volt. Arca kissé hosszú volt, de vidám, szép szemei voltak, és megjelenésében és viselkedésében egyszerre mutatta gyengédségét és, ha szükséges, komolyságát. Nagyon rendezett és tiszta volt, minden nap délután fürdött. [NEWLINE]--- Bernal Díaz del Castillo, „Mexikó felfedezése és meghódítása” (1568)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_38</Tag>
 		<English>Vigorous measures at present would soon put an end to this rebellion. The deluded people are made to believe that they are invincible... When this army is ordered to act against them, they will soon be convinced that they are very insignificant when opposed to regular troops.[NEWLINE]--- Thomas Pitcairn, Royal Army Commander, in a letter to John Montagu, Lord Sandwich, the British Secretary of State (February 14, 1775)</English>
 		<German>Einschneidende Maßnahmen würden dieser Rebellion bald ein Ende setzen. Dem verblendeten Volk wird vorgegaukelt, dass es unbesiegbar ist... Wenn dieser Armee befohlen wird, gegen sie vorzugehen, werden sie bald davon überzeugt sein, dass sie gegenüber regulären Truppen sehr unbedeutend sind.[NEWLINE]--- Thomas Pitcairn, Königlicher Armeekommandant, in einem Brief an John Montagu, Lord Sandwich, den britischen Außenminister (14. Februar 1775)</German>
+		<Hungarian>A jelenlegi határozott intézkedések hamar véget vetnének ennek a lázadásnak. A megtévesztett embereket elhitették velük, hogy legyőzhetetlenek... Amikor ez a hadsereg parancsot kap, hogy fellépjen ellenük, hamarosan meggyőződnek arról, hogy a reguláris csapatokkal szemben jelentéktelenek. [NEWLINE]--- Thomas Pitcairn, a királyi hadsereg parancsnoka, levelében John Montaguhoz, Lord Sandwichhez, a brit külügyminiszterhez (1775. február 14.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_39</Tag>
 		<English>By the rude bridge that arched the flood,[NEWLINE]Their flag to April's breeze unfurled,[NEWLINE]Here once the embattled farmers stood,[NEWLINE]And fired the shot heard round the world.[NEWLINE]--- Ralph Waldo Emerson, "Concord Hymn" (1837), commemorating the Battle of Lexington and Concord (April 19, 1775)</English>
 		<German>Bei der groben Brücke, die die Flut wölbte,[NEWLINE]entfaltete sich ihre Fahne in der Brise des Aprils,[NEWLINE]hier standen einst die umkämpften Bauern,[NEWLINE]und feuerten den Schuss ab, den die ganze Welt hörte.[NEWLINE]--- Ralph Waldo Emerson, "Concord Hymn" (1837), zum Gedenken an die Schlacht von Lexington und Concord (19. April 1775)</German>
+		<Hungarian>A durva hídnál, mely a gáton ívelt át,[NEWLINE]Zászlajuk április szelében lobogott,[NEWLINE]Hol egykor harcra készen álltak a farmerek,[NEWLINE]S eldördült a lövés, melyet az egész világ meghallott.[NEWLINE]--- Ralph Waldo Emerson, „Concord Hymn” (1837), a lexingtoni és concordi csata (1775. április 19.) emlékére</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_40</Tag>
 		<English>Come out, you old rat. Surrender in the name of the Great Jehovah and the Continental Congress.[NEWLINE]--- Ethan Allen, leader of the Green Mountain Boys, demanding the surrender of the British commander of Fort Ticonderoga (May 10, 1775)</English>
 		<German>Komm raus, du alte Ratte. Ergib dich im Namen des großen Jehova und des Kontinentalkongresses.[NEWLINE]--- Ethan Allen, Anführer der Green Mountain Boys, fordert die Kapitulation des britischen Kommandanten von Fort Ticonderoga (10. Mai 1775)</German>
+		<Hungarian>Gyere ki, te vén patkány! Add meg magad a Nagy Jehova és a Kontinentális Kongresszus nevében! [NEWLINE]--- Ethan Allen, a Green Mountain Boys vezetője, amint a Ticonderoga erőd brit parancsnokának megadását követeli (1775. május 10.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_41</Tag>
 		<English>We must all hang together now, or assuredly we shall hang separately.[NEWLINE]--- Benjamin Franklin, after signing the "Declaration of Independence" (July 4, 1776)</English>
 		<German>Wir müssen jetzt alle zusammen hängen, oder wir werden mit Sicherheit getrennt hängen.[NEWLINE]--- Benjamin Franklin, nach der Unterzeichnung der "Unabhängigkeitserklärung" (4. Juli 1776)</German>
+		<Hungarian>Most vagy együtt maradunk, vagy biztosan külön-külön fogunk lógni. [NEWLINE]--- Benjamin Franklin, miután aláírta a „Függetlenségi Nyilatkozatot” (1776. július 4.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_42</Tag>
 		<English>No man shall be compelled to frequent or support any religious worship, place, or ministry... nor shall otherwise suffer on account of his religious opinions or belief, but that all men shall be free to profess, and by argument to maintain, their opinion on matters of religion.[NEWLINE]--- Thomas Jefferson, "Virginia Bill on Religious Freedom" (1776)</English>
 		<German>Niemand soll gezwungen werden, irgendeinen religiösen Gottesdienst, Ort oder Dienst zu besuchen oder zu unterstützen ... noch soll er sonst wegen seiner religiösen Ansichten oder seines Glaubens leiden, sondern alle Menschen sollen frei sein, sich zu ihrer Meinung in Religionsangelegenheiten zu bekennen und sie durch Argumente zu vertreten.[NEWLINE]--- Thomas Jefferson, "Virginia Bill on Religious Freedom" (1776)</German>
+		<Hungarian>Senki sem kötelezhető arra, hogy bármilyen vallási szertartáson, helyen vagy szolgálaton vegyen részt vagy azokat támogassa... és senki sem szenvedhet vallási nézetei vagy hite miatt, hanem minden embernek joga van vallási kérdésekben szabadon vallani és érvekkel alátámasztani véleményét. [NEWLINE]--- Thomas Jefferson, "A vallásszabadságról szóló virginiai törvényjavaslat" (1776)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_43</Tag>
 		<English>When once these rebels have felt a smart blow, they will submit.[NEWLINE]--- Comment of a Hessian mercenary, before going into battle against American rebels (1776)</English>
 		<German>Wenn diese Rebellen einmal einen klugen Schlag gespürt haben, werden sie sich unterwerfen.[NEWLINE]--- Kommentar eines hessischen Söldners, bevor er in die Schlacht gegen amerikanische Rebellen zieht (1776)</German>	
+		<Hungarian>Ha ezek a lázadók egyszer megérzik az erős támadást, akkor megadják magukat. [NEWLINE]--- Egy Hesseni zsoldos megjegyzése, mielőtt csatába indult az amerikai lázadók ellen (1776)</Hungarian>	
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_44</Tag>
 		<English>The unfortunate soldiers were in want of everything; they had neither coats, nor hats, nor shirts, nor shoes; their feet and their legs froze till they grew black and it was often necessary to amputate them... The army frequently passed whole days without food.[NEWLINE]--- Gilbert du Motier, Marquis de La Fayette, on the Continental Army at Valley Forge, Pennsylvania (1777)</English>
 		<German>Den unglücklichen Soldaten fehlte es an allem; sie hatten weder Mäntel, noch Hüte, noch Hemden, noch Schuhe; ihre Füße und Beine erfroren, bis sie schwarz wurden, und es war oft notwendig, sie zu amputieren... Die Armee verbrachte oft ganze Tage ohne Essen.[NEWLINE]--- Gilbert du Motier, Marquis de La Fayette, über die Kontinentalarmee in Valley Forge, Pennsylvania (1777)</German>
+		<Hungarian>A szerencsétlen katonáknak mindenből hiányuk volt; nem volt kabátjuk, sapkájuk, ingük, cipőjük; a lábuk és az ujjaik megfagytak, feketévé váltak, és gyakran amputálni kellett őket... A hadsereg gyakran egész napokat töltött étel nélkül. [NEWLINE]--- Gilbert du Motier, La Fayette márki, a kontinentális hadseregről Valley Forge-ban, Pennsylvania (1777)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_45</Tag>
 		<English>Poor food - hard lodging - cold weather - fatigue - nasty clothes - nasty cookery... There comes a bowl of beef soup, full of burnt leaves and dirt![NEWLINE]--- Albigence Waldo, Continental Army surgeon, writing in his diary on conditions of the army at Valley Forge (1777)</English>
 		<German>Schlechtes Essen - harte Unterkunft - kaltes Wetter - Müdigkeit - schlechte Kleidung - schlechte Küche... Da kommt eine Schüssel Rindersuppe, voll von verbrannten Blättern und Dreck![NEWLINE]--- Albigence Waldo, Chirurg der Kontinentalarmee, schreibt in seinem Tagebuch über die Bedingungen der Armee in Valley Forge (1777)</German>
+		<Hungarian>Rossz ételek – durva szállás – hideg idő – fáradtság – ocsmány ruhák – ocsmány konyha... Jön egy tál marhahúsleves, tele égett levelekkel és piszokkal![NEWLINE]--- Albigence Waldo, a kontinentális hadsereg sebésze, naplójában írva a hadsereg körülményeiről Valley Forge-ban (1777)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_46</Tag>
 		<English>There was as much sorrow as joy... We had lived together as a family of brothers for several years, setting aside some little family squabbles, like most other families, had shared with each other the hardships, dangers, and sufferings incident to a soldier's life, had sympathized with each other in trouble and in sickness; had assisted in bearing each other's burdens... And now we were to be... parted forever.[NEWLINE]--- Joseph Plumb Martin, Continental Army soldier, in his memoir "Private Yankee Doodle" (1830)</English>
 		<German>Es gab ebenso viel Kummer wie Freude... Wir hatten mehrere Jahre lang als eine Familie von Brüdern zusammengelebt, hatten einige kleine Familienstreitigkeiten beiseite gelassen, wie die meisten anderen Familien, hatten miteinander die Härten, Gefahren und Leiden geteilt, die ein Soldatenleben mit sich bringt, hatten einander in Schwierigkeiten und in Krankheit beigestanden; hatten geholfen, die Lasten des anderen zu tragen ... Und nun sollten wir... für immer getrennt werden.[NEWLINE]--- Joseph Plumb Martin, Soldat der Kontinentalarmee, in seinen Memoiren "Private Yankee Doodle" (1830)</German>
+		<Hungarian>Annyi bánat volt, mint öröm... Több éven át testvérekként éltünk együtt, eltekintve néhány apró családi vitától, mint a legtöbb család, megosztottuk egymással a katonaélethez tartozó nehézségeket, veszélyeket és szenvedéseket, együtt éreztünk egymással bajban és betegségben, segítettünk egymás terheinek viselésében... És most... örökre el kellett válnunk egymástól. [NEWLINE]--- Joseph Plumb Martin, a kontinentális hadsereg katonája, emlékirataiban, „Private Yankee Doodle” (1830)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_47</Tag>
 		<English>Here is the God the Spaniards worship. For these they fight and kill; for these they persecute us and that is why we have to throw them into the sea... They tell us, these tyrants, that they adore a God of peace and equality, and yet they usurp our land and make us their slaves. They speak to us of an immortal soul and of their eternal rewards and punishments, and yet they rob our belongings, seduce our women, violate our daughters. Incapable of matching us in valor, these cowards cover themselves with iron that our weapons cannot break.[NEWLINE]--- Hatuey, Arawak cacique, to the Carib natives of Cuba, 1511</English>
 		<German>Hier ist der Gott, den die Spanier anbeten. Dafür kämpfen und töten sie; dafür verfolgen sie uns, und deshalb müssen wir sie ins Meer werfen... Sie sagen uns, diese Tyrannen, dass sie einen Gott des Friedens und der Gleichheit anbeten, und doch reißen sie unser Land an sich und machen uns zu ihren Sklaven. Sie sprechen zu uns von einer unsterblichen Seele und von ihrer ewigen Belohnung und Bestrafung, und doch rauben sie unser Hab und Gut, verführen unsere Frauen, schänden unsere Töchter. Unfähig, es mit uns aufzunehmen, überziehen sich diese Feiglinge mit Eisen, das unsere Waffen nicht brechen können.[NEWLINE]--- Hatuey, Arawak-Kacike, an die Kariben auf Kuba, 1511</German>
+		<Hungarian>Itt van a spanyolok által imádott Isten. Értük harcolnak és ölnek; értük üldöznek minket, és ezért kell őket a tengerbe vetnünk... Ezek a zsarnokok azt mondják nekünk, hogy a béke és az egyenlőség Istenét imádják, és mégis elrabolják földünket, és rabszolgáikká tesznek minket. Halhatatlan lélekről és örök jutalomról és büntetésről beszélnek nekünk, és mégis ellopják a vagyonunkat, elcsábítják a nőinket, megerőszakolják a lányainkat. Mivel nem képesek felvenni velünk a harcot, ezek a gyávák vasal borítják magukat, amelyet a fegyvereink nem tudnak áttörni. [NEWLINE]--- Hatuey, Aravak vezér, a kubai karib indiánokhoz, 1511</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_48</Tag>
 		<English>Hatuey, thinking a little, asked the religious man if Spaniards went to heaven. The religious man answered yes... The chief then said without further thought that he did not want to go there but to hell so as not to be where they were and where he would not see such cruel people. This is the name and honor that God and our faith have earned.[NEWLINE]February 2, 1512[NEWLINE]--- Bartolomé de Las Casas, "Brief account of the destruction of the Indies" (1552), on the execution of the Arawak cacique Hatuey</English>
 		<German>Hatuey, der ein wenig nachdachte, fragte den religiösen Mann, ob die Spanier in den Himmel kämen. Der religiöse Mann antwortete mit Ja... Daraufhin sagte der Häuptling, ohne weiter darüber nachzudenken, dass er nicht dorthin wolle, sondern in die Hölle, um nicht dort zu sein, wo sie waren, und wo er solche grausamen Menschen nicht sehen würde. Dies ist der Name und die Ehre, die Gott und unser Glaube verdient haben.[NEWLINE]2. Februar 1512[NEWLINE]--- Bartolomé de Las Casas, "Kurzer Bericht über die Zerstörung der Indias" (1552), über die Hinrichtung des Arawak-Kakis Hatuey</German>
+		<Hungarian>Hatuey egy kicsit elgondolkodott, majd megkérdezte a szerzetest, hogy a spanyolok a mennyországba kerülnek-e. A szerzetes igennel válaszolt... A főnök akkor gondolkodás nélkül azt mondta, hogy ő nem oda akar menni, hanem a pokolba, hogy ne legyen ott, ahol ők vannak, és ne lásson ilyen kegyetlen embereket. Ez a név és a becsület, amelyet Isten és hitünk szerzett 1512. február 2.[NEWLINE]--- Bartolomé de Las Casas, „Rövid beszámoló az Indinok pusztulásáról” (1552), az Aravak Hatuey kivégzéséről</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_49</Tag>
 		<English>And never have the Indians in all the Indies committed any act against the Spanish Christians, until those Christians have first and many times committed countless cruel aggressions against them or against neighbouring nations.[NEWLINE]--- Bartolomé de Las Casas, "Brief account of the destruction of the Indies" (1552)</English>
 		<German>Und niemals haben die Indianer in ganz Indien irgendeine Tat gegen die spanischen Christen begangen, bevor diese Christen nicht zuerst und viele Male zahllose grausame Aggressionen gegen sie oder gegen benachbarte Nationen begangen haben.[NEWLINE]--- Bartolomé de Las Casas, "Kurzer Bericht über die Zerstörung der Indias" (1552)</German>
+		<Hungarian>És az indiánok soha nem követtek el semmilyen cselekményt a spanyol keresztények ellen, amíg azok a keresztények először és többször is számtalan kegyetlen támadást nem indítottak ellenük vagy a szomszédos népek ellen. [NEWLINE]--- Bartolomé de Las Casas, „Rövid beszámoló az Indiánok pusztulásáról” (1552)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_50</Tag>
 		<English>Their reason for killing and destroying such an infinite number of souls is that the Christians have an ultimate aim, which is to acquire gold, and to swell themselves with riches in a very brief time and thus rise to a high estate disproportionate to their merits.[NEWLINE]--- Bartolomé de Las Casas, "Brief account of the destruction of the Indies" (1552)</English>
 		<German>Ihr Grund für das Töten und Vernichten einer so unendlichen Anzahl von Seelen ist, dass die Christen ein Endziel haben, nämlich Gold zu erwerben und sich in kurzer Zeit zu bereichern und so zu einem hohen Stand aufzusteigen, der in keinem Verhältnis zu ihren Verdiensten steht.[NEWLINE]--- Bartolomé de Las Casas, "Kurzer Bericht über die Zerstörung der Indias" (1552)</German>
+		<Hungarian>Azért öltek és pusztítottak el ilyen végtelen számú lelket, mert a keresztényeknek a végső céljuk az volt, hogy aranyat szerezzenek, és nagyon rövid idő alatt meggazdagodjanak, és így érdemeikhez képest aránytalanul magas rangra emelkedjenek. [NEWLINE]--- Bartolomé de Las Casas, „Rövid beszámoló az Indiánok pusztulásáról” (1552)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_51</Tag>
 		<English>We can estimate very surely and truthfully that in the forty years that have passed, with the infernal actions of the Christians, there have been unjustly slain more than twelve million men, women, and children. In truth, I believe without trying to deceive myself that the number of the slain is more like fifteen million.[NEWLINE]--- Bartolomé de Las Casas, "Brief account of the destruction of the Indies" (1552)</English>
 		<German>Wir können sehr sicher und wahrheitsgemäß schätzen, dass in den vierzig Jahren, die durch die höllischen Aktionen der Christen vergangen sind, mehr als zwölf Millionen Männer, Frauen und Kinder zu Unrecht getötet wurden. In Wahrheit glaube ich, ohne mir etwas vorzumachen, dass die Zahl der Ermordeten eher bei fünfzehn Millionen liegt.[NEWLINE]--- Bartolomé de Las Casas, "Kurzer Bericht über die Zerstörung der Indischen Inseln" (1552)</German>
+		<Hungarian>Nagyon biztosan és őszintén meg tudjuk becsülni, hogy az elmúlt negyven évben a keresztények pokoli tettei következtében több mint tizenkét millió férfit, nőt és gyermeket öltek meg igazságtalanul. Valójában, anélkül, hogy meg akarnám téveszteni magam, úgy gondolom, hogy a meggyilkoltak száma inkább tizenöt millióra tehető. [NEWLINE]--- Bartolomé de Las Casas, „Rövid beszámoló az Indiánok pusztulásáról” (1552)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_52</Tag>
 		<English>Compare then the blessings enjoyed by Spaniards of prudence, genius, magnanimity, temperance, humanity, and religion with those of the little men [the Indians] in whom you will scarcely find even vestiges of humanity. ... How can we doubt that these people - so uncivilized, so barbaric, contaminated with so many impieties and obscenities - have been justly conquered?[NEWLINE]--- Juan Ginés de Sepúlveda, to Bartolomé de Las Casas, at the Valladolid debate (1550-1551)</English>
 		<German>Vergleicht also die Segnungen, derer sich die Spanier mit Klugheit, Genialität, Großmut, Mäßigkeit, Menschlichkeit und Religion erfreuen, mit denen der kleinen Menschen [der Indianer], bei denen ihr kaum Spuren von Menschlichkeit finden werdet. ... Wie können wir daran zweifeln, dass dieses Volk - so unzivilisiert, so barbarisch, mit so vielen Untugenden und Obszönitäten verunreinigt - zu Recht erobert worden ist?[NEWLINE]--- Juan Ginés de Sepúlveda, an Bartolomé de Las Casas, bei der Debatte in Valladolid (1550-1551)</German>
+		<Hungarian>Hasonlítsuk össze a spanyolok által élvezett áldásokat – a bölcsességet, a zsenialitást, a nagylelkűséget, a mértékletességet, az emberséget és a vallásosságot – azokkal a kis emberekkel [az indiánokkal], akikben alig találjuk meg az emberség nyomait. ... Hogyan is kételkedhetnénk abban, hogy ezeket az embereket – akik annyira civilizálatlanok, barbárok, és akiket oly sok istentelenség és obszcénség szennyez – nem jogosan hódították meg?[NEWLINE]--- Juan Ginés de Sepúlveda Bartolomé de Las Casasnak, a valladolidi vitán (1550-1551)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_53</Tag>
 		<English>The Russians went to the settlement and carried out a terrible blood bath. Only a few people were able to flee to Angyahtalek in baidarkas; 300 Koniags were shot by the Russians. This happened in April. When our people revisited the place in the summer the stench of the corpses lying on the shore polluted the air so badly that none could stay there, and since then the island has been uninhabited. After this every chief had to surrender his children as hostages; I was saved only by my father's begging and many sea otter pelts.[NEWLINE]--- Arsenti Aminak, Alutiiq native, on the 1784 massacre of thousands of Alutiiq by Russian fur traders at Ala'uq</English>
 		<German>Die Russen gingen in die Siedlung und richteten ein schreckliches Blutbad an. Nur wenige Menschen konnten nach Angyahtalek in Baidarkas fliehen; 300 Koniags wurden von den Russen erschossen. Dies geschah im April. Als unsere Leute den Ort im Sommer wieder besuchten, verpestete der Gestank der am Ufer liegenden Leichen die Luft so sehr, dass sich niemand dort aufhalten konnte, und seitdem ist die Insel unbewohnt. Danach musste jeder Häuptling seine Kinder als Geiseln ausliefern; ich wurde nur durch das Betteln meines Vaters und viele Seeotterfelle gerettet.[NEWLINE]--- Arsenti Aminak, Alutiiq-Eingeborener, über das Massaker von 1784 an Tausenden von Alutiiq durch russische Pelzhändler in Ala'uq</German>
+		<Hungarian>Az oroszok elmentek a településre, és szörnyű vérengzést hajtottak végre. Csak néhány ember tudott elmenekülni Angyahtalekbe; 300 koniagot lelőttek az oroszok. Ez áprilisban történt. Amikor népünk nyáron visszatért a helyre, a parton fekvő holttestek bűze annyira szennyezte a levegőt, hogy senki sem tudott ott maradni, és azóta a sziget lakatlan. Ezt követően minden főnöknek át kellett adnia gyermekeit túszként; engem csak apám könyörgése és sok tengeri vidraprém mentett meg. [NEWLINE]--- Arsenti Aminak, alutiiq indián, az 1784-es mészárlásról, amikor orosz prémkereskedők több ezer alutiiqot mészároltak le Ala'uqban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_54</Tag>
 		<English>The time is near at hand which must determine whether Americans are to be free men or slaves.[NEWLINE]--- George Washington (1732 - 1799), Commander-in-Chief of the Continental Army and first President of the United States</English>
 		<German>Die Zeit ist nahe, in der sich entscheiden muss, ob die Amerikaner freie Menschen oder Sklaven sein werden.[NEWLINE]--- George Washington (1732 - 1799), Oberbefehlshaber der Kontinentalarmee und erster Präsident der Vereinigten Staaten</German>
 		<Russian>Пришло время, которое определит, будут ли американцы свободными людьми или рабами.[NEWLINE]--- Джордж Вашингтон (1732 - 1799), главнокомандующий Континентальной армией и первый президент Соединенных Штатов</Russian>
+		<Hungarian>Közeledik az idő, amikor eldől, hogy az amerikaiak szabad emberek vagy rabszolgák lesznek-e. [NEWLINE]--- George Washington (1732–1799), a kontinentális hadsereg főparancsnoka és az Egyesült Államok első elnöke</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_55</Tag>
 		<English>To secure all rights of independent sovereignty to each and yet provide for the interest and safety for all -- individuals entering into society must give up a share of liberty to preserve the rest.[NEWLINE]--- 1787 letter from George Washington (1732 - 1799), asking that the Constitution be ratified</English>
 		<German>Um jedem alle Rechte der unabhängigen Souveränität zu sichern und dennoch für das Interesse und die Sicherheit aller zu sorgen, müssen die Individuen, die in die Gesellschaft eintreten, einen Teil der Freiheit aufgeben, um den Rest zu bewahren.[NEWLINE]--- Brief von George Washington (1732 - 1799) aus dem Jahr 1787, in dem er darum bittet, die Verfassung zu ratifizieren</German>
 		<Russian>Чтобы обеспечить все права независимого суверенитета для каждого и в то же время обеспечить интересы и безопасность для всех, индивидуумы, вступающие в общество, должны отказаться от части свободы, чтобы сохранить остальное.[NEWLINE]--- Письмо Джорджа Вашингтона (1732 - 1799) 1787 года с просьбой ратифицировать Конституцию</Russian>
+		<Hungarian>Annak érdekében, hogy mindenki számára biztosítsák a független szuverenitás minden jogát, ugyanakkor mindenki érdekeit és biztonságát is garantálják, a társadalomba belépő egyéneknek fel kell adniuk szabadságuk egy részét, hogy megőrizhessék a többit. [NEWLINE]--- 1787-es levél George Washington-tól (1732–1799), amelyben az Alkotmány ratifikálását kéri.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_1</Tag>
 		<English>They do not bear arms, and do not know them, for I showed them a sword, they took it by the edge and cut themselves out of ignorance.[NEWLINE]--- Christopher Columbus, about Arawak Indians in the Bahamas (October 13, 1492)</English>
 		<French>They do not bear arms, and do not know them, for I showed them a sword, they took it by the edge and cut themselves out of ignorance.[NEWLINE]--- Christopher Columbus, about Arawak Indians in the Bahamas</French>
 		<German>Sie tragen keine Waffen und kennen sie nicht, denn ich zeigte ihnen ein Schwert, sie nahmen es an der Schneide und schnitten sich aus Unwissenheit.[NEWLINE]--- Christoph Kolumbus, über Arawak-Indianer auf den Bahamas (13. Oktober 1492)</German>
+		<Hungarian>Nem viselnek fegyvert és nem is ismerik azokat, mert amikor megmutattam nekik egy kardot, a pengéjét fogták meg és a tudatlanságukból fakadóan megvágták magukat. [NEWLINE]--- Christopher Columbus az Aravak Indiánokról a Bahama-szigeteken (1492. október 13.)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_2</Tag>
@@ -580,6 +676,7 @@ Viel Spass![NEWLINE]
 		<German>Wir fanden bei den Indios eine große Zahl von Büchern mit fremden Buchstaben, und weil sie nichts enthielten, was von Aberglauben und den Täuschungen des Teufels frei wäre, verbrannten wir sie alle.[NEWLINE]--- Diego de Landa Calderón, spanischer Missionar und Bischof in Yucatán</German>
 		<Italian>Per conquistare un insediamento o un gruppo di unità non combattenti devi sconfiggere tutte le unità combattenti presenti, più una di quelle non combattenti. Dopodiché i rimanenti coloni saranno tutti tuoi!</Italian>
 		<Spanish>Para capturar un asentamiento y un apilamiento de unidades no combatientes, tendréis que derrotar a todas las unidades de combate presentes y a una de las civiles. Tras ello, los Colonos restantes serán vuestros.</Spanish>
+		<Hungarian>Ezekkel a jelekkel írt számos könyvet találtunk, és mivel azok nem tartalmaztak mást, mint babonát és az ördög hazugságait, mindet elégettük, amit ők (a maják) rendkívüli mértékben sajnáltak és nagy fájdalmat okozott nekik. [NEWLINE]--- Diego de Landa Calderón, Yucatán spanyol püspöke</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_3</Tag>
@@ -588,6 +685,7 @@ Viel Spass![NEWLINE]
 		<German>Wir sind unbewaffnet und bereit, euch zu geben, was ihr wollt, wenn ihr freundlich auftretet.[NEWLINE]--- Häuptling Powhatan in einer Botschaft an John Smith, Gründer von Jamestown</German>
 		<Italian>Per assegnare a un colono in un insediamento una professione, [clicca due volte] sul colono nella schermata dell'insediamento.</Italian>
 		<Spanish>Para asignar una profesión a un Colono del asentamiento, haced doble clic en él en la pantalla del asentamiento.</Spanish>
+		<Hungarian>Hogy megszabaduljunk ettől a félelemtől, hagyjátok itt a fegyvereiteket, mert itt nincs rájuk szükség, hiszen mindannyian barátok vagyunk és örökre Póhatanok maradunk. [NEWLINE]--- Póhatanok Törzsfőnök John Smith kapitánynak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_4</Tag>
@@ -596,6 +694,7 @@ Viel Spass![NEWLINE]
 		<German>Es war ein schrecklicher Anblick, die Pequot im Feuer brennen und das Blut hervorquellen zu sehen, und der Gestank war fürchterlich. Aber die Engländer sandten ihre Gebete zu Gott, der ihnen ihre Feinde in die Hände gespielt hatte.[NEWLINE]--- William Bradford, Augenzeuge von John Masons Überfall auf ein Pequot-Dorf</German>
 		<Italian>L'argento non va lavorato, quindi può essere venduto fin da subito a un prezzo molto alto. Può essere estratto solo dalle montagne, o dalle caselle con la risorsa argento.</Italian>
 		<Spanish>La Plata no tiene que procesarse, por lo que se puede vender de inmediato a un buen precio. La Plata solo puede extraerse de picos o de casillas con el recurso de Plata.</Spanish>
+		<Hungarian>Félelmetes látvány volt, ahogy a tűzben pörkölődtek és a véres patakok eloltották a tüzet, és szörnyű volt a bűz és a szag, de a győzelem édes áldozatnak tűnt, és imádkoztak Istennek, aki olyan csodálatos dolgot tett értük, hogy ellenségeiket a kezükbe adta, és ilyen gyors győzelmet adott nekik egy olyan büszke és méltatlan ellenséggel szemben. [NEWLINE]--- William Bradford az angolok által a pequotok ellen elkövetett mészárlásról</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_5</Tag>
