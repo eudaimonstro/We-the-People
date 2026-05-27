@@ -1181,15 +1181,17 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] e clicca su una pila per selezionare tutte le unità dello stesso tipo.</Italian>
 		<Spanish>Mantener Pulsaro [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] y hacer clic en un apilamiento selecciona a todas las unidades del mismo tipo.</Spanish>
 		<Russian>Удерживайте [COLOR:140:255:40:255]CTRL[COLOR_REVERT] и кликните стек, чтобы выбрать все юниты одного типа.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] billentyűt lenyomva tartva kattints egy mezőn lévő több egységre, hogy kiválaszd az összes azonos típusút.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_9</Tag>
-		<English>With multiple units selected, you can give the group orders that they will conduct together.</English>
+		<English>With multiple units selected, you can give the group orders that they will carry out together.</English>
 		<French>Si vous avez sélectionné plusieurs unités, vous pouvez leur donner des ordres de groupe.</French>
 		<German>Haben Sie mehrere Einheiten ausgewählt, können Sie der gesamten Gruppe Befehle erteilen.</German>
 		<Italian>Quando più unità sono selezionate, puoi impartire ordini a tutto il gruppo.</Italian>
 		<Spanish>Con varias unidades seleccionadas, se pueden dar órdenes de grupo que éstas llevarán a cabo a la vez.</Spanish>
 		<Russian>Выбрав несколько отрядов, вы можете отдать группе приказы, которые они будут выполнять вместе.</Russian>
+		<Hungarian>Több egység kiválasztása esetén a csoportnak olyan parancsokat adhatsz, amelyeket közösen kell végrehajtaniuk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_10</Tag>
@@ -1199,6 +1201,7 @@ Viel Spass![NEWLINE]
 		<Italian>Clicca con il [COLOR:140:255:40:255]&lt; PULSANTE DESTRO &gt;[COLOR_REVERT] su un mezzo di trasporto per caricare automaticamente le unità a bordo.</Italian>
 		<Spanish>Hacer [COLOR:140:255:40:255]&lt; CLIC DERECHO &gt;[COLOR_REVERT] en un transporte embarcará directamente las unidades en él.</Spanish>
 		<Russian>[COLOR:140:255:40:255]ПКМ[COLOR_REVERT] на транспорте автоматически загрузит в него юниты. [COLOR_NEGATIVE_TEXT](ПОКА НЕ РАБОТАЕТ)[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR:140:255:40:255]&lt; JOBB EGÉR GOMBBAL KATTINTVA &gt;[COLOR_REVERT] egy szállítóeszközre az egységek automatikusan felkerülnek rá.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_11</Tag>
@@ -1208,15 +1211,17 @@ Viel Spass![NEWLINE]
 		<Italian>Quando hai selezionato un mezzo di trasporto, clicca con il [COLOR:140:255:40:255]&lt; PULSANTE DESTRO &gt;[COLOR_REVERT] del mouse su una casella adiacente per sbarcare automaticamente le unità a bordo.</Italian>
 		<Spanish>Con un transporte seleccionado, hacer [COLOR:140:255:40:255]&lt; CLIC DERECHO &gt;[COLOR_REVERT] en una casilla de tierra adyacente desembarcará automáticamente a las unidades.</Spanish>
 		<Russian>При выборе транспорта [COLOR:140:255:40:255]ПКМ[COLOR_REVERT] на соседнем квадрате земли автоматически разгрузит туда юниты.</Russian>
+		<Hungarian>A szállítóeszköz kiválasztása után [COLOR:140:255:40:255]&lt; JOBB EGÉRGOMBBAL KATTINTS &gt;[COLOR_REVERT] a szomszédos földterületre és az egységek automatikusan kiszállnak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_12</Tag>
-		<English>Press [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT] to access the Colopedia.</English>
+		<English>Press [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT] to open the Colopedia.</English>
 		<French>Appuyez sur [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT] pour ouvrir la Colopedia.</French>
 		<German>Drücken Sie [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT], wenn Sie die Colopedia öffnen möchten.</German>
 		<Italian>Premi [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT] per accedere alla Colopedia.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT] para acceder a la Colopedia.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]F12[COLOR_REVERT] для доступа к Колопедии.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; F12 &gt;[COLOR_REVERT] gombbal nyithatod meg a Colopédiát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_13</Tag>
@@ -1226,6 +1231,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; STAMP &gt;[COLOR_REVERT] per scattare una foto che verrà salvata in Colonization\Screenshots...</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; PRINT SCREEN &gt;[COLOR_REVERT] para hacer una captura de pantalla (se guardará en la carpeta Colonization\Screenshots).</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]PRINT SCREEN[COLOR_REVERT], чтобы сделать снимок экрана (он будет сохранен в папке *\Documents\My Games\Civilization IV Colonization\ScreenShots).</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; PRINT SCREEN &gt;[COLOR_REVERT] gombbal készíthetsz képernyőképet (ez a Colonization\Screenshots mappába lesz mentve).</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_14</Tag>
@@ -1235,6 +1241,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; ESC &gt;[COLOR_REVERT] per richiamare il menu di opzioni mentre stai giocando.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; ESC &gt;[COLOR_REVERT] para que aparezca el menú Opciones durante la partida.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]ESC[COLOR_REVERT], чтобы открыть меню параметров игры.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; ESC &gt;[COLOR_REVERT] gombbal nyithatod meg a játék menüt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_15</Tag>
@@ -1244,6 +1251,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + O &gt;[COLOR_REVERT] per richiamare il menu di opzioni.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + O &gt;[COLOR_REVERT] para que aparezca el menú Opciones.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + O[COLOR_REVERT], чтобы открыть меню параметров.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + O &gt;[COLOR_REVERT] gombokkal nyithatod meg az Opciók menüt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_16</Tag>
@@ -1253,6 +1261,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi il pulsante centrale del mouse per centrare la visuale sull'unità attiva.</Italian>
 		<Spanish>Pulsar el botón central del ratón para centrar la cámara en la unidad activa.</Spanish>
 		<Russian>Нажмите среднюю кнопку мыши, чтобы центрировать камеру на активном объекте.</Russian>
+		<Hungarian>A középső egérgombbal a kamerát az aktív egységre állíthatod.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_17</Tag>
@@ -1262,6 +1271,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; MAIUSC + F5 &gt;[COLOR_REVERT] (solo Giocatore Singolo) per effettuare un salvataggio rapido.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; MAYÚS + F5 &gt;[COLOR_REVERT] (solo en partidas de un jugador) para hacer un guardado rápido.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]SHIFT + F5[COLOR_REVERT] для быстрого сохранения (только для одиночной игры).</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT + F5 &gt;[COLOR_REVERT] (csak egyjátékos módban) gombokkal lehet gyors mentést végrehajtani.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_18</Tag>
@@ -1271,6 +1281,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; MAIUSC + F8 &gt;[COLOR_REVERT] (solo Giocatore Singolo) per effettuare un caricamento rapido.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; MAYÚS + F8 &gt;[COLOR_REVERT] (solo en partidas de un jugador) para hacer una carga rápida.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]SHIFT + F8[COLOR_REVERT] для быстрой загрузки (только для одиночной игры).</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT + F8 &gt;[COLOR_REVERT] (csak egyjátékos módban) gombokkal lehet a gyors betöltést elvégezni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_19</Tag>
@@ -1280,6 +1291,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + P &gt;[COLOR_REVERT] per segnare un punto sulla mappa e fornire informazioni ai tuoi compagni di squadra.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + P &gt;[COLOR_REVERT] para hacer una señal en el mapa y dar información a los compañeros de equipo.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + P[COLOR_REVERT], чтобы проверить карту и предоставить информацию товарищам по команде (кажется, это для мультиплеера).</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + P &gt;[COLOR_REVERT] billentyűkombinációval pingelheted a térképet és információkat adhatsz a csapattársaknak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_20</Tag>
@@ -1289,6 +1301,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + # &gt;[COLOR_REVERT] per assegnare l'unità selezionata al tasto #. Per esempio, premendo [COLOR:140:255:40:255]&lt; CTRL + 3 &gt;[COLOR_REVERT], ogni volta che si premerà il tasto [COLOR:140:255:40:255]&lt; 3 &gt;[COLOR_REVERT] quell'unità verrà automaticamente selezionata.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + número &gt;[COLOR_REVERT] para vincular la unidad seleccionada a ese número. Por ejemplo: [COLOR:140:255:40:255]&lt; CTRL + 3 &gt;[COLOR_REVERT] hará que la unidad quede seleccionada automáticamente cada vez que se pulse el [COLOR:140:255:40:255]&lt; 3 &gt;[COLOR_REVERT].</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + цифровая клавиша[COLOR_REVERT], чтобы привязать выбранный объект к этой клавише. Например: [COLOR:140:255:40:255]CTRL + 3[COLOR_REVERT] привяжет цифру [COLOR:140:255:40:255]3[COLOR_REVERT] к выбранному юниту.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + # billentyű &gt;[COLOR_REVERT] kombinációval a kiválasztott egységet a # billentyűhöz rendelheted. Például: [COLOR:140:255:40:255]&lt; CTRL + 3 &gt;[COLOR_REVERT] beállításával bármikor, amikor megnyomod a [COLOR:140:255:40:255]&lt; 3 &gt;[COLOR_REVERT] billentyűkombinációt, az egység automatikusan kiválasztásra kerül.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_21</Tag>
@@ -1298,6 +1311,7 @@ Viel Spass![NEWLINE]
 		<Italian>Mentre ti trovi nella schermata dell'insediamento, [COLOR:140:255:40:255]&lt; CTRL + # &gt;[COLOR_REVERT] per salvare la coda di produzione. Questa coda può essere caricata in qualsiasi altro insediamento premendo il tasto [COLOR:140:255:40:255]&lt; # &gt;[COLOR_REVERT].</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + número &gt;[COLOR_REVERT] en la pantalla del asentamiento para guardar la cola de producción. Se podrá cargar esa cola en cualquier otro asentamiento pulsando dicho número.</Spanish>
 		<Russian>На экране колонии нажмите [COLOR:140:255:40:255]CTRL + цифровая клавиша[COLOR_REVERT], чтобы сохранить производственную очередь. Эту очередь можно загрузить в любом другом населенном пункте, нажав выбранную [COLOR:140:255:40:255]цифру[COLOR_REVERT].</Russian>
+		<Hungarian>A település képernyőn nyomd meg a [COLOR:140:255:40:255]&lt; CTRL + # &gt;[COLOR_REVERT] billentyűkombinációt a gyártási sor mentéséhez. Ez a sor bármely más településen betölthető a [COLOR:140:255:40:255]&lt; # &gt;[COLOR_REVERT] billentyűkombinációval.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_22</Tag>
@@ -1307,6 +1321,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; F11 &gt;[COLOR_REVERT] per attivare/disattivare la visuale globale.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; F11 &gt;[COLOR_REVERT] para entrar y salir de la Vista global.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]F11[COLOR_REVERT] для быстрого переключения в режим глобуса и выхода из него.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; F11 &gt;[COLOR_REVERT] gombokkal gyorsan be- és kikapcsolhatja a Glóbusz nézetet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_23</Tag>
@@ -1316,6 +1331,7 @@ Viel Spass![NEWLINE]
 		<Italian>Quando sei nella schermata dell'insediamento, puoi usare la [COLOR:140:255:40:255]&lt; FRECCIA SINISTRA &gt;[COLOR_REVERT] e la [COLOR:140:255:40:255]&lt; FRECCIA DESTRA &gt;[COLOR_REVERT] per scorrere gli insediamenti...</Italian>
 		<Spanish>En la pantalla del asentamiento se puede usar la [COLOR:140:255:40:255]&lt; FLECHA IZQUIERDA &gt;[COLOR_REVERT] y la [COLOR:140:255:40:255]&lt; FLECHA DERECHA &gt;[COLOR_REVERT] para pasar de un asentamiento a otro.</Spanish>
 		<Russian>На экране колонии вы можете использовать [COLOR:140:255:40:255]стрелка ВЛЕВО[COLOR_REVERT] и [COLOR:140:255:40:255]стрелка ВПРАВО[COLOR_REVERT] для переключения между поселениями.</Russian>
+		<Hungarian>A település képernyőn a [COLOR:140:255:40:255]&lt; BALRA NYÍL &gt;[COLOR_REVERT] és a [COLOR:140:255:40:255]&lt; JOBBRA NYÍL &gt;[COLOR_REVERT] gombokkal válthatsz a települések között.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_24</Tag>
@@ -1325,6 +1341,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + B &gt;[COLOR_REVERT] per attivare/disattivare la visuale mappa semplificata.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + B &gt;[COLOR_REVERT] para activar la vista del mapa limpio.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + B[COLOR_REVERT] для переключения режима пустой карты. [COLOR_NEGATIVE_TEXT](ПОКА НЕ РАБОТАЕТ)[COLOR_REVERT]</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + B &gt;[COLOR_REVERT] gombokkal válthatsz a Puszta Térkép nézetre.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_25</Tag>
@@ -1334,6 +1351,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + R &gt;[COLOR_REVERT] per visualizzare/nascondere la segnalazione risorse.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + R &gt;[COLOR_REVERT] para activar las marcas de recursos.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + R[COLOR_REVERT] для вкл/выкл флага ресурсов. [COLOR_NEGATIVE_TEXT](ПОКА НЕ РАБОТАЕТ)[COLOR_REVERT]</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + R &gt;[COLOR_REVERT] billentyűkombinációval kapcsolhatod be vagy ki a Bónusz Erőforrás nézetet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_26</Tag>
@@ -1343,6 +1361,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + Y &gt;[COLOR_REVERT] per visualizzare/nascondere la produzione.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + Y &gt;[COLOR_REVERT] para activar la vista Mostrar rendimientos.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + Y[COLOR_REVERT], чтобы вкл/выкл доходность клеток.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + Y &gt;[COLOR_REVERT] billentyűkombinációval kapcsolhatod be vagy ki a Hozamok megjelenítését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_27</Tag>
@@ -1352,6 +1371,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + A &gt;[COLOR_REVERT] per forzare il movimento di tutte le unità con ordini in coda.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + A &gt;[COLOR_REVERT] para obligar a moverse a todas las unidades con órdenes en cola.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + A[COLOR_REVERT], чтобы заставить все юниты с очередью приказов двигаться.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + A &gt;[COLOR_REVERT] gombokkal elindíthatod az összes sorban álló egység mozgását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_28</Tag>
@@ -1361,6 +1381,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + T &gt;[COLOR_REVERT] per attivare la griglia delle caselle.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + T &gt;[COLOR_REVERT] para activar la cuadrícula.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + T[COLOR_REVERT] для вкл/выкл сетки клеток.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + T &gt;[COLOR_REVERT] gombokkal kapcsolhatod be és ki a Mező Rácsot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_29</Tag>
@@ -1370,6 +1391,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; ALT + Q &gt;[COLOR_REVERT] per ritirarti dalla partita. Nel multigiocatore, il controllo della tua colonia viene automaticamente assegnato alla IA.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; ALT + Q &gt;[COLOR_REVERT] para retirarse de la partida. En el modo para varios jugadores esto le dará el control de las colonias a la IA.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]ALT + Q[COLOR_REVERT] для выхода из игры. В многопользовательском режиме это автоматически передает контроль над вашими колониями ИИ. [COLOR_NEGATIVE_TEXT](ПОКА НЕ РАБОТАЕТ)[COLOR_REVERT]</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; ALT + Q &gt;[COLOR_REVERT] billentyűkombinációval kiléphetsz a játékból. Többjátékos módban ez automatikusan átadja a kolóniáid irányítását az MI-nek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_30</Tag>
@@ -1379,6 +1401,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; PAUSA &gt;[COLOR_REVERT] per interrompere il timer del turno.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; PAUSA &gt;[COLOR_REVERT] para interrumpir el contador del turno.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]PAUSE[COLOR_REVERT], чтобы прервать таймер хода (для мультиплеера).</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; PAUSE &gt;[COLOR_REVERT] gomb megnyomásával megszakíthatod a köridőzítőt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_31</Tag>
@@ -1388,6 +1411,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; MAIUSC + TAB &gt;[COLOR_REVERT] per comunicare via chat con tutti in Multigiocatore.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; MAYÚS + TAB &gt;[COLOR_REVERT] para charlar con todos en el modo multijugador.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]SHIFT + TAB[COLOR_REVERT] для общения со всеми игроками в многопользовательском режиме.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT + TAB &gt;[COLOR_REVERT] billentyűkombinációval beszélgethetsz mindenkivel a többjátékos módban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_32</Tag>
@@ -1397,6 +1421,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; TAB &gt;[COLOR_REVERT] per comunicare via chat con gli alleati in Multigiocatore.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; TAB &gt;[COLOR_REVERT] para charlar con los compañeros de equipo en el modo multijugador.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]TAB[COLOR_REVERT] для общения с товарищами по команде в сетевой игре.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT + TAB &gt;[COLOR_REVERT] billentyűkombinációval beszélgethetsz mindenkivel a többjátékos módban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_33</Tag>
@@ -1406,6 +1431,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + W &gt;[COLOR_REVERT] per accedere all'editor.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + W &gt;[COLOR_REVERT] para acceder al creador de mundos.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + W[COLOR_REVERT] для доступа к Строителю мира.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + W &gt;[COLOR_REVERT] billentyűkombinációval érheted el a Világépítőt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_34</Tag>
@@ -1415,6 +1441,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; W &gt;[COLOR_REVERT] o [COLOR:140:255:40:255]&lt; INVIO &gt;[COLOR_REVERT] per scorrere le unità attive.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; W &gt;[COLOR_REVERT] o [COLOR:140:255:40:255]&lt; INTRO &gt;[COLOR_REVERT] para pasar de una unidad activa a otra.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]W[COLOR_REVERT] или [COLOR:140:255:40:255]ENTER[COLOR_REVERT] для переключения между активными юнитами.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; W &gt;[COLOR_REVERT] vagy az [COLOR:140:255:40:255]&lt; ENTER &gt;[COLOR_REVERT] gombokkal válthatsz az aktív egységek között.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_36</Tag>
@@ -1424,6 +1451,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; , &gt;[COLOR_REVERT] e [COLOR:140:255:40:255]&lt; . &gt;[COLOR_REVERT] per scorrere tra le unità che si trovano nella stessa casella.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; , (coma) &gt;[COLOR_REVERT] y [COLOR:140:255:40:255]&lt; . (punto) &gt;[COLOR_REVERT] para desplazarse por las unidades que estén en la misma casilla.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255], (запятая)[COLOR_REVERT] или [COLOR:140:255:40:255]. (точка)[COLOR_REVERT] для прокрутки юнитов на одной клетке.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; VESSZŐ &gt;[COLOR_REVERT] és [COLOR:140:255:40:255]&lt; PONT &gt;[COLOR_REVERT] gombokkal válthatsz az ugyanazon a mezőn lévő egységek között.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_37</Tag>
@@ -1433,6 +1461,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; MAIUSC + INVIO &gt;[COLOR_REVERT] per forzare la fine del turno.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; MAYÚS + INTRO &gt;[COLOR_REVERT] para forzar el final del turno.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]SHIFT + ENTER[COLOR_REVERT] для принудительного завершения хода.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT + ENTER &gt;[COLOR_REVERT] gombokkal véget vethetsz a körnek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_38</Tag>
@@ -1442,6 +1471,7 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto [COLOR:140:255:40:255]&lt; ALT &gt;[COLOR_REVERT] e punta con il mouse una casella per visualizzare le probabilità di vittoria in caso di attacco.</Italian>
 		<Spanish>Mantener Pulsara la tecla [COLOR:140:255:40:255]&lt; ALT &gt;[COLOR_REVERT] mientras se señala una casilla con el cursor para ver las probabilidades de un ataque.</Spanish>
 		<Russian>Удерживайте кнопку [COLOR:140:255:40:255]ALT[COLOR_REVERT] при наведении курсора мыши на клетку с врагом, чтобы просмотреть примерный расчет итогов сражения.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; ALT &gt;[COLOR_REVERT] billentyűt lenyomva tartva, az egérrel a térképen egy ponton áthúzva megtekintheted a támadás esélyeit.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_39</Tag>
@@ -1451,6 +1481,7 @@ Viel Spass![NEWLINE]
 		<Italian>Per visualizzare le probabilità di vittoria di uno scontro, tieni premuto il pulsante destro del mouse su una casella bersaglio.</Italian>
 		<Spanish>Mantener el cursor encima de la casilla objetivo para ver las probabilidades del combate.</Spanish>
 		<Russian>Чтобы просмотреть примерный расчет итогов сражения, удерживайте правую кнопку мыши на целевой клетке.</Russian>
+		<Hungarian>A harci esélyek megtekintéséhez tartsd lenyomva a jobb egérgombot a célpont mezőn.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_40</Tag>
@@ -1460,6 +1491,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; HOME &gt;[COLOR_REVERT] e [COLOR:140:255:40:255]&lt; FINE &gt;[COLOR_REVERT] per scorrere i tuoi insediamenti...</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; INICIO &gt;[COLOR_REVERT] y [COLOR:140:255:40:255]&lt; FIN &gt;[COLOR_REVERT] para pasar de un asentamiento a otro.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]HOME[COLOR_REVERT] или [COLOR:140:255:40:255]END[COLOR_REVERT] для перехода к поселениям на карте.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; HOME &gt;[COLOR_REVERT] és [COLOR:140:255:40:255]&lt; END &gt;[COLOR_REVERT] gombokkal válthatsz a településeid között.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_41</Tag>
@@ -1469,6 +1501,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; INS &gt;[COLOR_REVERT] per aprire la schermata dell'insediamento alleato più vicino.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; INSERT &gt;[COLOR_REVERT] para abrir el asentamiento amistoso más cercano.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]INSERT[COLOR_REVERT], чтобы открыть ближайшее дружественное поселение.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; INSERT &gt;[COLOR_REVERT] gomb megnyomásával megnyithatod a legközelebbi baráti település képernyőjét.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_42</Tag>
@@ -1478,6 +1511,7 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto [COLOR:140:255:40:255]&lt; MAIUSC &gt;[COLOR_REVERT] per aggiungere degli oggetti in fondo alla coda di costruzione del tuo insediamento.</Italian>
 		<Spanish>Mantener Pulsara la tecla [COLOR:140:255:40:255]&lt; MAYÚS &gt;[COLOR_REVERT] para añadir elementos al final de la cola de construcción del asentamiento.</Spanish>
 		<Russian>Удерживайте клавишу [COLOR:140:255:40:255]SHIFT[COLOR_REVERT] для добавления предметов в конец очереди строительства вашего поселения.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT &gt;[COLOR_REVERT] billentyű lenyomva tartásával hozzáadhatsz elemeket a település építési sorának végéhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_43</Tag>
@@ -1487,6 +1521,7 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] per aggiungere degli oggetti all'inizio della coda di costruzione del tuo insediamento.</Italian>
 		<Spanish>Mantener Pulsara la tecla [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] para insertar elementos al principio de la cola de construcción del asentamiento.</Spanish>
 		<Russian>Удерживайте клавишу [COLOR:140:255:40:255]CTRL[COLOR_REVERT] для вставки предметов в начало очереди строительства вашего поселения.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] billentyű lenyomva tartásával elemek illeszthetők be a település építési sorának elejére.</Hungarian>
 	</TEXT>
 	<!--<TEXT>  duplicate HINT_INTERFACE_1
 		<Tag>TXT_KEY_HINT_INTERFACE_44</Tag>
@@ -1496,15 +1531,18 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto [ALT] per fare in modo che un insediamento costruisca un oggetto all'infinito...</Italian>
 		<Spanish>Mantener pulsada la tecla [ALT] para hacer que el asentamiento construya un elemento indefinidamente.</Spanish>
 		<Russian>Удерживайте нажатой клавишу [COLOR:140:255:40:255]ALT[COLOR_REVERT], чтобы поселение строило предмет бесконечно.</Russian>
+		<Hungarian>Az [ALT] billentyűt lenyomva tartva a település végtelen ideig építhet egy dolgot.</Hungarian>
 	</TEXT>-->
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_45</Tag>
 		<English>Press the forward and back buttons on your mouse to cycle through units on the same plot.</English>
 		<French>Appuyez sur le bouton Suivant et Précédent de votre souris pour faire défiler les unités stationnées sur la même case.</French>
 		<German>Drücken Sie die Vorwärts-/Rückwärts-Tasten Ihrer Maus, um durch alle Einheiten auf einem Geländefeld zu schalten.</German>
+		<Hungarian>Az egér előre és vissza gombjaival válthatsz az ugyanazon a mezőn lévő egységek között.</Hungarian>
 		<Italian>Premi i pulsanti su e giù sul mouse per scorrere le unità sulla stessa casella.</Italian>
 		<Spanish>Pulsar los botones de adelante y atrás del ratón para pasar de una unidad a otra en la misma casilla.</Spanish>
 		<Russian>Нажимайте кнопки "Вперед" и "Назад" на мыши, чтобы переключаться между юнитами на одной клетке.</Russian>
+		<Hungarian>Az egér előre és vissza gombjaival válthatsz az ugyanazon a mezőn lévő egységek között.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_46</Tag>
@@ -1514,6 +1552,7 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto il tasto [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] e usa la rotellina del mouse per scorrere tra le unità sulla stessa casella.</Italian>
 		<Spanish>Mantener Pulsara la tecla [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] y girar la rueda del ratón para pasar de una unidad a otra en la misma casilla.</Spanish>
 		<Russian>Удерживайте клавишу [COLOR:140:255:40:255]CTRL[COLOR_REVERT] и вращайте колесо мыши, чтобы переключаться между юнитами на одной клетке.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL &gt;[COLOR_REVERT] billentyűt lenyomva tartva forgasd az egérgörgőt, hogy ugyanazon a mezőn lévő egységek között válthass.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_47</Tag>
@@ -1523,6 +1562,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + M &gt;[COLOR_REVERT] per attivare e disattivare la musica.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + M &gt;[COLOR_REVERT] para encender o apagar la música.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + M[COLOR_REVERT] для включения и выключения музыки.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + M &gt;[COLOR_REVERT] gombokkal kapcsolhatod be és ki a zenét.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_48</Tag>
@@ -1532,6 +1572,7 @@ Viel Spass![NEWLINE]
 		<Italian>Muovi le unità su una casella lontana cliccandoci sopra con il [COLOR:140:255:40:255]&lt; PULSANTE DESTRO &gt;[COLOR_REVERT].</Italian>
 		<Spanish>Se pueden mover unidades a una casilla lejana haciendo [COLOR:140:255:40:255]&lt; CLIC DERECHO &gt;[COLOR_REVERT] en ella.</Spanish>
 		<Russian>Переместите юниты на отдалённую клетку с помощью [COLOR:140:255:40:255]ПКМ[COLOR_REVERT] на месте назначения.</Russian>
+		<Hungarian>Az egységeket egy távoli mezőre mozgathatod a [COLOR:140:255:40:255]&lt; JOBB EGÉRGOMB &gt;[COLOR_REVERT] segítségével a célpont mezőn.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_49</Tag>
@@ -1541,6 +1582,7 @@ Viel Spass![NEWLINE]
 		<Italian>Puoi muovere un gruppo di unità dello stesso tipo con [COLOR:140:255:40:255]&lt; CTRL + PULSANTE DESTRO &gt;[COLOR_REVERT] sulla destinazione.</Italian>
 		<Spanish>Se pueden mover en grupo todas las unidades del mismo tipo pulsando [COLOR:140:255:40:255]&lt; CTRL + CLIC DERECHO &gt;[COLOR_REVERT] en el lugar de destino.</Spanish>
 		<Russian>Вы можете сгруппировать перемещение всех юнитов одного типа с помощью [COLOR:140:255:40:255]CTRL + ПКМ[COLOR_REVERT] в месте назначения.</Russian>
+		<Hungarian>Az azonos típusú egységeket csoportosan mozgathatod a [COLOR:140:255:40:255]&lt; CTRL + JOBB EGÉRGOMB &gt;[COLOR_REVERT] segítségével a célpont mezőn.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_50</Tag>
@@ -1550,6 +1592,7 @@ Viel Spass![NEWLINE]
 		<Italian>Puoi muovere un gruppo di unità sulla stessa casella con [COLOR:140:255:40:255]&lt; ALT + PULSANTE DESTRO &gt;[COLOR_REVERT] sulla destinazione.</Italian>
 		<Spanish>Se pueden mover en grupo todas las unidades de la misma casilla pulsando [COLOR:140:255:40:255]&lt; ALT + CLIC DERECHO &gt;[COLOR_REVERT] en el lugar de destino.</Spanish>
 		<Russian>Вы можете сгруппировать перемещение всех юнитов на одной клетке с помощью [COLOR:140:255:40:255]ALT + ПКМ[COLOR_REVERT] в пункте назначения.</Russian>
+		<Hungarian>Az azonos mezőn lévő összes egységet csoportosan mozgathatod az [COLOR:140:255:40:255]&lt; ALT + JOBB EGÉRGOMB &gt;[COLOR_REVERT] segítségével a célpont mezőn.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_51</Tag>
@@ -1559,6 +1602,7 @@ Viel Spass![NEWLINE]
 		<Italian>Passa alla modalità "Vai a" premendo [COLOR:140:255:40:255]&lt; G &gt;[COLOR_REVERT].</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; G &gt;[COLOR_REVERT] para entrar en el modo "Ir a".</Spanish>
 		<Russian>Войдите в режим "Идти к городу", нажав [COLOR:140:255:40:255]G[COLOR_REVERT].</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; G &gt;[COLOR_REVERT] gomb megnyomásával a "Menj Oda" módba lépsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_52</Tag>
@@ -1568,6 +1612,7 @@ Viel Spass![NEWLINE]
 		<Italian>Passa alla modalità "Vai a (unità dello stesso tipo)" premendo [COLOR:140:255:40:255]&lt; CTRL + G &gt;[COLOR_REVERT].</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + G &gt;[COLOR_REVERT] para entrar en el modo "Ir a (mismo tipo de unidad)".</Spanish>
 		<Russian>Войдите в режим "Идти к (для юнитов одного типа)", нажав [COLOR:140:255:40:255]CTRL + G[COLOR_REVERT].</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + G &gt;[COLOR_REVERT] gombok megnyomásával a "Menj Oda" (Azonos Egységtípus) módba léphetsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_53</Tag>
@@ -1577,6 +1622,7 @@ Viel Spass![NEWLINE]
 		<Italian>Passa alla modalità "Vai a (tutte le unità)" premendo [COLOR:140:255:40:255]&lt; ALT + G &gt;[COLOR_REVERT].</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; ALT + G &gt;[COLOR_REVERT] para entrar en el modo "Ir a (todas las unidades)".</Spanish>
 		<Russian>Войдите в режим "Идти к (для всех юнитов)", нажав [COLOR:140:255:40:255]ALT + G[COLOR_REVERT].</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; ALT + G &gt;[COLOR_REVERT] gombok megnyomásával la "Menj Oda" (minden egység) módba léphetsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_54</Tag>
@@ -1586,6 +1632,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; C &gt;[COLOR_REVERT] per centrare la visuale sull'unità attiva.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; C &gt;[COLOR_REVERT] para centrar la cámara en la unidad activa.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]C[COLOR_REVERT] для центрирования камеры на активном юните.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; C &gt;[COLOR_REVERT] gomb megnyomásával a kamera az aktív egységre fókuszál.</Hungarian>
 	</TEXT>
 	<!--<TEXT> duplicate HINT_INTERFACE_56
 		<Tag>TXT_KEY_HINT_INTERFACE_55</Tag>
@@ -1594,6 +1641,7 @@ Viel Spass![NEWLINE]
 		<German>[STRG + C] wählt alle Einheiten desselben Typs auf dem Geländefeld der aktiven Einheit.</German>
 		<Italian>Premi [CTRL + C] per selezionare tutte le unità dello stesso tipo sulla stessa casella di quella attiva.</Italian>
 		<Spanish>Pulsar [CTRL + C] para seleccionar todas las unidades del mismo tipo que haya en la misma casilla que la unidad activa...</Spanish>
+		<Hungarian>A [CTRL + C] billentyűkombinációval kijelölheted az aktív egységével azonos típusú, ugyanazon a mezőn található összes egységet.</Hungarian>
 	</TEXT>-->
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_56</Tag>
@@ -1603,6 +1651,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; ALT + C &gt;[COLOR_REVERT] per selezionare tutte le unità sulla stessa casella di quella attiva.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; ALT + C &gt;[COLOR_REVERT] para seleccionar todas las unidades de la misma casilla que la unidad activa.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]ALT + C[COLOR_REVERT], чтобы выбрать все юниты на той же клетке, что и активный юнит.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; ALT + C &gt;[COLOR_REVERT] billentyűkombinációval kiválaszthatod az aktív egységével azonos mezőn lévő összes egységet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_57</Tag>
@@ -1612,24 +1661,27 @@ Viel Spass![NEWLINE]
 		<Italian>Se tieni premuto il tasto [MAIUSC] mentre clicchi sulla barra degli insediamenti, puoi "selezionare" più insediamenti. Puoi anche usare [MAIUSC + PULSANTE DESTRO] per impostare un punto di raduno...</Italian>
 		<Spanish>Si se mantiene pulsada la tecla [MAYÚS] mientras se hace clic en la barra del asentamiento, se pueden "seleccionar" varios asentamientos. También se puede usar [MAYÚS] + [CLIC DERECHO] para establecer un punto de concentración.</Spanish>
 		<Russian>Если удерживать клавишу [COLOR:140:255:40:255]SHIFT[COLOR_REVERT] и нажимать на панель поселения в круге строительства, можно не заходя в поселение изменять строительство. Также вы можете "выбрать" несколько поселений (зачем?). А выделив колонию и применив комбинацию [COLOR:140:255:40:255]SHIFT + ПКМ[COLOR_REVERT] на какой-либо клетке, можно установить точку сбора для юнитов.</Russian>
+		<Hungarian>Ha lenyomva tartod a [SHIFT] billentyűt, miközben rákattintasz a Települések sávra, több települést is „kiválaszthatsz”. A [SHIFT + JOBB EGÉRGOMB] billentyűkombinációval beállíthatsz egy gyülekezőhelyet is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_58</Tag>
-		<English>If you hold down the [CTRL] key while clicking on the Settlement Bar, you will "select" all of your Settlements on that continent.</English>
+		<English>If you hold down the [CTRL] key while clicking on the Settlement Bar, you will "select" all of your settlements on that continent.</English>
 		<French>Maintenez la touche [CTRL] enfoncée et cliquez sur la barre des villes pour sélectionner toutes vos colonies sur le même continent.</French>
 		<German>Halten Sie [STRG] gedrückt und klicken Sie auf die Siedlungsleiste, um alle Ihre Siedlungen auf diesem Kontinent auszuwählen.</German>
 		<Italian>Se tieni premuto il tasto [CTRL] mentre clicchi sulla barra dell'insediamento, puoi "selezionare" tutti gli insediamenti di quel continente...</Italian>
 		<Spanish>Si se mantiene pulsada la tecla [CTRL] mientras se hace clic en la barra del asentamiento, se "seleccionan" todos los asentamientos propios en ese continente.</Spanish>
 		<Russian>Если удерживать клавишу [COLOR:140:255:40:255]CTRL[COLOR_REVERT] и нажать на панель поселения, можно "выбрать" все свои поселения на текущем континенте.</Russian>
+		<Hungarian>Ha lenyomva tartod a [CTRL] billentyűt, miközben rákattintasz a Települések sávra, akkor az adott kontinensen található összes települést „kiválasztod”.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_59</Tag>
-		<English>If you hold down the [ALT] key while clicking on the Settlement Bar, you will "select" all of your Settlements.</English>
+		<English>If you hold down the [ALT] key while clicking on the Settlement Bar, you will select all of your settlements.</English>
 		<French>Maintenez la touche [ALT] enfoncée et cliquez sur la barre des colonies pour sélectionner toutes vos colonies.</French>
 		<German>Halten Sie [ALT] gedrückt und klicken Sie auf die Siedlungsleiste, um alle Ihre Siedlungen auszuwählen.</German>
 		<Italian>Se tieni premuto il tasto [ALT] mentre clicchi sulla barra dell'insediamento, puoi "selezionare" tutti i tuoi insediamenti...</Italian>
 		<Spanish>Si se mantiene pulsada la tecla [ALT] mientras se hace clic en la barra del asentamiento, se "seleccionan" todos los asentamientos propios en el mundo.</Spanish>
 		<Russian>Если удерживать клавишу [COLOR:140:255:40:255]ALT[COLOR_REVERT] и нажать на панель поселения, можно "выбрать" все свои поселения.</Russian>
+		<Hungarian>Ha lenyomva tartod az [ALT] billentyűt, miközben rákattintasz a Települések sávra, akkor az összes települést „kiválasztod”.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_61</Tag>
@@ -1639,6 +1691,7 @@ Viel Spass![NEWLINE]
 		<Italian>Puoi dare a un'unità ordini consecutivi premendo il tasto [MAIUSC]. Per esempio puoi ordinare a un pioniere di costruire prima una strada e poi una miniera cliccando sui rispettivi pulsanti mentre tieni premuto [MAIUSC].</Italian>
 		<Spanish>Es posible darle órdenes consecutivas a una unidad si se pulsa la tecla [MAYÚS]. Por ejemplo, se le puede decir a un Pionero que construya primero una carretera y luego una mina haciendo clic en esos dos botones mientras se mantiene pulsada la tecla [MAYÚS].</Spanish>
 		<Russian>Вы можете отдавать отряду последовательные приказы, зажимая клавишу [COLOR:140:255:40:255]SHIFT[COLOR_REVERT]. Например, вы можете приказать первопроходцу построить сначала ферму, а затем шахту, нажав на обе кнопки приказов и удерживая при этом нажатой клавишу [COLOR:140:255:40:255]SHIFT[COLOR_REVERT].</Russian>
+		<Hungarian>A [SHIFT] billentyű lenyomásával egymást követő parancsokat adhatsz egy egységnek. Például, ha lenyomva tartod a [SHIFT] billentyűt és mindkét gombra rákattintasz, akkor megparancsolhatod az Utásznak, hogy építsen egy utat, majd egy bányát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_62</Tag>
@@ -1648,6 +1701,7 @@ Viel Spass![NEWLINE]
 		<Italian>Tieni premuto il tasto [COLOR:140:255:40:255]&lt; MAIUSC &gt;[COLOR_REVERT] e clicca su una casella per aprire un menu contestuale.</Italian>
 		<Spanish>Mantener Pulsara la tecla [COLOR:140:255:40:255]&lt; MAYÚS &gt;[COLOR_REVERT] y hacer clic en una casilla para abrir un menú contextual.</Spanish>
 		<Russian>Удерживайте [COLOR:140:255:40:255]SHIFT[COLOR_REVERT] и щелкните на клетке, чтобы открыть контекстное меню. [COLOR_NEGATIVE_TEXT](ПОКА НЕ РАБОТАЕТ)[COLOR_REVERT]</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; SHIFT &gt;[COLOR_REVERT] billentyűt lenyomva tartva kattints egy mezőre, hogy megnyisd a helyi menüt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_63</Tag>
@@ -1657,6 +1711,7 @@ Viel Spass![NEWLINE]
 		<Italian>Quando sei nella schermata dell'insediamento puoi usare i tasti freccia del tastierino numerico per passare da un insediamento all'altro.</Italian>
 		<Spanish>Las flechas del TECLADO NUMÉRICO se pueden usar para pasar de un asentamiento a otro en la pantalla del asentamiento.</Spanish>
 		<Russian>Клавиши со стрелками [COLOR:140:255:40:255]NUMPAD[COLOR_REVERT] можно использовать для перехода между поселениями, когда открыт экран поселений.</Russian>
+		<Hungarian>A NUMPAD nyílgombokkal lehet ugrálni a települések között, amikor a Település képernyőn.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_64</Tag>
@@ -1666,6 +1721,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; \ &gt;[COLOR_REVERT] per tornare all'ultima unità selezionata.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; \ &gt;[COLOR_REVERT] para volver a la anterior unidad seleccionada.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]\[COLOR_REVERT] для возврата к последнему выбранному юниту.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; \ &gt;[COLOR_REVERT] gomb megnyomásával visszatérhetsz az utoljára kiválasztott egységhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_65</Tag>
@@ -1675,6 +1731,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + TAB &gt;[COLOR_REVERT] per vedere il registro degli eventi.</Italian>
 		<Spanish>Pulsar [COLOR:140:255:40:255]&lt; CTRL + TAB &gt;[COLOR_REVERT] para ver el historial de sucesos del turno.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + TAB[COLOR_REVERT] для просмотра журнала событий.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + TAB &gt;[COLOR_REVERT] billentyűkombinációval megtekintheted a kör eseménynaplóját.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_66</Tag>
@@ -1684,6 +1741,7 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; ALT + S &gt;[COLOR_REVERT] per aggiungere sulla mappa un segnale visibile soltanto a te e ai tuoi alleati.</Italian>
 		<Spanish>Pulsa [COLOR:140:255:40:255]&lt; ALT + S &gt;[COLOR_REVERT] para añadir al mapa un letrero que podáis ver tus compañeros y tú.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]ALT + S[COLOR_REVERT], чтобы добавить на карту заметку, которую сможете видеть вы и ваши товарищи по команде.</Russian>
+		<Hungarian>Az [COLOR:140:255:40:255]&lt; ALT + S &gt;[COLOR_REVERT] billentyűkombinációval jelölést adhatsz hozzá a térképhez, amit te és csapattársaid láthatnak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_INTERFACE_67</Tag>
@@ -1693,5 +1751,6 @@ Viel Spass![NEWLINE]
 		<Italian>Premi [COLOR:140:255:40:255]&lt; CTRL + H &gt;[COLOR_REVERT] per selezionare tutte le unità ferite sulla casella.</Italian>
 		<Spanish>Pulsa [COLOR:140:255:40:255]&lt; CTRL + H &gt;[COLOR_REVERT] para seleccionar todas las unidades heridas en una casilla.</Spanish>
 		<Russian>Нажмите [COLOR:140:255:40:255]CTRL + H[COLOR_REVERT], чтобы выбрать все раненые отряды на клетке.</Russian>
+		<Hungarian>A [COLOR:140:255:40:255]&lt; CTRL + H &gt;[COLOR_REVERT] billentyűkombinációval kiválaszthatod az összes sebesült egységet egy mezőn.</Hungarian>
 	</TEXT>
 </Civ4GameText>
