@@ -1318,8 +1318,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CRIMINALS_BLACKMAIL_CITY_DIRECT_RAID_GOLD</Tag>
-		<English>There were no defenders in %s1_city. The criminals plundered the settlement and carried off %d2 gold.</English>
-		<German>Die Kriminellen plünderten die Siedlung und schafften %d2 Gold fort.</German>
+		<English>The defenders in %s1_city were unable to prevent the theft. The criminals plundered the settlement and carried off %d2 gold.</English>
+		<German>Die Kriminellen in %s1_city plünderten die Siedlung und schafften %d2 Gold fort.</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>
