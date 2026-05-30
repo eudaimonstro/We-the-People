@@ -2935,4 +2935,148 @@
 		<German>Sehr außergewöhnlich! Und wahrlich zur rechten Zeit. Wir können alles brauchen, was die Menschen in die Neue Welt treibt - und selbst wenn es nur ein Gerücht über eine heiße Quelle irgendwo im Nirgendwo ist!</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT_1</Tag>
+		<English>Unbelievable! If there is even a grain of truth in these rumours, we need to find out more. Bring these [COLOR_HIGHLIGHT_TEXT]conquistadors[COLOR_REVERT] to our [COLOR_HIGHLIGHT_TEXT]capital[COLOR_REVERT] immediately and safely.</English>
+		<German>Unfassbar! Sollte auch nur ein Körnchen Wahrheit in diesen Gerüchten liegen, müssen wir mehr erfahren. Bringt diese [COLOR_HIGHLIGHT_TEXT]Konquistadoren[COLOR_REVERT] unverzüglich und sicher [COLOR_HIGHLIGHT_TEXT]in unsere Hauptstadt[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT_2</Tag>
+		<English>This isn’t the first time, and it won’t be the last, that we’ve been fed stories like this. We don’t have time for this nonsense. The men are welcome to join us – let’s carry on searching for real treasures.</English>
+		<German>Das ist nicht das erste Mal und es wird auch nicht das letzte Mal sein, dass uns solche Geschichten aufgetischt werden. Für diesen Unsinn haben wir keine Zeit. Die Männer können sich uns anschließen - suchen wir weiter nach echten Schätzen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_INITIAL_QUEST_FAILED</Tag>
+		<English>The conquistadors, who claimed to have heard rumours of the Seven Cities of Cibola, were swallowed up by the wilderness – and with them went the rumours of the Seven Cities of Cibola. May God have mercy on their poor souls!</English>
+		<German>Die Konquistadoren, die angeblich Gerüchte über die sieben Städte von Cibola gehört haben wollen, wurden von der Wildnis verschluckt - und mit ihnen die Gerüchte über die Sieben Städte von Cibola. Sei Gott ihren armen Seelen gnädig!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_REJECT</Tag>
+		<English>What do they take me for? I’m a royal official, not an adventurer. I’m not going to make a fool of myself by chasing after a ghost town – not with a large expedition, nor with a small one! It’s all just a figment of the imagination. Forget this nonsense once and for all!</English>
+		<German>Wofür halten die mich - Ich bin königlicher Beamter und kein Abenteurer. Ich mache mich doch nicht lächerlich und jage einer Geisterstadt nach - weder mit einer großen, noch mit einer kleinen Expedition! Das sind doch nur Hirngespinste. Vergesst diese Mär ein für alle Mal!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_REJECT_HELP</Tag>
+		<English>The rumors surrounding Cibola shall be dismissed and no further expeditions financed.</English>
+		<German>Die Gerüchte um Cibola sollen verworfen und keine weiteren Expeditionen finanziert werden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_PREPARATION</Tag>
+		<English>Wonderful! We’ve been waiting for this news for a very long time. We’re going to organise a major expedition and secure the gold for the crown. Get everything ready at once! I can already smell the gold...</English>
+		<German>Wunderbar! Sehr lange haben wir auf diese Nachricht gewartet. Wir werden eine große Expedition zusammenstellen und das Gold für die Krone sichern. Lasst sofort alles vorbereiten! Ich kann das Gold schon riechen...</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_START_EXP_HELP</Tag>
+		<English>A great expedition shall be assembled to search for the legendary Seven Cities of Cibola. The preparations cost [COLOR_HIGHLIGHT_TEXT]2000 gold, 50 provisions, 50 blades and 50 guns as well as two mounted conquistadors in this city[COLOR_REVERT].</English>
+		<German>Eine große Expedition soll zusammengestellt werden, um nach den sagenhaften Sieben Städten von Cibola zu suchen. Die Vorbereitungen kosten [COLOR_HIGHLIGHT_TEXT]2000 Gold, 50 Proviant, 50 Klingenwaffen und 50 Schusswaffen und drei Einheiten berittene Konquistadoren in der Stadt[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_PREPARATION_DONE_HELP</Tag>
+		<English>The expedition is now ready to depart. Supplies and weapons will be taken from the capital. In the next round, you can set off on your expedition!</English>
+		<German>Die Expedition ist nun bereit zum Aufbruch. Vorräte und Waffen werden aus der Hauptstadt entnommen. In der nächsten Runde könnt ihr Eure Expedition beginnen!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_PREPARATION_DONE</Tag>
+		<English>Brilliant, roll out the banners and let's get rich! Wie will start soon.</English>
+		<German>Ausgezeichnet, rollt die Banner aus und lasst uns reich werden! Bald geht es los. </German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_1</Tag>
+		<English>Excellent, then spur the horses on. We set out as beggars, and we shall return as rich men. A great day for our nation!</English>
+		<German>Ausgezeichnet, dann gebt den Pferden die Sporen. Als Bettler ziehen wir aus und als reiche Männer werden wir heimkehren. Ein großer Tag für unsere Nation!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_START_HELP</Tag>
+		<English>Lead your [COLOR_HIGHLIGHT_TEXT] expedition (all three conquistadors) straight to the other end of the map [COLOR_REVERT]until you come across new clues about the Seven Cities of Cibola.</English>
+		<German>Zieht mit Eurer [COLOR_HIGHLIGHT_TEXT]Expedition (alle drei Konquistadoren) immer geradewegs an das andere Ende der Karte[COLOR_REVERT], bis ihr auf neue Hinweise auf die Sieben Städte von Cibola stoßt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_2</Tag>
+		<English>We’re moving further inland. Give them both something to eat and drink, and send them to the capital with an interim report. And pay out more pay so the men stay calm.</English>
+		<German>Wir ziehen weiter ins Landesinnere. Gebt den beiden etwas zu essen und zu trinken und schickt Sie mit einem Zwischenbericht in die Hauptstadt. Und zahlt mehr Sold aus, damit die Männer ruhig bleiben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_1_DONE_HELP</Tag>
+		<English>[ICON_BULLET]You come across an old missionary and a confused trader.[NEWLINE][ICON_BULLET]Ride deeper into the interior: gather at least %d1 Mounted Conquistadors on the same plot, at least %d2 tiles away from your capital and at least %d tiles away from the ocean.</English>
+		<German>[ICON_BULLET]Ihr stoßt auf einen alten Missionar und einen verwirrten Händler.[NEWLINE][ICON_BULLET]Dringe tiefer ins Landesinnere vor: Versammle mindestens %d1 berittene Konquistadoren auf demselben Feld, mindestens %d2 Felder von deiner Hauptstadt entfernt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_1_HELP</Tag>
+		<English>[ICON_BULLET]Ride further inland: Gather at least %d1 mounted conquistadors on the same tile, at least %d2 tiles away from your capital.</English>
+		<German>[ICON_BULLET]Dringe tiefer ins Landesinnere vor: Versammle mindestens %d1 berittene Konquistadoren auf demselben Feld und mindestens %d2 Felder von deiner Hauptstadt entfernt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_3</Tag>
+		<English>We’ll press on and fight our way through if we have to. We’ve come this far; we’re not giving up now!</English>
+		<German>Wir werden weiterziehen und uns notfalls da durchkämpfen. Wir sind soweit gekommen, wir geben jetzt nicht so einfach auf!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_2_DONE_HELP</Tag>
+		<English>[ICON_BULLET]You come across an old missionary and a confused trader.[NEWLINE][ICON_BULLET]Ride deeper into the interior: gather at least %d1 Mounted Conquistadors on the same plot, at least %d2 tiles away from your capital and at least %d tiles away from the ocean.</English>
+		<German>[ICON_BULLET]Ihr werdet von Ureinwohnern angegriffen, die euch beobachten[NEWLINE][ICON_BULLET]Kämpft und dringt tiefer ins Landesinnere vor: Versammle mindestens %d1 berittene Konquistadoren auf demselben Feld, mindestens %d2 Felder von deiner Hauptstadt entfernt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_HOME</Tag>
+		<English>Search everywhere, spare no effort! This must be the golden paradise. And if the Indians refuse to hand everything over, show them that we fight alongside God and emerge victorious! After that, we’ll get out of here as quickly as possible and make our way home.</English>
+		<German>Durchsucht alles, scheut keine Mühen! Dies muss das goldene Paradies sein. Und wenn die Indianer sich weigern alles herauszurücken, zeigt Ihnen, dass wir mit Gott kämpfen und siegen! Danach verschwinden wir schnellstmöglich von hier und machen uns auf den Heimweg.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_3_DONE_HELP</Tag>
+		<English>[ICON_BULLET]The Indians are attacking you. As you search for the treasure, you have a realistic chance of finding a truly great treasure – make sure you bring it safely back to one of your towns!</English>
+		<German>[ICON_BULLET]Die Indianer greifen Euch an. Auf der Suche nach dem Schatz habt Ihr eine realistische Chance auf einen wahrlich großen Schatz - bringt ihn danach sicher in eine Eurer Städte!</German>
+		<Russian/>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_ARRIVAL_1</Tag>
+		<English>Yes, who would have thought it? The treasure will fill the king’s treasury. He should be grateful to us for that. Perhaps we’ll even be granted a title of nobility... who knows!</English>
+		<German>Ja, wer hätte das gedacht. Der Schatz wird die Schatzkammer des Königs füllen. Dafür sollte er uns dankbar sein. Vielleicht erhalten wir sogar einen Adelstitel...wer weiß!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_ARRIVAL_2</Tag>
+		<English>Well, who would have thought it? The treasure will fill the king’s treasury. He should be grateful to us for that and send a galleon so that the treasure can be brought to Europe.</English>
+		<German>Ja, wer hätte das gedacht. Der Schatz wird die Schatzkammer des Königs füllen. Dafür sollte er uns dankbar sein und eine Galeone schicken, damit der Schatz nach Europa gebracht werden kann.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_ARRIVAL_3</Tag>
+		<English>Well, who would have thought it? The treasure will fill the king’s treasury. He should be grateful to us for that. But first, we’re going to have a right good party here. Let all the townspeople drink to our health in the taverns – and we’ll have a good swig ourselves.</English>
+		<German>Ja, wer hätte das gedacht. Der Schatz wird die Schatzkammer des Königs füllen. Dafür sollte er uns dankbar sein. Aber zunächst werden wir hier mächtig feiern. Sollen alle Bürger auf unser Wohl in den Tavernen trinken - und wir genehmigen uns auch einen ordentlichen Schluck.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_1_HELP</Tag>
+		<English>[ICON_BULLET]Relations with the King improve by +%d1.</English>
+		<German>[ICON_BULLET]Die Beziehungen zum König verbessern sich um +%d1.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_2_HELP</Tag>
+		<English>[ICON_BULLET]Relations with the King improve by +%d1.</English>
+		<German>[ICON_BULLET]Die Beziehungen zum König verbessern sich um +%d1.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_3_HELP</Tag>
+		<English>[ICON_BULLET]Relations with the King improve by +%d1.</English>
+		<German>[ICON_BULLET]Die Beziehungen zum König verbessern sich um +%d1.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

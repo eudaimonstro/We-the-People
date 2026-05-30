@@ -23592,3 +23592,1311 @@ def applyFountainOfYouth(argsList):
 		)
 
 	_setFountainOfYouthDone(player)
+
+
+######## Seven Cities of Cibola Events and Quests ###########
+
+CIBOLA_MIN_DISTANCE_PERCENT = 35
+CIBOLA_INITIAL_CHANCE = 10
+
+CIBOLA_GOLD_COST = 2000
+CIBOLA_YIELD_COST = 50
+CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS = 3
+
+CIBOLA_YIELD_PROVISIONS = "YIELD_BAKERY_GOODS"
+CIBOLA_YIELD_BLADES = "YIELD_BLADES"
+CIBOLA_YIELD_MUSKETS = "YIELD_MUSKETS"
+
+CIBOLA_MOUNTED_CONQUISTADOR_UNITCLASS = "UNITCLASS_MOUNTED_CONQUISTADOR"
+
+CIBOLA_ACTIVE_MARKER = "[[WTP_CIBOLA_ACTIVE=1]]"
+CIBOLA_PREP_MARKER = "[[WTP_CIBOLA_PREP=1]]"
+CIBOLA_READY_MARKER = "[[WTP_CIBOLA_READY=1]]"
+CIBOLA_EXPEDITION_ACTIVE_MARKER = "[[WTP_CIBOLA_EXPEDITION_ACTIVE=1]]"
+CIBOLA_DONE_MARKER = "[[WTP_CIBOLA_DONE=1]]"
+
+CIBOLA_CONQUISTADOR_ID_PREFIX = "[[WTP_CIBOLA_CONQUISTADOR_ID="
+CIBOLA_CONQUISTADOR_ID_SUFFIX = "]]"
+
+
+def _getCibolaMainColony(player):
+	if player.isNone():
+		return None
+
+	(city, iter) = player.firstCity(True)
+	return city
+
+
+def _getCibolaMinDistanceToMainColony():
+	iMapWidth = CyMap().getGridWidth()
+	iMapHeight = CyMap().getGridHeight()
+
+	return max(12, min(iMapWidth, iMapHeight) * CIBOLA_MIN_DISTANCE_PERCENT / 100)
+
+
+def _hasCibolaMarker(player, szMarker):
+	if player.isNone():
+		return False
+
+	szData = player.getScriptData()
+
+	if szData is None:
+		return False
+
+	return szData.find(szMarker) != -1
+
+
+def _addCibolaMarker(player, szMarker):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+
+	if szData is None:
+		szData = ""
+
+	if szData.find(szMarker) == -1:
+		player.setScriptData(szData + szMarker)
+
+
+def _setCibolaConquistadorID(player, iUnitID):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(CIBOLA_CONQUISTADOR_ID_PREFIX)
+
+	if iStart != -1:
+		iEnd = szData.find(CIBOLA_CONQUISTADOR_ID_SUFFIX, iStart)
+
+		if iEnd != -1:
+			iEnd += len(CIBOLA_CONQUISTADOR_ID_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		CIBOLA_CONQUISTADOR_ID_PREFIX,
+		iUnitID,
+		CIBOLA_CONQUISTADOR_ID_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _getCibolaConquistadorID(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(CIBOLA_CONQUISTADOR_ID_PREFIX)
+
+	if iStart == -1:
+		return -1
+
+	iStart += len(CIBOLA_CONQUISTADOR_ID_PREFIX)
+
+	iEnd = szData.find(CIBOLA_CONQUISTADOR_ID_SUFFIX, iStart)
+
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _spawnCibolaConquistadorOnPlot(player, plot, iUnitClass):
+	if player.isNone():
+		return None
+
+	if plot is None or plot.isNone():
+		return None
+
+	if iUnitClass == -1:
+		return None
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	return player.initUnit(
+		iUnitType,
+		ProfessionTypes.NO_PROFESSION,
+		plot.getX(),
+		plot.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+
+def _countCibolaUnitsOnMainColonyPlot(player, szUnitClass):
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return 0
+
+	plot = mainColony.plot()
+
+	if plot is None or plot.isNone():
+		return 0
+
+	iUnitClass = gc.getInfoTypeForString(szUnitClass)
+
+	if iUnitClass == -1:
+		return 0
+
+	iCount = 0
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getOwner() != player.getID():
+			continue
+
+		if unit.getUnitClassType() == iUnitClass:
+			iCount += 1
+
+	return iCount
+
+
+def _canPayCibolaPreparationCosts(player):
+	if player.isNone():
+		return False
+
+	if player.getGold() < CIBOLA_GOLD_COST:
+		return False
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return False
+
+	for szYield in (
+		CIBOLA_YIELD_PROVISIONS,
+		CIBOLA_YIELD_BLADES,
+		CIBOLA_YIELD_MUSKETS
+	):
+		iYield = gc.getInfoTypeForString(szYield)
+
+		if iYield == -1:
+			return False
+
+		if mainColony.getYieldStored(iYield) < CIBOLA_YIELD_COST:
+			return False
+
+	return True
+
+
+def _payCibolaPreparationCosts(player):
+	if player.isNone():
+		return
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return
+
+	player.changeGold(-CIBOLA_GOLD_COST)
+
+	for szYield in (
+		CIBOLA_YIELD_PROVISIONS,
+		CIBOLA_YIELD_BLADES,
+		CIBOLA_YIELD_MUSKETS
+	):
+		iYield = gc.getInfoTypeForString(szYield)
+
+		if iYield != -1:
+			mainColony.changeYieldStored(iYield, -CIBOLA_YIELD_COST)
+
+######## Seven Cities of Cibola Initial Event ###########
+
+def canTriggerCibolaRumors(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_ACTIVE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_PREP_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_READY_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+
+	if unit is None or unit.isNone():
+		return False
+
+	if unit.getProfession() != gc.getInfoTypeForString("PROFESSION_SCOUT"):
+		return False
+
+	plot = unit.plot()
+
+	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX:
+		return False
+
+	if plot.getY() != kTriggeredData.iPlotY:
+		return False
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return False
+
+	if plotDistance(
+		plot.getX(),
+		plot.getY(),
+		mainColony.getX(),
+		mainColony.getY()
+	) < _getCibolaMinDistanceToMainColony():
+		return False
+
+	if CyGame().getSorenRandNum(100, "Cibola Rumors trigger") >= CIBOLA_INITIAL_CHANCE:
+		return False
+
+	return True
+
+
+def applyCibolaRumorsAccept(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_ACTIVE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	plot = gc.getMap().plot(
+		kTriggeredData.iPlotX,
+		kTriggeredData.iPlotY
+	)
+
+	if plot is None or plot.isNone():
+		return
+
+	unit = _spawnCibolaConquistadorOnPlot(
+		player,
+		plot,
+		event.getGenericParameter(1)
+	)
+
+	if unit is None or unit.isNone():
+		return
+
+	_setCibolaConquistadorID(player, unit.getID())
+	_addCibolaMarker(player, CIBOLA_ACTIVE_MARKER)
+
+
+def applyCibolaRumorsReject(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	_addCibolaMarker(player, CIBOLA_DONE_MARKER)
+
+
+def expireCibolaInitialQuest(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return True
+
+	iUnitID = _getCibolaConquistadorID(player)
+
+	if iUnitID == -1:
+		return True
+
+	unit = player.getUnit(iUnitID)
+
+	if unit is None or unit.isNone():
+		return True
+
+	return False
+
+
+######## Seven Cities of Cibola Preparation Event ###########
+
+
+def canTriggerCibolaInitialDone(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_ACTIVE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	mainColony = _getCibolaMainColony(player)
+	if mainColony is None or mainColony.isNone():
+		return False
+
+	iUnitID = _getCibolaConquistadorID(player)
+	if iUnitID == -1:
+		return False
+
+	unit = player.getUnit(iUnitID)
+	if unit is None or unit.isNone():
+		return False
+
+	if unit.getX() != mainColony.getX():
+		return False
+
+	if unit.getY() != mainColony.getY():
+		return False
+
+	return True
+
+
+def applyCibolaStartExpeditionPreparation(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_ACTIVE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_PREP_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_READY_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	_addCibolaMarker(player, CIBOLA_PREP_MARKER)
+
+
+def applyCibolaReject(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	_addCibolaMarker(player, CIBOLA_DONE_MARKER)
+
+
+def getHelpCibolaStartExpeditionPreparation(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_START_EXP_HELP",
+		()
+	)
+
+
+def getHelpCibolaReject(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_REJECT_HELP",
+		()
+	)
+
+
+######## Seven Cities of Cibola Preparation Done Event ###########
+
+def canTriggerCibolaPreparationDone(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_PREP_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_READY_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getID() != mainColony.getID():
+		return False
+
+	if _countCibolaUnitsOnMainColonyPlot(
+		player,
+		CIBOLA_MOUNTED_CONQUISTADOR_UNITCLASS
+	) < CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS:
+		return False
+
+	return _canPayCibolaPreparationCosts(player)
+
+
+def applyCibolaPreparationDone(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_PREP_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_READY_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return
+
+	if city.getID() != mainColony.getID():
+		return
+
+	if _countCibolaUnitsOnMainColonyPlot(
+		player,
+		CIBOLA_MOUNTED_CONQUISTADOR_UNITCLASS
+	) < CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS:
+		return
+
+	if not _canPayCibolaPreparationCosts(player):
+		return
+
+	_payCibolaPreparationCosts(player)
+	_addCibolaMarker(player, CIBOLA_READY_MARKER)
+
+
+def getHelpCibolaPreparationDone(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_PREPARATION_DONE_HELP",
+		()
+	)
+
+######## Seven Cities of Cibola Start Expedition Event ###########    
+
+def canTriggerCibolaExpeditionStart(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_READY_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_EXPEDITION_ACTIVE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getID() != mainColony.getID():
+		return False
+
+	return True
+
+def applyCibolaExpeditionStart(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_READY_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_EXPEDITION_ACTIVE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	_addCibolaMarker(player, CIBOLA_EXPEDITION_ACTIVE_MARKER)
+
+
+def getHelpCibolaExpeditionStart(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_START_HELP",
+		()
+	)
+
+######## Seven Cities of Cibola Reach Point 1 Event ###########
+
+CIBOLA_POINT_1_DISTANCE_PERCENT = 25
+
+CIBOLA_POINT_1_DONE_MARKER = "[[WTP_CIBOLA_POINT_1_DONE=1]]"
+
+
+def _getCibolaPoint1Distance():
+	iMapWidth = CyMap().getGridWidth()
+	iMapHeight = CyMap().getGridHeight()
+
+	return max(10, min(iMapWidth, iMapHeight) * CIBOLA_POINT_1_DISTANCE_PERCENT / 100)
+
+
+def _isCibolaMountedConquistador(unit):
+	if unit is None or unit.isNone():
+		return False
+
+	iRequiredUnitClass = gc.getInfoTypeForString(CIBOLA_MOUNTED_CONQUISTADOR_UNITCLASS)
+
+	if iRequiredUnitClass == -1:
+		return False
+
+	iUnitType = unit.getUnitType()
+
+	if iUnitType == -1:
+		return False
+
+	return gc.getUnitInfo(iUnitType).getUnitClassType() == iRequiredUnitClass
+
+
+def _countCibolaMountedConquistadorsOnPlot(player, plot):
+	if player.isNone():
+		return 0
+
+	if plot is None or plot.isNone():
+		return 0
+
+	iCount = 0
+
+	for i in range(plot.getNumUnits()):
+		unit = plot.getUnit(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getOwner() != player.getID():
+			continue
+
+		if _isCibolaMountedConquistador(unit):
+			iCount += 1
+
+	return iCount
+
+
+def _getCibolaValidExpeditionPlot(player):
+	if player.isNone():
+		return None
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return None
+
+	(unit, iter) = player.firstUnit()
+
+	while unit:
+		if _isCibolaMountedConquistador(unit):
+			plot = unit.plot()
+
+			if plot is not None and not plot.isNone():
+				if _countCibolaMountedConquistadorsOnPlot(player, plot) >= CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS:
+					if plotDistance(
+						plot.getX(),
+						plot.getY(),
+						mainColony.getX(),
+						mainColony.getY()
+					) >= _getCibolaPoint1Distance():
+						return plot
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return None
+
+
+def canTriggerCibolaExpeditionPoint1Done(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_EXPEDITION_ACTIVE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_POINT_1_DONE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	return _getCibolaValidExpeditionPlot(player) is not None
+
+
+def applyCibolaExpeditionPoint1Done(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_EXPEDITION_ACTIVE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_POINT_1_DONE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	plot = _getCibolaValidExpeditionPlot(player)
+
+	if plot is None or plot.isNone():
+		return
+
+	event = gc.getEventInfo(eEvent)
+
+	iUnitClass1 = event.getGenericParameter(1)
+	iUnitClass2 = event.getGenericParameter(2)
+
+	if iUnitClass1 != -1:
+		_spawnCibolaConquistadorOnPlot(player, plot, iUnitClass1)
+
+	if iUnitClass2 != -1:
+		_spawnCibolaConquistadorOnPlot(player, plot, iUnitClass2)
+
+	_addCibolaMarker(player, CIBOLA_POINT_1_DONE_MARKER)
+
+
+def getHelpCibolaExpeditionPoint1Done(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_1_HELP",
+		(
+			CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS,
+			_getCibolaPoint2Distance()
+		)
+	)
+    
+######## Seven Cities of Cibola Reach Point 2 Event ###########
+
+CIBOLA_POINT_2_DISTANCE_PERCENT = 35
+
+CIBOLA_POINT_2_DONE_MARKER = "[[WTP_CIBOLA_POINT_2_DONE=1]]"
+
+
+def _getCibolaPoint2Distance():
+	iMapWidth = CyMap().getGridWidth()
+	iMapHeight = CyMap().getGridHeight()
+
+	return max(15, min(iMapWidth, iMapHeight) * CIBOLA_POINT_2_DISTANCE_PERCENT / 100)
+
+
+def _getCibolaValidExpeditionPoint2Plot(player):
+	if player.isNone():
+		return None
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return None
+
+	(unit, iter) = player.firstUnit()
+
+	while unit:
+		if _isCibolaMountedConquistador(unit):
+			plot = unit.plot()
+
+			if plot is not None and not plot.isNone():
+				if _countCibolaMountedConquistadorsOnPlot(player, plot) >= CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS:
+					if plotDistance(
+						plot.getX(),
+						plot.getY(),
+						mainColony.getX(),
+						mainColony.getY()
+					) >= _getCibolaPoint2Distance():
+						return plot
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return None
+
+
+def _spawnCibolaHostileAdjacent(plot, iHostileUnitClass):
+	if plot is None or plot.isNone():
+		return None
+
+	if iHostileUnitClass == -1:
+		return None
+
+	iBarbarian = gc.getGame().getBarbarianPlayer()
+	barbPlayer = gc.getPlayer(iBarbarian)
+
+	if barbPlayer.isNone():
+		return None
+
+	barbCiv = gc.getCivilizationInfo(barbPlayer.getCivilizationType())
+	iUnitType = barbCiv.getCivilizationUnits(iHostileUnitClass)
+
+	if iUnitType == UnitTypes.NO_UNIT:
+		return None
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			loopPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+			if loopPlot is None or loopPlot.isNone():
+				continue
+
+			if loopPlot.isWater():
+				continue
+
+			if loopPlot.isImpassable():
+				continue
+
+			if loopPlot.isPeak():
+				continue
+
+			if loopPlot.isCity():
+				continue
+
+			if loopPlot.isUnit():
+				continue
+
+			hostileUnit = barbPlayer.initUnit(
+				iUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				loopPlot.getX(),
+				loopPlot.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				0
+			)
+
+			if hostileUnit is not None and not hostileUnit.isNone():
+				return hostileUnit
+
+	return None
+
+
+def canTriggerCibolaExpeditionPoint2Done(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_POINT_1_DONE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_POINT_2_DONE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	return _getCibolaValidExpeditionPoint2Plot(player) is not None
+
+
+def applyCibolaExpeditionPoint2Done(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_POINT_1_DONE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_POINT_2_DONE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	plot = _getCibolaValidExpeditionPoint2Plot(player)
+
+	if plot is None or plot.isNone():
+		return
+
+	event = gc.getEventInfo(eEvent)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iNumHostiles = event.getGenericParameter(2)
+
+	if iNumHostiles < 1:
+		iNumHostiles = 3
+
+	for i in range(iNumHostiles):
+		hostileUnit = _spawnCibolaHostileAdjacent(plot, iHostileUnitClass)
+
+		if hostileUnit is not None and not hostileUnit.isNone():
+			if hostileUnit.canMoveInto(plot, True, False, False):
+				hostileUnit.attack(plot, False)
+
+	_addCibolaMarker(player, CIBOLA_POINT_2_DONE_MARKER)
+
+
+def getHelpCibolaExpeditionPoint2Done(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_2_DONE_HELP",
+		(
+			CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS,
+			_getCibolaPoint3Distance()
+		)
+	)
+
+
+######## Seven Cities of Cibola Reach Point 3 Event ###########
+
+CIBOLA_POINT_3_DISTANCE_PERCENT = 50
+
+CIBOLA_POINT_3_DONE_MARKER = "[[WTP_CIBOLA_POINT_3_DONE=1]]"
+CIBOLA_RETURN_ACTIVE_MARKER = "[[WTP_CIBOLA_RETURN_ACTIVE=1]]"
+
+CIBOLA_TREASURE_ID_PREFIX = "[[WTP_CIBOLA_TREASURE_ID="
+CIBOLA_TREASURE_ID_SUFFIX = "]]"
+
+
+def _getCibolaPoint3Distance():
+	iMapWidth = CyMap().getGridWidth()
+	iMapHeight = CyMap().getGridHeight()
+
+	return max(20, min(iMapWidth, iMapHeight) * CIBOLA_POINT_3_DISTANCE_PERCENT / 100)
+
+
+def _setCibolaTreasureID(player, iUnitID):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(CIBOLA_TREASURE_ID_PREFIX)
+
+	if iStart != -1:
+		iEnd = szData.find(CIBOLA_TREASURE_ID_SUFFIX, iStart)
+
+		if iEnd != -1:
+			iEnd += len(CIBOLA_TREASURE_ID_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		CIBOLA_TREASURE_ID_PREFIX,
+		iUnitID,
+		CIBOLA_TREASURE_ID_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _getCibolaTreasureID(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(CIBOLA_TREASURE_ID_PREFIX)
+
+	if iStart == -1:
+		return -1
+
+	iStart += len(CIBOLA_TREASURE_ID_PREFIX)
+
+	iEnd = szData.find(CIBOLA_TREASURE_ID_SUFFIX, iStart)
+
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _getCibolaValidExpeditionPoint3Plot(player):
+	if player.isNone():
+		return None
+
+	mainColony = _getCibolaMainColony(player)
+
+	if mainColony is None or mainColony.isNone():
+		return None
+
+	(unit, iter) = player.firstUnit()
+
+	while unit:
+		if _isCibolaMountedConquistador(unit):
+			plot = unit.plot()
+
+			if plot is not None and not plot.isNone():
+				if _countCibolaMountedConquistadorsOnPlot(player, plot) >= CIBOLA_REQUIRED_MOUNTED_CONQUISTADORS:
+					if plotDistance(
+						plot.getX(),
+						plot.getY(),
+						mainColony.getX(),
+						mainColony.getY()
+					) >= _getCibolaPoint3Distance():
+						return plot
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return None
+
+
+def canTriggerCibolaExpeditionPoint3Done(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_POINT_2_DONE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_POINT_3_DONE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	return _getCibolaValidExpeditionPoint3Plot(player) is not None
+
+
+def applyCibolaExpeditionPoint3Done(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_POINT_2_DONE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_POINT_3_DONE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	plot = _getCibolaValidExpeditionPoint3Plot(player)
+
+	if plot is None or plot.isNone():
+		return
+
+	event = gc.getEventInfo(eEvent)
+
+	iHostileUnitClass = event.getGenericParameter(1)
+	iTreasureUnitClass = event.getGenericParameter(2)
+
+	hostileUnit = _spawnCibolaHostileAdjacent(plot, iHostileUnitClass)
+
+	if hostileUnit is not None and not hostileUnit.isNone():
+		if hostileUnit.canMoveInto(plot, True, False, False):
+			hostileUnit.attack(plot, False)
+
+	iTreasureGold = 2000
+
+	if CyGame().getSorenRandNum(100, "Cibola Treasure") < 60:
+		iTreasureGold = 8000
+
+	bTreasureCreated = False
+
+	if iTreasureUnitClass != -1:
+		iTreasureUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iTreasureUnitClass)
+
+		if iTreasureUnitType != UnitTypes.NO_UNIT:
+			treasureUnit = player.initUnit(
+				iTreasureUnitType,
+				ProfessionTypes.NO_PROFESSION,
+				plot.getX(),
+				plot.getY(),
+				UnitAITypes.NO_UNITAI,
+				DirectionTypes.DIRECTION_SOUTH,
+				iTreasureGold
+			)
+
+			if treasureUnit is not None and not treasureUnit.isNone():
+				_setCibolaTreasureID(player, treasureUnit.getID())
+				bTreasureCreated = True
+
+	if not bTreasureCreated:
+		return
+
+	_addCibolaMarker(player, CIBOLA_POINT_3_DONE_MARKER)
+	_addCibolaMarker(player, CIBOLA_RETURN_ACTIVE_MARKER)
+
+
+def getHelpCibolaExpeditionPoint3Done(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_POINT_3_DONE_HELP",
+		()
+	)
+
+######## Seven Cities of Cibola Final Return Event ###########
+
+def canTriggerCibolaExpeditionHome(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not _hasCibolaMarker(player, CIBOLA_RETURN_ACTIVE_MARKER):
+		return False
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return False
+
+	iTreasureID = _getCibolaTreasureID(player)
+
+	if iTreasureID == -1:
+		return False
+
+	treasureUnit = player.getUnit(iTreasureID)
+
+	if treasureUnit is None or treasureUnit.isNone():
+		return False
+
+	plot = treasureUnit.plot()
+
+	if plot is None or plot.isNone():
+		return False
+
+	if not plot.isCity():
+		return False
+
+	city = plot.getPlotCity()
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	return True
+
+
+def canDoCityCibolaExpeditionHome(argsList):
+	eTrigger = argsList[0]
+	ePlayer = argsList[1]
+	iCityId = argsList[2]
+
+	player = gc.getPlayer(ePlayer)
+
+	if player.isNone():
+		return False
+
+	city = player.getCity(iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	iTreasureID = _getCibolaTreasureID(player)
+
+	if iTreasureID == -1:
+		return False
+
+	treasureUnit = player.getUnit(iTreasureID)
+
+	if treasureUnit is None or treasureUnit.isNone():
+		return False
+
+	if treasureUnit.getX() != city.getX():
+		return False
+
+	if treasureUnit.getY() != city.getY():
+		return False
+
+	return True
+
+
+def applyCibolaReturnDone(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	if not _hasCibolaMarker(player, CIBOLA_RETURN_ACTIVE_MARKER):
+		return
+
+	if _hasCibolaMarker(player, CIBOLA_DONE_MARKER):
+		return
+
+	iTreasureID = _getCibolaTreasureID(player)
+
+	if iTreasureID == -1:
+		return
+
+	treasureUnit = player.getUnit(iTreasureID)
+
+	if treasureUnit is None or treasureUnit.isNone():
+		return
+
+	plot = treasureUnit.plot()
+
+	if plot is None or plot.isNone():
+		return
+
+	if not plot.isCity():
+		return
+
+	city = plot.getPlotCity()
+
+	if city is None or city.isNone():
+		return
+
+	if city.getOwner() != player.getID():
+		return
+
+	# Reward: improve relations with the King
+	applyKingPleased(argsList)
+
+	# Optional Father Points reward via GenericParameter1/2
+	ChangeFatherPoints(argsList)
+
+	_addCibolaMarker(player, CIBOLA_DONE_MARKER)
+
+
+def getHelpCibolaExpeditionArrival1(argsList):
+	szHelp = localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_1_HELP",
+		(3,)
+	)
+
+	szFatherHelp = getHelpChangeFatherPoints(argsList)
+
+	if szFatherHelp != u"":
+		szHelp += u"\n" + szFatherHelp
+
+	return szHelp
+
+def getHelpCibolaExpeditionArrival2(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_2_HELP",
+		(
+			3,
+		)
+	)
+
+
+def getHelpCibolaExpeditionArrival3(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_3_HELP",
+		(
+			3,
+			5
+		)
+	)

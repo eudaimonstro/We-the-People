@@ -7180,6 +7180,102 @@
 		<German>Milord, es ist unglaublich! Unsere Scouts sind geblendet von solcher Schönheit mitten in der Wildnis. Ein Garten Eden! [COLOR_HIGHLIGHT_TEXT]Ein Jungbrunnen![COLOR_REVERT] Die Menschen werden in die Wildnis strömen, um diesen Ort zu sehen. Es wird sich bis nach Europa herumsprechen. Wir sind gesegnet.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT</Tag>
+		<English>Scouts come across rumours in the wilderness about the [COLOR_HIGHLIGHT_TEXT]Seven Cities of Cibola[COLOR_REVERT]!</English>
+		<German>Kundschafter stoßen in der Wildnis auf Gerüchte über die [COLOR_HIGHLIGHT_TEXT]Sieben Städte von Cibola[COLOR_REVERT]!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT</Tag>
+		<English>As our scouts made their way through the desolate wilderness, far from the known colonies, they came across a group of weather-beaten conquistadors. The men recount tales told by the Indians of magnificent cities brimming with gold, silver and ancient treasures. Many may dismiss such tales as figments of the imagination, born of thirst and deprivation, yet the men swear on their honour that these are the legendary [COLOR_HIGHLIGHT_TEXT]Seven Cities of Cibola[COLOR_REVERT!</English>
+		<German>Während unsere Kundschafter fernab der bekannten Kolonien durch die trostlose Wildnis zogen, trafen sie auf eine Gruppe verwitterter Konquistadoren. Die Männer berichten von Erzählungen der Indios über prächtige Städte voller Gold, Silber und uralter Schätze. Viele mögen solche Geschichten für Hirngespinste halten, geboren aus Durst und Entbehrung, doch die Männer schwören bei ihrer Ehre, dass es sich um die sagenhaften [COLOR_HIGHLIGHT_TEXT]Sieben Städte von Cibola handelt[COLOR_REVERT]!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT_DONE</Tag>
+		<English>Rumours are spreading. A group of conquistadors has returned from the wilderness and has some truly incredible stories to tell.</English>
+		<German>Gerüchte verbreiten sich. Eine Gruppe Konquistadoren ist aus der Wildnis heimgekehrt und hat wahrlich sagenhaftes zu berichten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT_DONE</Tag>
+		<English>Mylord, a party of conquistadors has returned and brought back incredible news. Indians from various tribes are said to have spoken of the [COLOR_HIGHLIGHT_TEXT]treasure of all treasures[COLOR_REVERT]; indeed, entire cities made of gold are said to be hidden in the great canyons to the west. Everything we have always suspected may well be within our grasp!</English>
+		<German>Milord, ein Trupp Konquistadoren ist heimgekehrt und hat sagenhafte Neuigkeiten mitgebracht. Indios unterschiedlicher Stämme berichten angeblich über den [COLOR_HIGHLIGHT_TEXT]Schatz aller Schätze[COLOR_REVERT], ja ganze Städte aus Gold sollen in den großen Canyons im Westen verborgen sein. All das, was wir immer vermuteten, ist womöglich in greifbarer Nähe!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_PREPARATION_DONE</Tag>
+		<English>The colony is abuzz; one of the greatest expeditions of our time regarding the discovery of the Seven Cities of Cibolais about to begin.</English>
+		<German>Eine Kolonie ist in Aufregung, eine der größten Expeditionen unserer Zeit zur Entdeckung der Sieben Städte von Cibola ist im Begriff zu beginnen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_PREPARATION_DONE</Tag>
+		<English>Mylord, our men have been hard at work gathering enormous supplies and assembling the troops, and we have the pay ready too. We can soon set off and find the treasure of all treasures.</English>
+		<German>Milord, unsere Männer waren fleißig und haben enorme Ausrüstung und Truppen zusammengestellt und den Sold haben wir auch beisammen. Wir können bald aufbrechen und den Schatz aller Schätze finden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_START</Tag>
+		<English>A nation has launched an expedition into the wilderness to discover the Seven Cities of Cibola.</English>
+		<German>Eine Nation hat eine Expedition in die Wildnis zur Entdeckung der Sieben Städte von Cibola gestartet.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_START</Tag>
+		<English>Mylord, the scouts are riding ahead and we’re setting off now. If we keep up the pace, we’ll reach our destination within the next few weeks and return home in a golden carriage.</English>
+		<German>Milord, die Kundschafter reiten voraus und es geht jetzt los. Wenn wir uns ranhalten, werden wir in den nächsten Wochen bereits am Ziel sein und in einer goldenen Kutsche heimkehren.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_1_DONE</Tag>
+		<English>Another nation has ventured further in and found new clues to the Seven Cities of Cibola!</English>
+		<German>Eine Nation ist weiter vorgedrungen und hat neue Hinweise auf die Sieben Städte von Cibola gefunden!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_1_DONE</Tag>
+		<English>My lord, we’ve been on the road for a while now, but we haven’t found anything. Now we’ve come across these two half-starved and confused figures. What should we do? The men are getting impatient.</English>
+		<German>Milord, wir sind nun schon eine Weile unterwegs, haben aber nichts finden können. Jetzt laufen uns diese beiden halb verhungerten und verwirrten Gestalten über den Weg. Was sollen wir tun? Die Männer sind ungeduldig.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_2_DONE</Tag>
+		<English>A group of explorers ventured further in their search for the Seven Cities of Cibola and were attacked by angry Indians!</English>
+		<German>Eine Nation ist bei der Suche auf die Sieben Städte von Cibola weiter vorgedrungen und wurde von wütenden Ureinwohnern attackiert!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_2_DONE</Tag>
+		<English>My lord, the search is not proving very encouraging; there isn’t even the slightest sign of a golden city on the horizon, and there seem to be some Indians hiding in the thicket ahead of us – be careful!</English>
+		<German>Milord, die Suche ist wenig erquicklich, es hat derzeit noch nicht mal den Anschein einer goldenen Stadt am Horizont und im Dickicht vor uns scheinen sich einige Indianer zu verstecken - Vorsicht!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_3_DONE</Tag>
+		<English>A nation has stumbled upon a treasure whilst searching for the Seven Cities of Cibola!</English>
+		<German>Eine Nation ist seiner Suche nach den Sieben Städten von Cibola auf einen Schatz gestoßen!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_POINT_3_DONE</Tag>
+		<English>My lord, it’s hard to believe – look there! That must be it! After all our hardships, we’ve actually found a huge Indian settlement. Let’s go and look for the gold!</English>
+		<German>Milord, es ist kaum zu glauben - seht mal, da! Das muss sie sein! Wir haben doch wahrlich nach all diesen Strapazen und Verlusten an Mensch und Material eine riesige Stadt der Indianer gefunden. Lasst uns das Gold suchen!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_HOME_DONE</Tag>
+		<English>One nation succeeded in the legendary search for the Seven Cities of Cibola!</English>
+		<German>Eine Nation war bei der sagenhaften Suche nach den Sieben Städten von Cibola erfolgreich!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_HOME_DONE</Tag>
+		<English>My lord, we are truly blessed. We have indeed managed to bring the treasure to the colonies without suffering any major losses. The whole colony is already in an uproar. The king will be delighted. This expedition will go down in history.</English>
+		<German>Milord, wir sind wahrlich gesegnet. Wir konnten den Schatz tatsächlich ohne größere Verluste in die Kolonien bringen. Die ganze Kolonie ist bereits in Aufruhr. Der König wird begeistert sein. Diese Expedition wird zur Legende werden.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
 
 
