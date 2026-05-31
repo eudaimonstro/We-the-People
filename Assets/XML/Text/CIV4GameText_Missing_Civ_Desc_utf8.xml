@@ -25,6 +25,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Араваки</Russian>
+		<Hungarian>Aravakok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TUPI_DESC</Tag>
@@ -46,6 +47,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Тупи</Russian>
+		<Hungarian>Tupik</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHEROKEE_DESC</Tag>
@@ -67,6 +69,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Чироки</Russian>
+		<Hungarian>Cserokik</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IROQUOIS_DESC</Tag>
@@ -88,6 +91,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Ирокезы</Russian>
+		<Hungarian>Irokézek</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SIOUX_DESC</Tag>
@@ -109,6 +113,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Сиу</Russian>
+		<Hungarian>Sziúk</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NEZ_PERCE_DESC</Tag>
@@ -130,6 +135,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Не-Персе</Russian>
+		<Hungarian>Nez Percék</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_APACHE_DESC</Tag>
@@ -151,6 +157,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Апачи</Russian>
+		<Hungarian>Apacsok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INUIT_DESC</Tag>
@@ -172,6 +179,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Инуиты</Russian>
+		<Hungarian>Inuitok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HURON_DESC</Tag>
@@ -193,6 +201,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Гуроны</Russian>
+		<Hungarian>Huronok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ZAPOTEC_DESC</Tag>
@@ -214,6 +223,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Сапотеки</Russian>
+		<Hungarian>Zapotékok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GUARANI_DESC</Tag>
@@ -235,6 +245,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Гуарани</Russian>
+		<Hungarian>Guaranik</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARIBS_DESC</Tag>
@@ -256,6 +267,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Карибы</Russian>
+		<Hungarian>Karibok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NAVAJO_DESC</Tag>
@@ -277,6 +289,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Навахо</Russian>
+		<Hungarian>Navahók</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ALGONQUIAN_DESC</Tag>
@@ -298,6 +311,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Алгонкины</Russian>
+		<Hungarian>Algonkinok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MACHIPARO_DESC</Tag>
@@ -319,6 +333,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Мачипаро</Russian>
+		<Hungarian>Macsipárók</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MIXTEC_DESC</Tag>
@@ -340,6 +355,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Миштеки</Russian>
+		<Hungarian>Misték</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUISCA_DESC</Tag>
@@ -361,6 +377,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Муиски</Russian>
+		<Hungarian>Muiszkák</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COMANCHE_DESC</Tag>
@@ -382,6 +399,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Команчи</Russian>
+		<Hungarian>Komancsok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SHOSHONE_DESC</Tag>
@@ -403,6 +421,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Шошоны</Russian>
+		<Hungarian>Sosonok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TOROMONA_DESC</Tag>
@@ -424,6 +443,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Торомона</Russian>
+		<Hungarian>Toromonák</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CROW_DESC</Tag>
@@ -445,6 +465,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Кроу</Russian>
+		<Hungarian>Vicsiták</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BLACKFOOT_DESC</Tag>
@@ -466,6 +487,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Черноногие</Russian>
+		<Hungarian>Feketelábak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GUAYMI_DESC</Tag>
@@ -487,6 +509,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Нгабе</Russian>
+		<Hungarian>Guajmik</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TARASCANS_DESC</Tag>
@@ -508,6 +531,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Тараски</Russian>
+		<Hungarian>Taraszkánok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OMAGUA_DESC</Tag>
@@ -529,6 +553,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Омагуа</Russian>
+		<Hungarian>Omaguák</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAPUCHE_DESC</Tag>
@@ -550,5 +575,6 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Мапуче</Russian>
+		<Hungarian>Mapucsék</Hungarian>
 	</TEXT>
 </Civ4GameText>
