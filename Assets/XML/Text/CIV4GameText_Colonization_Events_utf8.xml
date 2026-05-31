@@ -7276,6 +7276,29 @@
 		<German>Milord, wir sind wahrlich gesegnet. Wir konnten den Schatz tatsächlich ohne größere Verluste in die Kolonien bringen. Die ganze Kolonie ist bereits in Aufruhr. Der König wird begeistert sein. Diese Expedition wird zur Legende werden.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_ZEALOUS_MISSIONARY</Tag>
+		<English>Reports arrive from one mission concerning remarkable success among the natives. They seem to be easily swayed.</English>
+		<German>Berichte aus einer Mission künden von außergewöhnlichen Erfolgen unter den Eingeborenen. Sie lassen sich offenbar leicht verführen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_ZEALOUS_MISSIONARY</Tag>
+		<English>Mylord, we have received some encouraging news from one of our missions. The missionary working there reports that more and more local people are voluntarily listening to his sermons and seeking his advice on both worldly and spiritual matters.</English>
+		<German>Milord, aus einer unserer Missionen erreicht uns eine erfreuliche Nachricht. Der dort tätige Missionar berichtet, dass immer mehr Eingeborene freiwillig seinen Predigten lauschen und seinen Rat sowohl in weltlichen als auch in geistlichen Angelegenheiten suchen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_BURNING_MISSION</Tag>
+		<English>Disturbing news is reaching the civilised world from a mission among the natives.</English>
+		<German>Beunruhigende Nachrichten erreichen die zivilisierte Welt aus einer Mission unter den Eingeborenen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_BURNING_MISSION</Tag>
+		<English>Some of our missionaries have gone a bit overboard in their zeal. The Indians feel that they and their own gods have been insulted, and have promptly set fire to the mission. They want to see whether our God can protect the house of God from the flames.</English>
+		<German>Einige unserer Missionare haben es mit ihrem Eifer übertrieben. Die Indianer fühlen sich und ihre eigenen Götter beleidigt und haben kurzerhand die Mission angezündet. Sie wollen sehen, ob unser Gott das Haus Gottes vor Feuer schützen kann.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
-
 

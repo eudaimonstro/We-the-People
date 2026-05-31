@@ -214,6 +214,9 @@ public:
 	bool isEverOwned(int /*PlayerTypes*/ eIndex);
 	PlayerTypes getMissionaryPlayer() const; // R&R, Robert Surcouf, No More Variables Hidden game option START
 	int getMissionaryRate() const; // R&R, Robert Surcouf, No More Variables Hidden game option END
+	void setMissionaryPlayer(PlayerTypes ePlayer, bool bAnnounce);
+	void setMissionaryRate(int iRate);
+	void ejectMissionary(); // WTP Schmiddie, entry for destroy mission event
 	
 	PlayerTypes getTradePostPlayer() const; // WTP, ray, Native Trade Posts - START
 	int getNativeTradeRate() const; // WTP, ray, Native Trade Posts - START

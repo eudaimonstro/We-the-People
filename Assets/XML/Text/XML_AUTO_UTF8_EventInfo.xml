@@ -3079,4 +3079,40 @@
 		<German>[ICON_BULLET]Die Beziehungen zum König verbessern sich um +%d1.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ZEALOUS_MISSIONARY_1</Tag>
+		<English>This work must be encouraged. Provide the mission with all necessary support.</English>
+		<German>Diese Arbeit verdient unsere volle Unterstützung. Stellt der Mission alle erforderlichen Mittel zur Verfügung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ZEALOUS_MISSIONARY_2</Tag>
+		<English>The missionary has our blessing, but he must continue with the resources already available.</English>
+		<German>Der Missionar genießt unseren Segen, doch muss er seine Arbeit mit den vorhandenen Mitteln fortführen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ZEALOUS_MISSIONARY_3</Tag>
+		<English>The mission has served its purpose well. It is time that its efforts also benefit the colony directly. The missionary should remind the natives that our God expects earthly sacrifices.</English>
+		<German>Die Mission hat ihren Zweck vortrefflich erfüllt. Nun soll ihre Arbeit auch dem Wohl der Kolonie unmittelbar dienen. Der Missionar soll die Ureinwohner daran erinnern, dass unser Gott weltliche Opfer erwartet.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_BURNING_MISSION_1</Tag>
+		<English>We will rebuild the mission. No harm is to come to the Native Americans who set fire to the mission. But the missionaries must make it clear to the Native Americans that our God does not condone such senseless destruction, and that they must now spend several days praying earnestly to our God to purify their corrupt souls.</English>
+		<German>Wir werden die Mission wieder aufbauen. Den Indianern, die die Mission angezündet haben, soll kein Leid zugefügt werden. Aber die Missionare müssen den Indianern klarmachen, dass unser Gott solch sinnlose Zerstörung nicht gutheißt und sie dafür nun mehrere Tage fleißig zu unserem Gott beten müssen, um ihre verdorbene Seele zu reinigen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_BURNING_MISSION_2</Tag>
+		<English>The mission has become a source of conflict. Withdraw the missionary and abandon the settlement. I don’t want a war with our Indian neighbours.</English>
+		<German>Die Mission ist zu einem Quell ständigen Unfriedens geworden. Zieht die Missionare ab und gebt die Niederlassung auf. Ich will keinen Krieg mit unseren indianischen Nachbarn.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_BURNING_MISSION_3</Tag>
+		<English>This insult cannot go unanswered. Demand compensation and hold the tribe responsible. Demand abundant offerings as reparation, so that they may see that our God is also capable of punishing His earthly children when they disobey Him.</English>
+		<German>Diese Beleidigung des Herrn darf nicht unbeantwortet bleiben. Fordert Wiedergutmachung und macht den Stamm für die Tat verantwortlich. Verlangt als Wiedergutmachung reichlich Opfergaben, damit sie sehen, dass unser Gott auch strafen kann, wenn seine irdischen Kinder nicht gehorchen.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

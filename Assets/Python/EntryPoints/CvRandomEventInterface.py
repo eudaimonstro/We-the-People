@@ -24900,3 +24900,156 @@ def getHelpCibolaExpeditionArrival3(argsList):
 			5
 		)
 	)
+
+######## Zealous Missionary Event ###########
+
+ZEALOUS_MISSIONARY_CHANCE = 10
+
+def canTriggerZealousMissionary(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+	if not player.isPlayable():
+		return False
+	if player.isNative():
+		return False
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone():
+		return False
+	if not nativePlayer.isNative():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return False
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity.isNone():
+		return False
+
+	if nativeCity.getMissionaryPlayer() != player.getID():
+		return False
+
+	if nativeCity.getMissionaryRate() <= 0:
+		return False
+
+	if CyGame().getSorenRandNum(100, "Zealous Missionary Event") >= ZEALOUS_MISSIONARY_CHANCE:
+		return False
+
+	return True
+
+######## Burning Mission Event ###########
+
+BURNING_MISSION_CHANCE = 10
+
+def _getBurningMissionData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity.isNone():
+		return (None, None, None)
+
+	# Mission must exist, but getMissionaryPlayer() is not reliable enough here.
+	if nativeCity.getMissionaryPlayer() == PlayerTypes.NO_PLAYER:
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+
+def _showBurningMissionPlot(player, nativeCity):
+	if player is None or player.isNone():
+		return
+	if nativeCity is None or nativeCity.isNone():
+		return
+	if not player.isHuman():
+		return
+
+	plot = nativeCity.plot()
+	if plot is None or plot.isNone():
+		return
+
+	plot.setRevealed(player.getTeam(), True, False, -1)
+	CyCamera().JustLookAtPlot(plot)
+
+
+def canTriggerBurningMission(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getBurningMissionData(kTriggeredData)
+	if player is None:
+		return False
+
+	# Test setting: allow up to pleased.
+	if nativePlayer.AI_getAttitude(player.getID()) > AttitudeTypes.ATTITUDE_PLEASED:
+		return False
+
+	if CyGame().getSorenRandNum(100, "Burning Mission Event") >= BURNING_MISSION_CHANCE:
+		return False
+
+	_showBurningMissionPlot(player, nativeCity)
+
+	return True
+
+
+def _showBurningMissionEffect(nativeCity):
+	if nativeCity is None or nativeCity.isNone():
+		return
+
+	CyEngine().triggerEffect(
+		gc.getInfoTypeForString("EFFECT_CITY_BIG_BURNING_SMOKE"),
+		nativeCity.plot().getPoint()
+	)
+
+
+def _removeBurningMission(nativeCity):
+	if nativeCity is None or nativeCity.isNone():
+		return
+
+	nativeCity.setMissionaryRate(0)
+	nativeCity.setMissionaryPlayer(PlayerTypes.NO_PLAYER, False)
+
+
+def applyBurningMissionRebuild(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getBurningMissionData(kTriggeredData)
+	if player is None:
+		return
+
+	_showBurningMissionEffect(nativeCity)
+
+
+def applyBurningMissionWithdraw(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getBurningMissionData(kTriggeredData)
+	if player is None:
+		return
+
+	_showBurningMissionEffect(nativeCity)
+	_removeBurningMission(nativeCity)
+
+
+def applyBurningMissionRetaliate(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getBurningMissionData(kTriggeredData)
+	if player is None:
+		return
+
+	_showBurningMissionEffect(nativeCity)
+	_removeBurningMission(nativeCity)

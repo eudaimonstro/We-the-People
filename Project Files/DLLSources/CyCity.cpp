@@ -901,7 +901,29 @@ int CyCity::getMissionaryRate() const
 	return m_pCity ? m_pCity->getMissionaryRate() : -1;
 }
 // R&R, Robert Surcouf, No More Variables Hidden game option END
-
+// WTP Schmiddie, entry for destroy mission event START
+void CyCity::ejectMissionary()
+{
+	if (m_pCity)
+	{
+		getCity()->ejectMissionary();
+	}
+}
+void CyCity::setMissionaryPlayer(PlayerTypes ePlayer, bool bAnnounce)
+{
+	if (m_pCity)
+	{
+		getCity()->setMissionaryPlayer(ePlayer, bAnnounce);
+	}
+}
+void CyCity::setMissionaryRate(int iRate)
+{
+	if (m_pCity)
+	{
+		getCity()->setMissionaryRate(iRate);
+	}
+}
+// WTP Schmiddie, entry for destroy mission event END
 // WTP, ray, Native Trade Posts - START
 PlayerTypes CyCity::getTradePostPlayer() const
 {

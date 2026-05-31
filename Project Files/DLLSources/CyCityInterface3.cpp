@@ -78,6 +78,9 @@ void CyCityPythonInterface3(python::class_<CyCity>& x)
 		// R&R, Robert Surcouf, No More Variables Hidden game option START
 		.def("getMissionaryPlayer", &CyCity::getMissionaryPlayer, "PlayerTypes ()")
 		.def("getMissionaryRate", &CyCity::getMissionaryRate, "int ()")
+		.def("setMissionaryPlayer", &CyCity::setMissionaryPlayer, "void (int, bool)")  // WTP Schmiddie, entry for destroy mission event
+		.def("setMissionaryRate", &CyCity::setMissionaryRate, "void (int)")  // WTP Schmiddie, entry for destroy mission event
+		.def("ejectMissionary", &CyCity::ejectMissionary, "void ()") // WTP Schmiddie, entry for destroy mission event
 		// R&R, Robert Surcouf, No More Variables Hidden game option END
 		// WTP, ray, Native Trade Posts - START
 		.def("getTradePostPlayer", &CyCity::getTradePostPlayer, "PlayerTypes ()")
