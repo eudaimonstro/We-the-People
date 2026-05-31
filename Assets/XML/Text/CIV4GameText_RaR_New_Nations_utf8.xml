@@ -25,6 +25,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Инуиты</Russian>
+		<Hungarian>Inuit</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INUIT_ADJECTIVE</Tag>
@@ -38,6 +39,7 @@
 		<Italian>Inuit</Italian>
 		<Spanish>Inuit</Spanish>
 		<Russian>Инуиты</Russian>
+		<Hungarian>Inuit</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TUGLAWINA_1</Tag>
@@ -45,6 +47,7 @@
 		<French>Bonjour. Je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], chef et Angakkuq du peuple [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]. Soyez notre invité pour ce soir, nos chasseurs de phoques seront bientôt de retour.</French>
 		<German>Fremder, ich bin [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], Häuptling und Angakkuq des [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]-Volkes. Seid unser Gast für heute Nacht, denn unsere Robbenjäger könnten jeden Moment zurückkehren.</German>
 		<Russian>Незнакомец, я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], вождь и знахарь [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Будь нашим гостем сегодня вечером, наши охотники на тюленей могут вернуться в любой момент и мы устроим пышный пир.</Russian>
+		<Hungarian>Idegen, én [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] vagyok, az [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] nép törzsfőnöke. Légy a vendégünk ma estére, mert a fókavadászaink bármelyik pillanatban visszatérhetnek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_TUGLAWINA_1</Tag>
@@ -52,6 +55,7 @@
 		<French>Vous vous demandez pourquoi nous avons autant de mots différents pour désigner la neige ? Parce que la neige nous est bien plus utile que vous. Partez.</French>
 		<German>Ihr fragt Euch, warum wir so viele verschiedene Wörter für Schnee haben? Denn Schnee ist für uns viel nützlicher als für Euch. Und jetzt verschwindet hier.</German>
 		<Russian>Знаете, почему у нас так много слов для обозначения снега? Потому что снег гораздо интереснее для нас, чем вы. Уходите.</Russian>
+		<Hungarian>Tudod, miért van annyi szavunk a hóra? Mert a hó sokkal érdekesebb számunkra, mint te. Menj el!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_TUGLAWINA_1</Tag>
@@ -59,6 +63,7 @@
 		<French>Il est trop tard. Vos crimes ont conduit les esprits de la lumière boréale à vous marquer pour mort.</French>
 		<German>Dafür ist es zu spät. Wegen Eurer Verbrechen haben die Geister des Nordlichts Euren Tod bestimmt.</German>
 		<Russian>Слишком поздно. Из-за твоих преступлений духи северного сияния пометили тебя для жертвоприношений.</Russian>
+		<Hungarian>Túl késő! Bűneid miatt az északi fény szellemei halálra jelöltek téged.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_TUGLAWINA_1</Tag>
@@ -66,6 +71,7 @@
 		<French>Le peuple [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] souhaite la bienvenue au chef de ses amis [CT_CIV_ADJ]. En quoi pouvons-nous vous être utile ?</French>
 		<German>Das [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] Volk heißt den Anführer seiner [CT_CIV_ADJ] Freunde gerne willkommen. Wie können wir behilflich sein?</German>
 		<Russian>Люди из [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] с радостью приветствуют лидера своих друзей из [CT_CIV_ADJ]. Чем мы можем быть полезны?</Russian>
+		<Hungarian>Az [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] nép örömmel üdvözli [CT_CIV_ADJ] barátaik vezetőjét. Miben lehetünk a segítségedre?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_TUGLAWINA_1</Tag>
@@ -73,6 +79,7 @@
 		<French>Encore vous ? Veuillez nous enseigner est vos arts raffinés de la tromperie et de la trahison.</French>
 		<German>Wieder zurück? Bitte unterrichtet uns weiter in den feinen Künsten der Täuschung und des Verrats.</German>
 		<Russian>Снова вернуться? Пожалуйста, научи нас искусству обмана и предательства. Ты преуспел в этом.</Russian>
+		<Hungarian>Megint visszatértél? Kérlek, oktass még minket a csalás és az árulás szép művészetére!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_TUGLAWINA_1</Tag>
@@ -82,6 +89,7 @@
 		<Italian>La mia tribù è nel bisogno. Condividi le tue provviste con noi, uomo bianco, e i nostri nipoti racconteranno ai loro nipoti le storie dei tuoi atti di gentilezza.</Italian>
 		<Spanish>Mi tribu está necesitada. Comparte tus suministros con nosotros, hombre blanco, y nuestros nietos contarán a sus nietos historias de tus actos de bondad.</Spanish>
 		<Russian>Моё племя в нужде. Поделитесь с нами своими запасами, и наши внуки расскажут своим внукам истории о вашей доброте.</Russian>
+		<Hungarian>A törzsem nehéz helyzetben van. Oszd meg velünk a készleteidet és az unokáink mesélni fognak az unokáiknak a kedvességedről.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_TUGLAWINA_1</Tag>
@@ -89,6 +97,7 @@
 		<French>Je suis venu en paix vous demander de l'aide. Qu'avez-vous à répondre ?</French>
 		<German>Ich komme in Frieden und bitte um Unterstützung. Wie lautet Eure Antwort?</German>
 		<Russian>Я пришел с миром просить о помощи. Что вы скажете?</Russian>
+		<Hungarian>Békével jöttem, hogy segítséget kérjek. Mit szólsz hozzá?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_TUGLAWINA_1</Tag>
@@ -96,6 +105,7 @@
 		<French>Je tiens le destin de l'[CT_EMPIRE] dans ma main. Avez-vous vraiment d'autre choix que de nous donner ce que j'exige ?</French>
 		<German>Ich halte das Schicksal der [CT_EMPIRE] in meinen Händen. Habt Ihr wirklich eine andere Wahl, als uns zu geben, was ich verlange?</German>
 		<Russian>Я держу судьбу [CT_EMPIRE] в своих руках. Есть ли у вас действительно другой выбор, кроме как дать нам то, что я требую?</Russian>
+		<Hungarian>Kezemben tartom [CT_EMPIRE] sorsát. Tényleg van más választásod, mint megadni nekünk, amit követelünk?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HURON_SHORT_DESC</Tag>
@@ -117,6 +127,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Гуроны</Russian>
+		<Hungarian>Huron</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HURON_ADJECTIVE</Tag>
@@ -138,6 +149,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Гуроны</Russian>
+		<Hungarian>Huron</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KONDIARONK_1</Tag>
@@ -145,6 +157,7 @@
 		<French>Bonjour. Je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], chef de la nation [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT] des Pétuns. Les doyens désire que nous vous tendions la main en guise d'amitié envers vous et votre peuple. J'espère que vous appréciez l'honneur que nous vous accordons par ce geste. Si ce n'est pas le cas, vous le regretterez. Ainsi ai-je parlé.</French>
 		<German>Ich bin [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], Häuptling der [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT], und ich heiße Euch willkommen. Die Ältesten unseres Volkes möchten Euch und Eurem Volk die Hand der Freundschaft reichen. Ich hoffe, Ihr wisst die Ehre zu schätzen, die wir Euch damit erweisen. Tut Ihr es nicht, werdet Ihr es bereuen. Ich habe gesprochen.</German>
 		<Russian>Я держу судьбу [CT_EMPIRE] в своих руках. Есть ли у вас действительно другой выбор, кроме как дать нам то, что я требую?</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] vagyok, a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] törzs vezetője. Üdvözöllek téged! Népünk vénei a barátság kezét kívánják nyújtani neked és népednek. Remélem, hogy méltányolod a megtiszteltetést, amelyet ezzel adunk nektek. Ha nem, akkor meg fogod bánni. Uff, én beszéltem.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_KONDIARONK_1</Tag>
@@ -152,6 +165,7 @@
 		<French>Laissez-nous tranquille ! Nous ne parlons aux serpents qu'après leur avoir coupés leur crochets venimeux.</French>
 		<German>Lasst uns in Ruhe! Wir sprechen nur mit Schlangen, nachdem wir ihnen ihre Giftzähne gezogen haben.</German>
 		<Russian>Оставить нас в покое. Мы говорим со змеями только после того, как вырезаем их ядовитые клыки.</Russian>
+		<Hungarian>Hagyj minket békén! Csak akkor beszélünk a kígyókkal, ha kivágtuk a méregfogukat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_KONDIARONK_1</Tag>
@@ -159,6 +173,7 @@
 		<French>Non, visage pâle. Notre peuple ne retrouvera la paix que lorsque j'arborerai le cuir de votre crane à l'entrée de mon Wigwam.</French>
 		<German>Nein, Bleichgesicht. Wir werden den Kriegspfad nicht verlassen. Erst wenn Euer Skalp in meinem Wigwam hängt, werde ich meine Krieger heim zu ihren Kindern und Weibern holen.</German>
 		<Russian>Нет, бледнолицый. Мы не сойдем с тропы войны. Только когда твой скальп будет висеть в моем типи, а я отведу своих воинов домой, к их детям и женам.</Russian>
+		<Hungarian>Nem, sápadtarcú! Nem hagyjuk el a hadiösvényt. Csak akkor hívom haza az embereimet a gyermekeikhez és a feleségeikhez, ha a skalpod a sátramban lóg.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_KONDIARONK_1</Tag>
@@ -166,6 +181,7 @@
 		<French>Bienvenue dans nos maisons longues [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Que notre rencontre prenne place sous les auspices du Grand Esprit.</French>
 		<German>Willkommen in den Langhäusern der [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Unser Treffen soll mit dem Segen des Großen Geistes stattfinden.</German>
 		<Russian>Добро пожаловать в длинные дома [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Да благословит Великий Дух нашу встречу.</Russian>
+		<Hungarian>Üdvözöllek a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] nép hosszúházaiban! Megbeszélésünk a Nagy Szellem áldása alatt történik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_KONDIARONK_1</Tag>
@@ -173,6 +189,7 @@
 		<French>Votre arrivée sur les terres [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] était annoncée par les mauvais esprits. Apparemment, ils sont horrifiés par votre présence. Comme nous le sommes également. Que voulez-vous donc ?</French>
 		<German>Eure Ankunft im [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] Stammesgebiet wurde von den bösen Geistern vorhergesagt. Offenbar sind sie von Eurer Anwesenheit entsetzt. Genau wie wir. Was wollt Ihr?</German>
 		<Russian>О твоём прибытии в земли [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] предупредило волнение среди злых духов. Видимо, они в ужасе от твоего присутствия. Как и мы. Что ты хочешь?</Russian>
+		<Hungarian>Érkezésedet a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] földekre a gonosz szellemek megjelenése előzte meg. Úgy tűnik, elborzadtak a jelenlétedtől. Ahogy mi is. Mit akarsz?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_KONDIARONK_1</Tag>
@@ -180,6 +197,7 @@
 		<French>Les esprits nous mettent actuellement à l'épreuve. Notre peuple va mal. L'[CT_EMPIRE] peut-il nous aider ?</French>
 		<German>Die Geister testen uns jetzt. Unser Volk ist in Not. Können die [CT_EMPIRE] uns helfen?</German>
 		<Russian>Духи разгневались и моему племени пришлось столкнуться с большими трудностями. Могут ли [CT_EMPIRE] помочь?</Russian>
+		<Hungarian>A szellemek sok megpróbáltatást engedtek elszenvedni a törzsemnek. Segít [CT_EMPIRE] nekünk?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_KONDIARONK_1</Tag>
@@ -187,6 +205,7 @@
 		<French>Je suis venu en paix vous demander de l'aide. Tiendrez-vous votre promesse d'amitié ?</French>
 		<German>Ich bin in Frieden gekommen, um Euch um Hilfe zu bitten. Werdet Ihr Euer Freundschaftsversprechen halten?</German>
 		<Russian>Я пришел с миром, чтобы попросить о помощи. Будете ли вы уважать нашу дружбу?</Russian>
+		<Hungarian>Békével jöttem, hogy segítséget kérjek. Tiszteletben tartod a barátságot, amit kötöttünk?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_KONDIARONK_1</Tag>
@@ -194,6 +213,7 @@
 		<French>Je tiens le destin de l'[CT_EMPIRE] dans ma main. Donnez-moi ce que j'exige !</French>
 		<German>Ich habe die Kraft, die Saat des [CT_EMPIRE] aus diesem Land zu tilgen. Gebt mir alles, worum ich bitte.</German>
 		<Russian>У меня достаточно сил, чтобы стереть племя [CT_EMPIRE] с этой земли. Дай мне все, что я прошу.</Russian>
+		<Hungarian>Megvan az erőm, hogy eltöröljem [CT_EMPIRE] írmagját erről a földről. Adj meg mindent, amit kérek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ZAPOTEC_SHORT_DESC</Tag>
@@ -215,6 +235,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Сапотеки</Russian>
+		<Hungarian>Zapoték</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ZAPOTEC_ADJECTIVE</Tag>
@@ -228,6 +249,7 @@
 		<Italian>Zapotec</Italian>
 		<Spanish>Zapotec</Spanish>
 		<Russian>Сапотеки</Russian>
+		<Hungarian>Zapoték</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_COCIJOEZA_1</Tag>
@@ -235,6 +257,7 @@
 		<French>Bonjour. Je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], 4ème souverain du pacifique royaume [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] de Zaachila. J'espère que vous partagez nos idéaux d'amitié et de loyauté.</French>
 		<German>Ich bin [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], der vierte Herrscher des [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT] Königreichs von Zaachilas. Ich hoffe, Ihr teilt unsere Ideale von Freundschaft und Loyalität...</German>
 		<Russian>Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], четвертый король мирного королевства [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Надеюсь, вы разделяете наши идеалы дружбы и товарищества.</Russian>
+		<Hungarian>Én [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] vagyok, Zaachila békés [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] királyságának negyedik királya. Remélem, osztozol velünk a barátság és a közösség eszméiben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_COCIJOEZA_1</Tag>
@@ -242,6 +265,7 @@
 		<French>Si vous connaissiez la civilisation, j'aurais peut-être un intérêt à vous parler. Malheureusement votre bestialité choque notre peuple raffiné.</French>
 		<German>Wenn Sie etwas über Zivilisation wüssten, hätte ich vielleicht ein Interesse daran, mit Ihnen zu sprechen. Leider ist Ihre Bestialität für unser kultiviertes Volk schockierend.</German>
 		<Russian>Если бы вы были цивилизованным человеком, мне было бы интересно поговорить с вами. К сожалению, ваше зоофилство шокирует наш утонченный народ.</Russian>
+		<Hungarian>Ha civilizált ember lennél, talán érdekelne, hogy beszélgessek veled. Sajnos a te bestiális viselkedésed sokkolja a mi kifinomult modorunkat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_COCIJOEZA_1</Tag>
@@ -249,6 +273,7 @@
 		<French>Nous, peuple des nuages, ne pourrons jamais faire la paix avec les bêtes immondes que vous êtes.</French>
 		<German>Wir, die Menschen der Wolken, können niemals Frieden schließen mit den dreckigen Bestien, die Ihr seid.</German>
 		<Russian>Мы, люди облаков, никогда не сможем помириться с грязными тварями, каковыми являетесь вы.</Russian>
+		<Hungarian>Mi, a felhők népe, soha nem tudunk békét kötni azokkal a mocskos állatokkal, amilyenek ti vagytok!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_COCIJOEZA_1</Tag>
@@ -256,6 +281,7 @@
 		<French>Nous invitons avec joie les [CT_CIV_ADJ] à venir visiter nos fiers cités-états [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. En quoi pouvons-nous vous aider ?</French>
 		<German>Die [CT_CIV_ADJ] sind gern gesehene Gäste in den glorreichen Städten der [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Bei welchen Themen können wir Euch mit unserem Rat zur Seite stehen?</German>
 		<Russian>[CT_CIV_ADJ] — желанные гости в славных городах [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. По каким вопросам мы можем помочь Вам нашим советом?</Russian>
+		<Hungarian>A kedves [CT_CIV_ADJ] emberek szívesen látott vendégei a dicső [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] városoknak. Milyen kérdésekben segíthetünk tanácsunkkal?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_COCIJOEZA_1</Tag>
@@ -263,6 +289,7 @@
 		<French>En tant qu'homme de culture, je considère de mon devoir d'éduquer toutes créatures, même les plus viles. Considérez-vous donc chanceux. Quelle est donc votre dernière lubie ?</French>
 		<German>Als kultivierter Mann sehe ich es als meine Pflicht an, alle Kreaturen zu erziehen, selbst die abscheulichsten, also schätzt Euch glücklich. Welche Eurer vielen Torheiten sollen wir besprechen?</German>
 		<Russian>Мой долг, как искушенного человека, воспитывать всех существ, даже самых мерзких, так что считай себя счастливчиком. Какую из твоих многочисленных глупостей мы обсудим?</Russian>
+		<Hungarian>Kifinomult emberként kötelességem, hogy minden teremtményt, még a legelvetemültebbeket is neveljem, úgyhogy tekintsd magad szerencsésnek! Melyik bolondságodról beszéljünk?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_COCIJOEZA_1</Tag>
@@ -272,6 +299,7 @@
 		<Italian>La mia tribù è nel bisogno. Condividi le tue provviste con noi, uomo bianco, e i nostri nipoti racconteranno ai loro nipoti le storie dei tuoi atti di gentilezza.</Italian>
 		<Spanish>Mi tribu está necesitada. Comparte tus suministros con nosotros, hombre blanco, y nuestros nietos contarán a sus nietos historias de tus actos de bondad.</Spanish>
 		<Russian>Моё племя в нужде. Поделитесь с нами своими запасами, и наши внуки расскажут своим внукам истории о вашей доброте.</Russian>
+		<Hungarian>A törzsem nehéz helyzetben van. Oszd meg velünk a készleteidet és az unokáink mesélni fognak az unokáiknak a kedvességedről.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_COCIJOEZA_1</Tag>
@@ -279,6 +307,7 @@
 		<French>Je suis venu en paix vous demander de l'aide. Qu'avez-vous à répondre ?</French>
 		<German>Ich komme in Frieden und bitte um Unterstützung. Wie lautet Eure Antwort?</German>
 		<Russian>Я пришел с миром просить о помощи. Что вы скажете?</Russian>
+		<Hungarian>Békével jöttem, hogy segítséget kérjek. Mit szólsz hozzá?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_COCIJOEZA_1</Tag>
@@ -286,6 +315,7 @@
 		<French>Je pourrais écraser le [CT_EMPIRE] à volonté. Donnez-moi ce que j'exige.</French>
 		<German>Ich könnte die [CT_EMPIRE] nach Belieben zerquetschen. Gebt mir, was ich verlange.</German>
 		<Russian>Я могу сокрушить [CT_EMPIRE] в любое время, когда захочу. Дайте мне то, что я требую.</Russian>
+		<Hungarian>Ha akarnám [CT_EMPIRE] elpusztulna. Add meg, amit követelek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GUARANI_SHORT_DESC</Tag>
@@ -307,6 +337,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Гуарани</Russian>
+		<Hungarian>Guarani</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GUARANI_ADJECTIVE</Tag>
@@ -328,6 +359,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Гуарани</Russian>
+		<Hungarian>Guarani</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SEPE_TIARAJU_1</Tag>
@@ -335,6 +367,7 @@
 		<French>Bonjour, visiteur aux vêtements étranges. Je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], représentant du peuple [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:1][COLOR_REVERT]. Allons donc dîner ensemble avec nos familles, nos amis, leurs familles, leurs amis et d'autres encore qui, par malchance, n'auraient pas été mentionnés !</French>
 		<German>Willkommen, viel Kleidung tragender Fremder. Ich, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], vertrete die [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] Stämme. Lasst uns gemeinsam mit all unseren Familien, unseren Freunden, deren Familien, deren Freunden und allen Menschen, die irgendwie noch gefehlt haben, zu Abend essen!</German>
 		<Russian>Добро пожаловать, незнакомец, одетый во многие одежды. Я, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], представляю племена [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Давайте поужинаем вместе со всеми нашими семьями, нашими друзьями, их семьями, их друзьями и всеми остальными, кого я мог упустить из виду!</Russian>
+		<Hungarian>Üdvözöllek, sok ruhát viselő idegen! Én, [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] törzseket képviselem. Vacsorázzunk együtt a családjainkkal, a barátainkkal, az ő családjukkal, az ő barátaikkal, és mindenkivel, akit esetleg kifelejtettem!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_SEPE_TIARAJU_1</Tag>
@@ -342,6 +375,7 @@
 		<French>Vous devrez calmer les esprits sacrés si vous désirez avoir une conversation. Pour le moment, c'est impossible.</French>
 		<German>Sucht die heiligen Geister auf, wenn Ihr ein Gespräch wünscht. Im Moment ist das unmöglich.</German>
 		<Russian>Ищите священных духов, если вы желаете поговорить. В данный момент это невозможно.</Russian>
+		<Hungarian>Keresd a szent szellemeket, ha beszélgetésre vágysz! Jelenleg ez lehetetlen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_SEPE_TIARAJU_1</Tag>
@@ -349,6 +383,7 @@
 		<French>Lorsque le dernier des vôtres sera tombé, et son sang versé à la mer par les grands fleuves, alors il y aura la paix.</French>
 		<German>Wenn der letzte Eures Volkes gefallen ist und sein Blut durch die großen Ströme ins Meer geflossen ist, dann wird Frieden sein.</German>
 		<Russian>Когда падет последний из ваших людей и его кровь будет смыта великими реками в море, только тогда наступит мир.</Russian>
+		<Hungarian>Amikor az utolsó embered is elesik és vérét a nagy folyók kimossák a tengerbe, akkor lesz béke.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_SEPE_TIARAJU_1</Tag>
@@ -356,6 +391,7 @@
 		<French>Bienvenue en pays [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] cher ami ! Que les dieux habitant nos grands fleuves trouvent de la sagesse dans notre conversation.</French>
 		<German>Willkommen in den Ländern der [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT], Freund. Mögen die Götter, die in unseren großen Flüssen leben, uns Weisheit in unserem Gespräch schenken.</German>
 		<Russian>Добро пожаловать в земли [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT], друг. Пусть боги реки даруют нам мудрость в наших беседах.</Russian>
+		<Hungarian>Üdvözöllek a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] földeken, barátom! A folyó istenei adjanak bölcsességet a beszélgetésünkben!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_SEPE_TIARAJU_1</Tag>
@@ -363,6 +399,7 @@
 		<French>Encore vous... c'est dommage, je passais une soirée agréable. Dîtes-nous donc ce qu'il vous faut pour que vous disparaissiez à nouveau.</French>
 		<German>Ihr schon wieder... schade, ich hatte einen angenehmen Abend. Warum sagt Ihr uns nicht, wie wir Euch wieder zum Verschwinden bringen können.</German>
 		<Russian>Вот и ты снова. Как раз когда у меня был хороший вечер. Пожалуйста, расскажи нам, что мы можем сделать для того, чтобы ты снова ушел.</Russian>
+		<Hungarian>Már megint itt vagy! Épp amikor egy kellemes estém volt. Kérlek, mondd el, hogyan tudunk téged újra elküldeni?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_SEPE_TIARAJU_1</Tag>
@@ -372,6 +409,7 @@
 		<Italian>La mia tribù è nel bisogno. Condividi le tue provviste con noi, uomo bianco, e i nostri nipoti racconteranno ai loro nipoti le storie dei tuoi atti di gentilezza.</Italian>
 		<Spanish>Mi tribu está necesitada. Comparte tus suministros con nosotros, hombre blanco, y nuestros nietos contarán a sus nietos historias de tus actos de bondad.</Spanish>
 		<Russian>Моё племя в нужде. Поделитесь с нами своими запасами, и наши внуки расскажут своим внукам истории о вашей доброте.</Russian>
+		<Hungarian>A törzsem nehéz helyzetben van. Oszd meg velünk a készleteidet és az unokáink mesélni fognak az unokáiknak a kedvességedről.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SEPE_TIARAJU_1</Tag>
@@ -379,6 +417,7 @@
 		<French>Je suis venu en paix vous demander de l'aide. Qu'avez-vous à répondre ?</French>
 		<German>Ich komme in Frieden und bitte um Unterstützung. Wie lautet Eure Antwort?</German>
 		<Russian>Я пришел с миром просить о помощи. Что скажете, вы поможете нам?</Russian>
+		<Hungarian>Békével jöttem, hogy segítséget kérjek. Mit szólsz hozzá?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_SEPE_TIARAJU_1</Tag>
@@ -386,6 +425,7 @@
 		<French>Je tiens le destin de l'[CT_EMPIRE] dans ma main. Donnez-moi ce que j'exige.</French>
 		<German>Ich halte das Schicksal von [CT_EMPIRE] in meinen Händen. Gebt mir, was ich verlange.</German>
 		<Russian>Я держу судьбу [CT_EMPIRE] в своих руках. Дайте мне то, что я требую.</Russian>
+		<Hungarian>A kezemben tartom [CT_EMPIRE] sorsát. Add meg, amit követelek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MUNK_1</Tag>
@@ -393,6 +433,7 @@
 		<French>C'est un honneur de rencontrer le grand [CT_NAME], gouverneur de l'[CT_EMPIRE]. Je suis [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], et je vous présente l'amitié du peuple [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Que pouvons-nous faire pour vous, aujourd'hui ?</French>
 		<German>Es ist mir eine Ehre, den großen [CT_NAME], Gouverneur von [CT_EMPIRE], zu treffen. Ich bin [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT], und ich biete Euch die Freundschaft des [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ:3][COLOR_REVERT]-Volkes. Was können wir heute für Euch tun?</German>
 		<Russian>Для меня большая честь познакомиться с великим [CT_NAME], губернатором [CT_EMPIRE]. Я [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] и я дарую вам дружбу людей [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT]. Я надеюсь, что в этот день мы сможем завязать прочную дружбу.</Russian>
+		<Hungarian>Megtiszteltetés, hogy találkozunk [CT_NAME], [CT_EMPIRE] nagy kormányzója! Én [COLOR_HIGHLIGHT_TEXT][OUR_NAME][COLOR_REVERT] vagyok és a [COLOR_HIGHLIGHT_TEXT][OUR_CIV_ADJ][COLOR_REVERT] nép barátságát hozom neked. Remélem, hogy ezen a napon tartós barátságot köthetünk!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_MUNK_1</Tag>
