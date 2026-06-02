@@ -7300,5 +7300,29 @@
 		<German>Einige unserer Missionare haben es mit ihrem Eifer übertrieben. Die Indianer fühlen sich und ihre eigenen Götter beleidigt und haben kurzerhand die Mission angezündet. Sie wollen sehen, ob unser Gott das Haus Gottes vor Feuer schützen kann.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_PRESSED_NATIVE_VILLAGE</Tag>
+		<English>An native settlement is on the verge of collapsing under the cultural pressure exerted by its European neighbours.</English>
+		<German>Eine Siedlung der Ureinwohner steht kurz davor, an dem kulturellen Druck europäischer Nachbarn zu zerbrechen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_PRESSED_NATIVE_VILLAGE_1</Tag>
+		<English>Mylord, our settlement is spreading ever further. The settlers have already taken almost all the land from the natives and driven them back considerably. One of their settlements is on the verge of being destroyed. Shall we put a stop to this?</English>
+		<German>Milord, unsere Siedlung breitet sich immer weiter aus. Siedler haben den Ureinwohnern bereits fast all ihr Land abgenommen und sie stark zurückgedrängt. Eine ihrer Siedlungen steht kurz davor zerstört zu werden. Sollen wir dem Einhalt gebieten?</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_PRESSED_NATIVE_VILLAGE_2</Tag>
+		<English>Mylord, a number of chiefs are gathered at our gates and are very angry – more and more settlers are coming into their country and encroaching on their hunting grounds and farmland. Their settlement is on the brink of destruction. They are demanding compensation</English>
+		<German>Milord, einige Häuptlinge stehen vor unseren Toren und sind sehr wütend - immer mehr Siedler kommen in ihr Land und rauben ihre Jagdgebiete und Ackerflächen. Ihre Siedlung steht kurz vor der Zerstörung. Sie verlangen Wiedergutmachung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_PRESSED_NATIVE_VILLAGE_3</Tag>
+		<English>My lord, a nearby native settlement is about to be destroyed – our settlers have effectively taken over the entire area. The natives are demanding that we withdraw or compensate them.</English>
+		<German>Milord, eine nahegelegene Siedlung der Ureinwohner wird bald zerstört werden - unsere Siedler haben praktisch das ganze Land in Besitz genommen. Die Ureinwohner verlangen, dass wir uns zurückziehen oder sie entschädigen.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
 

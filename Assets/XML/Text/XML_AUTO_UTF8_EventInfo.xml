@@ -3115,4 +3115,16 @@
 		<German>Diese Beleidigung des Herrn darf nicht unbeantwortet bleiben. Fordert Wiedergutmachung und macht den Stamm für die Tat verantwortlich. Verlangt als Wiedergutmachung reichlich Opfergaben, damit sie sehen, dass unser Gott auch strafen kann, wenn seine irdischen Kinder nicht gehorchen.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PRESSED_NATIVE_VILLAGE_1</Tag>
+		<English>We must protect the village at all costs and negotiate a treaty with the natives. We will compensate them and ensure that their settlement is not destroyed as well. We need peaceful relations with the natives – not least for trade.</English>
+		<German>Wir müssen das Dorf unbedingt schützen und mit den Indianern einen Vertrag aushandeln. Wir werden sie entschädigen und dafür sorgen, dass ihre Siedlung nicht auch noch zerstört wird. Wir brauchen den friedlichen Kontakt zu den Indianern - auch für den Handel.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PRESSED_NATIVE_VILLAGE_2</Tag>
+		<English>Pah, I couldn't care less about some savages. It's about time they cleared off. It's a good thing the settlers are pushing for this. We need the land for the colony's development.</English>
+		<German>Pah, was interessieren mich irgendwelche Wilden. Es wird langsam Zeit, dass sie hier verschwinden. Gut, dass die Siedler das vorantreiben. Wir brauchen das Land für die Entwicklung der Kolonie.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

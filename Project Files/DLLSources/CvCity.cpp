@@ -9486,6 +9486,41 @@ void CvCity::ejectTrader()
 	}
 }
 
+// WTP Schmiddie, entry for pressured native village event Start
+
+void CvCity::abandonNativeVillage()
+{
+	if (!isNative())
+	{
+		return;
+	}
+
+	ejectTeachUnits();
+	ejectMissionary();
+	ejectTrader();
+
+	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
+	{
+		CvPlot* pLoopPlot = ::plotCity(getX_INLINE(), getY_INLINE(), i);
+		if (pLoopPlot != NULL)
+		{
+			pLoopPlot->setCulture(getOwnerINLINE(), 0, false);
+		}
+	}
+
+	while (getPopulation() > 1)
+	{
+		if (!AI_removeWorstPopulationUnit(false))
+		{
+			FAssertMsg(false, "Could not eject unit");
+			break;
+		}
+	}
+
+	GET_PLAYER(getOwnerINLINE()).disband(this);
+}
+// WTP Schmiddie, entry for pressured native village event End
+
 bool CvCity::canProduceYield(YieldTypes eYield) const
 {
 	CvPlayer& kPlayer = GET_PLAYER(getOwnerINLINE());
@@ -11961,15 +11996,20 @@ bool CvCity::canTradeAway(PlayerTypes eToPlayer) const
 	{
 		return false;
 	}
-
+// WTP Schmiddie "giving native cities to European player "by respect" event deactivated - Start
 	if (isNative() && !GET_PLAYER(eToPlayer).isNative())
 	{
-		if (plot()->getCulture(eToPlayer) < plot()->getCulture(getOwnerINLINE()))
-		{
-			return false;
-		}
+		return false;
 	}
 
+//	if (isNative() && !GET_PLAYER(eToPlayer).isNative())
+//	{
+//		if (plot()->getCulture(eToPlayer) < plot()->getCulture(getOwnerINLINE()))
+//		{
+//			return false;
+//		}
+//	}
+// WTP Schmiddie "giving native cities to European player "by respect" event deactivated - End
 	return true;
 }
 

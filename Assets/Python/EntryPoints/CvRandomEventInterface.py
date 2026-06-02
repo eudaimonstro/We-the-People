@@ -25053,3 +25053,233 @@ def applyBurningMissionRetaliate(argsList):
 
 	_showBurningMissionEffect(nativeCity)
 	_removeBurningMission(nativeCity)
+
+
+######## Pressured Native Village Event ###########
+
+PRESSED_NATIVE_VILLAGE_READY_TURN_PREFIX = "[[WTP_PRESSED_NATIVE_VILLAGE_READY_TURN_"
+PRESSED_NATIVE_VILLAGE_READY_TURN_SUFFIX = "]]"
+
+
+def _getPressedNativeVillageKey(nativePlayer, nativeCity):
+	return "%s%d_%d=" % (
+		PRESSED_NATIVE_VILLAGE_READY_TURN_PREFIX,
+		nativePlayer.getID(),
+		nativeCity.getID()
+	)
+
+
+def _getPressedNativeVillageReadyTurn(player, nativePlayer, nativeCity):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	szKey = _getPressedNativeVillageKey(nativePlayer, nativeCity)
+
+	iStart = szData.find(szKey)
+	if iStart == -1:
+		return -1
+
+	iStart += len(szKey)
+	iEnd = szData.find(PRESSED_NATIVE_VILLAGE_READY_TURN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setPressedNativeVillageReadyTurn(player, nativePlayer, nativeCity, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	szKey = _getPressedNativeVillageKey(nativePlayer, nativeCity)
+
+	iStart = szData.find(szKey)
+	if iStart != -1:
+		iEnd = szData.find(PRESSED_NATIVE_VILLAGE_READY_TURN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(PRESSED_NATIVE_VILLAGE_READY_TURN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		szKey,
+		iReadyTurn,
+		PRESSED_NATIVE_VILLAGE_READY_TURN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _startPressedNativeVillageCooldown(player, nativePlayer, nativeCity):
+	iReadyTurn = CyGame().getGameTurn() + _scaleTurnsByGameSpeed(40)
+	_setPressedNativeVillageReadyTurn(player, nativePlayer, nativeCity, iReadyTurn)
+
+
+def _isPressedNativeVillageCooldownActive(player, nativePlayer, nativeCity):
+	iReadyTurn = _getPressedNativeVillageReadyTurn(player, nativePlayer, nativeCity)
+	return iReadyTurn > CyGame().getGameTurn()
+
+
+def _isPressedNativeVillageSurrounded(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return False
+
+	iValidLandPlots = 0
+	iOwnedPlots = 0
+	iPlayer = player.getID()
+
+	for iDX in range(-1, 2):
+		for iDY in range(-1, 2):
+			if iDX == 0 and iDY == 0:
+				continue
+
+			plot = plotXY(nativeCity.getX(), nativeCity.getY(), iDX, iDY)
+			if plot is None or plot.isNone():
+				continue
+
+			if plot.isWater():
+				continue
+
+			if plot.isCity():
+				continue
+
+			iValidLandPlots += 1
+
+			if plot.getOwner() == iPlayer:
+				iOwnedPlots += 1
+
+	if iValidLandPlots < 4:
+		return False
+
+	return (iOwnedPlots * 100) >= (iValidLandPlots * 75)
+
+
+def _getPressedNativeVillageData(kTriggeredData):
+	player, nativePlayer, nativeCity = _sunLandgrabbingContext(kTriggeredData)
+	if player is None:
+		return (None, None, None)
+
+	if _isPressedNativeVillageCooldownActive(player, nativePlayer, nativeCity):
+		return (None, None, None)
+
+	if not _isPressedNativeVillageSurrounded(player, nativeCity):
+		return (None, None, None)
+
+	return (player, nativePlayer, nativeCity)
+
+def _applyPressedNativeVillageRelationChange(player, nativePlayer, iChange):
+	if player.isNone() or nativePlayer is None or nativePlayer.isNone():
+		return
+
+	if iChange == 0:
+		return
+
+	player.AI_changeAttitudeExtra(nativePlayer.getID(), iChange)
+	nativePlayer.AI_changeAttitudeExtra(player.getID(), iChange)
+
+def _showPressedNativeVillagePlot(player, nativeCity):
+	if player is None or player.isNone():
+		return
+	if nativeCity is None or nativeCity.isNone():
+		return
+	if not player.isHuman():
+		return
+
+	plot = nativeCity.plot()
+	if plot is None or plot.isNone():
+		return
+
+	plot.setRevealed(player.getTeam(), True, False, -1)
+	CyCamera().JustLookAtPlot(plot)
+
+def canTriggerPressedNativeVillage(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getPressedNativeVillageData(kTriggeredData)
+	if player is None:
+		return False
+
+	_showPressedNativeVillagePlot(player, nativeCity)
+
+	return True
+
+
+def applyPressedNativeVillageProtect(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getPressedNativeVillageData(kTriggeredData)
+	if player is None:
+		return
+
+	_startPressedNativeVillageCooldown(player, nativePlayer, nativeCity)
+
+
+def applyPressedNativeVillageDisplace(argsList):
+	kTriggeredData = argsList[0]
+
+	player, nativePlayer, nativeCity = _getPressedNativeVillageData(kTriggeredData)
+	if player is None:
+		return
+
+	pPlot = nativeCity.plot()
+
+	_applyPressedNativeVillageRelationChange(player, nativePlayer, -1)
+
+	nativeCity.abandonNativeVillage()
+
+	if pPlot is not None and not pPlot.isNone():
+
+		try:
+			CyEngine().triggerEffect(
+				gc.getInfoTypeForString("EFFECT_CITY_BIG_BURNING_SMOKE"),
+				pPlot.getPoint()
+			)
+		except:
+			pass
+
+		try:
+			CyAudioGame().Play2DSound("AS2D_CITYRAZE")
+		except:
+			pass
+
+	_startPressedNativeVillageCooldown(player, nativePlayer, nativeCity)
+    
+def _spawnPressedNativeVillageReturnedUnit(player, nativeCity, iUnitClass, iProfession):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return
+
+	if iUnitClass == -1:
+		return
+
+	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+	if iUnitType == UnitTypes.NO_UNIT:
+		return
+
+	unit = player.initUnit(
+		iUnitType,
+		iProfession,
+		nativeCity.getX(),
+		nativeCity.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.DIRECTION_SOUTH,
+		0
+	)
+
+	return unit
+
+
+def _returnPressedNativeVillageMissionary(player, nativeCity):
+	if player.isNone() or nativeCity is None or nativeCity.isNone():
+		return
+
+	nativeCity.ejectMissionary()

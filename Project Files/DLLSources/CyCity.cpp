@@ -909,6 +909,20 @@ void CyCity::ejectMissionary()
 		getCity()->ejectMissionary();
 	}
 }
+void CyCity::ejectTrader()
+{
+	if (m_pCity)
+	{
+		const_cast<CvCity*>(m_pCity)->ejectTrader();
+	}
+}
+void CyCity::abandonNativeVillage()
+{
+	if (m_pCity)
+	{
+		const_cast<CvCity*>(m_pCity)->abandonNativeVillage();
+	}
+}
 void CyCity::setMissionaryPlayer(PlayerTypes ePlayer, bool bAnnounce)
 {
 	if (m_pCity)

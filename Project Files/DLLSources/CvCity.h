@@ -760,6 +760,7 @@ public:
 	void ejectTeachUnits();
 	void ejectMissionary();
 	void ejectTrader();
+	void abandonNativeVillage(); // WTP Schmiddie, entry for pressured native village event
 	bool canProduceYield(YieldTypes eYield) const;
 
 	bool educateStudent(int iUnitId, UnitTypes eUnit);

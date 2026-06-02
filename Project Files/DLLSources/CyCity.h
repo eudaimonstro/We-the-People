@@ -217,6 +217,8 @@ public:
 	void setMissionaryPlayer(PlayerTypes ePlayer, bool bAnnounce);
 	void setMissionaryRate(int iRate);
 	void ejectMissionary(); // WTP Schmiddie, entry for destroy mission event
+	void ejectTrader(); // WTP Schmiddie, entry for pressured native village event
+	void abandonNativeVillage(); // WTP Schmiddie, entry for pressured native village event
 	
 	PlayerTypes getTradePostPlayer() const; // WTP, ray, Native Trade Posts - START
 	int getNativeTradeRate() const; // WTP, ray, Native Trade Posts - START

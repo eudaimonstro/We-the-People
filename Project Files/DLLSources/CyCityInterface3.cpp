@@ -84,7 +84,9 @@ void CyCityPythonInterface3(python::class_<CyCity>& x)
 		// R&R, Robert Surcouf, No More Variables Hidden game option END
 		// WTP, ray, Native Trade Posts - START
 		.def("getTradePostPlayer", &CyCity::getTradePostPlayer, "PlayerTypes ()")
-		.def("getNativeTradeRate", &CyCity::getNativeTradeRate, "int ()")
+		.def("getNativeTradeRate", &CyCity::getNativeTradeRate, "int ()") 
+		.def("ejectTrader", &CyCity::ejectTrader, "void ()") // WTP Schmiddie, entry for pressured native village event
+		.def("abandonNativeVillage", &CyCity::abandonNativeVillage, "void ()") // WTP Schmiddie, entry for pressured native village event
 		// WTP, ray, Native Trade Posts - START
 		.def("isEverOwned", &CyCity::isEverOwned, "bool ()")
 		;
