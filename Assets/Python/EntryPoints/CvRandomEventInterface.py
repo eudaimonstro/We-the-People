@@ -25283,3 +25283,228 @@ def _returnPressedNativeVillageMissionary(player, nativeCity):
 		return
 
 	nativeCity.ejectMissionary()
+
+
+######## Gift of Native Knowledge Event ###########
+
+GIFT_NATIVE_KNOWLEDGE_CHANCE = 10
+GIFT_NATIVE_KNOWLEDGE_MAX_CITY_POPULATION = 20
+
+GIFT_NATIVE_KNOWLEDGE_FARM_MARKER = "[[WTP_GIFT_NATIVE_KNOWLEDGE_FARM=1]]"
+GIFT_NATIVE_KNOWLEDGE_PLANTATION_MARKER = "[[WTP_GIFT_NATIVE_KNOWLEDGE_PLANTATION=1]]"
+
+def _cityHasGiftNativeKnowledgeMarker(city, szMarker):
+	if city is None or city.isNone():
+		return False
+
+	szData = city.getScriptData()
+	if szData is None:
+		return False
+
+	return szMarker in szData
+
+
+def _setGiftNativeKnowledgeMarker(city, szMarker):
+	if city is None or city.isNone():
+		return
+
+	szData = city.getScriptData()
+	if szData is None:
+		szData = ""
+
+	if szMarker not in szData:
+		city.setScriptData(szData + szMarker)
+
+
+def _cityHasGiftNativeKnowledgeImprovement(city, improvementTypes):
+	if city is None or city.isNone():
+		return False
+
+	for i in range(gc.getNUM_CITY_PLOTS()):
+		plot = plotCity(city.getX(), city.getY(), i)
+
+		if plot is None or plot.isNone():
+			continue
+
+		if plot.getOwner() != city.getOwner():
+			continue
+
+		if plot.getImprovementType() in improvementTypes:
+			return True
+
+	return False
+
+
+def _cityHasGiftNativeKnowledgeFarm(city):
+	return _cityHasGiftNativeKnowledgeImprovement(city, (
+		gc.getInfoTypeForString("IMPROVEMENT_FARM"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_FARM"),
+	))
+
+
+def _cityHasGiftNativeKnowledgeCropPotential(city):
+	if city is None or city.isNone():
+		return False
+
+	for i in range(gc.getNUM_CITY_PLOTS()):
+		plot = plotCity(city.getX(), city.getY(), i)
+
+		if plot is None or plot.isNone():
+			continue
+
+		if plot.getOwner() != city.getOwner():
+			continue
+
+		if plot.isWater():
+			continue
+
+		if plot.isPeak():
+			continue
+
+		if plot.isCity():
+			continue
+
+		return True
+
+	return False
+
+
+def _cityHasGiftNativeKnowledgePlantation(city):
+	return _cityHasGiftNativeKnowledgeCropPotential(city)
+
+
+def _cityHasAvailableGiftNativeKnowledgeOption(city):
+	bHasFarmOption = (
+		_cityHasGiftNativeKnowledgeFarm(city) and
+		not _cityHasGiftNativeKnowledgeMarker(city, GIFT_NATIVE_KNOWLEDGE_FARM_MARKER)
+	)
+
+	bHasPlantationOption = (
+		_cityHasGiftNativeKnowledgePlantation(city) and
+		not _cityHasGiftNativeKnowledgeMarker(city, GIFT_NATIVE_KNOWLEDGE_PLANTATION_MARKER)
+	)
+
+	return bHasFarmOption or bHasPlantationOption
+
+
+def _getGiftNativeKnowledgeData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None, None)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return (None, None, None, None)
+
+	if city.getPopulation() > GIFT_NATIVE_KNOWLEDGE_MAX_CITY_POPULATION:
+		return (None, None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_PLEASED:
+		return (None, None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity.isNone():
+		return (None, None, None, None)
+
+	if not _rumBlossomNativeCityBordersPlayerCity(city, nativeCity):
+		return (None, None, None, None)
+
+	if not _cityHasAvailableGiftNativeKnowledgeOption(city):
+		return (None, None, None, None)
+
+	return (player, city, nativePlayer, nativeCity)
+
+
+def canTriggerGiftNativeKnowledge(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getGiftNativeKnowledgeData(kTriggeredData)
+	if player is None:
+		return False
+
+	if CyGame().getSorenRandNum(100, "Gift of Native Knowledge trigger") >= GIFT_NATIVE_KNOWLEDGE_CHANCE:
+		return False
+
+	return True
+
+
+def canApplyGiftNativeKnowledgeFarm(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getGiftNativeKnowledgeData(kTriggeredData)
+	if player is None:
+		return False
+
+	if _cityHasGiftNativeKnowledgeMarker(city, GIFT_NATIVE_KNOWLEDGE_FARM_MARKER):
+		return False
+
+	return _cityHasGiftNativeKnowledgeFarm(city)
+
+
+def canApplyGiftNativeKnowledgePlantation(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getGiftNativeKnowledgeData(kTriggeredData)
+	if player is None:
+		return False
+
+	if _cityHasGiftNativeKnowledgeMarker(city, GIFT_NATIVE_KNOWLEDGE_PLANTATION_MARKER):
+		return False
+
+	return _cityHasGiftNativeKnowledgePlantation(city)
+
+
+def applyGiftNativeKnowledgeFarm(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getGiftNativeKnowledgeData(kTriggeredData)
+	if player is None:
+		return
+
+	_setGiftNativeKnowledgeMarker(city, GIFT_NATIVE_KNOWLEDGE_FARM_MARKER)
+
+
+def applyGiftNativeKnowledgePlantation(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getGiftNativeKnowledgeData(kTriggeredData)
+	if player is None:
+		return
+
+	_setGiftNativeKnowledgeMarker(city, GIFT_NATIVE_KNOWLEDGE_PLANTATION_MARKER)
+
+
+def applyGiftNativeKnowledgeReject(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getGiftNativeKnowledgeData(kTriggeredData)
+	if player is None:
+		return
+
+
+def getHelpGiftNativeKnowledgeFarm(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_GIFT_NATIVE_KNOWLEDGE_FARM_HELP",
+		(2, 1)
+	)
+
+
+def getHelpGiftNativeKnowledgePlantation(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_GIFT_NATIVE_KNOWLEDGE_PLANTATION_HELP",
+		(2, 1)
+	)
+
+
+def getHelpGiftNativeKnowledgeReject(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_GIFT_NATIVE_KNOWLEDGE_REJECT_HELP",
+		(-1,)
+	)

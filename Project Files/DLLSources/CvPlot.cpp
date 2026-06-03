@@ -6989,7 +6989,65 @@ int CvPlot::calculatePotentialYield(YieldTypes eYield, PlayerTypes ePlayer, Impr
 			}
 		}
 		// R&R, ray, Landplot Yields - END
+		// WTP, Schmiddie, Gift of Native Knowledge - START
+		if (!isWater() && !isImpassable())
+		{
+			CvCity* pWorkingCity = getWorkingCity();
 
+			if (pWorkingCity != NULL)
+			{
+				CvWString szScriptData = pWorkingCity->getScriptData();
+
+				if (eYield == YIELD_FOOD)
+				{
+					if (szScriptData.find(L"[[WTP_GIFT_NATIVE_KNOWLEDGE_FARM=1]]") != CvWString::npos)
+					{
+						if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") ||
+							eImprovement == GC.getInfoTypeForString("IMPROVEMENT_LARGE_FARM"))
+						{
+							iYield += 2;
+						}
+					}
+				}
+
+				if (szScriptData.find(L"[[WTP_GIFT_NATIVE_KNOWLEDGE_PLANTATION=1]]") != CvWString::npos)
+				{
+					if (!isPeak() && !isCity())
+					{
+						if (iYield > 0)
+						{
+							if (eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_RICE") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_CASSAVA") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_HEMP") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_FLAX") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_COCOA_FRUITS") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_COFFEE_BERRIES") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_PEANUTS") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_TOBACCO") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_YERBA_LEAVES") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_COTTON") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_INDIGO") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_COCHINEAL") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_RED_PEPPER") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_VANILLA_PODS") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_BARLEY") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_SUGAR") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_FRUITS") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_GRAPES") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_OLIVES") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_RAPE") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_COCA_LEAVES") ||
+								eYield == (YieldTypes)GC.getInfoTypeForString("YIELD_KAUTSCHUK"))
+							{
+								iYield += 2;
+							}
+						}
+					}
+				}
+			}
+		}
+		// WTP, Schmiddie, Gift of Native Knowledge - END
+		
 		if (isWater())
 		{
 			if (!isImpassable())

@@ -7324,5 +7324,17 @@
 		<German>Milord, eine nahegelegene Siedlung der Ureinwohner wird bald zerstört werden - unsere Siedler haben praktisch das ganze Land in Besitz genommen. Die Ureinwohner verlangen, dass wir uns zurückziehen oder sie entschädigen.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_GIFT_OF_NATIVE_KNOWLEDGE</Tag>
+		<English>Rumours are circulating that Native Americans and Europeans are working closely together on the farm. The harvests in this colony are exceptionally good.</English>
+		<German>Gerüchte verbreiten sich, dass Indianer und Europäer beim Ackerbau eng zusammenarbeiten. Die Erträge in dieser Kolonie sind außergewöhnlich gut.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_GIFT_OF_NATIVE_KNOWLEDGE</Tag>
+		<English>For generations, the inhabitants of a neighbouring Native American village have farmed this land and know its plants, animals and soils better than almost anyone else. Impressed by the friendship between our peoples, they have offered to share their knowledge with us.</English>
+		<German>Seit Generationen bewirtschaften die Bewohner eines benachbarten Indianerdorfes dieses Land und kennen seine Pflanzen, Tiere und Böden wie kaum jemand sonst. Beeindruckt von der Freundschaft zwischen unseren Völkern bieten sie an, ihr Wissen mit uns zu teilen.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
 
