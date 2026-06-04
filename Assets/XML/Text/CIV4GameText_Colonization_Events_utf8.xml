@@ -7336,5 +7336,17 @@
 		<German>Seit Generationen bewirtschaften die Bewohner eines benachbarten Indianerdorfes dieses Land und kennen seine Pflanzen, Tiere und Böden wie kaum jemand sonst. Beeindruckt von der Freundschaft zwischen unseren Völkern bieten sie an, ihr Wissen mit uns zu teilen.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_MIXED_SETTLEMENT</Tag>
+		<English>Rumours are circulating that Native Americans and Europeans are living together on more than friendly terms in a colony.</English>
+		<German>Gerüchte verbreiten sich, dass Indianer und Europäer in einer Kolonie mehr als freundschaftlich zusammenleben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_MIXED_SETTLEMENT</Tag>
+		<English>Mylord, in one of our colonies it appears that the Native Americans and European settlers have been getting on more than just as friends for some time now. We have received reports that many mestizos are being born there. The Church is not pleased with this immoral behaviour.</English>
+		<German>Milord, in einer unserer Kolonien haben sich Indianer und Europäer offenbar seit einiger Zeit mehr als freundschaftlich angenähert. Wir erhielten Berichte, dass dort viele Mestizen gebohren werden. Die Kirche ist nicht erfreut über da unzüchtige Treiben.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
 

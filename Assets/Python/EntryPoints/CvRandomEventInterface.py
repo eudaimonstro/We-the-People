@@ -25508,3 +25508,272 @@ def getHelpGiftNativeKnowledgeReject(argsList):
 		"TXT_KEY_EVENT_GIFT_NATIVE_KNOWLEDGE_REJECT_HELP",
 		(-1,)
 	)
+
+######## Mixed Settlements Event ###########
+
+MIXED_SETTLEMENT_CHANCE = 10
+MIXED_SETTLEMENT_MAX_CITY_POPULATION = 10
+MIXED_SETTLEMENT_OBSERVATION_TURNS = 15
+
+MIXED_SETTLEMENT_READY_TURN_PREFIX = "[[WTP_MIXED_SETTLEMENT_READY_TURN_"
+MIXED_SETTLEMENT_READY_TURN_SUFFIX = "]]"
+
+
+def _getMixedSettlementKey(player, city, nativePlayer, nativeCity):
+	return "%s%d_%d_%d_%d=" % (
+		MIXED_SETTLEMENT_READY_TURN_PREFIX,
+		player.getID(),
+		city.getID(),
+		nativePlayer.getID(),
+		nativeCity.getID()
+	)
+
+
+def _getMixedSettlementReadyTurn(player, city, nativePlayer, nativeCity):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	szKey = _getMixedSettlementKey(player, city, nativePlayer, nativeCity)
+
+	iStart = szData.find(szKey)
+	if iStart == -1:
+		return -1
+
+	iStart += len(szKey)
+	iEnd = szData.find(MIXED_SETTLEMENT_READY_TURN_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _setMixedSettlementReadyTurn(player, city, nativePlayer, nativeCity, iReadyTurn):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	szKey = _getMixedSettlementKey(player, city, nativePlayer, nativeCity)
+
+	iStart = szData.find(szKey)
+	if iStart != -1:
+		iEnd = szData.find(MIXED_SETTLEMENT_READY_TURN_SUFFIX, iStart)
+		if iEnd != -1:
+			iEnd += len(MIXED_SETTLEMENT_READY_TURN_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		szKey,
+		iReadyTurn,
+		MIXED_SETTLEMENT_READY_TURN_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def _startMixedSettlementObservation(player, city, nativePlayer, nativeCity):
+	iReadyTurn = CyGame().getGameTurn() + _scaleTurnsByGameSpeed(MIXED_SETTLEMENT_OBSERVATION_TURNS)
+	_setMixedSettlementReadyTurn(player, city, nativePlayer, nativeCity, iReadyTurn)
+
+
+def _isMixedSettlementObservationDone(player, city, nativePlayer, nativeCity):
+	iReadyTurn = _getMixedSettlementReadyTurn(player, city, nativePlayer, nativeCity)
+
+	if iReadyTurn == -1:
+		_startMixedSettlementObservation(player, city, nativePlayer, nativeCity)
+		return False
+
+	return iReadyTurn <= CyGame().getGameTurn()
+
+
+def _applyMixedSettlementRelationBonus(player, nativePlayer, iBonus):
+	if player.isNone() or nativePlayer.isNone() or iBonus == 0:
+		return
+
+	player.AI_changeAttitudeExtra(nativePlayer.getID(), iBonus)
+	nativePlayer.AI_changeAttitudeExtra(player.getID(), iBonus)
+
+
+def _getMixedSettlementData(kTriggeredData):
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	if player.isNone() or not player.isPlayable() or player.isNative():
+		return (None, None, None, None)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return (None, None, None, None)
+
+	if city.getPopulation() > MIXED_SETTLEMENT_MAX_CITY_POPULATION:
+		return (None, None, None, None)
+
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	if nativePlayer.isNone() or not nativePlayer.isNative():
+		return (None, None, None, None)
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return (None, None, None, None)
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_FRIENDLY:
+		return (None, None, None, None)
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	if nativeCity.isNone():
+		return (None, None, None, None)
+
+	if not _rumBlossomNativeCityBordersPlayerCity(city, nativeCity):
+		return (None, None, None, None)
+
+	if not _isMixedSettlementObservationDone(player, city, nativePlayer, nativeCity):
+		return (None, None, None, None)
+
+	return (player, city, nativePlayer, nativeCity)
+
+
+
+def canTriggerMixedSettlement(argsList):
+	kTriggeredData = argsList[0]
+
+	player, city, nativePlayer, nativeCity = _getMixedSettlementData(kTriggeredData)
+	if player is None:
+		return False
+
+	if CyGame().getSorenRandNum(100, "Mixed Settlement trigger") >= MIXED_SETTLEMENT_CHANCE:
+		return False
+
+	return True
+
+
+######## Events for non-playable: Native Refugees Event ###########
+
+def triggerNativeRefugees(pLostCity, iNativePlayer):
+	# Native refugee support after a native village has been destroyed.
+
+	if pLostCity is None or pLostCity.isNone():
+		return
+
+	if iNativePlayer == -1:
+		return
+
+	nativePlayer = gc.getPlayer(iNativePlayer)
+
+	if nativePlayer.isNone():
+		return
+
+	if not nativePlayer.isNative():
+		return
+
+	if nativePlayer.getNumCities() < 1:
+		return
+
+	receivingCity = _getNativeRefugeeReceivingCity(nativePlayer)
+
+	if receivingCity is None or receivingCity.isNone():
+		return
+
+	applyNativeRefugees(nativePlayer, receivingCity)
+
+
+def _getNativeRefugeeReceivingCity(nativePlayer):
+	# Pick a random remaining city of the same native player.
+
+	if nativePlayer.isNone():
+		return None
+
+	cities = []
+
+	(loopCity, iter) = nativePlayer.firstCity(False)
+
+	while loopCity:
+		if not loopCity.isNone():
+			cities.append(loopCity)
+
+		(loopCity, iter) = nativePlayer.nextCity(iter, False)
+
+	if len(cities) < 1:
+		return None
+
+	iRandom = CyGame().getSorenRandNum(len(cities), "Native Refugees receiving city")
+
+	return cities[iRandom]
+
+
+def applyNativeRefugees(nativePlayer, receivingCity):
+	# Apply refugee support to the selected native city.
+
+	if nativePlayer.isNone():
+		return
+
+	if receivingCity is None or receivingCity.isNone():
+		return
+
+	if receivingCity.getOwner() != nativePlayer.getID():
+		return
+
+	receivingCity.changePopulation(2)
+
+	iNativeUnit = gc.getInfoTypeForString("UNIT_NATIVE")
+	iBraveProfession = gc.getInfoTypeForString("PROFESSION_BRAVE")
+
+	iNumBraves = 3
+
+	for i in range(iNumBraves):
+
+		newUnit = nativePlayer.initUnit(
+			iNativeUnit,
+			ProfessionTypes.NO_PROFESSION,
+			receivingCity.getX(),
+			receivingCity.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.NO_DIRECTION,
+			0
+		)
+
+		if not newUnit.isNone():
+			newUnit.setProfession(iBraveProfession)
+
+	_sendNativeRefugeesMessage(receivingCity)
+
+
+def _sendNativeRefugeesMessage(receivingCity):
+	# Inform all human players that the refugee support event has fired.
+
+	if receivingCity is None or receivingCity.isNone():
+		return
+
+	szMessage = CyTranslator().getText("TXT_KEY_MESSAGE_NATIVE_REFUGEES", (receivingCity.getName(),))
+
+	for iPlayer in range(gc.getMAX_PLAYERS()):
+		player = gc.getPlayer(iPlayer)
+
+		if player.isNone():
+			continue
+
+		if not player.isAlive():
+			continue
+
+		if not player.isHuman():
+			continue
+
+		CyInterface().addMessage(
+			iPlayer,
+			False,
+			gc.getEVENT_MESSAGE_TIME(),
+			szMessage,
+			"AS2D_DISCOVERBONUS",
+			InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+			None,
+			ColorTypes(-1),
+			receivingCity.getX(),
+			receivingCity.getY(),
+			True,
+			True
+		)

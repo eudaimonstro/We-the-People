@@ -15,6 +15,7 @@ import CvCameraControls
 import sys
 import CvWorldBuilderScreen
 import CvAdvisorUtils
+import CvRandomEventInterface
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -733,6 +734,8 @@ class CvEventManager:
 		'City Razed'
 		city, iPlayer = argsList
 		iOwner = city.findHighestCulture()
+
+		CvRandomEventInterface.triggerNativeRefugees(city, iOwner)
 
 		CvUtil.pyPrint("City Razed Event: %s" %(city.getName(),))
 

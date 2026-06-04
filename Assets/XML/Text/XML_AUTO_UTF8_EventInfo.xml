@@ -3155,4 +3155,22 @@
 		<English>[ICON_BULLET]COLOR_POSITIVE_TEXT]+%d1 yield[COLOR_REVERT] on Plantations worked by this settlement.</English>
 		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]+%d1 Ertrag [COLOR_REVERT]auf Plantagen, die von dieser Siedlung bewirtschaftet werden.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MIXED_SETTLEMENT_1</Tag>
+		<English>I am sure that living together will also have a positive impact on the rest of our settlements and make it easier to get along with the indigenous people as a whole. Let them be, whatever the Church may say.</English>
+		<German>Ich bin sicher, das Zusammenleben wird sich auch positiv auf den Rest unserer Siedlungen auswirken und das Auskommen mit den Ureinwohnern insgesamt erleichtern. Heißt die Familien willkommen, egal was die Kirche dazu sagt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MIXED_SETTLEMENT_2</Tag>
+		<English>I am sure that living together will also have a positive impact on the rest of our settlements and make it easier to get along with the indigenous people as a whole. Let them be, whatever the Church may say.</English>
+		<German>Um Himmels Willen, diesem unzüchtigen Treiben muss Einheit geboten werden. Wir leben hier doch nicht in Sodom und Gomorrha. Was passiert ist, können wir nicht ändern, aber in Zukunft werden wir solche Verfehlungen nicht tolerieren.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NATIVE_REFUGEES</Tag>
+		<English>Scouts report that the survivors of the destroyed village have been welcomed in %s1_city. Refugees, hunters and warriors now strengthen the settlement.</English>
+		<German>Kundschafter berichten, dass die Überlebenden des zerstörten Dorfes in %s1_city aufgenommen wurden. Die Siedlung wächst nun durch Flüchtlinge, Jäger und Krieger ihres Volkes.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
