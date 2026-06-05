@@ -7348,5 +7348,53 @@
 		<German>Milord, in einer unserer Kolonien haben sich Indianer und Europäer offenbar seit einiger Zeit mehr als freundschaftlich angenähert. Wir erhielten Berichte, dass dort viele Mestizen gebohren werden. Die Kirche ist nicht erfreut über da unzüchtige Treiben.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_NATIVE_WEAPONS_RAID</Tag>
+		<English>Native warriors have carried out a daring raid on a colonial settlement.</English>
+		<German>Indianische Krieger haben einen kühnen Überfall auf eine koloniale Siedlung durchgeführt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_WEAPONS_RAID</Tag>
+		<English>Mylord, under cover of darkness, some warriors slipped past the guards and reached the storehouses. Before the alarm could be raised in earnest, they vanished into the wilderness with valuable weapons.</English>
+		<German>Milord, im Schutz der Dunkelheit schlichen sich Krieger an den Wachen von vorbei und erreichten die Lagerhäuser. Noch bevor ernsthaft Alarm geschlagen werden konnte, verschwanden sie mit erbeuteten Musketen in der Wildnis.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_NATIVE_HORSES_RAID</Tag>
+		<English>Native warriors have carried out a daring raid on a colonial settlement.</English>
+		<German>Indianische Krieger haben einen kühnen Überfall auf eine koloniale Siedlung durchgeführt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_HORSES_RAID</Tag>
+		<English>Mylord, under cover of darkness, some warriors slipped past the guards and reached the horse stables. Before the alarm could be raised in earnest, they vanished into the wilderness with valuable horses.</English>
+		<German>Milord, im Schutz der Dunkelheit schlichen sich Krieger an den Wachen von vorbei und erreichten die Pferdeställe. Noch bevor ernsthaft Alarm geschlagen werden konnte, verschwanden sie mit erbeuteten Pferden in der Wildnis.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_NATIVE_FOOD_RAID</Tag>
+		<English>Rumours are spreading throughout the colonies that an Indian tribe is waging war against the Europeans by raiding their storehouses and stealing large quantities of food.</English>
+		<German>In den Kolonien verbreiten sich Gerüchte, dass ein Indianerstamm den Kampf gegen die Europäer führt, in dem er ihre Lagerhäuser um sehr viel Nahrung erleichtert.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_FOOD_RAID</Tag>
+		<English>Scouts report that warriors from a neighboring tribe have raided colonial storehouses and carried off large quantities of provisions.</English>
+		<German>Kundschafter berichten, dass Krieger eines benachbarten Stammes koloniale Vorratslager geplündert und große Mengen an Lebensmitteln fortgeschafft haben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_NATIVE_CONVERTED_RETURN</Tag>
+		<English>A convert can no longer stand living amongst Europeans and wants to return to his own people.</English>
+		<German>Ein Konvertit hält es unter Europäern nicht mehr aus und will wieder zurück zu seinem Volk.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_CONVERTED_RETURN</Tag>
+		<English>A native living amongst your settlers has asked to be allowed to return to his people. Deeply shaken by the Europeans’ way of life, he explains that the missionaries’ words had led him astray.</English>
+		<German>Ein Eingeborener, der unter euren Siedlern lebt, bittet darum, zu seinem Volk zurückkehren zu dürfen. Erschüttert von der Lebensweise der Europäer erklärt er, die Worte der Missionare hätten ihn irregeleitet.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
 

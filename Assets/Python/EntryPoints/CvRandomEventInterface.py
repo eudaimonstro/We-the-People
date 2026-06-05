@@ -25652,6 +25652,38 @@ def canTriggerMixedSettlement(argsList):
 	return True
 
 
+######## Native Event Helper ###########
+
+def _spawnNativeBraves(nativePlayer, city, iNumBraves):
+	# Spawn native units and assign the brave profession.
+
+	if nativePlayer.isNone():
+		return
+
+	if city is None or city.isNone():
+		return
+
+	if iNumBraves < 1:
+		return
+
+	iNativeUnit = gc.getInfoTypeForString("UNIT_NATIVE")
+	iBraveProfession = gc.getInfoTypeForString("PROFESSION_BRAVE")
+
+	for i in range(iNumBraves):
+
+		newUnit = nativePlayer.initUnit(
+			iNativeUnit,
+			ProfessionTypes.NO_PROFESSION,
+			city.getX(),
+			city.getY(),
+			UnitAITypes.NO_UNITAI,
+			DirectionTypes.NO_DIRECTION,
+			0
+		)
+
+		if not newUnit.isNone():
+			newUnit.setProfession(iBraveProfession)
+
 ######## Events for non-playable: Native Refugees Event ###########
 
 def triggerNativeRefugees(pLostCity, iNativePlayer):
@@ -25720,25 +25752,7 @@ def applyNativeRefugees(nativePlayer, receivingCity):
 
 	receivingCity.changePopulation(2)
 
-	iNativeUnit = gc.getInfoTypeForString("UNIT_NATIVE")
-	iBraveProfession = gc.getInfoTypeForString("PROFESSION_BRAVE")
-
-	iNumBraves = 3
-
-	for i in range(iNumBraves):
-
-		newUnit = nativePlayer.initUnit(
-			iNativeUnit,
-			ProfessionTypes.NO_PROFESSION,
-			receivingCity.getX(),
-			receivingCity.getY(),
-			UnitAITypes.NO_UNITAI,
-			DirectionTypes.NO_DIRECTION,
-			0
-		)
-
-		if not newUnit.isNone():
-			newUnit.setProfession(iBraveProfession)
+	_spawnNativeBraves(nativePlayer, receivingCity, 3)
 
 	_sendNativeRefugeesMessage(receivingCity)
 
@@ -25768,7 +25782,7 @@ def _sendNativeRefugeesMessage(receivingCity):
 			False,
 			gc.getEVENT_MESSAGE_TIME(),
 			szMessage,
-			"AS2D_DISCOVERBONUS",
+			"AS2D_ANCESTORSCALL",
 			InterfaceMessageTypes.MESSAGE_TYPE_INFO,
 			None,
 			ColorTypes(-1),
@@ -25777,3 +25791,786 @@ def _sendNativeRefugeesMessage(receivingCity):
 			True,
 			True
 		)
+
+######## Events for non-playable: Ancestors Call Event ###########
+
+ANCESTORS_CALL_MARKER = "[[WTP_ANCESTORS_CALL_USED=1]]"
+
+def triggerAncestorsCallAfterRaze(iNativePlayer):
+	# Trigger ancestors call after a native village has been destroyed.
+
+	if iNativePlayer == -1:
+		return
+
+	nativePlayer = gc.getPlayer(iNativePlayer)
+
+	if nativePlayer.isNone():
+		return
+
+	if not nativePlayer.isNative():
+		return
+
+	if nativePlayer.getNumCities() != 1:
+		return
+
+	if _hasAncestorsCallMarker(nativePlayer):
+		return
+
+	(loopCity, iter) = nativePlayer.firstCity(False)
+
+	if loopCity is None or loopCity.isNone():
+		return
+
+	triggerAncestorsCall(nativePlayer, loopCity)
+
+def triggerAncestorsCall(nativePlayer, city):
+	# Last stand support for a native tribe reduced to its final village.
+
+	if nativePlayer.isNone():
+		return
+
+	if city is None or city.isNone():
+		return
+
+	if not nativePlayer.isNative():
+		return
+
+	if city.getOwner() != nativePlayer.getID():
+		return
+
+	if nativePlayer.getNumCities() != 1:
+		return
+
+	if _hasAncestorsCallMarker(nativePlayer):
+		return
+
+	_setAncestorsCallMarker(nativePlayer)
+
+	applyAncestorsCall(nativePlayer, city)
+
+
+def applyAncestorsCall(nativePlayer, city):
+	# Apply ancestors call support to the last remaining native city.
+
+	if nativePlayer.isNone():
+		return
+
+	if city is None or city.isNone():
+		return
+
+	if city.getOwner() != nativePlayer.getID():
+		return
+
+	city.changePopulation(3)
+
+	_spawnNativeBraves(nativePlayer, city, 4)
+
+	_sendAncestorsCallMessage(city)
+
+
+def _hasAncestorsCallMarker(nativePlayer):
+	# Check whether ancestors call has already been used.
+
+	if nativePlayer.isNone():
+		return True
+
+	return nativePlayer.getScriptData().find(ANCESTORS_CALL_MARKER) != -1
+
+
+def _setAncestorsCallMarker(nativePlayer):
+	# Mark ancestors call as used.
+
+	if nativePlayer.isNone():
+		return
+
+	szScriptData = nativePlayer.getScriptData()
+
+	if szScriptData.find(ANCESTORS_CALL_MARKER) == -1:
+		nativePlayer.setScriptData(szScriptData + ANCESTORS_CALL_MARKER)
+
+
+def _sendAncestorsCallMessage(city):
+	# Inform all human players that the ancestors call event has fired.
+
+	if city is None or city.isNone():
+		return
+
+	szMessage = CyTranslator().getText("TXT_KEY_MESSAGE_ANCESTORS_CALL", (city.getName(),))
+
+	for iPlayer in range(gc.getMAX_PLAYERS()):
+		player = gc.getPlayer(iPlayer)
+
+		if player.isNone():
+			continue
+
+		if not player.isAlive():
+			continue
+
+		if not player.isHuman():
+			continue
+
+		CyInterface().addMessage(
+			iPlayer,
+			False,
+			gc.getEVENT_MESSAGE_TIME(),
+			szMessage,
+			"AS2D_ANCESTORSCALL",
+			InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+			None,
+			ColorTypes(-1),
+			city.getX(),
+			city.getY(),
+			True,
+			True
+		)
+        
+######## Events for non-playable: Native Weapons Raid Event ###########
+
+NATIVE_WEAPONS_RAID_MARKER = "[[WTP_NATIVE_WEAPONS_RAID_USED=1]]"
+
+
+def _getNativeWeaponsRaidScaledAmount(event):
+	# Scale yield amount by game speed storage percent.
+
+	if event is None:
+		return 0
+
+	iAmount = event.getGenericParameter(2)
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iAmount = iAmount * Speed.getStoragePercent() / 100
+
+	if iAmount < 1:
+		iAmount = 1
+
+	return iAmount
+
+
+def canTriggerNativeWeaponsRaid(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return False
+
+	if nativePlayer.isNone():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not nativePlayer.isNative():
+		return False
+
+	if _hasNativeWeaponsRaidMarker(nativePlayer):
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	if nativeCity.getOwner() != nativePlayer.getID():
+		return False
+
+	return True
+
+
+def canDoNativeWeaponsRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return False
+
+	if not canTriggerNativeWeaponsRaid(argsList):
+		return False
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeWeaponsRaidScaledAmount(event)
+
+	if iYield == -1:
+		return False
+
+	if iAmount < 1:
+		return False
+
+	if city.getYieldStored(iYield) < iAmount:
+		return False
+
+	return True
+
+
+def applyNativeWeaponsRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return
+
+	if not canDoNativeWeaponsRaid1(argsList):
+		return
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeWeaponsRaidScaledAmount(event)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return
+
+	city.changeYieldStored(iYield, -iAmount)
+	nativeCity.changeYieldStored(iYield, iAmount)
+
+	_setNativeWeaponsRaidMarker(nativePlayer)
+
+
+def getHelpNativeWeaponsRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return u""
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return u""
+
+	if nativePlayer.isNone():
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if city is None or city.isNone():
+		return u""
+
+	if nativeCity is None or nativeCity.isNone():
+		return u""
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeWeaponsRaidScaledAmount(event)
+
+	if iYield == -1:
+		return u""
+
+	if iAmount < 1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_WEAPONS_RAID_HELP_1",
+		(iAmount, gc.getYieldInfo(iYield).getTextKey(), city.getNameKey(), nativeCity.getNameKey())
+	)
+
+
+def _hasNativeWeaponsRaidMarker(nativePlayer):
+	# Check whether this native player has already used a native weapons raid.
+
+	if nativePlayer.isNone():
+		return True
+
+	return nativePlayer.getScriptData().find(NATIVE_WEAPONS_RAID_MARKER) != -1
+
+
+def _setNativeWeaponsRaidMarker(nativePlayer):
+	# Mark native weapons raid as used by this native player.
+
+	if nativePlayer.isNone():
+		return
+
+	szScriptData = nativePlayer.getScriptData()
+
+	if szScriptData.find(NATIVE_WEAPONS_RAID_MARKER) == -1:
+		nativePlayer.setScriptData(szScriptData + NATIVE_WEAPONS_RAID_MARKER)
+
+######## Events for non-playable: Native Horses Raid Event ###########
+
+NATIVE_HORSES_RAID_MARKER = "[[WTP_NATIVE_HORSES_RAID_USED=1]]"
+
+
+def _getNativeHorsesRaidScaledAmount(event):
+	# Scale yield amount by game speed storage percent.
+
+	if event is None:
+		return 0
+
+	iAmount = event.getGenericParameter(2)
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iAmount = iAmount * Speed.getStoragePercent() / 100
+
+	if iAmount < 1:
+		iAmount = 1
+
+	return iAmount
+
+
+def canTriggerNativeHorsesRaid(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return False
+
+	if nativePlayer.isNone():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not nativePlayer.isNative():
+		return False
+
+	if _hasNativeHorsesRaidMarker(nativePlayer):
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	if nativeCity.getOwner() != nativePlayer.getID():
+		return False
+
+	return True
+
+
+def canDoNativeHorsesRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return False
+
+	if not canTriggerNativeHorsesRaid(argsList):
+		return False
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeHorsesRaidScaledAmount(event)
+
+	if iYield == -1:
+		return False
+
+	if iAmount < 1:
+		return False
+
+	if city.getYieldStored(iYield) < iAmount:
+		return False
+
+	return True
+
+
+def applyNativeHorsesRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return
+
+	if not canDoNativeHorsesRaid1(argsList):
+		return
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeHorsesRaidScaledAmount(event)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return
+
+	city.changeYieldStored(iYield, -iAmount)
+	nativeCity.changeYieldStored(iYield, iAmount)
+
+	_setNativeHorsesRaidMarker(nativePlayer)
+
+
+def getHelpNativeHorsesRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return u""
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return u""
+
+	if nativePlayer.isNone():
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if city is None or city.isNone():
+		return u""
+
+	if nativeCity is None or nativeCity.isNone():
+		return u""
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeHorsesRaidScaledAmount(event)
+
+	if iYield == -1:
+		return u""
+
+	if iAmount < 1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_HORSES_RAID_HELP_1",
+		(iAmount, gc.getYieldInfo(iYield).getTextKey(), city.getNameKey(), nativeCity.getNameKey())
+	)
+
+
+def _hasNativeHorsesRaidMarker(nativePlayer):
+	# Check whether this native player has already used a native horses raid.
+
+	if nativePlayer.isNone():
+		return True
+
+	return nativePlayer.getScriptData().find(NATIVE_HORSES_RAID_MARKER) != -1
+
+
+def _setNativeHorsesRaidMarker(nativePlayer):
+	# Mark native horses raid as used by this native player.
+
+	if nativePlayer.isNone():
+		return
+
+	szScriptData = nativePlayer.getScriptData()
+
+	if szScriptData.find(NATIVE_HORSES_RAID_MARKER) == -1:
+		nativePlayer.setScriptData(szScriptData + NATIVE_HORSES_RAID_MARKER)
+        
+
+######## Events for non-playable: Native Food Raid Event ###########
+
+NATIVE_FOOD_RAID_MARKER = "[[WTP_NATIVE_FOOD_RAID_USED=1]]"
+
+
+def _getNativeFoodRaidScaledAmount(event):
+	# Scale yield amount by game speed storage percent.
+
+	if event is None:
+		return 0
+
+	iAmount = event.getGenericParameter(2)
+
+	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
+	iAmount = iAmount * Speed.getStoragePercent() / 100
+
+	if iAmount < 1:
+		iAmount = 1
+
+	return iAmount
+
+
+def canTriggerNativeFoodRaid(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return False
+
+	if nativePlayer.isNone():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not nativePlayer.isNative():
+		return False
+
+	if _hasNativeFoodRaidMarker(nativePlayer):
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	if nativeCity.getOwner() != nativePlayer.getID():
+		return False
+
+	return True
+
+
+def canDoNativeFoodRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return False
+
+	if not canTriggerNativeFoodRaid(argsList):
+		return False
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeFoodRaidScaledAmount(event)
+
+	if iYield == -1:
+		return False
+
+	if iAmount < 1:
+		return False
+
+	if city.getYieldStored(iYield) < iAmount:
+		return False
+
+	return True
+
+
+def applyNativeFoodRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return
+
+	if not canDoNativeFoodRaid1(argsList):
+		return
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeFoodRaidScaledAmount(event)
+
+	if city.getYieldStored(iYield) < iAmount:
+		return
+
+	city.changeYieldStored(iYield, -iAmount)
+	nativeCity.changeYieldStored(iYield, iAmount)
+
+	_setNativeFoodRaidMarker(nativePlayer)
+
+
+def getHelpNativeFoodRaid1(argsList):
+	kTriggeredData = argsList[0]
+	eEvent = argsList[1]
+	event = gc.getEventInfo(eEvent)
+
+	if event is None:
+		return u""
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return u""
+
+	if nativePlayer.isNone():
+		return u""
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if city is None or city.isNone():
+		return u""
+
+	if nativeCity is None or nativeCity.isNone():
+		return u""
+
+	iYield = event.getGenericParameter(1)
+	iAmount = _getNativeFoodRaidScaledAmount(event)
+
+	if iYield == -1:
+		return u""
+
+	if iAmount < 1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_NATIVE_FOOD_RAID_HELP_1",
+		(iAmount, gc.getYieldInfo(iYield).getTextKey(), city.getNameKey(), nativeCity.getNameKey())
+	)
+
+
+def _hasNativeFoodRaidMarker(nativePlayer):
+	# Check whether this native player has already used a native food raid.
+
+	if nativePlayer.isNone():
+		return True
+
+	return nativePlayer.getScriptData().find(NATIVE_FOOD_RAID_MARKER) != -1
+
+
+def _setNativeFoodRaidMarker(nativePlayer):
+	# Mark native food raid as used by this native player.
+
+	if nativePlayer.isNone():
+		return
+
+	szScriptData = nativePlayer.getScriptData()
+
+	if szScriptData.find(NATIVE_FOOD_RAID_MARKER) == -1:
+		nativePlayer.setScriptData(szScriptData + NATIVE_FOOD_RAID_MARKER)
+
+######## Events for non-playable: Converted Native Return Event ###########
+
+def _getConvertedNativeReturnsUnitFromCity(city):
+	if city is None or city.isNone():
+		return None
+
+	iConvertedNative = gc.getInfoTypeForString("UNIT_CONVERTED_NATIVE")
+
+	for i in range(city.getPopulation()):
+		unit = city.getPopulationUnitByIndex(i)
+
+		if unit is None or unit.isNone():
+			continue
+
+		if unit.getUnitType() == iConvertedNative:
+			return unit
+
+	return None
+
+
+def canTriggerConvertedNativeReturns(argsList):
+	kTriggeredData = argsList[0]
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if player.isNone():
+		return False
+
+	if nativePlayer.isNone():
+		return False
+
+	if player.isNative():
+		return False
+
+	if not nativePlayer.isNative():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	if nativeCity is None or nativeCity.isNone():
+		return False
+
+	if nativeCity.getOwner() != nativePlayer.getID():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+		return False
+
+	if nativePlayer.AI_getAttitude(player.getID()) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+		return False
+
+	if _getConvertedNativeReturnsUnitFromCity(city) is None:
+		return False
+
+	return True
+
+
+def applyConvertedNativeReturns1(argsList):
+	kTriggeredData = argsList[0]
+
+	if not canTriggerConvertedNativeReturns(argsList):
+		return
+
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	nativePlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	city = player.getCity(kTriggeredData.iCityId)
+	nativeCity = nativePlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+
+	unit = _getConvertedNativeReturnsUnitFromCity(city)
+
+	if unit is None or unit.isNone():
+		return
+
+	city.removePopulationUnit(unit, True, ProfessionTypes.NO_PROFESSION)
+
+	newUnit = nativePlayer.initUnit(
+		gc.getInfoTypeForString("UNIT_NATIVE"),
+		ProfessionTypes.NO_PROFESSION,
+		nativeCity.getX(),
+		nativeCity.getY(),
+		UnitAITypes.NO_UNITAI,
+		DirectionTypes.NO_DIRECTION,
+		0
+	)
+
+	if newUnit is not None and not newUnit.isNone():
+		newUnit.setProfession(gc.getInfoTypeForString("PROFESSION_BRAVE"))

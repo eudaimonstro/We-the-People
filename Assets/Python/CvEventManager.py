@@ -736,6 +736,7 @@ class CvEventManager:
 		iOwner = city.findHighestCulture()
 
 		CvRandomEventInterface.triggerNativeRefugees(city, iOwner)
+		CvRandomEventInterface.triggerAncestorsCallAfterRaze(iOwner)
 
 		CvUtil.pyPrint("City Razed Event: %s" %(city.getName(),))
 

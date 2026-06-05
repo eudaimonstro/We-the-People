@@ -3173,4 +3173,58 @@
 		<German>Kundschafter berichten, dass die Überlebenden des zerstörten Dorfes in %s1_city aufgenommen wurden. Die Siedlung wächst nun durch Flüchtlinge, Jäger und Krieger ihres Volkes.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_ANCESTORS_CALL</Tag>
+		<English>The spirits of the ancestors have united a struggling tribe. Warriors, hunters and families gather in %s1_city, the last remaining settlement of their people.</English>
+		<German>Die Geister der Ahnen haben einen bedrängten Stamm geeint. Krieger, Jäger und Familien versammeln sich in %s1_city, der letzten verbliebenen Siedlung ihres Volkes.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_WEAPONS_RAID_1</Tag>
+		<English>Those damned savages. Step up the guards and secure the warehouses. This won’t go unpunished!</English>
+		<German>Die verfluchten Wilden. Verstärkt die Wachen und sichert die Lagerhäuser. Das wird nicht ungestraft bleiben!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_WEAPONS_RAID_HELP_1</Tag>
+		<English>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] will be removed from %s3_city and added to the stock in %s4_city.</English>
+		<German>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] werden aus %s3_city entfernt und dem Lager von %s4_city hinzugefügt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_HORSES_RAID_1</Tag>
+		<English>Those damned savages. Step up the guards and secure the horse stables. This won’t go unpunished!</English>
+		<German>Die verfluchten Wilden. Verstärkt die Wachen und sichert die Pferdeställe. Das wird nicht ungestraft bleiben!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_HORSES_RAID_HELP_1</Tag>
+		<English>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] will be removed from %s3_city and added to the stock in %s4_city.</English>
+		<German>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] werden aus %s3_city entfernt und dem Lager von %s4_city hinzugefügt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_FOOD_RAID_1</Tag>
+		<English>Good heavens, those savages are good for nothing but plundering and murder. Godless creatures – secure the storehouses and reinforce the guards. We won’t forget this.</English>
+		<German>Himmeldonnerwetter, die Wilden können auch nichts außer Rauben und Morden. Gottlose Geschöpfe - sichert die Lagerhäuser und verstärkt die Wachen. Das werden wir nicht vergessen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_FOOD_RAID_HELP_1</Tag>
+		<English>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] are removed from %s3_city and added to the stores of %s4_city.</English>
+		<German>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] werden aus %s3_city entfernt und den Vorräten von %s4_city hinzugefügt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_CONVERTED_RETURN_1</Tag>
+		<English>Let him return to his people. That should help to strengthen our relations a little.</English>
+		<German>Lasst ihn zu seinem Volk zurückkehren. Das dürfte unsere Beziehungen ein wenig stärken.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NATIVE_CONVERTED_RETURN_2</Tag>
+		<English>He has chosen this path and must stay. God will surely guide him onto the right path.</English>
+		<German>Er hat unseren Weg gewählt und muss bleiben. Gott wird ihn schon noch auf den rechten Weg führen.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

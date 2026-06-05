@@ -2219,6 +2219,13 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>SND_ANCESTORS_CALL</SoundID>
+			<Filename>Sounds/Diplomacy/AncestorsCall</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SND_CITY_REVOLT</SoundID>
 			<Filename>Sounds/RevolutionStart</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
