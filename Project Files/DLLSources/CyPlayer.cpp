@@ -169,6 +169,12 @@ void CyPlayer::contact(int /*PlayerTypes*/ ePlayer)
 	if (m_pPlayer)
 		m_pPlayer->contact((PlayerTypes)ePlayer);
 }
+// WTP Schmiddie King demands war exposed to Python Start
+bool CyPlayer::triggerEuropeanWarDemand(int eEnemyPlayer)
+{
+	return m_pPlayer ? m_pPlayer->triggerEuropeanWarDemand((PlayerTypes)eEnemyPlayer) : false;
+}
+// WTP Schmiddie King demands war exposed to Python End
 bool CyPlayer::canTradeWith(int /*PlayerTypes*/ eWhoTo)
 {
 	return m_pPlayer ? m_pPlayer->canTradeWith((PlayerTypes)eWhoTo) : false;

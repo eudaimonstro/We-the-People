@@ -113,8 +113,10 @@ public:
 
 	void checkForRevolutionSupport(); //TAC Revolution Support
 
-	void checkForEuropeanWars(); //TAC European Wars
-
+	void checkForEuropeanWars(); //TAC European Wars	
+	
+	bool triggerEuropeanWarDemand(PlayerTypes eEnemyPlayer) const; // WTP Schmiddie King demands war exposed to Python
+	
 	void checkForStealingImmigrant(); // R&R, Stealing Immigrant
 
 	void checkForContinentalGuard(); // R&R, ray, Continental Guard - START

@@ -3227,4 +3227,124 @@
 		<German>Er hat unseren Weg gewählt und muss bleiben. Gott wird ihn schon noch auf den rechten Weg führen.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_CUSTOMS_1</Tag>
+		<English>If they cannot pay the King’s duties, their cargo shall be seized and placed in the warehouses of %s1_city.</English>
+		<German>Wenn sie die Abgaben an die Krone nicht entrichten können, wird ihre Ladung beschlagnahmt und in die Lagerhäuser von %s1_city verbracht.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_CUSTOMS_DISPUTE_1_HELP</Tag>
+		<English>[ICON_BULLET]The cargo is confiscated. %s1_city receives some goods.</English>
+		<German>[ICON_BULLET]Die Ladung wird beschlagnahmt. %s1_city erhält diverse beschlagnahmte Waren. </German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_CUSTOMS_2</Tag>
+		<English>Let them pass. No chest of goods is worth provoking another governor.</English>
+		<German>Lasst sie passieren. Keine Warenkiste ist es wert, einen anderen Gouverneur zu erzürnen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_CUSTOMS_DISPUTE_2_HELP</Tag>
+		<English>[ICON_BULLET]The merchants are allowed to continue their journey.</English>
+		<German>[ICON_BULLET]Die Händler dürfen ihre Reise fortsetzen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_CUSTOMS_3</Tag>
+		<English>Charge a reasonable duty and let them go on their way as soon as they can pay it.</English>
+		<German>Erhebt eine maßvolle Abgabe und lasst sie weiterziehen, sobald sie sie aufbringen können.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_CUSTOMS_DISPUTE_3_HELP</Tag>
+		<English>[ICON_BULLET]The merchants pay a customs duty.</English>
+		<German>[ICON_BULLET]Die Händler entrichten eine Zollabgabe.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_1</Tag>
+		<English>We have no choice. We are evacuating the border area immediately and withdrawing our troops and missionaries.</English>
+		<German>Wir haben keine Wahl. Wir räumen das Grenzgebiet umgehend und ziehen unsere Truppen und Missionare zurück.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_BORDER_DISPUTE_1_HELP</Tag>
+		<English>[ICON_BULLET]Substantial concessions are granted. Frontier forts and monasteries in the disputed border region are dismantled and relations with %s1_civ improve significantly.</English>
+		<German>[ICON_BULLET]Es werden weitreichende Zugeständnisse gemacht. Forts und Klöster im umstrittenen Grenzgebiet werden aufgegeben und die Beziehungen zu %s1_civ verbessern sich deutlich.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_2</Tag>
+		<English>We shall not yield a single acre of our territory.</English>
+		<German>Wir werden keinen einzigen Morgen unseres Landes preisgeben.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_BORDER_DISPUTE_2_HELP</Tag>
+		<English>[ICON_BULLET]Refuse all concessions. Relations with %s1_civ deteriorate severely and there is a risk that war will be declared on us.</English>
+		<German>[ICON_BULLET]Lehnt jegliche Zugeständnisse ab. Die Beziehungen zu %s1_civ verschlechtern sich erheblich und es besteht die Gefahr einer Kriegserklärung gegen uns.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_3</Tag>
+		<English>Provocation! We are the dominant power here. This means war!</English>
+		<German>Provokation! Wir sind hier die vorherrschende Macht. Das bedeutet Krieg!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_4</Tag>
+		<English>Oh dear, this really couldn’t have come at a worse time. We’re too weak militarily to face them head-on. We should negotiate and offer the envoy a bribe.</English>
+		<German>Oh je, das kommt wirklich zur Unzeit. Wir sind militärisch zu schwach für eine Konfrontation. Wir sollten verhandeln und dem Gesandten ein Bestechungsgeld anbieten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_MILITARY_AID_1</Tag>
+		<English>I agree; we’ll supply you with the weapons at cost price. We Europeans must stand together against the savages. Besides, it strengthens our position.</English>
+		<German>Ich bin einverstanden, wir liefern Ihnen die Waffen zum Herstellungspreis. Gegen Wilde müssen wir Europäer zusammenhalten. Außerdem stärkt das unsere Position.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_MILITARY_AID_2</Tag>
+		<English>I agree; we’ll supply you with the horses at breeding costs. We Europeans must stand together against the savages. Besides, it strengthens our position.</English>
+		<German>Ich bin einverstanden, wir liefern Ihnen die Pferde zu den Zuchtkosten. Gegen Wilde müssen wir Europäer zusammenhalten. Außerdem stärkt das unsere Position.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_MILITARY_AID_3</Tag>
+		<English>Out of the question! Let them sort it out with the savages. That should significantly strengthen our position in the region. It’s good if the Indians take care of it for us.</English>
+		<German>Kommt gar nicht in Frage! Sollen sie sich ruhig mit den Wilden schlagen. Das sollte unsere Position in der Region deutlich stärken. Gut, wenn die Indianer das für uns erledigen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_EVENTS_MILITARY_AID_4</Tag>
+		<English>Ha! This is our chance. Send the European envoy away and send a messenger to the natives. We’ll supply them with weapons and horses to help them out. That will strengthen our position in the region and help us build good relations with the natives.</English>
+		<German>Ha! Das ist die Gelegenheit für uns. Schickt den europäischen Gesandten weg und schickt einen Boten zu den Indianern. Wir liefern ihnen Waffen und Pferde als Unterstützung. Das stärkt unsere Position in der Region und bringt uns gute Beziehungen mit den Ureinwohnern.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_1_HELP</Tag>
+		<English>[ICON_BULLET]You send %d1 muskets to support the colonial forces. Relations improve.</English>
+		<German>[ICON_BULLET]Ihr liefert %d1 Musketen zur Unterstützung der Kolonialtruppen. Die Beziehungen verbessern sich.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_2_HELP</Tag>
+		<English>[ICON_BULLET]You provide %d1 horses for scouts, couriers and cavalry. Relations improve.</English>
+		<German>[ICON_BULLET]Ihr stellt %d1 Pferde für Kundschafter, Kuriere und Kavallerie zur Verfügung. Die Beziehungen verbessern sich.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_3_HELP</Tag>
+		<English>[ICON_BULLET]You refuse the request for aid. Relations worsen.</English>
+		<German>[ICON_BULLET]Ihr lehnt das Hilfegesuch ab. Die Beziehungen verschlechtern sich.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_4_HELP</Tag>
+		<English>[ICON_BULLET]You secretly deliver %d1 muskets and %d2 horses to the tribe. Relations with the natives improve by %d3, while your European neighbour's trust suffers greatly.</English>
+		<German>[ICON_BULLET]Ihr liefert dem Stamm heimlich %d1 Musketen und %d2 Pferde. Die Beziehungen zu den Eingeborenen verbessern sich um %d3, während das Vertrauen Eures europäischen Nachbarn erheblich leidet.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

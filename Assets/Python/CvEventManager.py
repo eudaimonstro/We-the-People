@@ -425,6 +425,7 @@ class CvEventManager:
 	def onBeginPlayerTurn(self, argsList):
 		'Called at the beginning of a players turn'
 		iGameTurn, iPlayer = argsList
+		CvRandomEventInterface.checkEuropeanBorderDisputeKingWarDemand(iPlayer)
 
 	def onEndPlayerTurn(self, argsList):
 		'Called at the end of a players turn'

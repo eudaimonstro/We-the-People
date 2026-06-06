@@ -79,6 +79,7 @@ public:
 	int countNumBuildings(int /*BuildingTypes*/ eBuilding);
 	bool canContact(int /*PlayerTypes*/ ePlayer);
 	void contact(int /*PlayerTypes*/ ePlayer);
+	bool triggerEuropeanWarDemand(int /*PlayerTypes*/ eEnemyPlayer); // WTP Schmiddie King demands war exposed to Python
 	bool canTradeWith(int /*PlayerTypes*/ eWhoTo);
 	bool canTradeItem(int /*PlayerTypes*/ eWhoTo, TradeData item, bool bTestDenial);
 	DenialTypes getTradeDenial(int /*PlayerTypes*/ eWhoTo, TradeData item);

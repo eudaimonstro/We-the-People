@@ -2344,7 +2344,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/european_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
@@ -2419,7 +2419,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/european_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
@@ -44324,7 +44324,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/native_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
@@ -44396,7 +44396,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/native_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
@@ -44476,7 +44476,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/native_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
@@ -44547,7 +44547,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/native_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
@@ -44618,7 +44618,7 @@
 			</TriggerTexts>
 			<bTutorial>0</bTutorial>
 			<bSinglePlayer>0</bSinglePlayer>
-			<EventArt>,Art/EventImages/Event_Image1.dds</EventArt>
+			<EventArt>,Art/EventImages/native_diplomacy.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
 			<iWeight>-1</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
@@ -44956,6 +44956,227 @@
 			<PythonCanDoUnit/>
 			<PythonCallback/>
 			<iMinTurn>55</iMinTurn>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_EUROPEAN_EVENTS_CUSTOMS</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENTTRIGGER_EUROPEAN_EVENTS_CUSTOMS</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_EUROPEAN_EVENTS_CUSTOMS</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/EventImages/european_diplomacy.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>1000</iWeight>
+			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<iMinTreasury>0</iMinTreasury>
+			<iMinPopulation>0</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
+				<iNumUnitsGlobal>0</iNumUnitsGlobal>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired/>
+			<iNumBuildings>0</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<bOwnPlot>0</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+			<Events>
+				<Event>EVENT_EUROPEAN_EVENTS_CUSTOMS_1</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_CUSTOMS_2</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_CUSTOMS_3</Event>
+			</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
+			<bRecurring>0</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>1</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo>canTriggerEuropeanCustomsDispute</PythonCanDo>
+			<PythonCanDoCity/>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
+			<iMinTurn>35</iMinTurn>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_EUROPEAN_EVENTS_BORDER_DISPUTE</Type>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENTTRIGGER_EUROPEAN_EVENTS_BORDER_DISPUTE</Text>
+			</WorldNewsTexts>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_EUROPEAN_EVENTS_BORDER_DISPUTE</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/EventImages/european_diplomacy.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>3000</iWeight>
+			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<iMinTreasury>0</iMinTreasury>
+			<iMinPopulation>0</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
+				<iNumUnitsGlobal>0</iNumUnitsGlobal>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired>
+				<BuildingClass>BUILDINGCLASS_BASECAMP</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_VILLAGEHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_TOWNHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CITYHALL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PALACE</BuildingClass>
+			</BuildingsRequired>
+			<iNumBuildings>3</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<bOwnPlot>1</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+			<Events>
+				<Event>EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_1</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_2</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_3</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_BORDER_DISPUTE_4</Event>
+			</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
+			<bRecurring>0</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>1</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>1</iOtherPlayerShareBorders>
+			<bPickCity>1</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo>canTriggerEuropeanBorderDispute</PythonCanDo>
+			<PythonCanDoCity/>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
+			<iMinTurn>30</iMinTurn>
+		</EventTriggerInfo>
+		<EventTriggerInfo>
+			<Type>EVENTTRIGGER_EUROPEAN_EVENTS_MILITARY_AID</Type>
+			<WorldNewsTexts/>
+			<TriggerTexts>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_EUROPEAN_EVENTS_MILITARY_AID</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+			</TriggerTexts>
+			<bTutorial>0</bTutorial>
+			<bSinglePlayer>0</bSinglePlayer>
+			<EventArt>,Art/EventImages/european_diplomacy.dds</EventArt>
+			<iPercentGamesActive>100</iPercentGamesActive>
+			<iWeight>-1</iWeight>
+			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
+			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
+			<eCivic>NONE</eCivic>
+			<iMinTreasury>0</iMinTreasury>
+			<iMinPopulation>0</iMinPopulation>
+			<iMaxPopulation>0</iMaxPopulation>
+			<iMinMapLandmass>0</iMinMapLandmass>
+			<iMinOurLandmass>0</iMinOurLandmass>
+			<iMaxOurLandmass>-1</iMaxOurLandmass>
+			<eMinDifficulty>NONE</eMinDifficulty>
+			<UnitTriggerConditions>
+				<UnitsRequired/>
+				<iNumUnits>0</iNumUnits>
+				<iNumUnitsGlobal>0</iNumUnitsGlobal>
+				<bTrackUnit>0</bTrackUnit>
+				<bUnitsOnPlot>0</bUnitsOnPlot>
+				<iUnitDamagedWeight>0</iUnitDamagedWeight>
+				<iUnitDistanceWeight>0</iUnitDistanceWeight>
+				<iUnitExperienceWeight>0</iUnitExperienceWeight>
+			</UnitTriggerConditions>
+			<BuildingsRequired/>
+			<iNumBuildings>0</iNumBuildings>
+			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
+			<iNumPlotsRequired>0</iNumPlotsRequired>
+			<bOwnPlot>0</bOwnPlot>
+			<FeaturesRequired/>
+			<TerrainsRequired/>
+			<ImprovementsRequired/>
+			<RoutesRequired/>
+			<Events>
+				<Event>EVENT_EUROPEAN_EVENTS_MILITARY_AID_1</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_MILITARY_AID_2</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_MILITARY_AID_3</Event>
+				<Event>EVENT_EUROPEAN_EVENTS_MILITARY_AID_4</Event>
+			</Events>
+			<PrereqEvents/>
+			<bPrereqEventPlot>0</bPrereqEventPlot>
+			<bRecurring>0</bRecurring>
+			<bTeam>0</bTeam>
+			<bGlobal>0</bGlobal>
+			<bPickPlayer>1</bPickPlayer>
+			<bOtherPlayerWar>0</bOtherPlayerWar>
+			<bOtherPlayerAI>0</bOtherPlayerAI>
+			<bOtherPlayerNative>0</bOtherPlayerNative>
+			<bOtherPlayerPlayable>1</bOtherPlayerPlayable>
+			<iOtherPlayerShareBorders>0</iOtherPlayerShareBorders>
+			<bPickCity>0</bPickCity>
+			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
+			<bShowPlot>1</bShowPlot>
+			<bFrontPopup>0</bFrontPopup>
+			<iCityFoodWeight>0</iCityFoodWeight>
+			<PythonCanDo>canTriggerEuropeanMilitaryAidRequest</PythonCanDo>
+			<PythonCanDoCity/>
+			<PythonCanDoUnit/>
+			<PythonCallback/>
 		</EventTriggerInfo>
 	</EventTriggerInfos>
 </Civ4EventTriggerInfos>

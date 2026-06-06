@@ -26574,3 +26574,789 @@ def applyConvertedNativeReturns1(argsList):
 
 	if newUnit is not None and not newUnit.isNone():
 		newUnit.setProfession(gc.getInfoTypeForString("PROFESSION_BRAVE"))
+
+######## European Diplomacy Events ###########
+######## Customs Dispute ###########
+
+EUROPEAN_CUSTOMS_DISPUTE_YIELDS = [
+	"YIELD_LUXURY_GOODS",
+	"YIELD_HOUSEHOLD_GOODS",
+	"YIELD_FIELD_WORKER_TOOLS",
+	"YIELD_POTTERY"
+]
+
+EUROPEAN_CUSTOMS_DISPUTE_YIELD_AMOUNT = 50
+
+
+def _getEuropeanCustomsDisputeYieldAmount():
+	iGrowthPercent = gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent()
+	iAmount = (EUROPEAN_CUSTOMS_DISPUTE_YIELD_AMOUNT * iGrowthPercent) / 100
+
+	if iAmount < 1:
+		iAmount = 1
+
+	return iAmount
+
+def _isValidEuropeanCustomsDisputePlayer(player):
+	if player.isNone():
+		return False
+
+	if not player.isAlive():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if player.isEurope():
+		return False
+
+	civInfo = gc.getCivilizationInfo(player.getCivilizationType())
+
+	if civInfo.isNative():
+		return False
+
+	if civInfo.isEurope():
+		return False
+
+	return True
+
+def _isValidEuropeanCustomsDisputeOtherPlayer(otherPlayer, player):
+	if not _isValidEuropeanCustomsDisputePlayer(otherPlayer):
+		return False
+
+	if otherPlayer.getID() == player.getID():
+		return False
+
+	if otherPlayer.getNumCities() <= 0:
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(otherPlayer.getTeam()):
+		return False
+
+	if gc.getTeam(player.getTeam()).isOpenBorders(otherPlayer.getTeam()):
+		return False
+
+	return True
+
+def canTriggerEuropeanCustomsDispute(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if not _isValidEuropeanCustomsDisputePlayer(player):
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanCustomsDisputeOtherPlayer(otherPlayer, player):
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city.isNone():
+		return False
+
+	if city.getOwner() != player.getID():
+		return False
+
+	if not city.isCoastal(10):
+		return False
+
+	return True
+
+def applyEuropeanCustomsDisputeSeizeGoods(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if not _isValidEuropeanCustomsDisputePlayer(player):
+		return
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanCustomsDisputeOtherPlayer(otherPlayer, player):
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city.isNone():
+		return
+
+	if city.getOwner() != player.getID():
+		return
+
+	if not city.isCoastal(10):
+		return
+
+	iAmount = _getEuropeanCustomsDisputeYieldAmount()
+
+	for szYield in EUROPEAN_CUSTOMS_DISPUTE_YIELDS:
+		iYield = gc.getInfoTypeForString(szYield)
+		if iYield != -1:
+			city.changeYieldStored(iYield, iAmount)
+
+def getHelpEuropeanCustomsDisputeSeizeGoods(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city.isNone():
+		return u""
+
+	return localText.getText("TXT_KEY_EVENT_EUROPEAN_CUSTOMS_DISPUTE_1_HELP", (city.getNameKey(),))
+
+def getHelpEuropeanCustomsDisputeLetPass(argsList):
+	return localText.getText("TXT_KEY_EVENT_EUROPEAN_CUSTOMS_DISPUTE_2_HELP", ())
+
+def getHelpEuropeanCustomsDisputeCollectDuty(argsList):
+	return localText.getText("TXT_KEY_EVENT_EUROPEAN_CUSTOMS_DISPUTE_3_HELP", ())
+
+######## European Events Border Dispute ###########
+
+EUROPEAN_BORDER_DISPUTE_WAR_CHANCE = 25
+BORDER_DISPUTE_KING_WAR_TARGET_PREFIX = "[[WTP_BORDER_DISPUTE_KING_WAR_TARGET="
+BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX = "]]"
+
+def _isValidEuropeanBorderDisputePlayer(player):
+	if player.isNone():
+		return False
+
+	if not player.isAlive():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if player.isEurope():
+		return False
+
+	return True
+
+
+def _isValidEuropeanBorderDisputeOtherPlayer(otherPlayer, player):
+	if not _isValidEuropeanBorderDisputePlayer(otherPlayer):
+		return False
+
+	if otherPlayer.getID() == player.getID():
+		return False
+
+	if otherPlayer.getNumCities() <= 0:
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(otherPlayer.getTeam()):
+		return False
+
+	if otherPlayer.getPower() < player.getPower():
+		return False
+
+	return True
+
+
+def _hasEuropeanBorderDisputeSharedBorder(player, otherPlayer):
+	iPlayer = player.getID()
+	iOtherPlayer = otherPlayer.getID()
+	map = CyMap()
+
+	for iPlot in range(map.numPlots()):
+		plot = map.plotByIndex(iPlot)
+
+		if plot is None or plot.isNone():
+			continue
+
+		if plot.getOwner() != iPlayer:
+			continue
+
+		for iDirection in range(DirectionTypes.NUM_DIRECTION_TYPES):
+			adjPlot = plotDirection(plot.getX(), plot.getY(), DirectionTypes(iDirection))
+
+			if adjPlot is None or adjPlot.isNone():
+				continue
+
+			if adjPlot.getOwner() == iOtherPlayer:
+				return True
+
+	return False
+
+
+def _getEuropeanBorderDisputeImprovementPlots(player, otherPlayer):
+	iPlayer = player.getID()
+	iOtherPlayer = otherPlayer.getID()
+
+	aBorderImprovements = [
+		gc.getInfoTypeForString("IMPROVEMENT_FORT"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_FORT"),
+		gc.getInfoTypeForString("IMPROVEMENT_MONASTERY"),
+		gc.getInfoTypeForString("IMPROVEMENT_LARGE_MONASTERY"),
+	]
+
+	aPlots = []
+
+	map = CyMap()
+
+	for iPlot in range(map.numPlots()):
+		plot = map.plotByIndex(iPlot)
+
+		if plot is None or plot.isNone():
+			continue
+
+		if plot.getOwner() != iPlayer:
+			continue
+
+		if plot.getImprovementType() not in aBorderImprovements:
+			continue
+
+		for iDX in range(-2, 3):
+			for iDY in range(-2, 3):
+
+				if iDX == 0 and iDY == 0:
+					continue
+
+				adjPlot = plotXY(plot.getX(), plot.getY(), iDX, iDY)
+
+				if adjPlot is None or adjPlot.isNone():
+					continue
+
+				if adjPlot.getOwner() == iOtherPlayer:
+					aPlots.append(plot)
+					iDX = 99
+					break
+
+	return aPlots
+
+
+def canTriggerEuropeanBorderDispute(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if not _isValidEuropeanBorderDisputePlayer(player):
+		return False
+
+	if player.getNumCities() < 3:
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanBorderDisputeOtherPlayer(otherPlayer, player):
+		return False
+
+	if not _hasEuropeanBorderDisputeSharedBorder(player, otherPlayer):
+		return False
+
+	if len(_getEuropeanBorderDisputeImprovementPlots(player, otherPlayer)) == 0:
+		return False
+
+	return True
+
+
+def _setEuropeanBorderDisputeKingWarTarget(player, iTargetPlayer):
+	szData = player.getScriptData()
+
+	if szData is None:
+		szData = ""
+
+	iStart = szData.find(BORDER_DISPUTE_KING_WAR_TARGET_PREFIX)
+
+	if iStart != -1:
+		iEnd = szData.find(BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX, iStart)
+
+		if iEnd != -1:
+			iEnd += len(BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX)
+			szData = szData[:iStart] + szData[iEnd:]
+
+	szData += "%s%d%s" % (
+		BORDER_DISPUTE_KING_WAR_TARGET_PREFIX,
+		iTargetPlayer,
+		BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX
+	)
+
+	player.setScriptData(szData)
+
+
+def applyEuropeanBorderDisputeConcessions(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if not _isValidEuropeanBorderDisputePlayer(player):
+		return
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanBorderDisputeOtherPlayer(otherPlayer, player):
+		return
+
+	aPlots = _getEuropeanBorderDisputeImprovementPlots(player, otherPlayer)
+
+	if len(aPlots) == 0:
+		return
+
+	for plot in aPlots:
+		plot.setImprovementType(-1)
+
+	_setEuropeanBorderDisputeKingWarTarget(
+		player,
+		otherPlayer.getID()
+	)
+
+
+def applyEuropeanBorderDisputeReject(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if not _isValidEuropeanBorderDisputePlayer(player):
+		return
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanBorderDisputeOtherPlayer(otherPlayer, player):
+		return
+
+	if CyGame().getSorenRandNum(100, "European Border Dispute War Chance") >= EUROPEAN_BORDER_DISPUTE_WAR_CHANCE:
+		return
+
+	gc.getTeam(otherPlayer.getTeam()).declareWar(
+		player.getTeam(),
+		False,
+		WarPlanTypes.WARPLAN_LIMITED
+	)
+
+
+def getHelpEuropeanBorderDisputeConcessions(argsList):
+	kTriggeredData = argsList[0]
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if otherPlayer.isNone():
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_EUROPEAN_BORDER_DISPUTE_1_HELP",
+		(otherPlayer.getCivilizationShortDescriptionKey(),)
+	)
+
+
+def getHelpEuropeanBorderDisputeReject(argsList):
+	kTriggeredData = argsList[0]
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if otherPlayer.isNone():
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_EUROPEAN_BORDER_DISPUTE_2_HELP",
+		(otherPlayer.getCivilizationShortDescriptionKey(),)
+	)
+
+
+def _getEuropeanBorderDisputeKingWarTarget(player):
+	szData = player.getScriptData()
+
+	if szData is None:
+		return -1
+
+	iStart = szData.find(BORDER_DISPUTE_KING_WAR_TARGET_PREFIX)
+
+	if iStart == -1:
+		return -1
+
+	iStart += len(BORDER_DISPUTE_KING_WAR_TARGET_PREFIX)
+
+	iEnd = szData.find(
+		BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX,
+		iStart
+	)
+
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _clearEuropeanBorderDisputeKingWarTarget(player):
+	szData = player.getScriptData()
+
+	if szData is None:
+		return
+
+	iStart = szData.find(BORDER_DISPUTE_KING_WAR_TARGET_PREFIX)
+
+	if iStart == -1:
+		return
+
+	iEnd = szData.find(
+		BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX,
+		iStart
+	)
+
+	if iEnd == -1:
+		return
+
+	iEnd += len(BORDER_DISPUTE_KING_WAR_TARGET_SUFFIX)
+
+	player.setScriptData(
+		szData[:iStart] + szData[iEnd:]
+	)
+
+
+def checkEuropeanBorderDisputeKingWarDemand(iPlayer):
+	player = gc.getPlayer(iPlayer)
+
+	if player.isNone():
+		return
+
+	if not player.isHuman():
+		return
+
+	if not player.isAlive():
+		return
+
+	if not player.isPlayable():
+		return
+
+	if player.isNative():
+		return
+
+	if player.isEurope():
+		return
+
+	if player.isInRevolution():
+		return
+
+	iTargetPlayer = _getEuropeanBorderDisputeKingWarTarget(player)
+
+	if iTargetPlayer < 0:
+		return
+
+	targetPlayer = gc.getPlayer(iTargetPlayer)
+
+	if targetPlayer.isNone():
+		_clearEuropeanBorderDisputeKingWarTarget(player)
+		return
+
+	if not targetPlayer.isAlive():
+		_clearEuropeanBorderDisputeKingWarTarget(player)
+		return
+
+	if targetPlayer.isNative():
+		_clearEuropeanBorderDisputeKingWarTarget(player)
+		return
+
+	if targetPlayer.isEurope():
+		_clearEuropeanBorderDisputeKingWarTarget(player)
+		return
+
+	if gc.getTeam(player.getTeam()).isAtWar(targetPlayer.getTeam()):
+		_clearEuropeanBorderDisputeKingWarTarget(player)
+		return
+
+	if player.triggerEuropeanWarDemand(iTargetPlayer):
+		_clearEuropeanBorderDisputeKingWarTarget(player)
+
+######## European Events Military Aid Request ###########
+
+EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT = 50
+EUROPEAN_MILITARY_AID_HORSES_AMOUNT = 50
+EUROPEAN_MILITARY_AID_NATIVE_ATTITUDE_BONUS = 4
+
+
+def _isValidEuropeanMilitaryAidPlayer(player):
+	if player.isNone():
+		return False
+
+	if not player.isAlive():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	if player.isEurope():
+		return False
+
+	return True
+
+
+def _getEuropeanMilitaryAidNativeEnemy(player, otherPlayer):
+	for iPlayer in range(gc.getMAX_PLAYERS()):
+		nativePlayer = gc.getPlayer(iPlayer)
+
+		if nativePlayer.isNone():
+			continue
+
+		if not nativePlayer.isAlive():
+			continue
+
+		if not nativePlayer.isNative():
+			continue
+
+		if gc.getTeam(player.getTeam()).isAtWar(nativePlayer.getTeam()):
+			continue
+
+		if gc.getTeam(otherPlayer.getTeam()).isAtWar(nativePlayer.getTeam()):
+			return nativePlayer
+
+	return None
+
+
+def _isValidEuropeanMilitaryAidOtherPlayer(otherPlayer, player):
+	if not _isValidEuropeanMilitaryAidPlayer(otherPlayer):
+		return False
+
+	if otherPlayer.getID() == player.getID():
+		return False
+
+	if gc.getTeam(player.getTeam()).isAtWar(otherPlayer.getTeam()):
+		return False
+
+	if _getEuropeanMilitaryAidNativeEnemy(player, otherPlayer) is None:
+		return False
+
+	return True
+
+
+def _getEuropeanMilitaryAidSourceCity(player, iYield, iAmount):
+	(city, iter) = player.firstCity(True)
+
+	while city:
+		if not city.isNone():
+			if city.getOwner() == player.getID():
+				if city.getYieldStored(iYield) >= iAmount:
+					return city
+
+		(city, iter) = player.nextCity(iter, True)
+
+	return None
+
+
+def _getEuropeanMilitaryAidTargetCity(otherPlayer):
+	(city, iter) = otherPlayer.firstCity(True)
+
+	if city and not city.isNone():
+		return city
+
+	return None
+
+
+def _getEuropeanMilitaryAidNativeTargetCity(nativePlayer):
+	bestCity = None
+	bestPopulation = -1
+
+	(city, iter) = nativePlayer.firstCity(True)
+
+	while city:
+		if not city.isNone():
+			if city.getPopulation() > bestPopulation:
+				bestCity = city
+				bestPopulation = city.getPopulation()
+
+		(city, iter) = nativePlayer.nextCity(iter, True)
+
+	return bestCity
+
+
+def canTriggerEuropeanMilitaryAidRequest(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if not _isValidEuropeanMilitaryAidPlayer(player):
+		return False
+
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanMilitaryAidOtherPlayer(otherPlayer, player):
+		return False
+
+	return True
+
+
+def canDoEuropeanMilitaryAidMuskets(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
+
+	if _getEuropeanMilitaryAidSourceCity(player, iYield, EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT) is None:
+		return False
+
+	return True
+
+
+def applyEuropeanMilitaryAidMuskets(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanMilitaryAidPlayer(player):
+		return
+
+	if not _isValidEuropeanMilitaryAidOtherPlayer(otherPlayer, player):
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_MUSKETS")
+	iAmount = EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT
+
+	sourceCity = _getEuropeanMilitaryAidSourceCity(player, iYield, iAmount)
+	targetCity = _getEuropeanMilitaryAidTargetCity(otherPlayer)
+
+	if sourceCity is None or targetCity is None:
+		return
+
+	sourceCity.changeYieldStored(iYield, -iAmount)
+	targetCity.changeYieldStored(iYield, iAmount)
+
+
+def canDoEuropeanMilitaryAidHorses(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+
+	if _getEuropeanMilitaryAidSourceCity(player, iYield, EUROPEAN_MILITARY_AID_HORSES_AMOUNT) is None:
+		return False
+
+	return True
+
+
+def applyEuropeanMilitaryAidHorses(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanMilitaryAidPlayer(player):
+		return
+
+	if not _isValidEuropeanMilitaryAidOtherPlayer(otherPlayer, player):
+		return
+
+	iYield = gc.getInfoTypeForString("YIELD_HORSES")
+	iAmount = EUROPEAN_MILITARY_AID_HORSES_AMOUNT
+
+	sourceCity = _getEuropeanMilitaryAidSourceCity(player, iYield, iAmount)
+	targetCity = _getEuropeanMilitaryAidTargetCity(otherPlayer)
+
+	if sourceCity is None or targetCity is None:
+		return
+
+	sourceCity.changeYieldStored(iYield, -iAmount)
+	targetCity.changeYieldStored(iYield, iAmount)
+
+
+def applyEuropeanMilitaryAidReject(argsList):
+	return
+
+
+def canDoEuropeanMilitaryAidSupportNatives(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanMilitaryAidPlayer(player):
+		return False
+
+	if not _isValidEuropeanMilitaryAidOtherPlayer(otherPlayer, player):
+		return False
+
+	iYieldMuskets = gc.getInfoTypeForString("YIELD_MUSKETS")
+	iYieldHorses = gc.getInfoTypeForString("YIELD_HORSES")
+
+	if _getEuropeanMilitaryAidSourceCity(player, iYieldMuskets, EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT) is None:
+		return False
+
+	if _getEuropeanMilitaryAidSourceCity(player, iYieldHorses, EUROPEAN_MILITARY_AID_HORSES_AMOUNT) is None:
+		return False
+
+	nativePlayer = _getEuropeanMilitaryAidNativeEnemy(player, otherPlayer)
+
+	if nativePlayer is None:
+		return False
+
+	nativeCity = _getEuropeanMilitaryAidNativeTargetCity(nativePlayer)
+
+	if nativeCity is None:
+		return False
+
+	return True
+
+
+def applyEuropeanMilitaryAidSupportNatives(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+
+	if not _isValidEuropeanMilitaryAidPlayer(player):
+		return
+
+	if not _isValidEuropeanMilitaryAidOtherPlayer(otherPlayer, player):
+		return
+
+	iYieldMuskets = gc.getInfoTypeForString("YIELD_MUSKETS")
+	iYieldHorses = gc.getInfoTypeForString("YIELD_HORSES")
+
+	sourceCityMuskets = _getEuropeanMilitaryAidSourceCity(player, iYieldMuskets, EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT)
+	sourceCityHorses = _getEuropeanMilitaryAidSourceCity(player, iYieldHorses, EUROPEAN_MILITARY_AID_HORSES_AMOUNT)
+
+	if sourceCityMuskets is None:
+		return
+
+	if sourceCityHorses is None:
+		return
+
+	nativePlayer = _getEuropeanMilitaryAidNativeEnemy(player, otherPlayer)
+
+	if nativePlayer is None:
+		return
+
+	nativeCity = _getEuropeanMilitaryAidNativeTargetCity(nativePlayer)
+
+	if nativeCity is None:
+		return
+
+	sourceCityMuskets.changeYieldStored(iYieldMuskets, -EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT)
+	sourceCityHorses.changeYieldStored(iYieldHorses, -EUROPEAN_MILITARY_AID_HORSES_AMOUNT)
+
+	nativeCity.changeYieldStored(iYieldMuskets, EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT)
+	nativeCity.changeYieldStored(iYieldHorses, EUROPEAN_MILITARY_AID_HORSES_AMOUNT)
+
+	player.AI_changeAttitudeExtra(nativePlayer.getID(), EUROPEAN_MILITARY_AID_NATIVE_ATTITUDE_BONUS)
+	nativePlayer.AI_changeAttitudeExtra(player.getID(), EUROPEAN_MILITARY_AID_NATIVE_ATTITUDE_BONUS)
+
+
+def getHelpEuropeanMilitaryAidMuskets(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_1_HELP",
+		(EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT,)
+	)
+
+
+def getHelpEuropeanMilitaryAidHorses(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_2_HELP",
+		(EUROPEAN_MILITARY_AID_HORSES_AMOUNT,)
+	)
+
+
+def getHelpEuropeanMilitaryAidReject(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_3_HELP",
+		()
+	)
+
+
+def getHelpEuropeanMilitaryAidSupportNatives(argsList):
+	return localText.getText(
+		"TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_4_HELP",
+		(EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT, EUROPEAN_MILITARY_AID_HORSES_AMOUNT, EUROPEAN_MILITARY_AID_NATIVE_ATTITUDE_BONUS)
+	)

@@ -7308,8 +7308,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_PRESSED_NATIVE_VILLAGE_1</Tag>
-		<English>Mylord, our settlement is spreading ever further. The settlers have already taken almost all the land from the natives and driven them back considerably. One of their settlements is on the verge of being destroyed. Shall we put a stop to this?</English>
-		<German>Milord, unsere Siedlung breitet sich immer weiter aus. Siedler haben den Ureinwohnern bereits fast all ihr Land abgenommen und sie stark zurückgedrängt. Eine ihrer Siedlungen steht kurz davor zerstört zu werden. Sollen wir dem Einhalt gebieten?</German>
+		<English>Mylord, our settlement is spreading ever further. The settlers have taken almost all the land from the natives and driven them back considerably. One of their settlements is on the verge of being destroyed. Shall we put a stop to this?</English>
+		<German>Milord, unsere Siedlung breitet sich immer weiter aus. Siedler haben den Ureinwohnern fast all ihr Land abgenommen und sie stark zurückgedrängt. Eine ihrer Siedlungen steht kurz davor zerstört zu werden. Sollen wir dem Einhalt gebieten?</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>
@@ -7394,6 +7394,36 @@
 		<Tag>TXT_KEY_EVENT_TRIGGER_NATIVE_CONVERTED_RETURN</Tag>
 		<English>A native living amongst your settlers has asked to be allowed to return to his people. Deeply shaken by the Europeans’ way of life, he explains that the missionaries’ words had led him astray.</English>
 		<German>Ein Eingeborener, der unter euren Siedlern lebt, bittet darum, zu seinem Volk zurückkehren zu dürfen. Erschüttert von der Lebensweise der Europäer erklärt er, die Worte der Missionare hätten ihn irregeleitet.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_EUROPEAN_EVENTS_CUSTOMS</Tag>
+		<English>A customs dispute with a European power has arisen.</English>
+		<German>Ein Zollstreit mit einer europäischen Macht ist entbrannt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_EUROPEAN_EVENTS_CUSTOMS</Tag>
+		<English>Customs officials have stopped a foreign trading party in %s2_city and demanded payment of the required duties. The traders claim to be under the protection of a European colonial power, but are unable to pay the fees demanded.</English>
+		<German>Zollbeamte haben in %s2_city einen fremden Handelstreck aufgehalten und die Zahlung ordnungsgemäßer Abgaben verlangt. Die Händler berufen sich auf den Schutz einer europäischen Kolonialmacht, können die geforderten Gebühren jedoch nicht entrichten.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_EUROPEAN_EVENTS_BORDER_DISPUTE</Tag>
+		<English>Two colonies are embroiled in a diplomatic dispute over border issues.</English>
+		<German>Zwei Kolonien befinden sich aufgrund von Grenzstreitigkeiten im diplomatischen Disput.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_EUROPEAN_EVENTS_BORDER_DISPUTE</Tag>
+		<English>Messengers of a %s1_civ colony have arrived with a formal protest. They accuse our settlers of encroaching upon lands they consider their rightful sphere of influence and demand the immediate evacuation of the disputed frontier region.</English>
+		<German>Gesandte einer %s1_civ Kolonie sind mit einer formellen Beschwerde eingetroffen. Sie werfen unseren Siedlern vor, in Gebiete vorzudringen, die sie als ihren rechtmäßigen Einflussbereich betrachten, und fordern die unverzügliche Räumung der umstrittenen Grenzregion.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_EUROPEAN_EVENTS_MILITARY_AID</Tag>
+		<English>Mylord, another colonial power has become embroiled in a war with a native tribe and is in need of support. They are asking for firearms and horses. This could lay the foundation for good relations.</English>
+		<German>Milord, eine andere Kolonialmacht ist in einen Krieg mit einem Ureinwohner-Stamm verwickelt worden und braucht Unterstützung. Man frage nach Schusswaffen und Pferden. Dies könnte der Grundstein für gute Beziehungen sein.</German>
 		<Russian/>
 	</TEXT>
 </Civ4GameText>

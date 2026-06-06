@@ -22442,7 +22442,42 @@ void CvPlayer::checkForEuropeanWars()
 	return;
 }
 //End TAC European Wars
+// WTP Schmiddie King demands war exposed to Python Start
+bool CvPlayer::triggerEuropeanWarDemand(PlayerTypes eEnemyPlayer) const
+{
+	if (getParent() == NO_PLAYER)
+	{
+		return false;
+	}
 
+	if (eEnemyPlayer == NO_PLAYER || eEnemyPlayer == getID())
+	{
+		return false;
+	}
+
+	CvPlayer& kEnemyPlayer = GET_PLAYER(eEnemyPlayer);
+
+	if (!kEnemyPlayer.isAlive())
+	{
+		return false;
+	}
+
+	if (kEnemyPlayer.getParent() == NO_PLAYER)
+	{
+		return false;
+	}
+
+	CvDiploParameters* pDiplo = new CvDiploParameters(getParent());
+	pDiplo->setDiploComment((DiploCommentTypes)GC.getInfoTypeForString("AI_DIPLOCOMMENT_EUROPE_WAR"));
+	pDiplo->addDiploCommentVariable(GC.getLeaderHeadInfo(GET_PLAYER(kEnemyPlayer.getParent()).getLeaderType()).getDescription());
+	pDiplo->setData(kEnemyPlayer.getID());
+	pDiplo->setAIContact(true);
+
+	gDLL->beginDiplomacy(pDiplo, getID());
+
+	return true;
+}
+// WTP Schmiddie King demands war exposed to Python End
 // R&R, Stealing Immigrant - START
 void CvPlayer::checkForStealingImmigrant()
 {
