@@ -39947,7 +39947,7 @@
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
-			<iMinTreasury>100</iMinTreasury>
+			<iMinTreasury>200</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
 			<iMinMapLandmass>0</iMinMapLandmass>
@@ -39978,8 +39978,6 @@
 			<bOwnPlot>0</bOwnPlot>
 			<PlotRequirements>
 				<PlotTypes>
-					<ePlotType>PLOT_PEAK</ePlotType>
-					<ePlotType>PLOT_HILLS</ePlotType>
 					<ePlotType>PLOT_LAND</ePlotType>
 				</PlotTypes>
 			</PlotRequirements>

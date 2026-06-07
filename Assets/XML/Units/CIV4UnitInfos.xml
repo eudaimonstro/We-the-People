@@ -53667,9 +53667,9 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<iWithdrawalProb>0</iWithdrawalProb>
 			<iCityAttack>0</iCityAttack>
-			<iCityDefense>30</iCityDefense>
+			<iCityDefense>15</iCityDefense>
 			<iHillsAttack>0</iHillsAttack>
-			<iHillsDefense>10</iHillsDefense>
+			<iHillsDefense>0</iHillsDefense>
 			<iDomesticBonus>0</iDomesticBonus>
 			<TerrainAttacks/>
 			<TerrainDefenses/>
@@ -54044,9 +54044,9 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<iWithdrawalProb>0</iWithdrawalProb>
 			<iCityAttack>0</iCityAttack>
-			<iCityDefense>30</iCityDefense>
+			<iCityDefense>20</iCityDefense>
 			<iHillsAttack>0</iHillsAttack>
-			<iHillsDefense>15</iHillsDefense>
+			<iHillsDefense>0</iHillsDefense>
 			<iDomesticBonus>0</iDomesticBonus>
 			<TerrainAttacks/>
 			<TerrainDefenses/>

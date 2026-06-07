@@ -1890,8 +1890,8 @@ def canTriggerDiscoveryStart(argsList):
 	if player.isNative():
 		return False
 
-	# Only before founding the first city
-	if player.getNumCities() > 0:
+	# Only before founding the second city
+	if player.getNumCities() > 1:
 		return False
 
 	unit = player.getUnit(kTriggeredData.iUnitId)
