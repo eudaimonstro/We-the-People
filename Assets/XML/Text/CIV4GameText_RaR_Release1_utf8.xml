@@ -13,6 +13,7 @@
 		<Italian>Come auspicato dal nostro Re, abbiamo accettato negoziati di pace con %s1_nation</Italian>
 		<Spanish>Como deseado por nuestro Rey, hemos aceptado las negociaciones de paz con %s1_nation.</Spanish>
 		<Russian>По просьбе Его Величества мы согласились на мирные переговоры с [COLOR_HIGHLIGHT_TEXT]%s1_nation[COLOR_REVERT]. После переговоров дипломаты решили остаться с нами.</Russian>
+		<Hungarian>Őfelsége kérésének megfelelően beleegyeztünk a béketárgyalásokba [COLOR_HIGHLIGHT_TEXT]%s1_nation[COLOR_REVERT] képviselőivel. A diplomaták úgy döntöttek, hogy a tárgyalások után itt maradnak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_PEACE_DENIED</Tag>
@@ -22,6 +23,7 @@
 		<Italian>Abbiamo rifiutato negoziati di pace con %s1_nation. Il re è infelice con la nostra decisione.</Italian>
 		<Spanish>Hemos rechazado las negociaciones de paz con %s1_nation. El Rey está satisfecho con nuestra decisión.</Spanish>
 		<Russian>Мы отказываемся заключать мир с [COLOR_HIGHLIGHT_TEXT]%s1_nation[COLOR_REVERT]. Его Величество недоволен нашим отказом выполнить Его волю.</Russian>
+		<Hungarian>Nem vagyunk hajlandóak tárgyalni a békéről [COLOR_HIGHLIGHT_TEXT]%s1_nation[COLOR_REVERT] képviselőivel. Őfelsége elégedetlen azzal, hogy nem vagyunk hajlandóak eleget tenni kívánságainak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>ABANDONING_CITY</Tag>
@@ -31,6 +33,7 @@
 		<Italian>Avete intenzione di abbandonare questa città.</Italian>
 		<Spanish>Usted va a abandonar esta ciudad.</Spanish>
 		<Russian>Милорд, если вы заставите всех жителей этого поселения собрать свои вещи и уйти, все, что было построено, будет стерто с лица земли.</Russian>
+		<Hungarian>Uram, ha ennek a településnek minden lakóját utasítod, hogy csomagolja össze a holmiját és elküldöd őket, akkor a hely elhagyatottá válik és eltűnik a térképről.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>CITY_ABANDONED</Tag>
@@ -40,6 +43,7 @@
 		<Italian>City %s1_city è stato abbandonato.</Italian>
 		<Spanish>Ciudad %s1_city ha sido abandonado.</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Последние горожане покинули город. Дома придут в негодность и скоро об этом месте никто не вспомнит.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Az utolsó lakosok is hátat fordítottak ennek a városnak. A házak el fognak pusztulni és hamarosan senki sem fog emlékezni erre a helyre.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>NO_ABANDONING_CITY_BECAUSE_WAR</Tag>
@@ -49,6 +53,7 @@
 		<Italian>Abbandonare la città non è possibile durante la guerra.</Italian>
 		<Spanish>El abandono de una ciudad no es posible durante la guerra.</Spanish>
 		<Russian>Милорд, идёт война и колонисты боятся покидать поселение, находящееся под защитой войск.</Russian>
+		<Hungarian>Uram, háború dúl és a lakosok félnek feladni a védett települést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>NO_TRADE_BECAUSE_BAD_BARGAIN</Tag>
@@ -58,6 +63,7 @@
 		<Italian>Questa città attualmente non vuole commerciare con voi.</Italian>
 		<Spanish>Esta ciudad actualmente no quiere negociar con usted.</Spanish>
 		<Russian>В данный момент [COLOR_HIGHLIGHT_TEXT]%s1_Civ[COLOR_REVERT] отказываются торговать с вами. Возвращайтесь, когда их обида пройдёт.</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1_Civ[COLOR_REVERT] nép jelenleg nem hajlandó veled kereskedni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>Debug</Tag>
@@ -75,6 +81,7 @@
 		<Italian>Raid %s1_civ_adjective a %s2_city! Infiltrati nemici hanno distrutto [NUM1:un:una] %s3_BldngName!</Italian>
 		<Spanish>¡Una incursión de los %s1:3_civ_adjective en %s2_city! ¡Los enemigos infiltrados han destruido [NUM1:un:una:unos:unas] %s3_BldngName!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]нападение индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! Краснокожие варвары разрушили [COLOR_SELECTED_TEXT]%s3_BldngName[COLOR_REVERT]!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective rajtaütés! %s3_BldngName megsemmisült a rajtaütés során!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PRODUCTION_RAIDED</Tag>
@@ -84,6 +91,7 @@
 		<Italian>Raid %s1_civ_adjective a %s2_city! Tutti i progressi in %s3_buildName sono stati distrutti da nemici infiltrati!</Italian>
 		<Spanish>¡Una incursión de los %s1:3_civ_adjective en %s2_city! ¡Los infiltrados enemigos han destruido todo el progreso [NUM1:del:de la:de los:de las] %s3_buildName!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]нападение индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! Негодяи полностью разрушили строящееся здание [COLOR_SELECTED_TEXT]%s3_buildName[COLOR_REVERT]! Нам придется начинать все заново!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective rajtaütés! %s3_buildName építésének minden előrehaladását megsemmisítette a portyázó csapat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PRODUCTION_RAIDED_PARTIAL</Tag>
@@ -93,6 +101,7 @@
 		<Italian>Raid %s1_civ_adjective a %s2_city! Parte del progresso in %s3_buildName sono stati distrutti da nemici infiltrati!</Italian>
 		<Spanish>¡Una incursión de los %s1:3_civ_adjective en %s2_city! ¡Los infiltrados enemigos han destruido parte del progreso [NUM1:del:de la:de los:de las] %s3_buildName!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]нападение индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! Они разрушили часть строящегося здания [COLOR_SELECTED_TEXT]%s3_buildName[COLOR_REVERT], но мы вовремя их отогнали! Не всё потеряно, милорд!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective rajtaütés! %s3_buildName építésének némi előrehaladását megsemmisítette a portyázó csapat!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TREASURY_RAIDED</Tag>
@@ -102,6 +111,7 @@
 		<Italian>Raid %s1_civ_adjective a %s2_city! Infiltrati nemici hanno rubato %d3[ICON_GOLD] del nostro tesoro di stato!</Italian>
 		<Spanish>¡Una incursión de los %s1:3_civ_adjective en %s2_city! ¡Los enemigos infiltrados han saqueado %d3[ICON_GOLD] de nuestro tesoro!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]нападение индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! Краснокожие демоны стащили %d3[ICON_GOLD] из городской казны!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective rajtaütés! %d3[ICON_GOLD]-at elvittek a portyázók a kincstárunkból!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCALP_RAIDED</Tag>
@@ -111,6 +121,7 @@
 		<Italian>Raid %s1_civ_adjective a %s2_city! sono morti %s3_unit</Italian>
 		<Spanish>¡Una incursión de los %s1:3_civ_adjective en %s2_city! Se lamenta la pérdida de %s3_unit</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]нападение индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! Краснокожие сняли скальп с [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT]!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective rajtaütés! A fosztogatók skalpokat gyűjtenek, egy [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] meghalt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HARBOR_RAIDED</Tag>
@@ -120,6 +131,7 @@
 		<Italian>Raid %s1_civ_adjective a %s2_city! La tua unità %s3_unit  è stata danneggiata!</Italian>
 		<Spanish>¡Una incursión de los %s1:3_civ_adjective en %s2_city! [NUM2:ha dañado:ha dañado:han dañado:han dañado] a [NUM1:vuestro:vuestra:vuestros:vuestras] %s3_unit!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]нападение индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]! Они атаковали наш порт, повредив [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT]!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective rajtaütés! A portyázók megtámadták a kikötőt. Az ott horgonyzó [COLOR_UNIT_TEXT]%s3_unit[COLOR_REVERT] megrongálódott!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NOTHING_RAIDED</Tag>
@@ -129,6 +141,7 @@
 		<Italian>%s1_civ_adjective gruppo di incursori spazzato via in %s2_city! Niente distrutto o rubato.</Italian>
 		<Spanish>%s1_civ_adjective partido de ataque acabó en %s2_city! Nada destruye o se lo roban.</Spanish>
 		<Russian>[COLOR_POSITIVE_TEXT]%s2_city : [COLOR_REVERT][COLOR_WARNING_TEXT]набег индейцев[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] отражен! Все в целости и сохранности.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]%s1_civ_adjective fosztogatókat elkergették! Semmit sem loptak el és semmisítettek meg.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RAIDING_NATIVE_CAPTURED</Tag>
@@ -138,6 +151,7 @@
 		<Italian>%s1_civ_adjective gruppo di incursori catturato in %s2_city! Pagheranno con il lavoro per i loro crimini.</Italian>
 		<Spanish>%s1_civ_adjective grupo asaltante capturado en %s2_city! Pagarán con el trabajo de sus crímenes.</Spanish>
 		<Russian>[COLOR_POSITIVE_TEXT]%s2_city : [COLOR_REVERT]группа индейцев [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT], пытавшихся утроить [COLOR_WARNING_TEXT]набег[COLOR_REVERT], схвачена! Отправьте их на плантации, Милорд! Пусть расплачиваются за свои преступления.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city: [COLOR_REVERT]A portyázó %s1_civ_adjective csapatot elfogtuk! Bűneikért rabszolgamunkával fognak fizetni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBEL_RAID_CAPTURED_CRIMINAL</Tag>
@@ -147,19 +161,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBEL_RAID_CAPTURED_AFRICAN_SLAVE</Tag>
-		<English>During the attack on %s1_city, one of the revolting slaves was captured alive.</English>
+		<English>During the attack on %s1_city, one of the rebelling slaves was captured alive.</English>
 		<German>Bei dem Angriff auf %s1_city wurde einer der aufständischen Sklaven lebend gefangen genommen.</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBEL_RAID_CAPTURED_NATIVE_SLAVE</Tag>
-		<English>During the attack on %s1_city, one of the revolting native slaves was captured alive.</English>
+		<English>During the attack on %s1_city, one of the rebelling Native slaves was captured alive.</English>
 		<German>Bei dem Angriff auf %s1_city wurde einer der aufständischen eingeborenen Sklaven lebend gefangen genommen.</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBEL_RAID_CAPTURED_PRISONER_OF_WAR</Tag>
-		<English>During the attack on %s1_city, one of the revolting prisoners was taken back into custody.</English>
+		<English>During the attack on %s1_city, one of the rebelling prisoners was taken back into custody.</English>
 		<German>Bei dem Angriff auf %s1_city wurde einer der aufständischen Gefangenen wieder in Gewahrsam genommen.</German>
 		<Russian/>
 	</TEXT>
@@ -195,6 +209,7 @@
 		<Italian>La cittadella di [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] ha sparato i suoi cannoni ad una nave nemica e affondato it!</Italian>
 		<Spanish>La ciudadela de [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] ha disparado sus cañones a un barco enemigo y hundido!</Spanish>
 		<Russian>[COLOR_POSITIVE_TEXT]Победа, Милорд! [COLOR_REVERT]Цитадель [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] обстреляла из пушек вражеский корабль и потопила его!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Győzelem, Uram! [COLOR_REVERT] [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] fellegvára egy ellenséges hajót vett célba ágyúival és elsüllyesztette!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORTBOMB_SUNK_BAD</Tag>
@@ -205,6 +220,7 @@
 		<Spanish>La ciudadela de [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] ha disparado sus cañones en nuestro barco y hundido!</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Поражение, Милорд! [COLOR_REVERT]Цитадель [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] огнем своих пушек потопила наш корабль!</Russian>
 	</TEXT>
+		<Hungarian>[COLOR_WARNING_TEXT]Vereség, Uram! [COLOR_REVERT][COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] fellegvára ágyúival elsüllyesztette a hajónkat!</Hungarian>
 	<TEXT>
 		<Tag>TXT_KEY_FORTBOMB_HIT_GOOD</Tag>
 		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]Using its cannons the citadel of [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] has damaged an enemy ship!</English>

@@ -10,6 +10,7 @@
 		<English>[TAB]Butchery is traditional work. Slaughterhouses use butchers to slaughter animals, performing steps repeatedly as specialists on an organized disassembly line. These include stunning (rendering the animal incapacitated), exsanguination (severing the carotid or brachial arteries to facilitate blood removal), skinning (removing the hide) or scalding and dehairing (pork), evisceration (removing the viscera) and splitting (dividing the carcass in half longitudinally).</English>
 		<French>[TAB]Une boucherie est un établissement commercial où l'on fait rassir et où l'on découpe et vend au détail de la viande d'animaux de boucherie. Son gérant est un artisan, le boucher. Les boucheries, lorsqu'elles ne prennent pas la forme d'un rayon dans une grande surface alimentaire, sont généralement un commerce de proximité.</French>
 		<German>[TAB]Der Fleischer, auch Metzger, Schlachter ist einer der älteren Handwerksberufe. Fleischer beschäftigen sich mit der Schlachtung und mit der Herstellung von Fleisch- und Wurstwaren, sie arbeiten in Schlachthöfen und in Fleischereien.</German>
+		<Hungarian>[TAB]A hentesmunka hagyományos foglalkozás. A vágóhidakon hentesek végzik az állatok levágását, szakemberekként ismétlődő mozdulatokat végrehajtva egy szervezett bontási soron. Ezek közé tartozik a kábítás (az állat mozgásképtelenné tétele), a kivérzés (a nyaki vagy felkari artériák elvágása a vér eltávolításának megkönnyítése érdekében), a nyúzás (a bőr eltávolítása) vagy a forrázás és szőrtelenítés (sertéshús), a belek eltávolítása (a zsigerek eltávolítása) és a hasítás (a tetem hosszirányban történő kettévágása).</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_WINEMAKER_PEDIA</Tag>
@@ -18,20 +19,23 @@
 		<German>[TAB]Der aus fermentierten Trauben hergestellte Wein wurde erstmals um 6000 vor Christus produziert und war im Nahen Osten und in Ägypten weit verbreitet. Das Getränk entwickelte sich schnell zu einem der beliebtesten kulinarischen Genüsse der Antike. Die für die Weinherstellung benötigten Trauben werden in vielen verschiedenen Gebieten der Welt angebaut, die meisten Weinhänge befinden sich jedoch in den Hügeln und Tälern von Regionen mit gemäßigtem Klima. Im Laufe mehrerer Jahrhunderte wurde die industrielle Weinherstellung immer weiter perfektioniert.[PARAGRAPH:1]Viele Anbaugebiete wie die Rhein- und Loiretäler in Europa sind für ihre feinen Weine bekannt und beziehen einen Großteil ihrer wirtschaftlichen Erträge aus der Weinproduktion.</German>
 		<Italian>[TAB]Realizzato dalla fermentazione dell'uva, il primo vino risale circa al 6000 a. C. e si diffuse rapirdamente attraverso il Medio Oriente e l'Egitto, diventando una delle bevande più popolari del mondo antico. Le qualità d'uva usate per la realizzazione del vino crescono in differenti zone del mondo; la maggior parte delle vigne si possono trovare sulle colline e nelle vallate di regioni dal clima temperato. L'industria del vino è andata perfezionandosi nel corso dei secoli: molte regioni europee, come le vallate del Reno e della Loira, sono rinomate per la produzione di ottimi vini, principale forma di economia della zona.</Italian>
 		<Spanish>[TAB]El vino, una bebida preparada a partir de uvas fermentadas, se elaboró por vez primera ya en el 6000 a. C. Su consumo se extendió rápidamente por Oriente Medio y Egipto, y pronto se convirtió en una popular bebida en el mundo antiguo. Las uvas empleadas en la fabricación del vino crecen en muchas y muy distintas partes del mundo. La mayoría de las viñas están en colinas y valles de regiones templadas. La vinicultura se ha perfeccionado como industria a lo largo de varios siglos. Muchas regiones, como los valles del Rin y del Loira en Europa, son conocidas por sus grandes vinos y obtienen una parte significativa de sus ingresos de la vinicultura.</Spanish>
+		<Hungarian>[TAB]A bor, egy erjesztett szőlőből készült ital, már i. e. 6000-ben is előállították. Használata elterjedt a Közel-Keleten és Egyiptomban és gyorsan az ókori világ népszerű italává vált. A bor készítéséhez használt szőlőt a világ számos különböző régiójában termesztik. A legtöbb szőlőültetvény a mérsékelt éghajlati övezetek dombjaiban és völgyeiben található. A borászat mint iparág több évszázad alatt tökéletesedett. Számos régió, például Európa Rajna- és Loire-völgyei híresek kiváló boraikról és gazdaságuk jelentős részét a borászat adja.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GOLD_MINER_STRATEGY</Tag>
-		<English>To make the most of a bountiful gold vein, bring in an [COLOR_UNIT_TEXT]expert prospector[COLOR_REVERT]. Expert Prospectors produce double the amount of [COLOR_HIGHLIGHT_TEXT]gold[COLOR_REVERT] from a gold-producing tile!</English>
+		<English>To make the most of a bountiful gold vein, bring in an [COLOR_UNIT_TEXT]expert prospector[COLOR_REVERT]. Expert prospectors produce double the amount of [COLOR_HIGHLIGHT_TEXT]gold[COLOR_REVERT] from a gold-producing tile!</English>
 		<French>Pour exploiter au mieux une importante veine d'[COLOR_HIGHLIGHT_TEXT]Or[COLOR_REVERT], engagez un [COLOR_UNIT_TEXT]Expert prospecteur[COLOR_REVERT]. Les Experts prospecteurs sont capables d'extraire deux fois plus d'[COLOR_HIGHLIGHT_TEXT]Or[COLOR_REVERT] que la normale !</French>
 		<German>Um eine Goldader optimal zu nutzen, sollten Sie einen [COLOR_UNIT_TEXT]Erfahrenen Schürfer[COLOR_REVERT] daran arbeiten lassen. Erfahrene Goldminenarbeiter können doppelt so viel [COLOR_HIGHLIGHT_TEXT]Gold[COLOR_REVERT] von einem Gold produzierenden Geländefeld fördern!</German>
 		<Italian>Per sfruttare al massimo una ricca vena d'oro, chiama un [COLOR_UNIT_TEXT]minatore d'oro esperto[COLOR_REVERT]. I minatori d'oro esperti sono in grado di raddoppiare la quantità di [COLOR_HIGHLIGHT_TEXT]Oro[COLOR_REVERT] ottenuta dalla casella!</Italian>
 		<Spanish>Para sacar el mejor partido de una vena de oro, llamad a un [COLOR_UNIT_TEXT]Minero de oro experto[COLOR_REVERT]. Los Mineros de oro expertos son capaces de extraer el doble de [COLOR_HIGHLIGHT_TEXT]Oro[COLOR_REVERT] de una casilla en la que haya este metal.</Spanish>
+		<Hungarian>Ahhoz, hogy a legjobban kihasználhasd a gazdag aranytelért, hívj be egy [COLOR_UNIT_TEXT]tapasztalt aranyásót[COLOR_REVERT]. A tapasztalt aranyásók kétszer annyi [COLOR_HIGHLIGHT_TEXT]aranyat[COLOR_REVERT] gyűjtenek az aranyat adó mezőkről!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GEMSTONES_MINER_STRATEGY</Tag>
 		<English>To make the most of a bountiful gemstone deposit, bring in an [COLOR_UNIT_TEXT]expert prospector[COLOR_REVERT]. Expert prospectors produce double the amount of [COLOR_HIGHLIGHT_TEXT]gems[COLOR_REVERT] from a gold-producing tile!</English>
         <French>Pour exploiter au mieux un important gisement de [COLOR_HIGHLIGHT_TEXT]Pierres précieuses[COLOR_REVERT], engagez un [COLOR_UNIT_TEXT]Expert prospecteur[COLOR_REVERT]. Les Experts prospecteurs sont capables d'extraire deux fois plus de [COLOR_HIGHLIGHT_TEXT]Pierres précieuses[COLOR_REVERT] que la normale !</French>
 		<German>Um ein Edelsteinvorkommen optimal zu nutzen, sollten Sie einen [COLOR_UNIT_TEXT]Erfahrenen Schürfer[COLOR_REVERT] daran arbeiten lassen. Erfahrene Schürfer können doppelt so viel [COLOR_HIGHLIGHT_TEXT]Edelsteine[COLOR_REVERT] von einem Geländefeld fördern!</German>
+		<Hungarian>Ahhoz, hogy a legjobban kihasználhasd a gazdag drágakő-lelőhelyeket, vegyél fel egy [COLOR_UNIT_TEXT]tapasztalt aranyásót[COLOR_REVERT]. A tapasztalt aranyásók kétszer annyi [COLOR_HIGHLIGHT_TEXT]drágakövet[COLOR_REVERT] gyűjtenek a drágakövet termelő mezőkről!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GATHER_BOAT_FISHING</Tag>
@@ -39,6 +43,7 @@
 		<French>[ICON_BULLET]Peut pêcher du poisson à partir de ressources marines.</French>
 		<German>[ICON_BULLET]Kann Fisch auf Bonusressourcen gewinnen</German>
 		<Russian>[ICON_BULLET]Может ловить рыбу на определенных морских ресурсах</Russian>
+		<Hungarian>[ICON_BULLET]Képes halat gyűjteni a tengeri erőforrásokból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_FISHING_UNLOAD</Tag>
@@ -46,6 +51,7 @@
 		<French>Automatiser la pêche</French>
 		<German>Fischfang automatisieren</German>
 		<Russian>Автоматизировать рыбную ловлю</Russian>
+		<Hungarian>Automatikus halászat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_FISHING_UNLOAD_HELP</Tag>
@@ -55,6 +61,7 @@
 		<Italian>Colletta alimentare a partire dai pesci fino balena o la nave è piena</Italian>
 		<Spanish>Recoger la comida de pescado o la ballena hasta que el barco está lleno</Spanish>
 		<Russian>Будет собирать рыбу из морских ресурсов, пока корабль не заполнится, а затем выгружать груз в выбранном порту.</Russian>
+		<Hungarian>Halat gyűjt a tengeri erőforrásokból, amíg a hajó meg nem telik, majd kirakodja a rakományt a kiválasztott kikötőben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_FISH_CITY_RADIUS</Tag>
@@ -62,13 +69,15 @@
 		<French>[COLOR_PLAYER_RED]Doit être hors du rayon de la colonie.[COLOR_REVERT]</French>
 		<German>[COLOR_PLAYER_RED]Muss außerhalb des Stadtradius liegen[COLOR_REVERT]</German>
 		<Russian>[COLOR_PLAYER_RED]Должен быть за пределами радиуса колонии[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_PLAYER_RED]A város hatósugarán kívül kell lennie[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_FISH_CITY_RADIUS_PLOT_WORKED</Tag>
-		<English>[COLOR_PLAYER_RED]This spot is already being worked by the neighboring city[COLOR_REVERT]</English>
+		<English>[COLOR_PLAYER_RED]This spot is already being worked by the neighbouring city[COLOR_REVERT]</English>
 		<French>[COLOR_PLAYER_RED]Cet emplacement est déjà exploité par une colonie environnante.[COLOR_REVERT]</French>
 		<German>[COLOR_PLAYER_RED]Dieser Platz wird bereits durch eine Stadt bewirtschaftet[COLOR_REVERT]</German>
 		<Russian>[COLOR_PLAYER_RED]Это место уже обрабатывается соседним городом[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_PLAYER_RED]Ezen a helyen már halászik a szomszédos város[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_FISH_NO_FISH</Tag>
@@ -76,6 +85,7 @@
 		<French>[COLOR_PLAYER_RED]Nécessite une ressource bonus de Poisson.[COLOR_REVERT]</French>
 		<German>[COLOR_PLAYER_RED]Fischvorkommen wird benötigt[COLOR_REVERT]</German>
 		<Russian>[COLOR_PLAYER_RED]Требуется рыбный бонус[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_PLAYER_RED]Hal bónusz szükséges[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_FISH_NEEDS_FISHING_BOAT</Tag>
@@ -83,6 +93,7 @@
 		<French>[COLOR_PLAYER_RED]Un bateau de pêche est nécessaire pour prélever des ressources.[COLOR_REVERT]</French>
 		<German>[COLOR_PLAYER_RED]Fischerboot wird benötigt[COLOR_REVERT]</German>
 		<Russian>[COLOR_PLAYER_RED]Для сбора ресурсов требуется рыбацкая лодка[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_PLAYER_RED]Az erőforrások összegyűjtéséhez halászhajó szükséges[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_FISH_FULL</Tag>
@@ -90,13 +101,15 @@
 		<French>[COLOR_PLAYER_RED]Il n'y a plus de place pour de la Nourriture.[COLOR_REVERT]</French>
 		<German>[COLOR_PLAYER_RED]Der Frachtraum ist voll![COLOR_REVERT]</German>
 		<Russian>[COLOR_PLAYER_RED]В грузовом отсеке больше нет места для еды[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_PLAYER_RED]Nincs több hely a raktérben az élelemnek[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_FISH_TAKEN</Tag>
-		<English>[COLOR_PLAYER_RED]This spot is taken, only one fishing boat per resource[COLOR_REVERT]</English>
+		<English>[COLOR_PLAYER_RED]This spot is taken. Only one fishing boat per resource[COLOR_REVERT]</English>
 		<French>[COLOR_PLAYER_RED]Cet emplacement est occupé : il ne peut y avoir qu'un Navire de pêche par ressource.[COLOR_REVERT]</French>
 		<German>[COLOR_PLAYER_RED]Hier geht bereits ein anderes Schiff auf die Fang![COLOR_REVERT]</German>
 		<Russian>[COLOR_PLAYER_RED]Это место занято, только одна рыбацкая лодка может обрабатывать один ресурс[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_PLAYER_RED]Ez a hely foglalt, erőforrásonként csak egy halászhajó lehet.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FISHER_FULL</Tag>
@@ -106,6 +119,7 @@
 		<Italian>Il vostro %s1_unit è riempito al bordo con il cibo dal mare.</Italian>
 		<Spanish>Su %s1_unit está llena hasta el tope con los alimentos del mar.</Spanish>
 		<Russian>Ваш %s1_unit до краев наполнен добычей.</Russian>
+		<Hungarian>%s1_unit csordultig tele van a tengerből származó élelemmel.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FISHER_HELP</Tag>
@@ -115,5 +129,6 @@
 		<Italian>(%s1_symbol_list per turno)</Italian>
 		<Spanish>(%s1_symbol_list por turno)</Spanish>
 		<Russian>(%s1_symbol_list за ход)</Russian>
+		<Hungarian>(%s1_symbol_list körönként)</Hungarian>
 	</TEXT>
 </Civ4GameText>
