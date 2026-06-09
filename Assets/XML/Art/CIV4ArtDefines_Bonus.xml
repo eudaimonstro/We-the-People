@@ -1207,9 +1207,9 @@
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_CASSAVA</Type>
-			<fScale>1.0</fScale>
+			<fScale>0.7</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/Cassava/wheat.nif</NIF>
+			<NIF>Art/Terrain/Resources/Cassava/cassava.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Cassava_Button.dds</Button>
 			<FontButtonIndex>93</FontButtonIndex>
