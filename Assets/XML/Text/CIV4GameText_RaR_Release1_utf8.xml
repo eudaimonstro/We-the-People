@@ -816,6 +816,7 @@
 		<Italian>Domestic Market</Italian>
 		<Spanish>Mercado Interior</Spanish>
 		<Russian>Внутренний рынок</Russian>
+		<Hungarian>Belföldi Piac</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_DEMAND</Tag>
@@ -825,6 +826,7 @@
 		<Italian>Domanda</Italian>
 		<Spanish>Demanda</Spanish>
 		<Russian>Потребность</Russian>
+		<Hungarian>Igény</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_PRICE</Tag>
@@ -834,6 +836,7 @@
 		<Italian>Prezzo</Italian>
 		<Spanish>Precio</Spanish>
 		<Russian>Цена</Russian>
+		<Hungarian>Ár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_MARKET_POPUP</Tag>
@@ -843,6 +846,7 @@
 		<Italian>[COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT][NEWLINE][NEWLINE]Mercato domestico :</Italian>
 		<Spanish>[COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT][NEWLINE][NEWLINE]Mercado Interior :</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT][NEWLINE][NEWLINE]Внутренний рынок :</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT][NEWLINE][NEWLINE]Belföldi Piac :</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STORED</Tag>
@@ -852,6 +856,7 @@
 		<Italian>Stored</Italian>
 		<Spanish>Stored</Spanish>
 		<Russian>Хранится</Russian>
+		<Hungarian>Elraktározva</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_FROM_HANDICAP</Tag>
@@ -861,6 +866,7 @@
 		<Italian>%D1 per il livello di difficoltà</Italian>
 		<Spanish>%D1 por nivel de dificultad</Spanish>
 		<Russian>%D1: (от уровня сложности)</Russian>
+		<Hungarian>%D1: (nehézségi szint)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_BASE_ATTITUDE</Tag>
@@ -870,6 +876,7 @@
 		<Italian>%D1: (atteggiamento iniziali)</Italian>
 		<Spanish>%D1: (actitud base)</Spanish>
 		<Russian>%D1: (начальное отношение)</Russian>
+		<Hungarian>%D1: (alapállás)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_TOTAL_ATTITUDE</Tag>
@@ -879,6 +886,7 @@
 		<Italian>%D1: (Total Attitude)</Italian>
 		<Spanish>%D1: (Total Attitude)</Spanish>
 		<Russian>%D1: (общее отношение)</Russian>
+		<Hungarian>%D1: (teljes hozzállás)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_LAND_TARGET</Tag>
@@ -888,6 +896,7 @@
 		<Italian>%D1: "C'è della tensione al confine."</Italian>
 		<Spanish>%D1: "Nuestras fronteras cerradas suscitan tensiones."</Spanish>
 		<Russian>%D1: "Закрытые границы усиливают напряжение."</Russian>
+		<Hungarian>%D1: "Közeli határaink feszültséget okoznak."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_WAR</Tag>
@@ -897,6 +906,7 @@
 		<Italian>%D1: "Questa guerra rovina i nostri rapporti."</Italian>
 		<Spanish>%D1: "Esta guerra echa por tierra nuestras relaciones."</Spanish>
 		<Russian>%D1: "Эта война портит наши отношения."</Russian>
+		<Hungarian>%D1: "Ez a háború elrontja a kapcsolatunkat."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_PEACE</Tag>
@@ -906,6 +916,7 @@
 		<Italian>%D1: "I molti anni di pace hanno rinsaldato i nostri rapporti."</Italian>
 		<Spanish>%D1: "Años de paz han fortalecido nuestras relaciones."</Spanish>
 		<Russian>%D1: "Годы мира укрепили наши отношения."</Russian>
+		<Hungarian>%D1: "A béke évei megerősítették kapcsolatainkat."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_OPEN_BORDERS</Tag>
@@ -915,6 +926,7 @@
 		<Italian>%D1: "Il nostro accordo di diritto di passaggio ha permesso ai nostri popoli di avvicinarsi"</Italian>
 		<Spanish>%D1: "La apertura de fronteras ha acercado más a nuestros pueblos."</Spanish>
 		<Russian>%D1: "Открытые границы сблизили наших людей."</Russian>
+		<Hungarian>%D1: "Nyitott határaink közel hozták egymáshoz népünket."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_DEFENSIVE_PACT</Tag>
@@ -924,6 +936,7 @@
 		<Italian>%D1: "La nostra alleanza difensiva dimostra che siamo buoni amici."</Italian>
 		<Spanish>%D1: "Nuestro acuerdo de protección demuestra que somos muy amigos."</Spanish>
 		<Russian>%D1: "Наш оборонительный договор доказывает, что мы близкие друзья."</Russian>
+		<Hungarian>%D1: "Védelmi szerződésünk bizonyítja, hogy közeli barátok vagyunk."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_RIVAL_DEFENSIVE_PACT</Tag>
@@ -933,6 +946,7 @@
 		<Italian>%D1: "Siamo sconvolti dal fatto che tu abbia firmato alleanze difensive con i nostri rivali."</Italian>
 		<Spanish>%D1: "Nos trastorna que hayáis firmado acuerdos de protección con nuestros rivales."</Spanish>
 		<Russian>%D1: "Нас расстраивают подписанные вами оборонительные соглашения с нашими соперниками".</Russian>
+		<Hungarian>%D1: "Felháborító, hogy védelmi szerződést kötöttél a riválisunkkal."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_SHARE_WAR</Tag>
@@ -942,6 +956,7 @@
 		<Italian>%D1: "I nostri reciproci aiuti militari ci rendono molto vicini l'un l'altro."</Italian>
 		<Spanish>%D1: "Nuestra mutua lucha militar nos acerca más."</Spanish>
 		<Russian>%D1: "Борьба с общим врагом сплотила наши народы."</Russian>
+		<Hungarian>%D1: "Közös katonai erőfeszítéseink közelebb hoznak minket egymáshoz."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_TRADE</Tag>
@@ -951,6 +966,7 @@
 		<Italian>%D1: "I nostri rapporti commerciali sono stati equi e onesti."</Italian>
 		<Spanish>%D1: "Nuestras relaciones comerciales han sido buenas y leales."</Spanish>
 		<Russian>%D1: "Мы рады множеству торговых сделок между нами."</Russian>
+		<Hungarian>%D1: "A kereskedelmi kapcsolataink kielégítőek."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_RIVAL_TRADE</Tag>
@@ -960,6 +976,7 @@
 		<Italian>%D1: "Hai commerciato con i nostri peggior nemici!"</Italian>
 		<Spanish>%D1: "¡Habéis comerciado con nuestros peores enemigos!"</Spanish>
 		<Russian>%D1: "Вы торговали с нашими злейшими врагами!"</Russian>
+		<Hungarian>%D1: "A legrosszabb ellenségeinkkel üzleteltél!"</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_MEMORY</Tag>
@@ -977,6 +994,7 @@
 		<Italian>%D1: "Hai rubato la nostra terra!"</Italian>
 		<Spanish>%D1: "¡Nos habéis arrebatado nuestra tierra!"</Spanish>
 		<Russian>%D1: "Вы украли нашу землю!"</Russian>
+		<Hungarian>%D1: "Elvetted a földünket!"</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_ALARM</Tag>
@@ -986,6 +1004,7 @@
 		<Italian>%D1: "Il tuo stile di vita è una minaccia per il nostro."</Italian>
 		<Spanish>%D1: "Vuestro modo de vida amenaza el nuestro."</Spanish>
 		<Russian>%D1: "Ваш образ жизни угрожает нам."</Russian>
+		<Hungarian>%D1: "Az életmódod veszélyezteti a miénket."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_NATIVE_ATTITUDE</Tag>
@@ -993,6 +1012,7 @@
 		<French>%D1: "Vos coutumes nous intriguent."</French>
 		<German>%D1: "Eure seltsamen Sitten verwirren uns."</German>
 		<Russian>%D1: "Ваши странные обычаи заинтриговали нас."</Russian>
+		<Hungarian>%D1: "Furcsa szokásaitok felkeltik érdeklődésünket."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_EXTRA_GOOD</Tag>
@@ -1002,6 +1022,7 @@
 		<Italian>%D1: "Gli eventi passati ci hanno dimostrato la tua buona natura."</Italian>
 		<Spanish>%D1: "Los acontecimientos pasados nos han demostrado vuestra bondad."</Spanish>
 		<Russian>%D1: "Прошлые события сплотили наших людей."</Russian>
+		<Hungarian>%D1: "A korábbi események összehozták a népeinket."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_EXTRA_BAD</Tag>
@@ -1011,6 +1032,7 @@
 		<Italian>%D1: "Gli eventi passati ci hanno dimostrato la tua natura malvagia."</Italian>
 		<Spanish>%D1: "Los acontecimientos pasados nos han demostrado vuestra maldad."</Spanish>
 		<Russian>%D1: "Прошлые события разлучили наши народы."</Russian>
+		<Hungarian>%D1: "A múltbeli események szétválasztották népeinket."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_LOST_WAR_ATTITUDE</Tag>
@@ -1018,6 +1040,7 @@
 		<French>%D1: "Nous avons perdu une guerre contre vous."</French>
 		<German>%D1: "Wir haben einen Krieg gegen Euch verloren."</German>
 		<Russian>%D1: "Мы проиграли вам в прошлой войне."</Russian>
+		<Hungarian>%D1: "Elvesztettünk egy háborút ellened."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_TEAMSIZE_ATTITUDE</Tag>
@@ -1025,6 +1048,7 @@
 		<French>%D1: "Vous avez trop d'alliés."</French>
 		<German>%D1: "Ihr habt zu viele Verbündete."</German>
 		<Russian>%D1: "У вас очень много союзников".</Russian>
+		<Hungarian>%D1: "Túl sok szövetségesed van."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_SAME_TEAM</Tag>
@@ -1032,6 +1056,7 @@
 		<French>%D1: "Nous sommes alliés."</French>
 		<German>%D1: "Wir sind Verbündete."</German>
 		<Russian>%D1: "Мы союзники!"</Russian>
+		<Hungarian>%D1: "Szövetségesek vagyunk."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_SAME_RELIGION</Tag>
@@ -1041,6 +1066,7 @@
 		<Italian>%D1: "Ci preoccupiamo dei nostri fratelli e delle nostre sorelle."</Italian>
 		<Spanish>%D1: "Nos preocupamos por nuestros hermanos y hermanas de fe."</Spanish>
 		<Russian>%D1: "Мы заботимся о наших братьях и сёстрах по вере."</Russian>
+		<Hungarian>%D1: "Gondoskodunk hitbeli testvéreinkről."</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_DIFFERENT_RELIGION</Tag>
@@ -1050,6 +1076,7 @@
 		<Italian>%D1: "Siamo amareggiati del fatto che siate caduti schiavi di una religione empia."</Italian>
 		<Spanish>%D1: "Nos trastorna que hayáis caído bajo el influjo de una religión infiel."</Spanish>
 		<Russian>%D1: "Мы расстроены тем, что вы попали под влияние язычников!"</Russian>
+		<Hungarian>%D1: "Felháborít bennünket, hogy egy pogány vallás uralma alá kerültetek!"</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ATTITUDE_REBEL</Tag>
@@ -1059,6 +1086,7 @@
 		<Italian>%D1: "Stai diventando un salasso, per il mio esercito."</Italian>
 		<Spanish>%D1: "Sois una sanguijuela de efectivos militares."</Spanish>
 		<Russian>%D1: "В колониях растут мятежные настроения!"</Russian>
+		<Hungarian>%D1: "A lázadás lehetősége növekszik a gyarmatokon!"</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AI_ATTITUDE_Modifie_A_supprimer</Tag>
@@ -1067,6 +1095,7 @@
 		<German>Gewichtung KI-Haltung</German>
 		<Italian>Peso dell'atteggiamento dell'IA</Italian>
 		<Spanish>Peso de la actitud de la IA</Spanish>
+		<Hungarian>MI Magatartás Súly</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADVANCED_START_POINTS_Modifie_A_supprimer</Tag>
@@ -1075,6 +1104,7 @@
 		<German>Basispunkte für Fortgeschrittenen Start :</German>
 		<Italian>Punti iniziali Avvio avanzato :</Italian>
 		<Spanish>Puntos base del Inicio avanzado :</Spanish>
+		<Hungarian>Kezdő Alappontok:</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TAX_BAR</Tag>
@@ -1082,6 +1112,7 @@
 		<French>Marchandises vendues en Europe et en Afrique (seul %d6%% du prix est pris en compte) (%d1/%d2%F3)[NEWLINE][NEWLINE]Il y a [COLOR_WARNING_TEXT]%d4,%d5[COLOR_REVERT] % de chance que le roi augmente les impôts au tour suivant.</French>
 		<German>Erträge aus dem Verkauf von Gütern in Europe and Africa (nur %d6%% des Preises werden berücksichtigt) : (%d1/%d2%F3)[NEWLINE][NEWLINE]Es besteht eine [COLOR_WARNING_TEXT]%d4.%d5%[COLOR_REVERT] Chance darauf, daß Seine Majestät Eure Steuern im nächsten Zug erhöht.</German>
 		<Russian>Товары, проданные в Европе и Африке (учитывается только %d6%% от цены) : %d1/%d2%F3[NEWLINE][NEWLINE]Есть [COLOR_WARNING_TEXT]%d4.%d5%[COLOR_REVERT] шанс, что Его Величество увеличит ставку налога в следующем ходу.</Russian>
+		<Hungarian>Az Európában és Afrikában értékesített áruk hozama (csak az árak %d6%%-a van figyelembe véve) : %d1/%d2%F3[NEWLINE][NEWLINE][COLOR_WARNING_TEXT]%d4.%d5%[COLOR_REVERT] esélye van, hogy Őfelsége a következő körben megemeli az adót.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CURRENT_ERA</Tag>
@@ -1091,6 +1122,7 @@
 		<Italian>[COLOR_FONT_CREAM]Era : [COLOR_REVERT]%s1[NEWLINE]</Italian>
 		<Spanish>[COLOR_FONT_CREAM]Época : [COLOR_REVERT]%s1[NEWLINE]</Spanish>
 		<Russian>[COLOR_FONT_CREAM]Эпоха : [COLOR_REVERT]%s1[NEWLINE]</Russian>
+		<Hungarian>[COLOR_FONT_CREAM]Éra : [COLOR_REVERT]%s1[NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRING</Tag>
@@ -1105,12 +1137,14 @@
 		<English>Happiness</English>
 		<French>Bonheur</French>
 		<Russian>Счастье</Russian>
+		<Hungarian>Boldogság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_TEACHER</Tag>
 		<English>Education</English>
 		<French>Éducation</French>
 		<Russian>Образование</Russian>
+		<Hungarian>Oktatás</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_NATIVE</Tag>
@@ -1118,6 +1152,7 @@
 		<French>Informations sur les indigènes</French>
 		<German>Informationen zu den Ureinwohnern</German>
 		<Russian>Информация об индейцах</Russian>
+		<Hungarian>Indián info</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GROWTH</Tag>
@@ -1143,6 +1178,7 @@
 		<Italian>Danno per turno : %d1_Amt%%</Italian>
 		<Spanish>Daño por turno : %d1_Amt%%</Spanish>
 		<Russian>Повреждений за ход : %d1_Amt%%</Russian>
+		<Hungarian>Sebzés Körönként : %d1_Amt%%</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_MOVEMENT_COST</Tag>
@@ -1152,6 +1188,7 @@
 		<Italian>Costo movimento : %d1[ICON_MOVES]</Italian>
 		<Spanish>Coste del movimiento : %d1 [ICON_MOVES]</Spanish>
 		<Russian>Стоимость передвижения : %d1[ICON_MOVES]</Russian>
+		<Hungarian>Mozgásköltség : %d1[ICON_MOVES]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_WAREHOUSE</Tag>
@@ -1177,6 +1214,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Хранилище</Russian>
+		<Hungarian>Depó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NATIVE_TRADE_FINISHED</Tag>
@@ -1184,6 +1222,7 @@
 		<French>Les indigènes ont livré le montant convenu de %d1_yield_amount%F3_yield_icon à [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</French>
 		<German>Milord, die Ureinwohner haben die versprochenen %d1_yield_amount%F3_yield_icon nach [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] geliefert.</German>
 		<Russian>Милорд, индейцы доставили обещанные %d1_yield_amount%F3_yield_icon в [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT].</Russian>
+		<Hungarian>Uram, az Indiánok leszállították az ígért %d1_yield_amount%F3_yield_icon árut [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] raktárába.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_RIVER</Tag>
@@ -1193,18 +1232,21 @@
 		<Italian>[COLOR_WARNING_TEXT]Richiede[COLOR_REVERT] un fiume</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requiere[COLOR_REVERT] un río</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Требуется[COLOR_REVERT] река</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Szükséges[COLOR_REVERT] egy folyó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COMMAND_TAKE_TRAIN</Tag>
 		<English>Take this carriage</English>
 		<French>Rejoindre le convoi</French>
 		<German>In Fuhrwerk einsteigen</German>
+		<Hungarian>Beszállás a kocsiba</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COMMAND_TAKE_TRAIN_HELP</Tag>
 		<English>The carriage will load this unit</English>
 		<French>Le convoi va prendre cette unité à bord</French>
 		<German>Die Einheit wird auf Ladefläche des Fuhrwerks verladen</German>
+		<Hungarian>Ez az egység a kocsiba kerül</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRAVEL_PLASTERED_ROAD_ONLY</Tag>
