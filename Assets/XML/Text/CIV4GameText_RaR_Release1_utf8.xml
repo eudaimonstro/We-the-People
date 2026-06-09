@@ -1663,6 +1663,7 @@
 		<Italian>[NEWLINE]	Port Royal[TAB]</Italian>
 		<Spanish>[NEWLINE]	Port Royal[TAB]</Spanish>
 		<Russian>[NEWLINE]	Порт Ройал[TAB]</Russian>
+		<Hungarian>[NEWLINE]    Port Royal[TAB]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TOTAL_CITY_HEALTH</Tag>
@@ -1672,56 +1673,64 @@
 		<Italian>Salute della città : %d1 %F2_Icon</Italian>
 		<Spanish>Salud de la ciudad : %d1 %F2_Icon</Spanish>
 		<Russian>Здоровье в городе : %d1%F2_Icon</Russian>
+		<Hungarian>Város Egészsége : %d1%F2_Icon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_BONUS_RESOURCE_IS_WATER</Tag>
-		<English>[ICON_BULLET]valid on Water</English>
+		<English>[ICON_BULLET]valid on water</English>
 		<French>[ICON_BULLET]valide sur l'eau</French>
 		<German>[ICON_BULLET]gültig auf Wasser</German>
 		<Russian>[ICON_BULLET]присутствует на воде</Russian>
+		<Hungarian>[ICON_BULLET]előfordulás Vízen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_BONUS_RESOURCE_IS_FLATLAND</Tag>
-		<English>[ICON_BULLET]valid on Flatlands</English>
+		<English>[ICON_BULLET]valid on flatlands</English>
 		<French>[ICON_BULLET]valide en terrain plat</French>
 		<German>[ICON_BULLET]gültig auf Flachland</German>
 		<Russian>[ICON_BULLET]присутствует на ровной местности</Russian>
+		<Hungarian>[ICON_BULLET]előfordulás Síkságon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_BONUS_RESOURCE_IS_HILLS</Tag>
-		<English>[ICON_BULLET]valid on Hills</English>
+		<English>[ICON_BULLET]valid on hills</English>
 		<French>[ICON_BULLET]valide en collines</French>
 		<German>[ICON_BULLET]gültig auf Hügeln</German>
 		<Russian>[ICON_BULLET]присутствует на холмах</Russian>
+		<Hungarian>[ICON_BULLET]előfordulás Dombon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_BONUS_RESOURCE_IS_PEAKS</Tag>
-		<English>[ICON_BULLET]valid on Peaks</English>
+		<English>[ICON_BULLET]valid on peaks</English>
 		<French>[ICON_BULLET]valide en montagne</French>
 		<German>[ICON_BULLET]gültig auf Gebirge</German>
 		<Russian>[ICON_BULLET]присутствует в горах</Russian>
+		<Hungarian>[ICON_BULLET]előfordulás Hegyen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HEALTH_FROM_RESSOURCE</Tag>
-		<English>if worked by citizen : +%d1%F2_Icon</English>
+		<English>if worked by a citizen : +%d1%F2_Icon</English>
 		<French>Si travaillé par un colon : +%d1%F2_Icon</French>
 		<German>falls bewirtschaftet : +%d1%F2_Icon</German>
 		<Russian>Если обрабатывается горожанином : +%d1%F2_Icon</Russian>
+		<Hungarian>ha egy lakos műveli : +%d1%F2_Icon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HEALTH_FROM_RESSOURCE_NEGATIVE</Tag>
-		<English>for City if worked on : %d1%F2_Icon</English>
+		<English>for city if worked on : %d1%F2_Icon</English>
 		<French>Si travaillé : %d1%F2_Icon </French>
 		<German>in Stadt falls bearbeitet : %d1%F2_Icon</German>
+		<Hungarian>a Városnak, ha művelve van : %d1%F2_Icon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_YIELD_HEALTH</Tag>
-		<English>[ICON_BULLET]%D1%%%F2[TAB]from City Health</English>
+		<English>[ICON_BULLET]%D1%%%F2[TAB]from city health</English>
 		<French>[ICON_BULLET]%D1%%%F2[TAB]par la santé de la ville</French>
 		<German>[ICON_BULLET]%D1%%%F2[TAB]durch Gesundheit der Stadt</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 attraverso la salute della città</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 por la salud de la ciudad</Spanish>
 		<Russian>[ICON_BULLET]%D1%%%F2[TAB]от Здоровья в городе</Russian>
+		<Hungarian>[ICON_BULLET]%D1%%%F2[TAB]a Város Egészségből</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_HEALTH_POP_CHANGE</Tag>
@@ -1731,19 +1740,22 @@
 		<Italian>Popolazione %s1 = %d2%F3</Italian>
 		<Spanish>Población %s1 = %d2%F3</Spanish>
 		<Russian>%s1 от количества жителей = %d2%F3</Russian>
+		<Hungarian>Lakosságszám változás %s1 = %d2%F3</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_HEALTH_CITY_PLOT_CHANGE</Tag>
-		<English>%s1 by City Location = %d2%F3</English>
+		<English>%s1 by city location = %d2%F3</English>
 		<French>%s1 pour l'emplacement de la ville = %d2%F3</French>
 		<German>%s1 durch Standort = %d2%F3</German>
 		<Russian>%s1 от расположения города = %d2%F3</Russian>
+		<Hungarian>%s1 a Város Elhelyezkedéséből = %d2%F3</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_HEALTH_RESSOURCE_CHANGE</Tag>
-		<English>%s1 by Resources = %d2%F3</English>
+		<English>%s1 by resources = %d2%F3</English>
 		<German>%s1 durch Resourcen = %d2%F3</German>
 		<Russian>%s1 от ресурсов = %d2%F3</Russian>
+		<Hungarian>%s1 Erőforrásokból = %d2%F3</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_HEALTH_TOTAL_CHANGE</Tag>
@@ -1753,6 +1765,7 @@
 		<Italian>Variazione totale %s1 = %d2%F3</Italian>
 		<Spanish>Cambio total %s1 = %d2%F3</Spanish>
 		<Russian>Общее изменение %s1 = %d2%F3</Russian>
+		<Hungarian>Teljes változás %s1 = %d2%F3</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_HEALTH_TOTAL</Tag>
@@ -1762,6 +1775,7 @@
 		<Italian>Città %s1 = %d2%F3</Italian>
 		<Spanish>Ciudad %s1 = %d2%F3</Spanish>
 		<Russian>%s1 в городе = %d2%F3</Russian>
+		<Hungarian>Város %s1 = %d2%F3</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_BONUS_YIELD</Tag>
@@ -1771,6 +1785,7 @@
 		<Italian>%s1 : %D2%F3 (con Resource [LINK=%s5]%s4[\LINK])</Italian>
 		<Spanish>%s1 : %D2 %F3 (con Resource [LINK=%s5]%s4[\LINK])</Spanish>
 		<Russian>%s1 : %D2%F3 (с ресурсом [LINK=%s5]%s4[\LINK])</Russian>
+		<Hungarian>%s1 : %D2%F3 (erőforrással [LINK=%s5]%s4[\LINK])</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALTH_CITY</Tag>
@@ -1780,6 +1795,7 @@
 		<Italian>[ICON_BULLET]%D1 [ICON_HEALTHY] a %s2_city</Italian>
 		<Spanish>[ICON_BULLET]%D1 [ICON_HEALTHY] en %s2_city</Spanish>
 		<Russian>[ICON_BULLET]%D1 [ICON_HEALTHY] в %s2_city</Russian>
+		<Hungarian>[ICON_BULLET]%D1 [ICON_HEALTHY] %s2_city településen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALTH</Tag>
@@ -1789,6 +1805,7 @@
 		<Italian>[ICON_BULLET]%D1 [ICON_HEALTH] in tutti gli insediamenti</Italian>
 		<Spanish>[ICON_BULLET]%D1 [ICON_HEALTH] en todos los asentamientos</Spanish>
 		<Russian>[ICON_BULLET]%D1 [ICON_HEALTH] во всех поселениях</Russian>
+		<Hungarian>[ICON_BULLET]%D1 [ICON_HEALTH] minden településen</Hungarian>
 	</TEXT>
 	<!--super forts-->
 	<TEXT>
@@ -1798,6 +1815,7 @@
 		<German>[SPACE](Muss befestigt sein, um zur Modernisierung %s1_ImpName zu werden)</German>
 		<Italian>[SPACE](Deve fortificare per diventare %s1_ImpName)</Italian>
 		<Spanish>[SPACE](Debe fortalecer para convertirse en [NUM1:un:una:unos:unas] %s1:1_ImpName)</Spanish>
+		<Hungarian>[SPACE](helyőrség kell, hogy %s1_ImpName legyen belőle)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PLOT_CULTURE</Tag>
@@ -1807,6 +1825,7 @@
 		<Italian>[ICON_BULLET]%D1_Change[ICON_CULTURE] per il proprietario di complotto</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change[ICON_CULTURE] para el propietario de la parcela</Spanish>
 		<Russian>[ICON_BULLET]%D1_Change[ICON_CULTURE] для владельца клетки</Russian>
+		<Hungarian>[ICON_BULLET]%D1_Change[ICON_CULTURE] a tulajdonostól a területen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_CULTURE_RANGE</Tag>
@@ -1816,6 +1835,7 @@
 		<Italian>[ICON_BULLET]Trame influenze entro una distanza di %d1_Num</Italian>
 		<Spanish>[ICON_BULLET]Influye en las parcelas dentro de una distancia de %d1_Num</Spanish>
 		<Russian>[ICON_BULLET]Распространение влияния на %d1_Num клетку</Russian>
+		<Hungarian>[ICON_BULLET]Befolyásolja %d1_Num mező távolságon belüli területeket</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_BOMBARD</Tag>
@@ -1825,6 +1845,7 @@
 		<Italian>[ICON_BULLET]Puo essere bombardati</Italian>
 		<Spanish>[ICON_BULLET]Puede ser bombardeado</Spanish>
 		<Russian>[ICON_BULLET]Может быть подвергнут бомбардировке</Russian>
+		<Hungarian>[ICON_BULLET]Ágyúzható</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FORTIFY_TO_UPGRADE</Tag>
@@ -1834,6 +1855,9 @@
 		<Italian>[ICON_BULLET]Una unita deve fortificare l'aggiornamento</Italian>
 		<Spanish>[ICON_BULLET]Una unidad debe fortalecer para mejorar</Spanish>
 		<Russian>[ICON_BULLET]Должно охраняться для повышения уровня</Russian>
+		<Hungarian>[ICON_BULLET]Egy egységnek őrködnie kell a fejlesztéshez</Hungarian>
+
+
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_VISIBILITY_RANGE</Tag>
@@ -1843,6 +1867,7 @@
 		<Italian>[ICON_BULLET]%D1_Change raggio di visibilità</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change al alcance de la visibilidad</Spanish>
 		<Russian>[ICON_BULLET]%D1_Change к обзору</Russian>
+		<Hungarian>[ICON_BULLET]%D1_Change láthatósági távolság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SEE_FROM</Tag>
@@ -1852,6 +1877,7 @@
 		<Italian>[ICON_BULLET]%D1_Change visibilita Altezza</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change visibilidad Altura</Spanish>
 		<Russian>[ICON_BULLET]%D1_Change к высоте обзора</Russian>
+		<Hungarian>[ICON_BULLET]%D1_Change láthatósági magasság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_UNIQUE_RANGE</Tag>
@@ -1861,6 +1887,7 @@
 		<Italian>[ICON_BULLET]Non e possibile costruire un altro ad una distanza di %d1_Num</Italian>
 		<Spanish>[ICON_BULLET]No se puede construir otro a una distancia de %d1_Num</Spanish>
 		<Russian>[ICON_BULLET]Невозможно построить еще один на расстоянии %d1_Num клетки</Russian>
+		<Hungarian>[ICON_BULLET]Nem építhető másik %d1_Num mező távolságon belül</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CITY_REVOLTED_JOINED</Tag>
@@ -1868,6 +1895,7 @@
 		<French>[ICON_BULLET][COLOR_SELECTED_TEXT]%s1_ImpName[COLOR_REVERT] s'est révolté et a rejoint [COLOR_HIGHLIGHT_TEXT]%s2_CivDesc[COLOR_REVERT]</French>
 		<German>[ICON_BULLET][COLOR_SELECTED_TEXT]%s1_ImpName[COLOR_REVERT] hat rebelliert und trat [COLOR_HIGHLIGHT_TEXT]%s2_CivDesc[COLOR_REVERT] bei</German>
 		<Russian>[ICON_BULLET][COLOR_SELECTED_TEXT]%s1_ImpName[COLOR_REVERT] поднял восстание и присоединился к [COLOR_HIGHLIGHT_TEXT]%s2_CivDesc[COLOR_REVERT]</Russian>
+		<Hungarian>[ICON_BULLET][COLOR_SELECTED_TEXT]%s1_ImpName[COLOR_REVERT] fellázadt és [COLOR_HIGHLIGHT_TEXT]%s2_CivDesc[COLOR_REVERT] népéhez csatlakozott</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_FLATLAND</Tag>
@@ -1875,6 +1903,7 @@
 		<French>[BOLD]Terrain plat :[\BOLD]</French>
 		<German>[BOLD]Flachland :[\BOLD]</German>
 		<Russian>[BOLD]Равнина :[\BOLD]</Russian>
+		<Hungarian>[BOLD]Síkság :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HILLS</Tag>
@@ -1882,6 +1911,7 @@
 		<French>[BOLD]Collines :[\BOLD]</French>
 		<German>[BOLD]Hügel :[\BOLD]</German>
 		<Russian>[BOLD]Холмы :[\BOLD]</Russian>
+		<Hungarian>[BOLD]Domb :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_PEAKS</Tag>
@@ -1889,6 +1919,7 @@
 		<French>[BOLD]Montagnes :[\BOLD]</French>
 		<German>[BOLD]Berge :[\BOLD]</German>
 		<Russian>[BOLD]Горы :[\BOLD]</Russian>
+		<Hungarian>[BOLD]Hegy :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_WATER</Tag>
@@ -1896,6 +1927,7 @@
 		<French>[BOLD]Eau :[\BOLD]</French>
 		<German>[BOLD]Wasser :[\BOLD]</German>
 		<Russian>[BOLD]Вода :[\BOLD]</Russian>
+		<Hungarian>[BOLD]Víz :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_VALID_TERRAINS</Tag>
@@ -1903,6 +1935,7 @@
 		<French>[NEWLINE][BOLD]Terrains valides :[\BOLD]</French>
 		<German>[NEWLINE][BOLD]Gültige Gelände :[\BOLD]</German>
 		<Russian>[NEWLINE][BOLD]Допустимые ландшафты :[\BOLD]</Russian>
+		<Hungarian>[NEWLINE][BOLD]Előfordulási Terep :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_VALID_TERRAINS_2</Tag>
@@ -1910,6 +1943,7 @@
 		<French>[BOLD]Terrains valides :[\BOLD]</French>
 		<German>[BOLD]Gültige Gelände :[\BOLD]</German>
 		<Russian>[BOLD]Допустимые ландшафты :[\BOLD]</Russian>
+		<Hungarian>[BOLD]Előfordulási Terep :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_VALID_FEATURES</Tag>
@@ -1917,13 +1951,15 @@
 		<French>[NEWLINE][BOLD]Ressources valides :[\BOLD]</French>
 		<German>[NEWLINE][BOLD]Gültige Features :[\BOLD]</German>
 		<Russian>[NEWLINE][BOLD]Где встречается :[\BOLD]</Russian>
+		<Hungarian>[NEWLINE][BOLD]Előforduló Jellemzők :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_YIELD_INCREASES</Tag>
 		<English>[BOLD]Yield Increases :[\BOLD]</English>
 		<French>[NEWLINE][BOLD]Bonus de production: [\BOLD]</French>
 		<German>[BOLD]Höhere Erträge :[\BOLD]</German>
-		<Russian>[BOLD]Увеличение урожайности :[\BOLD]</Russian>
+        <Russian>[BOLD]Увеличение урожайности :[\BOLD]</Russian>
+		<Hungarian>[BOLD]Hozam Növekedés :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_YIELD_DECREASES</Tag>
@@ -1931,12 +1967,14 @@
 		<French>[NEWLINE][BOLD]Malus de production: [\BOLD]</French>
 		<German>[NEWLINE][BOLD]Geringere Erträge :[\BOLD]</German>
 		<Russian>[NEWLINE][BOLD]Уменьшение урожайности :[\BOLD]</Russian>
+		<Hungarian>[NEWLINE][BOLD]Hozam Csökkenés :[\BOLD]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CULTURE_FROM_POPULATION</Tag>
-		<English>[ICON_BULLET]%d2%F3_Icon[TAB]from Population</English>
+		<English>[ICON_BULLET]%d2%F3_Icon[TAB]from population</English>
 		<French>[ICON_BULLET]%d2%F3_Icon[TAB]de la Population</French>
 		<German>[ICON_BULLET]%d2%F3_Icon[TAB]durch Stadtgröße</German>
 		<Russian>[ICON_BULLET]%d2%F3_Icon[TAB]от населения</Russian>
+		<Hungarian>[ICON_BULLET]%d2%F3_Icon[TAB]a Lakosságból</Hungarian>
 	</TEXT>
 </Civ4GameText>
