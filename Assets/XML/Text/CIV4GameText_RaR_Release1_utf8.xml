@@ -1254,15 +1254,17 @@
 		<French>[ICON_BULLET]Nécessite [COLOR_WARNING_TEXT] une route pavée[COLOR_REVERT] pour voyager</French>
 		<German>[ICON_BULLET]Kann nur auf [COLOR_WARNING_TEXT]gepflasterten Landstraßen[COLOR_REVERT] fahren</German>
 		<Russian>[ICON_BULLET]Требует [COLOR_WARNING_TEXT]вымощенную камнем дорогу[COLOR_REVERT] для передвижения</Russian>
+		<Hungarian>[ICON_BULLET][COLOR_WARNING_TEXT]Kövezett Út[COLOR_REVERT] szükséges a mozgáshoz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANIMAL</Tag>
-		<English>[ICON_BULLET]Wild Animal</English>
+		<English>[ICON_BULLET]Wild animal</English>
 		<French>[ICON_BULLET]Animal sauvage</French>
 		<German>[ICON_BULLET]Wildes Tier</German>
 		<Italian>[ICON_BULLET]Animale selvatico</Italian>
 		<Spanish>[ICON_BULLET]Animal salvaje</Spanish>
 		<Russian>[ICON_BULLET]Дикое животное</Russian>
+		<Hungarian>[ICON_BULLET]Vadállat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANIMAL_CANNOT_ENTER_PLAYER_TERRITORY</Tag>
@@ -1270,6 +1272,7 @@
 		<French>[ICON_BULLET]Ne peut rentrer dans le territoire du joueur</French>
 		<German>[ICON_BULLET]Kann das Gebiet des Spielers nicht betreten</German>
 		<Russian>[ICON_BULLET]Не может заходить на территорию игрока</Russian>
+		<Hungarian>[ICON_BULLET]Nem léphet be a játékosok területére</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ANIMAL_KILLING_REWARD</Tag>
@@ -1277,6 +1280,7 @@
 		<French>[ICON_BULLET]Offre des petites récompenses lorsqu'il est abattu</French>
 		<German>[ICON_BULLET]Kleine Belohung für Tötung</German>
 		<Russian>[ICON_BULLET]Небольшая награда за убийство</Russian>
+		<Hungarian>[ICON_BULLET]Kis jutalom a megölésekor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TERRAIN_NATIVE</Tag>
@@ -1284,6 +1288,7 @@
 		<French>[ICON_BULLET]Indigène vers le terrain %s1_Desc</French>
 		<German>[ICON_BULLET]Heimisch auf %s1_Desc Terrain</German>
 		<Russian>[ICON_BULLET]Уроженец %s1_Desc</Russian>
+		<Hungarian>[ICON_BULLET]Őshonos %s1_Desc terepen</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ANIMAL_REWARD</Tag>
@@ -1291,6 +1296,7 @@
 		<French>[COLOR_POSITIVE_TEXT]Bonne chasse! [COLOR_REVERT]Les restes de l'animal tué ([COLOR_UNIT_TEXT]%s1_animal[COLOR_REVERT]) vous rapportent %d2[ICON_GOLD] !</French>
 		<German>[COLOR_POSITIVE_TEXT]Erfolgreiche Jagd! [COLOR_REVERT]Die Körperteile [NUM1:des:der] getöteten [COLOR_UNIT_TEXT]%s1_animal[COLOR_REVERT] sind %d2[ICON_GOLD] wert!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Удачная охота! [COLOR_REVERT]Шкуру [COLOR_UNIT_TEXT]%s1_animal[COLOR_REVERT] удалось продать за %d2[ICON_GOLD]!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Sikeres vadászat! [COLOR_REVERT]Megnyúzása és megtisztítása után a levadászott [COLOR_UNIT_TEXT]%s1_animal[COLOR_REVERT] %d2[ICON_GOLD]-t ér!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ANIMALS_SPOTTED</Tag>
@@ -1298,6 +1304,7 @@
 		<French>[COLOR_WARNING_TEXT]%s1_CityName : [COLOR_REVERT]Des animaux sauvages ont été repérés!</French>
 		<German>[COLOR_WARNING_TEXT]%s1_CityName : [COLOR_REVERT]Ein Kundschafter meldet wilde Tiere in der Nähe!</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_CityName : [COLOR_REVERT]Жители жалуются на диких животных, бродящих поблизости от города!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_CityName : [COLOR_REVERT]Vadállatokat láttak a közelben!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_WONDER</Tag>
@@ -1307,6 +1314,7 @@
 		<Italian>[ICON_BULLET][COLOR_CYAN]Miracolo nazionale[COLOR_REVERT]</Italian>
 		<Spanish>[ICON_BULLET][COLOR_CYAN]Milagro nacional[COLOR_REVERT]</Spanish>
 		<Russian>[ICON_BULLET][COLOR_CYAN]Национальное чудо[COLOR_REVERT]</Russian>
+		<Hungarian>[ICON_BULLET][COLOR_CYAN]Nemzeti Csoda[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FORT_FEATURES</Tag>
@@ -1314,6 +1322,7 @@
 		<French>[ICON_BULLET]Protège une zone des raids indigènes, des animaux sauvages et des autres ennemis</French>
 		<German>[ICON_BULLET]Schützt ein Gebiet vor Überfallen der Ureinwohner, Wilden Tiere und anderen Gegnern</German>
 		<Russian>[ICON_BULLET]Позволяет защитить территорию от набегов туземцев, диких животных и других врагов.</Russian>
+		<Hungarian>[ICON_BULLET]Megvédi a területet a portyázó Indiánok, vadállatok és más ellenségek ellen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_MONASTERY_FEATURES</Tag>
@@ -1321,6 +1330,7 @@
 		<French>[ICON_BULLET]permet de convertir des indigènes de passage et de les convaincre d'apporter des présents dans vos villes.</French>
 		<German>[ICON_BULLET]Kann in manchen Fällen Ureinwohner überzeugen, zu konvertieren oder Geschenke zu bringen.</German>
 		<Russian>[ICON_BULLET]Может обратить индейцев в вашу веру или убедить их принести подарки в ваши города.</Russian>
+		<Hungarian>[ICON_BULLET]Megtérítheti a közeli Indiánokat vagy meggyőzheti őket, hogy hozzanak ajándékokat a városaidba.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FORT_DEFENSE_MODIFIER_IF_WORKED</Tag>
@@ -1328,6 +1338,7 @@
 		<French>[ICON_BULLET]Ajoute %d1_defensebonus%%%F2_Icon à la ville si le fort est défendu par des soldats et si son emplacement est travaillé par un citoyen de la ville.</French>
 		<German>[ICON_BULLET]Gibt der Stadt zusätzliche %d1_defensebonus%%%F2_Icon wenn das Fort durch Soldaten bewacht ist und dessen Feld durch einen Arbeiter in der Stadt bearbeitet wird</German>
 		<Russian>[ICON_BULLET]Дает дополнительный бонус %d1_defensebonus%%%F2_Icon к защите города, если форт защищают солдаты, а его участок внутри города обрабатывается горожанином.</Russian>
+		<Hungarian>[ICON_BULLET]További %d1_defensebonus%%%F2_Icon-t ad egy városnak, ha az erődöt katonák védik és a városon belül egy lakos dolgozik a földön.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_MONASTERY_CROSS_MODIFIER_IF_WORKED</Tag>
@@ -1335,6 +1346,7 @@
 		<French>[ICON_BULLET]Ajoute %d1_crossesbonus%%%F2_Icon si le monastère est occupé avec des missionnaires et si son emplacement est travaillé par un citoyen de la ville.</French>
 		<German>[ICON_BULLET]Gibt der Stadt einen zusätzliche %d1_crossesbonus%%%F2_Icon, wenn das Kloster durch Mönche besetzt ist und dessen Feld durch einen Arbeiter in der Stadt bearbeitet wird; erzeugt Religionspunkte für Gründerväter.</German>
 		<Russian>[ICON_BULLET]Дает дополнительный бонус %d1_crossesbonus%%%F2_Icon, если в нем находится миссионер, а его участок внутри города обрабатывается горожанином.</Russian>
+		<Hungarian>[ICON_BULLET]További %d1_crossesbonus%%%F2_Icon-t ad, ha a kolostorban van misszionárius és a területét egy városon belüli lakos műveli.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FOOD_MODIFIER_IF_WORKED</Tag>
@@ -1342,6 +1354,7 @@
 		<French>[ICON_BULLET]Ajoute %d1_millbonus%%%F2_Icon en sus à la ville si son emplacement est travaillé par un citoyen de la ville.</French>
 		<German>[ICON_BULLET]Gibt der Stadt zusätzliche %d1_millbonus%%%F2_Icon, wenn dessen Feld von einem Bürger der Stadt bearbeitet wird.</German>
 		<Russian>[ICON_BULLET]Дает городу дополнительный бонус %d1_millbonus%%%F2_Icon, если участок внутри города обрабатывается горожанином.</Russian>
+		<Hungarian>[ICON_BULLET]További %d1_millbonus%%%F2_Icon-t ad a városának, ha a területét egy városon belüli lakos műveli.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_HAMMERS_MODIFIER_IF_WORKED</Tag>
@@ -1349,6 +1362,7 @@
 		<French>[ICON_BULLET]Ajoute %d1_millbonus%%%F2_Icon en sus à la ville si son emplacement est travaillé par un citoyen de la ville.</French>
 		<German>[ICON_BULLET]Gibt der Stadt zusätzliche %d1_millbonus%%%F2_Icon, wenn dessen Feld von einem Bürger der Stadt bearbeitet wird.</German>
 		<Russian>[ICON_BULLET]Дает городу дополнительный бонус %d1_millbonus%%%F2_Icon, если участок внутри города обрабатывается горожанином.</Russian>
+		<Hungarian>[ICON_BULLET]További %d1_millbonus%%%F2_Icon-t ad a városának, ha a területét egy városon belüli lakos műveli.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_TOOLS_MODIFIER_IF_WORKED</Tag>
@@ -1356,40 +1370,46 @@
 		<French>[ICON_BULLET]Ajoute %d1_millbonus%%%F2_Icon en sus à la ville si son emplacement est travaillé par un citoyen de la ville.</French>
 		<German>[ICON_BULLET]Gibt der Stadt zusätzliche %d1_millbonus%%%F2_Icon, wenn dessen Feld von einem Bürger der Stadt bearbeitet wird.</German>
 		<Russian>[ICON_BULLET]Дает городу дополнительный бонус %d1_millbonus%%%F2, если участок внутри города обрабатывается горожанином.</Russian>
+		<Hungarian>[ICON_BULLET]További %d1_millbonus%%%F2_Icon-t ad a városának, ha a területét egy városon belüli lakos műveli.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_STORAGE_MODIFIER_IF_WORKED</Tag>
 		<English>[ICON_BULLET]Adds additional %d1_millbonus [COLOR_CYAN]Storage Capacity[COLOR_REVERT] to its city if its plot is worked by a citizen inside the city.</English>
 		<German>[ICON_BULLET]Gibt der Stadt zusätzliche %d1_millbonus [COLOR_CYAN]Lagerkapazität[COLOR_REVERT], wenn dessen Feld von einem Bürger der Stadt bearbeitet wird.</German>
 		<Russian>[ICON_BULLET]Дает дополнительный бонус %d1_millbonus к [COLOR_CYAN]вместимости склада[COLOR_REVERT], если участок внутри города обрабатывается горожанином.</Russian>
+		<Hungarian>[ICON_BULLET]További %d1_millbonus [COLOR_CYAN]Raktárkapacitást[COLOR_REVERT] ad a városának, ha a területét egy városon belüli lakos műveli.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NATIVE_RAID_ATTACKED_FORT</Tag>
-		<English>[COLOR_WARNING_TEXT]Bad news, Milord! [COLOR_REVERT]Your Fort was attacked by marauding Natives.</English>
+		<English>[COLOR_WARNING_TEXT]Bad news, Milord! [COLOR_REVERT]Your fort was attacked by marauding Natives.</English>
 		<French>[COLOR_WARNING_TEXT]Mauvaise nouvelle, Sire! [COLOR_REVERT]Votre fort a été attaqué par des indigènes lors d'un raid.</French>
 		<German>[COLOR_WARNING_TEXT]Schlechte Nachrichten, Milord! [COLOR_REVERT]Unser Fort wurde durch Ureinwohner überfallen.</German>
 		<Russian>[COLOR_WARNING_TEXT]Плохие новости, Милорд! [COLOR_REVERT]Наш форт был атакован злобными индейцами.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Rossz hírek, Uram! [COLOR_REVERT]Az Erődünket megtámadták a fosztogató Indiánok.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NATIVE_RAID_ATTACKED_FORT_BUT_DEFEATED</Tag>
-		<English>[COLOR_POSITIVE_TEXT]Victory, Milord! [COLOR_REVERT]The Troops in your fort defeated some Natives out on a raid.</English>
+		<English>[COLOR_POSITIVE_TEXT]Victory, Milord! [COLOR_REVERT]The troops in your fort defeated Natives out on a raid.</English>
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Les troupes de votre fort ont été vaincues par des indigènes lors d'un raid.</French>
 		<German>[COLOR_POSITIVE_TEXT]Sieg, Milord! [COLOR_REVERT]Die Besatzung eures Forts hat einen Überfall der Ureinwohner abgewehrt.</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Победа, Милорд! [COLOR_REVERT]Войска нашего форта отбили набег индейцев с большим уроном для них.</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Győzelem, Uram! [COLOR_REVERT]Az erődben lévő csapataid legyőztek néhány portyázó Indiánt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_DESTROYED_GOOD</Tag>
-		<English>[COLOR_POSITIVE_TEXT]Victory, Milord! [COLOR_REVERT]Our fort has fired at enemy troops and eliminated them!</English>
+		<English>[COLOR_POSITIVE_TEXT]Victory, Milord! [COLOR_REVERT]Our fort has fired at enemy troops, eliminating them.</English>
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Un fort a tiré sur des troupes ennemies et les a détruites !</French>
 		<German>[COLOR_POSITIVE_TEXT]Sieg, Milord! [COLOR_REVERT]Unser Fort hat auf feindliche Truppen gefeuert und diese vernichtet!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Победа, Милорд! [COLOR_REVERT]Наш форт обстрелял вражеские войска и уничтожил их!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Győzelem, Uram! [COLOR_REVERT]Az erődünk ellenséges csapatokra lőtt és megsemmisítette őket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_DESTROYED_BAD</Tag>
-		<English>[COLOR_WARNING_TEXT]Defeat, Milord! [COLOR_REVERT]A fort has fired at our troops and massacred them!</English>
+		<English>[COLOR_WARNING_TEXT]Defeat, Milord! [COLOR_REVERT]A fort has fired at our troops. They were massacred!</English>
 		<French>[COLOR_WARNING_TEXT]Mauvaise nouvelle, Sire! [COLOR_REVERT]Un fort a tiré sur nos troupes et les a tuées !</French>
 		<German>[COLOR_WARNING_TEXT]Niederlage, Milord! [COLOR_REVERT]Ein Fort hat auf unsere Truppen gefeuert und sie massakriert!</German>
 		<Russian>[COLOR_WARNING_TEXT]Поражение, Милорд! [COLOR_REVERT]Форт обстрелял наши войска и уничтожил их!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Vereség, Uram! [COLOR_REVERT]Egy erőd rálőtt a csapatainkra és lemészárolta őket!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_HIT_LAND_GOOD</Tag>
@@ -1397,20 +1417,23 @@
 		<French>Un fort a tiré sur des troupes ennemies et les a endommagées !</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Unser Fort hat auf feindliche Truppen gefeuert und diesen Verluste zugefügt!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Наш форт обстрелял вражеские войска и нанес им существенный рон!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Erődünk tüzet nyitott az ellenséges csapatokra és súlyos veszteségeket okozott!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_HIT_LAND_BAD</Tag>
-		<English>[COLOR_WARNING_TEXT]Bad news, Milord! [COLOR_REVERT]A fort has fired at our troops. We've suffered some casualties.</English>
+		<English>[COLOR_WARNING_TEXT]Bad news, Milord! [COLOR_REVERT]A fort has fired at our troops. We've suffered casualties.</English>
 		<French>[COLOR_WARNING_TEXT]Mauvaise nouvelle, Sire! [COLOR_REVERT]Un fort a tiré sur vos troupes. Il y a des victimes.</French>
 		<German>[COLOR_WARNING_TEXT]Schlechte Nachrichten, Milord! [COLOR_REVERT]Ein Fort hat auf unsere Truppen gefeuert und diesen Verluste zugefügt!</German>
 		<Russian>[COLOR_WARNING_TEXT]Плохие новости, Милорд! [COLOR_REVERT]Форт обстрелял наши войска. Мы понесли потери.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Rossz hírek, Uram! [COLOR_REVERT]Egy erődből tüzet nyitottak a csapatainkra. Veszteségeink lettek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_MISS_LAND_BAD</Tag>
-		<English>[COLOR_WARNING_TEXT]Bad news, Milord! [COLOR_REVERT]Our fort fired at enemy troops without effect.</English>
+		<English>[COLOR_WARNING_TEXT]Bad news, Milord! [COLOR_REVERT]Our fort fired at enemy troops to no effect.</English>
 		<French>[COLOR_WARNING_TEXT]Mauvaise nouvelle, Sire! [COLOR_REVERT]Un fort a tiré sur des troupes ennemies, mais les a manquées !</French>
 		<German>[COLOR_WARNING_TEXT]Schlechte Nachrichten, Milord! [COLOR_REVERT]Unser Fort hat auf feindliche Truppen gefeuert, diesen aber anscheinend keine Verluste beigebracht!</German>
 		<Russian>[COLOR_WARNING_TEXT]Плохие новости, Милорд! [COLOR_REVERT]Обстрел вражеских войск нашим фортом не причинил им никакого вреда .</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Rossz hírek, Uram! [COLOR_REVERT]Az erődünk eredménytelenül lőtt az ellenséges csapatokra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_MISS_LAND_GOOD</Tag>
@@ -1418,27 +1441,31 @@
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Un fort a tiré sur vos troupes, mais les a manquées !</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Ein Fort hat auf unsere Truppen gefeuert, diesen aber keine Verluste beigebracht!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Наши войска были обстреляны фортом, но мы сумели избежать потерь.</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Egy erőd rálőtt a csapatainkra, de nem okozott veszteséget nekünk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORT_IMPROVEMENT_KILLED_ANIMAL</Tag>
-		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]The troops in a fort killed a dangerous animal that got inside! The remains are worth %d1[ICON_GOLD]!</English>
+		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]Troops in our fort killed a dangerous animal that managed to get inside. The remains are worth %d1[ICON_GOLD]!</English>
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Les troupes en garde dans un fort ont tué un animal errant ! Ses restes ont été vendus pour %d1[ICON_GOLD]!</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Die Besatzung eines Forts hat ein herumwanderndes Tier getötet, dessen Körperteile %d1[ICON_GOLD] wert sind!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Гарнизон форта убил опасное животное, проникшее внутрь! За его шкуру мы выручили %d1[ICON_GOLD]!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Egyik erődünk katonái megöltek egy oda bejutó veszélyes állatot! A maradványai %d1[ICON_GOLD]-t érnek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MONASTERY_IMPROVEMENT_APEASED_RAIDING_NATIVE</Tag>
-		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]A monastery successfully deterred some young Natives from a raid!</English>
+		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]Our monastery successfully deterred some young Natives from a raid.</English>
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Un monastère a calmé avec succès des jeunes indigènes partis pour un raid !</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Ein Kloster hat erfolgreich einen Ureinwohner von einem Raubzug abgehalten!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Монастырь успешно удержал некоторых молодых туземцев от набега!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Egy kolostor sikeresen elrettentett néhány fiatal portyázó Indiánt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MONASTERY_IMPROVEMENT_GOT_PRESENT</Tag>
-		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]Natives brought a monastery gifts worth %d1[ICON_GOLD]!</English>
+		<English>[COLOR_POSITIVE_TEXT]Good news, Milord! [COLOR_REVERT]Natives brought our monastery gifts worth %d1[ICON_GOLD]!</English>
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Des indigènes ont apportés des présents dans un monastère pour une valeur de %d1[ICON_GOLD]!</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Ureinwohner haben einem Kloster Geschenke im Wert von %d1[ICON_GOLD] gebracht!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Индейцы принесли монастырю дары на %d1[ICON_GOLD]!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Az Indiánok ajándékokat hoztak egy kolostorunknak %d1[ICON_GOLD] értékben!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MONASTERY_IMPROVEMENT_CONVERTED_NATIVE</Tag>
@@ -1446,6 +1473,7 @@
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire! [COLOR_REVERT]Un monastère a converti avec succès des indigènes de passage !</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Ein Kloster hat erfolgreich einen Ureinwohner konvertiert!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Монастырь обратил проезжавшего мимо индейца в нашу веру!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Egy kolostor sikeresen megtérített egy idelátogató Indiánt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HIRED_PIRATES</Tag>
@@ -1453,6 +1481,7 @@
 		<French>Sire, Les [COLOR_UNIT_TEXT]pirates[COLOR_REVERT] que nous avons recrutés attendent vos ordres à [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</French>
 		<German>Milord, die angeheuerten [COLOR_UNIT_TEXT]Piraten[COLOR_REVERT] erwarten Eure Befehle in [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</German>
 		<Russian>Милорд, [COLOR_UNIT_TEXT]пираты[COLOR_REVERT], которых мы наняли, ожидают приказов в гавани [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT].</Russian>
+		<Hungarian>Uram, a felbérelt [COLOR_UNIT_TEXT]Kalózok[COLOR_REVERT] a parancsára várnak [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] kikötőjében.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOLD_BY_ENTERTAINMENT</Tag>
@@ -1460,6 +1489,7 @@
 		<French>%s2_city : Votre %s1_building a généré %d3[ICON_GOLD] de profit</French>
 		<German>%s2_city : Das Gebäude %s1_building hat %d3[ICON_GOLD] Gewinn erwirtschaftet</German>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] : %d3[ICON_GOLD] было сгенерировано в %s1_building</Russian>
+		<Hungarian>%s2_city : A %s1_building %d3[ICON_GOLD] bevételt adott</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ENTERTAINMENT_BUILDING</Tag>
@@ -1467,6 +1497,7 @@
 		<French>[ICON_BULLET]Génère [ICON_GOLD] à partir de %F1_yield</French>
 		<German>[ICON_BULLET]Erwirtschaftet [ICON_GOLD] durch %F1_yield</German>
 		<Russian>[ICON_BULLET]Генерирует [ICON_GOLD] из %F1_yield</Russian>
+		<Hungarian>[ICON_BULLET][ICON_GOLD]-t ad %F1_yield-ból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ENTERTAINMENT_BUILDING_INCREASED</Tag>
@@ -1474,6 +1505,7 @@
 		<French>[ICON_BULLET]Génère davantage de [ICON_GOLD] à partir de %F1_yield à: %d2_increase%%</French>
 		<German>[ICON_BULLET]Erhöht die Rate von [ICON_GOLD] durch %F1_yield um: %d2_increase%%</German>
 		<Russian>[ICON_BULLET]Увеличивает генерацию [ICON_GOLD] из %F1_yield на %d2_increase%%</Russian>
+		<Hungarian>[ICON_BULLET]Növeli az [ICON_GOLD] bevételt %F1_yield-ból %d2_increase%%-kal</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_MARKET_BUILDING</Tag>
@@ -1481,6 +1513,7 @@
 		<French>[ICON_BULLET]Génère [ICON_GOLD] en vendant des biens sur le marché local</French>
 		<German>[ICON_BULLET]Erwirtschaftet [ICON_GOLD] durch Verkauf von Waren an die Einwohner der Stadt</German>
 		<Russian>[ICON_BULLET]Генерирует [ICON_GOLD] при продаже товаров на Внутреннем рынке</Russian>
+		<Hungarian>[ICON_BULLET][ICON_GOLD]-t ad az áruk belföldi piacon történő értékesítésével</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_MARKET_BUILDING_INCREASED</Tag>
@@ -1488,6 +1521,7 @@
 		<French>[ICON_BULLET]Augmente la demande de bien sur le marché local</French>
 		<German>[ICON_BULLET]Erhöht die Nachfrage nach Waren in der Stadt</German>
 		<Russian>[ICON_BULLET]увеличивает спрос на товары на Внутреннем рынке</Russian>
+		<Hungarian>[ICON_BULLET]Növeli az áruk iránti keresletet a belföldi piacon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_EXTRA_TRADE_MODIFIER</Tag>
@@ -1495,20 +1529,23 @@
 		<French>[ICON_BULLET]%D1%% permet d'obtenir de meilleurs prix en négociant</French>
 		<German>[ICON_BULLET]%D1%% bessere Preise durch Feilschen und Handelsposten</German>
 		<Russian>[ICON_BULLET]%D1%% к цене при торге, ускорение работы Торговых постов</Russian>
+		<Hungarian>[ICON_BULLET]%D1%%-kal jobb árak az alkukból és a Kereskedelmi Állomásokból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_LEVIED_MILITIA_FOR_PROTECTION</Tag>
-		<English>Milord, the city [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] has levied a [COLOR_UNIT_TEXT]settler's militia[COLOR_REVERT] because they felt unprotected.[NEWLINE]To do so, they have taken food from the storage and money from the treasury.</English>
+		<English>Milord, the city [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] has levied a [COLOR_UNIT_TEXT]settlers' militia[COLOR_REVERT] because they felt unprotected.[NEWLINE]To do so, they have taken food from storage and money from the treasury.</English>
 		<French>Sire, la ville de [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] a levé [COLOR_UNIT_TEXT]une milice coloniale[COLOR_REVERT] à partir de simples colons car ils ne se sentaient pas protégés.[NEWLINE]À cette fin, ils se sont servis en nourriture et en argent.</French>
 		<German>Milord, die Stadt [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] hat eine [COLOR_UNIT_TEXT]Siedlermiliz[COLOR_REVERT] ausgehoben, weil sie sich unzureichend geschützt fühlte.[NEWLINE]Dafür haben sie Nahrung aus den Lagern und Gold aus der Schatzkammer entnommen.</German>
 		<Russian>Милорд! Жители города [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] чувствовали себя беззащитными и потому сами организовали отряд [COLOR_UNIT_TEXT]вооруженных колонистов[COLOR_REVERT]. [NEWLINE]Для обеспечения отряда они взяли еду со склада и деньги из казны города.</Russian>
+		<Hungarian>Uram, [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] besorozott egy [COLOR_UNIT_TEXT]Polgárőrt[COLOR_REVERT] mert védtelennek érezték magukat.[NEWLINE]Ennek érdekében élelmet vettek el a raktárból és pénzt a kincstárból.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_UNREST_BECAUSE_MISSING_PROTECTION</Tag>
-		<English>Milord, there is unrest in city [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] because the population feels unprotected.</English>
+		<English>Milord, there is unrest in [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] because the population feels unprotected.</English>
 		<French>Sire, il y a des émeutes à  [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] car la population ne s'y sent pas protégée.</French>
 		<German>Milord, in [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] gibt es Unruhen, weil die Bürger sich nicht ausreichend geschützt fühlen.</German>
 		<Russian>[COLOR_NEGATIVE_TEXT]Беда, Милорд![COLOR_REVERT] В городе [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] беспорядки. Из-за отсутствия войск жители чувствуют себя беззащитными.</Russian>
+		<Hungarian>Uram, nyugtalanság van [COLOR_SELECTED_TEXT]%s1_city[COLOR_REVERT] területén, mert a lakosság védtelennek érzi magát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAYED_CHURCH_DEMAND</Tag>
@@ -1516,27 +1553,31 @@
 		<French>L'information concernant votre généreuse donation à l'Église se répand.</French>
 		<German>Die Kunde über Eure grosszügige Spende an die Heilige Mutter Kirche verbreitet sich.</German>
 		<Russian>Все только и говорят о вашем щедром пожертвовании Матери-Церкви.</Russian>
+		<Hungarian>Az Anyaszentegyháznak tett nagylelkű adományod híre elterjedt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_REWARD_ATTITUDE_KING</Tag>
-		<English>[NEWLINE]His Majesty is very pleased that prestige for his Nation has increased through your actions.</English>
+		<English>[NEWLINE]His Majesty is very pleased that prestige for his nation has increased through your actions.</English>
 		<French>[NEWLINE]Le Roi est heureux de voir le prestige de sa Nation augmenter au travers de vos actions.</French>
 		<German>[NEWLINE]Seine Majestät ist sehr erfreut über das Ansehen, das Eure Taten seiner Nation bescheren.</German>
 		<Russian>[NEWLINE]Его Величество очень рад, что благодаря вашим действиям престиж его нации вырос.</Russian>
+		<Hungarian>[NEWLINE]Őfelsége nagyon örül annak, hogy Nemzetének presztízse a tetteid révén nőtt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_REWARD_ATTITUDE_EUROPEANS</Tag>
-		<English>[NEWLINE]Your prestige at other European Nations has grown.</English>
+		<English>[NEWLINE]Your prestige with other European nations has grown.</English>
 		<French>[NEWLINE]Votre prestige chez les autres Nations européennes a augmenté.</French>
 		<German>[NEWLINE]Euer Ansehen bei den anderen europäischen Nationen ist gestiegen.</German>
 		<Russian>[NEWLINE]Ваш авторитет в других странах Европы вырос.</Russian>
+		<Hungarian>[NEWLINE]Nőtt a presztízsed más Európai Nemzeteknél.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_REWARD_IMMIGRATION</Tag>
-		<English>[NEWLINE]Emigration of faithful Christians to your colony has increased.</English>
+		<English>[NEWLINE]Immigration of faithful Christians to your colony has increased.</English>
 		<French>[NEWLINE]L'immigration de chrétiens fidèles vers vos colonies a augmenté.</French>
 		<German>[NEWLINE]Die Auswanderung gläubiger Christen in die Kolonien nimmt zu.</German>
 		<Russian>[NEWLINE]Эмиграция верующих христиан в вашу колонию увеличилась.</Russian>
+		<Hungarian>[NEWLINE]A hívő keresztények kivándorlása a gyarmatokra megnövekedett.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_REWARD_MISSIONARY</Tag>
@@ -1544,6 +1585,7 @@
 		<French>[NEWLINE]Un missionnaire ayant eu échos de la nouvelle a décidé de se joindre à votre cause.</French>
 		<German>[NEWLINE]Ein Missionar, der diese Worte hörte, hat spontan entschieden, sich Eurer Sache anzuschliessen.</German>
 		<Russian>[NEWLINE]Услышав об этом, миссионер решил присоединиться к нашему делу.</Russian>
+		<Hungarian>[NEWLINE]Egy misszionárius ezeket a szavakat hallva spontán úgy döntött, hogy csatlakozik hozzád.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAYED_CHURCH_REWARD_PREACHER</Tag>
@@ -1551,6 +1593,7 @@
 		<French>[NEWLINE]Un prêtre ayant eu échos de la nouvelle a décidé de se joindre à votre cause.</French>
 		<German>[NEWLINE]Ein Prediger, der diese Worte hörte, hat spontan entschieden, sich Eurer Sache anzuschliessen.</German>
 		<Russian>[NEWLINE]Услышав об этом, проповедник решил присоединиться к нашему делу.</Russian>
+		<Hungarian>[NEWLINE]Egy pap e szavak hallatán spontán úgy döntött, hogy csatlakozik hozzád.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REFUSED_CHURCH_DEMAND</Tag>
@@ -1558,13 +1601,15 @@
 		<French>Votre refus d'aider les pauvres et les désespérés choque l'opinion.</French>
 		<German>Die Kunde über Eure Weigerung, den Armen und Hilfsbedürftigen zu spenden, verbreitet sich.</German>
 		<Russian>По всей стране разлетелся слух о вашем отказе помогать бедным и отчаявшимся.</Russian>
+		<Hungarian>Elterjedt a híre, hogy nem voltál hajlandó segíteni a szegényeken és a kétségbeesetteken.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_PENALTY_ATTITUDE_KING</Tag>
-		<English>[NEWLINE]His Majesty is profoundly displeased by the loss of prestige for his nation through your actions.</English>
+		<English>[NEWLINE]His Majesty is profoundly displeased by the loss of prestige your actions have cost his nation.</English>
 		<French>[NEWLINE]Le Roi est très insatisfait de la perte du prestige de sa Nation au travers de vos actions.</French>
 		<German>[NEWLINE]Seine Majestät ist nicht erfreut über den Verlust an Ansehen, den Eure Taten seiner Nation beschert haben.</German>
 		<Russian>[NEWLINE]Его Величество крайне недоволен потерей престижа его нации из-за ваших действий.</Russian>
+		<Hungarian>[NEWLINE]Őfelsége mélységesen elégedetlen, hogy a tetteiddel presztízsveszteséget okoztál a Nemzetének.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_PENALTY_ATTITUDE_EUROPEANS</Tag>
@@ -1572,6 +1617,7 @@
 		<French>[NEWLINE]Votre prestige chez les autres Nations européeennes s'est dégradé.</French>
 		<German>[NEWLINE]Euer Ansehen bei den anderen europäischen Nationen hat gelitten.</German>
 		<Russian>[NEWLINE]Ваш престиж среди других европейских стран понизился.</Russian>
+		<Hungarian>[NEWLINE]A tekintélyed más Európai nemzetek előtt csorbát szenvedett.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_PENALTY_UNREST</Tag>
@@ -1579,13 +1625,15 @@
 		<French>[NEWLINE]Les chrétiens fidèles de votre capitale marchent dans les rues.</French>
 		<German>[NEWLINE]Gläubige Christen demonstrieren auf den Strassen der Hauptstadt gegen Euer Handeln.</German>
 		<Russian>[NEWLINE]Верные христиане маршируют по улицам столицы.</Russian>
+		<Hungarian>[NEWLINE]Hívő Keresztények vonulnak a fővárosuk utcáin.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHURCH_PENALTY_IMMIGRATION</Tag>
-		<English>[NEWLINE]Fewer faithful Christians choose to emigrate to your colony.</English>
+		<English>[NEWLINE]Fewer faithful Christians choose to immigrate to your colony.</English>
 		<French>[NEWLINE]L'immigration de chrétiens fidèles vers vos colonies a diminué.</French>
 		<German>[NEWLINE]Die Auswanderung gläubiger Christen in die Kolonien nimmt ab.</German>
 		<Russian>[NEWLINE]В ваши колонии эмигрирует меньше праведных христиан.</Russian>
+		<Hungarian>[NEWLINE]Kevesebb hívő keresztény választja a kivándorlást a gyarmataidra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_PRICE_HELP</Tag>
@@ -1595,6 +1643,7 @@
 		<Italian>[NEWLINE]	Europa[TAB][TAB]</Italian>
 		<Spanish>[NEWLINE]	Europa[TAB][TAB]</Spanish>
 		<Russian>[NEWLINE]	Европа[TAB][TAB]</Russian>
+		<Hungarian>[NEWLINE]	Európa[TAB][TAB]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_AFRICA_PRICE_HELP</Tag>
@@ -1604,6 +1653,7 @@
 		<Italian>[NEWLINE]	Africa[TAB][TAB]</Italian>
 		<Spanish>[NEWLINE]	África[TAB][TAB]</Spanish>
 		<Russian>[NEWLINE]	Африка[TAB][TAB]</Russian>
+		<Hungarian>[NEWLINE]    Afrika[TAB][TAB]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PORT_ROYAL_PRICE_HELP</Tag>
