@@ -481,10 +481,10 @@
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_SWEET_POTATO</Type>
-			<fScale>0.8</fScale>
+			<fScale>0.7</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/Sweet_Potato/Wheat.nif</NIF>
-			<KFM>Art/Terrain/Resources/Sweet_Potato/Wheat.kfm</KFM>
+			<NIF>Art/Terrain/Resources/Sweet_Potato/sweet_potato.nif</NIF>
+			<KFM/>
 			<Button>Art/interface/buttons/Sweet_Potato_Button.dds</Button>
 			<FontButtonIndex>70</FontButtonIndex>
 			<bShadowCastor>1</bShadowCastor>
