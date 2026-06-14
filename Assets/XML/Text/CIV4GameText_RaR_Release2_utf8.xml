@@ -113,6 +113,7 @@
 		<Italian>Passaggio a Nord-Ovest (Grande, 80x59): in questo scenario, esplorate le acque ghiacciate del Nord America e del Canada</Italian>
 		<Spanish>Paso del Noroeste (Grande, 80x59): surca las gélidas aguas de Norteamérica y Canadá en este escenario</Spanish>
 		<Russian>Северо-Западный проход (80x59): добейтесь успеха в ледяных водах Северной Америки и Канады.</Russian>
+		<Hungarian>Északnyugati átjáró (Nagy, 80x59): játssz Észak-Amerika és Kanada jeges vizein ebben a játékban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_SOUTH_AMERICA_DESC</Tag>
@@ -122,6 +123,7 @@
 		<Italian>Sud America (Standard, 40x53): conquistate le giungle dell'Amazzonia, le vette delle Ande e le pianure della Patagonia in questo scenario</Italian>
 		<Spanish>Sudamérica (Estándar, 40x53): conquista las selvas del Amazonas, las cumbres de los Andes y las llanuras de la Patagonia en este escenario</Spanish>
 		<Russian>Южная Америка (40x53): покорите джунгли Амазонки, вершины Анд и равнины Патагонии.</Russian>
+		<Hungarian>Dél-Amerika (Normál, 40x53): hódítsd meg az Amazonas dzsungeleit, az Andok csúcsait és Patagónia síkságait ebben a játékban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_THE_NEW_WORLD</Tag>
@@ -131,6 +133,7 @@
 		<Italian>Il Nuovo Mondo (Gigantesca, 110x215): Mappa geograficamente corretta del Nuovo Mondo.</Italian>
 		<Spanish>El Nuevo Mundo (Gigante, 110x215): Mapa geográficamente correcto del Nuevo Mundo.</Spanish>
 		<Russian>Новый мир (110x215): географически корректная карта Нового Света</Russian>
+		<Hungarian>Az Újvilág (Gigantikus, 110x215): Az Újvilág földrajzilag helyes térképe.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_TWO_CONTINENTS</Tag>
@@ -140,6 +143,7 @@
 		<Italian>Due Continenti (Gigantesca, 110x215): Due giganteschi continenti situati nell'emisfero settentrionale e meridionale, separati da un ampio stretto.</Italian>
 		<Spanish>Dos Continentes (Gigante, 110x215): Dos gigantescos continentes situados en los hemisferios Norte y Sur, separados por un ancho estrecho.</Spanish>
 		<Russian>Два континента (110x215): два гигантских континента, расположенные в Северном и Южном полушариях, разделенные широким проливом.</Russian>
+		<Hungarian>Két Kontinens (Gigantikus, 110x215): Két gigantikus kontinens az északi és a déli féltekén, amelyeket egy széles tengerszoros választ el egymástól.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_WTP_UNCHARTED_LANDS_DESC</Tag>
@@ -149,6 +153,7 @@
 		<Italian>Terre Inesplorate (Enorme, 58x100): Terre Inesplorate è una mappa generata e modificata manualmente per WTP.</Italian>
 		<Spanish>Tierras Inexploradas (Enorme, 58x100): Tierras Inexploradas es un mapa generado y modificado manualmente para WTP.</Spanish>
 		<Russian>Неизведанные земли (58x100): автоматически сгенерированная карта, модифицированная вручную для WTP 4.Х.</Russian>
+		<Hungarian>Feltérképezetlen Földek (Hatalmas, 58x100): A Feltérképezetlen Földek egy generált térkép, ami kézzel lett módosítva a WTP számára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_WTP_UNDISCOVERED_WORLD_DESC</Tag>
@@ -158,15 +163,17 @@
 		<Italian>Mondi da Scoprire (Gigantesca, 108x215): Mondi da Scoprire è una mappa generata e modificata manualmente per WTP.</Italian>
 		<Spanish>Mundos por Descubrir (Gigante, 108x215): Mundos por Descubrir es un mapa generado y modificado manualmente para WTP.</Spanish>
 		<Russian>Неоткрытые миры (108x215): автоматически сгенерированная карта, модифицированная вручную для WTP 4.Х.</Russian>
+		<Hungarian>Felfedezetlen Világok (Gigantikus, 108x215): A Felfedezetlen Világ egy generált és kézzel módosított térkép a WTP számára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_WTP_UNKNOWN_CONTINENTS_DESC</Tag>
-		<English>Unknown Continents (Massive, 85x137): Unknown Continents is a generated map and manually modified for WTP</English>
+		<English>Unknown Continents (Massive, 85x137): Unknown Continents is a generated map, manually modified for WTP</English>
 		<French>Continents Inconnus (Massive, 85x137): Continents Inconnus est une carte générée et modifiée manuellement pour WTP.</French>
 		<German>Unbekannte Kontinente (Massiv, 85x137): Unbekannte Kontinente ist eine generierte Karte und manuell für WTP modifiziert.</German>
 		<Italian>Continenti Sconosciuti (Massicce, 85x137): Continenti Sconosciuti  è una mappa generata e modificata manualmente per WTP.</Italian>
 		<Spanish>Continentes Desconocidos (Masivo, 85x137): Continentes Desconocidos es un mapa generado y modificado manualmente para WTP.</Spanish>
 		<Russian>Неизвестные континенты (85x137): автоматически сгенерированная карта, модифицированная вручную для WTP 4.Х.</Russian>
+		<Hungarian>Ismeretlen Kontinensek (Masszív, 85x137): Az Ismeretlen Kontinensek egy generált és kézzel módosított térkép a WTP számára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_WEST_INDIES_DESC</Tag>
@@ -176,6 +183,7 @@
 		<Italian>Le Antille (Enorme, 88x58): Mappa delle Antille</Italian>
 		<Spanish>Las Antillas (Enorme, 88x58): Mapa de las Antillas</Spanish>
 		<Russian>Западная Индия (88x58): карта островов Карибского бассейна </Russian>
+		<Hungarian>Nyugat-Indiák (Hatalmas, 88x58): Nyugat-Indiák térképe</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORLDBUILDER_WESTERN_HEMI_DESC</Tag>
@@ -194,6 +202,7 @@
 		<Italian>Emisfero occidentale (Enorme, 72x100): colonizzare tutto il Nuovo Mondo in questo scenario</Italian>
 		<Spanish>Hemisferio occidental (Enorme, 72x100): coloniza todo el Nuevo Mundo en este escenario</Spanish>
 		<Russian>Западное полушарие (72x100): колонизируйте весь Новый Свет</Russian>
+		<Hungarian>Nyugati Félteke (Hatalmas, 72x100): kolonizáld az egész Újvilágot ebben a játékban.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_SCRIPT_ANEWWORLD_DESCR</Tag>
@@ -203,6 +212,7 @@
 		<Italian>Un Nuovo Mondo attende di essere scoperto. Lo script di questa mappa crea un continente che si estende dal Polo Nord al Polo Sud.</Italian>
 		<Spanish>Un Nuevo Mundo aguarda a ser descubierto. Esta secuencia de comandos del mapa genera un continente que se extiende desde el Polo Norte al Polo Sur.</Spanish>
 		<Russian>Новый Мир ждет своего первооткрывателя. Этот скрипт карты создает континент, простирающийся от Северного полюса до Южного полюса.</Russian>
+		<Hungarian>Egy Újvilág várja, hogy felfedezd. Ez a térkép kód egy kontinenst generál, amely az Északi-sarktól a Déli-sarkig terjed.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_SCRIPT_CARIBBEAN_DESCR</Tag>
@@ -212,6 +222,7 @@
 		<Italian>Fai una vacanza al mare e conquista un intero arcipelago, in questa mappa caraibica semi-casuale.</Italian>
 		<Spanish>Dejaos seducir por el ambiente de las islas y apoderaos de ellas en este mapa semialeatorio del Caribe.</Spanish>
 		<Russian>Вдохните чудесный островной воздух и захватите сами острова на этой полурандомизированной карте Карибского бассейна.</Russian>
+		<Hungarian>Szívd be a szigetek levegőjét és vedd birtokba magukat a szigeteket ezen a félig véletlenszerű karibi térképen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_DISTANCE</Tag>
@@ -221,6 +232,7 @@
 		<Italian>Distanza dall'Europa : </Italian>
 		<Spanish>Distancia hasta Europa : </Spanish>
 		<Russian>Дистанцию до Европы</Russian>
+		<Hungarian>Távolság Európától : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_NORTHERN_BORDER</Tag>
@@ -230,6 +242,7 @@
 		<Italian>Confine nord : </Italian>
 		<Spanish>Frontera norte : </Spanish>
 		<Russian>Северную границу</Russian>
+		<Hungarian>Északi határ : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_SOUTHERN_BORDER</Tag>
@@ -239,6 +252,7 @@
 		<Italian>Confine sud : </Italian>
 		<Spanish>Frontera sur : </Spanish>
 		<Russian>Южную границу</Russian>
+		<Hungarian>Déli határ : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_LAND_ALLOCATION</Tag>
@@ -248,6 +262,7 @@
 		<Italian>Assegnazione del terreno : </Italian>
 		<Spanish>Asignación de terrenos : </Spanish>
 		<Russian>Распределение суши</Russian>
+		<Hungarian>Földterület kiosztás : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_3_FIELDS</Tag>
@@ -257,6 +272,7 @@
 		<Italian>3 caselle : </Italian>
 		<Spanish>3 casillas : </Spanish>
 		<Russian>3 клетки</Russian>
+		<Hungarian>3 mező : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_4_FIELDS</Tag>
@@ -266,6 +282,7 @@
 		<Italian>4 caselle (predefinita) : </Italian>
 		<Spanish>4 casillas (por defecto) : </Spanish>
 		<Russian>4 клетки (по умолчанию)</Russian>
+		<Hungarian>4 mező (alap) : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_6_FIELDS</Tag>
@@ -275,6 +292,7 @@
 		<Italian>6 caselle : </Italian>
 		<Spanish>6 casillas : </Spanish>
 		<Russian>6 клеток</Russian>
+		<Hungarian>6 mező : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_8_FIELDS</Tag>
@@ -284,6 +302,7 @@
 		<Italian>8 caselle : </Italian>
 		<Spanish>8 casillas : </Spanish>
 		<Russian>8 клеток</Russian>
+		<Hungarian>8 mező : </Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_MANY_ISLES_0</Tag>
@@ -293,6 +312,7 @@
 		<Italian>Poche isole (predefinito)</Italian>
 		<Spanish>Pocas islas (por defecto)</Spanish>
 		<Russian>Несколько островов (по умолчанию)</Russian>
+		<Hungarian>Néhány sziget (alap)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_MANY_ISLES_1</Tag>
@@ -302,6 +322,7 @@
 		<Italian>Molte isole</Italian>
 		<Spanish>Muchas islas</Spanish>
 		<Russian>Много островов</Russian>
+		<Hungarian>Sok sziget</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_SELECT_NORTHERN_BORDER_0</Tag>
@@ -311,6 +332,7 @@
 		<Italian>Latitudine 90 gradi nord (predefinita)</Italian>
 		<Spanish>Latitud 90 grados norte (por defecto)</Spanish>
 		<Russian>90° северной широты (по умолчанию)</Russian>
+		<Hungarian>Északi szélesség 90 fok (alap)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_SELECT_NORTHERN_BORDER_1</Tag>
@@ -320,6 +342,7 @@
 		<Italian>Latitudine 90 gradi sud</Italian>
 		<Spanish>Latitud 90 grados sur</Spanish>
 		<Russian>90° южной широты</Russian>
+		<Hungarian>Déli szélesség 90 fok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_SELECT_SOUTHERN_BORDER_0</Tag>
@@ -329,6 +352,7 @@
 		<Italian>Latitudine 90 gradi nord</Italian>
 		<Spanish>Latitud 90 grados norte</Spanish>
 		<Russian>90° северной широты</Russian>
+		<Hungarian>Északi szélesség 90 fok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_SELECT_SOUTHERN_BORDER_1</Tag>
@@ -338,6 +362,7 @@
 		<Italian>Latitudine 90 gradi sud (predefinita)</Italian>
 		<Spanish>Latitud 90 grados sur (por defecto)</Spanish>
 		<Russian>90° южной широты (по умолчанию)</Russian>
+		<Hungarian>Déli szélesség 90 fok (alap)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_FAIRE_WEATHER_SELECT_EQUATOR</Tag>
@@ -347,6 +372,7 @@
 		<Italian>0° Equatore</Italian>
 		<Spanish>0° Ecuador</Spanish>
 		<Russian>0° экватор</Russian>
+		<Hungarian>0° Egyenlítő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AS_MAX_UNITS_PER_CITY</Tag>
@@ -356,6 +382,7 @@
 		<Italian>[COLOR_WARNING_TEXT]Massimo %d1 unità per insediamento[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]%d1 [NUM1:unidad:unidades] como máximo por asentamiento[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Максимум %d1 [NUM1:юнит:юнитов] на поселение[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Maximum %d1 [NUM1:unit:units] településenként[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CITY_DATA</Tag>
@@ -741,6 +768,7 @@
 		<Italian>Dimensioni mappa : %s1_size</Italian>
 		<Spanish>Tamaño : %s1_size</Spanish>
 		<Russian>Размер карты : %s1_size</Russian>
+		<Hungarian>Térkép mérete : %s1_size</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REGENERATE_MAP</Tag>
