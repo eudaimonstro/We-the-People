@@ -26,6 +26,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Церковь</Russian>
+		<Hungarian>Templom</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHURCH_ADJECTIVE</Tag>
@@ -39,6 +40,7 @@
 		<Italian>Church</Italian>
 		<Spanish>Church</Spanish>
 		<Russian>Церковь</Russian>
+		<Hungarian>Templomi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARAWAK_ADJECTIVE</Tag>
@@ -60,6 +62,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Араваки</Russian>
+		<Hungarian>Aravak</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TUPI_ADJECTIVE</Tag>
@@ -81,6 +84,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Тупи</Russian>
+		<Hungarian>Tupi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHEROKEE_ADJECTIVE</Tag>
@@ -102,6 +106,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Чироки</Russian>
+		<Hungarian>Cseroki</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IROQUOIS_ADJECTIVE</Tag>
@@ -123,6 +128,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Ирокезы</Russian>
+		<Hungarian>Irokéz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SIOUX_ADJECTIVE</Tag>
@@ -144,6 +150,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Сиу</Russian>
+		<Hungarian>Sziú</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NEZ_PERCE_ADJECTIVE</Tag>
@@ -165,6 +172,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Не-Персе</Russian>
+		<Hungarian>Nez Perce</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_APACHE_ADJECTIVE</Tag>
@@ -186,6 +194,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Апачи</Russian>
+		<Hungarian>Apacs</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_ADJECTIVE</Tag>
@@ -215,6 +224,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Ацтеки</Russian>
+		<Hungarian>Azték</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_ADJECTIVE</Tag>
@@ -244,6 +254,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Инки</Russian>
+		<Hungarian>Inka</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SHUAR_ADJECTIVE</Tag>
@@ -265,6 +276,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Шуар</Russian>
+		<Hungarian>Shuar</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SHUAR_SHORT_DESC</Tag>
@@ -286,6 +298,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Шуар</Russian>
+		<Hungarian>Shuar</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SHUAR_DESC</Tag>
@@ -307,6 +320,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Шуар</Russian>
+		<Hungarian>Shuar</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEHUELCHE_ADJECTIVE</Tag>
@@ -328,6 +342,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Теуэльче</Russian>
+		<Hungarian>Tehuelche</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEHUELCHE_SHORT_DESC</Tag>
@@ -349,6 +364,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Теуэльче</Russian>
+		<Hungarian>Tehuelche</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEHUELCHE_DESC</Tag>
@@ -370,6 +386,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Теуэльче</Russian>
+		<Hungarian>Tehuelche</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_ADJECTIVE</Tag>
@@ -391,6 +408,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Майа</Russian>
+		<Hungarian>Maja</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_DESC</Tag>
@@ -412,6 +430,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Империя Майа</Russian>
+		<Hungarian>Maja Birodalom</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_SHORT_DESC</Tag>
@@ -433,6 +452,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Майа</Russian>
+		<Hungarian>Maja</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NATIVE_NORTH</Tag>
@@ -454,11 +474,12 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Индейцы Северной Америки</Russian>
+		<Hungarian>Észak-Amerika Indiánjai</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BARBARIAN_ADJECTIVE</Tag>
 		<English>
-			<Text>Independent</Text>
+			<Text>Wild</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
@@ -483,6 +504,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Независимый</Russian>
+		<Hungarian>Független</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SEAFARERS_SHORT</Tag>
@@ -492,6 +514,7 @@
 		<Italian>Sea</Italian>
 		<Spanish>Sea</Spanish>
 		<Russian>Мор.</Russian>
+		<Hungarian>Ten.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_UNDEMANDING_SHORT</Tag>
@@ -501,6 +524,7 @@
 		<Italian>Und</Italian>
 		<Spanish>Und</Spanish>
 		<Russian>Нетреб.</Russian>
+		<Hungarian>Igé.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_ADMINISTRATIVE_SHORT</Tag>
@@ -510,6 +534,7 @@
 		<Italian>Amm</Italian>
 		<Spanish>Adm</Spanish>
 		<Russian>Управл.</Russian>
+		<Hungarian>Adm.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PIONEER_SHORT</Tag>
@@ -519,6 +544,7 @@
 		<Italian>Pio</Italian>
 		<Spanish>Pio</Spanish>
 		<Russian>Перво.</Russian>
+		<Hungarian>Utá.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_CAPITALIST_SHORT</Tag>
@@ -528,6 +554,7 @@
 		<Italian>Cap</Italian>
 		<Spanish>Cap</Spanish>
 		<Russian>Капит.</Russian>
+		<Hungarian>Kap.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SOPHISTICATED_SHORT</Tag>
@@ -537,6 +564,7 @@
 		<Italian>Sop</Italian>
 		<Spanish>Sop</Spanish>
 		<Russian>Культ.</Russian>
+		<Hungarian>Kif.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_EXPANSIVE_SHORT</Tag>
@@ -546,24 +574,27 @@
 		<Italian>Esp</Italian>
 		<Spanish>Exp</Spanish>
 		<Russian>Несдерж.</Russian>
+		<Hungarian>Terj.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_ADMIRAL_SHORT</Tag>
-		<English>ExA</English>
+		<English>Adm</English>
 		<French>AmEx</French>
 		<German>ErfA</German>
 		<Italian>ExA</Italian>
 		<Spanish>ExA</Spanish>
 		<Russian>Опыт.Адм.</Russian>
+		<Hungarian>Adm.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_GENERAL_SHORT</Tag>
-		<English>ExG</English>
+		<English>Gen</English>
 		<French>GeEx</French>
 		<German>ErfG</German>
 		<Italian>EsG</Italian>
 		<Spanish>ExG</Spanish>
 		<Russian>Опыт.Ген.</Russian>
+		<Hungarian>Hadv.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_AGRICULTURAL_SHORT</Tag>
@@ -573,6 +604,7 @@
 		<Italian>Agr</Italian>
 		<Spanish>Agr</Spanish>
 		<Russian>Землед.</Russian>
+		<Hungarian>Mez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_IMPERIALIST_SHORT</Tag>
@@ -582,6 +614,7 @@
 		<Italian>Imp</Italian>
 		<Spanish>Imp</Spanish>
 		<Russian>Импер.</Russian>
+		<Hungarian>Bir.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PATRIARCH_SHORT</Tag>
@@ -591,6 +624,7 @@
 		<Italian>Pat</Italian>
 		<Spanish>Pat</Spanish>
 		<Russian>Бесстраш.</Russian>
+		<Hungarian>Pat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_GATHERER_SHORT</Tag>
@@ -600,6 +634,7 @@
 		<Italian>Gat</Italian>
 		<Spanish>Gat</Spanish>
 		<Russian>Соб.</Russian>
+		<Hungarian>Gyűjt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_DISCIPLINED_SHORT</Tag>
@@ -609,6 +644,7 @@
 		<Italian>Dis</Italian>
 		<Spanish>Dis.</Spanish>
 		<Russian>Дисципл.</Russian>
+		<Hungarian>Fegy.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_LIBERTARIAN_SHORT</Tag>
@@ -618,6 +654,7 @@
 		<Italian>Lib</Italian>
 		<Spanish>Lib.</Spanish>
 		<Russian>Либер.</Russian>
+		<Hungarian>Lib.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_COOPERATIVE_SHORT</Tag>
@@ -627,6 +664,7 @@
 		<Italian>Coop</Italian>
 		<Spanish>Ser.</Spanish>
 		<Russian>Общит.</Russian>
+		<Hungarian>Együ.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_TOLERANT_SHORT</Tag>
@@ -636,6 +674,7 @@
 		<Italian>Toll</Italian>
 		<Spanish>Tol.</Spanish>
 		<Russian>Толер.</Russian>
+		<Hungarian>Tol.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_DETERMINED_SHORT</Tag>
