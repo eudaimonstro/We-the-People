@@ -1306,6 +1306,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Трясина</Russian>
+		<Hungarian>Láp</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DALETEST</Tag>
@@ -1323,6 +1324,7 @@
 		<Italian>[COLOR_CYAN]Menu Ausiliario[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_CYAN]Menú Asesor[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_CYAN]Меню советника[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_CYAN]Tanácsadó Menü[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_SENTRY_WHILE_HEAL</Tag>
@@ -1412,6 +1414,7 @@
 		<Italian>Seleziona tutte le unità (della stessa professione)</Italian>
 		<Spanish>Seleccionar todas las unidades (de la misma profesion)</Spanish>
 		<Russian>Выделить все юниты (одной профессии)</Russian>
+		<Hungarian>Összes egység kiválasztása (ugyanaz a szakma)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_CITY_BOMBARD</Tag>
@@ -1419,6 +1422,7 @@
 		<French>Bombardement automatique</French>
 		<German>Automatische Bombardierung</German>
 		<Russian>Включить городские пушки</Russian>
+		<Hungarian>Városi ágyúzás engedélyezése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_CITY_BOMBARD_HELP</Tag>
@@ -1426,6 +1430,7 @@
 		<French>Les villes bombardent automatiquement à l'approche de navires hostiles</French>
 		<German>Städte beschießen automatisch vorbeifahrende feindliche Schiffe</German>
 		<Russian>Города будут автоматически стрелять по проходящим мимо вражеским кораблям.</Russian>
+		<Hungarian>A városok automatikusan ágyúznak, ha ellenséges hajók érkeznek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAME_OPTION_NEW_AI</Tag>
@@ -1449,6 +1454,7 @@
 		<French>[ICON_BULLET]Ne peut rentrer dans les villages indigènes</French>
 		<German>[ICON_BULLET]Kann Siedlungen der Ureinwohner nicht anlaufen</German>
 		<Russian>[ICON_BULLET]Не может заходить в поселения индейцев</Russian>
+		<Hungarian>[ICON_BULLET]Nem léphet be a Indián falvakba</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_STUDENT_ALMOST_GRADUATED</Tag>
@@ -1456,20 +1462,23 @@
 		<French>%s2_city : Un étudiant va bientôt achever sa formation dans l'%s3_building : %d1_Num [NUM1:tour:tours].</French>
 		<German>%s2_city : In %d1 [NUM1:Runde:Runden] wird ein strebsamer Bürger an der %s3_building seine Ausbildung beenden.</German>
 		<Russian>[COLOR_SELECTED_TEXT]%s2_city :[COLOR_REVERT] Способный горожанин закончит обучение в [COLOR_FONT_CREAM]%s3_building[COLOR_REVERT] через %d1_Num [NUM1:ход:хода].</Russian>
+		<Hungarian>%s2_city : Egy ügyes lakos %d1_Num [NUM1:kör:kör] múlva befejezi a városi %s3_building falai között a tanulmányait.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_EXPERT</Tag>
-		<English>A free colonist who has worked long in his profession has now gained enough knowledge to be considered [COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT].</English>
+		<English>A free colonist who has worked in his profession for many years now has enough knowledge to be considered an [COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT].</English>
 		<French>Un colon libre avec de l'expérience dans sa profession a acquis assez de compétences pour être tenu pour [COLOR_UNIT_TEXT]%s1_expert.[COLOR_REVERT].</French>
 		<German>Ein Freier Kolonist, der lange in seinem Beruf gearbeitet hat, hat nun genug Wissen erlangt, um als [COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT] zu gelten.</German>
 		<Russian>Свободный колонист, который долгое время работал по своей профессии, теперь получил достаточно знаний, чтобы считаться [COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT].</Russian>
+		<Hungarian>Egy szabad telepes, aki sokáig dolgozott a szakmájában, már elég tudásra tett szert ahhoz, hogy [COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT] legyen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_EXPERT_IN_CITY</Tag>
-		<English>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]A free colonist who has worked long in his profession has now gained enough knowledge to be considered [COLOR_UNIT_TEXT]%s2_expert[COLOR_REVERT].</English>
+		<English>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]A free colonist who has worked in his profession for many years now knows enough to be considered an [COLOR_UNIT_TEXT]%s2_expert[COLOR_REVERT].</English>
 		<French>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT] Un colon libre avec de l'expérience dans sa profession a acquis assez de compétences pour être tenu pour [COLOR_UNIT_TEXT]%s2_expert[COLOR_REVERT].</French>
 		<German>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Ein Freier Kolonist, der lange in seinem Beruf gearbeitet hat, hat nun genug Wissen erlangt, um als [COLOR_UNIT_TEXT]%s2_expert[COLOR_REVERT] zu gelten.</German>
 		<Russian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Свободный колонист, долго трудившийся по своей профессии, теперь получил достаточно знаний, чтобы стать [COLOR_UNIT_TEXT]%s2_expert[COLOR_REVERT].</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Egy szabad telepes, aki sokáig dolgozott a szakmájában, már elég tudásra tett szert ahhoz, hogy [COLOR_UNIT_TEXT]%s2_expert[COLOR_REVERT] legyen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_FREE</Tag>
@@ -1477,6 +1486,7 @@
 		<French>Un colon sous servitude a gagné sa [COLOR_POSITIVE_TEXT]liberté[COLOR_REVERT] en travaillant dur.</French>
 		<German>Ein Unfreier hat sich durch harte Arbeit seine [COLOR_POSITIVE_TEXT]Freiheit[COLOR_REVERT] verdient.</German>
 		<Russian>Несвободный колонист тяжелым трудом заработал себе [COLOR_POSITIVE_TEXT]свободу[COLOR_REVERT].</Russian>
+		<Hungarian>Egy nem szabad lakos kemény munkával kiérdemelte a [COLOR_POSITIVE_TEXT]szabadságát[COLOR_REVERT].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_FREE_IN_CITY</Tag>
@@ -1484,27 +1494,31 @@
 		<French>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT] Un colon sous servitude a gagné sa liberté en travaiilant dur.</French>
 		<German>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Ein Unfreier hat sich durch harte Arbeit seine Freiheit verdient.</German>
 		<Russian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]Несвободный колонист добился освобождения своим упорным трудом.</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]%s1_city : [COLOR_REVERT]A nem szabad lakos kemény munkával kiérdemelte a szabadságát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_ESCAPE</Tag>
-		<English>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]An unfree colonist has disappeared. It is suspected that he has fled into the wilderness.</English>
+		<English>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]An unfree colonist has disappeared. We suspect he's fled into the wilderness.</English>
 		<French>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT] Un captif a disparu. On soupçonne qu'il a fui dans la nature.</French>
 		<German>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Ein Unfreier ist verschwunden. Man vermutet, dass er in die Wildnis geflohen ist.</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Несвободный колонист сбежал из колонии! Срочно собрать поисковую партию, он не мог далеко уйти!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Eltűnt egy nem szabad telepes. A gyanú szerint a vadonba menekült.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_REVOLT</Tag>
-		<English>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]An unfree colonist has revolted. He is believed to have fled into the wilderness.</English>
+		<English>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]An unfree colonist has revolted. We believe he's fled into the wilderness.</English>
 		<French>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT] Un captif s'est soulevé. On soupçonne qu'il a fui dans la nature.</French>
 		<German>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Ein Unfreier hat revoltiert. Man vermutet, dass er in die Wildnis geflohen ist.</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Несвободный колонист взбунтовался, где-то раздобыл оружие и сбежал из колонии! Все, кто свободен от работ, к оружию! Убьем негодяя!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Egy nem szabad telepes fellázadt. Úgy vélik, hogy a vadonba menekült.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_VETERAN_BY_MILITARY_SERVICE</Tag>
-		<English>[COLOR_POSITIVE_TEXT]A free colonist has gained enough experience through combat to become a [COLOR_REVERT][COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT]</English>
+		<English>[COLOR_POSITIVE_TEXT]A free colonist has survived enough combat to now be a [COLOR_REVERT][COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT]</English>
 		<French>[COLOR_POSITIVE_TEXT]Un colon libre a gagné suffisamment d'expérience pour devenir [COLOR_REVERT][COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT]</French>
 		<German>[COLOR_POSITIVE_TEXT]Ein Freier Kolonist hat im Kampf genug Erfahrung gesammelt, um jetzt als [COLOR_REVERT][COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT][COLOR_POSITIVE_TEXT] zu gelten.[COLOR_REVERT]</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Свободный колонист набрал достаточно опыта в боях, чтобы стать [COLOR_REVERT][COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Egy szabad telepes elég tapasztalatot szerzett a harcok során ahhoz, hogy [COLOR_REVERT][COLOR_UNIT_TEXT]%s1_expert[COLOR_REVERT] legyen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LBD_FREE_BY_MILITARY_SERVICE</Tag>
@@ -1512,6 +1526,7 @@
 		<French>[COLOR_POSITIVE_TEXT]Un combattant a gagné le droit de devenir un colon libre par sa bravoure dans la bataille.[COLOR_REVERT]</French>
 		<German>[COLOR_POSITIVE_TEXT]Ein Unfreier hat sich durch Mut und Einsatz im Kampf seine Freiheit verdient.[COLOR_REVERT]</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Несвободный колонист стал свободным благодаря своей храбрости в бою.[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Egy nem szabad telepes a csatában tanúsított bátorsága miatt szabaddá vált.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAX_WORKERS</Tag>
@@ -1521,6 +1536,7 @@
 		<Italian>[ICON_BULLET]Offerte %d1_Num [NUM1:luogo di lavoro:luoghi di lavoro]</Italian>
 		<Spanish>[ICON_BULLET]Ofrece %d1_Num [NUM1:lugar de trabajo:lugares de trabajo]</Spanish>
 		<Russian>[ICON_BULLET]ПРЕДЛАГАЕТ %d1_Num [NUM1:раб.место:раб.мест]</Russian>
+		<Hungarian>[ICON_BULLET]Ad %d1_Num [NUM1:munkahelyet:munkahelyet]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAX_WORKERS2</Tag>
@@ -1530,6 +1546,7 @@
 		<Italian>%d1_Num [NUM1:luogo di lavoro:luoghi di lavoro]</Italian>
 		<Spanish>%d1_Num [NUM1:lugar de trabajo:lugares de trabajo]</Spanish>
 		<Russian>%d1_Num [NUM1:раб.место:раб.места]</Russian>
+		<Hungarian>%d1_Num [NUM1:munkahely:munkahely]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COMPETITIOR_INDEPENDENCE_WAR</Tag>
@@ -1537,6 +1554,7 @@
 		<French>La communauté des peuples de la terre retient son souffle :  Les colonies [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT] se ont soulevées contre leur propre roi. Ils ne veulent plus s'incliner et être sous le joug d'un tyran.</French>
 		<German>Die Gemeinschaft der Völker dieser Welt hält den Atem an: Die [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Kolonien haben sich gegen ihren König erhoben. Sie wollen sich nicht länger der Knute eines Tyrannen beugen.</German>
 		<Russian>Сообщество народов мира затаило дыхание: [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] колонии восстали против своего короля. Они больше не хотят жить под пятой этого тирана.</Russian>
+		<Hungarian>A világ népei lélegzetvisszafojtva figyelnek: A bátor [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] gyarmatok fellázadtak a királyuk ellen. Nem akarnak többé meghajolni egy zsarnok akarata előtt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCHOOL_BUILDING_NEEDED</Tag>
@@ -1544,6 +1562,7 @@
 		<French>[ICON_BULLET]Peut être formé dans les [COLOR_BUILDING_TEXT][LINK=literal]%s1:2_building[\LINK][COLOR_REVERT] ou mieux</French>
 		<German>[ICON_BULLET]Ausbildung möglich in [COLOR_BUILDING_TEXT][LINK=literal]%s1_building[\LINK][COLOR_REVERT] oder besser</German>
 		<Russian>[ICON_BULLET]Можно обучить в [COLOR_BUILDING_TEXT][LINK=literal]%s1_building[\LINK][COLOR_REVERT] или в его улучшении</Russian>
+		<Hungarian>[ICON_BULLET][COLOR_BUILDING_TEXT][LINK=literal]%s1_building[\LINK][COLOR_REVERT] vagy annak továbbfejlesztése szükséges a kiképzéséhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AIONLY</Tag>
@@ -1551,6 +1570,7 @@
 		<French>[ICON_BULLET][COLOR_WARNING_TEXT]Uniquement disponible pour les puissances coloniales contrôlées par IA[COLOR_REVERT]</French>
 		<German>[ICON_BULLET][COLOR_WARNING_TEXT]Steht nur vom Computer gesteuerten Kolonialmächten zur Verfügung[COLOR_REVERT]</German>
 		<Russian>[ICON_BULLET][COLOR_WARNING_TEXT]Доступно только колониальным державам ИИ[COLOR_REVERT]</Russian>
+		<Hungarian>[ICON_BULLET][COLOR_WARNING_TEXT]Csak MI gyarmati hatalmak számára elérhető[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LBD</Tag>
@@ -1558,6 +1578,7 @@
 		<French>[ICON_BULLET]Peut devenir un expert en travaillant dur</French>
 		<German>[ICON_BULLET]Kann durch harte Arbeit zum Experten werden</German>
 		<Russian>[ICON_BULLET]Может стать экспертом благодаря упорному труду</Russian>
+		<Hungarian>[ICON_BULLET]Kemény munkával szakértővé válhat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FREE</Tag>
@@ -1565,6 +1586,7 @@
 		<French>[ICON_BULLET]Peut devenir un colon libre en travaillant dur</French>
 		<German>[ICON_BULLET]Kann durch harte Arbeit zum Freien Kolonisten werden</German>
 		<Russian>[ICON_BULLET]Может стать свободным колонистом благодаря упорному труду</Russian>
+		<Hungarian>[ICON_BULLET]Kemény munkával szabad lakossá válhat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ESCAPE</Tag>
@@ -1572,13 +1594,15 @@
 		<French>[ICON_BULLET]Peut s'enfuir pour éviter son sort</French>
 		<German>[ICON_BULLET]Kann fliehen, um sich seinem Schicksal zu entziehen</German>
 		<Russian>[ICON_BULLET]Может совершить побег, чтобы избежать своей участи</Russian>
+		<Hungarian>[ICON_BULLET]Elmenekülhet, hogy elkerülje a sorsát</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_REVOLT</Tag>
-		<English>[ICON_BULLET]Can revolt and become a threat</English>
+		<English>[ICON_BULLET]Can revolt and turn into a threat</English>
 		<French>[ICON_BULLET]Peut se soulever et devenir une menace</French>
 		<German>[ICON_BULLET]Kann revoltieren und zur Bedrohung werden</German>
 		<Russian>[ICON_BULLET]Может взбунтоваться и стать угрозой для колоний</Russian>
+		<Hungarian>[ICON_BULLET]Fellázadhat és ellenséggé válhat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROF_LBD1</Tag>
@@ -1586,6 +1610,7 @@
 		<French>[ICON_BULLET]Un colon libre exerçant cette profession peut devenir un expert au bout d'un certain temps</French>
 		<German>[ICON_BULLET]Ein Freier Kolonist kann nach einiger Zeit zum Experten in diesem Beruf werden</German>
 		<Russian>[ICON_BULLET]Через некоторое время Свободный колонист может стать экспертом в этой профессии.</Russian>
+		<Hungarian>[ICON_BULLET]Egy szabad telepes egy idő után szakértővé válhat ebben a szakmában</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROF_LBD2</Tag>
@@ -1593,6 +1618,7 @@
 		<French>[ICON_BULLET]Un colon libre exerçant cette profession peut devenir un expert au bout d'un long moment</French>
 		<German>[ICON_BULLET]Ein Freier Kolonist kann nach langer Zeit zum Experten in diesem Beruf werden</German>
 		<Russian>[ICON_BULLET]Свободный колонист может стать экспертом в этой профессии спустя долгое время.</Russian>
+		<Hungarian>[ICON_BULLET]Egy szabad telepes hosszú idő után válhat a szakma szakértőjévé</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROF_LBD3</Tag>
@@ -1600,6 +1626,7 @@
 		<French>[ICON_BULLET]Un colon libre exerçant cette profession peut devenir un expert au bout d'un très long moment</French>
 		<German>[ICON_BULLET]Ein Freier Kolonist kann nach sehr langer Zeit zum Experten in diesem Beruf werden</German>
 		<Russian>[ICON_BULLET]Свободный колонист может стать экспертом в своей профессии спустя очень долгое время</Russian>
+		<Hungarian>[ICON_BULLET]Egy szabad telepes nagyon hosszú idő után válhat a szakma szakértőjévé</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAPTURED_AFTER_FIGHT</Tag>
@@ -1607,6 +1634,7 @@
 		<French>[COLOR_POSITIVE_TEXT]Bonne nouvelle, Sire ! [COLOR_REVERT]Nous avons été capable de subjuguer et de capturer l'unité ennemie [COLOR_WARNING_TEXT]%s1_unit[COLOR_REVERT]!.</French>
 		<German>[COLOR_POSITIVE_TEXT]Frohe Kunde, Milord! [COLOR_REVERT]Wir haben einen feindlichen [COLOR_WARNING_TEXT]%s1_unit[COLOR_REVERT] überwältigen und gefangennehmen können!</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Хорошие новости, Милорд! [COLOR_REVERT]Нам удалось сокрушить и захватить вражеский [COLOR_WARNING_TEXT]%s1_unit[COLOR_REVERT]!</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]Sikerült legyőznünk és a foglyunk lett egy ellenséges [COLOR_WARNING_TEXT]%s1_unit[COLOR_REVERT]!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_YOU_UNIT_CAPTURED_ENEMY_SHIP</Tag>
@@ -1615,12 +1643,14 @@
 		<German>[COLOR_POSITIVE_TEXT]Sieg, Milord! [COLOR_REVERT]Wir konnten ein feindliches [COLOR_WARNING_TEXT]Schiff[COLOR_REVERT] kapern !</German>
 		<Russian>[COLOR_POSITIVE_TEXT]Победа, Милорд! [COLOR_REVERT]К тому же, нам удалось [COLOR_HIGHLIGHT_TEXT]захватить[COLOR_REVERT] вражеский [COLOR_HIGHLIGHT_TEXT]корабль[COLOR_REVERT]!</Russian>
 	</TEXT>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Győzelem, Uram! [COLOR_REVERT]Sikerült elfognunk egy ellenséges [COLOR_WARNING_TEXT]hajót[COLOR_REVERT]!</Hungarian>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_YOU_UNIT_CAPTURED_PRISONER_OF_WAR</Tag>
 		<English>A few wounded enemy soldiers survived the battle and were taken as [COLOR_WARNING_TEXT]prisoners of war[COLOR_REVERT].</English>
 		<French>Une unité ennemie a été capturé après le combat.</French>
 		<German>Einige verletzte feindliche Soldaten haben die Schlacht überlebt und wurden als [COLOR_WARNING_TEXT]Kriegsgefangene[COLOR_REVERT] genommen.</German>
 		<Russian>Несколько раненых солдат противника выжили в бою и были взяты в качестве [COLOR_WARNING_TEXT]военнопленных[COLOR_REVERT].</Russian>
+		<Hungarian>Néhány sebesült ellenséges katona túlélte a csatát és a [COLOR_WARNING_TEXT]hadifoglyunk[COLOR_REVERT] lett.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_YOU_UNIT_ESCAPED</Tag>
@@ -1630,6 +1660,7 @@
 		<Italian>Dopo essere stata sconfitta dalla tua unità %s1_UnitName, un'unità %s2_EnUName è riuscita a fuggire</Italian>
 		<Spanish>[NUM1:Un:Una:Unos:Unas] %s2_EnUName [NUM1:ha escapado tras ser derrotado:ha escapado tras ser derrotada:han escapado tras ser derrotados:han escapado tras ser derrotadas] por [NUM1:vuestro:vuestra:vuestros:vuestras] %s1_UnitName</Spanish>
 		<Russian>[COLOR_WARNING_TEXT]Плохие новости, Милорд! [COLOR_REVERT][COLOR_WARNING_TEXT]%s2_EnUName[COLOR_REVERT] почти проиграл бой с нашим [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT], но дьявол помог им сбежать!</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Rossz hírek, Uram! [COLOR_REVERT]Bár a seregünkből egy [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] legyőzte, az ellenséges [COLOR_WARNING_TEXT]%s2_EnUName[COLOR_REVERT] mégis elmenekült a naplementével leszálló sötétségben!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ENEMY_UNIT_ESCAPED</Tag>
@@ -1639,13 +1670,15 @@
 		<Italian>La tua unità %s1_UnitName è sopravvissuta al combattimento con l'unità %s2_EnUName e ora si sta riprendendo a %s3_city</Italian>
 		<Spanish>[NUM1:Vuestro:Vuestra:Vuestros:Vuestras]%s1_UnitName [NUM1:ha:ha:han:han] sobrevivido al combate con [NUM1:un:una:unos:unas] %s2_EnUName y se [NUM1:encuentra:encuentra:encuentran:encuentran] reparándose en %s3_city</Spanish>
 		<Russian>[COLOR_POSITIVE_TEXT]Отличные новости, Милорд! [COLOR_REVERT]Ваш [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] чудом выжил в бою с [COLOR_WARNING_TEXT]%s2_EnUName[COLOR_REVERT], сумев сбежать на закате. Сейчас корабль находится на ремонте в порту города [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT].</Russian>
+		<Hungarian>[COLOR_POSITIVE_TEXT]Jó hírek, Uram! [COLOR_REVERT]A seregedből egy [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] túlélte az ellenséges [COLOR_WARNING_TEXT]%s2_EnUName[COLOR_REVERT] ellen vívott harcot és elmenekült a naplementében. A hajó most [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT] kikötőjében van javítás alatt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NO_MORE_RESPAWN</Tag>
-		<English>First, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT]'s luck in battle has deserted him - and now he is also losing the favour of his king, who is tired of being the laughing stock of the whole world. His Majesty deigns to order all explorers, soldiers and colonists from the New World back to Europe.</English>
+		<English>First, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT]'s luck in battle has deserted him - and now he is also losing the favour of his king, who is tired of being the laughing stock of the whole world. His Majesty orders all explorers, soldiers and colonists from the New World back to Europe.</English>
 		<French>Las de l'insuccès de [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT], son Roi a décidé de retirer du Nouveau Monde l'ensemble de ses explorateurs, soldats et colons.</French>
 		<German>Zunächst hat [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] das Schlachtenglück verlassen - und nun verliert er auch noch die Gunst seines Königs, der es leid ist, zum Gespött der ganzen Welt zu werden. Seine Majestät geruhen, alle Entdecker, Soldaten und Kolonisten aus der Neuen Welt zurück nach Europa zu beordern.</German>
 		<Russian>Недавно удача на поле боя покинула [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT]! А теперь они потеряли благосклонность своего Короля, которому надоело быть посмешищем всего мира. Его Величество соизволит приказать всем исследователям, солдатам и колонистам Нового Света вернуться в Европу.</Russian>
+		<Hungarian>Először is, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] szerencséje elhagyta őt a csatában - és most már királya kegyét is elveszíti, aki belefáradt abba, hogy az egész világ rajta nevet. Őfelsége méltóztatik az Újvilágból minden felfedezőt, katonát és telepest visszarendelni Európába.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BOUGHT_NATIVE_MERC</Tag>
@@ -1653,6 +1686,7 @@
 		<French>Vous avez acquis une unité de [COLOR_UNIT_TEXT]mercenaires indigènes[COLOR_REVERT].</French>
 		<German>Milord, unsere [COLOR_UNIT_TEXT]Indianischen Söldner[COLOR_REVERT] stehen bereit.</German>
 		<Russian>Милорд, мы приобрели [COLOR_UNIT_TEXT]Индейских наемников[COLOR_REVERT].</Russian>
+		<Hungarian>Uram, [COLOR_UNIT_TEXT]Indián Zsoldosokat[COLOR_REVERT] szerzett.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REV_SUPPORT_ARRIVED</Tag>
@@ -1660,6 +1694,7 @@
 		<French>Sire, les renforts du [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] sont arrivés.</French>
 		<German>Milord, die Unterstützungstruppen des [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] sind eingetroffen.</German>
 		<Russian>Милорд, подкрепление из войск, отправленное [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT], достигло колоний.</Russian>
+		<Hungarian>Uram, a fenséges [COLOR_HIGHLIGHT_TEXT]%s1_king[COLOR_REVERT] által küldött csapatok megérkeztek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_WAR_KING_DECREASED_MAX_TAX</Tag>
@@ -1667,13 +1702,15 @@
 		<French>Le Roi est satisfait et accepte de réduire notre taux maximal d'imposition de %d1_decrease.</French>
 		<German>Erfreut über unseren Gehorsam hat Seine Majestät den maximalen Steuersatz um %d1_decrease gesenkt.</German>
 		<Russian>Довольный нашей покорностью, Его Величество милостливо снизил максимальную ставку налога на %d1_decrease.</Russian>
+		<Hungarian>Megelégedve az engedelmességeddel, Őfelsége %d1_decrease-kal csökkentette a maximális adókulcsot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS</Tag>
-		<English>Milord, the reinforcement troops sent by His Majesty have arrived. We have heard rumours that your enemy's king has also sent reinforcements as well.</English>
+		<English>Milord, the reinforcement troops sent by His Majesty have arrived. We've heard rumours that your enemy's king has sent reinforcements as well.</English>
 		<French>Sire, les renforts de notre roi sont arrivés. La rumeur court que ceux de l'autre roi a également envoyés des renforts. aussi.</French>
 		<German>Milord, die von Seiner Majestät entsandten Unterstützungstruppen sind eingetroffen. Wir haben Gerüchte gehört, dass der Gegner Seiner Majestät auch Unterstützungstruppen in die Neue Welt entsandt hat.</German>
 		<Russian>Милорд, войска, отправленные Его Величеством нам на подмогу, прибыли. До нас дошли слухи, что король вашего врага тоже прислал подкрепление.</Russian>
+		<Hungarian>Uram, megérkeztek az Őfelsége által küldött csapatok. Pletykákat hallottunk arról, hogy az ellenség királya is küldött erősítést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EUROPE_WAR_KING_INCCREASED_MAX_TAX</Tag>
@@ -1681,13 +1718,15 @@
 		<French>Irrité par notre désobéissance, le roi a augmenté notre taux maximal d'imposition de %d1_increase.[NEWLINE]Cependant, notre relation avec [COLOR_HIGHLIGHT_TEXT]%s2_nation[COLOR_REVERT] s'est améliorée.</French>
 		<German>Verärgert über unseren Ungehorsam hat Seine Majestät unseren maximalen Steuersatz um %d1_increase erhöht.[NEWLINE]Unsere Beziehung zu [COLOR_HIGHLIGHT_TEXT]%s2_nation[COLOR_REVERT] hat sich jedoch verbessert.</German>
 		<Russian>Разгневанный вашим неповиновением, Его Величество повысил ставку налога на %d1_increase.[NEWLINE]Однако, наши отношения с [COLOR_HIGHLIGHT_TEXT]%s2_nation[COLOR_REVERT] улучшились.</Russian>
+		<Hungarian>Az engedetlenségünk miatt feldühödve Őfelsége %d1_increase-kal megemelte a maximális adókulcsot.[NEWLINE]Azonban [COLOR_HIGHLIGHT_TEXT]%s2_nation[COLOR_REVERT] irányába fennálló kapcsolatunk javult.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAKE_PEACE_AFTER_ACQUIRE_CITY</Tag>
-		<English>Convinced by our compensation of our good intentions, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] has buried the hatchet again.</English>
+		<English>Convinced of our good intentions, along with adequate compensation, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] buries the hatchet again.</English>
 		<French>Convaincu par notre tribu et nos bonnes intentions, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] accepte la paix.</French>
 		<German>Durch unsere Entschädigung von unseren guten Absichten überzeugt, hat [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] das Kriegsbeil wieder begraben.</German>
 		<Russian>Убедившись в наших добрых намерениях, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] закопал топор войны.</Russian>
+		<Hungarian>A jó szándékunkból fakadó kárpótlásunkkal meggyőzve, [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] ismét elásta a csatabárdot.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_WHALING_UNLOAD</Tag>
@@ -1695,14 +1734,16 @@
 		<French>Automatiser la chasse à la baleine</French>
 		<German>Walfänger jagt Wale automatisch</German>
 		<Russian>Китобои сами будут искать китов для охоты</Russian>
+		<Hungarian>A Bálnavadász hajó automatikusan bálnára vadászik</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_WHALING_UNLOAD_HELP</Tag>
-		<English>Ship goes whale hunting automatically: searches for bonus resource whales, collects whale blubber and brings it to a harbour town</English>
+		<English>Ship hunts whales automatically: searches for bonus resource whales, collects blubber and brings it to a harbour town</English>
 		<French>Pêchera jusqu'au plein de sa cargaison puis rentrera au port sélectionné</French>
 		<German>Schiff geht automatisch auf Waljagd: sucht Bonusressource Wale, sammelt Walspeck und bringt ihn in eine Hafenstadt</German>
 		<Italian>Colletta alimentare a partire dai pesci fino balena o la nave è piena</Italian>
 		<Spanish>Recoger la comida de pescado o la ballena hasta que el barco está lleno</Spanish>
+		<Hungarian>A hajó automatikusan bálnavadászatra indul: Bálna bónusz erőforrásokat keres, bálnazsírt gyűjt és elviszi egy kikötővárosba.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_AUTOMATE_FISHINGBOAT</Tag>
@@ -1712,6 +1753,7 @@
 		<Italian>Automatizza i peschereccio</Italian>
 		<Spanish>Automatizar barco pesquero</Spanish>
 		<Russian>Автоматизировать ловлю</Russian>
+		<Hungarian>Automatikus Halászat</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_AUTOMATE_FISHINGBOAT_HELP</Tag>
@@ -1727,6 +1769,7 @@
 		<French>Votre [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] a déchargé sa marchandise et est prêt pour un nouveau voyage.</French>
 		<German>Milord, Euer Walfänger [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] hat allen Walspeck entladen und ist wieder bereit auszulaufen.</German>
 		<Russian>Милорд, наш китобой [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] выгрузил свой груз и готов к следующему выходу в море.</Russian>
+		<Hungarian>Uram, [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] Bálnavadász hajónk kirakodta rakományát és készen áll egy újabb útra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WHALER_HELP</Tag>
@@ -1736,6 +1779,7 @@
 		<Italian>(%s1_symbol_list per turno)</Italian>
 		<Spanish>(%s1_symbol_list por turno)</Spanish>
 		<Russian>(%s1_symbol_list за ход)</Russian>
+		<Hungarian>(%s1_symbol_list körönként)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WHALER_FULL</Tag>
@@ -1745,6 +1789,7 @@
 		<Italian>Il vostro [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] è riempito al bordo con il cibo dal mare.</Italian>
 		<Spanish>Su [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] está llena hasta el tope con los alimentos del mar.</Spanish>
 		<Russian>Милорд, наше китобойное судно [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] заполнено добычей до отказа.</Russian>
+		<Hungarian>Uram, [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] Bálnavadász hajó zsúfolásig tele van bálnazsírral.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WHALER_FULL_UNLOAD</Tag>
@@ -1754,13 +1799,15 @@
 		<Italian>Il vostro [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] è riempito al bordo con il cibo dal mare.</Italian>
 		<Spanish>Su [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] está llena hasta el tope con los alimentos del mar.</Spanish>
 		<Russian>Милорд, наш китобой [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] до краев заполнен китовым жиром и возвращается в [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] для разгрузки.</Russian>
+		<Hungarian>Uram, [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] Bálnavadász hajó zsúfolásig tele van bálnazsírral és elindul [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] kikötőjébe, hogy kirakodjon.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SELECT_RETURN_CITY</Tag>
-		<English>Milord, select a City for your [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] to return when cargo hold is full!</English>
+		<English>Milord, select the city where your [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] can return once its cargo hold is full!</English>
 		<French>Sélectionner la ville dans laquelle votre [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] doit revenir une fois plein!</French>
 		<German>Milord, wählen Sie eine Küstenstadt aus, zu der das Schiff [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] fahren soll, wenn sein Frachtraum voll ist!</German>
 		<Russian>Милорд, выберите город, в который [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] должен будет вернуться, когда трюмы будут полны добычи.</Russian>
+		<Hungarian>Uram, válasszon egy várost [COLOR_UNIT_TEXT]%s1_unit[COLOR_REVERT] számára, ahová visszatérjen, ha a raktere megtelt!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_WHALE_CITY_RADIUS</Tag>
@@ -1768,6 +1815,7 @@
 		<French>[COLOR_WARNING_TEXT]Ne peut pêcher qu'à l'extérieur du rayon d'une ville[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Muss außerhalb des Stadtradius liegen[COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]Должен быть за пределами города[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]A város területén kívül kell lennie[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_WHALE_CITY_RADIUS_PLOT_WORKED</Tag>
@@ -1775,6 +1823,7 @@
 		<French>[COLOR_WARNING_TEXT]Cette zone est déjà exploitée par les citoyen d'une ville proche[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Diese Bonusressource wird bereits durch eine benachbarte Stadt bewirtschaftet[COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]Это место уже занято работником из соседнего города[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]A szomszédos város már dolgozik ezen a helyen.[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_WHALE_NO_FISH</Tag>
@@ -1782,6 +1831,7 @@
 		<French>[COLOR_WARNING_TEXT]Un bonus de baleine est nécessaire[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Bonusressource Pottwale wird benötigt[COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]Требуется бонусный ресурс киты[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Bálna bónusz szükséges[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_WHALE_NEEDS_WHALER</Tag>
@@ -1789,6 +1839,7 @@
 		<French>[COLOR_WARNING_TEXT]Un baleinier est nécessaire pour pêcher cette ressource[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Walfänger wird benötigt[COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]Для сбора ресурса требуется китобойное судно[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Bálnavadász hajó szükséges az erőforrások összegyűjtéséhez[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_WHALE_FULL</Tag>
@@ -1796,6 +1847,7 @@
 		<French>[COLOR_WARNING_TEXT]Plus de place en cargaison pour de la[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]La soute est pleine ![COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]В грузовом отсеке больше нет места для жира[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Nincs több hely a raktérben az élelemnek[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_CANNOT_WHALE_TAKEN</Tag>
@@ -1803,6 +1855,7 @@
 		<French>[COLOR_WARNING_TEXT]Cette zone est déjà exploitée par un autre navire de pêche ![COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Ein anderes Schiff geht hier bereits auf Walfang - nur ein Walfänger pro Bonusressource![COLOR_REVERT]</German>
 		<Russian>[COLOR_WARNING_TEXT]Здесь уже промышляет другой китобой. Только один корабль может заниматься добычей на клетке с ресурсом![COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]Itt már bálnára vadászik egy másik hajó - erőforrásonként csak egy Bálnavadász hajó lehet![COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GATHER_BOAT_WHALING</Tag>
