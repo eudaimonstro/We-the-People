@@ -684,6 +684,7 @@
 		<Italian>Det</Italian>
 		<Spanish>Dec.</Spanish>
 		<Russian>Решит.</Russian>
+		<Hungarian>Elsz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_RESOURCEFUL_SHORT</Tag>
@@ -693,6 +694,7 @@
 		<Italian>Ing</Italian>
 		<Spanish>Ing.</Spanish>
 		<Russian>Наход.</Russian>
+		<Hungarian>Erő.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_ENTERPRISING_SHORT</Tag>
@@ -702,6 +704,7 @@
 		<Italian>Int</Italian>
 		<Spanish>Emp.</Spanish>
 		<Russian>Предпреим.</Russian>
+		<Hungarian>Szór.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_CONQUEROR_SHORT</Tag>
@@ -711,6 +714,7 @@
 		<Italian>Con</Italian>
 		<Spanish>Con.</Spanish>
 		<Russian>Конк.</Russian>
+		<Hungarian>Hód.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_MERCANTILE_SHORT</Tag>
@@ -720,6 +724,7 @@
 		<Italian>Mer</Italian>
 		<Spanish>Mer.</Spanish>
 		<Russian>Меркан.</Russian>
+		<Hungarian>Ker.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_CITYBUILDER_SHORT</Tag>
@@ -729,6 +734,7 @@
 		<Italian>Pro</Italian>
 		<Spanish>Pró.</Spanish>
 		<Russian>Зажит.</Russian>
+		<Hungarian>Vár.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_PUPIL_SHORT</Tag>
@@ -738,6 +744,7 @@
 		<Italian>Imp</Italian>
 		<Spanish>Imp.</Spanish>
 		<Russian>Любозн.</Russian>
+		<Hungarian>Tan.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_TRADER_SHORT</Tag>
@@ -747,6 +754,7 @@
 		<Italian>Imp</Italian>
 		<Spanish>Imp.</Spanish>
 		<Russian>Торг.</Russian>
+		<Hungarian>Ker.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_CLIMBER_SHORT</Tag>
@@ -756,6 +764,7 @@
 		<Italian>Ind</Italian>
 		<Spanish>Ind.</Spanish>
 		<Russian>Скал.</Russian>
+		<Hungarian>Domb.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_MENTOR_SHORT</Tag>
@@ -765,6 +774,7 @@
 		<Italian>Men</Italian>
 		<Spanish>Men.</Spanish>
 		<Russian>Наст.</Russian>
+		<Hungarian>Men.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FORESTWARRIORS_SHORT</Tag>
@@ -774,6 +784,7 @@
 		<Italian>Ben</Italian>
 		<Spanish>Cor.</Spanish>
 		<Russian>Лес.Воин</Russian>
+		<Hungarian>Erd.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FARMERS_SHORT</Tag>
@@ -783,6 +794,7 @@
 		<Italian>Pro</Italian>
 		<Spanish>Pró.</Spanish>
 		<Russian>Ферм.</Russian>
+		<Hungarian>Farm.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_NOMADS_SHORT</Tag>
@@ -792,6 +804,7 @@
 		<Italian>Pro</Italian>
 		<Spanish>Pró.</Spanish>
 		<Russian>Кочев.</Russian>
+		<Hungarian>Nom.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_HUNTERS_SHORT</Tag>
@@ -801,6 +814,7 @@
 		<Italian>Hun</Italian>
 		<Spanish>Hun</Spanish>
 		<Russian>Охот.</Russian>
+		<Hungarian>Vad.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_RAIDERS_SHORT</Tag>
@@ -810,6 +824,7 @@
 		<Italian>Pro</Italian>
 		<Spanish>Pró.</Spanish>
 		<Russian>Налёт.</Russian>
+		<Hungarian>Porty.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_COASTALWARRIORS_SHORT</Tag>
@@ -819,6 +834,7 @@
 		<Italian>Pro</Italian>
 		<Spanish>Pró.</Spanish>
 		<Russian>Приб.Воины</Russian>
+		<Hungarian>Part.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_DEVOUT</Tag>
@@ -832,6 +848,7 @@
 		<Italian>Devoto</Italian>
 		<Spanish>Devout</Spanish>
 		<Russian>Набожный</Russian>
+		<Hungarian>Jámbor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_DEVOUT_SHORT</Tag>
@@ -841,6 +858,7 @@
 		<Italian>Dev</Italian>
 		<Spanish>Dev</Spanish>
 		<Russian>Наб.</Russian>
+		<Hungarian>Jám.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_EXPLORERS_SHORT</Tag>
@@ -850,6 +868,7 @@
 		<Italian>Exp</Italian>
 		<Spanish>Exp</Spanish>
 		<Russian>Исслед.</Russian>
+		<Hungarian>Feld.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_INDUSTRIOUS_SHORT</Tag>
@@ -859,6 +878,7 @@
 		<Italian>Ind</Italian>
 		<Spanish>Dil</Spanish>
 		<Russian>Труд.</Russian>
+		<Hungarian>Ip.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_CHARISMATIC_SHORT</Tag>
@@ -868,6 +888,7 @@
 		<Italian>Car</Italian>
 		<Spanish>Car</Spanish>
 		<Russian>Харизм.</Russian>
+		<Hungarian>Ip.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_MILITARISTIC_SHORT</Tag>
@@ -877,6 +898,7 @@
 		<Italian>Mil</Italian>
 		<Spanish>Mil</Spanish>
 		<Russian>Милит.</Russian>
+		<Hungarian>Kat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_SCRIPT_FW_DESCR</Tag>
@@ -884,6 +906,7 @@
 		<French>Carte aléatoire qui simule la tectonique terrestre, la géostrophie, la mousson et la pluie.</French>
 		<German>Zufallsgenerierte Karte mit großen zusammenhängenden Klimazonen und Gebirgszügen</German>
 		<Russian>Случайная карта, которая имитирует земную тектонику плит, геострофические и муссонные ветры и осадки.</Russian>
+		<Hungarian>Véletlenszerű térkép, ami szimulálja a földszerű lemeztektonikát, a földfelszíni és monszun szeleket és csapadékot.</Hungarian>
 	</TEXT>
 	<!--<TEXT>
 		<Tag>TXT_KEY_GAMESPEED_MARATHON_Old</Tag>
@@ -989,6 +1012,7 @@
 		<Italian>Vorremmo offrirvi le terre e questo insediamento come segno del nostro rispetto.</Italian>
 		<Spanish>Nos gustaría ofrecerles las tierras y este acuerdo como muestra de nuestro respeto.</Spanish>
 		<Russian>Мы хотели бы предложить вам земли этого поселения в знак нашего уважения.</Russian>
+		<Hungarian>Tiszteletünk jeléül szeretnénk felajánlani neked e település földjeit.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_TRADE</Tag>
@@ -996,6 +1020,7 @@
 		<French>Activer les messages commerciaux [COLOR_HIGHLIGHT_TEXT]marche/arrêt[COLOR_REVERT]</French>
 		<German>Handels-Anzeige [COLOR_HIGHLIGHT_TEXT]Ein/Aus[COLOR_REVERT]</German>
 		<Russian>Торговые сообщения [COLOR_HIGHLIGHT_TEXT]вкл/выкл[COLOR_REVERT]</Russian>
+		<Hungarian>Kereskedelmi üzenetek [COLOR_HIGHLIGHT_TEXT]be/ki[COLOR_REVERT] kapcsolása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_DESCRIPTION</Tag>
@@ -1005,6 +1030,7 @@
 		<Italian>%s1_yield da [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] a [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT]</Italian>
 		<Spanish>%s1_yield por ruta de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] a [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT]</Spanish>
 		<Russian>%s1_yield из [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] в [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT]</Russian>
+		<Hungarian>%s1_yield: [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] -> [COLOR_SELECTED_TEXT]%s3_city[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MAINTAIN</Tag>
@@ -1030,6 +1056,7 @@
 		<Italian>Vulcano</Italian>
 		<Spanish>Volcán</Spanish>
 		<Russian>Вулкан</Russian>
+		<Hungarian>Vulkán</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_VULKAN_PEDIA</Tag>
@@ -1039,6 +1066,7 @@
 		<Italian>Vulcano</Italian>
 		<Spanish>Volcán</Spanish>
 		<Russian>Вулкан</Russian>
+		<Hungarian>Vulkán</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAP_SCRIPT_LANDMASS_TYPE</Tag>
@@ -1056,6 +1084,7 @@
 		<Italian>Hai catturato %d1[ICON_GOLD] dal nemico</Italian>
 		<Spanish>You captured %d1[ICON_GOLD] from the enemy</Spanish>
 		<Russian>Вы захватили %d1[ICON_GOLD] у врага</Russian>
+		<Hungarian>%d1[ICON_GOLD]-t zsákmányoltál az ellenségtől</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HIM_GOLD_CAPTURE</Tag>
@@ -1065,6 +1094,7 @@
 		<Italian>I pirati ti hanno estorto %d1[ICON_GOLD]</Italian>
 		<Spanish>You lost %d1[ICON_GOLD] to Pirates</Spanish>
 		<Russian>Вы потеряли %d1[ICON_GOLD] из-за пиратов</Russian>
+		<Hungarian>%d1[ICON_GOLD]-t vittek el a kalózok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YOU_UNITS_EUROPE_INTERCEPTED</Tag>
@@ -1072,6 +1102,7 @@
 		<French>Votre [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] a été intercepté en Europe par votre Roi.</French>
 		<German>Milord, Euer Schiff [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] wurde vor der Küste Europas von der königlichen Marine aufgebracht.</German>
 		<Russian>Милорд, наш корабль [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] был захвачен Королевским флотом у берегов Европы.</Russian>
+		<Hungarian>Uram, [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] hajódat a Királyi Haditengerészet Európa partjainál elfogta.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FORCE_START_PEACE</Tag>
@@ -1079,6 +1110,7 @@
 		<French>Vous ne pouvez pas déclarer la guerre dnas les 20 premiers tours du jeu.</French>
 		<German>Mäßigt Euch! Ihr könnt in den ersten 20 Runden keinen Krieg erklären!</German>
 		<Russian>Вы не можете объявить войну в первые 20 ходов игры.</Russian>
+		<Hungarian>A játék első 20 körében nem indíthatsz háborút.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FORCE_START_PEACE</Tag>
@@ -1086,6 +1118,7 @@
 		<French>Vous avez outrepassé votre autorité en tentant de déclarer la guerre à une autre nation européenne !</French>
 		<German>Ihr habt Eure Befugnisse überschritten, als Ihr versuchtet, einer anderen Europäischen Nation den Krieg zu erklären!</German>
 		<Russian>Вы превышаете свои полномочия, пытаясь объявить войну другой европейской нации!</Russian>
+		<Hungarian>Túlléped a hatásköröd és megpróbálsz hadat üzenni egy másik Európai nemzetnek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLOCOMMENT_FORCE_START_PEACE</Tag>
@@ -1093,6 +1126,7 @@
 		<French>Vous avez outrepassé votre autorité en tent de déclarer la guerre à une autre nation européenne !</French>
 		<German>Ihr habt Eure Befugnisse überschritten, als Ihr versuchtet, einer anderen Europäischen Nation den Krieg zu erklären!</German>
 		<Russian>Вы превысили свои полномочия, когда пытались объявить войну другой европейской нации!</Russian>
+		<Hungarian>Túlléped a hatásköröd és megpróbálsz hadat üzenni egy másik Európai nemzetnek!</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RUNNING_OUT_OF_SPACE</Tag>
@@ -1100,6 +1134,7 @@
 		<French>Vous n'avez presque plus de place pour %F1_yield_icon à %s2_city en raison d'une capacité de stockage limitée</French>
 		<German>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]Der Lagerraum für %F1_yield_icon ist fast vollständig ausgenutzt ...</German>
 		<Russian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]Место для хранения %F1_yield_icon почти закончилось ...</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s2_city : [COLOR_REVERT]%F1_yield_icon tárolóhelye majdnem teljesen elfogyott ...</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NO_RAW</Tag>
@@ -1107,6 +1142,7 @@
 		<French>%s1_city est à cours de %F2_yield_icon et ne peut ainsi plus produire %F3_yield_icon.</French>
 		<German>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Es steht keinerlei %F2_yield_icon mehr zur Verfügung. Unsere Bürger können keine %F3_yield_icon mehr herstellen und drehen Däumchen.</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]В городе закончились %F2_yield_icon. Горожане больше не могут производить %F3_yield_icon и сидят без дела.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]A városban elfogyott a rendelkezésre álló %F2_yield_icon. Lakosaink már nem tudnak %F3_yield_icon-t előállítani és tétlenül várakoznak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ALMOST_NO_RAW</Tag>
@@ -1114,6 +1150,7 @@
 		<French>%s1_city est presque à cours de %F2_yield_icon et ne pourra en conséquence plus produire de %F3_yield_icon.</French>
 		<German>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Es neigt sich der Lagervorrat an %F2_yield_icon. Bei der Herstellung von %F3_yield_icon werden wir bald ein Problem bekommen.</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Запас %F2_yield_icon снижается. Скоро у нас возникнут проблемы с производством %F3_yield_icon.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]%F2_yield_icon készlet csökken. %F3_yield_icon előállításával hamarosan gond lesz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NOT_ENOUGH_RAW</Tag>
@@ -1121,6 +1158,7 @@
 		<French>%s1_city est à cours de %F2_yield_icon et ne peut ainsi plus produire de %F3_yield_icon.</French>
 		<German>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Wir könnten mehr %F3_yield_icon herstellen, stünde uns dort mehr %F2_yield_icon zur Verfügung.</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Мы могли бы производить больше %F3_yield_icon, если бы у нас было больше %F2_yield_icon.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Több %F3_yield_icon-t tudnánk előállítani, ha több %F2_yield_icon állna rendelkezésre.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_WORLD_MAP_STRING</Tag>
@@ -1146,6 +1184,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Карта Нового мира</Russian>
+		<Hungarian>Újvilág térkép</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_WORLD_MAP</Tag>
@@ -1171,6 +1210,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Карта мира</Russian>
+		<Hungarian>Világtérkép</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_HURRY_SHORTAGE</Tag>
@@ -1188,6 +1228,7 @@
 		<Italian>Conquista</Italian>
 		<Spanish>Conquista</Spanish>
 		<Russian>Завоевание</Russian>
+		<Hungarian>Hóditási</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONQUEST_PEDIA</Tag>
@@ -1197,6 +1238,7 @@
 		<Italian>Eliminare tutti i rivali</Italian>
 		<Spanish>Eliminar a todos los rivales</Spanish>
 		<Russian>Устранить всех соперников</Russian>
+		<Hungarian>Minden rivális legyőzése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TRADE</Tag>
@@ -1206,6 +1248,7 @@
 		<Italian>Economic</Italian>
 		<Spanish>Economic</Spanish>
 		<Russian>Экономическая</Russian>
+		<Hungarian>Gazdasági</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PRODUCTION_RATE</Tag>
@@ -1215,6 +1258,7 @@
 		<Italian>Iniziare la rivoluzione industriale (tasso di produzione per turno)</Italian>
 		<Spanish>Iniciar la revolución industrial (tasa de producción por turno)</Spanish>
 		<Russian>Начать промышленную революцию (производство за ход)</Russian>
+		<Hungarian>Indítsd el az Ipari Forradalmat (termelés körönként)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TOTAL_PROD_RATE</Tag>
@@ -1224,6 +1268,7 @@
 		<Italian>Tasso di produzione totale :</Italian>
 		<Spanish>Tasa de producción total :</Spanish>
 		<Russian>Общая производительность :</Russian>
+		<Hungarian>Teljes termelési ráta :</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PRODUCTION_OF</Tag>
