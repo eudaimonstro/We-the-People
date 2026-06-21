@@ -16854,8 +16854,8 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 		applyYieldTradedModifier(TRADE_LOCATION_EUROPE, eOriginalYield, GLOBAL_DEFINE_TRADE_DECAY_PRICE_CHANGE);
 
 		gDLL->getInterfaceIFace()->setDirty(EuropeScreen_DIRTY_BIT, true);
-//WTP, Schmiddie, less price change messages START
-/*		if (bMessage)
+
+		if (bMessage)
 		{
 			CvWString szMessage;
 			if (iPrice > iOldPrice)
@@ -16878,8 +16878,7 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 					gDLL->UI().addPlayerMessage(kLoopPlayer.getID(), true, GC.getEVENT_MESSAGE_TIME(), szMessage, "AS2D_ADVISOR_SUGGEST", MESSAGE_TYPE_INFO, NULL);
 				}
 			}
-		} */ 
-//WTP, Schmiddie, less price change messages END
+		}  
 	}
 }
 
@@ -19994,7 +19993,7 @@ ProfessionTypes CvPlayer::getRevolutionEuropeProfession(int i) const
 
 	return m_aEuropeRevolutionUnits[i].second;
 }
-// WTP, Schmiddie, Availability Change Project
+// WTP, Schmiddie, Availability Change Project START
 void CvPlayer::addRevolutionEuropeUnit(UnitTypes eUnit, ProfessionTypes eProfession)
 {
 	if (!isUnitWithinGameYearWindow(eUnit))
@@ -20037,7 +20036,7 @@ void CvPlayer::addRevolutionEuropeUnit(UnitTypes eUnit, ProfessionTypes eProfess
 		m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
 	}
 }
-// WTP, Schmiddie, Availability Change Project
+// WTP, Schmiddie, Availability Change Project END
 void CvPlayer::clearRevolutionEuropeUnits()
 {
 	m_aEuropeRevolutionUnits.clear();
