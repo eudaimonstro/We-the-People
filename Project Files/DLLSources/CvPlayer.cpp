@@ -16854,8 +16854,8 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 		applyYieldTradedModifier(TRADE_LOCATION_EUROPE, eOriginalYield, GLOBAL_DEFINE_TRADE_DECAY_PRICE_CHANGE);
 
 		gDLL->getInterfaceIFace()->setDirty(EuropeScreen_DIRTY_BIT, true);
-
-		if (bMessage)
+//WTP, Schmiddie, less price change messages START
+/*		if (bMessage)
 		{
 			CvWString szMessage;
 			if (iPrice > iOldPrice)
@@ -16878,7 +16878,8 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 					gDLL->UI().addPlayerMessage(kLoopPlayer.getID(), true, GC.getEVENT_MESSAGE_TIME(), szMessage, "AS2D_ADVISOR_SUGGEST", MESSAGE_TYPE_INFO, NULL);
 				}
 			}
-		}
+		} */ 
+//WTP, Schmiddie, less price change messages END
 	}
 }
 

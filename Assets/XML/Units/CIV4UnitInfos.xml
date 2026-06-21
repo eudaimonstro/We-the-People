@@ -53639,7 +53639,6 @@
 			<iAIWeight>0</iAIWeight>
 			<YieldCosts/>
 			<iGameYearAvailable>1492</iGameYearAvailable>
-			<iGameYearObsolete>1650</iGameYearObsolete>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -54018,7 +54017,6 @@
 			<iAIWeight>0</iAIWeight>
 			<YieldCosts/>
 			<iGameYearAvailable>1492</iGameYearAvailable>
-			<iGameYearObsolete>1650</iGameYearObsolete>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -57175,8 +57173,6 @@
 			<ProductionTraits/>
 			<iAIWeight>0</iAIWeight>
 			<YieldCosts/>
-			<iGameYearAvailable>1650</iGameYearAvailable>
-			<iGameYearObsolete>0</iGameYearObsolete>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
