@@ -1863,13 +1863,15 @@
 		<French>[ICON_BULLET]Peut pêcher de la graisse de baleine en exploitant la ressource maritime Baleine</French>
 		<German>[ICON_BULLET]Kann Walspeck auf Bonusressource Wale gewinnen</German>
 		<Russian>[ICON_BULLET]Может собирать китовый жир с морского ресурса [COLOR_HIGHLIGHT_TEXT]киты[COLOR_REVERT]</Russian>
+		<Hungarian>[ICON_BULLET]Bálnazsírt gyűjthet a tengeri bálna erőforrásból</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NO_RAW_ON_FIELD</Tag>
-		<English>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]A Colonist, whom you had ordered to produce %F2_yield_icon, reports that he has nothing to do at present.</English>
+		<English>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]A colonist, whom you had ordered to produce %F2_yield_icon, reports that he now has nothing to do.</English>
 		<French>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Un colon ne peut plus produire de %F2_yield_icon sur sa case.</French>
 		<German>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Ein Kolonist, dem Ihr befohlen hattet, %F2_yield_icon einzubringen, meldet, dass er derzeit nichts zu tun hat.</German>
 		<Russian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Колонист, которому вы приказали производить %F2_yield_icon, сообщает, что ему сейчас нечего делать.</Russian>
+		<Hungarian>[COLOR_WARNING_TEXT]%s1_city : [COLOR_REVERT]Egy lakos, aki %F2_yield_icon előállításával foglalkozik, jelenti, hogy jelenleg nincs semmi dolga.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CHEATMENU_TITLE</Tag>
@@ -1935,6 +1937,7 @@
 		<Italian>[COLOR_FONT_CREAM]Turno :[COLOR_REVERT] %d1 / %d2[NEWLINE][NEWLINE]</Italian>
 		<Spanish>[COLOR_FONT_CREAM]Turno :[COLOR_REVERT] %d1 / %d2[NEWLINE][NEWLINE]</Spanish>
 		<Russian>[COLOR_FONT_CREAM]Ход :[COLOR_REVERT] %d1 / %d2[NEWLINE][NEWLINE]</Russian>
+		<Hungarian>[COLOR_FONT_CREAM]Kör :[COLOR_REVERT] %d1 / %d2[NEWLINE][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TIMETEXT_TURN_NO_LIMIT</Tag>
@@ -1944,15 +1947,17 @@
 		<Italian>[COLOR_FONT_CREAM]Turno :[COLOR_REVERT] %d1 / Nessun limite[NEWLINE][NEWLINE]</Italian>
 		<Spanish>[COLOR_FONT_CREAM]Turno :[COLOR_REVERT] %d1 / Sin límite[NEWLINE][NEWLINE]</Spanish>
 		<Russian>[COLOR_FONT_CREAM]Ход :[COLOR_REVERT] %d1 / Без лимита[NEWLINE][NEWLINE]</Russian>
+		<Hungarian>[COLOR_FONT_CREAM]Kör :[COLOR_REVERT] %d1 / Nincs korlát[NEWLINE][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TIMETEXT_IMMIGRATION_TITLE</Tag>
-		<English>[COLOR_FONT_CREAM]Emigration :[COLOR_REVERT][NEWLINE]</English>
+		<English>[COLOR_FONT_CREAM]Immigration :[COLOR_REVERT][NEWLINE]</English>
 		<French>[COLOR_FONT_CREAM]Émigration :[COLOR_REVERT][NEWLINE]</French>
 		<German>[COLOR_FONT_CREAM]Auswanderung :[COLOR_REVERT][NEWLINE]</German>
 		<Italian>[COLOR_FONT_CREAM]Emigrazione :[COLOR_REVERT][NEWLINE]</Italian>
 		<Spanish>[COLOR_FONT_CREAM]Emigración :[COLOR_REVERT][NEWLINE]</Spanish>
 		<Russian>[COLOR_FONT_CREAM]Эмиграция :[COLOR_REVERT][NEWLINE]</Russian>
+		<Hungarian>[COLOR_FONT_CREAM]Kivándorlás :[COLOR_REVERT][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TIMETEXT_IMMIGRATION</Tag>
@@ -1970,6 +1975,7 @@
 		<Italian>[COLOR_FONT_CREAM]Spirito ribelle :[COLOR_REVERT][NEWLINE]</Italian>
 		<Spanish>[COLOR_FONT_CREAM]Estado de ánimo rebelde :[COLOR_REVERT][NEWLINE]</Spanish>
 		<Russian>[COLOR_FONT_CREAM]Процент мятежников :[COLOR_REVERT][NEWLINE]</Russian>
+		<Hungarian>[COLOR_FONT_CREAM]Lázadó százalék :[COLOR_REVERT][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TIMETEXT_REBELS</Tag>
@@ -1987,6 +1993,7 @@
 		<Italian>[COLOR_FONT_CREAM]Grande Generale :[COLOR_REVERT][NEWLINE]</Italian>
 		<Spanish>[COLOR_FONT_CREAM]Gran general :[COLOR_REVERT][NEWLINE]</Spanish>
 		<Russian>[COLOR_FONT_CREAM]Великий Генерал :[COLOR_REVERT][NEWLINE]</Russian>
+		<Hungarian>[COLOR_FONT_CREAM]Nagy Tábornok :[COLOR_REVERT][NEWLINE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TIMETEXT_GENERALS</Tag>
@@ -2020,6 +2027,7 @@
 		<Italian>[NEWLINE][NEWLINE][COLOR_FONT_CREAM]Ora :[COLOR_REVERT] %s1</Italian>
 		<Spanish>[NEWLINE][NEWLINE][COLOR_FONT_CREAM]Hora :[COLOR_REVERT] %s1</Spanish>
 		<Russian>[NEWLINE][NEWLINE][COLOR_FONT_CREAM]Время :[COLOR_REVERT] %s1</Russian>
+		<Hungarian>[NEWLINE][NEWLINE][COLOR_FONT_CREAM]Idő :[COLOR_REVERT] %s1</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COMMAND_GOTO_MENU_TITLE</Tag>
@@ -2027,6 +2035,7 @@
 		<French>Assigner la destination</French>
 		<German>Zielsiedlung wählen</German>
 		<Russian>Выберите пункт назначения</Russian>
+		<Hungarian>Úticél kiválasztása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COMMAND_GOTO_MENU_SELECTION</Tag>
@@ -2042,12 +2051,14 @@
 		<French>Cap sur le [COLOR_HIGHLIGHT_TEXT]Nouveau Monde[COLOR_REVERT]</French>
 		<German>Reiseziel in der [COLOR_HIGHLIGHT_TEXT]Neuen Welt[COLOR_REVERT] auswählen</German>
 		<Russian>Выберите, куда плыть в [COLOR_HIGHLIGHT_TEXT]Новом мире[COLOR_REVERT]</Russian>
+		<Hungarian>Válaszd ki az úticélt az [COLOR_HIGHLIGHT_TEXT]Újvilágban[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_PREVIEW_MODE</Tag>
 		<English>Switch preview mode</English>
 		<French>Afficher la vue externe du port d'arrivée</French>
 		<German>Stadtvorschau an/aus</German>
+		<Hungarian>Előnézeti mód váltása</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SAIL_EAST</Tag>
@@ -2055,6 +2066,7 @@
 		<French>[COLOR_REVERT]Voguant sur l'Atlantique</French>
 		<German>[COLOR_REVERT]Überquert den Atlantik</German>
 		<Russian>[COLOR_REVERT]Пересекает Атлантику</Russian>
+		<Hungarian>[COLOR_REVERT]Átkel az Atlanti-óceánon</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SAIL_WEST</Tag>
@@ -2062,6 +2074,7 @@
 		<French>[COLOR_REVERT]Double le Cap Horn vers le Pacifique</French>
 		<German>[COLOR_REVERT]Umrundet Kap Hoorn in Richtung Pazifik</German>
 		<Russian>[COLOR_REVERT]Огибает мыс Доброй надежды в сторону Атлантики</Russian>
+		<Hungarian>[COLOR_REVERT]Megkerüli a Horn-fokot a Csendes-óceán felé</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_ROUTE</Tag>
@@ -2079,6 +2092,7 @@
 		<Italian>to [COLOR_YELLOW]%s1[COLOR_REVERT]</Italian>
 		<Spanish>to [COLOR_YELLOW]%s1[COLOR_REVERT]</Spanish>
 		<Russian>в [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] felé</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_NEAR_CITY</Tag>
@@ -2088,12 +2102,14 @@
 		<Italian>near [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT]</Italian>
 		<Spanish>near %s1</Spanish>
 		<Russian>рядом с [COLOR_SELECTED_TEXT]%s1[COLOR_REVERT]</Russian>
+		<Hungarian>[SPACE]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_BOUND</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT][NEWLINE]Due in %d2 [NUM2:turn:turns][NEWLINE]Cargo : %d3 / %d4</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT][NEWLINE]A échéance dans %d2 tours[NEWLINE]Cargaison : %d3 / %d4</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT][NEWLINE]Ankunft in %d2 [NUM2:Runde:Runden][NEWLINE]Ladung : %d3 / %d4</German>
+<Hungarian>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT][NEWLINE]%d2 [NUM2:kör:kör][NEWLINE]Rakomány : %d3 / %d4</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SAIL_EAST_MESSAGE</Tag>
@@ -2101,6 +2117,7 @@
 		<French>Nouveau monde - [COLOR_HIGHLIGHT_TEXT]voguant sur l'Atlantique[COLOR_REVERT]</French>
 		<German>Neue Welt - [COLOR_HIGHLIGHT_TEXT]überquert den Atlantik[COLOR_REVERT]</German>
 		<Russian>Новый мир - [COLOR_HIGHLIGHT_TEXT]пересекает Атлантику[COLOR_REVERT]</Russian>
+		<Hungarian>Újvilág - [COLOR_HIGHLIGHT_TEXT]átkelés az Atlanti-óceánon[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SAIL_WEST_MESSAGE</Tag>
@@ -2108,6 +2125,7 @@
 		<French>Nouveau monde - [COLOR_HIGHLIGHT_TEXT]voguant sur le Pacifique[COLOR_REVERT]</French>
 		<German>Neue Welt - [COLOR_HIGHLIGHT_TEXT]umrundet Kap Hoorn[COLOR_REVERT]</German>
 		<Russian>Новый мир - [COLOR_HIGHLIGHT_TEXT]огибает мыс Доброй надежды[COLOR_REVERT]</Russian>
+		<Hungarian>Újvilág - [COLOR_HIGHLIGHT_TEXT]a Horn-fok megkerülése[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SAIL_EAST</Tag>
@@ -2122,6 +2140,7 @@
 		<French>Partir pour le Nouveau Monde par le Pacifique</French>
 		<German>Segelt in die Neue Welt - Westküste!</German>
 		<Russian>Плыть в Новый свет - Западное побережье</Russian>
+		<Hungarian>Hajózás az Újvilágba - Keleti part</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_WAREHOUSE_INFO</Tag>
@@ -2131,6 +2150,7 @@
 		<Italian>%s1 - warehouse (max %d2):</Italian>
 		<Spanish>%s1 - warehouse (max %d2):</Spanish>
 		<Russian>[COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] (вместимость склада : %d2)</Russian>
+		<Hungarian>[COLOR_SELECTED_TEXT]%s1[COLOR_REVERT] (raktár kapacitása : %d2)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SHOW_TRADE_LOG</Tag>
@@ -2138,6 +2158,7 @@
 		<French>Afficher le registre</French>
 		<German>Handelsbuch aufklappen</German>
 		<Russian>Показать торговый журнал</Russian>
+		<Hungarian>Kereskedelmi napló megjelenítése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_HIDE_TRADE_LOG</Tag>
@@ -2145,6 +2166,7 @@
 		<French>Cacher le registre</French>
 		<German>Handelsbuch verbergen</German>
 		<Russian>Скрыть торговый журнал</Russian>
+		<Hungarian>Kereskedelmi napló elrejtése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_TRADE_LOG_1</Tag>
@@ -2154,6 +2176,7 @@
 		<Italian>Yield</Italian>
 		<Spanish>Yield</Spanish>
 		<Russian>Товар</Russian>
+		<Hungarian>Aru</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_TRADE_LOG_2</Tag>
@@ -2163,6 +2186,7 @@
 		<Italian>Action</Italian>
 		<Spanish>Action</Spanish>
 		<Russian>Действие</Russian>
+		<Hungarian>Akció</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_TRADE_LOG_SOLD</Tag>
@@ -2172,6 +2196,7 @@
 		<Italian>sold</Italian>
 		<Spanish>sold</Spanish>
 		<Russian>прод.</Russian>
+		<Hungarian>eladás</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_TRADE_LOG_BOUGHT</Tag>
@@ -2181,6 +2206,7 @@
 		<Italian>bought</Italian>
 		<Spanish>bought</Spanish>
 		<Russian>куп.</Russian>
+		<Hungarian>vétel</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_TRADE_LOG_3</Tag>
@@ -2198,6 +2224,7 @@
 		<Italian>Tax</Italian>
 		<Spanish>Tax</Spanish>
 		<Russian>Налог</Russian>
+		<Hungarian>Adó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SELL_LABEL</Tag>
@@ -2205,13 +2232,15 @@
 		<French>Vendre votre bateau ?</French>
 		<German>Schiff verkaufen?</German>
 		<Russian>Торговый агент спрашивает:</Russian>
+		<Hungarian>Eladod ezt a hajót?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SELL_MESSAGE</Tag>
-		<English>That floating coffin named [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]? Well, I'll give you %d2[ICON_GOLD].</English>
+		<English>That floating coffin named [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]? I can give you %d2[ICON_GOLD].</English>
 		<French>Ce raffiot que vous appelez [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] ? Et bien, je vous en donne %d2[ICON_GOLD].</French>
 		<German>Diesen morschen Kahn namens [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]? Nun, %d2[ICON_GOLD] seien Euch gewährt.</German>
 		<Russian>Хотите продать [COLOR_UNIT_TEXT]%s1[COLOR_REVERT], этот плавающий гроб? Хмм, что ж, я дам вам за него %d2[ICON_GOLD]</Russian>
+		<Hungarian>[COLOR_UNIT_TEXT]%s1[COLOR_REVERT] nevű lebegő koporsóról beszélsz? Hát, én adok neked érte %d2[ICON_GOLD]-t.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SELL_SHORT</Tag>
@@ -2219,6 +2248,7 @@
 		<French>Vendre votre [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] pour [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD] ?</French>
 		<German>[COLOR_UNIT_TEXT]%s1[COLOR_REVERT] für [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD] verkaufen?</German>
 		<Russian>Продать [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]</Russian>
+		<Hungarian>Eladod [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] hajódat [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD]-ért?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_DIALOG_ACCEPT</Tag>
@@ -2228,6 +2258,7 @@
 		<Italian>Great! Thank you.</Italian>
 		<Spanish>Great! Thank you.</Spanish>
 		<Russian>Меня устраивает эта сумма, он ваш.</Russian>
+		<Hungarian>Nagyszerű! Köszönöm.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_BOYCOTT_LABEL</Tag>
@@ -2237,6 +2268,7 @@
 		<Italian>Togliere il boicottaggio?</Italian>
 		<Spanish>¿Levantar el boicot?</Spanish>
 		<Russian>Отменить бойкот на этот товар?</Russian>
+		<Hungarian>Bojkott megszűntetése?</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_BOYCOTT_MESSAGE</Tag>
@@ -2246,6 +2278,7 @@
 		<Italian>Pay us %d1[ICON_GOLD] and you can trade with [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] again.</Italian>
 		<Spanish>Pay us %d1[ICON_GOLD] and you can trade with [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] again.</Spanish>
 		<Russian>Вы должны выплатить штраф в %d1[ICON_GOLD] и тогда снова можете начать торговать [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT].</Russian>
+		<Hungarian>Fizess Nekünk %d1[ICON_GOLD]-t és újra kereskedhetsz [COLOR_HIGHLIGHT_TEXT]%s2[COLOR_REVERT] áruval.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SELECT_DESTINATION</Tag>
@@ -2255,6 +2288,7 @@
 		<Italian>Select your destination</Italian>
 		<Spanish>Select your destination</Spanish>
 		<Russian>Выберите пункт назначения</Russian>
+		<Hungarian>Válaszd ki az úti célt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_DIALOG_DECLINE</Tag>
@@ -2264,6 +2298,7 @@
 		<Italian>Maybe later.</Italian>
 		<Spanish>Maybe later.</Spanish>
 		<Russian>Может быть позже...</Russian>
+		<Hungarian>Talán később.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_DESC</Tag>
@@ -2273,6 +2308,7 @@
 		<Italian>Colonie danesi</Italian>
 		<Spanish>Colonias danesas</Spanish>
 		<Russian>Датские колонии</Russian>
+		<Hungarian>Dán Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_SHORT_DESC</Tag>
@@ -2282,6 +2318,7 @@
 		<Italian>New Denmark</Italian>
 		<Spanish>New Denmark</Spanish>
 		<Russian>Новая Дания</Russian>
+		<Hungarian>Új Dánia</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_ADJECTIVE</Tag>
@@ -2295,6 +2332,7 @@
 		<Italian>Danish</Italian>
 		<Spanish>Danish</Spanish>
 		<Russian>Дании</Russian>
+		<Hungarian>Dán</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_EUROPE_ADJECTIVE</Tag>
@@ -2306,6 +2344,7 @@
 		</French>
 		<German>königlich-dänisch:königlich-dänischen:königlich-dänische:königlich-dänischer</German>
 		<Russian>Датским</Russian>
+		<Hungarian>Dán Királyi:Dán Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_EUROPE_DESC</Tag>
@@ -2315,6 +2354,7 @@
 		<Italian>Regno di Danimarca</Italian>
 		<Spanish>Reino de Dinamarca</Spanish>
 		<Russian>Датское королевство</Russian>
+		<Hungarian>Dán Királyság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_EUROPE_SHORT_DESC</Tag>
@@ -2324,6 +2364,7 @@
 		<Italian>Danimarca</Italian>
 		<Spanish>Dinamarca</Spanish>
 		<Russian>Дании</Russian>
+		<Hungarian>Dánia</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_ADJECTIVE</Tag>
@@ -2345,6 +2386,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Голландцы</Russian>
+		<Hungarian>Holland:Holland</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_DESC</Tag>
@@ -2366,6 +2408,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Голландские колонии</Russian>
+		<Hungarian>Holland Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_EUROPE_ADJECTIVE</Tag>
@@ -2387,6 +2430,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Голландским</Russian>
+		<Hungarian>Holland Királyi:Holland Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_ADJECTIVE</Tag>
@@ -2416,6 +2460,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Англичане</Russian>
+		<Hungarian>Angol</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_DESC</Tag>
@@ -2437,6 +2482,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Английские колонии</Russian>
+		<Hungarian>Angol Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_EUROPE_ADJECTIVE</Tag>
@@ -2458,6 +2504,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Английским</Russian>
+		<Hungarian>Angol Királyi:Angol Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_ADJECTIVE</Tag>
@@ -2487,6 +2534,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Французы</Russian>
+		<Hungarian>Francia</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_EUROPE_ADJECTIVE</Tag>
@@ -2508,6 +2556,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Французским</Russian>
+		<Hungarian>Francia Királyi:Francia Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_DESC</Tag>
@@ -2529,6 +2578,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Французские колонии</Russian>
+		<Hungarian>Francia Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_DESC</Tag>
@@ -2538,6 +2588,7 @@
 		<Italian>Colonie portoghesi</Italian>
 		<Spanish>Colonias portuguesas</Spanish>
 		<Russian>Португальские колонии</Russian>
+		<Hungarian>Portugál Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_SHORT_DESC</Tag>
@@ -2547,6 +2598,7 @@
 		<Italian>Nuovo Portogallo</Italian>
 		<Spanish>Nuevo Portugal</Spanish>
 		<Russian>Новая Португалия</Russian>
+		<Hungarian>Új Portugália</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_ADJECTIVE</Tag>
@@ -2564,6 +2616,7 @@
 		<Italian>Portoghese</Italian>
 		<Spanish>Portugues</Spanish>
 		<Russian>Португальцы</Russian>
+		<Hungarian>Portugál</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EUROPE_ADJECTIVE</Tag>
@@ -2581,6 +2634,7 @@
 		<Italian>Portoghese</Italian>
 		<Spanish>Portugues</Spanish>
 		<Russian>Португальским</Russian>
+		<Hungarian>Portugál Királyi:Portugál Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EUROPE_DESC</Tag>
@@ -2590,6 +2644,7 @@
 		<Italian>Impero Portoghese</Italian>
 		<Spanish>Imperio portugués</Spanish>
 		<Russian>Португальская империя</Russian>
+		<Hungarian>Portugál Birodalom</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EUROPE_SHORT_DESC</Tag>
@@ -2599,6 +2654,7 @@
 		<Italian>Portogallo</Italian>
 		<Spanish>Portugal</Spanish>
 		<Russian>Португалии</Russian>
+		<Hungarian>Portugália</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
@@ -2608,6 +2664,7 @@
 		<Italian>Colonie svedesi</Italian>
 		<Spanish>Colonias suecas</Spanish>
 		<Russian>Шведские колонии</Russian>
+		<Hungarian>Svéd Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>
@@ -2617,6 +2674,7 @@
 		<Italian>New Sweden</Italian>
 		<Spanish>New Sweden</Spanish>
 		<Russian>Новая Швеция</Russian>
+		<Hungarian>Új Svédország</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Tag>
@@ -2630,6 +2688,7 @@
 		<Italian>svedese</Italian>
 		<Spanish>sueco</Spanish>
 		<Russian>Шведы</Russian>
+		<Hungarian>Svéd</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_EUROPE_ADJECTIVE</Tag>
@@ -2641,15 +2700,18 @@
 		</French>
 		<German>königlich-schwedisch:königlich-schwedischen:königlich-schwedische:königlich-schwedischer</German>
 		<Russian>Шведским</Russian>
+<Hungarian>Svéd Királyi:Svéd Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_EUROPE_DESC</Tag>
 		<English>Kingdom of Sweden</English>
 		<French>Empire suédois</French>
+		<Hungarian>Svéd Királyság</Hungarian>
 		<German>Königreich von Schweden</German>
 		<Italian>Regno di Svezia</Italian>
 		<Spanish>Reino de Suecia</Spanish>
 		<Russian>Королевство Швеция</Russian>
+		<Hungarian>Svéd Királyság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_EUROPE_SHORT_DESC</Tag>
@@ -2659,6 +2721,7 @@
 		<Italian>Svezia</Italian>
 		<Spanish>Suecia</Spanish>
 		<Russian>Швеции</Russian>
+		<Hungarian>Svédország</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_DESC</Tag>
@@ -2668,6 +2731,7 @@
 		<Italian>Colonie russe</Italian>
 		<Spanish>Colonias rusas</Spanish>
 		<Russian>Русские колонии</Russian>
+		<Hungarian>Orosz Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SHORT_DESC</Tag>
@@ -2677,6 +2741,7 @@
 		<Italian>New Russia</Italian>
 		<Spanish>New Russia</Spanish>
 		<Russian>Новая Россия</Russian>
+		<Hungarian>Új Oroszország</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_ADJECTIVE</Tag>
@@ -2690,6 +2755,7 @@
 		<Italian>russo</Italian>
 		<Spanish>ruso</Spanish>
 		<Russian>Русские</Russian>
+		<Hungarian>Orosz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_EUROPE_ADJECTIVE</Tag>
@@ -2701,6 +2767,7 @@
 		</French>
 		<German>königlich-russisch:königlich-russischen:königlich-russische:königlich-russischer</German>
 		<Russian>Русским</Russian>
+		<Hungarian>Orosz Királyi:Orosz Királyi</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_EUROPE_DESC</Tag>
@@ -2710,6 +2777,7 @@
 		<Italian>Impero russo</Italian>
 		<Spanish>Imperio ruso</Spanish>
 		<Russian>Российская Империя</Russian>
+		<Hungarian>Orosz Birodalom</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_EUROPE_SHORT_DESC</Tag>
@@ -2719,6 +2787,7 @@
 		<Italian>Russia</Italian>
 		<Spanish>Rusia</Spanish>
 		<Russian>России</Russian>
+		<Hungarian>Oroszország</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ADJECTIVE</Tag>
@@ -2748,6 +2817,7 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Испанцы</Russian>
+		<Hungarian>Spanyol</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_DESC</Tag>
@@ -2769,6 +2839,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Испанские колонии</Russian>
+		<Hungarian>Spanyol Gyarmatok</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_EUROPE_ADJECTIVE</Tag>
@@ -2790,5 +2861,6 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 		<Russian>Испанским</Russian>
+		<Hungarian>Spanyol Királyi:Spanyol Királyi</Hungarian>
 	</TEXT>
 </Civ4GameText>
