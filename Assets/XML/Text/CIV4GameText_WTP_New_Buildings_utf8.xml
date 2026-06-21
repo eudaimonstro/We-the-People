@@ -14,6 +14,7 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Szobor</Hungarian>
 	</TEXT>
 	<!-- GRAVEYARD -->
 	<TEXT>
@@ -26,6 +27,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кладбище</Russian>
+		<Hungarian>Temető</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_GRAVEYARD</Tag>
@@ -37,6 +39,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кладбище</Russian>
+		<Hungarian>Temető</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAVEYARD</Tag>
@@ -48,17 +51,20 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кладбище</Russian>
+		<Hungarian>Temető</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAVEYARD_PEDIA</Tag>
 		<English>In a strange land where religious immigrants look back fondly to medieval times, the graveyard often is a place of fear and superstition. On the other hand it's a place to visit lost loved ones for quiet contemplation. Emotional conflicts arise.[NEWLINE]The two certainties in life are death and taxes. The graveyard handles one. The King takes care of the other.</English>
 		<German>In einem fremden Land, in dem religiöse Einwanderer mit Vorliebe auf das Mittelalter zurückblicken, ist der Friedhof oft ein Ort der Angst und des Aberglaubens. Andererseits ist er ein Ort, an dem man verlorene Angehörige besucht, um in Ruhe darüber nachzudenken. Emotionale Konflikte entstehen.[NEWLINE]Die zwei Gewissheiten im Leben sind der Tod und die Steuern. Um das eine kümmert sich der Friedhof. Der König kümmert sich um das andere.</German>
+		<Hungarian>Egy idegen országban, ahol a vallásos bevándorlók nosztalgiával tekintenek vissza a középkorra, a temető gyakran a félelem és a babona helyszíne. Másrészt viszont ez az a hely, ahol az elhunyt szeretteinket meglátogathatjuk, és csendben elmélkedhetünk. Érzelmi konfliktusok keletkeznek. Az életben két dolog biztos: a halál és az adók. A temető az egyiket kezeli, a király pedig a másikat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAVEYARD_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]graveyard[COLOR_REVERT] contributes to [LINK=YIELD_HEALTH]health[\LINK] and crosses.</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Friedhof[COLOR_REVERT] erhöht die [LINK=YIELD_HEALTH]Gesundheit[\LINK].</German>
 	</TEXT>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]temető[COLOR_REVERT] hozzájárul az [LINK=YIELD_HEALTH]egészséghez[\LINK] és a keresztek előállításához.</Hungarian>
 	<!-- CONFECTIONER -->
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALBUILDING_CONFECTIONER</Tag>
@@ -69,6 +75,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Cukrász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_CONFECTIONER_HOUSE</Tag>
@@ -80,6 +87,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом кондитера</Russian>
+		<Hungarian>Cukrász Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_CONFECTIONER_SHOP</Tag>
@@ -91,6 +99,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кондитерская</Russian>
+		<Hungarian>Cukrász Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_CONFECTIONER_FACTORY</Tag>
@@ -102,6 +111,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика сладостей</Russian>
+		<Hungarian>Cukrászda</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_HOUSE</Tag>
@@ -113,6 +123,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом кондитера</Russian>
+		<Hungarian>Cukrász Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_SHOP</Tag>
@@ -124,6 +135,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кондитерская</Russian>
+		<Hungarian>Cukrász Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_FACTORY</Tag>
@@ -135,36 +147,43 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика сладостей</Russian>
+		<Hungarian>Cukrászda</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_HOUSE_PEDIA</Tag>
 		<English>At first settlers import candy from the home country but before long an enterprising confectioner realizes that sugar is growing right next door, and all that's needed is a way to flavour it - maybe chocolate or vanilla. There's one other trick; grinding the sugar so fine that the candy has a smooth consistency.[NEWLINE]Having a candy store means that the settlers and their children don't need to wait for the ship to come in from Europe to satisfy their sweet tooth. The local confectioner makes everybody happy, the dentist in particular.</English>
 		<German>Zunächst importieren die Siedler Süßigkeiten aus der Heimat, doch schon bald stellt ein geschäftstüchtiger Zuckerbäcker fest, dass der Zucker gleich nebenan wächst und man ihn nur noch aromatisieren muss - vielleicht mit Schokolade oder Vanille. Es gibt noch einen weiteren Trick: Man muss den Zucker so fein mahlen, dass die Bonbons eine glatte Konsistenz bekommen.[NEWLINE]Ein Süßwarenladen bedeutet, dass die Siedler und ihre Kinder nicht auf das Schiff aus Europa warten müssen, um ihren süßen Hunger zu stillen. Der örtliche Süßwarenhändler macht alle glücklich, vor allem den Zahnarzt.</German>
+		<Hungarian>Eleinte a telepesek cukorkát hozatnak be az anyaországból, de hamarosan egy vállalkozó szellemű cukrász rájön, hogy a cukor a szomszédban terem, és csak ízesíteni kell – például csokoládéval vagy vaníliával. Van még egy trükk: a cukrot olyan finomra őrölni, hogy a cukorka selymes állagú legyen. [NEWLINE]A Cukrász Bolt megnyitása azt jelenti, hogy a telepesek és gyermekeik nem kelljenek megvárni az Európából érkező hajót, hogy kielégítsék édesség iránti vágyukat. A helyi cukrász mindenkit boldoggá tesz, különösen a fogorvost.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_HOUSE_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]confectioner's house[COLOR_REVERT] is where a settler with the [LINK=PROFESSION_CONFECTIONER_VANILLA]vanilla confectioner[\LINK] or the [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]chocolate confectioner[\LINK] profession turns [LINK=YIELD_VANILLA_PODS]vanilla beans[\LINK] into [LINK=YIELD_VANILLA]vanilla treats[\LINK] and [LINK=YIELD_COCOA]cocoa[\LINK] with [LINK=YIELD_SUGAR]sugar[\LINK] into [LINK=YIELD_CHOCOLATE]chocolate[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioner[\LINK] are particularly effective here.</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]confectioner's house[COLOR_REVERT] is where a settler with the [LINK=PROFESSION_CONFECTIONER_VANILLA]vanilla confectioner[\LINK] or the [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]chocolate confectioner[\LINK] profession turns [LINK=YIELD_VANILLA_PODS]vanilla beans[\LINK] into [LINK=YIELD_VANILLA]vanilla treats[\LINK] and [LINK=YIELD_COCOA]cocoa[\LINK] with [LINK=YIELD_SUGAR]sugar[\LINK] into [LINK=YIELD_CHOCOLATE]chocolate[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioners[\LINK] are particularly effective here.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Haus des Konditors[COLOR_REVERT] ist die niedrigste Ausbaustufe der Konditoreikette, in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] als [LINK=PROFESSION_CONFECTIONER_VANILLA]Konditor (Vanille)[\LINK] oder als [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]Konditor (Schokolade)[\LINK] die [LINK=YIELD_VANILLA_PODS]Vanilleschoten[\LINK] zu [LINK=YIELD_VANILLA]Vanilleköstlichkeiten[\LINK] bzw. [LINK=YIELD_COCOA]Kakao[\LINK] mit [LINK=YIELD_SUGAR]Zucker[\LINK] zu [LINK=YIELD_CHOCOLATE]Schokolade[\LINK] verarbeitet. [LINK=UNIT_CONFECTIONER]Konditormeister[\LINK] sind hier besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Cukrász Bolt[COLOR_REVERT] az a hely, ahol a [LINK=PROFESSION_CONFECTIONER_VANILLA]vanília cukrász [\LINK] vagy a [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]csokoládé cukrász[\LINK] a [LINK=YIELD_VANILLA_PODS]vaníliát[\LINK] [LINK=YIELD_VANILLA]vanília édességekké[\LINK] és [LINK=YIELD_COCOA]kakaót [\LINK] és [LINK=YIELD_SUGAR]cukorral[\LINK] [LINK=YIELD_CHOCOLATE]csokoládét[\LINK] készít. A [LINK=UNIT_CONFECTIONER]cukrászmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_SHOP_PEDIA</Tag>
 		<English>The confectioner's shop adds extra variety, candy for every taste, along with traditional sweets that remind people of home. The bigger market helps to keep prices down.[NEWLINE]Extra production creates trading opportunities. Some confectioners even set up tables where tea is served to accompany the treats. A very few offer coffee, at first considered scandalous, because the drink is so stimulating.</English>
 		<German>Die Konditorei sorgt für zusätzliche Abwechslung, Süßigkeiten für jeden Geschmack und traditionelle Süßigkeiten, die die Menschen an ihre Heimat erinnern. Der größere Markt trägt dazu bei, die Preise niedrig zu halten.[NEWLINE]Die zusätzliche Produktion schafft Handelsmöglichkeiten. Einige Zuckerbäcker stellen sogar Tische auf, an denen Tee zu den Leckereien gereicht wird. Einige wenige bieten Kaffee an, was zunächst als skandalös galt, weil das Getränk so anregend ist.</German>
+		<Hungarian>A Cukrász  Üzlet további változatosságot, minden ízlésnek megfelelő édességeket kínál, valamint hagyományos édességeket, amelyek az otthonra emlékeztetik az embereket. A nagyobb piac segít az árak alacsonyan tartásában. A többlettermelés kereskedelmi lehetőségeket teremt. Néhány cukrász még asztalokat is felállít, ahol tea kíséretében szolgálják fel az édességeket. Nagyon kevesen kínálnak kávét, amit eleinte botrányosnak tartottak, mert az ital annyira élénkítő hatású.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_SHOP_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]confectioners' shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_CONFECTIONER_HOUSE]confectioner's house[\LINK] where a settler with the [LINK=PROFESSION_CONFECTIONER_VANILLA]vanilla confectioner[\LINK] or the [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]chocolate confectioner[\LINK] profession turns [LINK=YIELD_VANILLA_PODS]vanilla beans[\LINK] into [LINK=YIELD_VANILLA]vanilla treats[\LINK] and [LINK=YIELD_COCOA]cocoa[\LINK] with [LINK=YIELD_SUGAR]sugar[\LINK] into [LINK=YIELD_CHOCOLATE]chocolate[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioner[\LINK] are particularly effective here.</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]confectioners' shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_CONFECTIONER_HOUSE]confectioner's house[\LINK] where a settler with the [LINK=PROFESSION_CONFECTIONER_VANILLA]vanilla confectioner[\LINK] or the [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]chocolate confectioner[\LINK] profession turns [LINK=YIELD_VANILLA_PODS]vanilla beans[\LINK] into [LINK=YIELD_VANILLA]vanilla treats[\LINK] and [LINK=YIELD_COCOA]cocoa[\LINK] with [LINK=YIELD_SUGAR]sugar[\LINK] into [LINK=YIELD_CHOCOLATE]chocolate[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioners[\LINK] are particularly effective here.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Konditorladen[COLOR_REVERT] ist die Erweiterung des [LINK=BUILDING_CONFECTIONER_HOUSE]Haus des Konditors[\LINK], in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] als [LINK=PROFESSION_CONFECTIONER_VANILLA]Konditor (Vanille)[\LINK] oder als [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]Konditor (Schokolade)[\LINK] die [LINK=YIELD_VANILLA_PODS]Vanilleschoten[\LINK] zu [LINK=YIELD_VANILLA]Vanilleköstlichkeiten[\LINK] bzw. [LINK=YIELD_COCOA]Kakao[\LINK] mit [LINK=YIELD_SUGAR]Zucker[\LINK] zu [LINK=YIELD_CHOCOLATE]Schokolade[\LINK] verarbeitet. [LINK=UNIT_CONFECTIONER]Konditormeister[\LINK] sind hier besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Cukrász Üzlet[COLOR_REVERT] a [LINK=BUILDING_CONFECTIONER_HOUSE]Cukrász Bolt[\LINK] továbbfejlesztése, ahol egy [LINK=PROFESSION_CONFECTIONER_VANILLA]vanília cukrász [\LINK] vagy [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]csokoládé cukrász[\LINK] [LINK=YIELD_VANILLA_PODS]vaníliát[\LINK] [LINK=YIELD_VANILLA]vanília édességekké[\LINK] és [LINK=YIELD_COCOA]kakaót [\LINK] és [LINK=YIELD_SUGAR]cukorral[\LINK] [LINK=YIELD_CHOCOLATE]csokoládét[\LINK] készít. A [LINK=UNIT_CONFECTIONER]Cukrászmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_FACTORY_PEDIA</Tag>
 		<English>The candy factory can serve an entire region. For one group it offers cheap sweets thanks to economies of scale. For the well-to-do it delivers an unparalleled variety of exotic confections to impress guests on special occasions.[NEWLINE]A big confectionery makes an important contribution to the region it serves, increasing both trading income and the community's happiness.</English>
 		<German>Die Süßwarenfabrik kann dank Skalierungseffekten eine ganze Region mit billigen Süßigkeiten versorgen. Für die Wohlhabenden liefert sie eine unvergleichliche Vielfalt an exotischen Süßigkeiten, um Gäste bei besonderen Anlässen zu beeindrucken.[NEWLINE]Eine große Konditorei leistet einen wichtigen Beitrag für die Region, in der sie tätig ist, und steigert sowohl das Handelseinkommen als auch die Zufriedenheit der Bevölkerung.</German>
+		<Hungarian>A Cukrászda egy egész régiót képes ellátni. Az egyik csoport számára méretgazdaságosságának köszönhetően olcsó édességeket kínál. A jómódúak számára pedig páratlanul változatos egzotikus édességeket szállít, amelyekkel különleges alkalmakkor lenyűgözhetik vendégeiket. [NEWLINE] Egy nagy cukrászda fontos hozzájárulást jelent a régióhoz, amelyet ellát, növelve mind a kereskedelmi bevételeket, mind a közösség boldogságát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFECTIONER_FACTORY_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]confectioners' factory[COLOR_REVERT] is the top upgrade of the [LINK=BUILDING_CONFECTIONER_HOUSE]confectioner's house[\LINK] where a settler with the [LINK=PROFESSION_CONFECTIONER_VANILLA]vanilla confectioner[\LINK] or the [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]chocolate confectioner[\LINK] profession turns [LINK=YIELD_VANILLA_PODS]vanilla beans[\LINK] into [LINK=YIELD_VANILLA]vanilla treats[\LINK] and [LINK=YIELD_COCOA]cocoa[\LINK] with [LINK=YIELD_SUGAR]sugar[\LINK] into [LINK=YIELD_CHOCOLATE]chocolate[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioner[\LINK] are particularly effective here.</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]confectioners' factory[COLOR_REVERT] is the top upgrade of the [LINK=BUILDING_CONFECTIONER_HOUSE]confectioner's house[\LINK] where a settler with the [LINK=PROFESSION_CONFECTIONER_VANILLA]vanilla confectioner[\LINK] or the [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]chocolate confectioner[\LINK] profession turns [LINK=YIELD_VANILLA_PODS]vanilla beans[\LINK] into [LINK=YIELD_VANILLA]vanilla treats[\LINK] and [LINK=YIELD_COCOA]cocoa[\LINK] with [LINK=YIELD_SUGAR]sugar[\LINK] into [LINK=YIELD_CHOCOLATE]chocolate[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioners[\LINK] are particularly effective here.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Konditorei[COLOR_REVERT] ist die höchste Stufe des [LINK=BUILDING_CONFECTIONER_HOUSE]Haus des Konditors[\LINK], in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] als [LINK=PROFESSION_CONFECTIONER_VANILLA]Konditor (Vanille)[\LINK] oder als [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]Konditor (Schokolade)[\LINK] die [LINK=YIELD_VANILLA_PODS]Vanilleschoten[\LINK] zu [LINK=YIELD_VANILLA]Vanilleköstlichkeiten[\LINK] bzw. [LINK=YIELD_COCOA]Kakao[\LINK] mit [LINK=YIELD_SUGAR]Zucker[\LINK] zu [LINK=YIELD_CHOCOLATE]Schokolade[\LINK] verarbeitet. [LINK=UNIT_CONFECTIONER]Konditormeister[\LINK] sind hier besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Cukrászda[COLOR_REVERT] a [LINK=BUILDING_CONFECTIONER_HOUSE]Cukrász Bolt[\LINK] legmagasabb szintű továbbfejlesztése, ahol egy [LINK=PROFESSION_CONFECTIONER_VANILLA]vanília cukrász [\LINK] vagy [LINK=PROFESSION_CONFECTIONER_CHOCOLATE]csokoládé cukrász[\LINK] telepes [LINK=YIELD_VANILLA_PODS]vaníliát[\LINK] [LINK=YIELD_VANILLA]vanília édességekké[\LINK] és [LINK=YIELD_COCOA]kakaót [\LINK] és [LINK=YIELD_SUGAR]cukorral[\LINK] [LINK=YIELD_CHOCOLATE]csokoládét[\LINK] készít. A [LINK=UNIT_CONFECTIONER]Cukrászmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<!-- LEATHER_PADDER -->
 	<TEXT>
@@ -176,6 +195,7 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Bőrműves</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_LEATHER_PADDER_HOUSE</Tag>
@@ -187,6 +207,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом кожевника</Russian>
+		<Hungarian>Bőrműves Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_LEATHER_PADDER_SHOP</Tag>
@@ -198,6 +219,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская кожевника</Russian>
+		<Hungarian>Bőrműves Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_LEATHER_PADDER_FACTORY</Tag>
@@ -209,6 +231,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кожевенная фабрика</Russian>
+		<Hungarian>Bőrműves Gyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_HOUSE</Tag>
@@ -220,6 +243,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом кожевника</Russian>
+		<Hungarian>Bőrműves Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_SHOP</Tag>
@@ -231,6 +255,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская кожевника</Russian>
+		<Hungarian>Bőrműves Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_FACTORY</Tag>
@@ -242,39 +267,46 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Кожевенная фабрика</Russian>
+		<Hungarian>Bőrműves Gyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_HOUSE_PEDIA</Tag>
 		<English>Leather is good at keeping out the wind but when the temperature drops it still feels cold. Putting padding into leather coats keeps people warm when the snow flies.[NEWLINE]Sewing padding into leather doesn't just make the clothes more comfortable. By adding insulation the leather clothier improves health for those working outside, which can even save their lives.</English>
 		<German>Leder hält zwar gut den Wind ab, aber wenn die Temperatur sinkt, fühlt es sich trotzdem kalt an. Eine Polsterung in den Mänteln hält hingegen die Menschen warm, selbst wenn der Schnee kommt.[NEWLINE]Das Einnähen von Polstern und Futter in Leder macht das Kleidungsstück nicht nur bequemer. Durch die zusätzliche Isolierung wird auch die Gesundheit derjenigen verbessert, die im Freien arbeiten, und kann sogar ihr Leben retten.</German>
+		<Hungarian>A bőr jól véd a széltől, de ha a hőmérséklet csökken, akkor mégis hidegnek érezzük. A bőrkabátokba varrt bélés melegen tartja az embereket, amikor havazik. A bőrbe varrt bélés nem csak kényelmesebbé teszi a ruhákat. A szigetelés hozzáadásával a bőrruha-gyártók javítják a kültéren dolgozók egészségét, ami akár életeket is menthet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_HOUSE_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]leatherworker's house[COLOR_REVERT] is the lowest level of expansion of leather processing, where settlers work as [LINK=PROFESSION_LEATHER_PADDER_COATS]leather clothier[\LINK] profession make [LINK=YIELD_PADDED_LEATHER_COATS]lined leather coats[\LINK] from [LINK=YIELD_HIDES]cowhides[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] or [LINK=PROFESSION_LEATHER_PADDER_BOOTS]bootmaker (lined)[\LINK] make [LINK=YIELD_GOAT_HIDE_BOOTS]lined goatskin boots[\LINK] from [LINK=YIELD_GOAT_HIDES]goatskin[\LINK] and [LINK=YIELD_WILD_FEATHERS]wild bird feathers[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Master leatherworker[\LINK] are particularly effective at this.</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]leatherworker's house[COLOR_REVERT] is the lowest level of expansion of leather processing, where settlers work at the [LINK=PROFESSION_LEATHER_PADDER_COATS]leather clothier[\LINK] profession to make [LINK=YIELD_PADDED_LEATHER_COATS]lined leather coats[\LINK] from [LINK=YIELD_HIDES]cowhides[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] or as a [LINK=PROFESSION_LEATHER_PADDER_BOOTS]bootmaker (lined)[\LINK] to make [LINK=YIELD_GOAT_HIDE_BOOTS]lined goatskin boots[\LINK] from [LINK=YIELD_GOAT_HIDES]goatskin[\LINK] and [LINK=YIELD_WILD_FEATHERS]wild bird feathers[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Master leatherworkers[\LINK] are particularly effective at this.</English>
 		<French>Coudre un rembourrage et une doublure dans le cuir ne rend pas seulement le vêtement plus confortable. En ajoutant de l'isolation, il améliore également la santé des personnes travaillant à l'extérieur, et peut même leur sauver la vie.</French>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Haus des Lederschneiders[COLOR_REVERT] ist die niedrigste Ausbaustufe der Lederverarbeitung, in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] als [LINK=PROFESSION_LEATHER_PADDER_COATS]Polsterer (Ledermäntel)[\LINK] die [LINK=YIELD_PADDED_LEATHER_COATS]gefütterten Ledermäntel[\LINK] aus [LINK=YIELD_HIDES]Rindshäuten[\LINK] und [LINK=YIELD_DOWNS]Daunen[\LINK] oder [LINK=PROFESSION_LEATHER_PADDER_BOOTS]Stiefelmacher (gefüttert)[\LINK] aus [LINK=YIELD_GOAT_HIDES]Ziegenfell[\LINK] und [LINK=YIELD_WILD_FEATHERS]Federn von Wildvögeln[\LINK] gefütterte [LINK=YIELD_GOAT_HIDE_BOOTS]Ziegenledersstiefel[\LINK] herstellen.[PARAGRAPH:1][LINK=UNIT_LEATHER_TAYLOR]Meister-Lederschneider[\LINK] sind hierbei besonders effektiv.</German>
 		<Italian>Cucire un'imbottitura e una fodera nella pelle non rende solo l'indumento più confortevole. L'aggiunta di isolamento migliora anche la salute di chi lavora all'aperto e può addirittura salvargli la vita.</Italian>
 		<Spanish>Coser acolchado y forro a la piel no sólo hace que la prenda sea más cómoda. Al añadir aislamiento, también mejora la salud de quienes trabajan al aire libre, e incluso puede salvarles la vida.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Bőrműves Bolt[COLOR_REVERT] a bőrmegmunkálás legalacsonyabb szintű épülete, ahol a lakosok [LINK=PROFESSION_LEATHER_PADDER_COATS]bőrművesként[\LINK] dolgoznak és [LINK=YIELD_PADDED_LEATHER_COATS]bélelt bőrkabátokat [\LINK] készítenek [LINK=YIELD_HIDES]marhabőrből[\LINK] és [LINK=YIELD_DOWNS]pehelytollból[\LINK] illetve [LINK=PROFESSION_LEATHER_PADDER_BOOTS]csizmadiaként[\LINK] [LINK=YIELD_GOAT_HIDE_BOOTS]bélelt kecskebőr csizmát[\LINK] [LINK=YIELD_GOAT_HIDES]kecskebőrből[\LINK] és [LINK=YIELD_WILD_FEATHERS]vadmadár tollból[\LINK]. A [LINK=UNIT_LEATHER_TAYLOR]bőrműves mesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_SHOP_PEDIA</Tag>
 		<English>A bigger business can produce a little more for export, not just to Europe but also to the surrounding First Nations and outdoor workers who appreciate warm clothing. A fashionable leather clothier relies on word of mouth to increase business.[NEWLINE]Practical people see the advantage of insulated clothing in a cold climate. Devout settlers are obsessed with religious prohibitions, so women of easy virtue can earn extra money wearing leather in private to dominate the pious.</English>
 		<German>Ein größeres Unternehmen kann etwas mehr für den Export produzieren, nicht nur nach Europa, sondern auch für die umliegenden Ureinwohner und Outdoor-Arbeiter, die warme Kleidung schätzen. Ein modischer Lederwarenhersteller verlässt sich auf Mundpropaganda, um sein Geschäft zu steigern.[NEWLINE]Praktische Menschen sehen den Vorteil isolierender Kleidung bei kalter Witterung. Fromme Siedler sind von religiösen Verboten beeinflusst, so dass Frauen mit wenig Tugendhaftigkeit zusätzliches Geld verdienen können, indem sie sich in Leder kleiden, um die Frommen zu beherrschen.</German>
+		<Hungarian>Egy nagyobb vállalkozás kicsit többet tud exportra gyártani, nem csak Európába, hanem a környező indián népekhez és a meleg ruházatot értékelő szabadtéri munkásoknak is. Egy divatos bőrruha készítő a szájhagyományra támaszkodik, hogy növelje forgalmát. A gyakorlatias emberek látják a szigetelt ruházat előnyeit a hideg éghajlaton. A jámbor telepesek megszállottan ragaszkodnak a vallási tilalmakhoz, így a könnyűvérű nők extra pénzt kereshetnek azzal, hogy magánéletükben bőrruhát viselnek, hogy így uralkodjanak a jámborokon.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_SHOP_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]leatherworkers' shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_LEATHER_PADDER_HOUSE]leatherworker's house[\LINK] where settlers work as [LINK=PROFESSION_LEATHER_PADDER_COATS]leather clothier[\LINK] profession make [LINK=YIELD_PADDED_LEATHER_COATS]lined leather coats[\LINK] from [LINK=YIELD_HIDES]cowhides[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] or [LINK=PROFESSION_LEATHER_PADDER_BOOTS]bootmaker (lined)[\LINK] make [LINK=YIELD_GOAT_HIDE_BOOTS]lined goatskin boots[\LINK] from [LINK=YIELD_GOAT_HIDES]goatskin[\LINK] and [LINK=YIELD_WILD_FEATHERS]wild bird feathers[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Master leatherworker[\LINK] are particularly effective at this.</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]leatherworkers' shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_LEATHER_PADDER_HOUSE]leatherworker's house[\LINK] where settlers work at the [LINK=PROFESSION_LEATHER_PADDER_COATS]leather clothier[\LINK] profession to make [LINK=YIELD_PADDED_LEATHER_COATS]lined leather coats[\LINK] from [LINK=YIELD_HIDES]cowhides[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] or as [LINK=PROFESSION_LEATHER_PADDER_BOOTS]bootmakers (lined)[\LINK] to make [LINK=YIELD_GOAT_HIDE_BOOTS]lined goatskin boots[\LINK] from [LINK=YIELD_GOAT_HIDES]goatskin[\LINK] and [LINK=YIELD_WILD_FEATHERS]wild bird feathers[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Master leatherworker[\LINK] are particularly effective at this.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Lederwerkstatt[COLOR_REVERT] ist die Erweiterung des [LINK=BUILDING_LEATHER_PADDER_HOUSE]Haus des Lederschneiders[\LINK], in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] als [LINK=PROFESSION_LEATHER_PADDER_COATS]Polsterer (Ledermäntel)[\LINK] die [LINK=YIELD_PADDED_LEATHER_COATS]gefütterten Ledermäntel[\LINK] aus [LINK=YIELD_HIDES]Rindshäuten[\LINK] und [LINK=YIELD_DOWNS]Daunen[\LINK] oder [LINK=PROFESSION_LEATHER_PADDER_BOOTS]Stiefelmacher (gefüttert)[\LINK] aus [LINK=YIELD_GOAT_HIDES]Ziegenfell[\LINK] und [LINK=YIELD_WILD_FEATHERS]Federn von Wildvögeln[\LINK] gefütterte [LINK=YIELD_GOAT_HIDE_BOOTS]Ziegenledersstiefel[\LINK] herstellen.[PARAGRAPH:1][LINK=UNIT_LEATHER_TAYLOR]Meister-Lederschneider[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Bőrműves Üzlet[COLOR_REVERT] a [LINK=BUILDING_LEATHER_PADDER_HOUSE]Bőrműves Bolt[\LINK] továbbfejlesztése, ahol a lakosok [LINK=PROFESSION_LEATHER_PADDER_COATS]bőrművesként[\LINK] dolgoznak és [LINK=YIELD_PADDED_LEATHER_COATS]bélelt bőrkabátokat [\LINK] készítenek [LINK=YIELD_HIDES]marhabőrből[\LINK] és [LINK=YIELD_DOWNS]pehelytollból[\LINK] illetve [LINK=PROFESSION_LEATHER_PADDER_BOOTS]csizmadiaként[\LINK] [LINK=YIELD_GOAT_HIDE_BOOTS]bélelt kecskebőr csizmát[\LINK] [LINK=YIELD_GOAT_HIDES]kecskebőrből[\LINK] és [LINK=YIELD_WILD_FEATHERS]vadmadár tollból[\LINK]. A [LINK=UNIT_LEATHER_TAYLOR]bőrműves mesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_FACTORY_PEDIA</Tag>
 		<English>A big business has efficiencies and economies of scale. A solitary leather clothier might spend days fitting a coat to a single customer but a factory can have enough sizes in stock for everyone to buy off the rack.[NEWLINE]Sturdy outdoor leather clothing that stands up to hard wear means more work gets done, people don't get cold, and health and happiness are the result.</English>
 		<German>Ein großes Unternehmen verfügt über Effizienz- und Größenvorteile. Ein einzelner Lederbekleidungshersteller verbringt vielleicht Tage damit, einen Mantel für einen einzigen Kunden anzupassen, aber eine Fabrik kann genügend Größen auf Lager haben, die jeder von der Stange kaufen kann.[NEWLINE]Dank robuster Outdoor-Lederkleidung, die harter Beanspruchung standhält, müssen die Menschen nicht frieren, was ihrer Gesundheit und Zufriedenheit zugutekommt, wodurch mehr Arbeit erledigt werden kann.</German>
+		<Hungarian>A nagyvállalatok hatékonysággal és méretgazdaságossággal rendelkeznek. Egy magányos bőrruha készítő napokig dolgozhat egy kabát elkészítésén egyetlen vevő számára, de egy gyárban mindenki számára elegendő méret áll rendelkezésre, hogy készruhákat vásárolhassanak. A strapabíró, kemény igénybevételnek is ellenálló, kültéri bőrruházat révén több munkát lehet elvégezni, az emberek nem fáznak, és ezáltal egészségesek és boldogok maradnak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEATHER_PADDER_FACTORY_STRATEGY</Tag>
-		<English>The [COLOR_HIGHLIGHT_TEXT]leather coat factory[COLOR_REVERT] is the final upgrade of the [LINK=BUILDING_LEATHER_PADDER_HOUSE]leatherworker's house[\LINK], where settlers work as [LINK=PROFESSION_LEATHER_PADDER_COATS]leather clothier[\LINK] profession make [LINK=YIELD_PADDED_LEATHER_COATS]lined leather coats[\LINK] from [LINK=YIELD_HIDES]cowhides[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] or [LINK=PROFESSION_LEATHER_PADDER_BOOTS]bootmaker (lined)[\LINK] make [LINK=YIELD_GOAT_HIDE_BOOTS]lined goatskin boots[\LINK] from [LINK=YIELD_GOAT_HIDES]goatskin[\LINK] and [LINK=YIELD_WILD_FEATHERS]wild bird feathers[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Master leatherworker[\LINK] are particularly effective at this.</English>
+		<English>The [COLOR_HIGHLIGHT_TEXT]leather coat factory[COLOR_REVERT] is the final upgrade of the [LINK=BUILDING_LEATHER_PADDER_HOUSE]leatherworker's house[\LINK], where settlers work at the [LINK=PROFESSION_LEATHER_PADDER_COATS]leather clothier[\LINK] profession to make [LINK=YIELD_PADDED_LEATHER_COATS]lined leather coats[\LINK] from [LINK=YIELD_HIDES]cowhides[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] or as [LINK=PROFESSION_LEATHER_PADDER_BOOTS]bootmakers (lined)[\LINK] to make [LINK=YIELD_GOAT_HIDE_BOOTS]lined goatskin boots[\LINK] from [LINK=YIELD_GOAT_HIDES]goatskin[\LINK] and [LINK=YIELD_WILD_FEATHERS]wild bird feathers[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Master leatherworker[\LINK] are particularly effective at this.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Lederwarenfabrik[COLOR_REVERT] ist die letzte Erweiterung des [LINK=BUILDING_LEATHER_PADDER_HOUSE]Haus des Lederschneiders[\LINK], in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] als [LINK=PROFESSION_LEATHER_PADDER_COATS]Polsterer (Ledermäntel)[\LINK] die [LINK=YIELD_PADDED_LEATHER_COATS]gefütterten Ledermäntel[\LINK] aus [LINK=YIELD_HIDES]Rindshäuten[\LINK] und [LINK=YIELD_DOWNS]Daunen[\LINK] oder [LINK=PROFESSION_LEATHER_PADDER_BOOTS]Stiefelmacher (gefüttert)[\LINK] aus [LINK=YIELD_GOAT_HIDES]Ziegenfell[\LINK] und [LINK=YIELD_WILD_FEATHERS]Federn von Wildvögeln[\LINK] gefütterte [LINK=YIELD_GOAT_HIDE_BOOTS]Ziegenledersstiefel[\LINK] herstellen.[PARAGRAPH:1][LINK=UNIT_LEATHER_TAYLOR]Meister-Lederschneider[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Bőrműves Gyár[COLOR_REVERT] a [LINK=BUILDING_LEATHER_PADDER_HOUSE]Bőrműves Bolt[\LINK] végső továbbfejlesztése, ahol a lakosok [LINK=PROFESSION_LEATHER_PADDER_COATS]bőrművesként[\LINK] dolgoznak és [LINK=YIELD_PADDED_LEATHER_COATS]bélelt bőrkabátokat [\LINK] készítenek [LINK=YIELD_HIDES]marhabőrből[\LINK] és [LINK=YIELD_DOWNS]pehelytollból[\LINK] illetve [LINK=PROFESSION_LEATHER_PADDER_BOOTS]csizmadiaként[\LINK] [LINK=YIELD_GOAT_HIDE_BOOTS]bélelt kecskebőr csizmát[\LINK] [LINK=YIELD_GOAT_HIDES]kecskebőrből[\LINK] és [LINK=YIELD_WILD_FEATHERS]vadmadár tollból[\LINK]. A [LINK=UNIT_LEATHER_TAYLOR]bőrműves mesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 <!-- OIL_TRADER -->
 	<TEXT>
@@ -286,6 +318,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Étolajkészítő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_OIL_TRADER_HOUSE</Tag>
@@ -297,6 +330,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом изготовителя масла</Russian>
+		<Hungarian>Étolaj Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_OIL_TRADER_SHOP</Tag>
@@ -308,6 +342,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская по изготовлению масла</Russian>
+		<Hungarian>Étolaj Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_OIL_TRADER_FACTORY</Tag>
@@ -319,6 +354,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика по изготовлению масла</Russian>
+		<Hungarian>Étolaj Gyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_HOUSE</Tag>
@@ -330,6 +366,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом изготовителя масла</Russian>
+		<Hungarian>Étolaj Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_SHOP</Tag>
@@ -341,6 +378,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская по изготовлению масла</Russian>
+		<Hungarian>Étolaj Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_FACTORY</Tag>
@@ -352,6 +390,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика по изготовлению масла</Russian>
+		<Hungarian>Étolaj Gyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_HOUSE_PEDIA</Tag>
@@ -360,31 +399,37 @@
 		<German>Das Pressen von Öl ist ein altes Handwerk in Europa, insbesondere in den Mittelmeerkulturen. Die Geräte, mit denen Oliven zur Gewinnung von Öl gepresst werden, können auch für die Verarbeitung von Raps verwendet werden.[NEWLINE]Vor dem Kontakt mit den Europäern war Speiseöl für die Ureinwohner des pazifischen Nordwestens lebenswichtig. Oolichan-Öl aus Kerzenfisch machte einen so großen Teil des Handels der Ureinwohner aus, dass die Handelsrouten als "Fettstraßen" bezeichnet wurden.[NEWLINE]Siedler, die Wild essen, stellen bald fest, dass das Fleisch viel weniger Fettanteil hat, als sie es von ihren Nutztieren gewohnt sind. In einem kalten Klima trägt Fett jedoch erheblich dazu bei, die Arbeiter im Freien lange warmzuhalten. In der Wildnis sind Pflanzenöle entsprechend ein guter Weg zu einer ausgewogenen Ernährung.</German>
 		<Italian>La spremitura dell'olio è un'attività antica in Europa, in particolare nelle culture mediterranee. Le attrezzature che schiacciano le olive per ricavarne l'olio possono essere adattate alla colza.[NEWLINE]Prima del contatto europeo, l'olio da cucina era essenziale per i nativi del Pacifico nordoccidentale. L'olio di oolichan ricavato dal pesce candela costituiva una parte così importante del commercio dei nativi che le rotte commerciali venivano chiamate "vie del grasso".</Italian>
 		<Spanish>El prensado del aceite es un antiguo oficio en Europa, sobre todo en las culturas mediterráneas. Antes del contacto europeo, el aceite de cocina era esencial para las naciones indígenas del noroeste del Pacífico. El aceite de oolichan procedente del pez vela constituía una parte tan importante del comercio nativo que las rutas comerciales se llamaban "rutas de la grasa".</Spanish>
+		<Hungarian>Az olajpréselés ősi mesterség Európában, különösen a mediterrán kultúrákban. Az olaj előállításához az olajbogyót zúzó berendezések repceolaj előállítására is átalakíthatók.[NEWLINE]Az európaiakkal való kapcsolatfelvétel előtt a főzőolaj elengedhetetlen volt a Csendes-óceán északnyugati partvidékén élő indián népek számára. A gyertyahalból nyert oolichan olaj olyan nagy szerepet játszott az indiánok kereskedelmében, hogy a kereskedelmi útvonalakat „zsíros ösvényeknek” nevezték. [NEWLINE]A vadhúst fogyasztó telepesek hamar rájöttek, hogy az sokkal kevesebb zsírt tartalmaz, mint a háziállatok húsai. Hideg éghajlaton a zsír melegen tartja a munkásokat a szabadban. A vadonban a növényi olajok jó megoldást jelentenek a kiegyensúlyozott étrendhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]oil trader's house[COLOR_REVERT] or one of its upgrades is where the [LINK=PROFESSION_OLIVE_OIL_TRADER]olive oil trader[\LINK] makes [LINK=YIELD_OLIVE_OIL]olive oil[\LINK] from [LINK=YIELD_OLIVES]olives[\LINK] or [LINK=PROFESSION_RAPE_OIL_TRADER]rapeseed oil trader[\LINK] makes [LINK=YIELD_RAPE_OIL]rapeseed oil[\LINK] from [LINK=YIELD_RAPE]rapeseed[\LINK]. [LINK=UNIT_OIL_TRADER]Master cooking oil traders[\LINK] are particularly effective at this.</English>
 		<German>Im [COLOR_HIGHLIGHT_TEXT]Haus des Ölhändlers[COLOR_REVERT] oder einer seiner Ausbaustufen stellen [LINK=PROFESSION_OLIVE_OIL_TRADER]Olivenölhändler[\LINK] das [LINK=YIELD_OLIVE_OIL]Ölivenöl[\LINK] aus [LINK=YIELD_OLIVES]Oliven[\LINK] oder [LINK=PROFESSION_RAPE_OIL_TRADER]Rapsölhändler[\LINK] das [LINK=YIELD_RAPE_OIL]Rapsöl[\LINK] aus [LINK=YIELD_RAPE]Raps[\LINK] her.[PARAGRAPH:1][LINK=UNIT_OIL_TRADER]Meister-Speiseölhändler[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>Az [COLOR_HIGHLIGHT_TEXT]Étolaj Bolt[COLOR_REVERT] vagy annak egyik továbbfejlesztése az a hely, ahol az [LINK=PROFESSION_OLIVE_OIL_TRADER]Olívaolaj Készítő[\LINK] [LINK=YIELD_OLIVE_OIL]Olívaolajat[\LINK] állít elő [LINK=YIELD_OLIVES]Olajbogyóból [\LINK] vagy a [LINK=PROFESSION_RAPE_OIL_TRADER]Repceolaj Készítő[\LINK] [LINK=YIELD_RAPE_OIL]Repceolajat[\LINK] állít elő [LINK=YIELD_RAPE]Repcéből[\LINK]. Az [LINK=UNIT_OIL_TRADER]Étolajkészítő  Mesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_SHOP_PEDIA</Tag>
 		<English>As the oil pressers refine their trade the quality of the oil attracts new customers. Oil traders can now separate their pressings into varying grades to be sold at different prices. As customers discuss which is better for different situations, sales increase.</English>
 		<German>In dem Maße, wie die Ölpresser ihr Handwerk verfeinern, zieht die Qualität des Öls neue Kunden an.[NEWLINE]Ölpresser können nun ihre Presslinge in verschiedene Qualitäten unterteilen, die zu unterschiedlichen Preisen verkauft werden. Wenn die Kunden darüber diskutieren, welche Qualität für die verschiedenen Situationen besser ist, steigt der Umsatz.</German>
+		<Hungarian>Ahogy az olajpréselők tökéletesítik mesterségüket, az olaj minősége új vásárlókat vonz. Az olajkészítők most már különböző minőségi osztályokba sorolhatják a préselt olajokat, hogy azokat különböző áron értékesítsék. Ahogy a vásárlók megvitatják, melyik olaj a legjobb a különböző helyzetekben, az eladások növekednek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_SHOP_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]cooking oil shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_OIL_TRADER_HOUSE]oil trader's house[\LINK] where the [LINK=PROFESSION_OLIVE_OIL_TRADER]olive oil trader[\LINK] makes [LINK=YIELD_OLIVE_OIL]olive oil[\LINK] from [LINK=YIELD_OLIVES]olives[\LINK] or [LINK=PROFESSION_RAPE_OIL_TRADER]rapeseed oil trader[\LINK] makes [LINK=YIELD_RAPE_OIL]rapeseed oil[\LINK] from [LINK=YIELD_RAPE]rapeseed[\LINK]. [LINK=UNIT_OIL_TRADER]Master cooking oil traders[\LINK] are particularly effective at this.</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Speiseölladen[COLOR_REVERT] ist die mittlere Ausbaustufe des [LINK=BUILDING_OIL_TRADER_HOUSE]Haus des Ölhändlers[\LINK], wo der [LINK=PROFESSION_OLIVE_OIL_TRADER]Olivenölhändler[\LINK] das [LINK=YIELD_OLIVE_OIL]Olivenöl[\LINK] aus [LINK=YIELD_OLIVES]Oliven[\LINK] oder der [LINK=PROFESSION_RAPE_OIL_TRADER]Rapsölhändler[\LINK] das [LINK=YIELD_RAPE_OIL]Rapsöl[\LINK] aus [LINK=YIELD_RAPE]Raps[\LINK] herstellt.[PARAGRAPH:1][LINK=UNIT_OIL_TRADER]Meister-Speiseölhändler[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>Az [COLOR_HIGHLIGHT_TEXT]Étolaj Üzlet[COLOR_REVERT] az [LINK=BUILDING_OIL_TRADER_HOUSE]Étolaj Bolt[\LINK] továbbfejlesztett változata, ahol az [LINK=PROFESSION_OLIVE_OIL_TRADER]Olívaolaj Készítő[\LINK] [LINK=YIELD_OLIVE_OIL]Olívaolajat[\LINK] készít [LINK=YIELD_OLIVES]Olajbogyóból[\LINK], vagy a [LINK=PROFESSION_RAPE_OIL_TRADER]Repceolaj Készítő[\LINK] [LINK=YIELD_RAPE_OIL]Repceolajat[\LINK] állít elő [LINK=YIELD_RAPE]Repcéből[\LINK]. Az [LINK=UNIT_OIL_TRADER]Étolajkészítő Mesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_FACTORY_PEDIA</Tag>
 		<English>If there's a good supply of olives and rapeseed, the oil presses can be mechanized to generate exportable quantities. If surplus quantities of oil and rapeseed can be grown close to the factory, an ambitious manager might prove himself by exporting the very best olive oil to Italy.</English>
 		<German>Wenn es ein gutes Angebot an Oliven und Raps gibt, können die Ölpressen mechanisiert werden, um exportfähige Mengen zu erzeugen.[NEWLINE]Wenn in der Nähe der Fabrik überschüssige Öl- und Rapsmengen angebaut werden können, könnte sich ein ehrgeiziger Manager durch den Export von bestem Olivenöl nach Italien beweisen.</German>
+		<Hungarian>Ha elegendő mennyiségű olajbogyó és repce áll rendelkezésre, az olajprések gépesíthetők, hogy exportra alkalmas mennyiségeket állítsanak elő. Ha a gyár közelében többletmennyiségű olajbogyó és repce termeszthető, egy ambiciózus vezető bizonyíthatja rátermettségét azzal, hogy a legjobb minőségű olívaolajat Olaszországba exportálja.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OIL_TRADER_FACTORY_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]cooking oil factory[COLOR_REVERT] is the ultimate upgrade of the [LINK=BUILDING_OIL_TRADER_HOUSE]oil trader's house[\LINK], where the [LINK=PROFESSION_OLIVE_OIL_TRADER]olive oil trader[\LINK] makes [LINK=YIELD_OLIVE_OIL]olive oil[\LINK] from [LINK=YIELD_OLIVES]olives[\LINK] or [LINK=PROFESSION_RAPE_OIL_TRADER]rapeseed oil trader[\LINK] makes [LINK=YIELD_RAPE_OIL]rapeseed oil[\LINK] from [LINK=YIELD_RAPE]rapeseed[\LINK]. [LINK=UNIT_OIL_TRADER]Master cooking oil traders[\LINK] are particularly effective at this.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Speiseölfabrik[COLOR_REVERT] ist das höchste Ausbaustufe des [LINK=BUILDING_OIL_TRADER_HOUSE]Haus des Ölhändlers[\LINK], wo der [LINK=PROFESSION_OLIVE_OIL_TRADER]Olivenölhändler[\LINK] das [LINK=YIELD_OLIVE_OIL]Olivenöl[\LINK] aus [LINK=YIELD_OLIVES]Oliven[\LINK] oder der [LINK=PROFESSION_RAPE_OIL_TRADER]Rapsölhändler[\LINK] das [LINK=YIELD_RAPE_OIL]Rapsöl[\LINK] aus [LINK=YIELD_RAPE]Raps[\LINK] herstellt.[PARAGRAPH:1][LINK=UNIT_OIL_TRADER]Meister-Speiseölhändler[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>Az [COLOR_HIGHLIGHT_TEXT]Étolaj Gyár[COLOR_REVERT] az [LINK=BUILDING_OIL_TRADER_HOUSE]Étolaj Bolt[\LINK] végső továbbfejlesztése, ahol az [LINK=PROFESSION_OLIVE_OIL_TRADER]Olívaolaj Készítő[\LINK] [LINK=YIELD_OLIVE_OIL]Olívaolajat[\LINK] készít [LINK=YIELD_OLIVES]Olajbogyóból[\LINK], vagy a [LINK=PROFESSION_RAPE_OIL_TRADER]Repceola Készítő[\LINK] [LINK=YIELD_RAPE_OIL]Repceolajat[\LINK] állít elő [LINK=YIELD_RAPE]Repcéből[\LINK]. Az [LINK=UNIT_OIL_TRADER]Étolajészítő Mesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<!-- ROASTER -->
 	<TEXT>
@@ -395,6 +440,7 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Pörkölő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_ROASTER_HOUSE</Tag>
@@ -406,6 +452,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом обжарщика</Russian>
+		<Hungarian>Pörkölő Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_ROASTER_SHOP</Tag>
@@ -417,6 +464,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская обжарки</Russian>
+		<Hungarian>Pörkölő Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_ROASTER_FACTORY</Tag>
@@ -428,6 +476,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика обжарки</Russian>
+		<Hungarian>Pörkölőüzem</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_HOUSE</Tag>
@@ -439,6 +488,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом обжарщика</Russian>
+		<Hungarian>Pörkölő Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_SHOP</Tag>
@@ -450,6 +500,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская обжарки</Russian>
+		<Hungarian>Pörkölő Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_FACTORY</Tag>
@@ -461,6 +512,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика обжарки</Russian>
+		<Hungarian>Pörkölőüzem</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_HOUSE_PEDIA</Tag>
@@ -469,21 +521,25 @@
 		<German>Erdnüsse werden in den Tropen und Subtropen weit verbreitet angebaut. Botanisch gesehen gehören sie zur Familie der Bohnengewächse, aber in der Küche werden sie wie eine Nuss verwendet. Im Gegensatz zu den meisten Hülsenfrüchten reifen Erdnussschoten unterirdisch.[NEWLINE]Erdnüsse sind eine hervorragende Quelle für Proteine und Vitamine. Sie ergänzen die traditionellen europäischen Getreidesorten und tragen zur Gesundheit und Ausdauer der Arbeitnehmer bei.</German>
 		<Italian>Le arachidi sono ampiamente coltivate nei tropici e nelle regioni subtropicali. Dal punto di vista botanico fanno parte della famiglia dei fagioli, ma in cucina vengono utilizzate come una noce. A differenza della maggior parte dei legumi, i baccelli delle arachidi maturano sottoterra.</Italian>
 		<Spanish>Los cacahuetes se cultivan ampliamente en las zonas tropicales y subtropicales. Botánicamente pertenecen a la familia de las judías, pero en la cocina se utilizan como frutos secos. A diferencia de la mayoría de las legumbres, las vainas de los cacahuetes maduran bajo tierra.</Spanish>
+		<Hungarian>A mogyorót széles körben termesztik a trópusokon és a szubtrópusokon. Botanikai szempontból a hüvelyesek családjába tartozik, de a konyhában dióféléként használják. A legtöbb hüvelyes növénytől eltérően a földimogyoró hüvelyei a föld alatt érnek be. A mogyoró kiváló fehérje- és vitaminforrás. Kiegészíti a hagyományos európai gabonaféléket, hozzájárulva a munkások egészségéhez és állóképességéhez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]roaster's house[COLOR_REVERT] is where various foods are roasted:[NEWLINE][LINK=PROFESSION_PEANUT_ROASTER]Peanut roasters[\LINK] roast [LINK=YIELD_PEANUTS]peanuts[\LINK] to make [LINK=YIELD_ROASTED_PEANUTS]roasted peanuts[\LINK]. [NEWLINE][LINK=PROFESSION_COCOA_ROASTER]cocoa roasters[\LINK] roast [LINK=YIELD_COCOA_FRUITS]cocoa pods[\LINK] to make [LINK=YIELD_COCOA]cocoa[\LINK]. [NEWLINE][LINK=PROFESSION_COFFEE_ROASTER]Coffee roasters[\LINK] roast [LINK=YIELD_COFFEE_BERRIES]coffee berries[\LINK] to make [LINK=YIELD_COFFEE]coffee[\LINK].[NEWLINE][LINK=UNIT_ROASTER]Master roasters[\LINK] are particularly effective in this regard.</English>
 		<German>Im [COLOR_HIGHLIGHT_TEXT]Haus des Rösters[COLOR_REVERT] oder einer seiner Ausbaustufen können verschiedene Lebensmittel geröstet werden:[NEWLINE][LINK=PROFESSION_PEANUT_ROASTER]Erdnussröster[\LINK] rösten [LINK=YIELD_PEANUTS]Erdnüsse[\LINK] um [LINK=YIELD_ROASTED_PEANUTS]geröstete Erdnüsse[\LINK] herzustellen.[NEWLINE][LINK=PROFESSION_COCOA_ROASTER]Kakaoröster[\LINK] rösten [LINK=YIELD_COCOA_FRUITS]Kakaofrüchte[\LINK] um [LINK=YIELD_COCOA]Kakao[\LINK] herzustellen.[NEWLINE][LINK=PROFESSION_COFFEE_ROASTER]Kaffeeröster[\LINK] rösten [LINK=YIELD_COFFEE_BERRIES]Kaffeebeeren[\LINK] um [LINK=YIELD_COFFEE]Kaffee[\LINK] herzustellen.[PARAGRAPH:1][LINK=UNIT_ROASTER]Röstmeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Pörkölő Boltban[COLOR_REVERT] különféle ételeket pörkölnek:[NEWLINE]A [LINK=PROFESSION_PEANUT_ROASTER]Mogyoró Pörkölők[\LINK] [LINK=YIELD_PEANUTS]Mogyorót[\LINK] pörkölnek, hogy [LINK=YIELD_ROASTED_PEANUTS]Pörkölt Mogyorót[\LINK] készítsenek.[NEWLINE]A [LINK=PROFESSION_COCOA_ROASTER]kakaóbab Pörkölők[\LINK] [LINK=YIELD_COCOA_FRUITS]Kakaóbabot[\LINK] pörkölnek, hogy [LINK=YIELD_COCOA]Kakaót[\LINK] készítsenek. [NEWLINE]A [LINK=PROFESSION_COFFEE_ROASTER]Kávépörkölők[\LINK] a  [LINK=YIELD_COFFEE_BERRIES]Kávébogyókat[\LINK] pörkölik, hogy [LINK=YIELD_COFFEE]kávét[\LINK] készítsenek.[NEWLINE]A [LINK=UNIT_ROASTER]Pörkölőmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_SHOP_PEDIA</Tag>
 		<English>Though they can be boiled, fresh harvested raw peanuts are usually roasted before being eaten. Enterprising roasters soon learn to add salt or grind the peanuts into peanut butter. Other nut butters soon follow.[NEWLINE]Once dried, peanuts last for a long time in a scout's saddlebags or in the barrels on a wagon. Peanut oil is also valuable for cooking.</English>
 		<German>Obwohl sie gekocht werden können, werden frisch geerntete, rohe Erdnüsse in der Regel geröstet, bevor sie verzehrt werden. Unternehmungslustige Röster lernten bald, Salz hinzuzufügen oder die Erdnüsse zu Erdnussbutter zu mahlen. Andere Nussbuttersorten folgten bald.[NEWLINE]Einmal getrocknet, halten sich Erdnüsse lange in den Satteltaschen der Pfadfinder oder in den Fässern auf dem Wagen. Erdnussöl ist auch zum Kochen wertvoll.</German>
+		<Hungarian>Bár meg lehet főzni őket, a frissen betakarított nyers mogyorót általában megpirítják, mielőtt megeszik. A vállalkozó szellemű pörkölők hamar megtanulják, hogy sózzák vagy őröljék a mogyorót mogyoróvajjá. Hamarosan más diófélékből készült vajak is megjelennek.[NEWLINE]A mogyoró szárítás után hosszú ideig eltartható a cserkészek nyeregtáskájában vagy a szekér hordóiban. A mogyoróolaj is értékes főzéshez.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_SHOP_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]roaster shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_ROASTER_HOUSE]roaster's house[\LINK] where various foods are roasted:[NEWLINE][LINK=PROFESSION_PEANUT_ROASTER]Peanut roasters[\LINK] roast [LINK=YIELD_PEANUTS]peanuts[\LINK] to make [LINK=YIELD_ROASTED_PEANUTS]roasted peanuts[\LINK]. [NEWLINE][LINK=PROFESSION_COCOA_ROASTER]cocoa roasters[\LINK] roast [LINK=YIELD_COCOA_FRUITS]cocoa pods[\LINK] to make [LINK=YIELD_COCOA]cocoa[\LINK]. [NEWLINE][LINK=PROFESSION_COFFEE_ROASTER]Coffee roasters[\LINK] roast [LINK=YIELD_COFFEE_BERRIES]coffee berries[\LINK] to make [LINK=YIELD_COFFEE]coffee[\LINK].[NEWLINE][LINK=UNIT_ROASTER]Master roasters[\LINK] are particularly effective in this regard.</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Röstwarenladen[COLOR_REVERT] ist die mittlere Ausbaustufe des [LINK=BUILDING_ROASTER_HOUSE]Haus des Rösters[\LINK], wo verschiedene Lebensmittel geröstet werden:[NEWLINE][LINK=PROFESSION_PEANUT_ROASTER]Erdnussröster[\LINK] rösten [LINK=YIELD_PEANUTS]Erdnüsse[\LINK] um [LINK=YIELD_ROASTED_PEANUTS]geröstete Erdnüsse[\LINK] herzustellen.[NEWLINE][LINK=PROFESSION_COCOA_ROASTER]Kakaoröster[\LINK] rösten [LINK=YIELD_COCOA_FRUITS]Kakaofrüchte[\LINK] um [LINK=YIELD_COCOA]Kakao[\LINK] herzustellen.[NEWLINE][LINK=PROFESSION_COFFEE_ROASTER]Kaffeeröster[\LINK] rösten [LINK=YIELD_COFFEE_BERRIES]Kaffeebeeren[\LINK] um [LINK=YIELD_COFFEE]Kaffee[\LINK] herzustellen.[PARAGRAPH:1][LINK=UNIT_ROASTER]Röstmeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Pörkölő Üzlet[COLOR_REVERT] a [LINK=BUILDING_ROASTER_HOUSE]Pörkölő Bolt[\LINK] továbbfejlesztése, ahol különböző ételeket pörkölnek:[NEWLINE]A [LINK=PROFESSION_PEANUT_ROASTER]Mogyoró Pörkölők[\LINK] [LINK=YIELD_PEANUTS]Mogyorót[\LINK] pörkölnek, hogy [LINK=YIELD_ROASTED_PEANUTS]Pörkölt Mogyorót[\LINK] készítsenek.[NEWLINE]A [LINK=PROFESSION_COCOA_ROASTER]kakaóbab Pörkölők[\LINK] [LINK=YIELD_COCOA_FRUITS]Kakaóbabot[\LINK] pörkölnek, hogy [LINK=YIELD_COCOA]Kakaót[\LINK] készítsenek. [NEWLINE]A [LINK=PROFESSION_COFFEE_ROASTER]Kávépörkölők[\LINK] a  [LINK=YIELD_COFFEE_BERRIES]Kávébogyókat[\LINK] pörkölik, hogy [LINK=YIELD_COFFEE]kávét[\LINK] készítsenek.[NEWLINE]A [LINK=UNIT_ROASTER]Pörkölőmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ROASTER_FACTORY_PEDIA</Tag>
