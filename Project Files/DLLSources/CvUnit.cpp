@@ -474,6 +474,129 @@ void CvUnit::convert(CvUnit* pUnit, bool bKill)
 	}
 }
 
+// WTP, Schmiddie, Maritime Wrecks and Salvage - START
+static const int WTP_SHIPWRECK_SPAWN_CHANCE = 30;
+static const int WTP_SHIPWRECK_READY_DELAY = 2;
+
+static bool isWTPShipwreckImprovement(ImprovementTypes eImprovement)
+{
+	return eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT3");
+}
+
+static bool isValidWTPShipwreckSpawnPlot(CvPlot* pPlot)
+{
+	if (pPlot == NULL)
+	{
+		return false;
+	}
+
+	if (!pPlot->isWater())
+	{
+		return false;
+	}
+
+	if (pPlot->isCity())
+	{
+		return false;
+	}
+
+	if (pPlot->isLake())
+	{
+		return false;
+	}
+
+	if (pPlot->isEurope())
+	{
+		return false;
+	}
+
+	if (pPlot->getTerrainType() == TERRAIN_LARGE_RIVERS)
+	{
+		return false;
+	}
+
+	if (pPlot->getFeatureType() != NO_FEATURE && GC.getFeatureInfo(pPlot->getFeatureType()).isTerrain(TERRAIN_LARGE_RIVERS))
+	{
+		return false;
+	}
+
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+static int getWTPShipwreckReadyTurn(CvPlot* pPlot)
+{
+	if (pPlot == NULL)
+	{
+		return 0;
+	}
+
+	CvString szScriptData = pPlot->getScriptData();
+	CvString szKey = "WTP_SHIPWRECK_READY_TURN=";
+
+	int iPos = szScriptData.find(szKey);
+
+	if (iPos == -1)
+	{
+		return 0;
+	}
+
+	iPos += szKey.GetLength();
+
+	return atoi(szScriptData.substr(iPos).c_str());
+}
+
+static void setWTPShipwreckReadyTurn(CvPlot* pPlot, int iReadyTurn)
+{
+	if (pPlot == NULL)
+	{
+		return;
+	}
+
+	CvString szScriptData = pPlot->getScriptData();
+	CvString szNewEntry;
+	szNewEntry.Format("|WTP_SHIPWRECK_READY_TURN=%d", iReadyTurn);
+	szScriptData += szNewEntry;
+	pPlot->setScriptData(szScriptData);
+}
+
+static bool isWTPShipwreckProtected(CvPlot* pPlot)
+{
+	if (pPlot == NULL)
+	{
+		return false;
+	}
+
+	if (!isWTPShipwreckImprovement(pPlot->getImprovementType()))
+	{
+		return false;
+	}
+
+	return GC.getGameINLINE().getGameTurn() < getWTPShipwreckReadyTurn(pPlot);
+}
+
+static void createWTPShipwreck(CvPlot* pPlot)
+{
+	if (!isValidWTPShipwreckSpawnPlot(pPlot))
+	{
+		return;
+	}
+
+	ImprovementTypes eImprovement = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT3");
+
+	if (eImprovement == NO_IMPROVEMENT)
+	{
+		return;
+	}
+
+	pPlot->setImprovementType(eImprovement);
+	setWTPShipwreckReadyTurn(pPlot, GC.getGameINLINE().getGameTurn() + WTP_SHIPWRECK_READY_DELAY);
+}
+// WTP, Schmiddie, Maritime Wrecks and Salvage - END
 
 void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 {
@@ -484,6 +607,15 @@ void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 	FAssert(GET_PLAYER(getOwnerINLINE()).checkPopulation());
 
 	const CvCity* pCity = pPlot->getPlotCity();
+	// WTP, Schmiddie, Maritime Wrecks and Salvage - START
+	if (getDomainType() == DOMAIN_SEA)
+	{
+		if (GC.getGameINLINE().getSorenRandNum(100, "WTP Shipwreck Spawn") < WTP_SHIPWRECK_SPAWN_CHANCE)
+		{
+			createWTPShipwreck(pPlot);
+		}
+	}
+	// WTP, Schmiddie, Maritime Wrecks and Salvage - END
 	if (pCity != NULL && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer() && pCity->isCitySelected())
 	{
 		// mark city screen to be redrawn to prevent leaving a ghost behind
@@ -11199,15 +11331,19 @@ void CvUnit::jumpTo(Coordinates toCoord, bool bGroup, bool bUpdate, bool bShow, 
 	{
 		if (pNewPlot->isGoody(getTeam()))
 		{
-			for (int i = 0; i < GC.getNumFatherPointInfos(); ++i)
+			if (!isWTPShipwreckProtected(pNewPlot))
 			{
-				FatherPointTypes ePointType = (FatherPointTypes) i;
-				GET_PLAYER(getOwnerINLINE()).changeFatherPoints(ePointType, GC.getFatherPointInfo(ePointType).getGoodyPoints() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getFatherPercent() / 100);
+				for (int i = 0; i < GC.getNumFatherPointInfos(); ++i)
+				{
+					FatherPointTypes ePointType = (FatherPointTypes) i;
+					GET_PLAYER(getOwnerINLINE()).changeFatherPoints(ePointType, GC.getFatherPointInfo(ePointType).getGoodyPoints() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getFatherPercent() / 100);
+				}
+
+				if (pTransportUnit == NULL || !pNewPlot->isWater())//R&R, ray, transported units should not trigger goodies, so transports themself will
+				{
+					GET_PLAYER(getOwnerINLINE()).doGoody(pNewPlot, this);
+				}
 			}
-
-
-			if (pTransportUnit == NULL || !pNewPlot->isWater())//R&R, ray, transported units should not trigger goodies, so transports themself will
-				GET_PLAYER(getOwnerINLINE()).doGoody(pNewPlot, this);
 		}
 	}
 	// PatchMod: Achievements START
