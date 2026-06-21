@@ -19722,11 +19722,6 @@ bool CvPlayer::isProfessionValid(ProfessionTypes eProfession, UnitTypes eUnit) c
 {
 	if (eProfession != NO_PROFESSION)
 	{
-		if (!isProfessionWithinGameYearWindow(eProfession))
-		{
-			return false;
-		}
-		
 		// CivEffect check
 		if (!CivEffect().canUseProfession(eProfession))
 		{
