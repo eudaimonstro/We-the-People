@@ -7038,6 +7038,26 @@ def _spawnPirateAttackUnit(player, bPlayer, pPlot, unitList):
 
 	bPlayer.initUnit(iUnit, ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
 
+def _getPirateAttackSpawnPlot(city):
+	if city.isNone():
+		return None
+
+	iOcean = gc.getInfoTypeForString("TERRAIN_OCEAN")
+
+	for iDX in range(-2, 3):
+		for iDY in range(-2, 3):
+			pPlot = plotXY(city.getX(), city.getY(), iDX, iDY)
+
+			if pPlot is None or pPlot.isNone():
+				continue
+
+			if not pPlot.isWater():
+				continue
+
+			if pPlot.getTerrainType() == iOcean:
+				return pPlot
+
+	return None
 
 def doPirateAttack1(argsList):
 	kTriggeredData = argsList[0]
