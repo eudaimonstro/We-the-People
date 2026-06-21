@@ -7015,26 +7015,28 @@ def canTriggerPirateAttack2(argsList):
 
 	return True
 
-def _getPirateAttackSpawnPlot(city):
-	if city.isNone():
-		return None
+def _getFirstAvailablePirateAttackUnit(player, unitList):
+	for iUnit in unitList:
+		if iUnit != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnit
 
-	iOcean = gc.getInfoTypeForString("TERRAIN_OCEAN")
+	for iUnit in reversed(unitList):
+		if iUnit != -1:
+			return iUnit
 
-	for iDX in range(-2, 3):
-		for iDY in range(-2, 3):
-			pPlot = plotXY(city.getX(), city.getY(), iDX, iDY)
+	return -1
 
-			if pPlot is None or pPlot.isNone():
-				continue
+def _spawnPirateAttackUnit(player, bPlayer, pPlot, unitList):
+	if pPlot is None or pPlot.isNone():
+		return
 
-			if not pPlot.isWater():
-				continue
+	iUnit = _getFirstAvailablePirateAttackUnit(player, unitList)
 
-			if pPlot.getTerrainType() == iOcean:
-				return pPlot
+	if iUnit == -1:
+		return
 
-	return None
+	bPlayer.initUnit(iUnit, ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
 
 
 def doPirateAttack1(argsList):
@@ -7054,8 +7056,14 @@ def doPirateAttack1(argsList):
 
 	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
 
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	_spawnPirateAttackUnit(player, bPlayer, pPlot, [
+		gc.getInfoTypeForString("UNIT_PRIVATEER"),
+		gc.getInfoTypeForString("UNIT_PIRATE_SHIP"),
+	])
+
+	_spawnPirateAttackUnit(player, bPlayer, pPlot, [
+		gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"),
+	])
 
 def doPirateAttack2(argsList):
 	kTriggeredData = argsList[0]
@@ -7074,10 +7082,29 @@ def doPirateAttack2(argsList):
 
 	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
 
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PRIVATEER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	_spawnPirateAttackUnit(player, bPlayer, pPlot, [
+		gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"),
+		gc.getInfoTypeForString("UNIT_PRIVATEER"),
+		gc.getInfoTypeForString("UNIT_PIRATE_SHIP"),
+		gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"),
+	])
+
+	_spawnPirateAttackUnit(player, bPlayer, pPlot, [
+		gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"),
+		gc.getInfoTypeForString("UNIT_PRIVATEER"),
+		gc.getInfoTypeForString("UNIT_PIRATE_SHIP"),
+		gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"),
+	])
+
+	_spawnPirateAttackUnit(player, bPlayer, pPlot, [
+		gc.getInfoTypeForString("UNIT_PRIVATEER"),
+		gc.getInfoTypeForString("UNIT_PIRATE_SHIP"),
+		gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"),
+	])
+
+	_spawnPirateAttackUnit(player, bPlayer, pPlot, [
+		gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"),
+	])
 
 def canTriggerTavernVsChapel(argsList):
 	ePlayer = argsList[1]
