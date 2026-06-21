@@ -379,7 +379,15 @@ void CvPlayer::initFreeUnits()
 			UnitClassTypes eLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
 			ProfessionTypes eLoopUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
 			UnitTypes eLoopUnit = kCivilizationInfo.getCivilizationUnits(eLoopUnitClass);
-
+// WTP, Schmiddie, Availability Change Project
+			if (eLoopUnit != NO_UNIT)
+			{
+				if (!isUnitWithinGameYearWindow(eLoopUnit))
+				{
+					continue;
+				}
+			}
+// WTP, Schmiddie, Availability Change Project
 			if (eLoopUnit != NO_UNIT)
 			{
 				int iFreeCount = (GC.getEraInfo(GC.getGameINLINE().getStartEra()).getStartingUnitMultiplier() + ((!isHuman()) ? GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIStartingUnitMultiplier() : 0));
@@ -495,6 +503,7 @@ void CvPlayer::initImmigration()
 
 // Make sure the number of units on the dock matches what the player is supposed to have by add/remove units.
 // Also replace any unit, which is no longer able to be available on the dock.
+// WTP, Schmiddie, Availability Change Project
 void CvPlayer::verifyImmigration()
 {
 	FAssert(!this->isEurope());
@@ -504,9 +513,9 @@ void CvPlayer::verifyImmigration()
 	for (unsigned int i = 0; i < m_aDocksNextUnits.size(); ++i)
 	{
 		UnitTypes eUnit = m_aDocksNextUnits[i];
-		if (eUnit != NO_UNIT && (!CivEffect().canUseUnit(eUnit) || !CivEffect().canUseImmigrant(eUnit)))
+		if (eUnit != NO_UNIT && (!CivEffect().canUseUnit(eUnit) || !CivEffect().canUseImmigrant(eUnit) || !isUnitWithinGameYearWindow(eUnit)))
 		{
-			if (eUnit != NO_UNIT && (!CivEffect().canUseUnit(eUnit) || !CivEffect().canUseImmigrant(eUnit)))
+			if (eUnit != NO_UNIT && (!CivEffect().canUseUnit(eUnit) || !CivEffect().canUseImmigrant(eUnit) || !isUnitWithinGameYearWindow(eUnit)))
 			{
 				m_aDocksNextUnits.erase(m_aDocksNextUnits.begin() + i);
 				--i; // compensate for ++i as next iteration needs to use the same value for i
@@ -529,7 +538,7 @@ void CvPlayer::verifyImmigration()
 		}
 	}
 }
-
+// WTP, Schmiddie, Availability Change Project
 
 void CvPlayer::addFreeUnitAI(UnitAITypes eUnitAI, int iCount)
 {
@@ -1629,6 +1638,7 @@ bool CvPlayer::initEuropeSettler(bool bPayEquipment)
 //WTP, ray, Settler Professsion - END
 
 //WTP, jooe, new respawn logic - START
+// WTP, Schmiddie, Availability Change Project
 bool CvPlayer::initEuropeTransport(bool bPay)
 {
 	CvCivilizationInfo& kCivilizationInfo = GC.getCivilizationInfo(getCivilizationType());
@@ -1638,21 +1648,28 @@ bool CvPlayer::initEuropeTransport(bool bPay)
 		ProfessionTypes eLoopUnitProfession = kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
 		UnitTypes eLoopUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(eLoopUnitClass);
 
-		if (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == UNITAI_TRANSPORT_SEA)
+		if (eLoopUnit != NO_UNIT)
 		{
-			int iPrice = 0;
-			if(bPay)
-				iPrice = getEuropeUnitBuyPrice(eLoopUnit);
-
-			if(getGold() >= iPrice)
+			if (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == UNITAI_TRANSPORT_SEA)
 			{
-				CvUnit* pUnit = buyEuropeUnit(eLoopUnit, bPay ? 100 : 0);
-				return true;
+				if (canTrain(eLoopUnit, false, false, true))
+				{
+					int iPrice = 0;
+					if(bPay)
+						iPrice = getEuropeUnitBuyPrice(eLoopUnit);
+
+					if(getGold() >= iPrice)
+					{
+						CvUnit* pUnit = buyEuropeUnit(eLoopUnit, bPay ? 100 : 0);
+						return true;
+					}
+				}
 			}
 		}
 	}
 	return false;
 }
+// WTP, Schmiddie, Availability Change Project
 //WTP, jooe, new respawn logic - END
 
 /*** TRIANGLETRADE 10/23/08 by DPII ***/
@@ -2448,11 +2465,14 @@ void CvPlayer::doTurnUnits()
 					if (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == UNITAI_TRANSPORT_SEA)
 					// TAC - AI Improved Navel AI - koma13 - END
 					{
-						int iCost = getEuropeUnitBuyPrice(eLoopUnit);
-						if (iCost < iLowestCost && iCost >= 0)
+						if (canTrain(eLoopUnit, false, false, true))
 						{
-							iLowestCost = iCost;
-							eCheapestShip = eLoopUnit;
+							int iCost = getEuropeUnitBuyPrice(eLoopUnit);
+							if (iCost < iLowestCost && iCost >= 0)
+							{
+								iLowestCost = iCost;
+								eCheapestShip = eLoopUnit;
+							}
 						}
 					}
 				}
@@ -4064,12 +4084,36 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 		break;
 	// R&R, ray, Conquistadors - END
 
-
+	//WTP, Schmiddie, Availability Change Projekt START
 	// R&R, ray, Pirates - START
 	case DIPLOEVENT_ACQUIRE_PIRATES:
-		GET_PLAYER(ePlayer).buyUnitFromPlayer(getID(), UNITCLASS_PIRATE_FRIGATE, 1, "TXT_KEY_HIRED_PIRATES", iData1, LocationFlags::LocationFlagDeepCoastal, false);
-		break;
+		{
+			CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
+			UnitClassTypes ePirateUnitClass = NO_UNITCLASS;
+
+			UnitTypes ePirateFrigate = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
+			if (ePirateFrigate != NO_UNIT && kPlayer.canTrain(ePirateFrigate, false, false, true))
+			{
+				ePirateUnitClass = UNITCLASS_PIRATE_FRIGATE;
+			}
+
+			if (ePirateUnitClass == NO_UNITCLASS)
+			{
+				UnitTypes ePirateShip = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_SHIP);
+				if (ePirateShip != NO_UNIT && kPlayer.canTrain(ePirateShip, false, false, true))
+				{
+					ePirateUnitClass = UNITCLASS_PIRATE_SHIP;
+				}
+			}
+
+			if (ePirateUnitClass != NO_UNITCLASS)
+			{
+				kPlayer.buyUnitFromPlayer(getID(), ePirateUnitClass, 1, "TXT_KEY_HIRED_PIRATES", iData1, LocationFlags::LocationFlagDeepCoastal, false);
+			}
+		}
+		break;
+	//WTP, Schmiddie, Availability Change Projekt END
 	case DIPLOEVENT_BRIBE_PIRATES:
 		{
 			int pricetopay = iData1 / 10;
@@ -6217,10 +6261,91 @@ CvCity* CvPlayer::found(Coordinates foundCoord)
 	return pCity;
 }
 
+// WTP, Schmiddie, Availability Change Project Start
+bool CvPlayer::isUnitWithinGameYearWindow(UnitTypes eUnit) const
+{
+	if (eUnit == NO_UNIT)
+	{
+		return true;
+	}
+
+	const CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
+
+	const int iCurrentYear = GC.getGameINLINE().getGameTurnYear();
+
+	const int iAvailableYear = kUnit.getGameYearAvailable();
+	const int iObsoleteYear = kUnit.getGameYearObsolete();
+
+	if (iAvailableYear > 0 && iCurrentYear < iAvailableYear)
+	{
+		return false;
+	}
+
+	if (iObsoleteYear > 0 && iCurrentYear >= iObsoleteYear)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool CvPlayer::isProfessionWithinGameYearWindow(ProfessionTypes eProfession) const
+{
+	if (eProfession == NO_PROFESSION)
+	{
+		return true;
+	}
+
+	const CvProfessionInfo& kProfession = GC.getProfessionInfo(eProfession);
+
+	const int iCurrentYear = GC.getGameINLINE().getGameTurnYear();
+
+	const int iAvailableYear = kProfession.getGameYearAvailable();
+	const int iObsoleteYear = kProfession.getGameYearObsolete();
+
+	if (iAvailableYear > 0 && iCurrentYear < iAvailableYear)
+	{
+		return false;
+	}
+
+	if (iObsoleteYear > 0 && iCurrentYear >= iObsoleteYear)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool CvPlayer::isBuildingAvailableByGameYear(BuildingTypes eBuilding) const
+{
+	if (eBuilding == NO_BUILDING)
+	{
+		return true;
+	}
+
+	const CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+	const int iCurrentYear = GC.getGameINLINE().getGameTurnYear();
+
+	const int iAvailableYear = kBuilding.getGameYearAvailable();
+
+	if (iAvailableYear > 0 && iCurrentYear < iAvailableYear)
+	{
+		return false;
+	}
+
+	return true;
+}
+
 
 bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool bIgnoreCost) const
 {
 	PROFILE_FUNC();
+
+	if (!bContinue && !isUnitWithinGameYearWindow(eUnit))
+	{
+		return false;
+	}
 
 	const UnitClassTypes eUnitClass = GC.getUnitInfo(eUnit).getUnitClassType();
 
@@ -6275,6 +6400,11 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 {
 	BuildingClassTypes eBuildingClass;
 	CvTeamAI& currentTeam = GET_TEAM(getTeam());
+
+	if (!isBuildingAvailableByGameYear(eBuilding))
+	{
+		return false;
+	}
 
 	eBuildingClass = ((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType()));
 
@@ -6361,6 +6491,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	return true;
 }
+// WTP, Schmiddie, Availability Change Project End
 
 int CvPlayer::getYieldProductionNeeded(UnitTypes eUnit, YieldTypes eYield) const
 {
@@ -6769,19 +6900,34 @@ void CvPlayer::processFatherOnce(FatherTypes eFather)
 	const CvFatherInfo& kFatherInfo = GC.getFatherInfo(eFather);
 
 	CivEffect().applyCivEffect(kFatherInfo.getCivEffect());
-
+//WTP, Schmiddie, Units Availability Change Projekt START
 	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		if (kFatherInfo.getFreeUnits(eUnitClass) == 0)
+		const int iFreeUnits = kFatherInfo.getFreeUnits(eUnitClass);
+
+		if (iFreeUnits == 0)
 		{
 			continue;
 		}
 
-		UnitTypes eUnit = (UnitTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
+		UnitClassTypes eRewardUnitClass = eUnitClass;
+		UnitTypes eUnit = (UnitTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eRewardUnitClass);
 
-		if (eUnit == NO_UNIT)
+		if (eUnit == NO_UNIT || !isUnitWithinGameYearWindow(eUnit))
 		{
-			continue;
+			eRewardUnitClass = (UnitClassTypes) kFatherInfo.getAlternativeFreeUnitClass(eUnitClass);
+
+			if (eRewardUnitClass == NO_UNITCLASS)
+			{
+				continue;
+			}
+
+			eUnit = (UnitTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eRewardUnitClass);
+
+			if (eUnit == NO_UNIT || !isUnitWithinGameYearWindow(eUnit))
+			{
+				continue;
+			}
 		}
 
 		const CvUnitInfo& UnitInfo = GC.getUnitInfo(eUnit);
@@ -6789,7 +6935,7 @@ void CvPlayer::processFatherOnce(FatherTypes eFather)
 		// add the units one by one. This is the least CPU efficient approach, but it is also the least likely solution to break something.
 		// adding FFs is so rare that performance doesn't matter at all. We just need to get the right result here.
 		//    Nightinggale
-		for (int i = 0; i < kFatherInfo.getFreeUnits(eUnitClass); ++i)
+		for (int i = 0; i < iFreeUnits; ++i)
 		{
 			// units spawns in the following locations
 			// 1 city with available harbor/barrack space (skipped for units not using this)
@@ -6799,7 +6945,7 @@ void CvPlayer::processFatherOnce(FatherTypes eFather)
 			// 5 Port Royal (during WOI only)
 			// ships can only spawn in cities with movable terrain next to them, so shallow/deep coast, not landlocked etc
 			// Europe and Port Royal can't spawn ships, which can't cross enter ocean (in extremely rare cases those ships can theoretically fail to spawn)
-
+//WTP, Schmiddie, Units Availability Change Projekt END
 			switch (UnitInfo.getDomainType())
 			{
 			case DOMAIN_SEA:
@@ -12048,6 +12194,8 @@ void CvPlayer::doCrosses()
 		return;
 	}
 
+	verifyImmigration(); // WTP, Schmiddie, Availability Change Project
+
 	int iCrossRate = getYieldRate(YIELD_CROSSES);
 	// WTP, ray, Happiness - START
 	int iHappinessRate = getHappinessRate();
@@ -17054,7 +17202,12 @@ int CvPlayer::getEuropeUnitBuyPrice(UnitTypes eUnit, bool bIncrease) const
 // TAC - AI purchases military units - koma13 - END
 {
 	CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
-
+// WTP, Schmiddie, Availability Change Project
+	if (!isUnitWithinGameYearWindow(eUnit))
+	{
+		return -1;
+	}
+// WTP, Schmiddie, Availability Change Project
 	int iCost = kUnit.getEuropeCost();
 
 	bool bNegative = (iCost < 0);
@@ -18259,7 +18412,12 @@ CvUnit* CvPlayer::buyEuropeUnit(UnitTypes eUnit, int iPriceModifier)
 int CvPlayer::getAfricaUnitBuyPrice(UnitTypes eUnit) const
 {
 	CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
-
+// WTP, Schmiddie, Availability Change Project
+	if (!isUnitWithinGameYearWindow(eUnit))
+	{
+		return -1;
+	}
+// WTP, Schmiddie, Availability Change Project
 	int iCost = kUnit.getAfricaCost();
 	if (iCost < 0)
 	{
@@ -18366,7 +18524,12 @@ CvUnit* CvPlayer::buyAfricaUnit(UnitTypes eUnit, int iPriceModifier)
 int CvPlayer::getPortRoyalUnitBuyPrice(UnitTypes eUnit) const
 {
 	CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
-
+// WTP, Schmiddie, Availability Change Project
+	if (!isUnitWithinGameYearWindow(eUnit))
+	{
+		return -1;
+	}
+// WTP, Schmiddie, Availability Change Project
 	int iCost = kUnit.getPortRoyalCost();
 	if (iCost < 0)
 	{
@@ -19558,6 +19721,11 @@ bool CvPlayer::isProfessionValid(ProfessionTypes eProfession, UnitTypes eUnit) c
 {
 	if (eProfession != NO_PROFESSION)
 	{
+		if (!isProfessionWithinGameYearWindow(eProfession))
+		{
+			return false;
+		}
+		
 		// CivEffect check
 		if (!CivEffect().canUseProfession(eProfession))
 		{
@@ -19830,12 +19998,50 @@ ProfessionTypes CvPlayer::getRevolutionEuropeProfession(int i) const
 
 	return m_aEuropeRevolutionUnits[i].second;
 }
-
+// WTP, Schmiddie, Availability Change Project
 void CvPlayer::addRevolutionEuropeUnit(UnitTypes eUnit, ProfessionTypes eProfession)
 {
-	m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
-}
+	if (!isUnitWithinGameYearWindow(eUnit))
+	{
+		return;
+	}
 
+	if (!isProfessionWithinGameYearWindow(eProfession))
+	{
+		return;
+	}
+
+	bool bModernizeObsoleteShip = false;
+
+	if (GC.getUnitInfo(eUnit).getDomainType() == DOMAIN_SEA)
+	{
+		for (int iI = 0; iI < (int)m_aEuropeRevolutionUnits.size(); ++iI)
+		{
+			UnitTypes eOldUnit = m_aEuropeRevolutionUnits[iI].first;
+
+			if (eOldUnit != NO_UNIT)
+			{
+				if (GC.getUnitInfo(eOldUnit).getDomainType() == DOMAIN_SEA)
+				{
+					if (!isUnitWithinGameYearWindow(eOldUnit))
+					{
+						m_aEuropeRevolutionUnits.erase(m_aEuropeRevolutionUnits.begin() + iI);
+						bModernizeObsoleteShip = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
+
+	if (bModernizeObsoleteShip)
+	{
+		m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
+	}
+}
+// WTP, Schmiddie, Availability Change Project
 void CvPlayer::clearRevolutionEuropeUnits()
 {
 	m_aEuropeRevolutionUnits.clear();
@@ -19851,13 +20057,13 @@ UnitTypes CvPlayer::getDocksNextUnit(int i) const
 	FAssert(i < (int)m_aDocksNextUnits.size());
 	return m_aDocksNextUnits[i];
 }
-
+// WTP, Schmiddie, Availability Change Project
 UnitTypes CvPlayer::pickBestImmigrant()
 {
 	std::vector<int> aiWeights(NUM_UNIT_TYPES, 0);
 	for (UnitTypes eUnit = FIRST_UNIT; eUnit < NUM_UNIT_TYPES; ++eUnit)
 	{
-		if (CivEffect().canUseUnit(eUnit) && CivEffect().canUseImmigrant(eUnit))
+		if (CivEffect().canUseUnit(eUnit) && CivEffect().canUseImmigrant(eUnit) && isUnitWithinGameYearWindow(eUnit))
 		{
 			const CvUnitInfo& kInfo = GC.getUnitInfo(eUnit);
 			int iWeight = kInfo.getImmigrationWeight();
@@ -19880,7 +20086,7 @@ UnitTypes CvPlayer::pickBestImmigrant()
 
 	return eBestUnit;
 }
-
+// WTP, Schmiddie, Availability Change Project
 bool CvPlayer::canHurry(HurryTypes eHurry, int iIndex) const
 {
 	CvHurryInfo& kHurry = GC.getHurryInfo(eHurry);
@@ -22986,12 +23192,35 @@ void CvPlayer::checkForPirates()
 		m_iTimerPirates = GC.getTIMER_PIRATES() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent() / 100;
 		return;
 	}
-
-	if (countNumCoastalCities() <= getUnitClassCount((UnitClassTypes)GC.getDefineINT("UNITCLASS_PIRATE_FRIGATE")))
+	//WTP, Schmiddie, Availability Change Projekt START
+	if (countNumCoastalCities() <= getUnitClassCount(UNITCLASS_PIRATE_FRIGATE) + getUnitClassCount(UNITCLASS_PIRATE_SHIP))
 	{
 		return;
 	}
 
+
+	UnitTypes PirateShipType = NO_UNIT;
+
+	UnitTypes ePirateFrigate = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
+	if (ePirateFrigate != NO_UNIT && canTrain(ePirateFrigate, false, false, true))
+	{
+		PirateShipType = ePirateFrigate;
+	}
+
+	if (PirateShipType == NO_UNIT)
+	{
+		UnitTypes ePirateShip = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_SHIP);
+		if (ePirateShip != NO_UNIT && canTrain(ePirateShip, false, false, true))
+		{
+			PirateShipType = ePirateShip;
+		}
+	}
+
+	if (PirateShipType == NO_UNIT)
+	{
+		return;
+	}
+	//WTP, Schmiddie, Availability Change Projekt END
 	// simple logic for AI
 	if (!isHuman())
 	{
@@ -22999,7 +23228,6 @@ void CvPlayer::checkForPirates()
 		if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 		{
 			//create the pirate ship
-			UnitTypes PirateShipType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
 			CvUnit* PirateShipUnit;
 			PirateShipUnit = initUnit(PirateShipType, GC.getUnitInfo(PirateShipType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 			//pay
@@ -23501,13 +23729,13 @@ void CvPlayer::createEnemyPirates()
 	}
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(GC.getGameINLINE().getBarbarianPlayer());
-
+	//WTP, Schmiddie, Availability Change Projekt START
 	// we never want to have too many of these
-	if (barbarianPlayer.getUnitClassCount((UnitClassTypes)GC.getDefineINT("UNITCLASS_PIRATE_FRIGATE")) > 6)
+	if (barbarianPlayer.getUnitClassCount(UNITCLASS_PIRATE_FRIGATE) + barbarianPlayer.getUnitClassCount(UNITCLASS_PIRATE_SHIP) > 6)
 	{
 		return;
 	}
-
+	//WTP, Schmiddie, Availability Change Projekt END
 	//get City
 	CvCity* pLoopCity = NULL;
 	CvCity* cityToAttack = NULL;
@@ -23549,11 +23777,32 @@ void CvPlayer::createEnemyPirates()
 			}
 		}
 	}
+	//WTP, Schmiddie, Availability Change Projekt START
+	UnitTypes PirateShipType = NO_UNIT;
 
+	UnitTypes ePirateFrigate = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
+	if (ePirateFrigate != NO_UNIT && canTrain(ePirateFrigate, false, false, true))
+	{
+		PirateShipType = ePirateFrigate;
+	}
+
+	if (PirateShipType == NO_UNIT)
+	{
+		UnitTypes ePirateShip = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_SHIP);
+		if (ePirateShip != NO_UNIT && canTrain(ePirateShip, false, false, true))
+		{
+			PirateShipType = ePirateShip;
+		}
+	}
+
+	if (PirateShipType == NO_UNIT)
+	{
+		return;
+	}
+	//WTP, Schmiddie, Availability Change Projekt END
 	// init Pirate Ship
 	if (pBestPlot != NULL)
 	{
-		UnitTypes PirateShipType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
 		CvUnit* PirateShipUnit;
 		PirateShipUnit = barbarianPlayer.initUnit(PirateShipType, GC.getUnitInfo(PirateShipType).getDefaultProfession(), pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), NO_UNITAI);
 		PirateShipUnit->setBarbarian(true);

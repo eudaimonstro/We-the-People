@@ -10394,8 +10394,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -10426,10 +10426,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyAntiPirateRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpAntiPirateRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>5</iGenericParameter1>
@@ -10455,8 +10455,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -10487,10 +10487,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyAntiPirateRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpAntiPirateRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>10</iGenericParameter1>
@@ -10516,8 +10516,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -10548,10 +10548,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyAntiPirateRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpAntiPirateRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>15</iGenericParameter1>
@@ -11136,8 +11136,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_BRIGANTINE</UnitClass>
-			<iNumFreeUnits>2</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -11173,10 +11173,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyFiveCathedralsRewardShips3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpFiveCathedralsRewardShips3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -13541,13 +13541,13 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
-			<UnitName>Schwarze Perle</UnitName>
+			<UnitName/>
 			<UnitCombatPromotions/>
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
@@ -13573,10 +13573,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyPiratesRewardShip4a</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpPiratesRewardShip4a</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -14290,7 +14290,7 @@
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
-			<bDisbandUnit>1</bDisbandUnit>
+			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
@@ -14325,10 +14325,10 @@
 				</EventTime>
 			</EventTimes>
 			<ClearEvents/>
-			<PythonCallback>applyKingPleased</PythonCallback>
+			<PythonCallback>applyCommandeeredTrackShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpKingPleased</PythonHelp>
+			<PythonHelp>getHelpCommandeeredTrackShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>600</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -14400,7 +14400,7 @@
 		<EventInfo>
 			<Type>EVENT_COMMANDEERED_RETURN</Type>
 			<Description>TXT_KEY_EVENT_COMMANDEERED_RETURN</Description>
-			<LocalInfoText/>
+			<LocalInfoText>TXT_KEY_EVENT_COMMANDEERED_RETURN</LocalInfoText>
 			<WorldNewsTexts/>
 			<OtherPlayerPopup/>
 			<QuestFailText/>
@@ -14412,11 +14412,11 @@
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>200</iRandomGold>
+			<iRandomGold>500</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -14447,10 +14447,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyCommandeeredReturn</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonCanDo>canDoCommandeeredReturn</PythonCanDo>
+			<PythonHelp>getHelpCommandeeredReturn</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -20186,7 +20186,7 @@
 			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
-			<bGlobal>1</bGlobal>
+			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
@@ -20196,8 +20196,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -20233,10 +20233,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyFiveDocksRewardShip2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpFiveDocksRewardShip2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -20262,8 +20262,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_BRIGANTINE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -20299,10 +20299,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyFiveDocksRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpFiveDocksRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -26185,13 +26185,13 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
 			<UnitPromotion/>
-			<UnitName>Queen Anne's Revenge</UnitName>
+			<UnitName/>
 			<UnitCombatPromotions/>
 			<UnitClassPromotions/>
 			<BuildingClass>NONE</BuildingClass>
@@ -26217,10 +26217,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyPrivateerRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpPrivateerRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>100</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -26246,8 +26246,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_MERCHANTMAN</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -26283,10 +26283,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applyPrivateerRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpPrivateerRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>100</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -28057,8 +28057,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_ROYAL_MAN_O_WAR</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -28094,15 +28094,15 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback/>
+			<PythonCallback>applySixWarshipsRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpSixWarshipsRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
 			<iGenericParameter2>0</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
+			<iGenericParameter3>1</iGenericParameter3>
 			<iGenericParameter4>0</iGenericParameter4>
 		</EventInfo>
 		<EventInfo>
@@ -28362,7 +28362,7 @@
 			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
-			<bGlobal>1</bGlobal>
+			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
 			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
@@ -28499,8 +28499,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_GALLEON</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -28531,10 +28531,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyKingPleased</PythonCallback>
+			<PythonCallback>applyFourTreasuresRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpKingPleased</PythonHelp>
+			<PythonHelp>getHelpFourTreasuresRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -28775,10 +28775,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyKingPleased</PythonCallback>
+			<PythonCallback>applyKingAngry</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpKingPleased</PythonHelp>
+			<PythonHelp>getHelpKingAngry</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>500</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -28804,8 +28804,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_ROYAL_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -28836,10 +28836,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyKingPleased</PythonCallback>
+			<PythonCallback>applyThreeGalleonsRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpKingPleased</PythonHelp>
+			<PythonHelp>getHelpThreeGalleonsRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>0</iGenericParameter1>
@@ -38611,8 +38611,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_BRIGANTINE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -38648,10 +38648,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDoneEuropeTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyEuropeTradeQuestRewardShip10</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDoneEuropeTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpEuropeTradeQuestRewardShip10</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>3000</iGenericParameter1>
@@ -39916,8 +39916,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_CORVETTE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -39953,10 +39953,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDoneEuropeTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyEuropeTradeQuestRewardShip11</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDoneEuropeTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpEuropeTradeQuestRewardShip11</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>3000</iGenericParameter1>
@@ -40439,8 +40439,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_SLOOP</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -40476,10 +40476,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDoneEuropeTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyEuropeTradeQuestRewardShipMuskets</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDoneEuropeTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpEuropeTradeQuestRewardShipMuskets</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>3000</iGenericParameter1>
@@ -40896,7 +40896,7 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_CARAVELA_REDONDA</UnitClass>
+			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
@@ -40933,10 +40933,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDoneEuropeTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyEuropeTradeQuestRewardShipRope</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDoneEuropeTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpEuropeTradeQuestRewardShipRope</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>3000</iGenericParameter1>
@@ -49285,8 +49285,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_SLOOP</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -49322,10 +49322,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDoneEuropeTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyEuropeTradeQuestRewardShipHardwood</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDoneEuropeTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpEuropeTradeQuestRewardShipHardwood</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -63717,8 +63717,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -63754,10 +63754,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -63783,8 +63783,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -63820,10 +63820,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -64108,8 +64108,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -64145,10 +64145,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -64174,8 +64174,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -64211,10 +64211,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -64499,8 +64499,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -64536,10 +64536,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -64565,8 +64565,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -64602,10 +64602,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -64890,8 +64890,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -64927,10 +64927,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -64956,8 +64956,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -64993,10 +64993,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -65281,8 +65281,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -65318,10 +65318,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -65347,8 +65347,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -65384,10 +65384,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -69639,7 +69639,7 @@
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>UNITCLASS_SMUGGLING_SHIP</UnitClass>
-			<iNumFreeUnits>3</iNumFreeUnits>
+			<iNumFreeUnits>2</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -69704,8 +69704,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
-			<iNumFreeUnits>2</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -69741,10 +69741,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip3</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip3</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -69770,8 +69770,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -69807,76 +69807,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyPortRoyalTradeQuestRewardShip4</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
-			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>800</iAIValue>
-			<iGenericParameter1>1000</iGenericParameter1>
-			<iGenericParameter2>YIELD_HARDWOOD</iGenericParameter2>
-			<iGenericParameter3>0</iGenericParameter3>
-			<iGenericParameter4>0</iGenericParameter4>
-		</EventInfo>
-		<EventInfo>
-			<Type>EVENT_PORTROYAL_TRADE_QUEST_HARDWOOD_DONE_8</Type>
-			<Description>TXT_KEY_EVENT_PORTROYAL_TRADE_QUEST_DONE_8</Description>
-			<LocalInfoText/>
-			<WorldNewsTexts/>
-			<OtherPlayerPopup/>
-			<QuestFailText/>
-			<bQuest>0</bQuest>
-			<bGlobal>1</bGlobal>
-			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
-			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
-			<bDeclareWar>0</bDeclareWar>
-			<iGold>0</iGold>
-			<bGoldToPlayer>0</bGoldToPlayer>
-			<iRandomGold>0</iRandomGold>
-			<iCulture>0</iCulture>
-			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_PIRATE_CUTTER</UnitClass>
-			<iNumFreeUnits>2</iNumFreeUnits>
-			<bDisbandUnit>0</bDisbandUnit>
-			<iUnitExperience>0</iUnitExperience>
-			<iUnitImmobileTurns>0</iUnitImmobileTurns>
-			<UnitPromotion/>
-			<UnitName/>
-			<UnitCombatPromotions/>
-			<UnitClassPromotions/>
-			<BuildingClass>NONE</BuildingClass>
-			<iBuildingChange>0</iBuildingChange>
-			<BuildingExtraYields/>
-			<iRevoltTurns>0</iRevoltTurns>
-			<iMinPillage>0</iMinPillage>
-			<iMaxPillage>0</iMaxPillage>
-			<iFood>0</iFood>
-			<iFoodPercent>0</iFoodPercent>
-			<FeatureType>NONE</FeatureType>
-			<iFeatureChange>0</iFeatureChange>
-			<ImprovementType>NONE</ImprovementType>
-			<iImprovementChange>0</iImprovementChange>
-			<RouteType>NONE</RouteType>
-			<iRouteChange>0</iRouteChange>
-			<BonusRevealed>NONE</BonusRevealed>
-			<PlotExtraYields/>
-			<iOurAttitudeModifier>0</iOurAttitudeModifier>
-			<iAttitudeModifier>0</iAttitudeModifier>
-			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
-			<iPopulationChange>0</iPopulationChange>
-			<AdditionalEvents/>
-			<EventTimes/>
-			<ClearEvents>
-				<EventChance>
-					<Event>EVENT_PORTROYAL_TRADE_QUEST_HARDWOOD_START</Event>
-					<iEventChance>100</iEventChance>
-				</EventChance>
-			</ClearEvents>
-			<PythonCallback>applyQuestDonePortRoyalTradePriceAndAttitude</PythonCallback>
-			<PythonExpireCheck/>
-			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDonePortRoyalTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpPortRoyalTradeQuestRewardShip4</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -77717,8 +77651,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -77754,10 +77688,10 @@
 					<iEventChance>100</iEventChance>
 				</EventChance>
 			</ClearEvents>
-			<PythonCallback>applyQuestDoneAfricaTradePriceAndAttitude</PythonCallback>
+			<PythonCallback>applyAfricaTradeQuestRewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpQuestDoneAfricaTradePriceAndAttitude</PythonHelp>
+			<PythonHelp>getHelpAfricaTradeQuestRewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>800</iAIValue>
 			<iGenericParameter1>1000</iGenericParameter1>
@@ -97896,8 +97830,8 @@
 			<iRandomGold>0</iRandomGold>
 			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
-			<UnitClass>UNITCLASS_GALLEON</UnitClass>
-			<iNumFreeUnits>1</iNumFreeUnits>
+			<UnitClass>NONE</UnitClass>
+			<iNumFreeUnits>0</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
 			<iUnitImmobileTurns>0</iUnitImmobileTurns>
@@ -97928,10 +97862,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyCibolaReturnDone</PythonCallback>
+			<PythonCallback>applyCibolaExpeditionArrival2RewardShip</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpCibolaExpeditionArrival2</PythonHelp>
+			<PythonHelp>getHelpCibolaExpeditionArrival2RewardShip</PythonHelp>
 			<Button>,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 			<iGenericParameter1>-1</iGenericParameter1>

@@ -1535,6 +1535,37 @@
 			<GoodyWeights/>
 		</GoodyInfo>
 		<GoodyInfo>
+			<Type>GOODY_ATTACKING_PIRATE_SHIP</Type>
+			<Description>TXT_KEY_GOODY_ATTACKING_PIRATE_SHIP</Description>
+			<Sound>AS2D_GOODY_XP</Sound>
+			<AnnounceText>TXT_KEY_GOODY_ATTACKING_PIRATE_SHIP</AnnounceText>
+			<ChiefText>TXT_KEY_GOODY_ATTACKING_PIRATE_SHIP</ChiefText>
+			<iGold>0</iGold>
+			<iGoldRand1>101</iGoldRand1>
+			<iGoldRand2>101</iGoldRand2>
+			<iImmigration>0</iImmigration>
+			<iMapOffset>0</iMapOffset>
+			<iMapRange>0</iMapRange>
+			<iMapProb>0</iMapProb>
+			<iExperience>10</iExperience>
+			<iHealing>0</iHealing>
+			<iDamagePrereq>0</iDamagePrereq>
+			<bBad>1</bBad>
+			<bWar>0</bWar>
+			<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
+			<TeachUnitClass>NONE</TeachUnitClass>
+			<iCityGoodyWeight>0</iCityGoodyWeight>
+			<bWaterGoody>1</bWaterGoody>
+			<bUnique>1</bUnique>
+			<iMinTurnValid>50</iMinTurnValid>
+			<iRandNumHostilesSpawned>1</iRandNumHostilesSpawned>
+			<bSpawnHostileUnitsAsXML>1</bSpawnHostileUnitsAsXML>
+			<bSpawnHostileAnimals>0</bSpawnHostileAnimals>
+			<bSpawnHostileNatives>0</bSpawnHostileNatives>
+			<bSpawnHostileCriminals>0</bSpawnHostileCriminals>
+			<GoodyWeights/>
+		</GoodyInfo>
+		<GoodyInfo>
 			<Type>GOODY_ATTACKING_PIRATE_FRIGATE</Type>
 			<Description>TXT_KEY_GOODY_ATTACKING_PIRATE_FRIGATE</Description>
 			<Sound>AS2D_GOODY_XP</Sound>

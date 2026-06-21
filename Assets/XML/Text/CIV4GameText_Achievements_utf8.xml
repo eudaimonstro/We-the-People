@@ -1112,6 +1112,36 @@
 		<Russian>Какой великолепный флот![NEWLINE][NEWLINE]Зная, что господство на море — ключ к успеху в Новом Свете, вы построили флот, которому нет равных.[NEWLINE][NEWLINE]Достаточно силен, чтобы защитить свои колонии от пиратов и каперов, достаточно силен, чтобы бросить вызов своим соседям.[NEWLINE][NEWLINE]Но будет ли достаточно его мощи, чтобы сразиться с королевским флотом, если потребуется?[NEWLINE][NEWLINE]Что ж, день, когда вы это узнаете, не так уж и далек, как вы думаете.[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_WAR_GALLEON</Tag>
+		<English>Your first war galleon</English>
+		<German>Eure erste Kriegsgaleone</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_WAR_GALLEON_HEAD</Tag>
+		<English>A war galleon is now patrolling these waters</English>
+		<German>Eine Kriegsgaleone kreuzt nun in diesen Gewässern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_WAR_GALLEON_TEXT</Tag>
+		<English>Trade in our colonies flourishes with every passing year. More goods are loaded and unloaded in our harbors, wealth flows into our towns, and ever more settlers brave the long passage to the New World. Yet with prosperity comes danger. Pirates, privateers and rival powers look with greedy eyes upon our commerce and upon the shores we have worked so hard to claim.[NEWLINE][NEWLINE]His Majesty the King has not overlooked the growing importance of our colonies. As a sign of royal favor, and as a shield for our future, he has sent a mighty War Galleon to these distant waters. Armed with heavy cannon and manned by seasoned sailors, she shall guard our ships, deter our enemies and secure the trade that now binds our colony to the realm. Let the bells be rung and the cannon fired! Today we celebrate not merely the arrival of a ship, but the strength, prosperity and promise of our colony in the New World.</English>
+		<German>Der Handel unserer Kolonien blüht von Jahr zu Jahr. In unseren Häfen werden immer mehr Waren geladen und entladen, Wohlstand strömt in unsere Städte und neue Siedler wagen die beschwerliche Überfahrt in die Neue Welt. Doch mit dem Wohlstand wächst auch die Gefahr. Piraten, Freibeuter und feindliche Mächte blicken gierig auf unseren Handel und auf die Gestade, die wir mit so viel Mühe erschlossen haben.[NEWLINE][NEWLINE]Seine Majestät der König hat die wachsende Bedeutung unserer Kolonien nicht übersehen. Als Zeichen königlicher Gunst und als Schutz für unsere Zukunft sendet er eine mächtige Kriegsgaleone in diese fernen Gewässer. Bewaffnet mit schweren Kanonen und bemannt von erfahrenen Seeleuten, soll sie unsere Schiffe bewachen, unsere Feinde abschrecken und den Handel sichern, der unsere Kolonie nun mit dem Reich verbindet. Lasst die Glocken läuten und die Kanonen donnern! Heute feiern wir nicht nur die Ankunft eines Schiffes, sondern die Stärke, den Wohlstand und die Verheißung unserer Kolonie in der Neuen Welt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_TWO_NAO</Tag>
+		<English>Two Naos</English>
+		<German>Zwei Naos</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_TWO_NAO_HEAD</Tag>
+		<English>A small merchant fleet</English>
+		<German>Eine kleine Handelsflotte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_TWO_NAO_TEXT</Tag>
+		<English>Where at first a single ship was enough to bind our fragile settlement to the Old World, two mighty Naos now ride the tide beneath our flag. Their holds are filled with timber, tobacco, cloth, tools and all the fruits of colonial labor, while sailors and dockworkers crowd the quays in the golden light of evening.[NEWLINE][NEWLINE]This is more than the arrival of another vessel; it is the first sign of a true merchant fleet. Across the vast Atlantic, our colony now sends not merely pleas for aid, but goods, wealth and ambition.[NEWLINE][NEWLINE]The merchants rejoice, the warehouses fill, and every mast in the harbor speaks of growing prosperity. If fortune favors us, these ships shall carry the promise of our colony to every port of the realm.</English>
+		<German>Wo zunächst ein einzelnes Schiff genügte, um unsere zerbrechliche Siedlung mit der Alten Welt zu verbinden, liegen nun zwei mächtige Naos unter unserer Flagge im Hafen. Ihre Laderäume füllen sich mit Holz, Tabak, Tuch, Werkzeugen und all den Früchten kolonialer Arbeit, während Matrosen und Hafenarbeiter im goldenen Licht des Abends die Kais bevölkern.[NEWLINE][NEWLINE]Dies ist mehr als nur die Ankunft eines weiteren Schiffes; es ist das erste Zeichen einer echten Handelsflotte. Über den weiten Atlantik sendet unsere Kolonie nun nicht mehr nur Bitten um Beistand, sondern Waren, Reichtum und Ehrgeiz.[NEWLINE][NEWLINE]Die Kaufleute jubeln, die Lagerhäuser füllen sich, und jeder Mast im Hafen kündet von wachsendem Wohlstand. Wenn das Glück uns hold ist, werden diese Schiffe die Verheißung unserer Kolonie in jeden Hafen des Reiches tragen.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_GALLEON</Tag>
 		<English>Your first galleon</English>
 		<French>Votre premier Galion</French>
@@ -1278,6 +1308,25 @@
 		<French>Vous regardez le port depuis la fenêtre de la salle à manger alors que le soleil se lève - et un nouveau type de bateau s'est amarré.[NEWLINE][NEWLINE]«[COLOR_SELECTED_TEXT]Un sloup, sire [COLOR_REVERT] » vous informe votre secrétaire «[COLOR_SELECTED_TEXT]Elle filerait 12 noeuds, mais elle est petite en taille et en cale. [COLOR_REVERT] » [NEWLINE][NEWLINE]«[COLOR_SELECTED_TEXT]Qu'allons nous faire alors de ce machin ? L'amirauté ne nous adonc rien donné que des babioles inutiles ? Ils ne savent donc pas en Europe que nous avons besoin avec une large cale pour emporter autant de colons et de biens que possible ? [COLOR_REVERT] »[NEWLINE][NEWLINE]«[COLOR_SELECTED_TEXT]Euh .. Humm.. Sire, le sloup est une navire de reconnaissance rapide qui peut espionner les autres colonies et débusquer les repaires de pirates. Avec son faible tirant d'eau, elle peut se cacher en eaux peu profondes, dans des baies étroites, et même remonter de grande rivières. Il nous sera bien utile à coup sur. [COLOR_REVERT] »[NEWLINE][NEWLINE]«[COLOR_SELECTED_TEXT]Aha, très bien ... où est donc la facture pour ce sloup? Ils s'attendent à ce que nous les payions pour ce navire ? [COLOR_REVERT] »[NEWLINE][NEWLINE]</French>
 		<German>Ihr blickt aus dem Fenster Eures Dienstzimmers auf den Hafen hinunter, über dem gerade die Sonne aufgeht - Und schon wieder hat ein Schiff am Kai festgemacht.[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Eine Sloop, Herr Gouverneur[COLOR_REVERT]" wie Euch Euer Sekretär dienstbeflissen berichtet. "[COLOR_SELECTED_TEXT]Sie soll glatte 12 Knoten laufen, Herr Gouverneur, obwohl sie nicht sehr groß ist und auch nicht viele Waren transportieren kann.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Was sollen wir dann mit dem Ding? Hat uns die Admiralität wieder nur unnützes Zeug zuerkannt? Wissen die denn da in Europa nicht, dass wir hier Schiffe brauchen, die möglichst viele Versorgungsgüter und Siedler herschaffen können?[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Hm...ähm...Herr Gouverneur, die Sloop ist ein schneller Aufklärer, die Piratennester und andere Kolonien hervorragend ausspionieren kann. Aufgrund ihres geringen Tiefgangs kann sie auch kleine Buchten anlaufen und sogar in größere Flüsse einlaufen. Sie wird uns sicher gute Dienste leisten, Herr Gouverneur.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Aha, na dann ... her mit der Faktura für diese Sloop. Man wird uns doch sicher trotzdem dafür bezahlen lassen wollen?![COLOR_REVERT]"[NEWLINE][NEWLINE]</German>
 		<Russian>На рассвете из окна своей столовой вы смотрите на гавань, где у причала только что пришвартовался еще один корабль.[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Шлюп, сэр.[COLOR_REVERT]" – официально говорит вам секретарь. "[COLOR_SELECTED_TEXT]Говорят, судно плавает со скоростью целых 12 узлов, сэр. Хотя оно не очень большое и не может перевозить много грузов.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Тогда что мы будем делать с этой штукой? Адмиралтейство снова не дало нам ничего, кроме бесполезного хлама? Разве в Европе не знают, что нам нужны корабли, чтобы доставлять как можно больше припасов и поселенцев?[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Кхм... эм... сэр, шлюп — быстроходный разведывательный корабль, который может шпионить за укрытиями пиратов и...или другими колониями. Благодаря небольшой осадке он может прятаться в небольших бухтах и даже заходить в большие реки. Безусловно, он сослужит нам хорошую службу, сэр.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Ага, тогда... где бумаги на этот шлюп? Неужели они хотят заставить нас платить за него?[COLOR_REVERT]"[NEWLINE][NEWLINE]</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_WAR_CARAVEL</Tag>
+		<English>Your first war caravel</English>
+		<French>Votre première caravelle de guerre</French>
+		<German>Eure erste Kriegskaravelle</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_WAR_CARAVEL_HEAD</Tag>
+		<English>Your first war caravel</English>
+		<French>Votre première caravelle de guerre</French>
+		<German>Eure erste Kriegskaravelle</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_WAR_CARAVEL_TEXT</Tag>
+		<English>From the window of your office you gaze down upon the harbor as the sun rises above the horizon. Among the merchantmen and fishing vessels lies a newly arrived ship at anchor, her slender hull and towering rigging immediately drawing the eye. "[COLOR_SELECTED_TEXT]A War Caravel, Governor.[COLOR_REVERT]" your secretary reports dutifully. "[COLOR_SELECTED_TEXT]She has only just arrived from Europe. The Crown's shipyards are producing these vessels in increasing numbers.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]A caravel? We have seen plenty of those already. Why all this excitement?[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Well, Governor, this is no ordinary caravel. The War Caravel is faster and considerably more heavily armed than her civilian cousins. She is excellently suited for exploring unknown coastlines, hunting smugglers and pirates, and safeguarding our trade routes.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Hm... perhaps you are right. The colonies continue to grow, and we shall need protection at sea.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Indeed, Governor.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]The eyes and ears of a fleet, then? Very well. Let us hope she is equally swift in spotting the next bill arriving from Europe.[COLOR_REVERT]"[NEWLINE][NEWLINE]</English>
+		<German>Ihr blickt aus dem Fenster Eures Dienstzimmers auf den Hafen hinunter, über dem gerade die Sonne aufgeht. Zwischen den Handelsschiffen und Fischerbooten liegt ein neues Schiff vor Anker, dessen schlanker Rumpf und hohe Takelage sofort ins Auge fallen. "[COLOR_SELECTED_TEXT]Eine Kriegskaravelle, Herr Gouverneur.[COLOR_REVERT]" meldet Euch Euer Sekretär pflichtbewusst. "[COLOR_SELECTED_TEXT]Gerade erst aus Europa eingetroffen. Die Werften der Krone bauen diese Schiffe inzwischen in größerer Zahl.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Eine Karavelle? Davon haben wir doch bereits einige gesehen. Weshalb macht Ihr darum solch ein Aufheben?[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Nun, Herr Gouverneur, dies ist keine gewöhnliche Karavelle. Die Kriegskaravelle ist schneller und zugleich deutlich stärker bewaffnet als ihre zivilen Verwandten. Sie eignet sich hervorragend zur Aufklärung unbekannter Küsten, zur Jagd auf Schmuggler und Piraten sowie zur Sicherung unserer Handelsrouten.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Hm... vielleicht habt Ihr Recht, die Kolonien wachsen und wir brauchen Schutz zur See.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Jawohl, Herr Gouverneur.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Die Augen und Ohren einer Flotte also? Nun gut. Dann wollen wir hoffen, dass sie auch rechtzeitig sieht, wenn die nächste Rechnung aus Europa eintrifft.[COLOR_REVERT]"[NEWLINE][NEWLINE]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_CORVETTE</Tag>
@@ -1470,24 +1519,39 @@
 		<Russian>"[COLOR_SELECTED_TEXT]Жирная добыча![COLOR_REVERT]" — кричит гарпунщик матросам на веслах. "[COLOR_SELECTED_TEXT]Кит будет у нас через минуту. Тяните, парни, тяните![COLOR_REVERT]"[NEWLINE][NEWLINE]Но вдруг гребцы роняют вёсла. Бледные от испуга, они указывают через плечо гарпунщика. Он оборачивается и нервно сглатывает.[NEWLINE][NEWLINE]Капер скользит вперед быстро, как ястреб. Пираты стоят у перил и ухмыляются.[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Мы не станем прерывать вашу работу, парни![COLOR_REVERT]" - кричит один из них и смеется. "[COLOR_SELECTED_TEXT]Мы не отберем у вас корабль, пока вы не наполните его брюхо жиром до самых краёв. Это будет жирная добыча![COLOR_REVERT]"[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_FRIGATE</Tag>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_SHIP</Tag>
 		<English>Pirates, the scum of the seas, are now under your command</English>
 		<French>Des Pirates, la racaille des océans, sont sous vos ordres</French>
 		<German>Piraten, den Abschaum der Meere, habt Ihr nun unter Eurem Befehl</German>
 		<Russian>Ваш первый пиратский фрегат</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_FRIGATE_HEAD</Tag>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_SHIP_HEAD</Tag>
 		<English>In Blackbeard's footsteps</English>
 		<French>Sur les traces de Barbe-Noire</French>
 		<German>Auf den Spuren Blackbeards</German>
 		<Russian>По стопам Черной Бороды</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_SHIP_TEXT</Tag>
+		<English>Once our colony was founded, many spoke of freedom, prosperity and a better life in the New World. It was a dream of paradise beyond the ocean, a place where honest men might begin anew. Yet the years have taught us that this world is not ruled by hope alone. Far from the laws of Europe and beyond the reach of the Crown, power belongs to those bold enough to seize it.[NEWLINE][NEWLINE]What began as a refuge for adventurers and outcasts has become a haven for pirates, smugglers and desperate men. They know no law but profit, no loyalty but fear, and no command but their own ambition.[NEWLINE][NEWLINE]Perhaps this is the true face of the New World: not innocence, but struggle; not paradise, but a game of power and gold. If others bend the rules to survive, then so shall we. Our colony will no longer merely endure this grim reality — it will learn to master it.</English>
+		<German>Als unsere Kolonie gegründet wurde, sprachen viele von Freiheit, Wohlstand und einem besseren Leben in der Neuen Welt. Es war der Traum von einem Paradies jenseits des Ozeans, einem Ort, an dem ehrliche Männer neu beginnen konnten. Doch die Jahre haben uns gelehrt, dass diese Welt nicht allein von Hoffnung regiert wird.[NEWLINE][NEWLINE]Fern der Gesetze Europas und jenseits der Reichweite der Krone gehört die Macht denen, die kühn genug sind, sie an sich zu reißen. Was als Zuflucht für Abenteurer und Ausgestoßene begann, ist zu einem Hort für Piraten, Schmuggler und verzweifelte Männer geworden. Sie kennen kein Gesetz außer dem Gewinn, keine Treue außer der Furcht und keinen Befehl außer dem eigenen Ehrgeiz.[NEWLINE][NEWLINE]Vielleicht ist dies das wahre Gesicht der Neuen Welt: nicht Unschuld, sondern Kampf; nicht Paradies, sondern ein Spiel um Macht und Gold. Wenn andere die Regeln beugen, um zu überleben, dann werden auch wir es tun. Unsere Kolonie wird diese abgründige Realität nicht länger nur ertragen — sie wird lernen, sie zu beherrschen.</German>	
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_FRIGATE</Tag>
+		<English>YOu are now in command of a pirate frigate</English>
+		<German>Ihr kommandiert nun eine Piratenfregatte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_FRIGATE_HEAD</Tag>
+		<English>Committed to the cause</English>
+		<German>Der Beute verpflichtet</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_PIRATE_FRIGATE_TEXT</Tag>
-		<English>Formerly you were a gentleman. And now? In command of a pirate ship?[NEWLINE][NEWLINE]Take a good look at this scum, Governor! Are you sure you want to go down this road and lead these people?[NEWLINE][NEWLINE]On land, you'd hand every one of them over to the militia at once or, better still, hang them from the nearest tree.[NEWLINE][NEWLINE]On the other hand, it promises good profits to send out a crew that fears neither death nor the devil and is loyal to you as long as the rum keeps flowing...[NEWLINE][NEWLINE]</English>
+		<English>Formerly you were a gentleman. And now? In command of a mighty pirate ship?[NEWLINE][NEWLINE]Take a good look at this scum, Governor! Are you sure you want to go down this road and lead these people?[NEWLINE][NEWLINE]On land, you'd hand every one of them over to the militia at once or, better still, hang them from the nearest tree.[NEWLINE][NEWLINE]On the other hand, it promises good profits to send out a crew that fears neither death nor the devil and is loyal to you as long as the rum keeps flowing...[NEWLINE][NEWLINE]</English>
 		<French>Vous étiez un gentilhomme avant. Et là ? Aux commandes d'un bateau pirate ? [NEWLINE][NEWLINE]Regardez-moi cette racaille, gouverneur. Êtes-vous sur que vous voulez suivre cette route et mener ces gens?[NEWLINE][NEWLINE]Sure terre, vous livreriez chacun d'eux à la milice sur le champ ou, mieux, vous les pendriez à l'arbre le plus proche[NEWLINE][NEWLINE]D'un autre côté, ce sont des beaux profits en perspective que d'envoyer un équipage qui ne craint ni Dieu ni Diable et qui vous restera loyal tant que le rhum coule à flot...[NEWLINE][NEWLINE]</French>
-		<German>Früher waren Sie ein Gentleman. Und jetzt untersteht Euch ein Piratenschiff?[NEWLINE][NEWLINE]Seht Euch diesen Abschaum genau an, Gouverneur! Seid Ihr sicher, dass Ihr diesen Weg gehen und diese Leute anführen wollt?[NEWLINE][NEWLINE]An Land würdet Ihr jeden von denen sofort der Miliz übergeben oder besser gleich am nächsten Baum aufhängen.[NEWLINE][NEWLINE]Andererseits verspricht es gute Gewinne, eine Mannschaft aufs Meer hinaus zu jagen, die weder Tod noch Teufel fürchtet und Euch treu ergeben ist, solange der Rum in Strömen fließt...[NEWLINE][NEWLINE]</German>
+		<German>Früher waren Sie ein Gentleman. Und jetzt untersteht Euch eines der mächtigsten Piratenschiffe der Region?[NEWLINE][NEWLINE]Seht Euch diesen Abschaum genau an, Gouverneur! Seid Ihr sicher, dass Ihr diesen Weg gehen und diese Leute anführen wollt?[NEWLINE][NEWLINE]An Land würdet Ihr jeden von denen sofort der Miliz übergeben oder besser gleich am nächsten Baum aufhängen.[NEWLINE][NEWLINE]Andererseits verspricht es gute Gewinne, eine Mannschaft aufs Meer hinaus zu jagen, die weder Tod noch Teufel fürchtet und Euch treu ergeben ist, solange der Rum in Strömen fließt...[NEWLINE][NEWLINE]</German>
 		<Russian>Раньше ты был джентльменом. А сейчас? Командир пиратского корабля?[NEWLINE][NEWLINE]Внимательно посмотрите на эту сволочь, губернатор! Вы уверены, что хотите пойти по этому пути и повести за собой этих людей?[NEWLINE][NEWLINE]На суше любого из них вы бы сразу сдали ополченцам, а еще быстрее повесили бы на ближайшем дереве.[NEWLINE][NEWLINE]С другой стороны, иметь под рукой команду, которая не боится ни смерти, ни дьявола и верна вам, пока ром льется рекой, сулит хорошую прибыль...[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
 	<TEXT>
@@ -3284,6 +3348,24 @@
 		<Russian>"[COLOR_SELECTED_TEXT]Эй, ты, не спать в карауле! Нам платят не за это. Мы здесь, чтобы поддерживать мир и порядок[COLOR_REVERT]".[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Да бросьте, позвольте мне хоть немного посидеть. Вчера мы сидели в таверне почти до закрытия. Мне просто нужно малость отдохнуть. С такими, как вы, этот город в надежных руках...[COLOR_REVERT]"[NEWLINE][NEWLINE]Один из колонистов выбрал для себя профессию городского стража. Очень хорошо - теперь колония хоть как-то защищена. Но в долгосрочной перспективе этого будет недостаточно.[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_CARAVEL</Tag>
+		<English>First slave caravel</English>
+		<German>Erste Sklavenkaravelle</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_CARAVEL_HEAD</Tag>
+		<English>Professional slave trade</English>
+		<French>Commerce d'esclave professionnel</French>
+		<German>Professioneller Sklavenhandel</German>
+		<Russian>Профессиональная работорговля</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_CARAVEL_TEXT</Tag>
+		<English>"[COLOR_SELECTED_TEXT]Sir, this is not a ship to carry emigrants. That should be obvious to you. It's cramped and stuffy down there in the hold. There's only one purpose for this kind of ship - to get as many slaves as possible from Africa to this hellhole.[NEWLINE][NEWLINE]I guess we both know what we're saying here. No need to keep talking about it. [NEWLINE][NEWLINE]This ship looks like it's in good shape. What do you want for it? I'll be needing more ships like this one.[COLOR_REVERT]"[NEWLINE][NEWLINE]You are now the owner of a slave transporter. Are you really sure you want to be in this kind of business? The good citizens of your colony might be frightened on the day when such a cargo is suddenly unloaded at their dock.[NEWLINE][NEWLINE]</English>
+		<German>"[COLOR_SELECTED_TEXT]Sir, das ist kein Schiff, um Auswanderer zu transportieren. Das sollte Euch klar sein. Es ist eng und stickig da unten im Laderaum. Es gibt nur einen Zweck für diese Art Schiffe - möglichst viele Sklaven von Afrika hierher zu schaffen. [NEWLINE][NEWLINE]Schätze, wir beide wissen, wovon wir hier reden. Reden wir nicht weiter davon. Sie scheint gut in Schuss zu sein. Was wollt Ihr dafür? Ich brauche vermutlich noch ein oder zwei Schiffe mehr von der Sorte.[COLOR_REVERT]"[NEWLINE][NEWLINE]Ihr seid nun Besitzer eines Sklaven-Transporters. Seid Ihr Euch wirklich sicher, dass Ihr in diese Art von Geschäft einsteigen wollt? Die braven Bürger Eurer Kolonie könnte es verschrecken, wenn an den Docks plötzlich solche Ladung gelöscht wird.[NEWLINE][NEWLINE]</German>
+		<Russian>"[COLOR_SELECTED_TEXT]Сэр, это не корабль для перевозки эмигрантов. Если вы не в курсе, то в его огромных трюмах тесно и душно. У такого корабля только одна цель - доставить в колонии как можно больше чёрного дерева из Африки[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Думаю, мы оба знаем, о чем говорим. Можете не беспокоиться об этом. Похоже, этот корабль в хорошем состоянии. Сколько вы хотите за него? Кстати, я готов купить еще один или два таких корабля.[COLOR_REVERT]"[NEWLINE][NEWLINE]Теперь вы владелец транспорта для перевозки рабов. Вы действительно уверены, что хотите заняться этим бизнесом? Добрые граждане вашей колонии могут прийти в ужас, когда в доках их колонии внезапно появится такой груз.[NEWLINE][NEWLINE]</Russian>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_BARQUE</Tag>
 		<English>First slave barque</English>
 		<French>Premier navire négrier</French>
@@ -3299,9 +3381,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_BARQUE_TEXT</Tag>
-		<English>"[COLOR_SELECTED_TEXT]Sir, this is not a ship to carry emigrants. That should be obvious to you. It's cramped and stuffy down there in the hold. There's only one purpose for this kind of ship - to get as many slaves as possible from Africa to this hellhole.[NEWLINE][NEWLINE]I guess we both know what we're saying here. No need to keep talking about it. [NEWLINE][NEWLINE]This ship looks like it's in good shape. What do you want for it? I'll be needing more ships like this one.[COLOR_REVERT]"[NEWLINE][NEWLINE]You are now the owner of a slave transporter. Are you really sure you want to be in this kind of business? The good citizens of your colony might be frightened on the day when such a cargo is suddenly unloaded at their dock.[NEWLINE][NEWLINE]</English>
-		<German>"[COLOR_SELECTED_TEXT]Sir, das ist kein Schiff, um Auswanderer zu transportieren. Das sollte Euch klar sein. Es ist eng und stickig da unten im Laderaum. Es gibt nur einen Zweck für diese Art Schiffe - möglichst viele Sklaven von Afrika hierher zu schaffen. [NEWLINE][NEWLINE]Schätze, wir beide wissen, wovon wir hier reden. Reden wir nicht weiter davon. Sie scheint gut in Schuss zu sein. Was wollt Ihr dafür? Ich brauche vermutlich noch ein oder zwei Schiffe mehr von der Sorte.[COLOR_REVERT]"[NEWLINE][NEWLINE]Ihr seid nun Besitzer eines Sklaven-Transporters. Seid Ihr Euch wirklich sicher, dass Ihr in diese Art von Geschäft einsteigen wollt? Die braven Bürger Eurer Kolonie könnte es verschrecken, wenn an den Docks plötzlich solche Ladung gelöscht wird.[NEWLINE][NEWLINE]</German>
-		<Russian>"[COLOR_SELECTED_TEXT]Сэр, это не корабль для перевозки эмигрантов. Если вы не в курсе, то в его огромных трюмах тесно и душно. У такого корабля только одна цель - доставить в колонии как можно больше чёрного дерева из Африки[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Думаю, мы оба знаем, о чем говорим. Можете не беспокоиться об этом. Похоже, этот корабль в хорошем состоянии. Сколько вы хотите за него? Кстати, я готов купить еще один или два таких корабля.[COLOR_REVERT]"[NEWLINE][NEWLINE]Теперь вы владелец транспорта для перевозки рабов. Вы действительно уверены, что хотите заняться этим бизнесом? Добрые граждане вашей колонии могут прийти в ужас, когда в доках их колонии внезапно появится такой груз.[NEWLINE][NEWLINE]</Russian>
+		<English>A new generation of slave ships now crosses the Atlantic under our flag. The Slave Barque is faster, cheaper to maintain and better suited to the cruel demands of this trade than the older vessels that came before her. Merchants and plantation owners speak openly of greater profits, shorter crossings and fuller holds.[NEWLINE][NEWLINE]There can be little doubt that such ships will make the trade more efficient and more lucrative. Yet every plank of her hull, every chain in her hold and every coin earned by her voyage carries a darker burden. What may enrich the colony today may poison its soul for generations to come.[NEWLINE][NEWLINE]Whether this path will truly strengthen our settlements, or whether it will one day bring misery, unrest and judgment upon them, remains more than doubtful.</English>
+		<German>Eine neue Generation von Sklavenschiffen überquert nun unter unserer Flagge den Atlantik. Die Sklavenbarke ist schneller, günstiger im Unterhalt und besser auf die grausamen Anforderungen dieses Handels zugeschnitten als die älteren Schiffe, die ihr vorausgingen. Kaufleute und Plantagenbesitzer sprechen offen von größeren Gewinnen, kürzeren Überfahrten und volleren Laderäumen.[NEWLINE][NEWLINE]Es besteht kaum Zweifel, dass solche Schiffe den Handel effizienter und einträglicher machen werden. Doch jede Planke ihres Rumpfes, jede Kette in ihrem Laderaum und jede Münze, die ihre Reise einbringt, trägt eine dunklere Last. Was die Kolonie heute bereichern mag, kann ihre Seele für Generationen vergiften.[NEWLINE][NEWLINE]Ob dieser Weg unsere Siedlungen wirklich stärken wird, oder ob er eines Tages Elend, Unruhe und Gericht über sie bringt, dürfte mehr als fraglich sein.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_SLAVE_HUNTER</Tag>

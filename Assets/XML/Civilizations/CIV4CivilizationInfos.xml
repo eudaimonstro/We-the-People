@@ -76,12 +76,24 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_COLONIST</UnitClassType>
 					<FreeUnitProfession>PROFESSION_DRAGOON</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_PREACHER</UnitClassType>
 					<FreeUnitProfession>PROFESSION_SETTLER</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -191,12 +203,24 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_HUNTER</UnitClassType>
 					<FreeUnitProfession>PROFESSION_SETTLER</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_CHRISTIAN_MISSIONARY</UnitClassType>
 					<FreeUnitProfession>PROFESSION_MISSIONARY</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -302,7 +326,11 @@
 			</Traits>
 			<FreeUnitClasses>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_CARAVELA_REDONDA</UnitClassType>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -316,6 +344,14 @@
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_CHRISTIAN_MISSIONARY</UnitClassType>
 					<FreeUnitProfession>PROFESSION_MISSIONARY</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -421,7 +457,11 @@
 			</Traits>
 			<FreeUnitClasses>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_FLUYT</UnitClassType>
+					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -431,6 +471,14 @@
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_COLONIST</UnitClassType>
 					<FreeUnitProfession>PROFESSION_DRAGOON</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -536,7 +584,11 @@
 			</Traits>
 			<FreeUnitClasses>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_CARRACK</UnitClassType>
+					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -546,6 +598,14 @@
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<FreeUnitProfession>PROFESSION_SETTLER</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -655,12 +715,24 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<FreeUnitProfession>PROFESSION_SETTLER</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_COLONIST</UnitClassType>
 					<FreeUnitProfession>PROFESSION_DRAGOON</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -770,12 +842,24 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<FreeUnitProfession>PROFESSION_SETTLER</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_COLONIST</UnitClassType>
 					<FreeUnitProfession>PROFESSION_DRAGOON</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -889,12 +973,24 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SCHOONER</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_HUNTER</UnitClassType>
 					<FreeUnitProfession>PROFESSION_SETTLER</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_EXPERT_TRADER</UnitClassType>
 					<FreeUnitProfession>PROFESSION_NATIVE_TRADER</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_NAO</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_MERCHANTMAN</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 			</FreeUnitClasses>
 			<FreeBuildingClasses>
@@ -973,6 +1069,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -1046,15 +1146,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -1252,6 +1388,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -1325,15 +1465,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -1531,6 +1707,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -1604,15 +1784,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -1810,6 +2026,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -1887,15 +2107,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -2093,6 +2349,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -2166,15 +2426,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -2372,6 +2668,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -2445,15 +2745,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -2651,6 +2987,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -2724,15 +3064,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -2930,6 +3306,10 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_FRIGATE</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LIGHT_ARTILLERY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -3003,15 +3383,51 @@
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_WAR_CARAVEL</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_FRIGATE</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
+					<FreeUnitProfession>NONE</FreeUnitProfession>
+				</FreeUnitClass>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_ROYAL_TROOP_SHIP</UnitClassType>
 					<FreeUnitProfession>NONE</FreeUnitProfession>
 				</FreeUnitClass>
 				<FreeUnitClass>
@@ -3939,7 +4355,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -5078,7 +5494,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -6212,7 +6628,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -7351,7 +7767,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -8489,7 +8905,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -9627,7 +10043,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -10765,7 +11181,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -11903,7 +12319,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -13037,7 +13453,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -14167,7 +14583,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -15297,7 +15713,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -16431,7 +16847,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -17565,7 +17981,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -18699,7 +19115,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -19834,7 +20250,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -20973,7 +21389,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -22111,7 +22527,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -23249,7 +23665,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -24379,7 +24795,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -25518,7 +25934,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -26657,7 +27073,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -27795,7 +28211,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -28933,7 +29349,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -30067,7 +30483,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -31205,7 +31621,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -32343,7 +32759,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -33477,7 +33893,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -34611,7 +35027,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -35746,7 +36162,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -36876,7 +37292,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -38014,7 +38430,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClassType>
+					<UnitClassType>UNITCLASS_WAR_GALLEON</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>

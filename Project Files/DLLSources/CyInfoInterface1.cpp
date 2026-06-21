@@ -114,6 +114,8 @@ void CyInfoPythonInterface1()
 		.def("getAIWeight", &CvUnitInfo::getAIWeight, "int ()")
 		.def("getHurryCostModifier", &CvUnitInfo::getHurryCostModifier, "int ()")
 		.def("getEuropeCost", &CvUnitInfo::getEuropeCost, "int ()")
+		.def("getGameYearAvailable", &CvUnitInfo::getGameYearAvailable, "int ()") // WTP, Schmiddie, Availability Change Project
+		.def("getGameYearObsolete", &CvUnitInfo::getGameYearObsolete, "int ()") // WTP, Schmiddie, Availability Change Project
 		.def("getEuropeCostIncrease", &CvUnitInfo::getEuropeCostIncrease, "int ()")
 		// WTP, ray, adding Africa Cost and Port Royal Cost also to Python - START
 		.def("getAfricaCost", &CvUnitInfo::getAfricaCost, "int ()")
@@ -280,6 +282,7 @@ void CyInfoPythonInterface1()
 		.def("getMaxStartEra", &CvBuildingInfo::getMaxStartEra, "int ()")
 		.def("getFreePromotion", &CvBuildingInfo::getFreePromotion, "int ()")
 		.def("getAIWeight", &CvBuildingInfo::getAIWeight, "int ()")
+		.def("getGameYearAvailable", &CvBuildingInfo::getGameYearAvailable, "int ()") // WTP, Schmiddie, Availability Change Project
 		.def("getHurryCostModifier", &CvBuildingInfo::getHurryCostModifier, "int ()")
 		.def("getProfessionOutput", &CvBuildingInfo::getProfessionOutput, "int ()")
 		.def("getMaxWorkers", &CvBuildingInfo::getMaxWorkers, "int ()")

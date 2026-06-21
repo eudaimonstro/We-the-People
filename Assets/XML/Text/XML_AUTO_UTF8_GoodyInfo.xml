@@ -591,6 +591,11 @@
 		<Russian>Милорд, мы нашли секретный порт контрабанды местных [COLOR_WARNING_TEXT]торговцев черного рынка[COLOR_REVERT]. Они пытаются бежать на своем корабле.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GOODY_ATTACKING_PIRATE_SHIP</Tag>
+		<English>Milord, we've found a half-sunk ship. It looks like it was attacked by [COLOR_WARNING_TEXT]pirates[COLOR_REVERT].</English>
+		<German>Milord, wir haben ein noch treibendes, aber unrettbar beschädigtes Schiff mit Spuren eines Kampfes entdeckt. Es wurde anscheinend von [COLOR_WARNING_TEXT]Piraten[COLOR_REVERT] angegriffen.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GOODY_ATTACKING_PIRATE_FRIGATE</Tag>
 		<English>Milord, we've found a half-sunk ship. It looks like it was attacked by [COLOR_WARNING_TEXT]pirates[COLOR_REVERT].</English>
 		<German>Milord, wir haben ein noch treibendes, aber unrettbar beschädigtes Schiff mit Spuren eines Kampfes entdeckt. Es wurde anscheinend von [COLOR_WARNING_TEXT]Piraten[COLOR_REVERT] angegriffen.</German>

@@ -312,6 +312,9 @@ public:
 	CvCity *found(Coordinates foundCoord);
 	bool canTrain(UnitTypes eUnit, bool bContinue = false, bool bTestVisible = false, bool bIgnoreCost = false) const;
 	bool canConstruct(BuildingTypes eBuilding, bool bContinue = false, bool bTestVisible = false, bool bIgnoreCost = false) const;
+	bool isUnitWithinGameYearWindow(UnitTypes eUnit) const;  // WTP, Schmiddie, Availability Change Project
+	bool isProfessionWithinGameYearWindow(ProfessionTypes eProfession) const;  // WTP, Schmiddie, Availability Change Project
+	bool isBuildingAvailableByGameYear(BuildingTypes eBuilding) const;  // WTP, Schmiddie, Availability Change Project
 	int getYieldProductionNeeded(UnitTypes eUnit, YieldTypes eYield) const;
 	int getYieldProductionNeeded(BuildingTypes eBuilding, YieldTypes eYield) const;
 	int getProductionModifier(UnitTypes eUnit) const;

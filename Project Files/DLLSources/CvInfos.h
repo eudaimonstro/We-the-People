@@ -383,6 +383,8 @@ public:
 	int getBarracksSpaceNeededChange() const;	// WTP, ray, new Barracks System - START
 	int getMovesChange() const;
 	int getWorkRate() const;
+	int getGameYearAvailable() const;  // WTP, Schmiddie, Availability Change Project
+	int getGameYearObsolete() const;  // WTP, Schmiddie, Availability Change Project
 	int getMissionaryRate() const;
 	int getNativeTradeRate() const; // WTP, ray, Native Trade Posts - START
 	int getPowerValue() const;
@@ -436,6 +438,8 @@ protected:
 	int m_iBarracksSpaceNeededChange; // WTP, ray, new Barracks System - START
 	int m_iMovesChange;
 	int m_iWorkRate;
+	int m_iGameYearAvailable;  // WTP, Schmiddie, Availability Change Project
+	int m_iGameYearObsolete;  // WTP, Schmiddie, Availability Change Project
 	int m_iMissionaryRate;
 	int m_iNativeTradeRate; // WTP, ray, Native Trade Posts - START
 	int m_iPowerValue;
@@ -715,6 +719,8 @@ public:
     float NBMOD_GetStrengthWeight() const;
 /** NBMOD EDU **/
 	int getAIWeight() const;
+	int getGameYearAvailable() const; // WTP, Schmiddie, Availability Change Project
+	int getGameYearObsolete() const; // WTP, Schmiddie, Availability Change Project
 	int getHurryCostModifier() const;
 	int getProductionWhenUsed() const; // WTP, ray, Construction Supplies - START
 	int getEuropeCost() const;
@@ -733,6 +739,8 @@ public:
 	int getAdvancedStartCostIncrease() const;
 	int getMinAreaSize() const;
 	int getMoves() const;
+	int getNavalControlCost() const; // WTP, Schmiddie, Naval Control Movement 
+	int getNavalControlRadius() const; // WTP, Schmiddie, Naval Control Movement
 	int getWorkRate() const;
 	int getWorkRateModifier() const;
 	int getGoldFromGoodiesAndChiefsModifier() const; // WTP, ray, Scout Gold Modifier for Goodies and Chiefs at Unit - START
@@ -943,6 +951,8 @@ protected:
     /** NBMOD EDU **/
 
 	int m_iAIWeight;
+	int m_iGameYearAvailable;  // WTP, Schmiddie, Availability Change Project
+	int m_iGameYearObsolete;  // WTP, Schmiddie, Availability Change Project
 	int m_iHurryCostModifier;
 	int m_iProductionWhenUsed; // WTP, ray, Construction Supplies - START
 	int m_iEuropeCost;
@@ -961,6 +971,8 @@ protected:
 	int m_iAdvancedStartCostIncrease;
 	int m_iMinAreaSize;
 	int m_iMoves;
+	int m_iNavalControlCost; // WTP, Schmiddie, Naval Control Movement 
+	int m_iNavalControlRadius; // WTP, Schmiddie, Naval Control Movement
 	int m_iWorkRate;
 	int m_iWorkRateModifier;
 	int m_iGoldFromGoodiesAndChiefsModifier; // WTP, ray, Scout Gold Modifier for Goodies and Chiefs at Unit - START
@@ -1338,6 +1350,7 @@ public:
 	int getFreePromotion() const;
 	int getRouteTypeCreated() const; //ray, removing hardcoded Roads for Buildings
 	int getAIWeight() const;
+	int getGameYearAvailable() const; // WTP, Schmiddie, Availability Change Project
 	int getHurryCostModifier() const;
 	int getAdvancedStartCost() const;
 	int getAdvancedStartCostIncrease() const;
@@ -1444,6 +1457,7 @@ protected:
 	int m_iFreePromotion;
 	int m_iRouteTypeCreated; //ray, removing hardcoded Roads for Buildings
 	int m_iAIWeight;
+	int m_iGameYearAvailable; // WTP, Schmiddie, Availability Change Project
 	int m_iHurryCostModifier;
 	int m_iAdvancedStartCost;
 	int m_iAdvancedStartCostIncrease;
@@ -4809,6 +4823,7 @@ protected:
 //  class : CvFatherInfo
 //
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//WTP, Schmiddie, Units Availability Change Projekt START
 class CvFatherInfo : public CvInfoBase
 {
 public:
@@ -4818,6 +4833,7 @@ public:
 	FatherPointTypes getFatherPointType() const;
 	TraitTypes getTrait() const;
 	int getFreeUnits(int iUnitClass) const;
+	int getAlternativeFreeUnitClass(int iUnitClass) const;
 	int getPointCost(int iFatherPointType) const;
 	bool isRevealImprovement(int iImprovement) const;
 	const char* getPortrait() const;
@@ -4837,6 +4853,7 @@ protected:
 	TraitTypes m_eTrait;
 	CivEffectTypes m_eCivEffect;
 	int* m_aiFreeUnits;
+	int* m_aiAlternativeFreeUnits;
 	int* m_aiPointCost;
 	bool* m_abRevealImprovement;
 
@@ -4845,7 +4862,7 @@ protected:
 	CvString m_szSound;
 	CvString m_szSoundMP;
 };
-
+//WTP, Schmiddie, Units Availability Change Projekt END
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //
 //  class : CvFatherPointInfo

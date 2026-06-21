@@ -130,7 +130,11 @@ class CvPediaBuilding:
 				screen.appendListBoxStringNoUpdate(panelName, u"<font=3>" + szCost + u"%c" % gc.getYieldInfo(iYield).getChar() + u"</font>", WidgetTypes.WIDGET_PEDIA_JUMP_TO_YIELDS, iYield, 1, CvUtil.FONT_LEFT_JUSTIFY)
 				#screen.appendListBoxStringNoUpdate(panelName, u"<font=4>" + szCost.upper() + u"%c" % gc.getYieldInfo(iYield).getChar() + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 				## R&R, Robert Surcouf,  Pedia - End
-				
+
+		iGameYearAvailable = buildingInfo.getGameYearAvailable()
+		if (iGameYearAvailable > 0):
+			screen.appendListBoxStringNoUpdate(panelName, u"<font=3>%c " % CyGame().getSymbolID(FontSymbols.BULLET_CHAR) + localText.getText("TXT_KEY_TIMELINE_AVAILABLE_FROM", (iGameYearAvailable, )) + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+
 #MultipleYieldsProduced Start
 
 		if (buildingInfo.getProfessionOutput() > 0):

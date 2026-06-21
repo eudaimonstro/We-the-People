@@ -160,6 +160,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_DANISH_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -195,10 +202,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_DANISH_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_DANISH_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -213,6 +220,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_DANISH_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_DANISH_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -628,6 +642,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_DUTCH_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -663,10 +684,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_DUTCH_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_DUTCH_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -681,6 +702,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_DUTCH_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_DUTCH_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1096,6 +1124,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_ENGLAND_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -1131,10 +1166,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_ENGLAND_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_ENGLAND_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1149,6 +1184,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_ENGLAND_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_ENGLAND_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1564,6 +1606,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_FRANCE_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -1599,10 +1648,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_FRANCE_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_FRANCE_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -1617,6 +1666,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_FRANCE_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_FRANCE_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -2032,6 +2088,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_PORTUGAL_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -2067,10 +2130,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_PORTUGAL_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_PORTUGAL_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -2085,6 +2148,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_PORTUGAL_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_PORTUGAL_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -2500,6 +2570,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_RUSSIA_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -2542,10 +2619,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_RUSSIA_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_RUSSIA_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -2560,6 +2637,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_RUSSIA_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_RUSSIA_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -2975,6 +3059,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_SPAIN_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -3010,10 +3101,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_SPAIN_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_SPAIN_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -3028,6 +3119,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_SPAIN_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_SPAIN_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -3443,6 +3541,13 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_WAR_CARAVEL</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_SWEDISH_WAR_CARAVEL</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_CARAVELA_REDONDA</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
@@ -3478,10 +3583,10 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_ROYAL_TROOP_GALLEON</UnitType>
+					<UnitType>UNIT_WAR_GALLEON</UnitType>
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
-						<ArtDefineTag>ART_DEF_UNIT_SWEDISH_ROYAL_TROOP_GALLEON</ArtDefineTag>
+						<ArtDefineTag>ART_DEF_UNIT_SWEDISH_WAR_GALLEON</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -3496,6 +3601,13 @@
 					<ProfessionType>NONE</ProfessionType>
 					<UnitMeshGroup>
 						<ArtDefineTag>ART_DEF_UNIT_SWEDISH_FRIGATE</ArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_FRIGATE</UnitType>
+					<ProfessionType>NONE</ProfessionType>
+					<UnitMeshGroup>
+						<ArtDefineTag>ART_DEF_UNIT_SWEDISH_HEAVY_FRIGATE</ArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>

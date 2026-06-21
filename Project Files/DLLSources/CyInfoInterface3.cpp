@@ -511,6 +511,8 @@ void CyInfoPythonInterface3()
 		.def("getBombardRateChangeProfession", &CvProfessionInfo::getBombardRateChangeProfession, "int ()") // WTP, ray, Cannons to Professions - START
 		.def("getMovesChange", &CvProfessionInfo::getMovesChange, "int ()")
 		.def("getWorkRate", &CvProfessionInfo::getWorkRate, "int ()")
+		.def("getGameYearAvailable", &CvProfessionInfo::getGameYearAvailable, "int ()") // WTP, Schmiddie, Availability Change Project
+		.def("getGameYearObsolete", &CvProfessionInfo::getGameYearObsolete, "int ()") // WTP, Schmiddie, Availability Change Project
 		.def("getMissionaryRate", &CvProfessionInfo::getMissionaryRate, "int ()")
 		.def("getNativeTradeRate", &CvProfessionInfo::getNativeTradeRate, "int ()") // WTP, ray, Native Trade Posts - START
 		.def("isWorkPlot", &CvProfessionInfo::isWorkPlot, "bool ()")

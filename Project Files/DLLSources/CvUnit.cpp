@@ -504,7 +504,7 @@ void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 	for(uint i=0;i<oldUnits.size();i++)
 	{
 		CvUnit* pLoopUnit = ::getUnit(oldUnits[i]);
-
+				// WTP, Schmiddie, fix negative cargo storage crash
 		if (pLoopUnit != NULL)
 		{
 			if (pLoopUnit->getTransportUnit() == this)
@@ -524,6 +524,11 @@ void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 						pLoopUnit->setCapturingPlayer(pAttacker->getOwnerINLINE());
 					}
 				}
+
+				// WTP, Schmiddie, fix negative cargo storage crash
+				// Loaded cargo must be detached before it is killed or captured.
+				// Otherwise the transport can still reference the cargo while yield storage is changed.
+				pLoopUnit->setTransportUnit(NULL);
 
 				pLoopUnit->kill(false, pAttacker);
 
@@ -12191,7 +12196,16 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 {
 	if (!bForce && !canHaveProfession(eProfession, false))
 	{
-		FAssertMsg(false, "Unit can not have profession");
+		CvString szAssert;
+		szAssert.Format("Unit can not have profession: Unit=%s, Profession=%s, Owner=%d, X=%d, Y=%d, CurrentProfession=%s",
+			GC.getUnitInfo(getUnitType()).getType(),
+			GC.getProfessionInfo(eProfession).getType(),
+			getOwnerINLINE(),
+			getX_INLINE(),
+			getY_INLINE(),
+			(getProfession() == NO_PROFESSION ? "NO_PROFESSION" : GC.getProfessionInfo(getProfession()).getType()));
+
+		FAssertMsg(false, szAssert.c_str());
 		return false;
 	}
 

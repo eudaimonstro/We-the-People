@@ -188,7 +188,8 @@ public:
 	int defenseModifier(TeamTypes eDefender, bool bHelp = false) const;
 	int movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot,														// Exposed to Python
 		bool bAssumeRevealed = false) const; // advc.001i, WTP: default is false rather than true
-
+	int navalControlMovementCost(const CvUnit* pMovingUnit) const; // WTP, Schmiddie, Naval Control Movement
+	
 	bool isAdjacentOwned() const;
 	bool isAdjacentPlayer(PlayerTypes ePlayer, bool bLandOnly = false) const;
 	bool isAdjacentTeam(TeamTypes eTeam, bool bLandOnly = false) const;

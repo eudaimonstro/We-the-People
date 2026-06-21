@@ -24,6 +24,7 @@ void CyPlayerPythonInterface3(python::class_<CyPlayer>& x)
 		.def("canFound", &CyPlayer::canFound, "bool (int iX, int iY)")
 		.def("found", &CyPlayer::found, "void (int iX, int iY)")
 		.def("canTrain", &CyPlayer::canTrain, "bool (int eUnit, bool bContinue, bool bTestVisible)")
+		.def("isUnitWithinGameYearWindow", &CyPlayer::isUnitWithinGameYearWindow, "bool (int eUnit)") // WTP, Schmiddie Availability Change Project
 		.def("canConstruct", &CyPlayer::canConstruct, "bool (int /*BuildingTypes*/eBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost)")
 		.def("getBuildingClassPrereqBuilding", &CyPlayer::getBuildingClassPrereqBuilding, "int (int /*BuildingTypes*/ eBuilding, int /*BuildingClassTypes*/ ePrereqBuildingClass, iExtra) -")
 		.def("getUnitYieldProductionNeeded", &CyPlayer::getUnitYieldProductionNeeded, "int getUnitYieldProductionNeeded(int /*UnitTypes*/ eUnit, int /*YieldTypes*/ eYield)")

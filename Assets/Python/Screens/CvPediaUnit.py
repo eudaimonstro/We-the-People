@@ -142,6 +142,14 @@ class CvPediaUnit:
 				screen.appendListBoxStringNoUpdate(panelName, u"<font=2>" + szCost + u"%c" % gc.getYieldInfo(iYield).getChar() + u"</font>", WidgetTypes.WIDGET_PEDIA_JUMP_TO_YIELDS, iYield, 1, CvUtil.FONT_LEFT_JUSTIFY)
 				## R&R, Robert Surcouf,  Pedia - Start
 				
+		iGameYearAvailable = gc.getUnitInfo(self.iUnit).getGameYearAvailable()
+		if (iGameYearAvailable > 0):
+			screen.appendListBoxStringNoUpdate(panelName, u"<font=3>%c " % CyGame().getSymbolID(FontSymbols.BULLET_CHAR) + localText.getText("TXT_KEY_TIMELINE_AVAILABLE_FROM", (iGameYearAvailable, )) + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+
+		iGameYearObsolete = gc.getUnitInfo(self.iUnit).getGameYearObsolete()
+		if (iGameYearObsolete > 0):
+			screen.appendListBoxStringNoUpdate(panelName, u"<font=3>%c " % CyGame().getSymbolID(FontSymbols.BULLET_CHAR) + localText.getText("TXT_KEY_TIMELINE_OBSOLETE_FROM", (iGameYearObsolete, )) + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+
 		iCombat = gc.getUnitInfo(self.iUnit).getUnitCombatType()
 		if (iCombat != -1):
 			screen.appendListBoxStringNoUpdate(panelName, u" ", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)

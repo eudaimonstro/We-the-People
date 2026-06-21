@@ -1302,6 +1302,22 @@
 		<Russian>Сила : %d1_Num</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TIMELINE_AVAILABLE_FROM</Tag>
+		<English>Available from : %d1_Num</English>
+		<French>Disponible à partir du : %d1_Num</French>
+		<German>Verfügbar ab : %d1_Num</German>
+		<Italian>Disponibile a partire dal : %d1_Num</Italian>
+		<Spanish>Disponible a partir del : %d1_Num</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TIMELINE_OBSOLETE_FROM</Tag>
+		<English>No longer available from : %d1_Num</English>
+		<French>N'est plus disponible auprès de : %d1_Num</French>
+		<German>Nicht mehr verfügbar ab : %d1_Num</German>
+		<Italian>Non più disponibile presso : %d1_Num</Italian>
+		<Spanish>Ya no está disponible en : %d1_Num</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_MOVEMENT</Tag>
 		<English>Movement : %d1_Num</English>
 		<French>Mouvement : %d1_Num</French>
@@ -10064,6 +10080,11 @@
 		<French>[ICON_BULLET]Peut voguer vers Port Royal</French>
 		<German>[ICON_BULLET]Kann nach Port Royal segeln</German>
 		<Russian>[ICON_BULLET]Может плыть в Порт Ройал</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NAVAL_CONTROL</Tag>
+		<English>[ICON_BULLET]Naval Control: Radius %d1_Num plots; Movement Cost deduction from other ships -%d2_Num</English>
+		<German>[ICON_BULLET]Seekontrolle: Radius %d1_Num Felder; Bewegungskosten-Abzug bei anderen Schiffen -%d2_Num</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IS_SLAVE_SHIP</Tag>

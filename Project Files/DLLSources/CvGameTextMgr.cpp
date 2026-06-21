@@ -5736,7 +5736,15 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CAN_SAIL_TO_PORT_ROYAL"));
 	}
-	// WTP, ray, display Info if Ship can sail to Port Royal - START
+	// WTP, ray, display Info if Ship can sail to Port Royal - END
+
+	// WTP, Schmiddie, Naval Control Movement - START
+	if (kUnitInfo.getNavalControlCost() > 0 && kUnitInfo.getNavalControlRadius() > 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_NAVAL_CONTROL", kUnitInfo.getNavalControlRadius(), kUnitInfo.getNavalControlCost()));
+	}
+	// WTP, Schmiddie, Naval Control Movement - END
 
 	// WTP, ray Slave Ship - START
 	if (kUnitInfo.isSlaveShip())
@@ -10752,6 +10760,25 @@ void CvGameTextMgr::setFatherHelp(CvWStringBuffer &szBuffer, FatherTypes eFather
 				szTempBuffer = gDLL->getText("TXT_KEY_FATHER_FREE_UNITS", kFatherInfo.getFreeUnits(eUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
 				szBuffer.append(NEWLINE);
 				szBuffer.append(szTempBuffer);
+
+				UnitClassTypes eAlternativeUnitClass = (UnitClassTypes)kFatherInfo.getAlternativeFreeUnitClass(eUnitClass);
+
+				if (eAlternativeUnitClass != NO_UNITCLASS)
+				{
+					UnitClassTypes eAlternativeUnitClass = (UnitClassTypes)kFatherInfo.getAlternativeFreeUnitClass(eUnitClass);
+
+					if (eAlternativeUnitClass != NO_UNITCLASS)
+					{
+						UnitTypes eAlternativeUnit = (UnitTypes)GC.getUnitClassInfo(eAlternativeUnitClass).getDefaultUnitIndex();
+
+						if (eAlternativeUnit != NO_UNIT)
+						{
+							szTempBuffer = gDLL->getText("TXT_KEY_FATHER_ALTERNATIVE_UNIT", GC.getUnitInfo(eAlternativeUnit).getTextKeyWide());
+							szBuffer.append(NEWLINE);
+							szBuffer.append(szTempBuffer);
+						}
+					}
+				}
 			}
 		}
 	}

@@ -194,6 +194,8 @@
 	</ElementType>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
+	<ElementType name="iGameYearAvailable" content="textOnly" dt:type="int"/>
+	<ElementType name="iGameYearObsolete" content="textOnly" dt:type="int"/>
 	<ElementType name="iHurryCostModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iProductionWhenUsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iAdvancedStartCost" content="textOnly" dt:type="int"/>
@@ -208,6 +210,8 @@
 	<ElementType name="iImmigrationWeightDecay" content="textOnly" dt:type="int"/>
 	<ElementType name="iMinAreaSize" content="textOnly" dt:type="int"/>
 	<ElementType name="iMoves" content="textOnly" dt:type="int"/>
+	<ElementType name="iNavalControlCost" content="textOnly" dt:type="int"/>
+	<ElementType name="iNavalControlRadius" content="textOnly" dt:type="int"/>
 	<ElementType name="bCapturesCargo" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bCapturesShips" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iCaptureShipsChanceIncrease" content="textOnly" dt:type="int"/>
@@ -495,6 +499,8 @@
 		<element type="ProductionTraits"/>
 		<element type="iAIWeight"/>
 		<element type="YieldCosts"/>
+		<element type="iGameYearAvailable" minOccurs="0"/>
+		<element type="iGameYearObsolete" minOccurs="0"/>
 		<element type="iHurryCostModifier"/>
 		<element type="iProductionWhenUsed" minOccurs="0"/>
 		<element type="iAdvancedStartCost"/>
@@ -509,6 +515,8 @@
 		<element type="iImmigrationWeightDecay"/>
 		<element type="iMinAreaSize"/>
 		<element type="iMoves"/>
+		<element type="iNavalControlCost" minOccurs="0"/>
+		<element type="iNavalControlRadius" minOccurs="0"/>
 		<element type="bCapturesCargo"/>
 		<element type="bCapturesShips"/>
 		<element type="iCaptureShipsChanceIncrease"/>
@@ -848,6 +856,8 @@
 		<element type="iMovesChange"/>
 		<element type="bMoveIntoPeak" minOccurs="0"/>
 		<element type="iWorkRate"/>
+		<element type="iGameYearAvailable" minOccurs="0"/>
+		<element type="iGameYearObsolete" minOccurs="0"/>
 		<element type="iMissionaryRate"/>
 		<element type="iNativeTradeRate"/>
 		<element type="iPower"/>

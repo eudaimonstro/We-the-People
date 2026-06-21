@@ -4800,9 +4800,16 @@ void CvUnitAI::AI_transportSeaMove()
 	{
 		// TODO: Check for settler being present!
 		AI_setUnitAIState(UNITAI_STATE_TRANSPORT_SETTLER);
+
 		const bool bAnyWoke = AI_wakeCargo(UNITAI_SETTLER, AI_getMovePriority() + 1);
-		FAssert(bAnyWoke);
-		return;
+
+		if (bAnyWoke)
+		{
+			return;
+		}
+
+		// No settler aboard - continue with normal transport AI
+		AI_setUnitAIState(NO_UNITAI_STATE);
 	}
 
 	if (AI_getUnitAIState() == UNITAI_STATE_TRANSPORT_SETTLER)
@@ -5757,6 +5764,12 @@ void CvUnitAI::AI_escortSeaMove()
 	{
 		return;
 	}
+	// WTP, Schmiddie, Naval AI adjacent attack - START
+	if (AI_adjacentSeaAttack(65))
+	{
+		return;
+	}
+	// WTP, Schmiddie, Naval AI adjacent attack - END
 
 	if (plot()->isCity(true)) //prioritize getting outta there
 	{
@@ -5876,6 +5889,12 @@ void CvUnitAI::AI_combatSeaMove()
 	// Erik: Check if there's an admiral waiting
 	if (AI_joinGreatAdmiral())
 		return;
+	// WTP, Schmiddie, Naval AI adjacent attack - START
+	if (AI_adjacentSeaAttack(60))
+	{
+		return;
+	}
+	// WTP, Schmiddie, Naval AI adjacent attack - END
 
 	// TAC - AI Improved Naval AI - koma13 - START
 	//if (AI_anyAttack(2, 49))
@@ -12373,8 +12392,12 @@ bool CvUnitAI::AI_exploreOcean(int iRange)
 					if (GC.getGameINLINE().getGameTurn() < 10)
 					{
 						DirectionTypes currentDirection = getDirectionFrom_dX_dY(iDX, iDY);
-						iValue += ((NUM_DIRECTION_TYPES / 2) - getDirectionDiff(currentDirection, preferredDirection)) * 100;
-					}
+
+						if (currentDirection != NO_DIRECTION && preferredDirection != NO_DIRECTION)
+						{
+							iValue += ((NUM_DIRECTION_TYPES / 2) - getDirectionDiff(currentDirection, preferredDirection)) * 100;
+						}
+}
 
 					if (iValue > 0)
 					{
@@ -14071,6 +14094,84 @@ bool CvUnitAI::AI_anyAttack(int iRange, int iOddsThreshold, int iMinStack, bool 
 
 	return false;
 }
+// WTP, Schmiddie, Naval AI adjacent attack - START
+bool CvUnitAI::AI_adjacentSeaAttack(int iOddsThreshold)
+{
+	if (!canMove())
+	{
+		return false;
+	}
+
+	if (!canAttack())
+	{
+		return false;
+	}
+
+	if (getDomainType() != DOMAIN_SEA)
+	{
+		return false;
+	}
+
+	CvPlot* pBestPlot = NULL;
+	int iBestValue = 0;
+
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		CvPlot* pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pLoopPlot == NULL)
+		{
+			continue;
+		}
+
+		if (!pLoopPlot->isWater())
+		{
+			continue;
+		}
+
+		if (!pLoopPlot->isVisible(getTeam(), false))
+		{
+			continue;
+		}
+
+		if (!pLoopPlot->isVisibleEnemyUnit(this))
+		{
+			continue;
+		}
+
+		if (pLoopPlot->getNumVisibleEnemyDefenders(this) <= 0)
+		{
+			continue;
+		}
+
+		if (!canMoveInto(*pLoopPlot, true))
+		{
+			continue;
+		}
+
+		int iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
+
+		if (iValue < iOddsThreshold)
+		{
+			continue;
+		}
+
+		if (iValue > iBestValue)
+		{
+			iBestValue = iValue;
+			pBestPlot = pLoopPlot;
+		}
+	}
+
+	if (pBestPlot != NULL)
+	{
+		getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), MOVE_DIRECT_ATTACK);
+		return true;
+	}
+
+	return false;
+}
+// WTP, Schmiddie, Naval AI adjacent attack - END
 // TAC - AI Attack City - koma13 - END
 
 //Attack only if the odds fall between two thresholds.

@@ -1352,6 +1352,11 @@
 		<Hungarian>[ICON_BULLET]Adománya: %d1 [LINK=literal]%s2:2[\LINK]</Hungarian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FATHER_ALTERNATIVE_UNIT</Tag>
+		<English>[ICON_BULLET]Alternative available unit: [LINK=literal]%s1:1[\LINK]</English>
+		<German>[ICON_BULLET]Alternativ verfügbare Einheit: [LINK=literal]%s1:1[\LINK]</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_FATHER_NATIVE_ATTITUDE_GOOD</Tag>
 		<English>[ICON_BULLET]Strengthens relations with the Natives</English>
 		<French>[ICON_BULLET]Renforce les relations avec les indigènes</French>

@@ -230,6 +230,14 @@ class CvPediaProfession:
 		if(iMovesChange != 0):
 			screen.appendListBoxStringNoUpdate(panelName, u"<font=4>" + localText.getText("INTERFACE_PANE_MOVEMENT", ()).upper() + (u" +%i" % iMovesChange) +u" %c" % CyGame().getSymbolID(FontSymbols.MOVES_CHAR) + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
+		iGameYearAvailable = gc.getProfessionInfo(self.iProfession).getGameYearAvailable()
+		if (iGameYearAvailable > 0):
+			screen.appendListBoxStringNoUpdate(panelName, u"<font=3>%c " % CyGame().getSymbolID(FontSymbols.BULLET_CHAR) + localText.getText("TXT_KEY_TIMELINE_AVAILABLE_FROM", (iGameYearAvailable, )) + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+
+		iGameYearObsolete = gc.getProfessionInfo(self.iProfession).getGameYearObsolete()
+		if (iGameYearObsolete > 0):
+			screen.appendListBoxStringNoUpdate(panelName, u"<font=3>%c " % CyGame().getSymbolID(FontSymbols.BULLET_CHAR) + localText.getText("TXT_KEY_TIMELINE_OBSOLETE_FROM", (iGameYearObsolete, )) + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+
 		iCombat = gc.getProfessionInfo(self.iProfession).getUnitCombatType()
 		if (iCombat != -1):
 			screen.appendListBoxStringNoUpdate(panelName, u" ", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)

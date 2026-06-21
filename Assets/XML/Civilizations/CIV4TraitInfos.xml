@@ -413,6 +413,14 @@
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
+					<UnitClass>UNITCLASS_WAR_CARAVEL</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
+					<UnitClass>UNITCLASS_NAO</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
 					<UnitClass>UNITCLASS_MERCHANTMAN</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
@@ -421,7 +429,7 @@
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
-					<UnitClass>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
@@ -445,11 +453,23 @@
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
+					<UnitClass>UNITCLASS_SLAVE_CARAVEL</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
 					<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
 					<UnitClass>UNITCLASS_WEST_INDIAMAN</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
+					<UnitClass>UNITCLASS_ROYAL_TROOP_SHIP</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
+					<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
@@ -482,6 +502,10 @@
 				</UnitMoveChange>
 				<UnitMoveChange>
 					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
+					<UnitClass>UNITCLASS_HEAVY_FRIGATE</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
@@ -595,6 +619,10 @@
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
@@ -604,6 +632,14 @@
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_PIRATE_CUTTER</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_WAR_CARAVEL</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
@@ -620,6 +656,10 @@
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_HEAVY_FRIGATE</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
@@ -6189,15 +6229,15 @@
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
+					<UnitClass>UNITCLASS_NAO</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
 					<UnitClass>UNITCLASS_MERCHANTMAN</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
 					<UnitClass>UNITCLASS_GALLEON</UnitClass>
-					<iChange>1</iChange>
-				</UnitMoveChange>
-				<UnitMoveChange>
-					<UnitClass>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
@@ -6221,11 +6261,19 @@
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
+					<UnitClass>UNITCLASS_SLAVE_CARAVEL</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
 					<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 				<UnitMoveChange>
 					<UnitClass>UNITCLASS_WEST_INDIAMAN</UnitClass>
+					<iChange>1</iChange>
+				</UnitMoveChange>
+				<UnitMoveChange>
+					<UnitClass>UNITCLASS_ROYAL_TROOP_SHIP</UnitClass>
 					<iChange>1</iChange>
 				</UnitMoveChange>
 			</UnitMoveChanges>
@@ -7783,6 +7831,10 @@
 			<BuildingRequiredYieldModifiers/>
 			<UnitStrengthModifiers>
 				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
+					<iCombatModifier>20</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
 					<iCombatModifier>20</iCombatModifier>
 				</UnitStrengthModifier>
@@ -7856,6 +7908,14 @@
 			<BuildingRequiredYieldModifiers/>
 			<UnitStrengthModifiers>
 				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_WAR_CARAVEL</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_SLOOP</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
@@ -7869,6 +7929,10 @@
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_HEAVY_FRIGATE</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
@@ -10200,6 +10264,10 @@
 			<BuildingRequiredYieldModifiers/>
 			<UnitStrengthModifiers>
 				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
@@ -10711,6 +10779,10 @@
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_NAO</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_FLUYT</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
@@ -10735,6 +10807,10 @@
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_SLAVE_CARAVEL</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
+				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
@@ -10743,11 +10819,11 @@
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
-					<UnitClass>UNITCLASS_ROYAL_TROOP_GALLEON</UnitClass>
+					<UnitClass>UNITCLASS_WEST_INDIAMAN</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 				<UnitStrengthModifier>
-					<UnitClass>UNITCLASS_WEST_INDIAMAN</UnitClass>
+					<UnitClass>UNITCLASS_ROYAL_TROOP_SHIP</UnitClass>
 					<iCombatModifier>10</iCombatModifier>
 				</UnitStrengthModifier>
 			</UnitStrengthModifiers>
@@ -11683,6 +11759,10 @@
 			<BuildingProductionModifiers/>
 			<BuildingRequiredYieldModifiers/>
 			<UnitStrengthModifiers>
+				<UnitStrengthModifier>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
+					<iCombatModifier>10</iCombatModifier>
+				</UnitStrengthModifier>
 				<UnitStrengthModifier>
 					<UnitClass>UNITCLASS_SHIP_OF_THE_LINE</UnitClass>
 					<iCombatModifier>10</iCombatModifier>

@@ -251,6 +251,12 @@ bool CyPlayer::canTrain(int /*UnitTypes*/ eUnit, bool bContinue, bool bTestVisib
 {
 	return m_pPlayer ? m_pPlayer->canTrain((UnitTypes)eUnit, bContinue, bTestVisible) : false;
 }
+// WTP, Schmiddie Availability Change Project
+bool CyPlayer::isUnitWithinGameYearWindow(int /*UnitTypes*/ eUnit)
+{
+	return m_pPlayer ? m_pPlayer->isUnitWithinGameYearWindow((UnitTypes)eUnit) : false;
+}
+// WTP, Schmiddie Availability Change Project
 bool CyPlayer::canConstruct(int /*BuildingTypes*/eBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost)
 {
 	return m_pPlayer ? m_pPlayer->canConstruct((BuildingTypes)eBuilding, bContinue, bTestVisible, bIgnoreCost) : false;

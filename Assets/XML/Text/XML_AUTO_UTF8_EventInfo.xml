@@ -70,6 +70,12 @@
 		<Russian>Мы в большом долгу перед Его Величеством за поддержку. И если он считает, что мы должны научиться стоять на собственных ногах, то скоро заметит, что мы планируем сделать именно это...</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_ANTI_PIRATE_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_ARCHBISHOPRIC</Tag>
 		<English>Glory be to the Almighty!</English>
 		<French>Gloire au Tout-Puissant !</French>
@@ -458,10 +464,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_COMMANDEERED_RETURN</Tag>
-		<English>The Royal Navy has returned our frigate, somewhat the worse for wear, though with a generous share of booty in her hold!</English>
+		<English>The Royal Navy has returned our war ship, somewhat the worse for wear, though with a generous share of booty in her hold!</English>
 		<French>La Marine Royale nous a rendu notre frégate, il est vrai un endommagé, mais avec un joli butin dans sa soute !</French>
-		<German>Die Royal Navy hat uns unsere Fregatte wieder zurückgegeben. Sie ist zwar etwas mitgenommen, aber im Frachtraum findet sich als Ausgleich ein großzügiger Anteil an der Beute.</German>
+		<German>Die Royal Navy hat uns unser Kriegschiff wieder zurückgegeben. Sie ist zwar etwas mitgenommen, aber im Frachtraum findet sich als Ausgleich ein großzügiger Anteil an der Beute.</German>
 		<Russian>Королевский флот вернул наш фрегат, немного потрепанный, но с щедрой долей добычи в трюме!</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_COMMANDEERED_RETURN_HELP</Tag>
+		<English>Your commandeered [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] will be returned to one of your colonies.</English>
+		<German>Eure von der Krone abkommandierte [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] wird in eine Eurer Kolonien zurückerwarter.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CONFLICT_HIRE_ELITE</Tag>
@@ -966,6 +978,12 @@
 		<French>Nous attendons de nombreux pélerins. Aidez nous à assurer la sécurité de leur passage.</French>
 		<German>Sicher werden Wallfahrer aus aller Welt anreisen wollen. Bitte helft ihnen bei der Überfahrt.</German>
 		<Russian>Мы ожидаем много паломников. Пожалуйста, помогите нам гарантировать их безопасный проход.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FIVE_CATHEDRALS_REWARD_SHIPS_HELP</Tag>
+		<English>We will receive [COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten [COLOR_HIGHLIGHT_TEXT]%d1 %s2[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FIVE_CATHEDRALS_DONE_4</Tag>
@@ -1761,6 +1779,12 @@
 		<French>Un vieux navire hisse les voiles ...</French>
 		<German>Ein alter Kahn sticht im Schatten der Unruhe unter Kapitän Jakob Spatz in See ...</German>
 		<Russian>Старый корабль отправляется в плавание...</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PIRATES_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten ein bzw. eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_POLITICAL_REFUGEE_1</Tag>
@@ -3053,6 +3077,12 @@
 		<Tag>TXT_KEY_EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_ARRIVAL_2</Tag>
 		<English>Well, who would have thought it? The treasure will fill the king’s treasury. He should be grateful to us for that and send a galleon so that the treasure can be brought to Europe.</English>
 		<German>Ja, wer hätte das gedacht. Der Schatz wird die Schatzkammer des Königs füllen. Dafür sollte er uns dankbar sein und eine Galeone schicken, damit der Schatz nach Europa gebracht werden kann.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to transport the expedition's spoils.</English>
+		<German>Wir erhalten eine bzw. einen [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT], um die Beute der Expedition zu transportieren.</German>
 		<Russian/>
 	</TEXT>
 	<TEXT>

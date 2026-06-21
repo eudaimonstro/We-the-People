@@ -449,6 +449,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -569,6 +570,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1650</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -1124,6 +1126,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>10</iAIWeight>
+			<iGameYearAvailable>1650</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -1419,6 +1422,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -1721,6 +1725,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -2229,6 +2234,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -2760,6 +2766,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -2855,6 +2862,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -2954,6 +2962,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1650</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -3592,6 +3601,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1650</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -3925,6 +3935,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -4230,6 +4241,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -4556,6 +4568,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -4882,6 +4895,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -5195,6 +5209,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -5497,6 +5512,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -5805,6 +5821,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -6106,6 +6123,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -6310,6 +6328,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -6614,6 +6633,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -7028,6 +7048,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -7140,6 +7161,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1650</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -7552,6 +7574,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -7856,6 +7879,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -8731,6 +8755,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>60</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -9051,6 +9076,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -9422,6 +9448,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -9863,6 +9890,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -9988,6 +10016,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -10313,6 +10342,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>30</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -10421,6 +10451,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>20</iAIWeight>
+			<iGameYearAvailable>1650</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -11764,6 +11795,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -12371,6 +12403,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -12694,6 +12727,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -13012,6 +13046,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -13339,6 +13374,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -13657,6 +13693,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>
@@ -13968,6 +14005,7 @@
 			<bNeverCapture>0</bNeverCapture>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>40</iAIWeight>
+			<iGameYearAvailable>1600</iGameYearAvailable>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_HAMMERS</YieldType>

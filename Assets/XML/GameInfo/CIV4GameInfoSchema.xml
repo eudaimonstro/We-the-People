@@ -128,6 +128,7 @@
 	<ElementType name="bBad" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bWar" content="textOnly" dt:type="boolean"/>
 	<ElementType name="UnitClass" content="textOnly"/>
+	<ElementType name="AlternativeUnitClass" content="textOnly"/>
 	<ElementType name="TeachUnitClass" content="textOnly"/>
 	<ElementType name="iCityGoodyWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="bWaterGoody" content="textOnly" dt:type="boolean"/>
@@ -721,6 +722,7 @@
 	<ElementType name="FreeUnit" content="eltOnly">
 		<element type="UnitClass"/>
 		<element type="iFreeUnits"/>
+		<element type="AlternativeUnitClass" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="FreeUnits" content="eltOnly">
 		<element type="FreeUnit" minOccurs="0" maxOccurs="*"/>

@@ -326,5 +326,10 @@
 			<Description>TXT_KEY_CONCEPT_UNIT_EQUIPMENT</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_UNIT_EQUIPMENT_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_GAME_YEAR_AVAILABILITY</Type>
+			<Description>TXT_KEY_CONCEPT_GAME_YEAR_AVAILABILITY</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_GAME_YEAR_AVAILABILITY_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

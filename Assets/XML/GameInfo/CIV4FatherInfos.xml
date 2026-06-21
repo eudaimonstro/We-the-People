@@ -152,14 +152,17 @@
 				<FreeUnit>
 					<UnitClass>UNITCLASS_GALLEON</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_WEST_INDIAMAN</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
+					<UnitClass>UNITCLASS_SLAVE_CARAVEL</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SLAVE_BARQUE</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_BRIGANTINE</UnitClass>
+					<UnitClass>UNITCLASS_CARRACK</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_BRIGANTINE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -321,6 +324,7 @@
 				<FreeUnit>
 					<UnitClass>UNITCLASS_CARRACK</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_BRIGANTINE</AlternativeUnitClass>	
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -412,8 +416,9 @@
 					<iFreeUnits>1</iFreeUnits>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_NAVAL_BRIG</UnitClass>
+					<UnitClass>UNITCLASS_CARAVELA_REDONDA</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_NAVAL_BRIG</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -497,8 +502,9 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
+					<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_PRIVATEER</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -591,8 +597,9 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_BRIGANTINE</UnitClass>
+					<UnitClass>UNITCLASS_CARRACK</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_BRIGANTINE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -626,8 +633,9 @@
 			</RevealImprovements>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_WEST_INDIAMAN</UnitClass>
+					<UnitClass>UNITCLASS_GALLEON</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_WEST_INDIAMAN</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
 					<UnitClass>UNITCLASS_PIRATE_CUTTER</UnitClass>
@@ -662,6 +670,7 @@
 				<FreeUnit>
 					<UnitClass>UNITCLASS_CARAVELA_REDONDA</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SCHOONER</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -715,8 +724,9 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
+					<UnitClass>UNITCLASS_PIRATE_SHIP</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_PIRATE_FRIGATE</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
 					<UnitClass>UNITCLASS_BUCCANNEER</UnitClass>
@@ -895,10 +905,12 @@
 				<FreeUnit>
 					<UnitClass>UNITCLASS_CARRACK</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_BRIGANTINE</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
 					<UnitClass>UNITCLASS_CARAVEL</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SCHOONER</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -1488,12 +1500,14 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_MERCHANTMAN</UnitClass>
+					<UnitClass>UNITCLASS_CARRACK</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_MERCHANTMAN</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_ROYAL_FRIGATE</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_ROYAL_FRIGATE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -2396,12 +2410,14 @@
 					<iFreeUnits>1</iFreeUnits>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_FRIGATE</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_CORVETTE</UnitClass>
+					<UnitClass>UNITCLASS_WAR_CARAVEL</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_CORVETTE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -2460,12 +2476,14 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_COLONIAL_MAN_O_WAR</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SHIP_OF_THE_LINE</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_FRIGATE</UnitClass>
+					<UnitClass>UNITCLASS_WAR_CARAVEL</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_FRIGATE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -2502,8 +2520,9 @@
 					<iFreeUnits>1</iFreeUnits>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_SLAVE_BARQUE</UnitClass>
+					<UnitClass>UNITCLASS_SLAVE_CARAVEL</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SLAVE_BARQUE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -2651,8 +2670,9 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_SHIP_OF_THE_LINE</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SHIP_OF_THE_LINE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -2813,8 +2833,9 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_SHIP_OF_THE_LINE</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEON</UnitClass>
 					<iFreeUnits>2</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SHIP_OF_THE_LINE</AlternativeUnitClass>
 				</FreeUnit>
 			</FreeUnits>
 			<FatherPointCosts>
@@ -3151,12 +3172,14 @@
 			<RevealImprovements/>
 			<FreeUnits>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_SLOOP</UnitClass>
+					<UnitClass>UNITCLASS_WAR_CARAVEL</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SLOOP</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
-					<UnitClass>UNITCLASS_SCHOONER</UnitClass>
+					<UnitClass>UNITCLASS_CARAVELA_REDONDA</UnitClass>
 					<iFreeUnits>1</iFreeUnits>
+					<AlternativeUnitClass>UNITCLASS_SCHOONER</AlternativeUnitClass>
 				</FreeUnit>
 				<FreeUnit>
 					<UnitClass>UNITCLASS_GREAT_ADMIRAL</UnitClass>

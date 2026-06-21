@@ -53,6 +53,7 @@
 	<ElementType name="bNeverCapture" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
+	<ElementType name="iGameYearAvailable" content="textOnly" dt:type="int"/>
 	<ElementType name="iWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
 	<ElementType name="iHurryCostModifier" content="textOnly" dt:type="int"/>
@@ -257,6 +258,7 @@
 		<element type="bNeverCapture"/>
 		<element type="bCenterInCity"/>
 		<element type="iAIWeight"/>
+		<element type="iGameYearAvailable" minOccurs="0"/>
 		<element type="YieldCosts"/>
 		<element type="iHurryCostModifier"/>
 		<element type="iAdvancedStartCost"/>

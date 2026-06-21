@@ -11,9 +11,13 @@
 <!-- RaR Native Nations Units -->
 <!-- RaR Civil and Military Ships All Nations Units -->
 <!-- RaR Ships Caravel -->
+<!-- Ships War Caravel -->
+<!-- Ships Nao -->
 <!-- RaR Ships Caravel Redonda -->
 <!-- RaR Ships Galleon -->
+<!-- WTP Ships War Galleon -->
 <!-- RaR Ships West_Indiaman -->
+<!-- Ships Royal Troop Ship -->
 <!-- RaR Ships Flyt -->
 <!-- RaR Ships Merchantman -->
 <!-- RaR Ships Brigantine -->
@@ -6393,7 +6397,329 @@
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
-		<!-- RaR Ships Caravel Redonda -->
+<!-- Ships War Caravel -->
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Ships_Transport/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_ENGLAND_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/England/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_FRANCE_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/France/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SPAIN_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Spain/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SWEDISH_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Sweden/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_RUSSIA_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Russia/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_DANISH_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Denmark/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_DUTCH_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Dutch/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_PORTUGAL_WAR_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Portugal/Ships/war_caravel/war_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+<!-- Ships Nao -->
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_NAO</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_nao.dds</FullLengthIcon>
+			<fScale>0.22</fScale>
+			<fInterfaceScale>0.50</fInterfaceScale>
+			<NIF>Art/Units/Ships_Transport/nao/nao.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+<!-- RaR Ships Caravel Redonda -->
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARAVELA_REDONDA</Type>
 			<Button>,Art/colonization_atlas_military.dds,6,17</Button>
@@ -6971,15 +7297,15 @@
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
-		<!-- WTP Ships Royal Troop Galleon -->
+		<!-- WTP Ships War Galleon -->
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/Ships_Transport/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Ships_Transport/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7005,13 +7331,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_SPAIN_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_DANISH_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/spain/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Denmark/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7037,13 +7363,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_RUSSIA_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_DUTCH_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/russia/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/dutch/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7069,13 +7395,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FRANCE_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_ENGLAND_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/france/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/england/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7101,13 +7427,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PORTUGAL_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_FRANCE_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/portugal/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/france/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7133,13 +7459,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ENGLAND_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_PORTUGAL_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/england/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Portugal/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7165,13 +7491,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_DUTCH_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_RUSSIA_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/dutch/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Russia/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7197,13 +7523,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_DANISH_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_SPAIN_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/denmark/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Spain/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7229,13 +7555,13 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_SWEDISH_ROYAL_TROOP_GALLEON</Type>
-			<Button>,Art/colonization_atlas_military.dds,6,14</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_royal_troop_galleon.dds</FullLengthIcon>
-			<fScale>0.24</fScale>
+			<Type>ART_DEF_UNIT_SWEDISH_WAR_GALLEON</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,15</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_war_galleon.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/Sweden/ships/Royal_Troop_Galleon/Frigate_Civ5_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Sweden/ships/war_galleon/Galleon.nif</NIF>
+			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -7525,6 +7851,39 @@
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Units/portugal/ships/west_indiaman/Galleon.nif</NIF>
 			<KFM>Art/Units/Ships_Transport/west_indiaman/Galleon.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<!-- Ships Royal Troop Ship -->
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_ROYAL_TROOP_SHIP</Type>
+			<Button>,Art/colonization_atlas_military.dds,1,13</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_Royal_Troop_Ship.dds</FullLengthIcon>
+			<fScale>0.18</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/Ships_Transport/Royal_Troop_Ship/Royal_Troop_Ship.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -8416,7 +8775,39 @@
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
-		<!-- WTP Ships Slave Barque -->
+		<!-- WTP Ships SLave Caravel and Slave Barque -->
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SLAVE_CARAVEL</Type>
+			<Button>,Art/colonization_atlas_military.dds,2,13</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_slave_caravel.dds</FullLengthIcon>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Units/Ships_Transport/Slave_Caravel/Slave_Caravel.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SLAVE_BARQUE</Type>
 			<Button>,Art/colonization_atlas_military.dds,8,14</Button>
@@ -9861,15 +10252,304 @@
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
+		<!-- WTP Ships Heavy Friagte -->
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/Ships_Transport/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SPAIN_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/spain/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_RUSSIA_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/russia/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_FRANCE_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/france/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_PORTUGAL_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/portugal/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_ENGLAND_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/england/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_DUTCH_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/dutch/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_DANISH_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/denmark/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SWEDISH_HEAVY_FRIGATE</Type>
+			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Heavy_Frigate.dds</FullLengthIcon>
+			<fScale>0.20</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Units/Sweden/ships/heavy_frigate/Frigate_Constitution_FX.nif</NIF>
+			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
 		<!-- WTP Ships Royal Friagte -->
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/Ships_Transport/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Ships_Transport/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -9896,12 +10576,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPAIN_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/spain/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/spain/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -9928,12 +10608,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_RUSSIA_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/russia/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/russia/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -9960,12 +10640,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FRANCE_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/france/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/france/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -9992,12 +10672,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PORTUGAL_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/portugal/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/portugal/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -10024,12 +10704,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ENGLAND_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/england/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/england/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -10056,12 +10736,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_DUTCH_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/dutch/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/dutch/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -10088,12 +10768,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_DANISH_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/denmark/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/denmark/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -10120,12 +10800,12 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWEDISH_ROYAL_FRIGATE</Type>
-			<Button>,Art/colonization_atlas_military.dds,5,14</Button>
+			<Button>,Art/colonization_atlas_military.dds,4,13</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/Europe_Royal_Frigate.dds</FullLengthIcon>
-			<fScale>0.20</fScale>
+			<fScale>0.23</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Units/Sweden/ships/Royal_Frigate/Frigate_Constitution_FX.nif</NIF>
-			<KFM>Art/Units/Frigate/Frigate.kfm</KFM>
+			<NIF>Art/Units/Sweden/ships/Royal_Frigate/Royal_Frigate.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
 				<Texture>Art/Shared/water_ship_wake.dds</Texture>
@@ -11600,7 +12280,7 @@
 			<Type>ART_DEF_UNIT_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/Ships_Transport/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11632,7 +12312,7 @@
 			<Type>ART_DEF_UNIT_SPAIN_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/spain/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11664,7 +12344,7 @@
 			<Type>ART_DEF_UNIT_FRANCE_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/france/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11696,7 +12376,7 @@
 			<Type>ART_DEF_UNIT_SWEDISH_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Units/Sweden/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11728,7 +12408,7 @@
 			<Type>ART_DEF_UNIT_RUSSIA_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/russia/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11760,7 +12440,7 @@
 			<Type>ART_DEF_UNIT_PORTUGAL_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/portugal/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11792,7 +12472,7 @@
 			<Type>ART_DEF_UNIT_ENGLAND_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/england/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11824,7 +12504,7 @@
 			<Type>ART_DEF_UNIT_DUTCH_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/units/dutch/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -11856,7 +12536,7 @@
 			<Type>ART_DEF_UNIT_DANISH_CARRACK</Type>
 			<Button>,Art/colonization_atlas_military.dds,1,17</Button>
 			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_carrack.dds</FullLengthIcon>
-			<fScale>0.18</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Units/Denmark/ships/Carrack/Galleon.nif</NIF>
 			<KFM>Art/units/Ships_Transport/Carrack/Galleon.kfm</KFM>
@@ -12526,6 +13206,38 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<!-- RaR Ships Special Units -->
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_PIRATE_SHIP</Type>
+			<Button>,Art/colonization_atlas_military.dds,3,13</Button>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_pirate_ship.dds</FullLengthIcon>
+			<fScale>0.2</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Units/Ships_Transport/Pirate_Ship/Pirate_Ship.nif</NIF>
+			<KFM>Art/Units/Ships_Transport/dutch_east_india_man/dutch_east_india_man.kfm</KFM>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.3</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN1</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN1</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PRIVATEER</Type>
 			<Button>,Art/Interface/Buttons/Unit_Resource_Colonization_Atlas.dds,3,13</Button>

@@ -1964,44 +1964,44 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_ANTI_PIRATE_1</Tag>
-		<English>Because of constant attacks on peaceful merchant ships, frigates have been sent from Europe to hunt down the harassers.</English>
+		<English>Because of constant attacks on peaceful merchant ships, war ships have been sent from Europe to hunt down the harassers.</English>
 		<French>Les attaques incessantes de nos navires marchands a conduit l'Europe à nous envoyer des frégates pour faire fuire les agresseurs.</French>
-		<German>Unablässige Angriffe auf Handelsschiffe beeinträchtigen den Handel mit Europa. Ein Monarch schickt eine Fregatte, um die Störenfriede zu vertreiben.</German>
+		<German>Unablässige Angriffe auf Handelsschiffe beeinträchtigen den Handel mit Europa. Ein Monarch schickt ein Kriegsschiff, um die Störenfriede zu vertreiben.</German>
 		<Russian>Из-за постоянных нападений на мирные торговые суда из Европы были отправлены фрегаты, чтобы выследить пиратов.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_ANTI_PIRATE_2</Tag>
-		<English>Following ongoing attacks on merchant ships, frigates are coming from Europe to destroy the predators once and for all.</English>
+		<English>Following ongoing attacks on merchant ships, war ships are coming from Europe to destroy the predators once and for all.</English>
 		<French>Les attaques incessantes de nos navires marchands a conduit l'Europe à nous envoyer des frégates pour en finir une fois pour toute.</French>
-		<German>Immer noch beeinträchtigen Piraten die Überfahrten der Händler nach Europa. Ein Monarch schickt eine Fregatte, um den Störenfrieden den Garaus zu machen.</German>
+		<German>Immer noch beeinträchtigen Piraten die Überfahrten der Händler nach Europa. Ein Monarch schickt ein Kriegsschiff, um den Störenfrieden den Garaus zu machen.</German>
 		<Russian>После непрекращающихся атак на торговые суда из Европы прибывают фрегаты, чтобы уничтожить хищников раз и навсегда.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_ANTI_PIRATE_3</Tag>
-		<English>Privateers and pirates are still terrorizing the merchants. A king in Europe is sending a third frigate to America to protect the sea lanes.</English>
+		<English>Privateers and pirates are still terrorizing the merchants. A king in Europe is sending a third war ship to America to protect the sea lanes.</English>
 		<French>Les corsaires et les pirates continuent à terroriser nos marchands. Un roi en Europe décide d'envoyer une troisième frégate aux Amériques pour protéger les voies maritimes.</French>
-		<German>Piraten terrorisieren ohne Unterlass die Überfahrten der Händler nach Europa. Ein Monarch scheut weder Kosten noch Mühen und schickt zum dritten Mal eine Fregatte nach Amerika, um die Küste sicherer zu machen.</German>
+		<German>Piraten terrorisieren ohne Unterlass die Überfahrten der Händler nach Europa. Ein Monarch scheut weder Kosten noch Mühen und schickt zum dritten Mal ein Kriegsschiff nach Amerika, um die Küste sicherer zu machen.</German>
 		<Russian>Каперы и пираты все еще терроризируют купцов. Короли Европы отправляют в Америку третий фрегат для защиты морских путей.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_ANTI_PIRATE_1</Tag>
-		<English>Milord, hostile ships are hunting our merchants. Our King's frigate will send them to a watery grave.</English>
+		<English>Milord, hostile ships are hunting our merchants. Our King's war ship will send them to a watery grave.</English>
 		<French>Seigneur, des navires hostiles chassent nos marchands. Notre Roi va envoyer une frégate pour combattre les pirates.</French>
-		<German>Milord, Piraten und Freibeuter fremder Nationen machen unsere Küste unsicher. Seine Majestät wird eine Fregatte entsenden, um den Halunken ein nasses Grab zu bereiten.</German>
+		<German>Milord, Piraten und Freibeuter fremder Nationen machen unsere Küste unsicher. Seine Majestät wird ein Kriegsschiff entsenden, um den Halunken ein nasses Grab zu bereiten.</German>
 		<Russian>Милорд, вражеские корабли охотятся на наших торговцев. Фрегат нашего Короля отправит их на дно.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_ANTI_PIRATE_2</Tag>
-		<English>Milord, hostile ships are still hunting along our coast where they capture our merchant ships. Our King will send another frigate to protect the sea lanes.</English>
+		<English>Milord, hostile ships are still hunting along our coast where they capture our merchant ships. Our King will send another war ship to protect the sea lanes.</English>
 		<French>Seigneur, des navires hostiles continuent à patrouiller le long de nos côtes et à capturer nos navires marchands. Notre Roi envoi une nouvelle frégate pour protéger les voies maritimes.</French>
-		<German>Milord, immer noch segeln Feinde an unserer Küste entlang und machen Jagd auf unsere Schiffe. Seine Majestät entsendet eine weitere Fregatte zu unserem Schutz.</German>
+		<German>Milord, immer noch segeln Feinde an unserer Küste entlang und machen Jagd auf unsere Schiffe. Seine Majestät entsendet ein weiteres Kriegsschiff zu unserem Schutz.</German>
 		<Russian>Милорд, вражеские корабли все еще охотятся у нашего побережья, захватывая наши торговые суда. Наш Король отправит еще один фрегат для защиты морских путей.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_ANTI_PIRATE_3</Tag>
-		<English>Milord, our King says he is disappointed by our inability to bring the enemy warships to heel. He has once again ordered a frigate from Europe to the New World to eliminate these rogues. The King warns us, however, that he cannot spare any more ships.</English>
+		<English>Milord, our King says he is disappointed by our inability to bring the enemy warships to heel. He has once again ordered a war ship from Europe to the New World to eliminate these rogues. The King warns us, however, that he cannot spare any more ships.</English>
 		<French>Seigneur, notre Roi est profondément déçu de notre incapacité à assurer la sécurité des voies maritimes. Il a envoyé encore une frégate d'Europe pour nous aider. Soyez assuré que c'est la dernière fois qu'il nous viendra en aide.</French>
-		<German>Milord, Seine Majestät lässt verlauten, er sei enttäuscht von Eurem Unvermögen, die Piraten und feindlichen Freibeuter zur Räson zu ziehen. Er hat erneut eine Fregatte aus Europa in die Neue Welt abkommandiert, um diese Schurken auszuschalten. Seine Majestät warnt Euch aber, dass er keine weiteren Schiffe mehr entbehren könne.</German>
+		<German>Milord, Seine Majestät lässt verlauten, er sei enttäuscht von Eurem Unvermögen, die Piraten und feindlichen Freibeuter zur Räson zu ziehen. Er hat erneut ein Kriegsschiff aus Europa in die Neue Welt abkommandiert, um diese Schurken auszuschalten. Seine Majestät warnt Euch aber, dass er keine weiteren Schiffe mehr entbehren könne.</German>
 		<Russian>Милорд, Король разочарован нашей неспособностью разобраться с вражескими кораблями. Он в очередной раз приказал отправить фрегат из Европы в Новый Свет, чтобы уничтожить этих негодяев. Однако, Король предупреждает нас, что больше кораблей он выделить не сможет.</Russian>
 	</TEXT>
 	<TEXT>
@@ -2961,6 +2961,12 @@
 		<Russian>Милорд, мы построили доки в пяти городах раньше, чем любая другая колониальная держава. Теперь у вас есть поддержка влиятельной торговой компании. Время забрать свою награду.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_FIVE_DOCKS_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our coastal colonies.</English>
+		<German>Wir erhalten eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Küstenkolonien.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FIVE_MARKETS</Tag>
 		<English>A group of private traders in our colony insists that we need more markets. They even offer a reward if we can be the first to have five cities with markets.</English>
 		<French>Des négociants privés dans nos colonies nous demandent d'investir dans davantage de marchés. Ils nous proposent même une récompense si nous devenons la première puissance coloniale à construire 5 marchés.</French>
@@ -3452,9 +3458,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SIX_WARSHIPS_QUEST</Tag>
-		<English>Milord, His Majesty and the court are delighted about the acquisition of our first warships. We have been promised that once we have a war fleet of at least [COLOR_HIGHLIGHT_TEXT]six warships (frigate or larger)[COLOR_REVERT], His Majesty will deliver one of his finest [COLOR_HIGHLIGHT_TEXT]royal man-o-wars[COLOR_REVERT] to us as flagship for our fleet.</English>
+		<English>Milord, His Majesty and the court are delighted about the acquisition of our first warships. We have been promised that once we have a war fleet of at least [COLOR_HIGHLIGHT_TEXT]six warships (frigate or larger)[COLOR_REVERT], His Majesty will deliver one of his finest [COLOR_HIGHLIGHT_TEXT]royal ships of the line[COLOR_REVERT] to us as flagship for our fleet.</English>
 		<French>Sire, Sa Majesté et la cour sont ravies de voir vos premiers navires de combat. Nous avons eu la promesse que si nous constituions une flotte de guerre de six grands navires de combat de classe frégate ou supérieure, sa Majesté nous livrera un de ses meilleurs [COLOR_HIGHLIGHT_TEXT]vaisseaux de guerre royaux[COLOR_REVERT] pour servir de navire-amiral.</French>
-		<German>Milord, Seine Majestät und der Hof sind hocherfreut über die ersten Kriegsschiffe, die wir erworben haben. Uns wurde versprochen, dass uns Seine Majestät, sobald wir eine Flotte von mindestens [COLOR_HIGHLIGHT_TEXT]sechs Kriegsschiffen (Fregatte oder größer)[COLOR_REVERT] haben, eines seiner [COLOR_HIGHLIGHT_TEXT]Königlichen Schlachtschiffe[COLOR_REVERT] als Flaggschiff unserer Flotte zur Verfügung stellen wird.</German>
+		<German>Milord, Seine Majestät und der Hof sind hocherfreut über die ersten Kriegsschiffe, die wir erworben haben. Uns wurde versprochen, dass uns Seine Majestät, sobald wir eine Flotte von mindestens [COLOR_HIGHLIGHT_TEXT]sechs Kriegsschiffen (Fregatte oder größer)[COLOR_REVERT] haben, eines seiner [COLOR_HIGHLIGHT_TEXT]Königlichen Kriegsschiffe[COLOR_REVERT] als Flaggschiff unserer Flotte zur Verfügung stellen wird.</German>
 		<Russian>Милорд, Его Величество и Королевский двор поздравляют колониальную администрацию с приобретением первого боевого корабля. Нам пообещали, что как только у нас будет не менее [COLOR_HIGHLIGHT_TEXT]шести военных кораблей (фрегат или больше)[COLOR_REVERT], Его Величество отправит нам один из своих лучших [COLOR_HIGHLIGHT_TEXT]королевских кораблей[COLOR_REVERT] в качестве флагмана нашего флота.</Russian>
 	</TEXT>
 	<TEXT>
@@ -3491,6 +3497,12 @@
 		<French>Merveilleux ! Laissez-le entrer au port et saluez-le d'une salve.</French>
 		<German>Wundervoll, laßt es aus dem Hafen segeln und unserer Flotte Salut schießen.</German>
 		<Russian>Прекрасно! Прикажите кораблям салютовать двенадцатью пушечными выстрелами.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SIX_WARSHIPS_REWARD_SHIP_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]The Crown will reward the colonies with a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT].</English>
+		<German>[NEWLINE][ICON_BULLET]Die Krone belohnt die Kolonien mit mit einer [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT].</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SIX_PRIVATEERS_QUEST</Tag>
@@ -3584,9 +3596,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES</Tag>
-		<English>Milord, His Majesty is deeply discontented that so many treasures are not being shipped in time to Europe. To solve this issue He offers us a [COLOR_HIGHLIGHT_TEXT]galleon[COLOR_REVERT] for a discounted price.</English>
-		<French>Sa majesté est pronfondément déçu que tant de trésors ne soient pas envoyés en Europe en temps et en heure. Pour résoudre ce probème, Il nous propose un [COLOR_HIGHLIGHT_TEXT]galion[COLOR_REVERT] à un prix réduit.</French>
-		<German>Milord, Seine Majestät ist sehr unzufrieden, dass so viele Schätze nicht rechtzeitig nach Europa verschifft werden. Um das Problem zu lösen bietet man uns eine [COLOR_HIGHLIGHT_TEXT]Galeone[COLOR_REVERT] zu einem vergünstigten Preis an.</German>
+		<English>Milord, His Majesty is deeply discontented that so many treasures are not being shipped in time to Europe. To solve this issue He offers us a [COLOR_HIGHLIGHT_TEXT]treasure transport ship[COLOR_REVERT] for a discounted price.</English>
+		<French>Sa majesté est pronfondément déçu que tant de trésors ne soient pas envoyés en Europe en temps et en heure. Pour résoudre ce probème, Il nous propose un [COLOR_HIGHLIGHT_TEXT]Navire de transport de trésors[COLOR_REVERT] à un prix réduit.</French>
+		<German>Milord, Seine Majestät ist sehr unzufrieden, dass so viele Schätze nicht rechtzeitig nach Europa verschifft werden. Um das Problem zu lösen bietet man uns ein [COLOR_HIGHLIGHT_TEXT]Schatz-Transportschiff[COLOR_REVERT] zu einem vergünstigten Preis an.</German>
 		<Russian>Милорд, Его Величество крайне недоволен тем, что так много [COLOR_HIGHLIGHT_TEXT]сокровищ[COLOR_REVERT] не отправляется вовремя в Европу. Для решения этой проблемы Он предлагает нам [COLOR_HIGHLIGHT_TEXT]галеон[COLOR_REVERT] по сниженной цене.</Russian>
 	</TEXT>
 	<TEXT>
@@ -3598,10 +3610,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_2</Tag>
-		<English>That is an excellent offer! We will happily buy the galleon for that price.</English>
-		<French>Une offre qu'on ne saurait réfuser ! Nous achetons volontiers le galion à ce prix.</French>
-		<German>Das ist ein hervorragendes Angebot! Wir kaufen die Galeone gerne zu diesem Preis.</German>
+		<English>That is an excellent offer! We will happily buy the ship for that price.</English>
+		<French>Une offre qu'on ne saurait réfuser ! Nous achetons volontiers le navire à ce prix.</French>
+		<German>Das ist ein hervorragendes Angebot! Wir kaufen das Schiff gerne zu diesem Preis.</German>
 		<Russian>Какое превосходное предложение! Мы с радостью купим галеон за эту цену.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_REWARD_SHIP_HELP</Tag>
+		<English>The Crown will provide us with a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] to transport the treasures.</English>
+		<German>Die Krone stellt uns eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] zur Verfügung, um die Schätze zu transportieren.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_3</Tag>
@@ -3612,20 +3630,20 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FOUR_TREASURES_RETURN</Tag>
-		<English>The envoys of your king return, reminding you of the galleon you previously declined to purchase. Now that your treasury has recovered, they demand a final decision.</English>
-		<German>Die Gesandten Eures Königs kehren zurück und erinnern Euch an die Galeone, deren Kauf Ihr zuvor aufgeschoben habt. Nun, da sich Eure Schatzkammer erholt hat, verlangen sie eine endgültige Entscheidung.</German>
+		<English>The envoys of your king return, reminding you of the transport ship you previously declined to purchase. Now that your treasury has recovered, they demand a final decision.</English>
+		<German>Die Gesandten Eures Königs kehren zurück und erinnern Euch an das Transportschiff, dessen Kauf Ihr zuvor aufgeschoben habt. Nun, da sich Eure Schatzkammer erholt hat, verlangen sie eine endgültige Entscheidung.</German>
 		<Russian>Посланники вашего Короля вернулись и напомнили о галеоне, покупку которого вы ранее отложили. Теперь, когда ваша казна восстановилась, они требуют окончательного решения.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FOUR_TREASURES_RETURN</Tag>
-		<English>The king's envoys return. Now that your treasury has recovered, they once again demand a final answer regarding the purchase of the galleon.</English>
-		<German>Die Gesandten des Königs kehren zurück. Da sich Eure Schatzkammer erholt hat, verlangen sie nun erneut eine endgültige Entscheidung über den Kauf der Galeone.</German>
+		<English>The king's envoys return. Now that your treasury has recovered, they once again demand a final answer regarding the purchase of the transport ship.</English>
+		<German>Die Gesandten des Königs kehren zurück. Da sich Eure Schatzkammer erholt hat, verlangen sie nun erneut eine endgültige Entscheidung über den Kauf des Transportschiffes.</German>
 		<Russian>Королевские посланники вернулись. Теперь, когда ваша казна восстановилась, они требуют окончательного решения относительно покупки галеона.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1</Tag>
-		<English>Very well. We shall honor our obligation to the Crown and purchase the galleon.</English>
-		<German>Sehr wohl. Wir werden unserer Verpflichtung gegenüber der Krone nachkommen und die Galeone kaufen.</German>
+		<English>Very well. We shall honor our obligation to the Crown and purchase the transport ship.</English>
+		<German>Sehr wohl. Wir werden unserer Verpflichtung gegenüber der Krone nachkommen und das Transportschiff kaufen.</German>
 		<Russian>Конечно, мы выполним свои обязательства перед Короной и купим этот галеон.</Russian>
 	</TEXT>
 	<TEXT>
@@ -3636,8 +3654,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP</Tag>
-		<English>You pay %d1 gold to fulfill your obligation to the Crown. A galleon will be arriving in the coastal city %s2, and your standing with the king improves.</English>
-		<German>Ihr zahlt %d1 Gold, um Eurer Verpflichtung gegenüber der Krone nachzukommen. Eine Galeone wird in der Küstenstadt %s2 anlanden, und Eure Stellung beim König verbessert sich.</German>
+		<English>You pay %d1 gold to fulfill your obligation to the Crown. A %s3 will be arriving in the coastal city %s2, and your standing with the king improves.</English>
+		<German>Ihr zahlt %d1 Gold, um Eurer Verpflichtung gegenüber der Krone nachzukommen. Eine %s3 wird in der Küstenstadt %s2 anlanden, und Eure Stellung beim König verbessert sich.</German>
 		<Russian>Во исполнение обязательств перед Короной из вашей казны будет вычтено %d1 золота. Галеон будет прибудет в порт города %s2, а ваше положение у Короля улучшиться.</Russian>
 	</TEXT>
 	<TEXT>
@@ -3655,9 +3673,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_THREE_GALLEONS</Tag>
-		<English>Milord, His Majesty is worried that our treasure fleet needs better protection. To ensure safe passage His Majesty offers us a mighty [COLOR_HIGHLIGHT_TEXT]royal frigate[COLOR_REVERT] for a discounted price.</English>
+		<English>Milord, His Majesty is worried that our treasure fleet needs better protection. To ensure safe passage His Majesty offers us a mighty [COLOR_HIGHLIGHT_TEXT]war ship[COLOR_REVERT] for a discounted price.</English>
 		<French>Sire, sa Majesté est inquiète car notre convoi de trésor a besoin de plus protection. Pour assurer l'arrivée à bon port du convoi, sa majesté nous propose une puissante [COLOR_HIGHLIGHT_TEXT]frégate royale[COLOR_REVERT] à bas prix.</French>
-		<German>Milord, Seine Majestät ist besorgt, dass unsere Schatzflotte nicht genug geschützt ist. Daher bietet uns Seine Majestät eine mächtige [COLOR_HIGHLIGHT_TEXT]Königliche Fregatte[COLOR_REVERT] zu einem günstigen Preis an, um eine sichere Überfahrt zu gewährleisten.</German>
+		<German>Milord, Seine Majestät ist besorgt, dass unsere Schatzflotte nicht genug geschützt ist. Daher bietet uns Seine Majestät ein mächtiges [COLOR_HIGHLIGHT_TEXT]Kriegsschiff[COLOR_REVERT] zu einem günstigen Preis an, um eine sichere Überfahrt zu gewährleisten.</German>
 		<Russian>Милорд, Его Величество обеспокоен тем, что наши корабли, перевозящие сокровища, не защищены в должной мере. Для обеспечения безопасности транспортировки Его Величество предлагает нам отличный [COLOR_HIGHLIGHT_TEXT]королевский фрегат[COLOR_REVERT] по сниженной цене.</Russian>
 	</TEXT>
 	<TEXT>
@@ -3673,6 +3691,11 @@
 		<French>Nous acceptons, bien sûr. Nous ne refuserions jamais la chance de recevoir un vaisseau aussi puissant.</French>
 		<German>Wir nehmen das Angebot natürlich an. Wir könnten niemals diese einzigartige Gelegenheit zum Erwerb eines solch mächtigen Schifes ablehnen.</German>
 		<Russian>Отличное предложение. Мы никогда не упустим возможность заполучить такой мощный корабль.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_THREE_GALLEONS_REWARD_SHIP_HELP</Tag>
+		<English>[NEWLINE][ICON_BULLET]The Crown will grant us a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT].</English>
+		<German>[NEWLINE][ICON_BULLET]Die Krone wird uns eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] schicken.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_BURNING_CORN_CHAMBER</Tag>
@@ -4114,6 +4137,18 @@
 		<French>Seigneur, un de nos nouveaux corsaires a été capturé par la marine de notre voisin. Les flibustiers ont tous été pendus.</French>
 		<German>Milord, der Freibeuter, den wir kürzlich mit einem neuen Kaperbrief ausstatteten, wurde von der Marine unserer Konkurenten aufgebracht und die Besatzung wegen Piraterie gehängt.</German>
 		<Russian>Милорд, один из наших новых каперов был захвачен флотом нашего соседа. Весь экипаж был повешен...</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PRIVATEER_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PRIVATEER_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_CONVERTED_TOWNHALL</Tag>
@@ -4759,6 +4794,12 @@
 		<Russian>Каждое дополнительное торговое судно показывает, насколько процветают наши колонии!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_EUROPE_TRADE_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_EUROPE_TRADE_QUEST_DONE_11</Tag>
 		<English>It is only a small warship, but it should be enough to protect our merchant fleet.</English>
 		<French>C'est seulement un petit navire de guerre, mais il devrait suffire pour protéger notre flotte marchande.</French>
@@ -4841,6 +4882,12 @@
 		<French>Pour la gloire et la richesse de nos colonies! La mort et le pillage attendent les navires marchands étrangers !</French>
 		<German>Für Ruhm und Reichtum unserer Kolonien! Tod und verderben den fremden Handelsflotten!</German>
 		<Russian>Во славу и богатство наших колоний! Иностранные торговые флоты отправятся на морское дно!</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PORTROYAL_TRADE_REWARD_SHIP_HELP</Tag>
+		<English>We will receive a [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in one of our colonies.</English>
+		<German>Wir erhalten ein bzw. eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] in einer unserer Kolonien.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PORTROYAL_TRADE_QUEST_DONE_4</Tag>

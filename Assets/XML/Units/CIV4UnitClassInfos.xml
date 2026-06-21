@@ -707,6 +707,11 @@
 			<DefaultUnit>UNIT_CARAVEL</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_WAR_CARAVEL</Type>
+			<Description>TXT_KEY_UNITCLASS_WAR_CARAVEL</Description>
+			<DefaultUnit>UNIT_WAR_CARAVEL</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_FLUYT</Type>
 			<Description>TXT_KEY_UNITCLASS_FLUYT</Description>
 			<DefaultUnit>UNIT_FLUYT</DefaultUnit>
@@ -715,6 +720,11 @@
 			<Type>UNITCLASS_CARAVELA_REDONDA</Type>
 			<Description>TXT_KEY_UNITCLASS_CARAVELA_REDONDA</Description>
 			<DefaultUnit>UNIT_CARAVELA_REDONDA</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_NAO</Type>
+			<Description>TXT_KEY_UNITCLASS_NAO</Description>
+			<DefaultUnit>UNIT_NAO</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CARRACK</Type>
@@ -737,6 +747,11 @@
 			<DefaultUnit>UNIT_BRIGANTINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_SLAVE_CARAVEL</Type>
+			<Description>TXT_KEY_UNITCLASS_SLAVE_CARAVEL</Description>
+			<DefaultUnit>UNIT_SLAVE_CARAVEL</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_SLAVE_BARQUE</Type>
 			<Description>TXT_KEY_UNITCLASS_SLAVE_BARQUE</Description>
 			<DefaultUnit>UNIT_SLAVE_BARQUE</DefaultUnit>
@@ -747,14 +762,19 @@
 			<DefaultUnit>UNIT_GALLEON</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ROYAL_TROOP_GALLEON</Type>
-			<Description>TXT_KEY_UNITCLASS_ROYAL_TROOP_GALLEON</Description>
-			<DefaultUnit>UNIT_ROYAL_TROOP_GALLEON</DefaultUnit>
+			<Type>UNITCLASS_WAR_GALLEON</Type>
+			<Description>TXT_KEY_UNITCLASS_WAR_GALLEON</Description>
+			<DefaultUnit>UNIT_WAR_GALLEON</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_WEST_INDIAMAN</Type>
 			<Description>TXT_KEY_UNITCLASS_WEST_INDIAMAN</Description>
 			<DefaultUnit>UNIT_WEST_INDIAMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_ROYAL_TROOP_SHIP</Type>
+			<Description>TXT_KEY_UNITCLASS_ROYAL_TROOP_SHIP</Description>
+			<DefaultUnit>UNIT_ROYAL_TROOP_SHIP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SLOOP</Type>
@@ -770,6 +790,11 @@
 			<Type>UNITCLASS_PIRATE_CUTTER</Type>
 			<Description>TXT_KEY_UNITCLASS_PIRATE_CUTTER</Description>
 			<DefaultUnit>UNIT_PIRATE_CUTTER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_PIRATE_SHIP</Type>
+			<Description>TXT_KEY_UNITCLASS_PIRATE_SHIP</Description>
+			<DefaultUnit>UNIT_PIRATE_SHIP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_PIRATE_FRIGATE</Type>
@@ -795,6 +820,11 @@
 			<Type>UNITCLASS_FRIGATE</Type>
 			<Description>TXT_KEY_UNITCLASS_FRIGATE</Description>
 			<DefaultUnit>UNIT_FRIGATE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HEAVY_FRIGATE</Type>
+			<Description>TXT_KEY_UNITCLASS_HEAVY_FRIGATE</Description>
+			<DefaultUnit>UNIT_HEAVY_FRIGATE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_ROYAL_FRIGATE</Type>

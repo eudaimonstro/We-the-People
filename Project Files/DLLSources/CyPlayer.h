@@ -97,6 +97,7 @@ public:
 	bool canFound(int iX, int iY);
 	void found(int iX, int iY);
 	bool canTrain(int /*UnitTypes*/ eUnit, bool bContinue, bool bTestVisible);
+	bool isUnitWithinGameYearWindow(int /*UnitTypes*/ eUnit); // WTP, Schmiddie Availability Change Project
 	bool canConstruct(int /*BuildingTypes*/eBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost);
 	int getUnitYieldProductionNeeded(int /*UnitTypes*/ eUnit, int /*YieldTypes*/ eYield) const;
 	int getBuildingYieldProductionNeeded(int /*BuildingTypes*/ eBuilding, int /*YieldTypes*/ eYield) const;

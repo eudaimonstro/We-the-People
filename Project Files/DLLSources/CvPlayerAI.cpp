@@ -5318,7 +5318,7 @@ int CvPlayerAI::AI_unitGoldValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* p
 #endif
 	return std::max(0, iValue);
 }
-
+//WTP, Schmiddie, Unit Availability CHange Projekt START - more units 
 //This function indicates how worthwhile the unit is to buy.
 int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvArea* pArea)
 {
@@ -5341,9 +5341,12 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 	{
 		//Do we need a transport, period?
 		int iTransportCount = AI_totalUnitAIs(UNITAI_TRANSPORT_SEA);
+		int iCoastalCityCount = countNumCoastalCities();
+		int iNeededTransports = std::max(4, 1 + iCoastalCityCount / 2);
+
 		if (iTransportCount == 0)
 		{
-			iValue += 200 + 50 * iCargoSpace;
+			iValue += 300 + 75 * iCargoSpace;
 		}
 		else if (AI_totalUnitAIs(UNITAI_TREASURE) > 0) //Do we need a treasure transport?
 		{
@@ -5386,27 +5389,28 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 			}
 		}
 
-		if (iTransportCount < (1 + getNumCities() / 3))
+		if (iTransportCount < iNeededTransports)
 		{
-			int iBestTransportSize = 0;
+			int iBestTransportSize = 1;
 			int iLoop;
 			CvUnit* pLoopUnit;
 			for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 			{
-				int iBestTransportSize = 1;
 				if (pLoopUnit->AI_getUnitAIType() == UNITAI_TRANSPORT_SEA)
 				{
 					iBestTransportSize = std::max(iBestTransportSize, pLoopUnit->cargoSpace());
 				}
 			}
 
+			iValue += 100 + 40 * (iNeededTransports - iTransportCount);
+
 			if (iCargoSpace == iBestTransportSize)
 			{
-				iValue += 25;
+				iValue += 50;
 			}
 			else if (iCargoSpace > iBestTransportSize)
 			{
-				iValue += 50 + 10 * (iCargoSpace - iBestTransportSize);
+				iValue += 100 + 20 * (iCargoSpace - iBestTransportSize);
 			}
 		}
 	}
@@ -5416,22 +5420,44 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 	{
 		if (kUnitInfo.getCombat() > 0)
 		{
+			int iCoastalCityCount = countNumCoastalCities();
+
 			//Pirate
-			if (getTotalPopulation() > 12)
+			if (getTotalPopulation() > 8)
 			{
 				if (kUnitInfo.isHiddenNationality())
 				{
-					if (AI_totalUnitAIs(UNITAI_PIRATE_SEA) <= (getNumCities() / 9))
+					int iPirateCount = AI_totalUnitAIs(UNITAI_PIRATE_SEA);
+					int iNeededPirates = std::max(1, iCoastalCityCount / 4);
+
+					if (iPirateCount < iNeededPirates)
 					{
-						iValue += 50 + getNumCities() * 5;
+						iValue += 100 + 50 * (iNeededPirates - iPirateCount);
+						iValue += getNumCities() * 8;
+						iValue += kUnitInfo.getCombat() * 2;
 					}
+				}
+			}
+
+			//Regular warships
+			if (!kUnitInfo.isHiddenNationality() && !kUnitInfo.isOnlyDefensive() && kUnitInfo.getMoves() > 0)
+			{
+				int iWarshipCount = AI_totalUnitAIs(UNITAI_COMBAT_SEA) + AI_totalUnitAIs(UNITAI_ESCORT_SEA);
+				int iNeededWarships = std::max(3, 1 + iCoastalCityCount / 2);
+
+				if (iWarshipCount < iNeededWarships)
+				{
+					iValue += 150 + 60 * (iNeededWarships - iWarshipCount);
+					iValue += kUnitInfo.getCombat() * 3;
+					iValue += kUnitInfo.getMoves() * 10;
 				}
 			}
 		}
 	}
+
 	return iValue;
 }
-
+//WTP, Schmiddie, Unit Availability CHange Projekt END - more units 
 int CvPlayerAI::AI_totalUnitAIs(UnitAITypes eUnitAI)
 {
 	return (AI_getNumTrainAIUnits(eUnitAI) + AI_getNumAIUnits(eUnitAI));

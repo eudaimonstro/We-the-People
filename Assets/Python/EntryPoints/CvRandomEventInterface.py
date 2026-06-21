@@ -20,6 +20,13 @@ localText = CyTranslator()
 # ============================================================
 # CORE HELPERS (DO NOT TOUCH)
 # ============================================================
+def getFirstAvailableUnit(player, unitList):
+
+	for iUnit in unitList:
+		if player.isUnitWithinGameYearWindow(iUnit):
+			return iUnit
+
+	return unitList[-1]
 
 def _scaleTurnsByGameSpeed(iBaseTurns):
 	iGameSpeedType = CyGame().getGameSpeedType()
@@ -3913,24 +3920,114 @@ def helpCargoSpace(argsList):
 def canTriggerAntiPirate(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
 	if not player.isPlayable():
 		return False
-	iKilledTradeships = 0
-	i=0
-	eEvent = gc.getEventTriggerInfo(kTriggeredData.eTrigger).getEvent(0)
-	event = gc.getEventInfo(eEvent)
+
 	if player.isInRevolution():
 		return False
-	for i in (UnitTypes.UNIT_CARAVEL, UnitTypes.UNIT_FLUYT, UnitTypes.UNIT_MERCHANTMAN, UnitTypes.UNIT_WHALING_BOAT, UnitTypes.UNIT_CARRACK, UnitTypes.UNIT_CARAVELA_REDONDA, UnitTypes.UNIT_WEST_INDIAMAN, UnitTypes.UNIT_BRIGANTINE):
+
+	iKilledTradeships = 0
+
+	eEvent = gc.getEventTriggerInfo(kTriggeredData.eTrigger).getEvent(0)
+	event = gc.getEventInfo(eEvent)
+
+	for i in (
+		UnitTypes.UNIT_CARAVEL,
+		UnitTypes.UNIT_FLUYT,
+		UnitTypes.UNIT_MERCHANTMAN,
+		UnitTypes.UNIT_WHALING_BOAT,
+		UnitTypes.UNIT_CARRACK,
+		UnitTypes.UNIT_CARAVELA_REDONDA,
+		UnitTypes.UNIT_WEST_INDIAMAN,
+		UnitTypes.UNIT_BRIGANTINE,
+		UnitTypes.UNIT_NAO,
+		UnitTypes.UNIT_GALLEON,
+	):
 		iKilledTradeships += CyStatistics().getPlayerNumUnitsLost(kTriggeredData.ePlayer, i)
-	if iKilledTradeships >= event.getGenericParameter(1):
-		(loopUnit, iter) = player.firstUnit()
-		while(loopUnit):
-			if loopUnit.getUnitType() in (UnitTypes.UNIT_FRIGATE, UnitTypes.UNIT_SHIP_OF_THE_LINE, UnitTypes.UNIT_COLONIAL_MAN_O_WAR):
-				return False
-			(loopUnit, iter) = player.nextUnit(iter)
-		return True
-	return False
+
+	if iKilledTradeships < event.getGenericParameter(1):
+		return False
+
+	forbiddenWarships = (
+		UnitTypes.UNIT_WAR_GALLEON,
+		UnitTypes.UNIT_CORVETTE,
+		UnitTypes.UNIT_NAVAL_BRIG,
+		UnitTypes.UNIT_FRIGATE,
+		UnitTypes.UNIT_HEAVY_FRIGATE,
+		UnitTypes.UNIT_SHIP_OF_THE_LINE,
+		UnitTypes.UNIT_ROYAL_SHIP_OF_THE_LINE,
+		UnitTypes.UNIT_COLONIAL_MAN_O_WAR,
+		UnitTypes.UNIT_ROYAL_MAN_O_WAR,
+	)
+
+	(loopUnit, iter) = player.firstUnit()
+	while loopUnit:
+		if loopUnit.getUnitType() in forbiddenWarships:
+			return False
+
+		(loopUnit, iter) = player.nextUnit(iter)
+
+	return True
+
+def getAntiPirateRewardUnitClass(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_FRIGATE"), gc.getInfoTypeForString("UNITCLASS_FRIGATE")),
+		(gc.getInfoTypeForString("UNIT_WAR_GALLEON"), gc.getInfoTypeForString("UNITCLASS_WAR_GALLEON")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyAntiPirateRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getAntiPirateRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpAntiPirateRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getAntiPirateRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_ANTI_PIRATE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
 
 ######## RUM BLOSSOM ###########
 
@@ -5662,6 +5759,7 @@ def canTriggerSupersitiousPirates(argsList):
 		return False
 
 	if unit.getUnitClassType() not in (
+		gc.getInfoTypeForString("UNITCLASS_PIRATE_SHIP"),
 		gc.getInfoTypeForString("UNITCLASS_PRIVATEER"),
 		gc.getInfoTypeForString("UNITCLASS_PIRATE_CUTTER"),
 		gc.getInfoTypeForString("UNITCLASS_PIRATE_FRIGATE"),
@@ -7003,6 +7101,18 @@ def canTriggerTavernVsChapel(argsList):
 
 ######## Privateer Events ###########
 
+def _isPrivateerEventShip(unit):
+	if unit is None or unit.isNone():
+		return False
+
+	aValidUnitClasses = [
+		gc.getInfoTypeForString("UNITCLASS_PIRATE_SHIP"),
+		gc.getInfoTypeForString("UNITCLASS_PIRATE_FRIGATE"),
+		gc.getInfoTypeForString("UNITCLASS_PRIVATEER"),
+	]
+
+	return unit.getUnitClassType() in aValidUnitClasses
+    
 def canTriggerPrivateer(argsList):
 	kTriggeredData = argsList[0]
 
@@ -7014,11 +7124,14 @@ def canTriggerPrivateer(argsList):
 	if unit.isNone():
 		return False
 
-	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_PRIVATEER"):
+	if not _isPrivateerEventShip(unit):
 		return False
 
 	plot = unit.plot()
 	if plot is None or plot.isNone():
+		return False
+
+	if plot.getX() != kTriggeredData.iPlotX or plot.getY() != kTriggeredData.iPlotY:
 		return False
 
 	if not plot.isWater():
@@ -7028,6 +7141,7 @@ def canTriggerPrivateer(argsList):
 		return False
 
 	return True
+
 
 def applyPrivateer1(argsList):
 	kTriggeredData = argsList[0]
@@ -7040,7 +7154,7 @@ def applyPrivateer1(argsList):
 	if unit.isNone():
 		return
 
-	if unit.getUnitClassType() != gc.getInfoTypeForString("UNITCLASS_PRIVATEER"):
+	if not _isPrivateerEventShip(unit):
 		return
 
 	plot = unit.plot()
@@ -7053,8 +7167,127 @@ def applyPrivateer1(argsList):
 	if not plot.isWater():
 		return
 
-	unit.kill(False)
+	if plot.isCity():
+		return
+
+	unit.kill(False)   
     
+ 
+def getPrivateerRewardUnitClass3(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_PRIVATEER"), gc.getInfoTypeForString("UNITCLASS_PRIVATEER")),
+		(gc.getInfoTypeForString("UNIT_PIRATE_SHIP"), gc.getInfoTypeForString("UNITCLASS_PIRATE_SHIP")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyPrivateerRewardShip3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getPrivateerRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	unit = city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+	if unit is not None and not unit.isNone():
+		unit.setName("Queen Anne's Revenge")
+
+
+def getHelpPrivateerRewardShip3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getPrivateerRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_PRIVATEER_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+def getPrivateerRewardUnitClass4(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_MERCHANTMAN"), gc.getInfoTypeForString("UNITCLASS_MERCHANTMAN")),
+		(gc.getInfoTypeForString("UNIT_CARRACK"), gc.getInfoTypeForString("UNITCLASS_CARRACK")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyPrivateerRewardShip4(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getPrivateerRewardUnitClass4(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpPrivateerRewardShip4(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getPrivateerRewardUnitClass4(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_PRIVATEER_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+ 
 ######## BEER ROBBERY ###########
 
 def canTriggerBeerRobbery(argsList):
@@ -20483,6 +20716,60 @@ def canTriggerFourTreasures(argsList):
 	return True
 
 
+def getFourTreasuresRewardUnitClass(player):
+	iGalleon = gc.getInfoTypeForString("UNIT_GALLEON")
+	iGalleonClass = gc.getInfoTypeForString("UNITCLASS_GALLEON")
+	iWestIndiamanClass = gc.getInfoTypeForString("UNITCLASS_WEST_INDIAMAN")
+
+	if iGalleon != -1 and player.isUnitWithinGameYearWindow(iGalleon):
+		return iGalleonClass
+
+	return iWestIndiamanClass
+
+
+def applyFourTreasuresRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyKingPleased(argsList)
+
+	iRewardUnitClass = getFourTreasuresRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	(city, iter) = player.firstCity(True)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpFourTreasuresRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpKingPleased(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getFourTreasuresRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_FOUR_TREASURES_REWARD_SHIP_HELP",
+		(gc.getUnitClassInfo(iRewardUnitClass).getTextKey(),)
+	)
+
+	return szHelp
+
 # -----------------------------------------
 # Postpone
 # -----------------------------------------
@@ -20641,23 +20928,14 @@ def applyFourTreasuresReturnBuy(argsList):
 	if player.getGold() < FOUR_TREASURES_RETURN_REQUIRED_GOLD:
 		return
 
-	iUnitClassType = gc.getInfoTypeForString("UNITCLASS_GALLEON")
-	iUnitType = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClassType)
+	iRewardUnitClass = getFourTreasuresRewardUnitClass(player)
 
-	if iUnitType == UnitTypes.NO_UNIT:
+	if iRewardUnitClass == -1:
 		return
 
 	player.changeGold(-FOUR_TREASURES_RETURN_REQUIRED_GOLD)
 
-	player.initUnit(
-		iUnitType,
-		0,
-		city.getX(),
-		city.getY(),
-		UnitAITypes.NO_UNITAI,
-		DirectionTypes.DIRECTION_SOUTH,
-		0
-	)
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
 
 	_changeKingRelation(argsList, 1)
 	_clearFourTreasuresState(player)
@@ -20676,9 +20954,21 @@ def getHelpFourTreasuresReturnBuy(argsList):
 	else:
 		szCityName = u"-"
 
+	iRewardUnitClass = getFourTreasuresRewardUnitClass(player)
+
+	if iRewardUnitClass != -1:
+		iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+		szUnitName = gc.getUnitInfo(iRewardUnit).getDescription()
+	else:
+		szUnitName = u"-"
+
 	szHelp = localText.getText(
 		"TXT_KEY_EVENT_FOUR_TREASURES_RETURN_1_HELP",
-		(FOUR_TREASURES_RETURN_REQUIRED_GOLD, szCityName)
+		(
+			FOUR_TREASURES_RETURN_REQUIRED_GOLD,
+			szCityName,
+			szUnitName
+		)
 	)
 
 	szHelp += u"\n" + localText.getText(
@@ -27360,3 +27650,1243 @@ def getHelpEuropeanMilitaryAidSupportNatives(argsList):
 		"TXT_KEY_EVENT_EUROPEAN_MILITARY_AID_4_HELP",
 		(EUROPEAN_MILITARY_AID_MUSKETS_AMOUNT, EUROPEAN_MILITARY_AID_HORSES_AMOUNT, EUROPEAN_MILITARY_AID_NATIVE_ATTITUDE_BONUS)
 	)
+
+######## Event three galleons / west indiaman ###########
+
+def canTriggerThreeGalleons(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	iCount = 0
+
+	aUnitClasses = [
+		gc.getInfoTypeForString("UNITCLASS_GALLEON"),
+		gc.getInfoTypeForString("UNITCLASS_WEST_INDIAMAN"),
+	]
+
+	(unit, iter) = player.firstUnit()
+	while unit:
+		if unit.getUnitClassType() in aUnitClasses:
+			iCount += 1
+
+			if iCount >= 3:
+				return True
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return False
+
+def getThreeGalleonsRewardUnitClass(player):
+	iRoyalFrigate = gc.getInfoTypeForString("UNIT_ROYAL_FRIGATE")
+	iRoyalFrigateClass = gc.getInfoTypeForString("UNITCLASS_ROYAL_FRIGATE")
+	iWarGalleonClass = gc.getInfoTypeForString("UNITCLASS_WAR_GALLEON")
+
+	if iRoyalFrigate != -1 and player.isUnitWithinGameYearWindow(iRoyalFrigate):
+		return iRoyalFrigateClass
+
+	return iWarGalleonClass
+
+
+def applyThreeGalleonsRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyKingPleased(argsList)
+
+	iRewardUnitClass = getThreeGalleonsRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	(city, iter) = player.firstCity(True)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpThreeGalleonsRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpKingPleased(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getThreeGalleonsRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	szHelp += localText.getText(
+		"TXT_KEY_EVENT_THREE_GALLEONS_REWARD_SHIP_HELP",
+		(gc.getUnitClassInfo(iRewardUnitClass).getTextKey(),)
+	)
+
+	return szHelp
+
+######## Event six war ships ###########
+
+def getFirstOceanAccessCity(player):
+	if player.isNone():
+		return None
+
+	(city, iter) = player.firstCity(True)
+
+	while city:
+		if not city.isNone():
+			if _cityHasEuropeAccess(city):
+				return city
+
+		(city, iter) = player.nextCity(iter, True)
+
+	return None
+
+def canTriggerSixWarshipsQuest(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if getSixWarshipsRewardUnitClass(player) == -1:
+		return False
+
+	if getFirstOceanAccessCity(player) is None:
+		return False
+
+	return True
+
+
+def getSixWarshipsRewardUnitClass(player):
+	aRewardUnits = [
+		(
+			gc.getInfoTypeForString("UNIT_ROYAL_MAN_O_WAR"),
+			gc.getInfoTypeForString("UNITCLASS_ROYAL_MAN_O_WAR")
+		),
+		(
+			gc.getInfoTypeForString("UNIT_ROYAL_SHIP_OF_THE_LINE"),
+			gc.getInfoTypeForString("UNITCLASS_ROYAL_SHIP_OF_THE_LINE")
+		),
+		(
+			gc.getInfoTypeForString("UNIT_SHIP_OF_THE_LINE"),
+			gc.getInfoTypeForString("UNITCLASS_SHIP_OF_THE_LINE")
+		),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applySixWarshipsRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyKingPleased(argsList)
+
+	iRewardUnitClass = getSixWarshipsRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpSixWarshipsRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpKingPleased(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getSixWarshipsRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szUnitName = gc.getUnitInfo(iRewardUnit).getDescription()
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_SIX_WARSHIPS_REWARD_SHIP_HELP",
+		(szUnitName,)
+	)
+
+	return szHelp
+
+######## Event two slave ships ###########
+
+def canTriggerSlaveTraderQuestDone(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	iSlaveCaravelClass = gc.getInfoTypeForString("UNITCLASS_SLAVE_CARAVEL")
+	iSlaveBarqueClass = gc.getInfoTypeForString("UNITCLASS_SLAVE_BARQUE")
+
+	iCount = 0
+
+	(unit, iter) = player.firstUnit()
+	while unit:
+		if unit.getUnitClassType() == iSlaveCaravelClass:
+			iCount += 1
+		elif unit.getUnitClassType() == iSlaveBarqueClass:
+			iCount += 1
+
+		if iCount >= 2:
+			return True
+
+		(unit, iter) = player.nextUnit(iter)
+
+	return False
+
+######## Event five docks ###########
+
+def getFiveDocksRewardUnitClass2(player):
+	aRewardUnits = [
+		(
+			gc.getInfoTypeForString("UNIT_FRIGATE"),
+			gc.getInfoTypeForString("UNITCLASS_FRIGATE")
+		),
+		(
+			gc.getInfoTypeForString("UNIT_WAR_GALLEON"),
+			gc.getInfoTypeForString("UNITCLASS_WAR_GALLEON")
+		),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def getFiveDocksRewardUnitClass3(player):
+	aRewardUnits = [
+		(
+			gc.getInfoTypeForString("UNIT_BRIGANTINE"),
+			gc.getInfoTypeForString("UNITCLASS_BRIGANTINE")
+		),
+		(
+			gc.getInfoTypeForString("UNIT_CARRACK"),
+			gc.getInfoTypeForString("UNITCLASS_CARRACK")
+		),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyFiveDocksRewardShip2(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getFiveDocksRewardUnitClass2(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def applyFiveDocksRewardShip3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getFiveDocksRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpFiveDocksRewardShip2(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getFiveDocksRewardUnitClass2(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+	if iRewardUnit == -1:
+		return u""
+
+	szUnitName = gc.getUnitInfo(iRewardUnit).getDescription()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FIVE_DOCKS_REWARD_SHIP_HELP",
+		(szUnitName,)
+	)
+
+
+def getHelpFiveDocksRewardShip3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getFiveDocksRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+	if iRewardUnit == -1:
+		return u""
+
+	szUnitName = gc.getUnitInfo(iRewardUnit).getDescription()
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FIVE_DOCKS_REWARD_SHIP_HELP",
+		(szUnitName,)
+	)
+
+
+######## Event Great Admial / Sloop ###########
+
+def canTriggerAdmiralQuest(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	iSloop = gc.getInfoTypeForString("UNIT_SLOOP")
+
+	return player.isUnitWithinGameYearWindow(iSloop)
+
+
+######## Event Commandeered / Return ###########
+COMMANDEERED_SHIP_CLASS_PREFIX = "[[WTP_COMMANDEERED_SHIP_CLASS="
+COMMANDEERED_SHIP_CLASS_SUFFIX = "]]"
+
+
+def _isCommandeeredShip(unit):
+	if unit is None or unit.isNone():
+		return False
+
+	return unit.getUnitClassType() in (
+		gc.getInfoTypeForString("UNITCLASS_WAR_GALLEON"),
+		gc.getInfoTypeForString("UNITCLASS_FRIGATE"),
+	)
+
+
+def _getCommandeeredShipClass(player):
+	if player.isNone():
+		return -1
+
+	szData = player.getScriptData()
+	if szData is None or szData == "":
+		return -1
+
+	iStart = szData.find(COMMANDEERED_SHIP_CLASS_PREFIX)
+	if iStart == -1:
+		return -1
+
+	iStart += len(COMMANDEERED_SHIP_CLASS_PREFIX)
+	iEnd = szData.find(COMMANDEERED_SHIP_CLASS_SUFFIX, iStart)
+	if iEnd == -1:
+		return -1
+
+	try:
+		return int(szData[iStart:iEnd])
+	except:
+		return -1
+
+
+def _clearCommandeeredShipClass(player):
+	if player.isNone():
+		return
+
+	szData = player.getScriptData()
+	if szData is None:
+		return
+
+	iStart = szData.find(COMMANDEERED_SHIP_CLASS_PREFIX)
+	if iStart == -1:
+		return
+
+	iEnd = szData.find(COMMANDEERED_SHIP_CLASS_SUFFIX, iStart)
+	if iEnd == -1:
+		return
+
+	iEnd += len(COMMANDEERED_SHIP_CLASS_SUFFIX)
+	player.setScriptData(szData[:iStart] + szData[iEnd:])
+
+
+def _setCommandeeredShipClass(player, iUnitClass):
+	if player.isNone():
+		return
+
+	_clearCommandeeredShipClass(player)
+
+	szData = player.getScriptData()
+	if szData is None:
+		szData = ""
+
+	szData += "%s%d%s" % (
+		COMMANDEERED_SHIP_CLASS_PREFIX,
+		iUnitClass,
+		COMMANDEERED_SHIP_CLASS_SUFFIX
+	)
+
+	player.setScriptData(szData)
+    
+def applyCommandeeredTrackShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	unit = player.getUnit(kTriggeredData.iUnitId)
+	if unit.isNone():
+		return
+
+	if not _isCommandeeredShip(unit):
+		return
+
+	_setCommandeeredShipClass(player, unit.getUnitClassType())
+
+	applyKingPleased(argsList)
+
+	unit.kill(False)
+
+def getHelpCommandeeredTrackShip(argsList):
+	return getHelpKingPleased(argsList)
+
+
+def canDoCommandeeredReturn(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if _getCommandeeredShipClass(player) == -1:
+		return False
+
+	if getFirstOceanAccessCity(player) is None:
+		return False
+
+	return True
+
+def applyCommandeeredReturn(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iUnitClass = _getCommandeeredShipClass(player)
+
+	if iUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iUnitClass)
+
+	_clearCommandeeredShipClass(player)
+
+def getHelpCommandeeredReturn(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iUnitClass = _getCommandeeredShipClass(player)
+
+	if iUnitClass == -1:
+		return u""
+
+	iUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iUnitClass)
+
+	if iUnit == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_COMMANDEERED_RETURN_HELP",
+		(gc.getUnitInfo(iUnit).getDescription(),)
+	)
+
+######## Event THREE_SMALL_COASTAL_SHIPS_QUEST ###########
+
+def canTriggerThreeSmallCoastalShipsQuest(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	iBigCoastalShip = gc.getInfoTypeForString("UNIT_BIG_COASTAL_SHIP")
+
+	if iBigCoastalShip == -1:
+		return False
+
+	return player.isUnitWithinGameYearWindow(iBigCoastalShip)
+
+
+######## Further ship codes regarding availability change fixes ###########
+
+def getAfricaTradeQuestRewardUnitClass(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_SLAVE_BARQUE"), gc.getInfoTypeForString("UNITCLASS_SLAVE_BARQUE")),
+		(gc.getInfoTypeForString("UNIT_SLAVE_CARAVEL"), gc.getInfoTypeForString("UNITCLASS_SLAVE_CARAVEL")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyAfricaTradeQuestRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDoneAfricaTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getAfricaTradeQuestRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpAfricaTradeQuestRewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDoneAfricaTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getAfricaTradeQuestRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_AFRICA_TRADE_QUEST_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getFiveCathedralsRewardUnitClass3(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_BRIGANTINE"), gc.getInfoTypeForString("UNITCLASS_BRIGANTINE")),
+		(gc.getInfoTypeForString("UNIT_CARRACK"), gc.getInfoTypeForString("UNITCLASS_CARRACK")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyFiveCathedralsRewardShips3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getFiveCathedralsRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	for i in range(2):
+		city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpFiveCathedralsRewardShips3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getFiveCathedralsRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_FIVE_CATHEDRALS_REWARD_SHIPS_HELP",
+		(2, gc.getUnitInfo(iRewardUnit).getDescription())
+	)
+
+def applyPiratesRewardShip4a(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	iRewardUnitClass = getPrivateerRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	unit = city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+	if unit is not None and not unit.isNone():
+		unit.setName("Black Pearl")
+
+
+def getHelpPiratesRewardShip4a(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return u""
+
+	iRewardUnitClass = getPrivateerRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return u""
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return u""
+
+	return localText.getText(
+		"TXT_KEY_EVENT_PIRATES_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+    
+def getEuropeTradeQuestRewardUnitClass10(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_BRIGANTINE"), gc.getInfoTypeForString("UNITCLASS_BRIGANTINE")),
+		(gc.getInfoTypeForString("UNIT_CARRACK"), gc.getInfoTypeForString("UNITCLASS_CARRACK")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyEuropeTradeQuestRewardShip10(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClass10(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpEuropeTradeQuestRewardShip10(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClass10(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_EUROPE_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getEuropeTradeQuestRewardUnitClass11(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_CORVETTE"), gc.getInfoTypeForString("UNITCLASS_CORVETTE")),
+		(gc.getInfoTypeForString("UNIT_WAR_GALLEON"), gc.getInfoTypeForString("UNITCLASS_WAR_GALLEON")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyEuropeTradeQuestRewardShip11(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClass11(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpEuropeTradeQuestRewardShip11(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClass11(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_EUROPE_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getEuropeTradeQuestRewardUnitClassMuskets(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_SLOOP"), gc.getInfoTypeForString("UNITCLASS_SLOOP")),
+		(gc.getInfoTypeForString("UNIT_WAR_CARAVEL"), gc.getInfoTypeForString("UNITCLASS_WAR_CARAVEL")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyEuropeTradeQuestRewardShipMuskets(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClassMuskets(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpEuropeTradeQuestRewardShipMuskets(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClassMuskets(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_EUROPE_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getEuropeTradeQuestRewardUnitClassRope(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_MERCHANTMAN"), gc.getInfoTypeForString("UNITCLASS_MERCHANTMAN")),
+		(gc.getInfoTypeForString("UNIT_NAO"), gc.getInfoTypeForString("UNITCLASS_NAO")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+def applyEuropeTradeQuestRewardShipRope(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClassRope(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+def getHelpEuropeTradeQuestRewardShipRope(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClassRope(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_EUROPE_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getEuropeTradeQuestRewardUnitClassHardwood(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_SLOOP"), gc.getInfoTypeForString("UNITCLASS_SLOOP")),
+		(gc.getInfoTypeForString("UNIT_WAR_CARAVEL"), gc.getInfoTypeForString("UNITCLASS_WAR_CARAVEL")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyEuropeTradeQuestRewardShipHardwood(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClassHardwood(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpEuropeTradeQuestRewardShipHardwood(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDoneEuropeTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getEuropeTradeQuestRewardUnitClassHardwood(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_EUROPE_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getPortRoyalTradeQuestRewardUnitClass3(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_PRIVATEER"), gc.getInfoTypeForString("UNITCLASS_PRIVATEER")),
+		(gc.getInfoTypeForString("UNIT_PIRATE_SHIP"), gc.getInfoTypeForString("UNITCLASS_PIRATE_SHIP")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyPortRoyalTradeQuestRewardShip3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDonePortRoyalTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getPortRoyalTradeQuestRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpPortRoyalTradeQuestRewardShip3(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDonePortRoyalTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getPortRoyalTradeQuestRewardUnitClass3(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_PORTROYAL_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+def getPortRoyalTradeQuestRewardUnitClass4(player):
+	aRewardUnits = [
+		(gc.getInfoTypeForString("UNIT_PIRATE_FRIGATE"), gc.getInfoTypeForString("UNITCLASS_PIRATE_FRIGATE")),
+		(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), gc.getInfoTypeForString("UNITCLASS_PIRATE_CUTTER")),
+	]
+
+	for iUnit, iUnitClass in aRewardUnits:
+		if iUnit != -1 and iUnitClass != -1:
+			if player.isUnitWithinGameYearWindow(iUnit):
+				return iUnitClass
+
+	return -1
+
+
+def applyPortRoyalTradeQuestRewardShip4(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyQuestDonePortRoyalTradePriceAndAttitude(argsList)
+
+	iRewardUnitClass = getPortRoyalTradeQuestRewardUnitClass4(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpPortRoyalTradeQuestRewardShip4(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpQuestDonePortRoyalTradePriceAndAttitude(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getPortRoyalTradeQuestRewardUnitClass4(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_PORTROYAL_TRADE_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp
+
+######## EVENT_START_SEVEN_CITIES_OF_CIBOLA_EXPEDITION_ARRIVAL_2 regarding availability change fix ###########
+
+def getCibolaExpeditionArrivalRewardUnitClass(player):
+	iGalleon = gc.getInfoTypeForString("UNIT_GALLEON")
+	iGalleonClass = gc.getInfoTypeForString("UNITCLASS_GALLEON")
+	iWestIndiamanClass = gc.getInfoTypeForString("UNITCLASS_WEST_INDIAMAN")
+
+	if iGalleon != -1 and player.isUnitWithinGameYearWindow(iGalleon):
+		return iGalleonClass
+
+	return iWestIndiamanClass
+
+
+def applyCibolaExpeditionArrival2RewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return
+
+	applyCibolaReturnDone(argsList)
+
+	iRewardUnitClass = getCibolaExpeditionArrivalRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return
+
+	city = player.getCity(kTriggeredData.iCityId)
+
+	if city is None or city.isNone():
+		city = getFirstOceanAccessCity(player)
+
+	if city is None or city.isNone():
+		return
+
+	city.spawnOwnPlayerUnitOnPlotOfCity(iRewardUnitClass)
+
+
+def getHelpCibolaExpeditionArrival2RewardShip(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	szHelp = getHelpCibolaExpeditionArrival2(argsList)
+
+	if player.isNone():
+		return szHelp
+
+	iRewardUnitClass = getCibolaExpeditionArrivalRewardUnitClass(player)
+
+	if iRewardUnitClass == -1:
+		return szHelp
+
+	iRewardUnit = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationUnits(iRewardUnitClass)
+
+	if iRewardUnit == -1:
+		return szHelp
+
+	szHelp += u"\n" + localText.getText(
+		"TXT_KEY_EVENT_CIBOLA_EXPEDITION_ARRIVAL_REWARD_SHIP_HELP",
+		(gc.getUnitInfo(iRewardUnit).getDescription(),)
+	)
+
+	return szHelp

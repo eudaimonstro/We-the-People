@@ -38,6 +38,96 @@
 // Moving from 10 (vanilla guess at max visual range) to a realistic 3 will reduce the number of looped plots by 89%.
 // In general the game will use a low realistic number while it can increase if a rare promotion combo comes up.
 
+// WTP, Schmiddie, Naval Control Movement - START
+int CvPlot::navalControlMovementCost(const CvUnit* pMovingUnit) const
+{
+	if (pMovingUnit == NULL)
+	{
+		return 0;
+	}
+
+	if (pMovingUnit->getDomainType() != DOMAIN_SEA)
+	{
+		return 0;
+	}
+
+	if (!isWater())
+	{
+		return 0;
+	}
+
+	int iExtraCost = 0;
+	const int iMaxExtraCost = 15;
+	const int iSearchRadius = 3;
+
+	for (int iDX = -iSearchRadius; iDX <= iSearchRadius; ++iDX)
+	{
+		for (int iDY = -iSearchRadius; iDY <= iSearchRadius; ++iDY)
+		{
+			if (iDX == 0 && iDY == 0)
+			{
+				continue;
+			}
+
+			CvPlot* pControlPlot = GC.getMap().plot(getX_INLINE() + iDX, getY_INLINE() + iDY);
+
+			if (pControlPlot == NULL || !pControlPlot->isWater())
+			{
+				continue;
+			}
+
+			if (!pControlPlot->isVisible(pMovingUnit->getTeam(), false))
+			{
+				continue;
+			}
+
+			for (int iUnit = 0; iUnit < pControlPlot->getNumUnits(); ++iUnit)
+			{
+				CvUnit* pControlUnit = pControlPlot->getUnitByIndex(iUnit);
+
+				if (pControlUnit == NULL)
+				{
+					continue;
+				}
+
+				if (pControlUnit->getDomainType() != DOMAIN_SEA)
+				{
+					continue;
+				}
+
+				const CvUnitInfo& kControlUnitInfo = pControlUnit->getUnitInfo();
+				const int iNavalControlCost = kControlUnitInfo.getNavalControlCost();
+				const int iNavalControlRadius = kControlUnitInfo.getNavalControlRadius();
+
+				if (iNavalControlCost <= 0 || iNavalControlRadius <= 0)
+				{
+					continue;
+				}
+
+				if (std::max(abs(iDX), abs(iDY)) > iNavalControlRadius)
+				{
+					continue;
+				}
+
+				if (!pControlUnit->isAlwaysHostile(pControlPlot) && !pMovingUnit->isEnemy(pControlUnit->getTeam(), pControlPlot))
+				{
+					continue;
+				}
+
+				iExtraCost += iNavalControlCost;
+
+				if (iExtraCost >= iMaxExtraCost)
+				{
+					return iMaxExtraCost * GLOBAL_DEFINE_MOVE_DENOMINATOR;
+				}
+			}
+		}
+	}
+
+	return iExtraCost * GLOBAL_DEFINE_MOVE_DENOMINATOR;
+}
+// WTP, Schmiddie, Naval Control Movement - END
+
 #ifndef CHECK_GLOBAL_CONSTANTS
 int MAX_VISIBILITY_RANGE_PLOT;
 int MAX_VISIBILITY_RANGE_PLOT_BONUS;
@@ -3463,6 +3553,7 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bHelp) const
 
 // bAssumeRevealed=true will allow a unit (AI or player controlled) to use the actual cost rather
 // than the worst-case estimate if not revealed
+// WTP, Schmiddie, Naval Control Movement - START
 int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot,
 	bool bAssumeRevealed) const // advc.001i
 {
@@ -3696,9 +3787,16 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot,
 		iRouteFlatCost = MAX_INT;
 	}
 
-	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
-}
+	int iMovementCost = std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
 
+	if (!USE_CLASSIC_MOVEMENT_SYSTEM)
+	{
+		iMovementCost += navalControlMovementCost(pUnit);
+	}
+
+	return iMovementCost;
+}
+// WTP, Schmiddie, Naval Control Movement - END
 bool CvPlot::isAdjacentOwned() const
 {
 	CvPlot* pAdjacentPlot;

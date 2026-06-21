@@ -1538,6 +1538,8 @@ CvProfessionInfo::CvProfessionInfo() :
 	m_iBarracksSpaceNeededChange(0), // WTP, ray, new Barracks System - START
 	m_iMovesChange(0),
 	m_iWorkRate(0),
+	m_iGameYearAvailable(0),  // WTP, Schmiddie, Availability Change Project
+	m_iGameYearObsolete(0),  // WTP, Schmiddie, Availability Change Project
 	m_iMissionaryRate(0),
 	m_iNativeTradeRate(0), // WTP, ray, Native Trade Posts - START
 	m_iPowerValue(0),
@@ -1646,6 +1648,17 @@ int CvProfessionInfo::getWorkRate() const
 {
 	return m_iWorkRate;
 }
+// WTP, Schmiddie, Availability Change Project
+int CvProfessionInfo::getGameYearAvailable() const
+{
+	return m_iGameYearAvailable;
+}
+
+int CvProfessionInfo::getGameYearObsolete() const
+{
+	return m_iGameYearObsolete;
+}
+// WTP, Schmiddie, Availability Change Project
 int CvProfessionInfo::getMissionaryRate() const
 {
 	return m_iMissionaryRate;
@@ -1918,7 +1931,9 @@ bool CvProfessionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iBarracksSpaceNeededChange, "iBarracksSpaceNeededChange"); // WTP, ray, new Barracks System - START
 	pXML->GetChildXmlValByName(&m_iMovesChange, "iMovesChange");
 	pXML->GetChildXmlValByName(&m_iWorkRate, "iWorkRate");
-	pXML->GetChildXmlValByName(&m_iMissionaryRate, "iMissionaryRate");
+	pXML->GetChildXmlValByName(&m_iGameYearAvailable, "iGameYearAvailable");
+	pXML->GetChildXmlValByName(&m_iGameYearObsolete, "iGameYearObsolete");  // WTP, Schmiddie, Availability Change Project
+	pXML->GetChildXmlValByName(&m_iMissionaryRate, "iMissionaryRate");  // WTP, Schmiddie, Availability Change Project
 	pXML->GetChildXmlValByName(&m_iNativeTradeRate, "iNativeTradeRate"); // WTP, ray, Native Trade Posts - START
 	pXML->GetChildXmlValByName(&m_iPowerValue, "iPower");
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");
@@ -2799,6 +2814,8 @@ m_iTeachLevel(3),
 m_fNBMOD_REF_StrengthWeight(1.0),
 /** NBMOD REF **/
 m_iAIWeight(0),
+m_iGameYearAvailable(0),  // WTP, Schmiddie, Availability Change Project
+m_iGameYearObsolete(0),  // WTP, Schmiddie, Availability Change Project
 m_iHurryCostModifier(0),
 m_iProductionWhenUsed(0), // WTP, ray, Construction Supplies - START
 m_iEuropeCost(0),
@@ -2817,6 +2834,8 @@ m_iAdvancedStartCost(0),
 m_iAdvancedStartCostIncrease(0),
 m_iMinAreaSize(0),
 m_iMoves(0),
+m_iNavalControlCost(0), // WTP, Schmiddie, Naval Control Movement 
+m_iNavalControlRadius(0), // WTP, Schmiddie, Naval Control Movement
 m_iWorkRate(0),
 m_iWorkRateModifier(0),
 m_iGoldFromGoodiesAndChiefsModifier(0), // WTP, ray, Scout Gold Modifier for Goodies and Chiefs at Unit - START
@@ -2978,6 +2997,17 @@ int CvUnitInfo::getAIWeight() const
 {
 	return m_iAIWeight;
 }
+// WTP, Schmiddie, Availability Change Project Start
+int CvUnitInfo::getGameYearAvailable() const
+{
+	return m_iGameYearAvailable;
+}
+
+int CvUnitInfo::getGameYearObsolete() const
+{
+	return m_iGameYearObsolete;
+}
+// WTP, Schmiddie, Availability Change Project End
 int CvUnitInfo::getHurryCostModifier() const
 {
 	return m_iHurryCostModifier;
@@ -2998,7 +3028,6 @@ int CvUnitInfo::getEuropeCostIncrease() const
 {
 	return m_iEuropeCostIncrease;
 }
-
 /*** TRIANGLETRADE 10/24/08 by DPII ***/
 int CvUnitInfo::getAfricaCost() const
 {
@@ -3045,6 +3074,17 @@ int CvUnitInfo::getMoves() const
 {
 	return m_iMoves;
 }
+// WTP, Schmiddie, Naval Control Movement - START
+int CvUnitInfo::getNavalControlCost() const
+{
+	return m_iNavalControlCost;
+}
+
+int CvUnitInfo::getNavalControlRadius() const
+{
+	return m_iNavalControlRadius;
+}
+// WTP, Schmiddie, Naval Control Movement - END
 int CvUnitInfo::getWorkRate() const
 {
 	return m_iWorkRate;
@@ -4221,6 +4261,8 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_abPrereqOrBuilding, "PrereqOrBuildings", GC.getNumBuildingClassInfos(), false);
 	pXML->SetVariableListTagPair(&m_aiProductionTraits, "ProductionTraits", GC.getNumTraitInfos(), 0);
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
+	pXML->GetChildXmlValByName(&m_iGameYearAvailable, "iGameYearAvailable");  // WTP, Schmiddie, Availability Change Project
+	pXML->GetChildXmlValByName(&m_iGameYearObsolete, "iGameYearObsolete");  // WTP, Schmiddie, Availability Change Project
 	pXML->GetChildXmlValByName(&m_iHurryCostModifier, "iHurryCostModifier");
 	pXML->GetChildXmlValByName(&m_iProductionWhenUsed, "iProductionWhenUsed"); // WTP, ray, Construction Supplies - START
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCost, "iAdvancedStartCost");
@@ -4239,6 +4281,8 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iImmigrationWeightDecay, "iImmigrationWeightDecay");
 	pXML->GetChildXmlValByName(&m_iMinAreaSize, "iMinAreaSize");
 	pXML->GetChildXmlValByName(&m_iMoves, "iMoves");
+	pXML->GetChildXmlValByName(&m_iNavalControlCost, "iNavalControlCost", 0); // WTP, Schmiddie, Naval Control Movement 
+	pXML->GetChildXmlValByName(&m_iNavalControlRadius, "iNavalControlRadius", 0); // WTP, Schmiddie, Naval Control Movement
 	pXML->GetChildXmlValByName(&m_iWorkRate, "iWorkRate");
 	pXML->GetChildXmlValByName(&m_iWorkRateModifier, "iWorkRateModifier");
 	pXML->GetChildXmlValByName(&m_iGoldFromGoodiesAndChiefsModifier, "iGoldFromGoodiesAndChiefsModifier"); // WTP, ray, Scout Gold Modifier for Goodies and Chiefs at Unit - START
@@ -5122,6 +5166,7 @@ m_iMaxStartEra(NO_ERA),
 m_iFreePromotion(NO_PROMOTION),
 m_iRouteTypeCreated(NO_ROUTE), //ray, removing hardcoded Roads for Buildings
 m_iAIWeight(0),
+m_iGameYearAvailable(0),  // WTP, Schmiddie, Availability Change Project
 m_iHurryCostModifier(0),
 m_iAdvancedStartCost(0),
 m_iAdvancedStartCostIncrease(0),
@@ -5228,6 +5273,12 @@ int CvBuildingInfo::getAIWeight() const
 {
 	return m_iAIWeight;
 }
+// WTP, Schmiddie, Availability Change Project
+int CvBuildingInfo::getGameYearAvailable() const
+{
+	return m_iGameYearAvailable;
+}
+// WTP, Schmiddie, Availability Change Project
 int CvBuildingInfo::getHurryCostModifier() const
 {
 	return m_iHurryCostModifier;
@@ -5794,6 +5845,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNeverCapture, "bNeverCapture");
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
+	pXML->GetChildXmlValByName(&m_iGameYearAvailable, "iGameYearAvailable");  // WTP, Schmiddie, Availability Change Project
 	pXML->GetChildXmlValByName(&m_iHurryCostModifier, "iHurryCostModifier");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCost, "iAdvancedStartCost");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCostIncrease, "iAdvancedStartCostIncrease");
@@ -16386,12 +16438,13 @@ bool CvMainMenuInfo::read(CvXMLLoadUtility* pXML)
 	}
 	return true;
 }
-
+//WTP, Schmiddie, Units Availability Change Projekt START
 CvFatherInfo::CvFatherInfo() :
 	m_eFatherCategory(NO_FATHERCATEGORY),
 	m_eTrait(NO_TRAIT),
 	m_eCivEffect(NO_CIV_EFFECT),
 	m_aiFreeUnits(NULL),
+	m_aiAlternativeFreeUnits(NULL),
 	m_aiPointCost(NULL),
 	m_abRevealImprovement(NULL)
 {
@@ -16400,10 +16453,11 @@ CvFatherInfo::CvFatherInfo() :
 CvFatherInfo::~CvFatherInfo()
 {
 	SAFE_DELETE_ARRAY(m_aiFreeUnits);
+	SAFE_DELETE_ARRAY(m_aiAlternativeFreeUnits);
 	SAFE_DELETE_ARRAY(m_aiPointCost);
 	SAFE_DELETE_ARRAY(m_abRevealImprovement);
 }
-
+//WTP, Schmiddie, Units Availability Change Projekt END
 FatherCategoryTypes CvFatherInfo::getFatherCategory() const
 {
 	return m_eFatherCategory;
@@ -16434,7 +16488,13 @@ int CvFatherInfo::getFreeUnits(int iUnitClass) const
 	FAssert(iUnitClass >= 0 && iUnitClass < GC.getNumUnitClassInfos());
 	return m_aiFreeUnits ? m_aiFreeUnits[iUnitClass] : -1;
 }
-
+//WTP, Schmiddie, Units Availability Change Projekt START
+int CvFatherInfo::getAlternativeFreeUnitClass(int iUnitClass) const
+{
+	FAssert(iUnitClass >= 0 && iUnitClass < GC.getNumUnitClassInfos());
+	return m_aiAlternativeFreeUnits ? m_aiAlternativeFreeUnits[iUnitClass] : NO_UNITCLASS;
+}
+//WTP, Schmiddie, Units Availability Change Projekt END
 int CvFatherInfo::getPointCost(int i) const
 {
 	FAssert((i >= 0) && (i < GC.getNumFatherPointInfos()));
@@ -16466,7 +16526,7 @@ const char* CvFatherInfo::getSoundMP() const
 {
 	return m_szSoundMP;
 }
-
+//WTP, Schmiddie, Units Availability Change Projekt START
 void CvFatherInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -16479,6 +16539,10 @@ void CvFatherInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_aiFreeUnits);
 	m_aiFreeUnits = new int [GC.getNumUnitClassInfos()];
 	stream->Read(GC.getNumUnitClassInfos(), m_aiFreeUnits);
+
+	SAFE_DELETE_ARRAY(m_aiAlternativeFreeUnits);
+	m_aiAlternativeFreeUnits = new int [GC.getNumUnitClassInfos()];
+	stream->Read(GC.getNumUnitClassInfos(), m_aiAlternativeFreeUnits);
 
 	SAFE_DELETE_ARRAY(m_aiPointCost);
 	m_aiPointCost = new int [GC.getNumFatherPointInfos()];
@@ -16503,6 +16567,7 @@ void CvFatherInfo::write(FDataStreamBase* stream)
 	//stream->Write(m_iFatherCategory);
 	stream->Write(m_eTrait);
 	stream->Write(GC.getNumUnitClassInfos(), m_aiFreeUnits);
+	stream->Write(GC.getNumUnitClassInfos(), m_aiAlternativeFreeUnits);
 	stream->Write(GC.getNumFatherPointInfos(), m_aiPointCost);
 	stream->Write(GC.getNumImprovementInfos(), m_abRevealImprovement);
 	stream->WriteString(m_szQuoteKey);
@@ -16526,6 +16591,43 @@ bool CvFatherInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetEnum(getType(), m_eCivEffect, "eCivEffect", false);
 
 	pXML->SetVariableListTagPair(&m_aiFreeUnits, "FreeUnits", GC.getNumUnitClassInfos(), 0);
+
+	SAFE_DELETE_ARRAY(m_aiAlternativeFreeUnits);
+	pXML->InitList(&m_aiAlternativeFreeUnits, GC.getNumUnitClassInfos(), (int)NO_UNITCLASS);
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FreeUnits"))
+	{
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "FreeUnit"))
+		{
+			do
+			{
+				CvString szUnitClass;
+				CvString szAlternativeUnitClass;
+
+				pXML->GetChildXmlValByName(szUnitClass, "UnitClass");
+
+				const int iUnitClass = pXML->FindInInfoClass(szUnitClass);
+
+				if (iUnitClass != -1)
+				{
+					if (pXML->GetChildXmlValByName(szAlternativeUnitClass, "AlternativeUnitClass"))
+					{
+						const int iAlternativeUnitClass = pXML->FindInInfoClass(szAlternativeUnitClass);
+
+						if (iAlternativeUnitClass != -1)
+						{
+							m_aiAlternativeFreeUnits[iUnitClass] = iAlternativeUnitClass;
+						}
+					}
+				}
+			} while (gDLL->getXMLIFace()->NextSibling(pXML->GetXML()));
+
+			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
 	pXML->SetVariableListTagPair(&m_aiPointCost, "FatherPointCosts", GC.getNumFatherPointInfos(), 0);
 	pXML->SetVariableListTagPair(&m_abRevealImprovement, "RevealImprovements", GC.getNumImprovementInfos(), false);
 
@@ -16534,7 +16636,7 @@ bool CvFatherInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szSoundMP, "SoundMP");
 	return true;
 }
-
+//WTP, Schmiddie, Units Availability Change Projekt END
 CvFatherPointInfo::CvFatherPointInfo() :
 	m_iChar(0),
 	m_iFontButtonIndex(0),

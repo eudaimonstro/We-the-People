@@ -319,6 +319,7 @@ protected:
 	//bool AI_anyAttack(int iRange, int iOddsThreshold, int iMinStack = 0, bool bFollow = false);
 	bool AI_anyAttack(int iRange, int iOddsThreshold, int iMinStack = 0, bool bFollow = false, bool bAllowCities = true);
 	// TAC - AI Attack City - koma13 - END
+	bool AI_adjacentSeaAttack(int iOddsThreshold); // WTP, Schmiddie, Naval AI adjacent attack
 	bool AI_smartAttack(int iRange, int iLowOddsThreshold, int iHighOddsThreshold, CvPlot* pHintPlot);
 	bool AI_leaveAttack(int iRange, int iThreshold, int iStrengthThreshold);
 	bool AI_seaBombardRange(int iMaxRange);

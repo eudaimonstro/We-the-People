@@ -291,6 +291,24 @@
 		<Russian>Бригантина:Бригантины</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_SLAVE_CARAVEL</Tag>
+		<English>
+			<Text>Slave caravel: Slave caravels</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>Caravelle négrière : caravelles négrières</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Sklavenkaravelle:Sklavenkaravellen</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_SLAVE_BARQUE</Tag>
 		<English>
 			<Text>Slave Barque:Slave Barques</Text>
@@ -385,6 +403,35 @@
 		<Russian>Каравелла:Каравеллы</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_WAR_CARAVEL</Tag>
+		<English>
+			<Text>War Caravel:War Caravels</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>Caravelle de guerre:Caravelles de guerre</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Kriegskaravelle:Kriegskaravellen</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Caravella da guerra:Caravelle da guerra</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Carabela de guerra:Carabelas de guerra</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+		<Russian>Каравелла:Каравеллы</Russian>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_CARAVELA_REDONDA</Tag>
 		<English>
 			<Text>Caravela Redonda:Caravelas Redondas</Text>
@@ -412,6 +459,34 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Каравелла Редонда:Каравеллы Редонды</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_NAO</Tag>
+		<English>
+			<Text>Nao:Naos</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>Nao:Naos</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Nao:Naos</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Nao:Naos</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Nao:Naos</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_CARPENTER</Tag>
@@ -1319,6 +1394,30 @@
 		<Russian>Фрегат:Фрегаты</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_HEAVY_FRIGATE</Tag>
+		<English>Heavy Frigate:Heavy Frigates</English>
+		<French>
+			<Text>Frégate lourde : Frégates lourdes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Schwere Fregatte:Schwere Fregatten</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Fregata pesante: Fregate pesanti</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Fragata pesada: Fragatas pesadas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_ROYAL_FRIGATE</Tag>
 		<English>Royal Frigate:Royal Frigates</English>
 		<French>
@@ -1457,19 +1556,18 @@
 		<Russian>Галеон:Галеоны</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_ROYAL_TROOP_GALLEON</Tag>
-		<English>Royal Troop Galleon:Royal Troop Galleons</English>
+		<Tag>TXT_KEY_UNITCLASS_WAR_GALLEON</Tag>
+		<English>War Galleon:War Galleons</English>
 		<French>
-			<Text>Galion de transport royal:Galions de transport royaux</Text>
+			<Text>Galeons de guerre : Galeons de guerre</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
 		<German>
-			<Text>Königliche Transportgaleone:Königliche Transportgaleonen</Text>
+			<Text>Kriegsgaleone:Kriegsgaleonen</Text>
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</German>
-		<Russian>Галеон Королевских войск:Галеоны Королевских войск</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_GOVERNOR</Tag>
@@ -2420,6 +2518,34 @@
 		<Russian>Отважный первопроходец:Отважные первопроходцы</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_PIRATE_SHIP</Tag>
+		<English>
+			<Text>Pirate Ship:Pirate Ships</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>Bateau pirate: bateaux pirates</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Piratenschiff:Piratenschiffe</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Nave pirata: navi pirata</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Barco pirata: Barcos piratas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_PIRATE_FRIGATE</Tag>
 		<English>
 			<Text>Pirate Frigate:Pirate Frigates</Text>
@@ -2432,7 +2558,7 @@
 			<Plural>0:1</Plural>
 		</French>
 		<German>
-			<Text>Piratenfrigate:Piratenfrigaten</Text>
+			<Text>Piratenfregatte:Piratenfregatten</Text>
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</German>
@@ -3062,14 +3188,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_ROYAL_MAN_O_WAR</Tag>
-		<English>Royal Man O' War:Royal Men O' War</English>
+		<English>Royal Ship of the Line 1st rate:Royal Ships of the Line 1st rate</English>
 		<French>
-			<Text>Vaisseau de haut-bord royal:Vaisseaux de haut-bord royaux</Text>
+			<Text>Navire de ligne royal de 1er rang:Navires de ligne royaux de 1er rang</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
 		<German>
-			<Text>Königliches Schlachtschiff:Königliche Schlachtschiffe</Text>
+			<Text>Königliches Linienschiff 1. Klasse:Königliche Linienschiffe 1. Klasse</Text>
 			<Gender>Neuter</Gender>
 			<Plural>0:1</Plural>
 		</German>
@@ -3077,14 +3203,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_COLONIAL_MAN_O_WAR</Tag>
-		<English>Man O' War:Men O' War</English>
+		<English>Colonial Ship of the Line 1st rate:Colonial Ships of the Line 1st rate</English>
 		<French>
-			<Text>Vaisseau de haut-bord:Vaisseaux de haut-bord</Text>
+			<Text>Navire de ligne colonial de 1re classe:navires de ligne coloniaux de 1re classe</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
 		<German>
-			<Text>Schlachtschiff:Schlachtschiffe</Text>
+			<Text>Koloniales Linienschiff 1. Klasse:Koloniale Linienschiffe 1. Klasse</Text>
 			<Gender>Neuter</Gender>
 			<Plural>0:1</Plural>
 		</German>
@@ -3732,6 +3858,34 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Корабль Вест-Индской компании:Корабли Вест-Индской компании</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_ROYAL_TROOP_SHIP</Tag>
+		<English>
+			<Text>Royal Troop Transport: Royal Troop Transports</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>Véhicule de transport de troupes royal : Véhicules de transport de troupes royaux</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Königlicher Truppentransporter:Königliche Truppentransporter</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Veicolo militare reale per il trasporto truppe: Veicoli militari reali per il trasporto truppe</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Transporte militar real: Transportes militares reales</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_WHALE_BLUBBER</Tag>

@@ -939,11 +939,11 @@
 	</Define>
 	<Define>
 		<DefineName>MIN_ROUND_PIRATES</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BASE_CHANCE_PIRATES</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>30</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PRICE_PIRATES</DefineName>
