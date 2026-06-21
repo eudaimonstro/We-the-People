@@ -7054,7 +7054,7 @@ def doPirateAttack1(argsList):
 
 	bPlayer = gc.getPlayer(gc.getGame().getBarbarianPlayer())
 
-	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PRIVATEER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
+	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
 	bPlayer.initUnit(gc.getInfoTypeForString("UNIT_PIRATE_CUTTER"), ProfessionTypes.NO_PROFESSION, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_PIRATE_SEA, DirectionTypes.DIRECTION_SOUTH, 0)
 
 def doPirateAttack2(argsList):

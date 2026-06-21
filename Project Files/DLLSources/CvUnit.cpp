@@ -528,7 +528,7 @@ void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 				// WTP, Schmiddie, fix negative cargo storage crash
 				// Loaded cargo must be detached before it is killed or captured.
 				// Otherwise the transport can still reference the cargo while yield storage is changed.
-				pLoopUnit->setTransportUnit(NULL);
+				pLoopUnit->setTransportUnit(NULL, false);
 
 				pLoopUnit->kill(false, pAttacker);
 
