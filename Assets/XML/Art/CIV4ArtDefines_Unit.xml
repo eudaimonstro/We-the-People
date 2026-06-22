@@ -7044,7 +7044,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPAIN_GALLEON</Type>
 			<Button>,Art/Interface/Buttons/Unit_Resource_Colonization_Atlas.dds,6,13</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_galleon_spain.dds</FullLengthIcon>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_galleon.dds</FullLengthIcon>
 			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Units/spain/ships/Galleon/Galleon.nif</NIF>
@@ -7108,7 +7108,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PORTUGAL_GALLEON</Type>
 			<Button>,Art/Interface/Buttons/Unit_Resource_Colonization_Atlas.dds,6,13</Button>
-			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_galleon_spain.dds</FullLengthIcon>
+			<FullLengthIcon>,Art/Interface/Screens/Europe/ships/europe_galleon.dds</FullLengthIcon>
 			<fScale>0.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Units/portugal/ships/Galleon/Galleon.nif</NIF>
