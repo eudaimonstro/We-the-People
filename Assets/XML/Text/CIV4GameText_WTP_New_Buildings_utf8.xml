@@ -550,6 +550,7 @@
 		<Tag>TXT_KEY_BUILDING_ROASTER_FACTORY_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]roastery[COLOR_REVERT] is the ultimate upgrade of the [LINK=BUILDING_ROASTER_HOUSE]roaster's house[\LINK] where various foods are roasted:[NEWLINE][LINK=PROFESSION_PEANUT_ROASTER]Peanut roasters[\LINK] roast [LINK=YIELD_PEANUTS]peanuts[\LINK] to make [LINK=YIELD_ROASTED_PEANUTS]roasted peanuts[\LINK]. [NEWLINE][LINK=PROFESSION_COCOA_ROASTER]cocoa roasters[\LINK] roast [LINK=YIELD_COCOA_FRUITS]cocoa pods[\LINK] to make [LINK=YIELD_COCOA]cocoa[\LINK]. [NEWLINE][LINK=PROFESSION_COFFEE_ROASTER]Coffee roasters[\LINK] roast [LINK=YIELD_COFFEE_BERRIES]coffee berries[\LINK] to make [LINK=YIELD_COFFEE]coffee[\LINK].[NEWLINE][LINK=UNIT_ROASTER]Master roasters[\LINK] are particularly effective in this regard.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Rösterei[COLOR_REVERT] ist die höchste Ausbaustufe des [LINK=BUILDING_ROASTER_HOUSE]Haus des Rösters[\LINK], wo verschiedene Lebensmittel geröstet werden:[NEWLINE][LINK=PROFESSION_PEANUT_ROASTER]Erdnussröster[\LINK] rösten [LINK=YIELD_PEANUTS]Erdnüsse[\LINK] um [LINK=YIELD_ROASTED_PEANUTS]geröstete Erdnüsse[\LINK] herzustellen.[NEWLINE][LINK=PROFESSION_COCOA_ROASTER]Kakaoröster[\LINK] rösten [LINK=YIELD_COCOA_FRUITS]Kakaofrüchte[\LINK] um [LINK=YIELD_COCOA]Kakao[\LINK] herzustellen.[NEWLINE][LINK=PROFESSION_COFFEE_ROASTER]Kaffeeröster[\LINK] rösten [LINK=YIELD_COFFEE_BERRIES]Kaffeebeeren[\LINK] um [LINK=YIELD_COFFEE]Kaffee[\LINK] herzustellen.[PARAGRAPH:1][LINK=UNIT_ROASTER]Röstmeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Pörkölőüzem[COLOR_REVERT] a [LINK=BUILDING_ROASTER_HOUSE]Pörkölő Bolt[\LINK] végső továbbfejlesztése, ahol különböző ételeket pörkölnek:[NEWLINE]A [LINK=PROFESSION_PEANUT_ROASTER]Mogyoró Pörkölők[\LINK] [LINK=YIELD_PEANUTS]Mogyorót[\LINK] pörkölnek, hogy [LINK=YIELD_ROASTED_PEANUTS]Pörkölt Mogyorót[\LINK] készítsenek.[NEWLINE]A [LINK=PROFESSION_COCOA_ROASTER]kakaóbab Pörkölők[\LINK] [LINK=YIELD_COCOA_FRUITS]Kakaóbabot[\LINK] pörkölnek, hogy [LINK=YIELD_COCOA]Kakaót[\LINK] készítsenek. [NEWLINE]A [LINK=PROFESSION_COFFEE_ROASTER]Kávépörkölők[\LINK] a  [LINK=YIELD_COFFEE_BERRIES]Kávébogyókat[\LINK] pörkölik, hogy [LINK=YIELD_COFFEE]kávét[\LINK] készítsenek.[NEWLINE]A [LINK=UNIT_ROASTER]Pörkölőmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<!-- POTTERY -->
 	<TEXT>
@@ -561,6 +562,7 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Fazekas Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_POTTERY_HOUSE</Tag>
@@ -572,6 +574,8 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом гончара</Russian>
+        </German>
+		<Hungarian>Fazekas Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_POTTERY_SHOP</Tag>
@@ -583,6 +587,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Гончарная мастерская</Russian>
+		<Hungarian>Fazekas Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_POTTERY_FACTORY</Tag>
@@ -594,6 +599,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика гончарных изделий</Russian>
+		<Hungarian>Kerámiagyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_HOUSE</Tag>
@@ -605,6 +611,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом гончара</Russian>
+		<Hungarian>Fazekas Bolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_SHOP</Tag>
@@ -616,6 +623,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Гончарная мастерская</Russian>
+		<Hungarian>Fazekas Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_FACTORY</Tag>
@@ -627,6 +635,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика гончарных изделий</Russian>
+		<Hungarian>Kerámiagyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_HOUSE_PEDIA</Tag>
@@ -635,31 +644,37 @@
 		<German>Töpferwaren sind eine uralte Methode zur Lagerung von Getreide. In der regnerischen, von Insekten heimgesuchten Neuen Welt enthielten die Töpfe genug Getreide, um die Siedler über den Winter am Leben zu erhalten, bis sie im Frühjahr endlich ihre neue Ernte einpflanzen konnten.[NEWLINE]Töpferwaren ermöglichen es den Dörfern, ihr überschüssiges Getreide zu lagern, um den Winter zu überstehen. Das Beladen von Wagen mit robusten Töpfen ist eine praktische Methode, um Getreide zu transportieren und neue Siedlungen mit Lebensmitteln zu versorgen.</German>
 		<Italian>La ceramica è un modo antico di conservare il grano. Nel Nuovo Mondo, caratterizzato da piogge e insetti, i vasi contengono abbastanza grano per mantenere i coloni in vita durante l'inverno, fino a quando non possono piantare le nuove colture in primavera.</Italian>
 		<Spanish>La cerámica es una forma antigua de almacenar grano. En el lluvioso Nuevo Mundo, plagado de insectos, las vasijas contienen grano suficiente para mantener vivos a los colonos durante el invierno, hasta que por fin pueden plantar sus nuevas cosechas en primavera.</Spanish>
+		<Hungarian>A kerámia egy ősi módszer a gabona tárolására. Az esős, rovarokkal teli Újvilágban a cserépedényekben elegendő gabona tárolható ahhoz, hogy a telepesek átvészeljék a telet, amíg tavasszal végre elvethetik az új termést. A szilárd cserépedényeket szekerekre rakva könnyen szállítható a gabona, és így az új települések élelmiszerellátása is biztosítható.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]potter's house[COLOR_REVERT] is where a colonist with the [LINK=PROFESSION_POTTER]potter[\LINK] profession uses [LINK=YIELD_PEAT]peat[\LINK] to transform [LINK=YIELD_CLAY]clay[\LINK] into [LINK=YIELD_POTTERY]pottery[\LINK]. [LINK=UNIT_POTTER]Master potters[\LINK] are artists at this, and more productive as well.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Haus des Töpfers[COLOR_REVERT] ist der Ort, an dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] im Beruf des [LINK=PROFESSION_POTTER]Töpfers[\LINK] den [LINK=YIELD_CLAY]Lehm[\LINK], mit Hilfe von [LINK=YIELD_PEAT]Torf[\LINK], zu [LINK=YIELD_POTTERY]Töpferwaren[\LINK] verarbeitet.[PARAGRAPH:1][LINK=UNIT_POTTER]Töpfermeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Fazekas Bolt[COLOR_REVERT] az a hely, ahol a [LINK=PROFESSION_POTTER]Fazekas[\LINK] lakosok [LINK=YIELD_PEAT]Tőzeggel[\LINK] az [LINK=YIELD_CLAY]Agyagot[\LINK] [LINK=YIELD_POTTERY]Kerámiává[\LINK] alakítanak. A [LINK=UNIT_POTTER]Fazekasmesterek[\LINK] művészek ebben és termelékenyebbek is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_SHOP_PEDIA</Tag>
 		<English>As the pottery business grows employees specialize. Most of the money comes in for sturdy practical pots holding everything from rice to rum, but a few creative types form imaginative vessels with decorative patterns, some merely for display. The Puritans strongly object.[NEWLINE]With food and drink stored securely in pottery, life is now less precarious. Businesses feel safer taking risks and so the communities grow.</English>
 		<German>Während das Töpfergeschäft wächst, spezialisieren sich die Mitarbeiter. Das meiste Geld wird für robuste, praktische Töpfe ausgegeben, in denen alles von Reis bis Rum aufbewahrt wird, aber ein paar kreative Typen formen phantasievolle Gefäße mit dekorativen Mustern, einige davon nur zur Schau. Die Puritaner sind strikt dagegen.[NEWLINE]Durch die sichere Aufbewahrung von Lebensmitteln und Getränken in Töpferwaren ist das Leben nun weniger prekär. Die Unternehmen fühlen sich sicherer und somit risikobereiter, wodurch sich das Wachstum erhöht.</German>
+		<Hungarian>A fazekasság fejlődésével az alkalmazottak szakosodnak. A legtöbb bevétel a rizstől a rumig mindent tároló, strapabíró, praktikus edényekből származik, de néhány kreatív típus fantáziadús, díszes mintákkal ellátott edényeket készít, amelyek közül néhány csupán díszítésre szolgál. A puritánok ezt erőteljesen ellenzik. Az ételek és italok fazekas edényekben való biztonságos tárolásával az élet kevésbé bizonytalan. A vállalkozások biztonságosabban vállalnak kockázatot, így a közösségek növekednek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_SHOP_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]pottery shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_POTTERY_HOUSE]potter's house[\LINK] where colonists with the [LINK=PROFESSION_POTTER]potter[\LINK] profession use [LINK=YIELD_PEAT]peat[\LINK] to transform [LINK=YIELD_CLAY]clay[\LINK] into [LINK=YIELD_POTTERY]pottery[\LINK]. [LINK=UNIT_POTTER]Master potters[\LINK] are particularly effective at this.</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Töpferladen[COLOR_REVERT] ist die mittlere Ausbaustufe des [LINK=BUILDING_POTTERY_HOUSE]Haus des Töpfers[\LINK], in dem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] im Beruf des [LINK=PROFESSION_POTTER]Töpfers[\LINK] den [LINK=YIELD_CLAY]Lehm[\LINK], mit Hilfe von [LINK=YIELD_PEAT]Torf[\LINK], zur Herstellung von [LINK=YIELD_POTTERY]Töpferwaren[\LINK] verwenden.[PARAGRAPH:1][LINK=UNIT_POTTER]Töpfermeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Fazekas Üzlet[COLOR_REVERT] a [LINK=BUILDING_POTTERY_HOUSE]Fazekas Bolt[\LINK] továbbfejlesztése, ahol a [LINK=PROFESSION_POTTER]Fazekas[\LINK] lakosok [LINK=YIELD_PEAT]Tőzeggel[\LINK] az [LINK=YIELD_CLAY]Agyagot[\LINK] [LINK=YIELD_POTTERY]Kerámiává[\LINK] alakítanak. A [LINK=UNIT_POTTER]Fazekasmesterek[\LINK] művészek ebben és termelékenyebbek is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_FACTORY_PEDIA</Tag>
 		<English>Pottery factories can be built near the best sources of clay, thus delivering high quality at a cheap price. With every type of pot in demand, the pottery factory owners are squirrelling away pots of money.</English>
 		<German>Töpferfabriken können in der Nähe der besten Tonvorkommen errichtet werden, so dass sie eine hohe Qualität zu einem günstigen Preis liefern.[NEWLINE]Da alle Arten von Töpfen gefragt sind, legen die Besitzer der Töpferfabriken einen Haufen Geld beiseite.</German>
+		<Hungarian>A Kerámiagyárak a legjobb agyagforrások közelében épülhetnek, így olcsó áron kiváló minőségű termékeket tudnak gyártani. Mivel minden típusú edényre van kereslet, a Kerámiagyárak tulajdonosai hatalmas pénzeket halmoznak fel.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTTERY_FACTORY_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]pottery factory[COLOR_REVERT] is the final upgrade of the [LINK=BUILDING_POTTERY_HOUSE]potter's house[\LINK] where colonists with the [LINK=PROFESSION_POTTER]potter[\LINK] profession use [LINK=YIELD_PEAT]peat[\LINK] to transform [LINK=YIELD_CLAY]clay[\LINK] into [LINK=YIELD_POTTERY]pottery[\LINK]. [LINK=UNIT_POTTER]Master potters[\LINK] are particularly effective at this.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Töpferei[COLOR_REVERT] ist die höchste Ausbaustufe des [LINK=BUILDING_POTTERY_HOUSE]Haus des Töpfers[\LINK], in dem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] im Beruf des [LINK=PROFESSION_POTTER]Töpfers[\LINK] den [LINK=YIELD_CLAY]Lehm[\LINK], mit Hilfe von [LINK=YIELD_PEAT]Torf[\LINK], zur Herstellung von [LINK=YIELD_POTTERY]Töpferwaren[\LINK] verwenden.[PARAGRAPH:1][LINK=UNIT_POTTER]Töpfermeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXTKerámiagyár[COLOR_REVERT] a [LINK=BUILDING_POTTERY_HOUSE]Fazekas Bolt[\LINK] végső továbbfejlesztése, ahol a [LINK=PROFESSION_POTTER]Fazekas[\LINK] lakosok [LINK=YIELD_PEAT]Tőzeggel[\LINK] az [LINK=YIELD_CLAY]Agyagot[\LINK] [LINK=YIELD_POTTERY]Kerámiává[\LINK] alakítanak. A [LINK=UNIT_POTTER]Fazekasmesterek[\LINK] művészek ebben és termelékenyebbek is.</Hungarian>
 	</TEXT>
 	<!-- TAILOR -->
 	<TEXT>
@@ -670,6 +685,7 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Szabó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_TAILOR_HOUSE</Tag>
@@ -680,6 +696,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом портного</Russian>
+		<Hungarian>Szabóműhely</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_TAILOR_SHOP</Tag>
@@ -690,6 +707,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская портного</Russian>
+		<Hungarian>Szabóság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_TAILOR_FACTORY</Tag>
@@ -700,6 +718,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика одежды</Russian>
+		<Hungarian>Ruhagyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_HOUSE</Tag>
@@ -711,6 +730,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Дом портного</Russian>
+		<Hungarian>Szabóműhely</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_SHOP</Tag>
@@ -722,6 +742,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская портного</Russian>
+		<Hungarian>Szabóság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_FACTORY</Tag>
@@ -733,36 +754,43 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика одежды</Russian>
+		<Hungarian>Ruhagyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_HOUSE_PEDIA</Tag>
 		<English>At first women prided themselves on sewing all their families' clothes, getting their cloth from the weaver. The tailor needs to show his garments are better, or hope that people assume they're better simply because he's a man.[NEWLINE]With time and talent the tailor is finally able to create the well-dressed man, stylish and ready to succeed at diplomacy, business or romance.</English>
 		<German>Anfangs waren die Frauen stolz darauf, die gesamte Kleidung ihrer Familien zu nähen und den Stoff von der Weberin zu beziehen. Der Schneider muss zeigen, dass seine Kleidung besser ist, oder darauf hoffen, dass die Leute annehmen, dass sie besser ist, nur weil er ein Mann ist.[NEWLINE]Der Schneider erschafft den gut gekleideten Mann, stilvoll und bereit, in der Diplomatie, im Geschäftsleben oder in der Liebe erfolgreich zu sein.</German>
+		<Hungarian>Eleinte a nők büszkék voltak arra, hogy a családjuk összes ruháját ők varrták, a szövetet pedig a takácsoktől szerezték be. A szabónak be kell bizonyítania, hogy az ő ruhái jobbak, vagy remélnie kell, hogy az emberek egyszerűen azért tartják őket jobbnak, mert ő férfi. Az idő és a tehetség segítségével a szabó végül képes megalkotni a jól öltözött férfit, aki stílusos és készen áll a diplomácia, az üzleti élet vagy a szerelem terén elért sikerekre.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]tailor's house[COLOR_REVERT] is where the coloured fabrics from the [LINK=BUILDING_DYERS_HOUSE]dyer's house[\LINK], or one of its upgrades, are made into clothing.[NEWLINE]A settler with the [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]workwear tailor[\LINK] profession uses [LINK=YIELD_COLOURED_WOOL_CLOTH]coloured wool cloth[\LINK] to make [LINK=YIELD_EVERYDAY_CLOTHES]everyday clothing[\LINK]; or the [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]formalwear tailor[\LINK] uses [LINK=YIELD_COLOURED_CLOTH]coloured cloth[\LINK] to make more [LINK=YIELD_FESTIVE_CLOTHES]festive outfits[\LINK].  [LINK=UNIT_CLOTH_TAYLOR]Master tailors[\LINK] are particularly effective at this.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Haus des Schneiders[COLOR_REVERT] ist der Ort, an dem die gefärbten Stoffe aus dem [LINK=BUILDING_DYERS_HOUSE]Färberhaus[\LINK], oder einer seiner Erweiterungen, zu Kleidung verarbeitet werden.[NEWLINE]Ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] mit dem Beruf des [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Schneiders (Alltagskleider)[\LINK] stellt aus [LINK=YIELD_COLOURED_WOOL_CLOTH]gefärbtem Wollstoff[\LINK] schlichte [LINK=YIELD_EVERYDAY_CLOTHES]Alltagskleidung[\LINK] oder der [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]Schneider (Festtagskleider)[\LINK] stellt aus [LINK=YIELD_COLOURED_CLOTH]gefärbtem Stoff[\LINK] dekorative [LINK=YIELD_FESTIVE_CLOTHES]festliche Kleidung[\LINK] her.[PARAGRAPH:1][LINK=UNIT_CLOTH_TAYLOR]Schneidermeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Szabóműhely[COLOR_REVERT] az a hely, ahol a [LINK=BUILDING_DYERS_HOUSE]festőműhelyből[\LINK] vagy annak egyik továbbfejlesztéséből származó festett kelméből ruhákat készítenek. [NEWLINE]A [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Hétköznapi Ruha Szabó[\LINK] készítő lakos [LINK=YIELD_COLOURED_WOOL_CLOTH]Festett Gyapjúkelmét[\LINK] használ [LINK=YIELD_EVERYDAY_CLOTHES]Hétköznapi Ruhák[\LINK] készítéséhez; illetve az [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]Ünnepi Ruha Szabó[\LINK] [LINK=YIELD_COLOURED_CLOTH]Festett Kelmét[\LINK] használ az [LINK=YIELD_FESTIVE_CLOTHES]Ünnepi Ruha[\LINK] készítéséhez. A [LINK=UNIT_CLOTH_TAYLOR]Szabómesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_SHOP_PEDIA</Tag>
 		<English>The tailor's shop grows to include a variety of sub-trades. The cutter seldom sews the garment. A different specialist chooses the perfect fabric for every style.[NEWLINE]Having a tailor's shop is a sign of success for a growing town. If the shop has a tailor who's fashionable, everyone from the elder statesman to the firebrand preacher will buy there so they can look their best.</English>
 		<German>Die Schneiderei wächst und umfasst eine Vielzahl von Unterberufen. Selten näht der Schneider das Kleidungsstück. Für jeden Stil wählt ein anderer Spezialist den perfekten Stoff aus.[NEWLINE]Das Vorhandensein einer Schneiderei ist ein Zeichen für den Erfolg einer wachsenden Stadt. Wenn das Geschäft einen Schneider hat, der modisch ist, kauft jeder - vom älteren Staatsmann bis zum Brandprediger - dort ein, damit er gut aussieht.</German>
+		<Hungarian>A szabóság egyre bővül és számos alvállalkozót foglalkoztat. A szabó ritkán varrja meg a ruhadarabokat. Minden stílushoz egy másik szakember választja ki a tökéletes anyagot. [NEWLINE]A szabóság egy növekvő város sikereinek jelképe. Ha az üzletben divatos szabó dolgozik, akkor mindenki, a tapasztalt politikustól a papig, ott vásárol, hogy a legjobban nézzen ki.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_SHOP_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]tailors' shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_TAILOR_HOUSE]tailor's house[\LINK] where colonists with the [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]workwear tailor[\LINK] profession use [LINK=YIELD_COLOURED_WOOL_CLOTH]coloured wool cloth[\LINK] to make [LINK=YIELD_EVERYDAY_CLOTHES]everyday clothing[\LINK]; and where [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]formalwear tailors[\LINK] use [LINK=YIELD_COLOURED_CLOTH]coloured cloth[\LINK] to make more [LINK=YIELD_FESTIVE_CLOTHES]festive outfits[\LINK]. [LINK=UNIT_CLOTH_TAYLOR]Master tailors[\LINK] are particularly effective at this.</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Schneiderladen[COLOR_REVERT] ist die mittlere Ausbaustufe des [LINK=BUILDING_TAILOR_HOUSE]Schneiderhauses[\LINK], in dem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Schneider (Alltagskleider)[\LINK] aus [LINK=YIELD_COLOURED_WOOL_CLOTH]gefärbtem Wollstoff[\LINK] einfache [LINK=YIELD_EVERYDAY_CLOTHES]Alltagskleidung[\LINK] oder [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]Schneider (Festtagskleider)[\LINK] aus [LINK=YIELD_COLOURED_CLOTH]gefärbtem Stoff[\LINK], dekorative [LINK=YIELD_FESTIVE_CLOTHES]festliche Kleidung[\LINK] herstellen.[PARAGRAPH:1][LINK=UNIT_CLOTH_TAYLOR]Schneidermeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Szabóság[COLOR_REVERT] a [LINK=BUILDING_TAILOR_HOUSE]Szabóműhely[\LINK] továbbfejlesztése, ahol a [LINK=BUILDING_WEAVERS_HOUSE]szövődéből[\LINK] származó kelméből ruhákat készítenek. [NEWLINE]A [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Hétköznapi Ruha Szabó[\LINK] készítő lakos [LINK=YIELD_COLOURED_WOOL_CLOTH]Festett Gyapjúkelmét[\LINK] használ [LINK=YIELD_EVERYDAY_CLOTHES]Hétköznapi Ruhák[\LINK] készítéséhez; illetve az [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]Ünnepi Ruha Szabó[\LINK] [LINK=YIELD_COLOURED_CLOTH]Festett Kelmét[\LINK] használ az [LINK=YIELD_FESTIVE_CLOTHES]Ünnepi Ruha[\LINK] készítéséhez. A [LINK=UNIT_CLOTH_TAYLOR]Szabómesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_FACTORY_PEDIA</Tag>
 		<English>A tailors' factory offers less prestige than an exclusive shop but it makes up for that in output. Young workers with an eye on advancement can buy off the rack at a fraction of the cost of a personal fitting.[NEWLINE]The tailors' factory demonstrates that menswear and women's fashion are widely available. It's proof that a city has arrived socially.</English>
 		<German>Eine Schneiderei bietet weniger Prestige als ein exklusives Geschäft, macht dies aber durch die Produktion wieder wett. Junge, aufstiegsorientierte Arbeitnehmer können zu einem Bruchteil der Kosten einer persönlichen Anprobe von der Stange kaufen.[NEWLINE]Die Schneiderei zeigt, dass Herrenmode weithin verfügbar ist. Sie ist der Beweis dafür, dass eine Stadt gesellschaftlich angekommen ist.</German>
+		<Hungarian>A ruhagyár kevésbé tekintélyes, mint egy exkluzív üzlet, de ezt a termelékenységével kompenzálja. A karrierjükre törekvő fiatal munkavállalók a személyre szabott ruhák árának töredékéért vásárolhatnak kész ruhákat. [NEWLINE]A ruhagyár bizonyítja, hogy a férfi- és női divat széles körben elérhető. Ez annak a bizonyítéka, hogy egy város társadalmi szempontból elérte a fejlettséget.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAILOR_FACTORY_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]tailors' factory[COLOR_REVERT] is the ultimate upgrade of the [LINK=BUILDING_TAILOR_HOUSE]tailor's house[\LINK] where colonists with the [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]workwear tailor[\LINK] profession use [LINK=YIELD_COLOURED_WOOL_CLOTH]coloured wool cloth[\LINK] to make [LINK=YIELD_EVERYDAY_CLOTHES]everyday clothing[\LINK]; and where [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]formalwear tailors[\LINK] use [LINK=YIELD_COLOURED_CLOTH]coloured cloth[\LINK] to make more [LINK=YIELD_FESTIVE_CLOTHES]festive outfits[\LINK]. [LINK=UNIT_CLOTH_TAYLOR]Master tailors[\LINK] are particularly effective at this.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Schneiderei[COLOR_REVERT] ist die höchste Ausbaustufe des [LINK=BUILDING_TAILOR_HOUSE]Haus des Schneiders[\LINK], in dem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Schneider (Alltagskleider)[\LINK] aus [LINK=YIELD_COLOURED_WOOL_CLOTH]gefärbtem Wollstoff[\LINK] einfache [LINK=YIELD_EVERYDAY_CLOTHES]Alltagskleidung[\LINK] oder [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]Schneider (Festtagskleider)[\LINK] aus [LINK=YIELD_COLOURED_CLOTH]gefärbtem Stoff[\LINK], dekorative [LINK=YIELD_FESTIVE_CLOTHES]festliche Kleidung[\LINK] herstellen.[PARAGRAPH:1][LINK=UNIT_CLOTH_TAYLOR]Schneidermeister[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Ruhagyár[COLOR_REVERT] a [LINK=BUILDING_TAILOR_HOUSE]Szabóműhely[\LINK] végső továbbfejlesztése, ahol a [LINK=BUILDING_WEAVERS_HOUSE]szövődéből[\LINK] származó kelméből ruhákat készítenek. [NEWLINE]A [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Hétköznapi Ruha Szabó[\LINK] készítő lakos [LINK=YIELD_COLOURED_WOOL_CLOTH]Festett Gyapjúkelmét[\LINK] használ [LINK=YIELD_EVERYDAY_CLOTHES]Hétköznapi Ruhák[\LINK] készítéséhez; illetve az [LINK=PROFESSION_FESTIVE_CLOTHES_TAILOR]Ünnepi Ruha Szabó[\LINK] [LINK=YIELD_COLOURED_CLOTH]Festett Kelmét[\LINK] használ az [LINK=YIELD_FESTIVE_CLOTHES]Ünnepi Ruha[\LINK] készítéséhez. A [LINK=UNIT_CLOTH_TAYLOR]Szabómesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<!-- FIREWORKER -->
 	<TEXT>
@@ -773,6 +801,7 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Puskaporgyártó Műhely</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_FIREWORKERS_HOUSE</Tag>
@@ -782,6 +811,7 @@
 		<Italian>Casa del polveriere</Italian>
 		<Spanish>Casa del polvorero</Spanish>
 		<Russian>Дом пороховщика</Russian>
+		<Hungarian>Puskaporgyártó Műhely</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_FIREWORKERS_SHOP</Tag>
@@ -793,6 +823,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская по изготовлению пороха</Russian>
+		<Hungarian>Puskaporgyártó Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_FIREWORKERS_FACTORY</Tag>
@@ -804,6 +835,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика взрывчатки</Russian>
+		<Hungarian>Puskapor Gyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_HOUSE</Tag>
@@ -813,6 +845,7 @@
 		<Italian>Casa del polveriere</Italian>
 		<Spanish>Casa del polvorero</Spanish>
 		<Russian>Дом пороховщика</Russian>
+		<Hungarian>Puskaporgyártó Műhely</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_SHOP</Tag>
@@ -824,6 +857,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Мастерская по изготовлению пороха</Russian>
+		<Hungarian>Puskaporgyártó Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_FACTORY</Tag>
@@ -835,39 +869,46 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Фабрика взрывчатки</Russian>
+		<Hungarian>Puskapor Gyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_HOUSE_PEDIA</Tag>
-		<English>Well away from other buildings the powder maker mixes gunpowder from sulphur, charcoal and saltpeter: ammunition for the soldiers' guns. In colonial times it's the only available explosive (dynamite will be invented in 1867) so it's also used for artillery, mining and road building.[NEWLINE]The powder maker needs to produce enough black powder so that soldiers are well-supplied to defend their settlements. Even more is needed for miners and the pioneers building roads.</English>
+		<English>Well away from other buildings the powder maker prepares gunpowder from sulphur, charcoal and saltpeter: ammunition for the soldiers' guns. In colonial times it's the only available explosive (dynamite will be invented in 1867) so it's also used for artillery, mining and road building.[NEWLINE]The powder maker needs to produce enough black powder so that soldiers are well-supplied to defend their settlements. Even more is needed for miners and the pioneers building roads.</English>
 		<French>A l'écart des autres bâtiments, le poudrier mélange la poudre à canon à partir de soufre, de charbon de bois et de salpêtre : des munitions pour les fusils des soldats. À l'époque coloniale, c'est le seul explosif disponible (la dynamite sera inventée en 1867). Elle est donc également utilisée pour l'artillerie, l'exploitation minière et la construction de routes.</French>
 		<German>Weit entfernt von anderen Gebäuden mischt der Pulvermacher Schießpulver aus Schwefel, Holzkohle und Salpeter für die Gewehre der Soldaten. In der Kolonialzeit ist es der einzige verfügbare Sprengstoff (Dynamit wird erst 1867 erfunden) und wird auch für die Artillerie, den Bergbau und den Straßenbau verwendet.[NEWLINE]Der Pulvermacher muss genügend Schwarzpulver herstellen, damit die Soldaten gut ausgerüstet sind, um ihre Siedlungen zu verteidigen. Noch mehr wird für die Bergleute und die Pioniere zum Straßenbau benötigt.</German>
 		<Italian>Ben lontano da altri edifici, il polveriere mescola la polvere da sparo con zolfo, carbone e salnitro: munizioni per i cannoni dei soldati. In epoca coloniale è l'unico esplosivo disponibile (la dinamite sarà inventata nel 1867), quindi viene utilizzato anche per l'artiglieria, le miniere e la costruzione di strade.</Italian>
 		<Spanish>Alejado de otros edificios, el polvorero mezcla pólvora a partir de azufre, carbón vegetal y salitre: munición para las armas de los soldados. En la época colonial es el único explosivo disponible (la dinamita se inventará en 1867), por lo que también se utiliza para la artillería, la minería y la construcción de carreteras.</Spanish>
+		<Hungarian>Távol más épületektől a puskaporgyártó kénből, faszénből és salétromból keveri össze a puskaport: a katonák fegyvereinek lőszerét. A gyarmati időkben ez az egyetlen rendelkezésre álló robbanóanyag (a dinamitot 1867-ben találják fel), ezért tüzérségi célokra, bányászatban és útépítésben is használják. A puskaporgyártónak elegendő puskaport kell készítenie ahhoz, hogy a katonák jól felszereltek legyenek a településeik védelméhez. Még több puskaporra van szükség a bányászok és az utakat építő utászok számára.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]powder maker's house[COLOR_REVERT] is where, first, [LINK=YIELD_CHAR_COAL]charcoal[\LINK] is made from [LINK=YIELD_LUMBER]lumber[\LINK] by a settler with the [LINK=PROFESSION_CHARCOAL_BURNER]charcoal burner[\LINK] profession; and then turned into [LINK=YIELD_BLACK_POWDER]gunpowder[\LINK] by another colonist with the [LINK=PROFESSION_FIREWORKER]gunpowder mixer[\LINK] profession. [LINK=UNIT_FIREWORKER]Master powder makers[\LINK] are particularly effective at this.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]Gunpowder[COLOR_REVERT] is needed to train gunpowder units like [LINK=PROFESSION_LINE_INFANTRY]line infantry[\LINK] or units like the [LINK=PROFESSION_LIGHT_ARTILLERY]light artillery[\LINK] or a ship equipped with cannons, such as the [LINK=UNIT_SHIP_OF_THE_LINE]ship of the line[\LINK].</English>
 		<German>Im [COLOR_HIGHLIGHT_TEXT]Haus des Pulvermachers[COLOR_REVERT] wird zunächst von einem [COLOR_UNIT_TEXT]Freien Kolonisten[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_CHARCOAL_BURNER]Köhler[\LINK] aus [LINK=YIELD_LUMBER]Holz[\LINK] die [LINK=YIELD_CHAR_COAL]Holzkohle[\LINK] hergestellt und dann daraus von einem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_FIREWORKER]Pulvermacher[\LINK] zu [LINK=YIELD_BLACK_POWDER]Schwarzpulver[\LINK] verarbeitet.[PARAGRAPH:1][LINK=UNIT_FIREWORKER]Meister Pulvermacher[\LINK] sind hierbei besonders effektiv.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]Schwarzpulver[COLOR_REVERT] wird benötigt um Schießpulver-Einheiten wie [LINK=PROFESSION_LINE_INFANTRY]Linieninfanteristen[\LINK] auszubilden oder Einheiten wie die  [LINK=PROFESSION_LIGHT_ARTILLERY]leichte Artillerie[\LINK] oder ein mit Kanonen ausgerüstetes Schiff, wie das [LINK=UNIT_SHIP_OF_THE_LINE]Linienschiff[\LINK] zu bauen.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Puskaporgyártó Műhely[COLOR_REVERT] az a hely, ahol először [LINK=YIELD_CHAR_COAL]faszén[\LINK] készül [LINK=YIELD_LUMBER]épületfából [\LINK] egy [LINK=PROFESSION_CHARCOAL_BURNER]szénégető[\LINK] szakmájú telepes által, majd [LINK=YIELD_BLACK_POWDER]puskaporrá[\LINK] alakítja át egy másik, [LINK=PROFESSION_FIREWORKER]puskaporkeverő[\LINK] szakmájú telepes. A [LINK=UNIT_FIREWORKER]Puskaporkeverő Mesterek[\LINK] különösen hatékonyak ebben.[NEWLINE][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Puskapor[COLOR_REVERT] az olyan egységek kiképzéséhez szükséges, mint a [LINK=PROFESSION_LINE_INFANTRY]gyalogság [\LINK] vagy a [LINK=PROFESSION_LIGHT_ARTILLERY]könnyű tüzérség[\LINK] illetve az ágyúkkal felszerelt hajók számára, mint a [LINK=UNIT_SHIP_OF_THE_LINE]sorhajó[\LINK].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_SHOP_PEDIA</Tag>
 		<English>As the business gets bigger, the black powder is stored in kegs which represent a massive increase in explosive power, so much that "powder keg" becomes a metaphor for high risk. Black powder may be dangerous, but it's not as dangerous as having a weak army without enough ammunition.</English>
 		<German>Mit zunehmender Größe des Unternehmens wird das Schwarzpulver in Fässern gelagert, die eine so große Sprengkraft haben, dass "Pulverfass" zu einer Metapher für ein hohes Risiko wird.[NEWLINE]Schwarzpulver mag gefährlich sein, aber es ist nicht so gefährlich wie eine schwache Armee ohne genügend Munition.</German>
+		<Hungarian>Ahogy az üzlet növekszik, a puskaport hordókban tárolják, ami hatalmas robbanóerő-növekedést jelent, annyira, hogy a „puskaporos hordó” a nagy kockázat metaforájává válik. A puskapor veszélyes lehet, de nem annyira, mint egy gyenge hadsereg, amelynek nincs elegendő lőszere.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_SHOP_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]powder makers' shop[COLOR_REVERT] is the upgrade of the [LINK=BUILDING_FIREWORKERS_HOUSE]powder maker's house[\LINK] where charcoal is made from [LINK=YIELD_LUMBER]lumber[\LINK] by settlers with the [LINK=PROFESSION_CHARCOAL_BURNER]charcoal burner[\LINK] profession, and then turned into [LINK=YIELD_BLACK_POWDER]gunpowder[\LINK] by other colonists with the [LINK=PROFESSION_FIREWORKER]gunpowder mixer[\LINK] profession. [LINK=UNIT_FIREWORKER]Master powder makers[\LINK] are particularly effective at this.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]Gunpowder[COLOR_REVERT] is needed to train gunpowder units like [LINK=PROFESSION_LINE_INFANTRY]line infantry[\LINK] or units like the [LINK=PROFESSION_LIGHT_ARTILLERY]light artillery[\LINK] or a ship equipped with cannons, such as the [LINK=UNIT_SHIP_OF_THE_LINE]ship of the line[\LINK].</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Pulverladen[COLOR_REVERT] ist die mittlere Ausbaustufe des [LINK=BUILDING_FIREWORKERS_HOUSE]Haus des Pulvermachers[\LINK], in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_CHARCOAL_BURNER]Köhler[\LINK] aus [LINK=YIELD_LUMBER]Holz[\LINK] die [LINK=YIELD_CHAR_COAL]Holzkohle[\LINK] herstellt, und dann von einem [COLOR_UNIT_TEXT]Freien Kolonisten[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_FIREWORKER]Pulvermacher[\LINK] zu [LINK=YIELD_BLACK_POWDER]Schwarzpulver[\LINK] verarbeitet wird.[PARAGRAPH:1][LINK=UNIT_FIREWORKER]Meister Pulvermacher[\LINK] sind hierbei besonders effektiv.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]Schwarzpulver[COLOR_REVERT] wird benötigt um Schießpulver-Einheiten wie [LINK=PROFESSION_LINE_INFANTRY]Linieninfanteristen[\LINK] auszubilden oder Einheiten wie die  [LINK=PROFESSION_LIGHT_ARTILLERY]leichte Artillerie[\LINK] oder ein mit Kanonen ausgerüstetes Schiff, wie das [LINK=UNIT_SHIP_OF_THE_LINE]Linienschiff[\LINK] zu bauen.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Puskaporgyártó Üzlet[COLOR_REVERT] a [LINK=BUILDING_FIREWORKERS_HOUSE]Puskaporgyártó Műhely[\LINK] továbbfejlesztése, ahol először [LINK=YIELD_CHAR_COAL]faszén[\LINK] készül [LINK=YIELD_LUMBER]épületfából [\LINK] egy [LINK=PROFESSION_CHARCOAL_BURNER]szénégető[\LINK] szakmájú telepes által, majd [LINK=YIELD_BLACK_POWDER]puskaporrá[\LINK] alakítja át egy másik, [LINK=PROFESSION_FIREWORKER]puskaporkeverő[\LINK] szakmájú telepes. A [LINK=UNIT_FIREWORKER]Puskaporkeverő Mesterek[\LINK] különösen hatékonyak ebben.[NEWLINE][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Puskapor[COLOR_REVERT] az olyan egységek kiképzéséhez szükséges, mint a [LINK=PROFESSION_LINE_INFANTRY]gyalogság [\LINK] vagy a [LINK=PROFESSION_LIGHT_ARTILLERY]könnyű tüzérség[\LINK] illetve az ágyúkkal felszerelt hajók számára, mint a [LINK=UNIT_SHIP_OF_THE_LINE]sorhajó[\LINK].</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_FACTORY_PEDIA</Tag>
 		<English>The powder maker supplies propellant for guns and artillery, and explosives for mining and road building. For a big army so much has to be kept in kegs that an unlucky event in this building can blow up the entire town.[NEWLINE]Centralizing production of propellant for guns and artillery, and explosives for mining and road building, is efficient but it means powder trains of vulnerable wagons are now on the roads, open to attack.</English>
 		<German>Der Pulvermacher liefert Treibladungen für Geschütze und Artillerie sowie Sprengstoff für den Berg- und Straßenbau. Für eine große Armee muss so viel in Fässern gelagert werden, dass ein einziges Missgeschick in diesem Gebäude die ganze Stadt in die Luft jagen kann.[NEWLINE]Die Zentralisierung der Produktion von Treibstoff für Geschütze und Artillerie sowie von Sprengstoff für den Berg- und Straßenbau ist effizient, bedeutet aber auch, dass Pulverzüge mit anfälligen Wagen auf den Straßen unterwegs sind und angegriffen werden können.</German>
+		<Hungarian>A puskaport gyártó cég szállítja a lőfegyverekhez és tüzérségi fegyverekhez szükséges hajtóanyagot, valamint a bányászatban és útépítésben használt robbanóanyagokat. Egy nagy hadsereg számára olyan nagy mennyiséget kell hordókban tárolni, hogy egy szerencsétlen esemény ebben az épületben az egész város felrobbanását okozhatja. A lőfegyverekhez és tüzérségi fegyverekhez szükséges hajtóanyagok, valamint a bányászatban és útépítésben használt robbanóanyagok gyártásának központosítása hatékony, de ez azt jelenti, hogy a sebezhető kocsikból álló puskaporszállító kocsik most az utakon közlekednek, és támadásnak vannak kitéve.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIREWORKERS_FACTORY_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]powder magazine[COLOR_REVERT] is the ultimate upgrade of the [LINK=BUILDING_FIREWORKERS_HOUSE]powder maker's house[\LINK] where charcoal is made from [LINK=YIELD_LUMBER]lumber[\LINK] by settlers with the [LINK=PROFESSION_CHARCOAL_BURNER]charcoal burner[\LINK] profession, and then turned into [LINK=YIELD_BLACK_POWDER]gunpowder[\LINK] by other colonists with the [LINK=PROFESSION_FIREWORKER]gunpowder mixer[\LINK] profession. [LINK=UNIT_FIREWORKER]Master powder makers[\LINK] are particularly effective at this.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]Gunpowder[COLOR_REVERT] is needed to train gunpowder units like [LINK=PROFESSION_LINE_INFANTRY]line infantry[\LINK] or units like the [LINK=PROFESSION_LIGHT_ARTILLERY]light artillery[\LINK] or a ship equipped with cannons, such as the [LINK=UNIT_SHIP_OF_THE_LINE]ship of the line[\LINK].</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Pulverfabrik[COLOR_REVERT] ist die höchste Ausbaustufe des [LINK=BUILDING_FIREWORKERS_HOUSE]Haus des Pulvermachers[\LINK], in dem ein [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_CHARCOAL_BURNER]Köhler[\LINK] aus [LINK=YIELD_LUMBER]Holz[\LINK] die [LINK=YIELD_CHAR_COAL]Holzkohle[\LINK] herstellt, und dann von einem [COLOR_UNIT_TEXT]Freien Kolonisten[COLOR_REVERT] mit dem Beruf [LINK=PROFESSION_FIREWORKER]Pulvermacher[\LINK] zu [LINK=YIELD_BLACK_POWDER]Schwarzpulver[\LINK] verarbeitet wird.[PARAGRAPH:1][LINK=UNIT_FIREWORKER]Meister Pulvermacher[\LINK] sind hierbei besonders effektiv.[NEWLINE][NEWLINE][COLOR_HIGHLIGHT_TEXT]Schwarzpulver[COLOR_REVERT] wird benötigt um Schießpulver-Einheiten wie [LINK=PROFESSION_LINE_INFANTRY]Linieninfanteristen[\LINK] auszubilden oder Einheiten wie die  [LINK=PROFESSION_LIGHT_ARTILLERY]leichte Artillerie[\LINK] oder ein mit Kanonen ausgerüstetes Schiff, wie das [LINK=UNIT_SHIP_OF_THE_LINE]Linienschiff[\LINK] zu bauen.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Puskapor Gyár[COLOR_REVERT] a [LINK=BUILDING_FIREWORKERS_HOUSE]Puskaporgyártó Műhely[\LINK] végső továbbfejlesztése, ahol először [LINK=YIELD_CHAR_COAL]faszén[\LINK] készül [LINK=YIELD_LUMBER]épületfából [\LINK] egy [LINK=PROFESSION_CHARCOAL_BURNER]szénégető[\LINK] szakmájú telepes által, majd [LINK=YIELD_BLACK_POWDER]puskaporrá[\LINK] alakítja át egy másik, [LINK=PROFESSION_FIREWORKER]puskaporkeverő[\LINK] szakmájú telepes. A [LINK=UNIT_FIREWORKER]Puskaporkeverő Mesterek[\LINK] különösen hatékonyak ebben.[NEWLINE][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Puskapor[COLOR_REVERT] az olyan egységek kiképzéséhez szükséges, mint a [LINK=PROFESSION_LINE_INFANTRY]gyalogság [\LINK] vagy a [LINK=PROFESSION_LIGHT_ARTILLERY]könnyű tüzérség[\LINK] illetve az ágyúkkal felszerelt hajók számára, mint a [LINK=UNIT_SHIP_OF_THE_LINE]sorhajó[\LINK].</Hungarian>
 	</TEXT>
 	<!-- BAKER -->
 	<TEXT>
@@ -877,6 +918,7 @@
 		<German>Bäcker</German>
 		<Italian>Fornaio</Italian>
 		<Spanish>Panadero</Spanish>
+		<Hungarian>Pék</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_BAKER_HOUSE</Tag>
@@ -886,16 +928,18 @@
 		<Italian>Casa del fornaio</Italian>
 		<Spanish>Casa del panadero</Spanish>
 		<Russian>Дом пекаря</Russian>
+		<Hungarian>Pékség</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_BAKER_SHOP</Tag>
-		<English>Baker's Shop</English>
+		<English>Bakeshop</English>
 		<German>
 			<Text>Bäckerladen</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Russian>Пекарня</Russian>
+		<Hungarian>Pék Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_BAKERY</Tag>
@@ -905,6 +949,7 @@
 		<Italian>Panificio</Italian>
 		<Spanish>Panadería</Spanish>
 		<Russian>Фабрика выпечки</Russian>
+		<Hungarian>Kenyérgyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKER_HOUSE</Tag>
@@ -914,10 +959,11 @@
 		<Italian>Casa del fornaio</Italian>
 		<Spanish>Casa del panadero</Spanish>
 		<Russian>Дом пекаря</Russian>
+		<Hungarian>Pékség</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKER_SHOP</Tag>
-		<English>Baker's Shop</English>
+		<English>Bakeshop</English>
 		<French>Atelier du boulanger</French>
 		<German>
 			<Text>Bäckerladen</Text>
@@ -925,6 +971,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Пекарня</Russian>
+		<Hungarian>Pék Üzlet</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKERY</Tag>
@@ -934,6 +981,7 @@
 		<Italian>Panificio</Italian>
 		<Spanish>Panadería</Spanish>
 		<Russian>Фабрика выпечки</Russian>
+		<Hungarian>Kenyérgyár</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKER_HOUSE_PEDIA</Tag>
@@ -942,31 +990,37 @@
 		<German>Zunächst bäckt jeder Haushalt sein eigenes Brot, doch schon bald wird die Lebensmittelproduktion durch die Bäckereien zentralisiert. Der Bäcker beginnt seine Arbeit lange vor dem Morgengrauen, damit die Haushalte ihr tägliches Brot bekommen. Siedler, die sich an die frühen Hungertage erinnern, bauen weiterhin Kürbisse, Bohnen und Mais an, aber Neuankömmlinge bevorzugen die vertrauten Lebensmittel aus dem alten Land.[NEWLINE]Mit einer Bäckerei muss nicht jeder Haushalt sein eigenes Brot backen. So können die anderen Kolonisten ihre Zeit mit dem verbringen, was sie am besten können. Spezialisierung hilft der Wirtschaft zu wachsen, ein Konzept, das schon bald in den Büchern der Ökonomen Adam Smith und David Ricardo popularisiert wurde.</German>
 		<Italian>All'inizio ogni famiglia prepara il proprio pane, ma presto la casa del fornaio centralizza la produzione di cibo. Il fornaio inizia a lavorare molto prima dell'alba, in modo che le famiglie possano avere il pane quotidiano. I coloni che ricordano i primi tempi di fame continuano a coltivare zucche, fagioli e mais, ma i nuovi arrivati preferiscono il cibo familiare del vecchio Paese.[NEWLINE]Avere un panificio significa che ogni famiglia non ha bisogno di cuocere il proprio pane. Questo permette agli altri coloni di dedicare il loro tempo a ciò che sanno fare meglio. La specializzazione aiuta l'economia a crescere, un concetto presto reso popolare nei libri degli economisti Adam Smith e David Ricardo.</Italian>
 		<Spanish>Al principio, cada hogar hornea su propio pan, pero pronto la casa del panadero centraliza la producción de alimentos. El panadero empieza a trabajar mucho antes del amanecer para que los hogares puedan tener su pan diario. Los colonos que recuerdan los primeros días de hambruna siguen cultivando calabaza, judías y maíz, pero los recién llegados prefieren la comida familiar del viejo país.[NEWLINE]Tener una panadería significa que cada hogar no necesita hornear su propio pan. Eso permite a los demás colonos dedicar su tiempo a lo que mejor saben hacer. La especialización contribuye al crecimiento de la economía, un concepto que pronto se popularizó en los libros de los economistas Adam Smith y David Ricardo.</Spanish>
+		<Hungarian>Eleinte minden háztartás saját kenyeret süt, de hamarosan a pékség központosítja az élelemtermelést. A pék hajnal előtt jóval megkezdi a munkát, hogy a háztartásoknak legyen napi kenyerük. Azok a lakosok, akik emlékeznek a korai éhínségre, továbbra is tököt, babot és kukoricát termesztenek, de az újonnan érkezők inkább a régi hazájukból ismert ételeket részesítik előnyben. A pékség megléte azt jelenti, hogy a háztartásoknak nem kell saját kenyeret sütniük. Ez lehetővé teszi a többi lakos számára, hogy azzal foglalkozzanak, amiben a legjobbak. A specializáció elősegíti a gazdaság növekedését, egy koncepció, amelyet hamarosan népszerűsítettek Adam Smith és David Ricardo közgazdászok könyveikben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKER_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]baker's house[COLOR_REVERT] is where colonists with the [COLOR_HIGHLIGHT_TEXT]baker[COLOR_REVERT] profession make [LINK=YIELD_BAKERY_GOODS]provisions[\LINK] from [LINK=YIELD_BARLEY]barley[\LINK], [LINK=YIELD_RICE]rice[\LINK] or [LINK=YIELD_CASSAVA]cassava[\LINK]. [LINK=UNIT_BAKER]Master bakers[\LINK] are particularly effective here.</English>
 		<German>Im [COLOR_HIGHLIGHT_TEXT]Haus des Bäckers[COLOR_REVERT] stellen [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] mit dem Beruf [COLOR_HIGHLIGHT_TEXT]Bäcker[COLOR_REVERT] [LINK=YIELD_BAKERY_GOODS]Proviant[\LINK] aus [LINK=YIELD_BARLEY]Gerste[\LINK], [LINK=YIELD_RICE]Reis[\LINK] oder [LINK=YIELD_CASSAVA]Maniok[\LINK] her. [LINK=UNIT_BAKER]Bäckermeister[\LINK] sind hier besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Pékség[COLOR_REVERT] az a hely, ahol a [COLOR_HIGHLIGHT_TEXT]Pék[COLOR_REVERT] szakmát űző lakosok [LINK=YIELD_BAKERY_GOODS]Ellátmányt[\LINK] készítenek [LINK=YIELD_BARLEY]Árpából[\LINK], [LINK=YIELD_RICE]Rizsből[\LINK] vagy [LINK=YIELD_CASSAVA]Maniókából[\LINK]. A [LINK=UNIT_BAKER]Pékmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKER_SHOP_PEDIA</Tag>
 		<English>As the bakery gets more workers it might add a pastry chef who creates sweet treats that bring in business. The business also provides a variety of loaves so that new arrivals can buy the kind of bread that reminds them of home. The bakery also has cured meats for sandwiches, soon offering all the variety a hungry traveller might want.[NEWLINE]As the bakery grows, offering cookies and pastries, it becomes a social center. Some bakers even set up tables where tea is served to accompany the treats. A few serve coffee which is considered scandalous because of the stimulating effect.</English>
 		<German>Wenn die Bäckerei mehr Mitarbeiter hat, kann sie einen Konditor einstellen, der süße Leckereien herstellt, die das Geschäft ankurbeln. Das Unternehmen bietet auch eine Vielzahl von Brotsorten an, damit Gäste das Brot kaufen können, das sie an ihre Heimat erinnert.[NEWLINE]Wenn die Bäckerei wächst und Kekse und Gebäck anbietet, wird sie zu einem sozialen Zentrum. Einige Bäcker stellen sogar Tische auf, an denen Tee zu den Leckereien serviert wird. Einige wenige servieren Kaffee, der wegen seiner anregenden Wirkung als skandalös gilt.</German>
+		<Hungarian>Ahogy a pékség egyre több munkavállalót foglalkoztat, felvehet egy cukrászt is, aki édességeket készít, amelyek vonzzák a vásárlókat. A vállalkozás különféle kenyérfajtákat is kínál, hogy az újonnan érkezők olyan kenyeret vásárolhassanak, amely emlékezteti őket otthonukra. A pékségben szendvicsekhez való pácolt húsok is kaphatók, és hamarosan mindenféle étel megtalálható lesz, amire egy éhes utazónak szüksége lehet. Ahogy a pékség növekszik, és süteményeket és péksüteményeket is kínál, társadalmi központtá válik. Néhány pék asztalokat is felállít, ahol tea is kapható a finomságok mellé. Néhányan kávét is kínálnak, ami a stimuláló hatása miatt botrányosnak számít.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKER_SHOP_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]bakeshop[COLOR_REVERT] is the upgrade of the[LINK=BUILDING_BAKER_HOUSE]baker's house[\LINK] where colonists with the [COLOR_HIGHLIGHT_TEXT]baker[COLOR_REVERT] profession make [LINK=YIELD_BAKERY_GOODS]provisions[\LINK] from [LINK=YIELD_BARLEY]barley[\LINK], [LINK=YIELD_RICE]rice[\LINK] or [LINK=YIELD_CASSAVA]cassava[\LINK]. [LINK=UNIT_BAKER]Master bakers[\LINK] are particularly effective here.</English>
 		<German>Der [COLOR_HIGHLIGHT_TEXT]Bäckerladen[COLOR_REVERT] ist die Erweiterung des [LINK=BUILDING_BAKER_HOUSE]Haus des Bäckers[\LINK], in dem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] mit dem Beruf [COLOR_HIGHLIGHT_TEXT]Bäcker[COLOR_REVERT] [LINK=YIELD_BAKERY_GOODS]Proviant[\LINK] aus [LINK=YIELD_BARLEY]Gerste[\LINK], [LINK=YIELD_RICE]Reis[\LINK] oder [LINK=YIELD_CASSAVA]Maniok[\LINK] herstellen. [LINK=UNIT_BAKER]Bäckermeister[\LINK] sind hier besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Pék Üzlet[COLOR_REVERT] a [LINK=BUILDING_BAKER_HOUSE]Pékség[\LINK] továbbfejlesztése, ahol a [COLOR_HIGHLIGHT_TEXT]Pék[COLOR_REVERT] szakmát űző lakosok [LINK=YIELD_BAKERY_GOODS]Ellátmányt[\LINK] készítenek [LINK=YIELD_BARLEY]Árpából[\LINK], [LINK=YIELD_RICE]Rizsből[\LINK] vagy [LINK=YIELD_CASSAVA]Maniókából[\LINK]. A [LINK=UNIT_BAKER]Pékmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKERY_PEDIA</Tag>
 		<English>A large bakery serves a region. On the one hand it offers cheap food thanks to economies of sale. On the other it delivers an unparalleled variety of pastries, pies and cakes for special occasions.[NEWLINE]A big bakery makes an important contribution to the region it serves, increasing both the food supply and the community's happiness.</English>
 		<German>Eine Großbäckerei bedient eine Region. Einerseits bietet sie dank des günstigen Verkaufs günstige Lebensmittel an. Darüber hinaus liefert sie eine unvergleichliche Vielfalt an Backwaren, Torten und Kuchen für besondere Anlässe.[NEWLINE]Eine große Bäckerei leistet einen wichtigen Beitrag für die Region, in der sie tätig ist, indem sie sowohl die Lebensmittelversorgung als auch das Wohlbefinden der Bevölkerung verbessert.</German>
+		<Hungarian>Egy nagy kenyérgyár egy egész régiót ellát. Egyrészt az értékesítésből származó megtakarításoknak köszönhetően olcsó élelmiszereket kínál. Másrészt páratlanul széles választékkal rendelkezik sütemények, piték és torták terén, amelyek különleges alkalmakra készülnek. [NEWLINE]Egy nagy kenyérgyár fontos hozzájárulást nyújt a régióhoz, amelynek ellátását biztosítja, növelve ezzel mind az élelem ellátást, mind a közösség boldogságát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAKERY_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]bakery[COLOR_REVERT] is the ultimate upgrade of the [LINK=BUILDING_BAKER_HOUSE]baker's house[\LINK] where colonists with the [COLOR_HIGHLIGHT_TEXT]baker[COLOR_REVERT] profession make [LINK=YIELD_BAKERY_GOODS]provisions[\LINK] from [LINK=YIELD_BARLEY]barley[\LINK], [LINK=YIELD_RICE]rice[\LINK] or [LINK=YIELD_CASSAVA]cassava[\LINK]. [LINK=UNIT_BAKER]Master bakers[\LINK] are particularly effective here.</English>
 		<German>Die [COLOR_HIGHLIGHT_TEXT]Bäckerei[COLOR_REVERT] ist die höchste Ausbaustufe des [LINK=BUILDING_BAKER_HOUSE]Haus des Bäckers[\LINK], in dem [COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] mit dem Beruf [COLOR_HIGHLIGHT_TEXT]Bäcker[COLOR_REVERT] [LINK=YIELD_BAKERY_GOODS]Proviant[\LINK] aus [LINK=YIELD_BARLEY]Gerste[\LINK], [LINK=YIELD_RICE]Reis[\LINK] oder [LINK=YIELD_CASSAVA]Maniok[\LINK] herstellen. [LINK=UNIT_BAKER]Bäckermeister[\LINK] sind hier besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Kenyérgyár[COLOR_REVERT] a [LINK=BUILDING_BAKER_HOUSE]Pékség[\LINK] végső továbbfejlesztése, ahol a [COLOR_HIGHLIGHT_TEXT]Pék[COLOR_REVERT] szakmát űző lakosok [LINK=YIELD_BAKERY_GOODS]Ellátmányt[\LINK] készítenek [LINK=YIELD_BARLEY]Árpából[\LINK], [LINK=YIELD_RICE]Rizsből[\LINK] vagy [LINK=YIELD_CASSAVA]Maniókából[\LINK]. A [LINK=UNIT_BAKER]Pékmesterek[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<!-- Courthouse -->
 	<TEXT>
@@ -977,6 +1031,7 @@
 			<Gender>Neuter</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_VILLAGE_COURT</Tag>
@@ -988,6 +1043,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Здание суда</Russian>
+		<Hungarian>Falusi Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_TOWN_COURT</Tag>
@@ -999,6 +1055,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Городской суд</Russian>
+		<Hungarian>Városi Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_CITY_COURT</Tag>
@@ -1010,6 +1067,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Окружной суд</Russian>
+		<Hungarian>Törvényszék</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_SUPREME_COURT</Tag>
@@ -1021,6 +1079,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Верховный суд</Russian>
+		<Hungarian>Legfelsőbb Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VILLAGE_COURT</Tag>
@@ -1032,6 +1091,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Здание суда</Russian>
+		<Hungarian>Falusi Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOWN_COURT</Tag>
@@ -1043,6 +1103,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Городской суд</Russian>
+		<Hungarian>Városi Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CITY_COURT</Tag>
@@ -1054,6 +1115,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Окружной суд</Russian>
+		<Hungarian>Törvényszék</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPREME_COURT</Tag>
@@ -1065,46 +1127,55 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Верховный суд</Russian>
+		<Hungarian>Legfelsőbb Bíróság</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VILLAGE_COURT_PEDIA</Tag>
 		<English>Village courthouses handle small property disputes and local misbehaviour. Some use common law, where the judge recalls what was decided the last time that the cow broke through the fence and grazed in the neighbour's field. Others rely on written rules from the governor or the overseas monarch.</English>
 		<German>Die Dorfgerichte kümmern sich um kleine Eigentumsstreitigkeiten und lokales Fehlverhalten. Einige wenden das Gewohnheitsrecht an, wobei sich der Richter daran erinnert, was das letzte Mal entschieden wurde, als die Kuh den Zaun durchbrach und auf dem Feld des Nachbarn graste. Andere stützen sich auf schriftliche Vorschriften des Gouverneurs oder des Monarchen in Übersee.</German>
+		<Hungarian>A falusi bíróságok kisebb vagyoni vitákat és helyi szabálysértéseket kezelnek. Néhányan a szokásjogot alkalmazzák, ahol a bíró felidézi, hogy mi történt legutóbb, amikor a tehén áttörte a kerítést és a szomszéd mezőjén legelt. Mások a kormányzó vagy a tengerentúli uralkodó írásbeli szabályaira támaszkodnak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VILLAGE_COURT_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]village court[COLOR_REVERT] is the smallest justice building. A colonist assigned as a [LINK=PROFESSION_JUDGE]judge[\LINK] in the [COLOR_HIGHLIGHT_TEXT]village court[COLOR_REVERT] generates [LINK=YIELD_LAW]law[\LINK]. [LINK=UNIT_JUDGE]Honourable judges[\LINK] are particularly effective at this.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Dorfgericht[COLOR_REVERT] ist das kleinste Justizgebäude. Ein im [COLOR_HIGHLIGHT_TEXT]Dorfgericht[COLOR_REVERT] als [LINK=PROFESSION_JUDGE]Richter[\LINK] eingesetzter [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] erzeugt [LINK=YIELD_LAW]Justiz[\LINK].[PARAGRAPH:1][LINK=UNIT_JUDGE]Ehrenwerte Richter[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Falusi Bíróság[COLOR_REVERT] a legkisebb igazságszolgáltatási épület. Az itt [LINK=PROFESSION_JUDGE]Bíróként[\LINK] dolgozó lakos [LINK=YIELD_LAW]törvényeket[\LINK] hoz létre. A [LINK=UNIT_JUDGE]Méltóságos Bírák[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOWN_COURT_PEDIA</Tag>
 		<English>The town courthouse expands its purview to contracts and business law. It still hears criminal cases but they're a distraction from the decisions that really matter. There's a long list of hanging offences.</English>
 		<German>Das Stadtgericht weitet seinen Zuständigkeitsbereich auf Verträge und Wirtschaftsrecht aus. Es werden zwar immer noch Gewalttaten verhandelt, aber die lenken von den wirklich wichtigen Entscheidungen ab. Es gibt eine lange Liste von Hinrichtungsdelikten.</German>
+		<Hungarian>A városi bíróság hatásköre kiterjed a szerződésekre és az üzleti jogra is. Továbbra is büntetőügyeket tárgyal, de ezek elvonják a figyelmet a valóban fontos döntésekről. Hosszú a lista a halálbüntetéssel járó bűncselekményekről.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOWN_COURT_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]town courthouse[COLOR_REVERT] is the first expansion stage of the [LINK=BUILDING_VILLAGE_COURT]village court[\LINK]. A colonist appointed in the [COLOR_HIGHLIGHT_TEXT]town courthouse[COLOR_REVERT] as a [LINK=PROFESSION_JUDGE]judge[\LINK] generates [LINK=YIELD_LAW]law[\LINK]. [LINK=UNIT_JUDGE]Honourable judges[\LINK] are particularly effective at this.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Stadtgericht[COLOR_REVERT] ist die erste Ausbaustufe des [LINK=BUILDING_VILLAGE_COURT]Dorfgerichts[\LINK]. Ein im [COLOR_HIGHLIGHT_TEXT]Stadtgericht[COLOR_REVERT] als [LINK=PROFESSION_JUDGE]Richter[\LINK] eingesetzter [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] erzeugt [LINK=YIELD_LAW]Justiz[\LINK].[PARAGRAPH:1][LINK=UNIT_JUDGE]Ehrenwerte Richter[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Városi Bíróság[COLOR_REVERT] a [LINK=BUILDING_VILLAGE_COURT]Falusi Bíróság[\LINK] első továbbfejlesztése. Az itt [LINK=PROFESSION_JUDGE]Bíróként[\LINK] dolgozó lakos [LINK=YIELD_LAW]törvényeket[\LINK] hoz létre. A [LINK=UNIT_JUDGE]Méltóságos Bírák[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CITY_COURT_PEDIA</Tag>
 		<English>The city courthouse still has to control violence and money, but dangerous ideas are increasingly subject to regulation. The jails have political prisoners alongside drunks and con artists. Sometimes all three are the same person.</English>
 		<German>Das Distriktsgericht muss nach wie vor Gewalt und Geld kontrollieren, aber gefährliche Ideen werden zunehmend einer Regulierung unterworfen. In den Gefängnissen sitzen politische Gefangene neben Säufern und Betrügern. Manchmal sind alle drei ein und dieselbe Person.</German>
+		<Hungarian>A törvényszéknek továbbra is az erőszakot és a pénzt kell ellenőriznie, de a veszélyes eszmék egyre inkább szabályozás alá kerülnek. A börtönökben politikai foglyok ülnek részegek és csalók mellett. Néha mindhárom ugyanaz a személy.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CITY_COURT_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]city courthouse[COLOR_REVERT] is the highest normal expansion level of the [LINK=BUILDING_VILLAGE_COURT]village court[\LINK]. A colonist appointed to the [COLOR_HIGHLIGHT_TEXT]city courthouse[COLOR_REVERT] as a [LINK=PROFESSION_JUDGE]judge[\LINK] generates [LINK=YIELD_LAW]law[\LINK]. [LINK=UNIT_JUDGE]Honourable judges[\LINK] are particularly effective at this.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Distriktsgerichthaus[COLOR_REVERT] ist die höchste normale Ausbaustufe des [LINK=BUILDING_VILLAGE_COURT]Dorfgerichts[\LINK]. Ein im [COLOR_HIGHLIGHT_TEXT]Distriktsgerichthaus[COLOR_REVERT] als [LINK=PROFESSION_JUDGE]Richter[\LINK] eingesetzter [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] erzeugt [LINK=YIELD_LAW]Justiz[\LINK].[PARAGRAPH:1][LINK=UNIT_JUDGE]Ehrenwerte Richter[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Törvényszék[COLOR_REVERT] a [LINK=BUILDING_VILLAGE_COURT]Falusi Bíróság[\LINK] legmagasabb normál továbbfejlesztése. Az itt [LINK=PROFESSION_JUDGE]Bíróként[\LINK] dolgozó lakos [LINK=YIELD_LAW]törvényeket[\LINK] hoz létre. A [LINK=UNIT_JUDGE]Méltóságos Bírák[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPREME_COURT_PEDIA</Tag>
 		<English>The Supreme Court exists as a counterbalance to government. Rules are made consistent. Many laws have a strong religious component. Precedent remains important, so the Supreme Court is a force for social continuity.</English>
 		<German>Der Oberste Gerichtshof ist ein Gegengewicht zur Regierung. Regeln werden konsequent umgesetzt. Viele Gesetze haben eine starke religiöse Komponente. Präzedenzfälle bleiben wichtig, so dass der Oberste Gerichtshof eine Kraft für soziale Kontinuität ist.</German>
+		<Hungarian>A Legfelsőbb Bíróság a kormány ellensúlyaként működik. A szabályok következetesek. Sok törvénynek erős vallási vonatkozása van. A precedensek továbbra is fontosak, így a Legfelsőbb Bíróság a társadalmi folytonosság erőforrása.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPREME_COURT_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]supreme court[COLOR_REVERT] can only be built once and is the very highest expansion level of the [LINK=BUILDING_VILLAGE_COURT]village court[\LINK]. A colonist appointed in the [COLOR_HIGHLIGHT_TEXT]supreme court[COLOR_REVERT] as a [LINK=PROFESSION_JUDGE]judge[\LINK] generates a great deal of [LINK=YIELD_LAW]law[\LINK]. [LINK=UNIT_JUDGE]Honourable judges[\LINK] are particularly effective at this.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Oberste Gericht[COLOR_REVERT] kann nur einmal errichtet werden und ist die allerhöchste Ausbaustufe des [LINK=BUILDING_VILLAGE_COURT]Dorfgerichts[\LINK]. Ein im [COLOR_HIGHLIGHT_TEXT]Obersten Gericht[COLOR_REVERT] als [LINK=PROFESSION_JUDGE]Richter[\LINK] eingesetzter [COLOR_UNIT_TEXT]Freier Kolonist[COLOR_REVERT] erzeugt sehr viel [LINK=YIELD_LAW]Justiz[\LINK].[PARAGRAPH:1][LINK=UNIT_JUDGE]Ehrenwerte Richter[\LINK] sind hierbei besonders effektiv.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Legfelsőbb Bíróság[COLOR_REVERT] csak egyszer építhető meg, és a [LINK=BUILDING_VILLAGE_COURT]falusi bíróság[\LINK] legmagasabb szintű továbbfejlesztése. Az itt [LINK=PROFESSION_JUDGE]Bíróként[\LINK] dolgozó lakos nagy mennyiségű [LINK=YIELD_LAW]törvényt[\LINK] hoz létre. A [LINK=UNIT_JUDGE]Méltóságos Bírák[\LINK] különösen hatékonyak ebben.</Hungarian>
 	</TEXT>
 	<!-- JAIL -->
 	<TEXT>
@@ -1116,6 +1187,7 @@
 			<Gender>Neuter</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Hungarian>Börtön</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDINGCLASS_JAIL</Tag>
@@ -1127,6 +1199,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Тюрьма</Russian>
+		<Hungarian>Börtön</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIL</Tag>
@@ -1138,6 +1211,7 @@
 			<Plural>0</Plural>
 		</German>
 		<Russian>Тюрьма</Russian>
+		<Hungarian>Börtön</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIL_PEDIA</Tag>
@@ -1148,5 +1222,6 @@
 		<Tag>TXT_KEY_BUILDING_JAIL_STRATEGY</Tag>
 		<English>The [COLOR_HIGHLIGHT_TEXT]jail[COLOR_REVERT] increases the [LINK=YIELD_LAW]law[\LINK] without additional use of [LINK=PROFESSION_JUDGE]judges[\LINK] in the city.</English>
 		<German>Das [COLOR_HIGHLIGHT_TEXT]Gefängnis[COLOR_REVERT] erhöht die [LINK=YIELD_LAW]Justiz[\LINK] ohne zusätzlichen Einsatz von [LINK=PROFESSION_JUDGE]Richtern[\LINK] in der Stadt.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Börtön[COLOR_REVERT] növeli a [LINK=YIELD_LAW]Törvény[\LINK] hatályát anélkül, hogy további [LINK=PROFESSION_JUDGE]Bírókat[\LINK] kellene alkalmazni a városban.</Hungarian>
 	</TEXT>
 </Civ4GameText>
