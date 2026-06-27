@@ -63,6 +63,7 @@ public:
 
 	void AI_doTurnPre();
 	void AI_doTurnPost();
+	void AI_doFleetModernization(); // WTP, Schmiddie, AI Fleet Modernization
 	void AI_doTurnUnitsPre();
 	void AI_doTurnUnitsPost();
 

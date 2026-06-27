@@ -273,8 +273,207 @@ void CvPlayerAI::AI_doTurnPost()
 	AI_doTradeRoutes();
 
 	AI_doDiplo();
+
 }
 
+// WTP, Schmiddie, AI Fleet Modernization START
+void CvPlayerAI::AI_doFleetModernization()
+{
+	if (isHuman())
+	{
+		return;
+	}
+
+	if (!isPlayable())
+	{
+		return;
+	}
+
+	if (isNative())
+	{
+		return;
+	}
+
+	if (isEurope())
+	{
+		return;
+	}
+
+	if (GC.getGameINLINE().getGameTurnYear() < 1651)
+	{
+		return;
+	}
+
+	CvUnit* pBestOldUnit = NULL;
+	UnitTypes eBestNewUnit = NO_UNIT;
+	int iBestCost = -1;
+	int iBestCount = 0;
+	UnitAITypes eBestUnitAI = NO_UNITAI;
+
+	int iLoop;
+	for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	{
+		if (pLoopUnit->isDead())
+		{
+			continue;
+		}
+
+		if (pLoopUnit->getUnitTravelState() != UNIT_TRAVEL_STATE_IN_EUROPE)
+		{
+			continue;
+		}
+
+		UnitTypes eOldUnit = pLoopUnit->getUnitType();
+		const CvUnitInfo& kOldUnitInfo = GC.getUnitInfo(eOldUnit);
+
+		if (kOldUnitInfo.getDomainType() != DOMAIN_SEA)
+		{
+			continue;
+		}
+
+		UnitClassTypes eOldUnitClass = (UnitClassTypes)kOldUnitInfo.getUnitClassType();
+		UnitClassTypes eNewUnitClass = NO_UNITCLASS;
+
+		if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WAR_GALLEON"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SHIP_OF_THE_LINE");
+		}
+		else if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_GALLEON"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WEST_INDIAMAN");
+		}
+		else if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WAR_CARAVEL"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_NAVAL_BRIG");
+		}
+		else if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_NAO"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_FLEUTE");
+		}
+		else if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_CARAVELA_REDONDA"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLOOP");
+		}
+		else if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_CARRACK"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_BRIGANTINE");
+		}
+		else if (eOldUnitClass == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_CARAVEL"))
+		{
+			eNewUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SCHOONER");
+		}
+
+		if (eNewUnitClass == NO_UNITCLASS)
+		{
+			continue;
+		}
+
+		UnitTypes eNewUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eNewUnitClass);
+
+		if (eNewUnit == NO_UNIT)
+		{
+			continue;
+		}
+
+		if (!isUnitWithinGameYearWindow(eNewUnit))
+		{
+			continue;
+		}
+
+		if (GC.getUnitInfo(eNewUnit).getDomainType() != DOMAIN_SEA)
+		{
+			continue;
+		}
+
+		int iNewPrice = getEuropeUnitBuyPrice(eNewUnit);
+
+		if (iNewPrice <= 0)
+		{
+			continue;
+		}
+
+		int iOldPrice = std::abs(kOldUnitInfo.getEuropeCost());
+
+		iOldPrice *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
+		iOldPrice /= 100;
+
+		iOldPrice *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getTrainPercent();
+		iOldPrice /= 100;
+
+		for (int iTrait = 0; iTrait < GC.getNumTraitInfos(); ++iTrait)
+		{
+			if (hasTrait((TraitTypes)iTrait))
+			{
+				iOldPrice *= std::max(0, (100 - GC.getTraitInfo((TraitTypes)iTrait).getRecruitPriceDiscount()));
+				iOldPrice /= 100;
+			}
+		}
+
+		iOldPrice *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAITrainPercent();
+		iOldPrice /= 100;
+
+		iOldPrice *= std::max(0, ((GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIPerEraModifier() * getCurrentEra()) + 100));
+		iOldPrice /= 100;
+
+		int iCost = iNewPrice - iOldPrice;
+
+		if (iCost < 0)
+		{
+			iCost = 0;
+		}
+
+		if (getGold() < iCost)
+		{
+			continue;
+		}
+
+		++iBestCount;
+
+		if (GC.getGameINLINE().getSorenRandNum(iBestCount, "AI Fleet Modernization Unit Selection") == 0)
+		{
+			pBestOldUnit = pLoopUnit;
+			eBestNewUnit = eNewUnit;
+			iBestCost = iCost;
+			eBestUnitAI = pLoopUnit->AI_getUnitAIType();
+		}
+	}
+
+	if (pBestOldUnit == NULL)
+	{
+		return;
+	}
+
+	if (eBestNewUnit == NO_UNIT)
+	{
+		return;
+	}
+
+	if (iBestCost < 0)
+	{
+		return;
+	}
+
+	if (getGold() < iBestCost)
+	{
+		return;
+	}
+
+	const int iOldX = pBestOldUnit->getX_INLINE();
+	const int iOldY = pBestOldUnit->getY_INLINE();
+
+	pBestOldUnit->kill(false);
+
+	changeGold(-iBestCost);
+
+	CvUnit* pNewUnit = initUnit(eBestNewUnit, NO_PROFESSION, iOldX, iOldY, eBestUnitAI, NO_DIRECTION);
+
+	if (pNewUnit != NULL)
+	{
+		pNewUnit->AI_setUnitAIType(eBestUnitAI);
+		pNewUnit->setUnitTravelState(UNIT_TRAVEL_STATE_IN_EUROPE, false);
+		pNewUnit->setUnitTravelTimer(0);
+	}
+}
 
 void CvPlayerAI::AI_doTurnUnitsPre()
 {
@@ -287,6 +486,10 @@ void CvPlayerAI::AI_doTurnUnitsPre()
 	{
 		if (getParent() != NO_PLAYER)
 		{
+			// WTP, Schmiddie, AI Fleet Modernization START
+			AI_doFleetModernization();
+			// WTP, Schmiddie, AI Fleet Modernization END
+
 			AI_doProfessions();
 			AI_doEurope();
 		}
@@ -308,7 +511,7 @@ void CvPlayerAI::AI_doTurnUnitsPre()
 		return;
 	}
 }
-
+// WTP, Schmiddie, AI Fleet Modernization END
 
 void CvPlayerAI::AI_doTurnUnitsPost()
 {
