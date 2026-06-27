@@ -175,6 +175,15 @@ bool CyPlayer::triggerEuropeanWarDemand(int eEnemyPlayer)
 	return m_pPlayer ? m_pPlayer->triggerEuropeanWarDemand((PlayerTypes)eEnemyPlayer) : false;
 }
 // WTP Schmiddie King demands war exposed to Python End
+// WTP Schmiddie Availability Change Project START
+void CyPlayer::modernizeRevolutionEuropeNavy()
+{
+	if (m_pPlayer)
+	{
+		pointer(CREATE_ASSERT_DATA)->modernizeRevolutionEuropeNavy();
+	}
+}
+// WTP Schmiddie Availability Change Project END
 bool CyPlayer::canTradeWith(int /*PlayerTypes*/ eWhoTo)
 {
 	return m_pPlayer ? m_pPlayer->canTradeWith((PlayerTypes)eWhoTo) : false;

@@ -865,6 +865,7 @@ public:
 	UnitTypes getRevolutionEuropeUnit(int i) const;
 	ProfessionTypes getRevolutionEuropeProfession(int i) const;
 	void addRevolutionEuropeUnit(UnitTypes eUnit, ProfessionTypes eProfession);
+	void modernizeRevolutionEuropeNavy();  // WTP, Schmidde, Availability Change Project
 	void clearRevolutionEuropeUnits();
 
 	UnitTypes getDocksNextUnit(int i) const;

@@ -2889,6 +2889,7 @@ m_bHiddenNationality(false),
 m_bSlaveShip(false), // WTP, ray Slave Ship
 m_bTreasureShip(false), // WTP, ray Treasure Ship
 m_bTroopShip(false), // WTP, ray Troop Ship
+m_iREFShipClass(0), // WTP, Schmiddie, REF Navy Modernization
 m_bAlwaysHostile(false),
 m_bTreasure(false),
 m_eEthnicity(NO_ETHNICITY), // WTP, ray, Ethnically correct Population Growth - START
@@ -3357,7 +3358,12 @@ bool CvUnitInfo::isTroopShip() const
 	return m_bTroopShip;
 }
 // WTP, ray Troop Ship - END
-
+//WTP, Schmiddie, REF modernization 
+int CvUnitInfo::getREFShipClass() const
+{
+	return m_iREFShipClass;
+}
+//WTP, Schmiddie, REF modernization 
 bool CvUnitInfo::isAlwaysHostile() const
 {
 	return m_bAlwaysHostile;
@@ -4218,6 +4224,7 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bSlaveShip,"bSlaveShip",false); // WTP, ray Slave Ship
 	pXML->GetChildXmlValByName(&m_bTreasureShip,"bTreasureShip",false); // WTP, ray Treasure Ship
 	pXML->GetChildXmlValByName(&m_bTroopShip,"bTroopShip",false); // WTP, ray Troop Ship
+	pXML->GetChildXmlValByName(&m_iREFShipClass, "iREFShipClass"); // WTP, Schmiddie, REF Navy Modernization
 	pXML->GetChildXmlValByName(&m_bAlwaysHostile,"bAlwaysHostile",false);
 	pXML->GetChildXmlValByName(&m_bTreasure,"bTreasure",false);
 	pXML->GetEnum(getType(), m_eEthnicity, "eEthnicity", false); // WTP, ray, Ethnically correct Population Growth - START

@@ -80365,6 +80365,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTreasureShip>0</bTreasureShip>
+			<iREFShipClass>1</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -80392,7 +80393,7 @@
 			<PrereqBuilding>BUILDINGCLASS_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>50</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
@@ -80582,6 +80583,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>3</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -80609,7 +80611,7 @@
 			<PrereqBuilding>BUILDINGCLASS_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>40</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
@@ -80827,7 +80829,7 @@
 			<PrereqBuilding>BUILDINGCLASS_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>30</iAIWeight>
+			<iAIWeight>80</iAIWeight>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
@@ -81016,6 +81018,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>1</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -81222,6 +81225,7 @@
 			<bMechanized>1</bMechanized>
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
+			<iREFShipClass>2</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -81927,15 +81931,15 @@
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iEuropeCost>4000</iEuropeCost>
-			<iEuropeCostIncrease>750</iEuropeCostIncrease>
+			<iEuropeCost>-1</iEuropeCost>
+			<iEuropeCostIncrease>0</iEuropeCostIncrease>
 			<iPortRoyalCost>3000</iPortRoyalCost>
 			<iPortRoyalCostIncrease>500</iPortRoyalCostIncrease>
 			<iImmigrationWeight>0</iImmigrationWeight>
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>4</iNavalControlCost>
+			<iNavalControlCost>2</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>1</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -81965,7 +81969,7 @@
 				</FeatureImpassable>
 			</FeatureImpassables>
 			<EvasionBuildings/>
-			<iCombat>30</iCombat>
+			<iCombat>25</iCombat>
 			<iXPValueAttack>5</iXPValueAttack>
 			<iXPValueDefense>3</iXPValueDefense>
 			<iWithdrawalProb>25</iWithdrawalProb>
@@ -82209,7 +82213,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>4</iNavalControlCost>
+			<iNavalControlCost>2</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>1</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -82239,7 +82243,7 @@
 				</FeatureImpassable>
 			</FeatureImpassables>
 			<EvasionBuildings/>
-			<iCombat>33</iCombat>
+			<iCombat>28</iCombat>
 			<iXPValueAttack>5</iXPValueAttack>
 			<iXPValueDefense>3</iXPValueDefense>
 			<iWithdrawalProb>20</iWithdrawalProb>
@@ -82268,8 +82272,8 @@
 			<iRequiredTransportSize>7</iRequiredTransportSize>
 			<iBerthSize>1</iBerthSize>
 			<iHarbourSpaceNeeded>2</iHarbourSpaceNeeded>
-			<iAsset>3800</iAsset>
-			<iPower>3800</iPower>
+			<iAsset>3500</iAsset>
+			<iPower>3500</iPower>
 			<iNativeLearnTime>-1</iNativeLearnTime>
 			<iStudentWeight>0</iStudentWeight>
 			<iTeacherWeight>0</iTeacherWeight>
@@ -82397,7 +82401,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>4</iNavalControlCost>
+			<iNavalControlCost>2</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>1</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -82427,7 +82431,7 @@
 				</FeatureImpassable>
 			</FeatureImpassables>
 			<EvasionBuildings/>
-			<iCombat>35</iCombat>
+			<iCombat>30</iCombat>
 			<iXPValueAttack>5</iXPValueAttack>
 			<iXPValueDefense>3</iXPValueDefense>
 			<iWithdrawalProb>20</iWithdrawalProb>
@@ -82563,8 +82567,8 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>24</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>3</iNavalControlCost>
-			<iNavalControlRadius>2</iNavalControlRadius>
+			<iNavalControlCost>1</iNavalControlCost>
+			<iNavalControlRadius>1</iNavalControlRadius>
 			<bCapturesCargo>1</bCapturesCargo>
 			<bCapturesShips>0</bCapturesShips>
 			<iCaptureShipsChanceIncrease>0</iCaptureShipsChanceIncrease>
@@ -82575,7 +82579,7 @@
 			<TerrainImpassables/>
 			<FeatureImpassables/>
 			<EvasionBuildings/>
-			<iCombat>26</iCombat>
+			<iCombat>22</iCombat>
 			<iXPValueAttack>5</iXPValueAttack>
 			<iXPValueDefense>3</iXPValueDefense>
 			<iWithdrawalProb>25</iWithdrawalProb>
@@ -82604,8 +82608,8 @@
 			<iRequiredTransportSize>7</iRequiredTransportSize>
 			<iBerthSize>1</iBerthSize>
 			<iHarbourSpaceNeeded>1</iHarbourSpaceNeeded>
-			<iAsset>3500</iAsset>
-			<iPower>3500</iPower>
+			<iAsset>3000</iAsset>
+			<iPower>3000</iPower>
 			<iNativeLearnTime>-1</iNativeLearnTime>
 			<iStudentWeight>0</iStudentWeight>
 			<iTeacherWeight>0</iTeacherWeight>
@@ -82904,7 +82908,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>4</iNavalControlCost>
+			<iNavalControlCost>2</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -83046,6 +83050,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>2</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -83113,8 +83118,8 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>10</iMoves>
-			<iNavalControlCost>3</iNavalControlCost>
-			<iNavalControlRadius>2</iNavalControlRadius>
+			<iNavalControlCost>2</iNavalControlCost>
+			<iNavalControlRadius>1</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
 			<iCaptureShipsChanceIncrease>100</iCaptureShipsChanceIncrease>
@@ -83251,6 +83256,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>2</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -83273,7 +83279,7 @@
 			<PrereqBuilding>BUILDINGCLASS_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>40</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
@@ -83318,7 +83324,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>5</iNavalControlCost>
+			<iNavalControlCost>3</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -83473,8 +83479,8 @@
 			<PrereqBuilding>BUILDINGCLASS_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>0</iAIWeight>
-						<YieldCosts>
+			<iAIWeight>120</iAIWeight>
+			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
 					<iCost>85</iCost>
@@ -83518,7 +83524,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>11</iMoves>
-			<iNavalControlCost>5</iNavalControlCost>
+			<iNavalControlCost>4</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -83651,6 +83657,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>2</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -83681,7 +83688,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>12</iMoves>
-			<iNavalControlCost>5</iNavalControlCost>
+			<iNavalControlCost>4</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -83814,6 +83821,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>3</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -83836,7 +83844,7 @@
 			<PrereqBuilding>BUILDINGCLASS_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>40</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
@@ -83881,7 +83889,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>8</iMoves>
-			<iNavalControlCost>6</iNavalControlCost>
+			<iNavalControlCost>4</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -84014,6 +84022,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>3</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -84044,7 +84053,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>8</iMoves>
-			<iNavalControlCost>6</iNavalControlCost>
+			<iNavalControlCost>5</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>1</bCapturesShips>
@@ -84199,7 +84208,7 @@
 			<PrereqBuilding>BUILDINGCLASS_GREAT_SHIPYARD</PrereqBuilding>
 			<PrereqOrBuildings/>
 			<ProductionTraits/>
-			<iAIWeight>0</iAIWeight>
+			<iAIWeight>120</iAIWeight>
 			<YieldCosts>
 				<YieldCost>
 					<YieldType>YIELD_SAILCLOTH</YieldType>
@@ -84244,7 +84253,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>8</iMoves>
-			<iNavalControlCost>6</iNavalControlCost>
+			<iNavalControlCost>5</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>0</bCapturesShips>
@@ -84377,6 +84386,7 @@
 			<bLineOfSight>0</bLineOfSight>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bTroopShip>1</bTroopShip>
+			<iREFShipClass>3</iREFShipClass>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<bTreasure>0</bTreasure>
 			<bLbDCanBecomeExpert>0</bLbDCanBecomeExpert>
@@ -84407,7 +84417,7 @@
 			<iImmigrationWeightDecay>0</iImmigrationWeightDecay>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>8</iMoves>
-			<iNavalControlCost>6</iNavalControlCost>
+			<iNavalControlCost>5</iNavalControlCost>
 			<iNavalControlRadius>2</iNavalControlRadius>
 			<bCapturesCargo>0</bCapturesCargo>
 			<bCapturesShips>0</bCapturesShips>

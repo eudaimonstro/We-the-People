@@ -7473,5 +7473,11 @@
 		<German>Milord, eine andere Kolonialmacht ist in einen Krieg mit einem Ureinwohner-Stamm verwickelt worden und braucht Unterstützung. Man frage nach Schusswaffen und Pferden. Dies könnte der Grundstein für gute Beziehungen sein.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_EVENTTRIGGER_REF_NAVY_MODERNIZATION</Tag>
+		<English>The high admiralty has commissioned a new generation of warships and transports. Older vessels are being withdrawn from service and replaced by more modern designs.</English>
+		<German>Die hohe Admiralität hat entschieden, eine neue Generation von Kriegsschiffen und Transportschiffen in Dienst zu stellen. Veraltete Schiffe werden nach und nach ausgemustert und durch moderne Neubauten ersetzt.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>
 

@@ -19993,6 +19993,7 @@ ProfessionTypes CvPlayer::getRevolutionEuropeProfession(int i) const
 
 	return m_aEuropeRevolutionUnits[i].second;
 }
+
 // WTP, Schmiddie, Availability Change Project START
 void CvPlayer::addRevolutionEuropeUnit(UnitTypes eUnit, ProfessionTypes eProfession)
 {
@@ -20006,34 +20007,157 @@ void CvPlayer::addRevolutionEuropeUnit(UnitTypes eUnit, ProfessionTypes eProfess
 		return;
 	}
 
-	bool bModernizeObsoleteShip = false;
+	m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
+}
 
-	if (GC.getUnitInfo(eUnit).getDomainType() == DOMAIN_SEA)
+void CvPlayer::modernizeRevolutionEuropeNavy()
+{
+	if (getParent() == NO_PLAYER)
 	{
-		for (int iI = 0; iI < (int)m_aEuropeRevolutionUnits.size(); ++iI)
-		{
-			UnitTypes eOldUnit = m_aEuropeRevolutionUnits[iI].first;
+		return;
+	}
 
-			if (eOldUnit != NO_UNIT)
-			{
-				if (GC.getUnitInfo(eOldUnit).getDomainType() == DOMAIN_SEA)
-				{
-					if (!isUnitWithinGameYearWindow(eOldUnit))
-					{
-						m_aEuropeRevolutionUnits.erase(m_aEuropeRevolutionUnits.begin() + iI);
-						bModernizeObsoleteShip = true;
-						break;
-					}
-				}
-			}
+	CvPlayer& kParent = GET_PLAYER(getParent());
+
+	if (!kParent.isEurope())
+	{
+		return;
+	}
+
+	const int iCurrentYear = GC.getGameINLINE().getGameTurnYear();
+
+	if (iCurrentYear < 1650)
+	{
+		return;
+	}
+
+	const int REF_SHIPCLASS_TRANSPORT = 1;
+	const int REF_SHIPCLASS_FRIGATE = 2;
+	const int REF_SHIPCLASS_LINE = 3;
+
+	int iTransportCount = 0;
+	int iWarShipCount = 0;
+
+	for (int iI = 0; iI < (int)m_aEuropeRevolutionUnits.size(); ++iI)
+	{
+		UnitTypes eUnit = m_aEuropeRevolutionUnits[iI].first;
+
+		if (eUnit == NO_UNIT)
+		{
+			continue;
+		}
+
+		const CvUnitInfo& kUnitInfo = GC.getUnitInfo(eUnit);
+
+		if (kUnitInfo.getREFShipClass() == REF_SHIPCLASS_TRANSPORT)
+		{
+			++iTransportCount;
+		}
+		else if (kUnitInfo.getREFShipClass() == REF_SHIPCLASS_FRIGATE || kUnitInfo.getREFShipClass() == REF_SHIPCLASS_LINE)
+		{
+			++iWarShipCount;
 		}
 	}
 
-	m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
+	const int iMaxTransportShips = std::max(2, (iWarShipCount + 3) / 4);
 
-	if (bModernizeObsoleteShip)
+	for (int iI = 0; iI < (int)m_aEuropeRevolutionUnits.size(); ++iI)
 	{
-		m_aEuropeRevolutionUnits.push_back(std::make_pair(eUnit, eProfession));
+		UnitTypes eOldUnit = m_aEuropeRevolutionUnits[iI].first;
+
+		if (eOldUnit == NO_UNIT)
+		{
+			continue;
+		}
+
+		const CvUnitInfo& kOldUnitInfo = GC.getUnitInfo(eOldUnit);
+
+		if (kOldUnitInfo.getDomainType() != DOMAIN_SEA)
+		{
+			continue;
+		}
+
+		const int iOldREFShipClass = kOldUnitInfo.getREFShipClass();
+
+		if (iOldREFShipClass <= 0)
+		{
+			continue;
+		}
+
+		int iTargetREFShipClass = iOldREFShipClass;
+
+		if (iOldREFShipClass == REF_SHIPCLASS_TRANSPORT && iTransportCount > iMaxTransportShips)
+		{
+			iTargetREFShipClass = REF_SHIPCLASS_FRIGATE;
+		}
+
+		UnitTypes eBestUnit = NO_UNIT;
+		int iBestValue = 0;
+
+		for (int iJ = 0; iJ < GC.getNumUnitInfos(); ++iJ)
+		{
+			UnitTypes eLoopUnit = (UnitTypes)iJ;
+
+			if (eLoopUnit == eOldUnit)
+			{
+				continue;
+			}
+
+			if (!isUnitWithinGameYearWindow(eLoopUnit))
+			{
+				continue;
+			}
+
+			const CvUnitInfo& kLoopUnitInfo = GC.getUnitInfo(eLoopUnit);
+
+			if (kLoopUnitInfo.getDomainType() != DOMAIN_SEA)
+			{
+				continue;
+			}
+
+			if (kLoopUnitInfo.isHiddenNationality())
+			{
+				continue;
+			}
+
+			if (kLoopUnitInfo.getREFShipClass() != iTargetREFShipClass)
+			{
+				continue;
+			}
+
+			if (kLoopUnitInfo.getGameYearAvailable() <= kOldUnitInfo.getGameYearAvailable())
+			{
+				continue;
+			}
+
+			int iValue = 0;
+
+			if (iTargetREFShipClass == REF_SHIPCLASS_TRANSPORT)
+			{
+				iValue = kLoopUnitInfo.getGameYearAvailable() * 10000 + kLoopUnitInfo.getCargoSpace() * 100 + kLoopUnitInfo.getMoves() * 10 + kLoopUnitInfo.getCombat();
+			}
+			else
+			{
+				iValue = kLoopUnitInfo.getGameYearAvailable() * 10000 + kLoopUnitInfo.getCombat() * 100 + kLoopUnitInfo.getMoves() * 10 + kLoopUnitInfo.getCargoSpace();
+			}
+
+			if (iValue > iBestValue)
+			{
+				iBestValue = iValue;
+				eBestUnit = eLoopUnit;
+			}
+		}
+
+		if (eBestUnit != NO_UNIT)
+		{
+			m_aEuropeRevolutionUnits[iI] = std::make_pair(eBestUnit, NO_PROFESSION);
+
+			if (iOldREFShipClass == REF_SHIPCLASS_TRANSPORT && iTargetREFShipClass == REF_SHIPCLASS_FRIGATE)
+			{
+				--iTransportCount;
+				++iWarShipCount;
+			}
+		}
 	}
 }
 // WTP, Schmiddie, Availability Change Project END
@@ -20041,7 +20165,7 @@ void CvPlayer::clearRevolutionEuropeUnits()
 {
 	m_aEuropeRevolutionUnits.clear();
 }
-
+// WTP, Schmiddie, Availability Change Project Start
 UnitTypes CvPlayer::getDocksNextUnit(int i) const
 {
 	if (!canTradeWithEurope())
@@ -20049,10 +20173,14 @@ UnitTypes CvPlayer::getDocksNextUnit(int i) const
 		return NO_UNIT;
 	}
 
-	FAssert(i < (int)m_aDocksNextUnits.size());
+	if (i < 0 || i >= (int)m_aDocksNextUnits.size())
+	{
+		return NO_UNIT;
+	}
+
 	return m_aDocksNextUnits[i];
 }
-// WTP, Schmiddie, Availability Change Project
+
 UnitTypes CvPlayer::pickBestImmigrant()
 {
 	std::vector<int> aiWeights(NUM_UNIT_TYPES, 0);
@@ -20081,7 +20209,7 @@ UnitTypes CvPlayer::pickBestImmigrant()
 
 	return eBestUnit;
 }
-// WTP, Schmiddie, Availability Change Project
+// WTP, Schmiddie, Availability Change Project END
 bool CvPlayer::canHurry(HurryTypes eHurry, int iIndex) const
 {
 	CvHurryInfo& kHurry = GC.getHurryInfo(eHurry);

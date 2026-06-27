@@ -20104,6 +20104,17 @@ def canTriggerRevolutionaryDrunkenSpeeches(argsList):
 	if player.isNative():
 		return False
 
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	if city.getOwner() != kTriggeredData.ePlayer:
+		return False
+
+	iBells = gc.getInfoTypeForString("YIELD_BELLS")
+	if city.getYieldRate(iBells) <= 5:
+		return False
+
 	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
 	if iRebelPercent <= 25:
 		return False
@@ -20198,6 +20209,10 @@ def canTriggerRevolutionaryEventsStartDone(argsList):
 
 	city = player.getCity(iCityId)
 	if city.isNone():
+		return False
+
+	iBells = gc.getInfoTypeForString("YIELD_BELLS")
+	if city.getYieldRate(iBells) <= 5:
 		return False
 
 	iUnitType = gc.getInfoTypeForString("UNIT_NOBLE")
@@ -20406,6 +20421,20 @@ def canTriggerTheRoyals(argsList):
 	if not king.isEurope():
 		return False
 
+	iBells = gc.getInfoTypeForString("YIELD_BELLS")
+	bHasValidCity = False
+
+	(city, iter) = player.firstCity(True)
+	while city:
+		if not city.isNone():
+			if city.getYieldRate(iBells) > 5:
+				bHasValidCity = True
+				break
+		(city, iter) = player.nextCity(iter, True)
+
+	if not bHasValidCity:
+		return False
+
 	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
 	if iRebelPercent <= 40:
 		return False
@@ -20436,6 +20465,14 @@ def canTriggerRevolutionaryMovement(argsList):
 		return False
 
 	if not king.isEurope():
+		return False
+
+	city = player.getCity(kTriggeredData.iCityId)
+	if city.isNone():
+		return False
+
+	iBells = gc.getInfoTypeForString("YIELD_BELLS")
+	if city.getYieldRate(iBells) <= 5:
 		return False
 
 	iRebelPercent = gc.getTeam(player.getTeam()).getRebelPercent()
@@ -28937,3 +28974,66 @@ def getHelpCibolaExpeditionArrival2RewardShip(argsList):
 	)
 
 	return szHelp
+
+######## Kick-Off event for REF modernization 1651 ###########
+
+def canTriggerREFNavyModernization1651(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	king = gc.getPlayer(player.getParent())
+	if king.isNone():
+		return False
+
+	if not king.isEurope():
+		return False
+
+	if gc.getGame().getGameTurnYear() < 1651:
+		return False
+
+	return True
+
+
+def canTriggerREFNavyModernization1701(argsList):
+	kTriggeredData = argsList[0]
+	player = gc.getPlayer(kTriggeredData.ePlayer)
+
+	if player.isNone():
+		return False
+
+	if not player.isPlayable():
+		return False
+
+	if player.isNative():
+		return False
+
+	king = gc.getPlayer(player.getParent())
+	if king.isNone():
+		return False
+
+	if not king.isEurope():
+		return False
+
+	if gc.getGame().getGameTurnYear() < 1701:
+		return False
+
+	return True
+
+
+def applyREFNavyModernization(argsList):
+    kTriggeredData = argsList[0]
+    player = gc.getPlayer(kTriggeredData.ePlayer)
+
+    player.modernizeRevolutionEuropeNavy()
+
+    return 1
+

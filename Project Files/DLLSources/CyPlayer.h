@@ -80,6 +80,7 @@ public:
 	bool canContact(int /*PlayerTypes*/ ePlayer);
 	void contact(int /*PlayerTypes*/ ePlayer);
 	bool triggerEuropeanWarDemand(int /*PlayerTypes*/ eEnemyPlayer); // WTP Schmiddie King demands war exposed to Python
+	void modernizeRevolutionEuropeNavy(); // WTP, Schmiddie, Availability Change Project
 	bool canTradeWith(int /*PlayerTypes*/ eWhoTo);
 	bool canTradeItem(int /*PlayerTypes*/ eWhoTo, TradeData item, bool bTestDenial);
 	DenialTypes getTradeDenial(int /*PlayerTypes*/ eWhoTo, TradeData item);

@@ -809,6 +809,7 @@ public:
 	bool isSlaveShip() const; // WTP, ray Slave Ship
 	bool isTreasureShip() const;// WTP, ray Treasure Ship
 	bool isTroopShip() const;// WTP, ray Troop Ship
+	int getREFShipClass() const; // WTP, Schmiddie, REF Navy Modernization
 	bool isAlwaysHostile() const;
 	bool isTreasure() const;
 	EthnicityTypes getEthnicity() const; // WTP, ray, Ethnically correct Population Growth - START
@@ -1027,7 +1028,8 @@ protected:
 	bool m_bHiddenNationality;
 	bool m_bSlaveShip; // WTP, ray Slave Ship
 	bool m_bTreasureShip; // WTP, ray Treasure Ship
-	bool m_bTroopShip; // WTP, ray Treasure Ship
+	bool m_bTroopShip; // WTP, ray troop Ship
+	int m_iREFShipClass; // WTP, Schmiddie, REF Navy Modernization
 	bool m_bAlwaysHostile;
 	bool m_bTreasure;
 	EthnicityTypes m_eEthnicity; // WTP, ray, Ethnically correct Population Growth - START

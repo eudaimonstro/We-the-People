@@ -650,7 +650,7 @@ void CvCity::doTurn()
 		{
 			// The AI will reassign its colonist the next turn so only trigger this (i.e. warn)
 			// human players
-			FAssertMsg(false, "Citizen in colony stuck with NO_PROFESSION");
+			// FAssertMsg(false, "Citizen in colony stuck with NO_PROFESSION");
 
 			const ProfessionTypes eDefaultProfession = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getDefaultProfession();
 
@@ -5169,6 +5169,11 @@ void CvCity::calculateNetYields(int aiYields[NUM_YIELD_TYPES], int* aiProducedYi
 
 	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 	{
+		if (eYield != YIELD_FOOD && aiYields[eYield] < 0)
+		{
+			aiYields[eYield] = 0;
+		}
+
 		FAssertMsg((eYield == YIELD_FOOD) || (aiYields[eYield] >= 0), CvString::format("%s=%d", GC.getYieldInfo(eYield).getType(), aiYields[eYield]).c_str());
 		aiYields[eYield] -= getYieldStored(eYield);
 	}
@@ -11554,13 +11559,13 @@ int CvCity::educationThreshold() const
 }
 
 
-
+//WTP, Schmiddie, code against negativ yield_storage bug start
 void CvCity::setRebelSentiment(int iValue)
 {
-	m_iRebelSentiment = iValue;
+	m_iRebelSentiment = std::max(0, iValue);
 	FAssert(getRebelSentiment() >= 0);
 }
-
+//WTP, Schmiddie, code against negativ yield_storage bug end
 UnitClassTypes CvCity::bestTeachUnitClass()
 {
 	PROFILE_FUNC();

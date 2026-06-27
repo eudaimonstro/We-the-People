@@ -3377,4 +3377,10 @@
 		<German>[ICON_BULLET]Ihr liefert dem Stamm heimlich %d1 Musketen und %d2 Pferde. Die Beziehungen zu den Eingeborenen verbessern sich um %d3, während das Vertrauen Eures europäischen Nachbarn erheblich leidet.</German>
 		<Russian/>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REF_NAVY_MODERNIZATION_NOTICE</Tag>
+		<English>Got it. That was to be expected.</English>
+		<German>Verstanden. Das war zu erwarten.</German>
+		<Russian/>
+	</TEXT>
 </Civ4GameText>

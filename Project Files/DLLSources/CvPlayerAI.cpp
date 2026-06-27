@@ -328,6 +328,90 @@ void CvPlayerAI::AI_doTurnUnitsPost()
 	{
 		return;
 	}
+
+	// WTP, Schmiddie, Availability Change Project START
+	const int iCurrentYear = GC.getGameINLINE().getGameTurnYear();
+
+	if (iCurrentYear < 1610)
+	{
+		return;
+	}
+
+	int iSeaShipCount = 0;
+
+	for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	{
+		if (pLoopUnit->getUnitInfo().getDomainType() == DOMAIN_SEA)
+		{
+			iSeaShipCount++;
+		}
+	}
+
+	if (iSeaShipCount <= 8)
+	{
+		return;
+	}
+
+	int iScrapUnitId = -1;
+	int iScrapValue = 0;
+
+	for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	{
+		const CvUnitInfo& kUnitInfo = pLoopUnit->getUnitInfo();
+
+		if (kUnitInfo.getDomainType() != DOMAIN_SEA)
+		{
+			continue;
+		}
+
+		if (pLoopUnit->isCargo())
+		{
+			continue;
+		}
+
+		if (pLoopUnit->getTransportUnit() != NULL)
+		{
+			continue;
+		}
+
+		if (pLoopUnit->getCargo() > 0)
+		{
+			continue;
+		}
+
+		if (pLoopUnit->getUnitTravelState() != NO_UNIT_TRAVEL_STATE)
+		{
+			continue;
+		}
+
+		const int iObsoleteYear = kUnitInfo.getGameYearObsolete();
+
+		if (iObsoleteYear <= 0)
+		{
+			continue;
+		}
+
+		if (iCurrentYear <= iObsoleteYear + 10)
+		{
+			continue;
+		}
+
+		iScrapUnitId = pLoopUnit->getID();
+		iScrapValue = std::max(50, kUnitInfo.getEuropeCost() / 10);
+		break;
+	}
+
+	if (iScrapUnitId != -1)
+	{
+		CvUnit* pScrapUnit = getUnit(iScrapUnitId);
+
+		if (pScrapUnit != NULL)
+		{
+			changeGold(iScrapValue);
+			pScrapUnit->scrap();
+		}
+	}
+	// WTP, Schmiddie, Availability Change Project END
 }
 
 
@@ -5318,15 +5402,14 @@ int CvPlayerAI::AI_unitGoldValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* p
 #endif
 	return std::max(0, iValue);
 }
-//WTP, Schmiddie, Unit Availability CHange Projekt START - more units 
-//This function indicates how worthwhile the unit is to buy.
+
+//WTP, Schmiddie, Unit Availability Change Projekt START - more units 
 int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvArea* pArea)
 {
 	FAssertMsg(eUnit != NO_UNIT, "Unit is not assigned a valid value");
 	CvUnitInfo& kUnitInfo = GC.getUnitInfo(eUnit);
 
 	int iValue = 0;
-
 	int iGoldCost = getEuropeUnitBuyPrice(eUnit);
 
 	if (iGoldCost <= 0)
@@ -5334,21 +5417,77 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 		return -1;
 	}
 
+	const int iCurrentYear = GC.getGameINLINE().getGameTurnYear();
+
+	// Basic AI core fleet, fully data-driven:
+	// Make sure the AI buys at least one currently relevant large trade ship
+	// and one currently relevant heavy warship.
+	if (kUnitInfo.getDomainType() == DOMAIN_SEA)
+	{
+		bool bIsLargeTradeShip = (kUnitInfo.getCargoSpace() >= 6);
+		bool bIsHeavyWarship = (!kUnitInfo.isHiddenNationality() && !kUnitInfo.isOnlyDefensive() && kUnitInfo.getCombat() >= 8 && kUnitInfo.getMoves() > 0);
+
+		if (bIsLargeTradeShip || bIsHeavyWarship)
+		{
+			bool bHasLargeTradeShip = false;
+			bool bHasHeavyWarship = false;
+
+			int iLoop;
+			CvUnit* pLoopUnit;
+			for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+			{
+				const CvUnitInfo& kLoopUnitInfo = pLoopUnit->getUnitInfo();
+
+				if (kLoopUnitInfo.getDomainType() != DOMAIN_SEA)
+				{
+					continue;
+				}
+
+				const int iLoopObsoleteYear = kLoopUnitInfo.getGameYearObsolete();
+
+				if (iLoopObsoleteYear > 0 && iCurrentYear > iLoopObsoleteYear)
+				{
+					continue;
+				}
+
+				if (kLoopUnitInfo.getCargoSpace() >= 6)
+				{
+					bHasLargeTradeShip = true;
+				}
+
+				if (!kLoopUnitInfo.isHiddenNationality() && !kLoopUnitInfo.isOnlyDefensive() && kLoopUnitInfo.getCombat() >= 8 && kLoopUnitInfo.getMoves() > 0)
+				{
+					bHasHeavyWarship = true;
+				}
+			}
+
+			if (bIsLargeTradeShip && !bHasLargeTradeShip)
+			{
+				iValue += 900 + kUnitInfo.getCargoSpace() * 80;
+			}
+
+			if (bIsHeavyWarship && !bHasHeavyWarship)
+			{
+				iValue += 900 + kUnitInfo.getCombat() * 40 + kUnitInfo.getMoves() * 20;
+			}
+		}
+	}
 
 	//Transport Sea
 	int iCargoSpace = kUnitInfo.getCargoSpace();
 	if ((iCargoSpace > 1) && (kUnitInfo.getDomainType() == DOMAIN_SEA))
 	{
-		//Do we need a transport, period?
+		iValue += iCargoSpace * 30;
+
 		int iTransportCount = AI_totalUnitAIs(UNITAI_TRANSPORT_SEA);
 		int iCoastalCityCount = countNumCoastalCities();
-		int iNeededTransports = std::max(4, 1 + iCoastalCityCount / 2);
+		int iNeededTransports = std::max(6, 2 + iCoastalCityCount);
 
 		if (iTransportCount == 0)
 		{
-			iValue += 300 + 75 * iCargoSpace;
+			iValue += 300 + 100 * iCargoSpace;
 		}
-		else if (AI_totalUnitAIs(UNITAI_TREASURE) > 0) //Do we need a treasure transport?
+		else if (AI_totalUnitAIs(UNITAI_TREASURE) > 0)
 		{
 			int iLargestTreasureUnit = 0;
 			int iTotalTreasure = 0;
@@ -5410,7 +5549,7 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 			}
 			else if (iCargoSpace > iBestTransportSize)
 			{
-				iValue += 100 + 20 * (iCargoSpace - iBestTransportSize);
+				iValue += 150 + 80 * (iCargoSpace - iBestTransportSize);
 			}
 		}
 	}
@@ -5434,7 +5573,7 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 					{
 						iValue += 100 + 50 * (iNeededPirates - iPirateCount);
 						iValue += getNumCities() * 8;
-						iValue += kUnitInfo.getCombat() * 2;
+						iValue += kUnitInfo.getCombat() * 4;
 					}
 				}
 			}
@@ -5443,13 +5582,13 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 			if (!kUnitInfo.isHiddenNationality() && !kUnitInfo.isOnlyDefensive() && kUnitInfo.getMoves() > 0)
 			{
 				int iWarshipCount = AI_totalUnitAIs(UNITAI_COMBAT_SEA) + AI_totalUnitAIs(UNITAI_ESCORT_SEA);
-				int iNeededWarships = std::max(3, 1 + iCoastalCityCount / 2);
+				int iNeededWarships = std::max(6, 2 + iCoastalCityCount);
 
 				if (iWarshipCount < iNeededWarships)
 				{
 					iValue += 150 + 60 * (iNeededWarships - iWarshipCount);
-					iValue += kUnitInfo.getCombat() * 3;
-					iValue += kUnitInfo.getMoves() * 10;
+					iValue += kUnitInfo.getCombat() * 8;
+					iValue += kUnitInfo.getMoves() * 15;
 				}
 			}
 		}
@@ -5457,7 +5596,8 @@ int CvPlayerAI::AI_unitValuePercent(UnitTypes eUnit, UnitAITypes* peUnitAI, CvAr
 
 	return iValue;
 }
-//WTP, Schmiddie, Unit Availability CHange Projekt END - more units 
+//WTP, Schmiddie, Unit Availability Change Projekt END - more units
+
 int CvPlayerAI::AI_totalUnitAIs(UnitAITypes eUnitAI)
 {
 	return (AI_getNumTrainAIUnits(eUnitAI) + AI_getNumAIUnits(eUnitAI));
@@ -16525,7 +16665,7 @@ bool CvPlayerAI::AI_shouldHurryUnit() const
 // Returns the index of the best unit (as in purchase price of an equivalent unit) to hurry
 int CvPlayerAI::AI_getBestDockUnit() const
 {
-	int iBestIndex = 0;
+	int iBestIndex = -1;
 	int iBestAdvantage = 0;
 	const int iDockCount = CivEffect().getNumUnitsOnDock();
 
@@ -16534,8 +16674,10 @@ int CvPlayerAI::AI_getBestDockUnit() const
 	{
 		const UnitTypes eLoopUnit = getDocksNextUnit(iIndex);
 
-		// At this point there should always be a unit available
-		FAssert(eLoopUnit != NO_UNIT);
+		if (eLoopUnit == NO_UNIT)
+		{
+			continue;
+		}
 
 		const int iHurryCost = getHurryGold(HURRY_IMMIGRANT, iIndex);
 
@@ -16550,6 +16692,11 @@ int CvPlayerAI::AI_getBestDockUnit() const
 			iBestAdvantage = iHurryCostAdvantage;
 			iBestIndex = iIndex;
 		}
+	}
+
+	if (iBestIndex == -1)
+	{
+		return 0;
 	}
 
 	return iBestIndex;
