@@ -24428,7 +24428,7 @@ int CvPlayer::getUsedShipPrice(UnitClassTypes iUsedShipClassType) const
 
 	return iPrice;
 }
-
+//WTP, Schmiddie, naval availability changes START
 UnitClassTypes CvPlayer::getRandomUsedShipClassTypeID() const
 {
 	UnitClassTypes eBestUnitClass = NO_UNITCLASS;
@@ -24449,6 +24449,11 @@ UnitClassTypes CvPlayer::getRandomUsedShipClassTypeID() const
 		const UnitTypes eUnit = getUnitType(iI);
 		if (eUnit != NO_UNIT)
 		{
+			if (!isUnitWithinGameYearWindow(eUnit))
+			{
+				continue;
+			}
+
 			const CvUnitInfo& UnitInfo = GC.getUnitInfo(eUnit);
 			if (UnitInfo.getDomainType() == DOMAIN_SEA && !UnitInfo.getTerrainImpassable(TERRAIN_OCEAN) && UnitInfo.getEuropeCost() > 0 && getGold() > UnitInfo.getEuropeCost())
 			{
@@ -24470,7 +24475,7 @@ UnitClassTypes CvPlayer::getRandomUsedShipClassTypeID() const
 	// FAssert(eBestUnitClass != NO_UNITCLASS);
 	return eBestUnitClass;
 }
-
+//WTP, Schmiddie, naval availability changes END
 bool CvPlayer::isKingWillingToTradeUsedShips() const
 {
 	if (!isAlive())
