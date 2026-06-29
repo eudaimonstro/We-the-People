@@ -608,7 +608,10 @@ void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 
 	const CvCity* pCity = pPlot->getPlotCity();
 	// WTP, Schmiddie, Maritime Wrecks and Salvage - START
-	if (getDomainType() == DOMAIN_SEA)
+	if (getDomainType() == DOMAIN_SEA
+		&& !getUnitInfo().isAnimal()
+		&& !getUnitInfo().getUnitAIType(UNITAI_ANIMAL_SEA)
+		&& getUnitInfo().getDefaultUnitAIType() != UNITAI_ANIMAL_SEA)
 	{
 		if (GC.getGameINLINE().getSorenRandNum(100, "WTP Shipwreck Spawn") < WTP_SHIPWRECK_SPAWN_CHANCE)
 		{
