@@ -30,6 +30,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный птицевод:Опытные птицеводы</Russian>
+		<Hungarian>Tapasztalt Baromfitenyésztő:Tapasztalt Baromfitenyésztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BREEDER</Tag>
@@ -55,16 +56,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный птицевод:Опытные птицеводы</Russian>
+		<Hungarian>Tapasztalt Baromfitenyésztő:Tapasztalt Baromfitenyésztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BREEDER_PEDIA</Tag>
 		<English>Chickens are an excellent food source. They travel well so they often provide the first domestic protein in a new colony. Poultry farmers raise chickens, ducks, turkeys and geese for meat and eggs. Children can look after a pen with few chickens. When the flock gets bigger wolves and bobcats discover an opportunity, so poultry breeding turns into an adult job.</English>
 		<German>Hühner sind eine hervorragende Nahrungsquelle. Da sie sich gut transportieren lassen, sind sie oft das erste heimische Eiweiß in einer neuen Kolonie. Geflügelzüchter züchten Hühner, Enten, Truthähne und Gänse für Fleisch und Eier. Kinder können sich um einen Stall mit wenigen Hühnern kümmern. Wenn die Herde größer wird, werden Wölfe und Rotluchse eine Gefahr, und die Geflügelzucht wird zu einer Aufgabe für Erwachsene.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Tapasztalt Baromfitenyésztők[COLOR_REVERT] két különböző területen dolgoznak: [LINK=YIELD_CHICKEN]csirkék[\LINK] vagy [LINK=YIELD_GEESE]libák[\LINK] tenyésztést végzik. A tenyésztők különösen jók a [LINK=YIELD_CHICKEN]csirkék[\LINK] és a [LINK=YIELD_GEESE]libák[\LINK] állományának növelésében. [NEWLINE]A tenyésztéshez a megfelelő fajokból néhány állatot szükséges tartani. További információkért lásd az [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]állattenyésztés[\LINK] fejezetet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BREEDER_STRATEGY</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Expert poultry breeders[COLOR_REVERT] have two different professions: raising ([LINK=PROFESSION_CHICKEN_BREEDER]chickens[\LINK] or [LINK=PROFESSION_GEESE_BREEDER]geese[\LINK]). The breeders are particularly good at increasing flocks of [LINK=YIELD_CHICKEN]chickens[\LINK] and [LINK=YIELD_GEESE]geese[\LINK]. [NEWLINE]The right birds have to be on hand for breeding to occur. For more information, see the [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]livestock[\LINK] concept.</English>
 		<German>[COLOR_HIGHLIGHT_TEXT]Erfahrene Geflügelzüchter[COLOR_REVERT] sind bei der Geflügelzucht ([LINK=PROFESSION_CHICKEN_BREEDER]Hühner[\LINK] / [LINK=PROFESSION_GEESE_BREEDER]Gänse[\LINK]) von [LINK=YIELD_CHICKEN]Hühnern[\LINK] und [LINK=YIELD_GEESE]Gänsen[\LINK] besonders effektiv.[NEWLINE]Einige Tiere der entsprechenden Art muss zu Zuchtzwecken gehalten werden. Mehr Informationen dazu unter dem Konzept [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]Tierzucht[\LINK].</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Tapasztalt Baromfitenyésztők[COLOR_REVERT] két különböző területen dolgoznak: [LINK=YIELD_CHICKEN]csirkék[\LINK] vagy [LINK=YIELD_GEESE]libák[\LINK] tenyésztést végzik. A tenyésztők különösen jók a [LINK=YIELD_CHICKEN]csirkék[\LINK] és a [LINK=YIELD_GEESE]libák[\LINK] állományának növelésében. [NEWLINE]A tenyésztéshez a megfelelő fajokból néhány állatot szükséges tartani. További információkért lásd az [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]állattenyésztés[\LINK] fejezetet.</Hungarian>
 	</TEXT>
 	<!-- CASSAVA_PLANTER -->
 	<TEXT>
@@ -91,6 +95,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор маниоки:Опытные плантаторы маниоки</Russian>
+		<Hungarian>Tapasztalt Manióka Termesztő:Tapasztalt Manióka Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CASSAVA_PLANTER</Tag>
@@ -116,16 +121,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор маниоки:Опытные плантаторы маниоки</Russian>
+		<Hungarian>Tapasztalt Manióka Termesztő:Tapasztalt Manióka Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CASSAVA_PLANTER_PEDIA</Tag>
 		<English>Cassava roots are a staple food in tropical and subtropical climates. Cassava can be either sweet or bitter, with the bitter more pest-resistant. Proper preparation is important to avoid the risk of acute cyanide intoxication.[NEWLINE]Cassava is drought-resistant. It grows on marginal soils. It's usually boiled, but the starch can be extracted for tapioca. In Brazil it's grated and dried into a coarse flour.</English>
 		<German>Maniokwurzeln sind ein Grundnahrungsmittel in tropischen und subtropischen Klimazonen. Maniok kann entweder süß oder bitter sein, wobei die bittere Variante schädlingsresistenter ist. Die richtige Zubereitung ist wichtig, um das Risiko einer akuten Zyanidvergiftung zu vermeiden.[NEWLINE]Maniok ist dürreresistent. Sie wächst auf marginalen Böden. Normalerweise wird sie gekocht, aber die Stärke kann für Tapioka extrahiert werden. In Brasilien wird sie gerieben und zu grobem Mehl getrocknet.</German>
+		<Hungarian>A maniókagyökér a trópusi és szubtrópusi éghajlaton alapvető élelmiszer. A manióka lehet édes vagy keserű, a keserűbb fajta jobban ellenáll a kártevőknek. A megfelelő előkészítés fontos, hogy elkerülhető legyen az akut cianidmérgezés kockázata. [NEWLINE]A manióka szárazságtűrő. Marginális talajon is megterem. Általában főzik, de a keményítő kivonható manióka előállításához. Brazíliában reszelik és szárítják, hogy durva liszt legyen belőle.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CASSAVA_PLANTER_STRATEGY</Tag>
 		<English>An [COLOR_HIGHLIGHT_TEXT]expert cassava planter[COLOR_REVERT] is more effective at [LINK=PROFESSION_CASSAVA_PLANTER]planting[\LINK] [LINK=YIELD_CASSAVA]cassava[\LINK] than any other expert.[PARAGRAPH:1]Expert cassava planters can be bought in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT], [LINK=CONCEPT_TRAINING]trained[\LINK] by [LINK=CONCEPT_NATIVES]natives[\LINK] or in a colony with a [LINK=BUILDING_SCHOOLHOUSE]schoolhouse[\LINK] or one of its extensions.</English>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]erfahrener Maniokpflanzer[COLOR_REVERT] ist effektiver im [LINK=PROFESSION_CASSAVA_PLANTER]pflanzen[\LINK] von [LINK=YIELD_CASSAVA]Maniok[\LINK] als alle anderen Experten.[PARAGRAPH:1]Erfahrene Maniokpflanzer können in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT] erworben werden, in Dörfern der [LINK=CONCEPT_NATIVES]Ureinwohner[\LINK] oder in einer Kolonie mit einer [LINK=BUILDING_SCHOOLHOUSE]Schule[\LINK] bzw. einer seiner Erweiterungen können sie [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]tapasztalt maniókaültető[COLOR_REVERT] hatékonyabban [LINK=PROFESSION_CASSAVA_PLANTER]termeszt[\LINK] [LINK=YIELD_CASSAVA]maniókát[\LINK], mint bárki más.[PARAGRAPH:1]Tapasztalt maniókaültetők felfogadhatók [COLOR_HIGHLIGHT_TEXT]Port Royalban[COLOR_REVERT], vagy [LINK=CONCEPT_TRAINING]kiképezhetők[\LINK] [LINK=CONCEPT_NATIVES]Indián[\LINK] falvakban, vagy egy kolóniában tanítható, ahol [LINK=BUILDING_SCHOOLHOUSE]iskola[\LINK] vagy annak egyik továbbfejlesztése van.</Hungarian>
 	</TEXT>
 	<!-- COCHINEAL_COLLECTOR -->
 	<TEXT>
@@ -152,6 +160,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик кошенили:Опытные сборщики кошенили</Russian>
+		<Hungarian>Tapasztalt Bíbortetű Gyűjtő:Tapasztalt Bíbortetű Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COCHINEAL_COLLECTOR</Tag>
@@ -177,16 +186,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик кошенили:Опытные сборщики кошенили</Russian>
+		<Hungarian>Tapasztalt Bíbortetű Gyűjtő:Tapasztalt Bíbortetű Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COCHINEAL_COLLECTOR_PEDIA</Tag>
 		<English>The cochineal insects found on prickly pear cactus pads produce carminic acid, a predator-deterring chemical. When mixed with aluminum or calcium salts dried cochineal becomes carmine dye. Collectors gather the bugs by brushing them off the cactus pads.[NEWLINE]Bright red carmine dye, used in the Americas for colouring fabrics, became an important export good in the 16th century. Cochineal insects are found in the areas now known as Peru, Mexico, Chile and Argentina.[NEWLINE]When assigned to the Cochineal Collector profession, the expert can gather double the quantity of cochineal in the same amount of time it would take a regular colonist.</English>
 		<German>Die Cochenille-Schildläuse, die auf den Blättern des Feigenkaktus zu finden sind, produzieren Karminsäure, eine Chemikalie, die Raubtiere abschreckt. In Verbindung mit Aluminium- oder Kalziumsalzen wird aus den getrockneten Cochenille-Schildläusen ein karminroter Farbstoff. Sammler sammeln die Schildläuse ein, indem sie sie von den Kaktusblättern abbürsten.[NEWLINE]Der leuchtend rote Karminfarbstoff, der in Amerika zum Färben von Stoffen verwendet wurde, wurde ab Mitte des 16. Jahrhunderts zu einem wichtigen Exportgut. Cochenille-Insekten kommen in den Gebieten vor, die heute als Peru, Mexiko, Chile und Argentinien bekannt sind.[NEWLINE]Wenn ein Experte den Beruf des Cochenille-Sammlers ausübt, kann er die doppelte Menge an Cochenille-Schildläusen in der gleichen Zeit sammeln, die ein normaler Kolonist benötigen würde.</German>
+		<Hungarian>A fügekaktusz levelein élő bíbortetűk karminsavat termelnek, amely egy ragadozókat elriasztó vegyi anyag. Alumínium- vagy kalciumsókkal keverve a szárított bíbortetű karminfestékké válik. A gyűjtők a kaktuszlevelekről lekefélve gyűjtik össze a rovarokat. [NEWLINE]Az Amerikában szövetek színezésére használt élénkpiros karminfesték a 16. században fontos exportcikké vált. A bíbortetűk a mai Peru, Mexikó, Chile és Argentína területén élnek. [NEWLINE]A Tapasztalt Bíbortetű Gyűjtő ugyanannyi idő alatt kétszer annyi bíbortetűt tud gyűjteni, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COCHINEAL_COLLECTOR_STRATEGY</Tag>
 		<English>An [COLOR_HIGHLIGHT_TEXT]expert cochineal collector[COLOR_REVERT] is more effective at [LINK=PROFESSION_COCHINEAL_COLLECTOR]collecting[\LINK] [LINK=YIELD_COCHINEAL]cochineal[\LINK] than any other expert.[PARAGRAPH:1]Expert cochineal collectors can be [LINK=CONCEPT_TRAINING]trained[\LINK] by [LINK=CONCEPT_NATIVES]Natives[\LINK] or in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its extensions. They can also be purchased in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT].</English>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]erfahrener Cochenille-Sammler[COLOR_REVERT] ist effektiver im [LINK=PROFESSION_COCHINEAL_COLLECTOR]Sammeln[\LINK] von [LINK=YIELD_COCHINEAL]Cochenille-Schildläusen[\LINK] als alle anderen Experten.[PARAGRAPH:1]Erfahrene Cochenille-Sammler können in Dörfern der [LINK=CONCEPT_NATIVES]Ureinwohner[\LINK] oder in einer Kolonie mit einer [LINK=BUILDING_COLLEGE]Akademie[\LINK] bzw. einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden. Man kann sie auch in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT] erwerben.</German>
+		<Hungarian>Egy [COLOR_HIGHLIGHT_TEXT]tapasztalt bíbortetű gyűjtő[COLOR_REVERT] hatékonyabban [LINK=PROFESSION_COCHINEAL_COLLECTOR]gyűjti[\LINK] a [LINK=YIELD_COCHINEAL] bíbortetűt[\LINK], mint bárki más.[PARAGRAPH:1] A tapasztalt bíbortetű gyűjtőket [LINK=CONCEPT_TRAINING]ki lehet képezni[\LINK] az [LINK=CONCEPT_NATIVES]Indián[\LINK] falvakban vagy egy kolóniában, ahol [LINK=BUILDING_COLLEGE]főiskola[\LINK] vagy annak egyik továbbfejlesztése van. Emellett felfogadhatók [COLOR_HIGHLIGHT_TEXT]Port Royalban [COLOR_REVERT] is.</Hungarian>
 	</TEXT>
 	<!-- LINEN_PLANTER -->
 	<TEXT>
@@ -213,6 +225,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор льна:Опытные плантаторы льна</Russian>
+		<Hungarian>Tapasztalt Len Termesztő:Tapasztalt Len Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LINEN_PLANTER</Tag>
@@ -238,16 +251,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор льна:Опытные плантаторы льна</Russian>
+		<Hungarian>Tapasztalt Len Termesztő:Tapasztalt Len Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LINEN_PLANTER_PEDIA</Tag>
 		<English>Linen fabrics woven from wild flax date back over 30,000 years. Devout colonists all know that linen is frequently mentioned in the Bible.[NEWLINE]Linen is comfortable to wear in hot weather. The fabric is strong and absorbent, though it does wrinkle.</English>
 		<German>Leinenstoffe, die aus wildem Flachs gewebt werden, gibt es schon seit über 30.000 Jahren. Fromme Kolonisten wissen, dass Leinen häufig in der Bibel erwähnt wird.[NEWLINE]Leinen ist bei heißem Wetter angenehm zu tragen. Der Stoff ist stark und saugfähig, knittert aber.</German>
+		<Hungarian>A vad lenből szőtt vászon szövetek története több mint 30 000 évre nyúlik vissza. A jámbor telepesek mind tudják, hogy a vászon gyakran szerepel a Bibliában. [NEWLINE]A vászon meleg időben kényelmes viselet. A szövet erős és nedvszívó, bár gyűrődik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LINEN_PLANTER_STRATEGY</Tag>
 		<English>An [COLOR_HIGHLIGHT_TEXT]expert flax planter[COLOR_REVERT] is more effective at [LINK=PROFESSION_FLAX_PLANTER]planting[\LINK] [LINK=YIELD_FLAX]flax[\LINK] than any other expert.[PARAGRAPH:1]Expert flax planters can be [LINK=CONCEPT_TRAINING]trained[\LINK] by [LINK=CONCEPT_NATIVES]Natives[\LINK] or in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its extensions.</English>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]erfahrener Flachspflanzer[COLOR_REVERT] ist effektiver im [LINK=PROFESSION_FLAX_PLANTER]pflanzen[\LINK] von [LINK=YIELD_FLAX]Flachs[\LINK] als alle anderen Experten.[PARAGRAPH:1]Erfahrene Flachspflanzer können in Dörfern der [LINK=CONCEPT_NATIVES]Ureinwohner[\LINK] oder in einer Kolonie mit einer [LINK=BUILDING_COLLEGE]Akademie[\LINK] bzw. einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
+		<Hungarian>Egy [COLOR_HIGHLIGHT_TEXT] tapasztalt len termesztő[COLOR_REVERT] hatékonyabban [LINK=PROFESSION_FLAX_PLANTER]termeszt[\LINK] [LINK=YIELD_FLAX]lent[\LINK], mint bárki más. [PARAGRAPH:1]A tapasztalt len termesztőt [LINK=CONCEPT_TRAINING]ki lehet képezni[\LINK] az [LINK=CONCEPT_NATIVES]Indián[\LINK] falvakban vagy egy kolónián, ahol van [LINK=BUILDING_COLLEGE]főiskola[\LINK] vagy annak egyik továbbfejlesztése.</Hungarian>
 	</TEXT>
 	<!-- LOGWOOD_COLLECTOR -->
 	<TEXT>
@@ -274,6 +290,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик кампеша:Опытные сборщики кампеша</Russian>
+		<Hungarian>Tapasztalt Kékfa Gyűjtő:Tapasztalt Kékfa Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LOGWOOD_COLLECTOR</Tag>
@@ -299,16 +316,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик кампеша:Опытные сборщики кампеша</Russian>
+		<Hungarian>Tapasztalt Kékfa Gyűjtő:Tapasztalt Kékfa Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LOGWOOD_COLLECTOR_PEDIA</Tag>
 		<English>The logwood tree was of great economic importance in the colonial era when it was exported to Europe for dyeing fabrics. Defying Spanish territorial claims, foreign sailors cut and collected trees for shipment back to Europe. Spain responded by commissioning privateers to attack them. Under attack from Spanish privateers, logwood cutters formed their own pirate crews to raid the Spanish. Blackbeard turned captured logwood sloops into pirate ships.</English>
 		<German>In der Kolonialzeit war Blauholz von großer wirtschaftlicher Bedeutung, da es zum Färben von Stoffen nach Europa exportiert wurde. Unter Missachtung spanischer Gebietsansprüche fällten und sammelten ausländische Seeleute Bäume, um sie nach Europa zu verschiffen. Spanien beauftragte daraufhin Freibeuter, um sie anzugreifen. Unter den Angriffen der spanischen Freibeuter gründeten die Holzfäller ihre eigenen Piratencrews, um die Spanier zu überfallen. Blackbeard verwandelte gekaperte Holzschiffe in Piratenschiffe.</German>
+		<Hungarian>A kékfa nagy gazdasági jelentőséggel bírt a gyarmati korszakban, amikor Európába exportálták szövetek festésére. A spanyol területi igényeket figyelmen kívül hagyva a külföldi tengerészek kivágták és összegyűjtötték a fákat, hogy Európába szállítsák őket. Spanyolország erre úgy reagált, hogy kalózokat bízott meg a támadással. A spanyol kalózok támadásai miatt a kékfa favágók saját kalózcsapatokat alakítottak, hogy rajtaütéseket hajtsanak végre a spanyolokon. Feketeszakáll a fogságba ejtett kékfa szállító szlúpokat kalózhajókká alakította.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LOGWOOD_COLLECTOR_STRATEGY</Tag>
 		<English>If an [COLOR_HIGHLIGHT_TEXT]experienced logwood collector[COLOR_REVERT] is employed in the [LINK=PROFESSION_BLOODWOOD_CUTTER]logwood cutter[\LINK] profession, the yield of [LINK=YIELD_LOGWOOD]logwood[\LINK] extraction is greater than that of other experts. For other types of wood ([LINK=YIELD_LUMBER]lumber[\LINK], [LINK=YIELD_HARDWOOD]hardwood[\LINK] and [LINK=YIELD_VALUABLE_WOOD]exotic wood[\LINK]), the experienced logwood collector scores slightly higher than [COLOR_HIGHLIGHT_TEXT]free colonists[COLOR_REVERT].[PARAGRAPH:1]Expert logwood collectors can be hired in [LINK=CONCEPT_AFRICA]Africa[\LINK], and they can also be [LINK=CONCEPT_TRAINING]taught[\LINK] in a colony with a [LINK=BUILDING_SCHOOLHOUSE]schoolhouse[\LINK] or one of its upgrades.</English>
 		<German>Wird ein [COLOR_HIGHLIGHT_TEXT]Erfahrener Blauholz-Sammler[COLOR_REVERT] im Beruf des [LINK=PROFESSION_BLOODWOOD_CUTTER]Holzfällers (Blauholz)[\LINK] eingesetzt, ist die Ausbeute bei der Gewinnung von [LINK=YIELD_LOGWOOD]Blauholz[\LINK] größer als bei anderen Experten. Bei anderen Holzsorten ([LINK=YIELD_LUMBER]Holz[\LINK], [LINK=YIELD_HARDWOOD]Hartholz[\LINK] und [LINK=YIELD_VALUABLE_WOOD]Edelholz[\LINK]) erzielt der erfahrene Blauholz-Sammler etwas mehr als [COLOR_HIGHLIGHT_TEXT]Freie Kolonisten[COLOR_REVERT].[PARAGRAPH:1]Erfahrene Holzfäller können in [LINK=CONCEPT_AFRICA]Afrika[\LINK] angeheuert werden oder in einer Kolonie mit einer [LINK=BUILDING_SCHOOLHOUSE]Schule[\LINK] bzw. einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
+		<Hungarian>Ha egy [COLOR_HIGHLIGHT_TEXT]tapasztalt kékfa gyűjtő[COLOR_REVERT] dolgozik [LINK=PROFESSION_BLOODWOOD_CUTTER]kékfa favágó[\LINK] szakmában, akkor a [LINK=YIELD_LOGWOOD]kékfa[\LINK] termelés nagyobb, mint bármelyik másik lakosnál. Más fafajok vágásánal ([LINK=YIELD_LUMBER]épületfa[\LINK], [LINK=YIELD_HARDWOOD]keményfa[\LINK] és [LINK=YIELD_VALUABLE_WOOD]bútorfa[\LINK]) a tapasztalt kékfa gyűjtő hozama kissé magasabb, mint a [COLOR_HIGHLIGHT_TEXT]szabad gyarmatosítóké [COLOR_REVERT].[PARAGRAPH:1] A tapasztalt kékfa gyűjtőket [LINK=CONCEPT_AFRICA]Afrikában[\LINK] lehet felfogadni és [LINK=CONCEPT_TRAINING]kiképezhetők[\LINK] egy kolónián, ahol van [LINK=BUILDING_SCHOOLHOUSE]iskola[\LINK] vagy annak egyik továbbfejlesztése.</Hungarian>
 	</TEXT>
 	<!-- LOGWOOD_OLIVES_PLANTER -->
 	<TEXT>
@@ -335,6 +355,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор оливок:Опытные плантаторы оливок</Russian>
+		<Hungarian>Tapasztalt Olajbogyó Szedő:Tapasztalt Olajbogyó Szedő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVES_PLANTER</Tag>
@@ -360,6 +381,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор оливок:Опытные плантаторы оливок</Russian>
+		<Hungarian>Tapasztalt Olajbogyó Szedő:Tapasztalt Olajbogyó Szedő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVES_PLANTER_PEDIA</Tag>
@@ -368,6 +390,7 @@
 		<German>Olivenbäume liefern entweder Tafeloliven oder Oliven zur Ölgewinnung. Spanische Kolonisten brachten die Olive im Jahr 1560 in die Neue Welt, wo ihr Anbau im heutigen Peru, Chile und Argentinien florierte. Im 18. Jahrhundert pflanzten spanische Missionare Olivenbäume in Kalifornien.[NEWLINE]Vor dem Kontakt mit den Europäern war Speiseöl für die Ureinwohner des pazifischen Nordwestens lebenswichtig. Der Handel Oolichan-Öl aus Kerzenfisch hatte eine so große Bedeutung für die Ureinwohner, dass die Handelsrouten als "Fettstraßen" bezeichnet wurden.</German>
 		<Italian>Gli olivi producono olive da tavola o olive da olio. I coloni spagnoli portarono l'olivo nel Nuovo Mondo nel 1560, dove la sua coltivazione prosperò negli attuali Perù, Cile e Argentina. Nel XVIII secolo i missionari spagnoli piantarono olivi in California.[NEWLINE]Prima del contatto europeo, l'olio da cucina era essenziale per i nativi del Pacifico nordoccidentale. L'olio di oolichan ricavato dal pesce candela costituiva una parte così importante del commercio dei nativi che le rotte commerciali venivano chiamate "vie del grasso".</Italian>
 		<Spanish>Los olivos producen aceitunas de mesa o aceitunas para aceite. Los colonos españoles llevaron el olivo al Nuevo Mundo en 1560, donde su cultivo prosperó en los actuales Perú, Chile y Argentina. En el siglo XVIII, los misioneros españoles plantaron olivos en California.[NEWLINE]Antes del contacto europeo, el aceite de cocina era esencial para las naciones indígenas del noroeste del Pacífico. El aceite de oolichan procedente del pez vela constituía una parte tan importante del comercio nativo que las rutas comerciales se llamaban "rutas de la grasa".</Spanish>
+		<Hungarian>Az olajfák asztali olajbogyót vagy olívaolajhoz való olajbogyót termelnek. A spanyol gyarmatosítók 1560-ban hozták az olajbogyót az Újvilágba, ahol termesztése a mai Peru, Chile és Argentína területén virágzott. A 18. században spanyol misszionáriusok olajfákat ültettek Kaliforniában. Az európaiakkal való kapcsolatfelvétel előtt az étolaj elengedhetetlen volt a Csendes-óceán északnyugati partvidékén élő őslakos népek számára. A gyertyaolaj olyan fontos szerepet játszott az őslakosok kereskedelmében, hogy a kereskedelmi útvonalakat "zsíros ösvényeknek" nevezték.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVES_PLANTER_STRATEGY</Tag>
@@ -376,6 +399,7 @@
 		<German>Die Olive ist ein kleiner Baum, der im Mittelmeerraum beheimatet ist. Oliven sind eine der wichtigsten Zutaten der mediterranen Küche. Der Olivenbaum hat Tausende von Kultivaren.</German>
 		<Italian>L'olivo è un piccolo albero originario del bacino del Mediterraneo. Le olive sono uno degli ingredienti principali della cucina mediterranea. L'olivo ha migliaia di cultivar.</Italian>
 		<Spanish>El olivo es un árbol pequeño originario de la cuenca mediterránea. Las aceitunas son uno de los ingredientes básicos de la cocina mediterránea. El olivo tiene miles de variedades.</Spanish>
+		<Hungarian>Az olajfa egy kis fa, amely a Földközi-tenger medencéjéből származik. Az [LINK=YIELD_OLIVES]olajbogyó[\LINK] a mediterrán konyha egyik alapvető összetevője. Az olajfának több ezer fajtája létezik. [NEWLINE]Egy Tapasztalt Olajbogyó Szedő kétszer annyi olajbogyót tud gyűjteni ugyanannyi idő alatt, mint egy átlagos gyarmatosító.</Hungarian>
 	</TEXT>
 	<!-- PEANUT_PLANTER -->
 	<TEXT>
@@ -402,6 +426,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор арахиса:Опытные плантаторы арахиса</Russian>
+		<Hungarian>Tapasztalt Mogyoró Termesztő:Tapasztalt Mogyoró Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEANUT_PLANTER</Tag>
@@ -427,19 +452,22 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор арахиса:Опытные плантаторы арахиса</Russian>
+		<Hungarian>Tapasztalt Mogyoró Termesztő:Tapasztalt Mogyoró Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEANUT_PLANTER_PEDIA</Tag>
-		<English>Peanuts are legumes farmed for their edible seeds. They're widely grown in the tropics and subtropics by both small and large commercial producers. The peanut is both a grain legume and, due to its high oil content, an oil crop.[NEWLINE]Boiled peanuts are a popular snack in the areas where they're grown. They can be used to treat malnutrition and are especially important for feeding slave populations. Peanuts are usually roasted before being shipped.</English>
+		<English>Peanuts are legumes farmed for their edible seeds. They're widely grown in the tropics and subtropics by both small and large commercial producers. The peanut is a grain legume and also, due to its high oil content, an oil crop.[NEWLINE]Boiled peanuts are a popular snack in the areas where they're grown. They can be used to treat malnutrition and are especially important for feeding slave populations. Peanuts are usually roasted before being shipped.</English>
 		<French>Les cacahuètes sont des légumineuses cultivées pour leurs graines comestibles. Elles sont largement cultivées dans les régions tropicales et subtropicales par les petits et grands producteurs commerciaux. L'arachide est à la fois une légumineuse à graines et, en raison de sa forte teneur en huile, un oléagineux.</French>
 		<German>Erdnüsse sind Hülsenfrüchte, die wegen ihrer essbaren Samen angebaut werden. Sie werden in den Tropen und Subtropen sowohl von kleinen als auch großen kommerziellen Erzeugern angebaut. Die Erdnuss ist sowohl eine Körnerleguminose als auch, aufgrund ihres hohen Ölgehalts, eine Ölpflanze.</German>
 		<Italian>Le arachidi sono legumi coltivati per i loro semi commestibili. Sono ampiamente coltivate nei tropici e nelle regioni subtropicali da piccoli e grandi produttori commerciali. L'arachide è sia una leguminosa da granella sia, grazie al suo elevato contenuto di olio, una coltura oleosa.</Italian>
 		<Spanish>Los cacahuetes son leguminosas que se cultivan por sus semillas comestibles. Su cultivo está muy extendido en los trópicos y subtrópicos, tanto por pequeños como por grandes productores comerciales. El cacahuete es a la vez una leguminosa de grano y, por su alto contenido en aceite, un cultivo oleaginoso.</Spanish>
+		<Hungarian>A mogyoró egy hüvelyes növény, amelyet ehető magjaiért termesztenek. Trópusi és szubtrópusi területeken széles körben termesztik mind kis, mind nagy kereskedelmi termelők. A mogyoró egyrészt hüvelyes gabona, másrészt magas olajtartalma miatt olajos növény is. A főtt mogyoró népszerű snack a termőterületein. Alultápláltság kezelésére is használható és különösen fontos a rabszolgák élelmezésében. A mogyorót általában pörkölik, mielőtt szállítják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEANUT_PLANTER_STRATEGY</Tag>
 		<English>An [COLOR_HIGHLIGHT_TEXT]expert peanut planter[COLOR_REVERT] is more effective at [LINK=PROFESSION_PEANUT_PLANTER]planting[\LINK] [LINK=YIELD_PEANUTS]peanuts[\LINK] than any other expert.[PARAGRAPH:1]Expert peanut planters can be [LINK=CONCEPT_TRAINING]trained[\LINK] by [LINK=CONCEPT_NATIVES]Natives[\LINK] or in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its extensions.</English>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]erfahrener Erdnusspflanzer[COLOR_REVERT] ist effektiver im [LINK=PROFESSION_PEANUT_PLANTER]pflanzen[\LINK] von [LINK=YIELD_PEANUTS]Erdnüssen[\LINK] als alle anderen Experten.[PARAGRAPH:1]Erfahrene Erdnusspflanzer können in Dörfern der [LINK=CONCEPT_NATIVES]Ureinwohner[\LINK] oder in einer Kolonie mit einer [LINK=BUILDING_COLLEGE]Akademie[\LINK] bzw. einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]tapasztalt mogyoró termesztő[COLOR_REVERT] hatékonyabban [LINK=PROFESSION_PEANUT_PLANTER] termeszt[\LINK] [LINK=YIELD_PEANUTS]mogyorót[\LINK], mint bárki más. [PARAGRAPH:1]A tapasztalt mogyoró termesztőket [LINK=CONCEPT_TRAINING]kiképezhetik[\LINK] az [LINK=CONCEPT_NATIVES]Indián[\LINK] falvakban vagy egy kolónián, ahol [LINK=BUILDING_COLLEGE]főiskola[\LINK] vagy annak egyik továbbfejlesztése van.</Hungarian>
 	</TEXT>
 	<!-- PEAT_CUTTER -->
 	<TEXT>
@@ -466,6 +494,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный добытчик торфа и глины:Опытные добытчики торфа и глины</Russian>
+		<Hungarian>Tapasztalt Tőzeg és Agyagbányász:Tapasztalt Tőzeg és Agyagbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEAT_CUTTER</Tag>
@@ -491,6 +520,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный добытчик торфа и глины:Опытные добытчики торфа и глины</Russian>
+		<Hungarian>Tapasztalt Tőzeg és Agyagbányász:Tapasztalt Tőzeg és Agyagbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEAT_CUTTER_PEDIA</Tag>
@@ -499,11 +529,13 @@
 		<German>Ein Sumpf trocknet aus und verwandelt sich sehr langsam in ein Torfmoor, das billigen Brennstoff bietet, wenn Holz und Kohle nicht verfügbar sind. Torfstecher brauchen nicht viel Ausrüstung für ihre Arbeit, nur einen Stecher und eine Hacke, mit der sie die Torfstücke auf dem Rücken tragen können.</German>
 		<Italian>Una palude si asciuga e molto lentamente si trasforma in una torbiera, che offre combustibile a basso costo laddove legno e carbone non sono disponibili. I tagliatori di torba non hanno bisogno di molte attrezzature per svolgere il loro lavoro, solo di una taglierina e di un'ascia per trasportare i pezzi di torba sulla schiena.</Italian>
 		<Spanish>Un pantano se seca y se convierte muy lentamente en una turbera, que ofrece combustible barato allí donde no se dispone de leña ni carbón. Los cortadores de turba no necesitan mucho equipo para hacer su trabajo, sólo un cortador y un hod para transportar trozos de turba a la espalda.</Spanish>
+		<Hungarian>A mocsár kiszárad és nagyon lassan tőzeggé alakul, ami olcsó tüzelőanyagot biztosít ott, ahol fa és szén nem áll rendelkezésre. A tőzegbányászoknak nem kell sok felszerelés a munkájukhoz, csak egy csákány és egy kosár, amiben a tőzegdarabokat a hátukon cipelik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEAT_CUTTER_STRATEGY</Tag>
 		<English>Peat is a peasant fuel, warming the poor and slaves at low or no cost. Peat is the world's most efficient carbon sink, storing 42% of all soil carbon, more than all other vegetation types, including the world's forests. It's not renewable.[NEWLINE]When assigned to the [LINK=PROFESSION_CLAY_MINER]clay cutter[\LINK] or [LINK=PROFESSION_PEAT_CUTTER]peat cutter[\LINK] profession, the expert can cut twice as much [LINK=YIELD_CLAY]clay[\LINK] and [LINK=YIELD_PEAT]peat[\LINK] in the same amount of time as a regular colonist.</English>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]erfahrener Torf- und Lehmstecher[COLOR_REVERT] kann, wenn er den Berufen [LINK=PROFESSION_CLAY_MINER]Lehmkuhlenarbeiter[\LINK] oder [LINK=PROFESSION_PEAT_CUTTER]Torfstecher[\LINK] zugewiesen ist, doppelt so viel [LINK=YIELD_CLAY]Lehm[\LINK] und [LINK=YIELD_PEAT]Torf[\LINK] produzieren, als ein normaler Kolonist.</German>
+		<Hungarian>A tőzeg paraszti tüzelőanyag, ami alacsony vagy nulla költséggel melegíti a szegényeket és a rabszolgákat. A tőzeg a világ leghatékonyabb szén-dioxid-elnyelője, az összes talajszén 42%-át tárolja, többet, mint bármely más növényzet, beleértve a világ erdőit is. Nem megújuló erőforrás. [NEWLINE]Ha [LINK=PROFESSION_CLAY_MINER]agyagbányász[\LINK] vagy [LINK=PROFESSION_PEAT_CUTTER]tőzegbányász[\LINK] szakmát választasz a Tapasztalt Agyag és Tőzegbányásznak, akkor az kétszer annyi [LINK=YIELD_CLAY]agyagot[\LINK] és [LINK=YIELD_PEAT]tőzeget[\LINK] állít elő ugyanannyi idő alatt, mint egy másik lakos.</Hungarian>
 	</TEXT>
 	<!-- RAPE_PLANTER -->
 	<TEXT>
@@ -530,6 +562,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор рапса:Опытные плантаторы рапса</Russian>
+		<Hungarian>Tapasztalt Repce Termesztő:Tapasztalt Repce Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE_PLANTER</Tag>
@@ -555,16 +588,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор рапса:Опытные плантаторы рапса</Russian>
+		<Hungarian>Tapasztalt Repce Termesztő:Tapasztalt Repce Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE_PLANTER_PEDIA</Tag>
 		<English>Rapeseed with its bright yellow flowers is cultivated mainly for its oil-rich seed, which has appreciable amounts of erucic acid. Rapeseed meal, left after the oil is extracted, is a high-protein animal feed.</English>
 		<German>Raps mit seinen leuchtend gelben Blüten wird hauptsächlich wegen seiner ölreichen Samen angebaut, die einen nennenswerten Anteil an Erucasäure enthalten. Rapsschrot, das nach der Ölgewinnung übrig bleibt, ist ein proteinreiches Tierfutter.</German>
+		<Hungarian>A ragyogó sárga virágú repcét elsősorban olajban gazdag magjáért termesztik, amely jelentős mennyiségű erukasavat tartalmaz. Az olaj kinyerése után visszamaradó repcemag-liszt magas fehérjetartalmú állati takarmány.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE_PLANTER_STRATEGY</Tag>
 		<English>Rapeseed is a valuable oil crop. Once the oil is extracted, what's left is used as fodder for domestic animals, mainly cattle, but also pigs and poultry. It's a member of the cabbage family.[NEWLINE]When assigned to the Rapeseed Planter profession, the expert can harvest double the [LINK=YIELD_RAPE]rapeseed[\LINK] in the same time as a regular colonist.</English>
 		<German>Raps ist eine wertvolle Ölpflanze. Nach der Ölgewinnung wird der Rest als Futter für Haustiere verwendet, hauptsächlich für Rinder, aber auch für Schweine und Geflügel. Raps gehört zur Familie der Kohlgewächse. [NEWLINE] Wenn der Beruf des Rapsbauern zugewiesen wird, kann der Experte in der gleichen Zeit wie ein normaler Kolonist die doppelte Menge an Raps ernten.</German>
+		<Hungarian>A repce értékes olajos növény. Az olaj kinyerése után a maradékot háziállatok, főként marhák, de disznók és baromfi takarmányozására használják. A káposztafélék családjába tartozik.[NEWLINE]A Tapasztalt Repce Termesztő ugyanannyi idő alatt kétszer annyi [LINK=YIELD_RAPE]repcét[\LINK] tud betakarítani, mint a többi lakos.</Hungarian>
 	</TEXT>
 	<!-- RICE_FARMER -->
 	<TEXT>
@@ -591,6 +627,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный рисовод:Опытные рисоводы</Russian>
+		<Hungarian>Tapasztalt Rizs Termesztő:Tapasztalt Rizs Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RICE_FARMER</Tag>
@@ -616,16 +653,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный рисовод:Опытные рисоводы</Russian>
+		<Hungarian>Tapasztalt Rizs Termesztő:Tapasztalt Rizs Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RICE_FARMER_PEDIA</Tag>
 		<English>In tropical areas rice can survive as a perennial. It grows in water. Rice seeds are milled with a huller to remove the chaff, producing brown rice. Removing the bran creates white rice.</English>
 		<German>In tropischen Gebieten kann Reis als Staude überleben. Er wächst im Wasser. Reissamen werden mit einer Schälmaschine gemahlen, um die Spreu zu entfernen, wodurch brauner Reis entsteht. Durch das Entfernen der Kleie entsteht weißer Reis.</German>
+		<Hungarian>A trópusi területeken a rizs évelő növényként is megélhet. Vízben nő. A rizsmagokat hántolóval őrlik, hogy eltávolítsák a pelyvát, így barna rizst kapnak. A korpa eltávolításával fehér rizs keletkezik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RICE_FARMER_STRATEGY</Tag>
 		<English>[LINK=YIELD_RICE]Rice[\LINK] is nutritious and light to carry. Scouts may have a loaf of bread for their first day on the trail but it's the bag of dried rice that feeds them for the rest of the trip.[NEWLINE]When assigned to the Rice Farmer profession, the expert can grow double the rice in the same time as a regular colonist.</English>
 		<German>[LINK=YIELD_RICE]Reis[\LINK] ist nahrhaft und leicht zu transportieren. Pfadfinder haben vielleicht einen Laib Brot für ihren ersten Tag auf dem Pfad, aber es ist der Beutel mit getrocknetem Reis, der sie für den Rest der Reise ernährt.[NEWLINE]Wenn er dem Beruf des Reisbauern zugewiesen wird, kann der Experte doppelt so viel Reis in der gleichen Zeit anbauen wie ein normaler Kolonist.</German>
+		<Hungarian>A [LINK=YIELD_RICE]rizs[\LINK] tápláló és könnyen hordozható. A felderítőknek lehet, hogy az első napon van kenyerük, de a többi napon a szárított rizs táplálja őket. [NEWLINE]Egy Tapasztalt Rizs Termesztő ugyanannyi idő alatt kétszer annyi rizst tud termeszteni, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- VANILLA_COLLECTOR -->
 	<TEXT>
@@ -651,7 +691,8 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
-	<Russian>Опытный сборщик ванили:Опытные сборщики ванили</Russian>
+		<Russian>Опытный сборщик ванили:Опытные сборщики ванили</Russian>
+		<Hungarian>Tapasztalt Vanília Termesztő:Tapasztalt Vanília Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA_COLLECTOR</Tag>
@@ -677,6 +718,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик ванили:Опытные сборщики ванили</Russian>
+		<Hungarian>Tapasztalt Vanília Termesztő:Tapasztalt Vanília Termesztő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA_COLLECTOR_PEDIA</Tag>
