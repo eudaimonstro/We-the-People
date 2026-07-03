@@ -727,6 +727,7 @@
 		<German>Vanille ist ein aus Orchideen gewonnenes Gewürz. Es gibt drei Hauptarten, die alle von der ursprünglichen mexikanischen Pflanze abstammen. Sie kann von Hand bestäubt werden, um die Vanilleschote zu gewinnen.</German>
 		<Italian>La vaniglia è una spezia derivata dalle orchidee. Esistono tre specie principali, tutte derivate dalla pianta originale messicana. Può essere impollinata a mano per produrre il baccello di vaniglia.</Italian>
 		<Spanish>La vainilla es una especia derivada de las orquídeas. Hay tres especies principales, todas derivadas de la planta mexicana original. Se puede polinizar a mano para producir la vaina de vainilla.</Spanish>
+		<Hungarian>A vanília egy orchideákból nyert fűszer. Három fő fajtája létezik, amelyek mindegyike az eredeti mexikói növényből származik. Kézzel beporozható, így vaníliarúdat lehet előállítani belőle.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA_COLLECTOR_STRATEGY</Tag>
@@ -735,6 +736,7 @@
 		<German>Vanille ist neben Schokolade eine der beiden beliebtesten Geschmacksrichtungen für süße Leckereien. Sie wird in Süßigkeiten, zum Backen und für Liköre verwendet, alles Dinge, die Mönchen in kolonialen Missionen vertraut sind.[NEWLINE]Wenn der Experte den Beruf des Vanille-Sammlers ausübt, kann er in derselben Zeit doppelt so viele Vanilleschoten sammeln wie ein normaler Kolonist.</German>
 		<Italian>La vaniglia è uno dei due aromi più popolari per i dolci, l'altro è il cioccolato. Si usa nei dolci, nella pasticceria e nei liquori, tutti aromi familiari ai monaci delle missioni coloniali.[NEWLINE]Quando viene assegnato alla professione di Raccoglitore di Vaniglia, l'esperto può raccogliere il doppio dei semi di vaniglia nello stesso tempo di un normale colono.</Italian>
 		<Spanish>La vainilla es uno de los dos sabores más populares de los dulces, el otro es el chocolate. Se utiliza en dulces, repostería y licores, todo lo cual sería familiar a los monjes de las misiones coloniales.[NEWLINE]Cuando se le asigna la profesión de Recolector de Vainilla, el experto puede recolectar el doble de vainas de vainilla en el mismo tiempo que un colono normal.</Spanish>
+		<Hungarian>A [LINK=YIELD_VANILLA]vanília[\LINK] az édességek két legnépszerűbb íze közül az egyik, a másik a [LINK=YIELD_COCOA]csokoládé[\LINK]. Cukorkákban, süteményekben és likőrökben használják, amelyek mindegyike ismerős lehet a gyarmati missziókban élő szerzetesek számára. [NEWLINE]A Tapasztalt Vanília Termesztő ugyanannyi idő alatt kétszer annyi zöld vaníliababot tud gyűjteni, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- YERBA_PLANTER -->
 	<TEXT>
@@ -765,6 +767,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Tapasztalt Tealevél Gyűjtő:Tapasztalt Tealevél Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_PLANTER</Tag>
@@ -794,22 +797,25 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Tapasztalt Tealevél Gyűjtő:Tapasztalt Tealevél Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_PLANTER_PEDIA</Tag>
-		<English>The Guaraní and Tupí cultivated yerba mate prior to European colonization. After the Jesuits started using it, yerba mate became widespread in what's now Paraguay and throughout other Spanish colonies.</English>
+		<English>The Guaraní and Tupí cultivated yerba maté prior to European colonization. After the Jesuits started using it, yerba maté became widespread in what's now Paraguay and throughout other Spanish colonies.</English>
 		<French>Les Guarani et les Tupi cultivaient la yerba mate avant la colonisation européenne. Après que les Jésuites aient commencé à l'utiliser, le yerba mate s'est répandu dans ce qui est aujourd'hui le Paraguay et dans d'autres colonies espagnoles.</French>
 		<German>Die Guarani und Tupi bauten Yerba Mate bereits vor der europäischen Kolonisierung an. Nachdem die Jesuiten damit begonnen hatten, wurde Mate-Tee im heutigen Paraguay und in anderen spanischen Kolonien weit verbreitet.</German>
 		<Italian>I Guarani e i Tupi coltivavano la yerba mate prima della colonizzazione europea. Dopo che i gesuiti iniziarono a usarla, la yerba mate si diffuse nell'attuale Paraguay e in altre colonie spagnole.</Italian>
 		<Spanish>Los guaraníes y los tupíes cultivaban la yerba mate antes de la colonización europea. Después de que los jesuitas empezaran a utilizarla, la yerba mate se generalizó en lo que hoy es Paraguay y en otras colonias españolas.</Spanish>
+		<Hungarian>A guarani és a tupi törzsek már az európai gyarmatosítás előtt is termesztették a yerba mate-t. Miután a jezsuiták elkezdték használni, a yerba mate tea elterjedt a mai Paraguay területén és más spanyol gyarmatokon is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_PLANTER_STRATEGY</Tag>
-		<English>Yerba leaves are steeped in hot water to make a caffeinated beverage: yerba mate. Brewed cold, it is used to make tereré.[NEWLINE]When assigned to the [LINK=PROFESSION_YERBA_COLLECTOR]yerba collector[\LINK] profession, the expert yerba planter can gather twice as many yerba leaves in the same time as a regular colonist.</English>
+		<English>Yerba leaves are steeped in hot water to make a caffeinated beverage: yerba maté. Brewed cold, it is used to make tereré.[NEWLINE]When assigned to the [LINK=PROFESSION_YERBA_COLLECTOR]yerba collector[\LINK] profession, the expert yerba planter can gather twice as many yerba leaves in the same time as a regular colonist.</English>
 		<French>Les feuilles de yerba sont infusées dans de l'eau chaude pour obtenir une boisson caféinée : le yerba mate. Brassée froide, elle est utilisée pour faire du terere.[NEWLINE]Lorsqu'il est affecté à la profession de [LINK=PROFESSION_YERBA_COLLECTOR]collecteur de yerba[\LINK], le planteur de yerba expert peut récolter deux fois plus de feuilles de yerba dans le même temps qu'un colon ordinaire.</French>
 		<German>Mate-Blätter werden in heißem Wasser eingeweicht, um ein koffeinhaltiges Getränk herzustellen: Mate-Tee. Kalt gebraut, wird er zur Herstellung von Terere verwendet.[NEWLINE]Als [LINK=PROFESSION_YERBA_COLLECTOR]Yerba-Sammler[\LINK] kann ein erfahrener Yerba-Pflanzer doppelt so viele Mate-Blätter in derselben Zeit sammeln wie ein normaler Kolonist.</German>
 		<Italian>Le foglie di yerba vengono messe in infusione in acqua calda per ottenere una bevanda a base di caffeina: la yerba mate. Preparato a freddo, viene usato per fare il terere.[NEWLINE]Se assegnato alla professione di [LINK=PROFESSION_YERBA_COLLECTOR]raccoglitore di yerba[\LINK], il piantatore di yerba esperto può raccogliere il doppio delle foglie di yerba nello stesso tempo di un normale colono.</Italian>
 		<Spanish>Las hojas de yerba se remojan en agua caliente para preparar una bebida con cafeína: la yerba mate. Elaborado en frío, se utiliza para hacer terere.[NEWLINE]Cuando se le asigna la profesión de [LINK=PROFESSION_YERBA_COLLECTOR]recolector de yerba[\LINK], el plantador de yerba experto puede recolectar el doble de hojas de yerba en el mismo tiempo que un colono normal.</Spanish>
+		<Hungarian>A tealeveleket forró vízben áztatják, hogy koffeintartalmú italt készítsenek belőle: a yerba mate teát. Hidegen főzve tereré készítésére használják.[NEWLINE]A Tapasztalt [LINK=PROFESSION_YERBA_COLLECTOR]Tealevél Gyűjtő[\LINK] kétszer annyi tealevelet tud gyűjteni ugyanannyi idő alatt, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- HERDER -->
 	<TEXT>
@@ -836,6 +842,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный пастух:Опытные пастухи</Russian>
+		<Hungarian>Tapasztalt Pásztor:Tapasztalt Pásztor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HERDER</Tag>
@@ -861,16 +868,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный пастух:Опытные пастухи</Russian>
+		<Hungarian>Tapasztalt Pásztor:Tapasztalt Pásztor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HERDER_PEDIA</Tag>
 		<English>Cattle graze the tops of grass stalks. so they can use the same field for years. Sheep eat the whole grass plant down to the root, leaving pastures barren. The result can be a range war. Herding flocks is ancient. Biblical shepherds carried slings which they used to kill lions and Philistines, so herders in the New World were already well-prepared for wolves and bears.</English>
 		<German>Rinder weiden nur die Spitzen der Grashalme ab, so dass sie jahrelang dieselbe Wiese nutzen können. Schafe fressen die gesamte Graspflanze bis zur Wurzel ab und machen die Weiden unfruchtbar, was unter Umständen zu einem Kampf bzgl. der Weidenutzung führte. Bereits die biblischen Hirten trugen Schleudern, mit denen sie Löwen und Philister töteten, so dass die Hirten in der Neuen Welt gut auf Wölfe und Bären vorbereitet waren.</German>
+		<Hungarian>A marhák a fűszálak tetejét legelik, így ugyanazt a legelőt évekig használhatják. A juhok az egész fűszálat a gyökérig megeszik, így a legelők kopárrá válnak. Ez legelőháborúkhoz vezethet. A nyájterelés ősi foglalkozás. A bibliai pásztorok parittyaikkal oroszlánokat és filiszteusokat öltek, így az Újvilág pásztorai már jól fel voltak készülve a farkasok és medvék ellen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HERDER_STRATEGY</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Expert herders[COLOR_REVERT] can take on different professions to handle [LINK=PROFESSION_SHEPHERD]sheep[\LINK], [LINK=PROFESSION_GOATHERD]goats[\LINK] or [LINK=PROFESSION_PIG_BREEDER]pigs[\LINK]. To increase the flocks of [LINK=YIELD_SHEEP]sheep[\LINK], [LINK=YIELD_PIG]pigpen[\LINK] populations, or herds of [LINK=YIELD_GOATS]goats[\LINK], animals have to be in the settlement so they can mate. For more information, see the [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]livestock[\LINK] concept.</English>
 		<German>[COLOR_HIGHLIGHT_TEXT]Erfahrene Hirten[COLOR_REVERT] sind beim Züchten ([LINK=PROFESSION_SHEPHERD]Schafe[\LINK] / [LINK=PROFESSION_GOATHERD]Ziegen[\LINK] / [LINK=PROFESSION_PIG_BREEDER]Schweine[\LINK]) von [LINK=YIELD_SHEEP]Schafen[\LINK], [LINK=YIELD_GOATS]Ziegen[\LINK] und [LINK=YIELD_PIG]Schweinen[\LINK] besonders effektiv. [NEWLINE]Einige Tiere der entsprechenden Art muss zu Zuchtzwecken gehalten werden. Mehr Informationen dazu unter dem Konzept [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]Tierzucht[\LINK].</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]tapasztalt pásztor[COLOR_REVERT] különböző feladatokat végezhet [LINK=YIELD_SHEEP]juhokkal[\LINK], [LINK=YIELD_PIG]disznókkal[\LINK] és [LINK=YIELD_GOATS]kecskékkel[\LINK]. A tenyésztéshez a [LINK=YIELD_SHEEP]juhokból[\LINK], [LINK=YIELD_PIG]disznókból[\LINK] vagy [LINK=YIELD_GOATS]kecskékből[\LINK] néhány állatnak lennie kell a településen. További információkért lásd a [LINK=CONCEPT_CATTLE_OR_SHEEP_BREEDING]állattenyésztés[\LINK] fejezetet.</Hungarian>
 	</TEXT>
 	<!-- MAPLE_SIRUP_COLLECTOR -->
 	<TEXT>
@@ -897,6 +907,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик кленового сиропа:Опытные сборщики кленового сиропа</Russian>
+		<Hungarian>Tapasztalt Juharfa Csapoló:Tapasztalt Juharfa Csapoló</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAPLE_SIRUP_COLLECTOR</Tag>
@@ -922,16 +933,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик кленового сиропа:Опытные сборщики кленового сиропа</Russian>
+		<Hungarian>Tapasztalt Juharfa Csapoló:Tapasztalt Juharfa Csapoló</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAPLE_SIRUP_COLLECTOR_PEDIA</Tag>
 		<English>Maple syrup comes from maple forests which grow in north temperate regions. It's a popular treat, contributing to happiness. In spring when sap starts to flow in the maple forests, tappers hammer spouts through the bark and collect a thin fluid that's then distilled over a slow fire into a rich thick syrup. The sap can also be poured on snow to make maple sugar.</English>
 		<German>Ahornsirup stammt aus Ahornwäldern, die in den nördlichen gemäßigten Zonen wachsen. Er ist ein beliebtes Süßungsmittel und trägt zum Glücklichsein bei. Im Frühjahr, wenn in den Ahornwäldern der Saft zu fließen beginnt, schlagen die Pflücker mit dem Hammer Tüllen durch die Rinde und sammeln eine dünne Flüssigkeit, die dann langsam über einem Feuer zu einem reichhaltigen, dicken Sirup destilliert wird. Der Saft kann auch auf Schnee gegossen werden, um Ahornzucker herzustellen.</German>
+		<Hungarian>A juharszirup az északi mérsékelt éghajlati övezetekben növő juharerdőkből származik. Népszerű csemege, ami hozzájárul a boldogsághoz. Tavasszal, amikor a juharerdőkben megindul a nedvkeringés, a csapolók lyukakat ütnek a kéregbe és összegyűjtik a híg folyadékot, amelyet aztán lassú tűzön sűrű, dús sziruppá párolnak. A nedvet hóra is önthetik, hogy juharcukrot készítsenek belőle.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAPLE_SIRUP_COLLECTOR_STRATEGY</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Expert maple tree tappers[COLOR_REVERT] gather twice as much [LINK=YIELD_MAPLE_SIRUP]maple syrup[\LINK] per hour as regular colonists assigned to be [LINK=PROFESSION_MAPLE_SIRUP_COLLECTOR]maple syrup collectors[\LINK]. The syrup comes from trees on [LINK=TERRAIN_TAIGA]taiga[\LINK] hills or in [LINK=BONUS_MAPLE_TREES]maple forests[\LINK][PARAGRAPH:1]Expert maple tree tappers can be taught by [LINK=CONCEPT_NATIVES]Natives[\LINK], or [LINK=CONCEPT_TRAINING]trained[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or its extensions. They can also be hired in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT].</English>
 		<German>[COLOR_HIGHLIGHT_TEXT]Erfahrene Ahornsirup-Sammler[COLOR_REVERT] können in den Hügeln der [LINK=TERRAIN_TAIGA]Taiga[\LINK] oder in [LINK=BONUS_MAPLE_TREES]Ahorn-Wäldern[\LINK] als [LINK=PROFESSION_MAPLE_SIRUP_COLLECTOR]Ahornsirup-Sammler[\LINK] doppelt so viel [LINK=YIELD_MAPLE_SIRUP]Ahornsirup[\LINK] sammeln, wie freie Kolonisten.[PARAGRAPH:1]Erfahrene Ahornsirup-Sammler können von [LINK=CONCEPT_NATIVES]Ureinwohnern[\LINK] ausgebildet werden, oder in einer Kolonie in einer [LINK=BUILDING_COLLEGE]Akademie[\LINK] bzw. dessen Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden. Sie können auch in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT] erworben werden.</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Tapasztalt Juhszirupgyűjtők[COLOR_REVERT] kétszer annyi [LINK=YIELD_MAPLE_SIRUP]juharszirupot[\LINK] gyűjtenek [LINK=PROFESSION_MAPLE_SIRUP_COLLECTOR]juharszirup gyűjtőként[\LINK], mint a többi lakos. A szirup a [LINK=TERRAIN_TAIGA]tajga[\LINK] dombságon vagy a [LINK=BONUS_MAPLE_TREES]juharfák[\LINK] bónusszal rendelkező erdőkből.[PARAGRAPH:1]A tapasztalt juharszirupgyűjtőt az [LINK=CONCEPT_NATIVES]Indiánok[\LINK] képezhetik ki vagy [LINK=CONCEPT_TRAINING]megtaníthatók[\LINK] egy [LINK=BUILDING_COLLEGE]főiskolával[\LINK] vagy annak továbbfejlesztésével rendelkező kolóniában. Fel lehet őket fogadni [COLOR_HIGHLIGHT_TEXT]Port Royalban[COLOR_REVERT] is.</Hungarian>
 	</TEXT>
 	<!-- KAUTSCHUK_COLLECTOR -->
 	<TEXT>
@@ -958,6 +972,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик каучука:Опытные сборщики каучука</Russian>
+		<Hungarian>Tapasztalt Kaucsuk Gyűjtő:Tapasztalt Kaucsuk Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KAUTSCHUK_COLLECTOR</Tag>
@@ -983,16 +998,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик каучука:Опытные сборщики каучука</Russian>
+		<Hungarian>Tapasztalt Kaucsuk Gyűjtő:Tapasztalt Kaucsuk Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KAUTSCHUK_COLLECTOR_PEDIA</Tag>
 		<English>Rubber is harvested by making incisions in the bark of rubber trees. The latex is heated to create rubber that can be dried into waterproof sheets, along with other industrial products.</English>
 		<German>Kautschuk wird durch Einschnitte in die Rinde von Kautschukbäumen geerntet. Der Latex wird erhitzt, um Kautschuk zu gewinnen, der zusammen mit anderen Industrieprodukten zu wasserdichten Platten getrocknet werden kann.</German>
+		<Hungarian>A kaucsukot úgy állítják elő, hogy bemetszéseket ejtenek a kaucsukfák kérgébe. A latexet felmelegítik, hogy vízálló lapokká szárítható kaucsukot és egyéb ipari termékeket állítsanak elő.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KAUTSCHUK_COLLECTOR_STRATEGY</Tag>
 		<English>[LINK=YIELD_KAUTSCHUK]Rubber[\LINK] has a large stretch ratio, high resilience and is also water-proof. It's classified as an elastomer.[NEWLINE]When assigned to the Rubber Collector profession, the expert can get twice as much rubber in the same time as a regular colonist.</English>
 		<German>[LINK=YIELD_KAUTSCHUK]Kautschuk[\LINK] hat ein großes Dehnungsverhältnis, eine hohe Elastizität und ist außerdem wasserfest. Wenn er dem Beruf des Kautschuksammlers zugewiesen wird, kann der Experte in der gleichen Zeit doppelt so viel Kautschuk gewinnen wie ein normaler Kolonist.</German>
+		<Hungarian>A [LINK=YIELD_KAUTSCHUK]kaucsuk[\LINK] nagy nyújthatósággal, nagy rugalmassággal rendelkezik és vízálló is. Elasztomernek minősül. [NEWLINE]A Tapasztalt Kaucsuk Gyűjtő kétszer annyi kaucsukot tud gyűjteni ugyanannyi idő alatt, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- CONFECTIONER -->
 	<TEXT>
@@ -1019,6 +1037,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер кондитер:Мастера кондитеры</Russian>
+		<Hungarian>Cukrászmester:Cukrászmester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONFECTIONER</Tag>
@@ -1044,6 +1063,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер кондитер:Мастера кондитеры</Russian>
+		<Hungarian>Cukrászmester:Cukrászmester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONFECTIONER_PEDIA</Tag>
@@ -1052,11 +1072,13 @@
 		<German>Ein Zuckerbäcker macht aus Plantagenzucker ein hochwertiges Produkt, indem er ihn aromatisiert - etwa mit Schokolade oder Vanille. Es ist wichtig, den Zucker fein zu mahlen, damit die Süßigkeit eine glatte Konsistenz erhält.</German>
 		<Italian>Il pasticcere trasforma lo zucchero di piantagione in un prodotto di alto valore aromatizzandolo, magari con cioccolato o vaniglia. È importante macinare lo zucchero finemente in modo che le caramelle abbiano una consistenza omogenea.</Italian>
 		<Spanish>Un confitero convierte el azúcar de plantación en un producto de alto valor aromatizándolo, quizá con chocolate o vainilla. Es importante moler el azúcar finamente para que el caramelo tenga una consistencia suave.</Spanish>
+		<Hungarian>A cukrász az ültetvényről származó cukrot ízesítéssel – például csokoládéval vagy vaníliával – értékes termékgé alakítja. Fontos, hogy a cukrot finomra őrölje, hogy a termék egyenletes állagú legyen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONFECTIONER_STRATEGY</Tag>
 		<English>The confectioner creates variety, candy for every taste, alongside traditional sweets that remind people of home. Flavouring is done with [LINK=YIELD_VANILLA]vanilla[\LINK] or [LINK=YIELD_COCOA]cocoa[\LINK]. The business can become a social destination, with tables and beverages to accompany the treats.[NEWLINE]When assigned to the Confectioner profession, the master can make twice as much candy in the time a regular colonist would take to do the job.</English>
 		<German>Der Konditor schafft Abwechslung, Süßigkeiten für jeden Geschmack, aber auch traditionelle Süßigkeiten, die die Menschen an ihre Heimat erinnern. Die Aromatisierung erfolgt mit [LINK=YIELD_VANILLA]Vanille[\LINK] oder [LINK=YIELD_COCOA]Kakao[\LINK]. Das Geschäft kann zu einem sozialen Treffpunkt werden, mit Tischen und Getränken, die die Leckereien begleiten.[NEWLINE]Wenn der Meister dem Beruf des Zuckerbäckers zugeordnet ist, kann er doppelt so viel Süßigkeiten in der Zeit herstellen, die ein normaler Kolonist für die Arbeit benötigen würde.</German>
+<Hungarian>A cukrász sokféle, minden ízlésnek megfelelő édességet készít, valamint hagyományos édességeket, amelyek az otthonra emlékeztetik az embereket. Az ízesítés [LINK=YIELD_VANILLA]vaníliával[\LINK] vagy [LINK=YIELD_COCOA]kakaóval[\LINK] történik. Az üzlet társasági helyszínné válhat, asztalokkal és italokkal, amelyek a finomságokat kísérik.[NEWLINE]A Cukrászmester ugyanannyi idő alatt kétszer  annyi édességet tud készíteni, mint amennyit egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- HOUSEHOLD_TRADER -->
 	<TEXT>
@@ -1083,6 +1105,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер производства хозтоваров:Мастера производства хозтоваров</Russian>
+		<Hungarian>Háztartási Árugyártó Mester:Háztartási Árugyártó Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOUSEHOLD_TRADER</Tag>
@@ -1108,16 +1131,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер производства хозтоваров:Мастера производства хозтоваров</Russian>
+		<Hungarian>Háztartási Árugyártó Mester:Háztartási Árugyártó Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOUSEHOLD_TRADER_PEDIA</Tag>
 		<English>Housewares encompass everything that makes life comfortable, extending from basic necessities to rare luxuries. At first everything comes from Europe but clever artisans soon learn to make, and sometimes improve, familiar items.</English>
 		<German>Haushaltswaren umfassen alles, was das Leben angenehm macht, vom Grundbedarf bis hin zu seltenen Luxusgütern. Zunächst kommt alles aus Europa, aber geschickte Kunsthandwerker lernen bald, vertraute Dinge herzustellen und manchmal zu verbessern.</German>
+		<Hungarian>A háztartási áruk mindent magukban foglalnak, ami kényelmessé teszi az életet, az alapvető szükségleti cikkektől a ritka luxuscikkekig. Eleinte minden Európából érkezik, de az ügyes kézművesek hamar megtanulják előállítani és néha továbbfejleszteni a megszokott tárgyakat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOUSEHOLD_TRADER_STRATEGY</Tag>
 		<English>The houseware trader is expected to have all the necessities in stock at a fair price. Raw materials to make furniture include [LINK=YIELD_VALUABLE_WOOD]exotic wood[\LINK] and [LINK=YIELD_GOAT_HIDES]goatskins[\LINK]. [NEWLINE]When assigned to the Household Trader profession, the master can handle twice the goods in the same time as a regular colonist.</English>
 		<German>Von einem Haushaltswarenhändler wird erwartet, dass er alles Notwendige zu einem fairen Preis auf Lager hat. Zu den Rohstoffen für die Herstellung von Möbeln gehören [LINK=YIELD_VALUABLE_WOOD]exotisches Holz[\LINK] und [LINK=YIELD_GOAT_HIDES]Ziegenfelle[\LINK]. [NEWLINE]Wenn der Meister den Beruf des Haushaltwarenhändlers ausübt, kann er in der gleichen Zeit doppelt so viele Waren umschlagen wie ein normaler Kolonist.</German>
+		<Hungarian>A háztartási árugyártónak minden szükséges termékkel kell rendelkeznie, méltányos áron. A bútorok gyártásához szükséges alapanyagok közé tartoznak a [LINK=YIELD_VALUABLE_WOOD]bútorfa[\LINK] és a [LINK=YIELD_GOAT_HIDES]kecskebőr[\LINK].[NEWLINE]A Háztartási Árugyártó Mester ugyanannyi idő alatt kétszer annyi árut tud készíteni, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- YERBA_TRADER -->
 	<TEXT>
@@ -1144,10 +1170,11 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер производства чая:Мастера производства чая</Russian>
+		<Hungarian>Teakészítő Mester:Teakészítő Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_TRADER</Tag>
-		<English>Master Yerba-Maté Trader:Master Yerba-Maté Traders</English>
+		<English>Master Yerba Maté Trader:Master Yerba Maté Traders</English>
 		<French>
 			<Text>Maître marchand en maté:Maîtres marchands en maté</Text>
 			<Gender>Male</Gender>
@@ -1169,16 +1196,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер производства чая:Мастера производства чая</Russian>
+		<Hungarian>Teakészítő Mester:Teakészítő Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_TRADER_PEDIA</Tag>
-		<English>Getting started in the yerba-maté trade meant dealing with two especially dangerous Indigenous nations: the Guaraní and Tupí. To add to the challenge, yerba was found in only two regions, Amambay and Alto Paraná.</English>
+		<English>Getting started in the yerba maté trade meant dealing with two especially dangerous Indigenous nations: the Guaraní and Tupí. To add to the challenge, yerba was found in only two regions, Amambay and Alto Paraná.</English>
 		<German>Der Einstieg in den Yerba-Maté-Handel bedeutete, sich mit zwei besonders gefährlichen indigenen Völkern auseinanderzusetzen: den Guaraní und den Tupí. Erschwerend kam hinzu, dass Yerba nur in zwei Regionen, Amambay und Alto Paraná, zu finden war.</German>
+		<Hungarian>A teakereskedelembe való belépés két különösen veszélyes Indián néppel való kapcsolatfelvételt jelentett: a guaranikkal és a tupikkal. A kihívást tovább nehezítette, hogy a yerba tea csak két régióban, Amambayban és Alto Paranában volt megtalálható.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_TRADER_STRATEGY</Tag>
-		<English>[LINK=YIELD_YERBA_LEAVES]Yerba leaves[\LINK] are steeped in hot water to make a caffeinated beverage: yerba-maté. Brewed cold, it is used to make tereré.[NEWLINE]When assigned to the yerba-maté trader profession, the master can market twice the quantity of yerba leaves in the same time as a regular colonist.</English>
+		<English>[LINK=YIELD_YERBA_LEAVES]Yerba leaves[\LINK] are steeped in hot water to make a caffeinated beverage: yerba maté. Brewed cold, it is used to make tereré.[NEWLINE]When assigned to the yerba maté trader profession, the master can market twice the quantity of yerba leaves in the same time as a regular colonist.</English>
 		<German>[LINK=YIELD_YERBA_LEAVES]Yerba-Blätter[\LINK] werden in heißem Wasser eingeweicht, um ein koffeinhaltiges Getränk herzustellen: Yerba-maté. Wenn der Meister den Beruf des Yerba-Maté-Händlers ausübt, kann er die doppelte Menge an Yerba-Blättern in derselben Zeit vermarkten wie ein normaler Kolonist.</German>
+		<Hungarian>A [LINK=YIELD_YERBA_LEAVES]tealeveleket[\LINK] forró vízben áztatják, hogy koffeintartalmú italt készítsenek belőle: a yerba-maté teát. Hidegen főzve tereré készítésére használják.[NEWLINE]A Teakészítő Mester ugyanannyi idő alatt kétszer annyi teát tud elkészíteni, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- OIL_TRADER -->
 	<TEXT>
@@ -1205,6 +1235,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер производства растительного масла:Мастера производства растительного масла</Russian>
+		<Hungarian>Étolajkészítő Mester:Étolajkészítő Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OIL_TRADER</Tag>
@@ -1230,16 +1261,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер производства растительного масла:Мастера производства растительного масла</Russian>
+		<Hungarian>Étolajkészítő Mester:Étolajkészítő Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OIL_TRADER_PEDIA</Tag>
 		<English>Pressing oil is an ancient craft in Europe, particularly in Mediterranean cultures. Olives are crushed for their oil. Once rapeseed oil is extracted, what's left is used as fodder for domestic animals, mainly cattle, but also pigs and poultry.</English>
 		<German>Das Pressen von Öl ist ein altes Handwerk in Europa, insbesondere in den mediterranen Kulturen. Zur Gewinnung des Öls werden die Oliven gepresst. Nach der Gewinnung des Rapsöls wird der Rest als Futtermittel für Haustiere, vor allem Rinder, aber auch Schweine und Geflügel, verwendet.</German>
+		<Hungarian>Az olajpréselés ősi mesterség Európában, különösen a mediterrán kultúrákban. Az olajbogyókat étolaj kinyerése céljából préselik. A repceolaj kinyerése után a maradékot háziállatok, főként marhák, de disznók és baromfik takarmányozására is felhasználják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OIL_TRADER_STRATEGY</Tag>
 		<English>Cooking oil is used in most households almost every day. Because the market is so widespread it's a good cover for smuggling. Nostalgic settlers often prefer the taste of oil from their home country. [LINK=YIELD_OLIVES]Olives[\LINK] and [LINK=YIELD_RAPE]rapeseed[\LINK] are pressed to create two popular cooking oils.[NEWLINE]When assigned to the Cooking Oil Trader profession, the master presser can sell twice as much cooking oil in the same time as a regular colonist.</English>
 		<German>Speiseöl wird in den meisten Haushalten fast jeden Tag verwendet. Da der Markt so weit verbreitet ist, bietet er eine gute Tarnung für den Schmuggel. Nostalgische Siedler bevorzugen oft den Geschmack von Öl aus ihrem Heimatland. Aus [LINK=YIELD_OLIVES]Oliven[\LINK] und [LINK=YIELD_RAPE]Raps[\LINK] werden zwei beliebte Speiseöle gepresst.[NEWLINE]Mit dem Beruf des Speiseölhändlers kann der Pressmeister in der gleichen Zeit doppelt so viel Speiseöl verkaufen wie ein normaler Kolonist.</German>
+		<Hungarian>Az étolajat a legtöbb háztartásban szinte minden nap használják. Mivel a piac annyira elterjedt, jó álca a csempészethez. A nosztalgikus bevándorlók gyakran kedvelik szülőhazájukból származó olaj ízét. Az [LINK=YIELD_OLIVES]olajbogyó[\LINK] és a [LINK=YIELD_RAPE]repce[\LINK] préselésével két népszerű étolaj készül.[NEWLINE]Az Étolajkészítő Mester ugyanannyi idő alatt kétszer annyi étolajat tud előállítani, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- FRUITS_PICKER -->
 	<TEXT>
@@ -1266,6 +1300,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный сборщик фруктов:Опытные сборщики фруктов</Russian>
+		<Hungarian>Tapasztalt Gyümölcsszedő:Tapasztalt Gyümölcsszedő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRUITS_PICKER</Tag>
@@ -1290,17 +1325,20 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
-	<Russian>Опытный сборщик фруктов:Опытные сборщики фруктов</Russian>
+		<Russian>Опытный сборщик фруктов:Опытные сборщики фруктов</Russian>
+		<Hungarian>Tapasztalt Gyümölcsszedő:Tapasztalt Gyümölcsszedő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRUITS_PICKER_PEDIA</Tag>
-		<English>Fruit picking is one of the most laborious jobs available, what with climbing and stooping, but without pickers good food rots. It's usually a first job for immigrants and young people, and they move on to something less strenuous at the first opportunity.[NEWLINE]When assigned to the Fruit Picker profession, the expert can harvest twice as much fruit in the same time as a regular colonist.[PARAGRAPH:1]Fresh fruit is essential for good health. Fruits mature in different seasons, giving people a feeling for nature. Knowing the right moment to capture a crop's ripeness means getting the best price.</English>
+		<English>Fruit picking is one of the most laborious jobs available, what with climbing and stooping, but good food rots without pickers. It's usually a first job for immigrants and young people, and they move on to something less strenuous at the first opportunity.[PARAGRAPH:1]Fresh fruit is essential for good health. Fruits mature in different seasons, giving people a feeling for nature. Knowing the right moment to capture a crop's ripeness means getting the best price.</English>
 		<German>Obstpflücken ist einer der mühsamsten Berufe überhaupt, denn man muss klettern und sich bücken, aber ohne Pflücker verderben gute Lebensmittel. Für Einwanderer und junge Leute ist es in der Regel der erste Job, und sie wechseln bei der ersten Gelegenheit zu etwas weniger Anstrengendem.[NEWLINE]Wenn der Beruf des Obstpflückers ausgeübt wird, kann der Experte in der gleichen Zeit doppelt so viel Obst ernten wie ein normaler Kolonist.[PARAGRAPH:1]Frisches Obst ist für eine gute Gesundheit unerlässlich. Früchte reifen zu verschiedenen Jahreszeiten und vermitteln den Menschen ein Gefühl für die Natur. Das Wissen um den richtigen Zeitpunkt, um die Reife einer Frucht zu erfassen, bedeutet, den besten Preis zu erzielen.</German>
+		<Hungarian>A gyümölcsszedés az egyik legfárasztóbb munka, hiszen mászni és hajolgatni kell, de a gyümölcsszedők nélkül a jó minőségű élelem megromlik. Általában ez az első munkahelye a bevándorlóknak és a fiataloknak, akik az első adandó alkalommal kevésbé megterhelő munkára váltanak. [NEWLINE]A Tapasztalt Gyümölcsszedő kétszer annyi gyümölcsöt tud betakarítani ugyanannyi idő alatt, mint egy átlagos lakos. [PARAGRAPH:1]A friss gyümölcs elengedhetetlen az egészséghez. A gyümölcsök különböző évszakokban érnek be, így az emberek megismerhetik a természetet. Ha tudjuk, mikor érik be a termés, akkor a legjobb árat kaphatjuk érte.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRUITS_PICKER_STRATEGY</Tag>
-		<English>COLOR_HIGHLIGHT_TEXT]Expert Fruit Picker[COLOR_REVERT] achieve particularly high yields of [LINK=YIELD_FRUITS]fruits[\LINK] as [LINK=PROFESSION_FRUITS_PICKER]fruit pickers[\LINK].</English>
+		<English>When assigned to the COLOR_HIGHLIGHT_TEXT]Fruit Picker[COLOR_REVERT] profession, the expert can harvest twice as much [LINK=YIELD_FRUITS]fruit[\LINK] in the same time as a regular colonist.</English>
 		<German>[COLOR_HIGHLIGHT_TEXT]Erfahrene Fruchtsammler[COLOR_REVERT] erzielen als [LINK=PROFESSION_FRUITS_PICKER]Obstpflücker[\LINK] besonders hohe Erträge bei [LINK=YIELD_FRUITS]Früchten[\LINK].</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Tapasztalt Gyümölcsszedő[COLOR_REVERT] különösen magas hozamot biztosít [LINK=YIELD_FRUITS] gyümölcsből[\LINK], ha [LINK=PROFESSION_FRUITS_PICKER]gyümölcsszedőként[\LINK] dolgozik.</Hungarian>
 	</TEXT>
 	<!-- POULTRY_BUTCHER -->
 	<TEXT>
@@ -1327,6 +1365,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер мясник птицы:Мастера мясники птицы</Russian>
+		<Hungarian>Baromfihentes Mester:Baromfihentes Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POULTRY_BUTCHER</Tag>
@@ -1352,16 +1391,19 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мастер мясник птицы:Мастера мясники птицы</Russian>
+		<Hungarian>Baromfihentes Mester:Baromfihentes Mester</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POULTRY_BUTCHER_PEDIA</Tag>
 		<English>Poultry is usually the cheapest domestic meat in any settlement. A good butcher works fast and keeps the price down. Workers who don't get paid much still can eat well and the result is a busy happy community.[NEWLINE]Butchers use sharp knives and they have to work fast so it's a dangerous job. Poultry is tricky because not only do the carcasses have to be cleaned and the meat portioned, but the feathers and down, particularly from geese and ducks, must be plucked to insulate quilts and coats.</English>
 		<German>Geflügel ist in der Regel das billigste einheimische Fleisch in jeder Siedlung. Ein guter Fleischer arbeitet schnell und hält den Preis niedrig. Arbeiter, die nicht viel verdienen, können sich trotzdem gut ernähren.[NEWLINE]Metzger arbeiten mit scharfen Messern und müssen schnell arbeiten, daher ist es ein gefährlicher Beruf. Geflügel ist eine schwierige Angelegenheit, da nicht nur die Kadaver gesäubert und das Fleisch portioniert werden müssen, sondern auch die Federn und Daunen, vor allem von Gänsen und Enten, zur Isolierung gerupft werden müssen.</German>
+		<Hungarian>A baromfi általában a legolcsóbb háztartási hústermék minden településen. A jó hentes gyorsan dolgozik és alacsonyan tartja az árakat. Az alacsony fizetésű munkások is jól tudnak étkezni, ami egy dolgos, boldog közösséget eredményez. A hentesek éles késekkel dolgoznak és gyorsan kell haladniuk, ezért ez egy veszélyes munka. A baromfi feldolgozása bonyolult, mert nemcsak a tetemeket kell megtisztítani és a húst felosztani, hanem a tollakat és a pehelyt is le kell szedni, különösen a libák és kacsák esetében, hogy azok hőszigetelőként szolgálhassanak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POULTRY_BUTCHER_STRATEGY</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Master poultry butchers[COLOR_REVERT] achieve particularly high yields of [LINK=YIELD_FOOD]food[\LINK] and [LINK=YIELD_DOWNS]down[\LINK] when [LINK=PROFESSION_BUTCHER_CHICKEN]slaughtering[\LINK] [LINK=YIELD_CHICKEN]chickens[\LINK] in the [LINK=BUILDING_BUTCHERS_HOUSE]butcher's house[\LINK].</English>
 		<German>[COLOR_HIGHLIGHT_TEXT]Meister-Geflügelschlachter[COLOR_REVERT] erzielen beim [LINK=PROFESSION_BUTCHER_CHICKEN]Schlachten[\LINK] von [LINK=YIELD_CHICKEN]Hühnern[\LINK] im [LINK=BUILDING_BUTCHERS_HOUSE]Haus des Schlachters[\LINK] besonders hohe Erträge von [LINK=YIELD_FOOD]Nahrung[\LINK] und [LINK=YIELD_DOWNS]Daunen[\LINK].</German>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Baromfihentes Mester[COLOR_REVERT] különösen magas hozamot ér el [LINK=YIELD_FOOD] élelem[\LINK] és [LINK=YIELD_DOWNS]pehelytoll[\LINK] előállításában, ha [LINK=YIELD_CHICKEN]csirkéket[\LINK] [LINK=PROFESSION_BUTCHER_CHICKEN] vág le[\LINK]  a [LINK=BUILDING_BUTCHERS_HOUSE]hentesboltban[\LINK].</Hungarian>
 	</TEXT>
 	<!-- COAL_MINER -->
 	<TEXT>
@@ -1388,6 +1430,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный угольщик:Опытные угольщики</Russian>
+		<Hungarian>Tapasztalt Szénbányász:Tapasztalt Szénbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COAL_MINER</Tag>
@@ -1413,6 +1456,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный угольщик:Опытные угольщики</Russian>
+		<Hungarian>Tapasztalt Szénbányász:Tapasztalt Szénbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COAL_MINER_PEDIA</Tag>
@@ -1421,11 +1465,13 @@
 		<German>Kohle entsteht, wenn abgestorbenes Pflanzenmaterial zu Torf zerfällt und durch die Hitze und den Druck der oberen Erdschichten über Millionen von Jahren in Kohle umgewandelt wird. In der Kolonialzeit wurde Kohle zum Heizen verwendet, nicht für die Industrie.</German>
 		<Italian>Il carbone si forma quando la materia vegetale morta si decompone in torba e viene convertita in carbone dal calore e dalla pressione della sepoltura profonda per milioni di anni. Durante l'epoca coloniale il carbone viene utilizzato per il riscaldamento, non per l'industria.</Italian>
 		<Spanish>El carbón se forma cuando la materia vegetal muerta se descompone en turba y se convierte en carbón por el calor y la presión del enterramiento profundo durante millones de años. En la época colonial, el carbón se utiliza para calefacción, no para la industria.</Spanish>
+		<Hungarian>A szén akkor keletkezik, amikor az elhalt növényi anyagok tőzeggé bomlanak és több millió év alatt a mélyen eltemetett rétegek hője és nyomása hatására szénné alakulnak. A gyarmati időkben a szenet fűtésre használták, nem ipari célokra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COAL_MINER_STRATEGY</Tag>
 		<English>Coal mining causes premature death and illness, but it's a soft rock that doesn't need as many explosives as hard rock mining. It's a job where labourers use picks and shovels, and they don't get paid much.[NEWLINE]When assigned to the [LINK=PROFESSION_COAL_MINER]coal miner[\LINK] profession, the expert can get twice the tonnage of [LINK=YIELD_COAL]coal[\LINK] in the same time as a regular colonist.</English>
 		<German>Ein [COLOR_HIGHLIGHT_TEXT]erfahrener Kohlekumpel[COLOR_REVERT], der als [LINK=PROFESSION_COAL_MINER]Bergmann[\LINK] dem Abbau von [LINK=YIELD_COAL]Kohle[\LINK] zugewiesen ist, produziert doppelt so viel Kohle wie ein freier Kolonist.</German>
+		<Hungarian>A szénbányászat korai halált és betegségeket okoz, de ez egy puha kőzet, amelyhez nem kell annyi robbanószer, mint a kemény kőzetek bányászatához. Ez egy olyan munka, ahol a munkások csákányt és lapátot használnak, és ezért nem kapnak sok fizetést.[NEWLINE]A Tapasztalt [LINK=PROFESSION_COAL_MINER]Szénbányász[\LINK] kétszer annyi [LINK=YIELD_COAL]szenet[\LINK] tud kitermelni ugyanannyi idő alatt, mint egy átlagos lakos.</Hungarian>
 	</TEXT>
 	<!-- LEATHER_TAYLOR -->
 	<TEXT>
