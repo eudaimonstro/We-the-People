@@ -30,6 +30,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Красильщик ткани (кампеш):Красильщики ткани (кампеш)</Russian>
+		<Hungarian>Ruhafestő (Kékfa):Ruhafestő (Kékfa)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_DYER_COCHINEAL</Tag>
@@ -55,6 +56,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Красильщик ткани (кошениль):Красильщики ткани (кошениль)</Russian>
+		<Hungarian>Ruhafestő (Bíbortetű):Ruhafestő (Bíbortetű)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_WOOL_DYER_LOGWOOD</Tag>
@@ -80,6 +82,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Красильщик шерсти (кампеш):Красильщики шерсти (кампеш)</Russian>
+		<Hungarian>Gyapjúfestő (Kékfa):Gyapjúfestő (Kékfa)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_WOOL_DYER_COCHINEAL</Tag>
@@ -105,6 +108,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Красильщик шерсти (кошениль):Красильщики шерсти (кошениль)</Russian>
+		<Hungarian>Gyapjúfestő (Bíbortetű):Gyapjúfestő (Bíbortetű)</Hungarian>
 	</TEXT>
 	<!-- Outdoor Professions -->
 	<TEXT>
@@ -135,6 +139,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Охотник на птиц:Охотники на птиц</Russian>
+		<Hungarian>Vadász (Madár)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BIRD_HUNTER_HELP</Tag>
@@ -147,6 +152,7 @@
 		<German>Unter Vogeljagd versteht man die Jagd auf Vögel zur Gewinnung von Fleisch, Federn oder anderen kommerziell wertvollen Produkten. Im Norden können Daunenfedern von Eiderenten für Daunendecken und Steppjacken gesammelt werden, ohne dass die Vögel getötet werden müssen.[NEWLINE]Vom 17. bis zum späten 19. Jahrhundert wurden Flinten durch die Mündung mit Schwarzpulver und Bleischrot geladen, bis Perkussionsschlosswaffen und Hinterlader populär wurden. In Europa brauchte jeder Gutsbesitzer einen Wildhüter.</German>
 		<Italian>La caccia agli uccelli per ricavarne carne, piume o altri prodotti di valore commerciale. Nel nord, le piume di edredone possono essere raccolte per ottenere piumini e giacche trapuntate senza necessariamente uccidere gli uccelli.[NEWLINE]Dal 17° alla fine del 19° secolo i fucili da caccia erano caricati dalla canna con polvere nera e pallini di piombo, fino a quando non si sono diffuse le armi da fuoco con chiusura a percussione e quelle con caricamento a culatta. In Europa ogni proprietà terriera aveva bisogno di un guardiacaccia.</Italian>
 		<Spanish>La caza de aves para obtener carne, plumas u otros productos de valor comercial. En el norte, las plumas del pato de flojel se pueden recoger para confeccionar edredones y chaquetas acolchadas sin necesidad de matar a las aves.[NEWLINE]Desde el siglo XVII hasta finales del XIX, las escopetas se cargaban por la boca con pólvora negra y perdigones de plomo, hasta que se popularizaron las armas de fuego de percusión y las pistolas de avancarga. En Europa, todos los terratenientes necesitaban un guardabosque.</Spanish>
+		<Hungarian>A madárvadászat madarak húsáért, tolláért vagy más kereskedelmi értékű termékekért folyik. Északon a pehelyréce tollát pehelypaplanok és steppelt kabátok készítéséhez lehet gyűjteni anélkül, hogy a madarakat meg kellene ölni. A 17. századtól a 19. század végéig a puskákat a csővükön keresztül töltötték meg puskaporral és ólomgolyókkal, amíg a csappantyús lőfegyverek és a töltényes fegyverek népszerűvé nem váltak. Európában minden földbirtokosnak szükség volt vadőrre.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BIRD_HUNTER_STRATEGY</Tag>
@@ -155,6 +161,7 @@
 		<German>In Wald-Geländefeldern kann die Jagd auf Vögel [LINK=YIELD_WILD_FEATHERS]Wildvogelfedern[\LINK] erbringen, wenn der Kolonist, der sie bejagt, dem Beruf [COLOR_HIGHLIGHT_TEXT]Vogeljäger[COLOR_REVERT] ausübt. Die Anzahl gefangener Vögel im Beutel kann erhöht werden, indem Sie einen [LINK=UNIT_HUNTER]erfahrenen Jäger[\LINK] mit der Jagd beauftragen.</German>
 		<Italian>Le tessere foresta possono produrre [LINK=YIELD_WILD_FEATHERS]piume di uccelli selvatici[\LINK] dalla caccia agli uccelli se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]cacciatore di uccelli[COLOR_REVERT]. Gli uccelli nella sacca di gioco possono essere aumentati assegnando al lavoro un [LINK=UNIT_HUNTER]cacciatore esperto[\LINK].</Italian>
 		<Spanish>Las losetas de bosque pueden producir [LINK=YIELD_WILD_FEATHERS]plumas de aves silvestres[\LINK] de aves de caza si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]cazador de aves[COLOR_REVERT]. Las aves de tu bolsa de juego pueden aumentarse asignando un [LINK=UNIT_HUNTER]experto cazador[\LINK] al trabajo.</Spanish>
+		<Hungarian>Az erdei mezők [LINK=YIELD_WILD_FEATHERS]vadmadár tollat[\LINK] adhatnak, ha a lakosnak [COLOR_HIGHLIGHT_TEXT]madárvadász[COLOR_REVERT] szakmát választasz. A levadászott madarak számát növelheted, ha egy [LINK=UNIT_HUNTER]tapasztalt vadászt[\LINK] rendelsz a munkához.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SEA_BIRD_HUNTER</Tag>
@@ -184,6 +191,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Охотник на морских птиц:Охотники на морских птиц</Russian>
+		<Hungarian>Vadász (Tengerimadár)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SEA_BIRD_HUNTER_HELP</Tag>
@@ -196,6 +204,7 @@
 		<German>Für die Jagd auf Wasservögel werden hauptsächlich Köder und Schrotflinten benötigt. Jäger setzen auch eine ganze Reihe von Hunderassen also use a variety of dogs, from pointers to retrievers.[NEWLINE]Auf den westlichen Inseln Schottlands jagen Jäger, die Gillies genannt werden, Seevögel von ihren Nestern auf den Klippen.[NEWLINE]Der effizienteste Jäger ist der Punt Gunner. Er hat eine lange Kanone mit kleinem Lauf und Mündung, die mittig in einem speziell konstruierten Boot montiert ist, das einem schweren Holzkajak ähnelt. Der Schütze liegt in der hinteren Hälfte des Bootes mit an den Unterarmen befestigten Paddelblättern und nähert sich einem Floß von Enten. Nach einem einzigen gewaltigen Kanonenschuss muss er nur noch die Ernte einsammeln und zum Markt bringen.</German>
 		<Italian>Per la caccia agli uccelli acquatici le esche e i fucili da caccia sono gli strumenti principali. Gli strumenti principali sono le esche e i fucili da caccia. I cacciatori utilizzano anche una varietà di cani, dai pointer ai retriever.[NEWLINE]Nelle isole occidentali della Scozia, i cacciatori chiamati gillies catturano gli uccelli marini dai loro nidi sulle scogliere.[NEWLINE]Il cacciatore più efficiente è il punt gunner. Ha un lungo cannone ad avancarica di piccole dimensioni, montato al centro della prua di un'imbarcazione appositamente progettata come un pesante kayak di legno. Il tiratore si trova nella metà posteriore con le pale legate agli avambracci, avvicinandosi a una zattera di anatre. Dopo un'unica, massiccia cannonata, è sufficiente raccogliere il raccolto e portarlo al mercato.</Italian>
 		<Spanish>Para cazar aves acuáticas se necesitan principalmente señuelos y escopetas. Las principales herramientas son los señuelos y las escopetas.[NEWLINE]En las islas occidentales de Escocia, unos cazadores llamados gillies cazan aves marinas en sus nidos de los acantilados.[NEWLINE]El cazador más eficaz es el artillero de batea. Lleva un cañón largo de pequeño calibre cargado en la boca, montado en el centro de una embarcación especialmente diseñada como un pesado kayak de madera. El cazador se coloca en la popa con las palas de los remos atadas a los antebrazos, acercándose a una balsa de patos. Tras un único cañonazo, sólo queda recoger la cosecha y llevarla al mercado.</Spanish>
+		<Hungarian>A vadvízi madárvadászat a vízimadarak vadászatának történelmi neve. A legfontosabb eszközök a csalik és a sörétes puskák. A vadászok különféle kutyákat is használnak, a pointerektől a retrieverekig. [NEWLINE]Skócia nyugati szigetein a gillies nevű vadászok a sziklák tetején lévő fészkekből veszik ki a tengeri madarakat. [NEWLINE]A leghatékonyabb madárvadász a punt gunner. Hosszú, kis kaliberű, elöltöltős fegyverrel rendelkezik, amelyet egy speciálisan tervezett, nehéz fa kajakhoz hasonló csónak közepén elöl helyeztek el. A vadász a csónak hátsó felében fekszik, evezőlapátokat kötve az alkarjához, és így közelít meg egy kacsa csapatot. Egyetlen hatalmas ágyúlövés után már csak össze kell gyűjteni a zsákmányt és elvinni a piacra.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SEA_BIRD_HUNTER_STRATEGY</Tag>
@@ -204,6 +213,7 @@
 		<German>Küsten- und Wasser-Geländefelder kann die Jagd auf Seevögel [LINK=YIELD_WILD_FEATHERS]Wildvogelfedern[\LINK] erbringen, wenn der Kolonist, der sie bejagt, dem Beruf [COLOR_HIGHLIGHT_TEXT]Seevogeljäger[COLOR_REVERT] zugeordnet ist. Die Anzahl gefangener Vögel kann erhöht werden, indem Sie einen [LINK=UNIT_SEALS_HUNTER]erfahrenen Robbenjäger[\LINK] mit der Jagd beauftragen.</German>
 		<Italian>Le tessere della costa e dell'acqua possono produrre [LINK=YIELD_WILD_FEATHERS]piume di uccelli selvatici[\LINK] dalla uccelli marini se il colono che vi lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]cacciatore di uccelli marini[COLOR_REVERT]. Gli uccelli presenti nella sacca di gioco possono essere aumentati assegnando il lavoro a un [LINK=UNIT_SEALS_HUNTER]cacciatore di foche esperto[\LINK].</Italian>
 		<Spanish>Las losetas de costa y agua pueden producir [LINK=YIELD_WILD_FEATHERS]plumas de aves silvestres[\LINK] de caza de aves marinas si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]cazador de aves marinas[COLOR_REVERT]. Las aves de tu bolsa de juego pueden aumentar asignando un [LINK=UNIT_SEALS_HUNTER]experto cazador de focas[\LINK] al trabajo.</Spanish>
+		<Hungarian>A parti és vízi mezők [LINK=YIELD_WILD_FEATHERS]madártollakat[\LINK] adhatnak a tengeri madarak vadászatából, ha az itt dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]tengeri madár vadász[COLOR_REVERT] szakmát választod. A levadászott madarak számát növelheted, ha egy [LINK=UNIT_SEALS_HUNTER]tapasztalt vadászt[\LINK] rendelsz a munkához.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BLOODWOOD_CUTTER</Tag>
@@ -233,6 +243,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик кампеша:Сборщики кампеша</Russian>
+		<Hungarian>Kékfa Favágó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BLOODWOOD_CUTTER_HELP</Tag>
@@ -245,6 +256,7 @@
 		<German>Blauholz ist ein vielseitiger Farbstoff, der sowohl für Textilien als auch für Papier verwendet wird. Es kann auch als pH-Indikator verwendet werden, der unter sauren Bedingungen gelb-rötlich und unter alkalischen Bedingungen violett ist. Die Rinde und die Blätter werden auch für verschiedene medizinische Zwecke verwendet.[NEWLINE]Blauholz spielte im Leben der Freibeuter des 17. Jahrhunderts während des Goldenen Zeitalters der Piraterie eine wichtige Rolle. Die Holzfäller wurden oft von spanischen Schiffen um ihre Arbeit gebracht und schlossen sich daher Piratencrews an, um die Spanier zu überfallen und ihr Holz zurückzubekommen.</German>
 		<Italian>Il sanguinaccio è un colorante versatile, utilizzato sia per i tessuti che per la carta. Può essere utilizzato anche come indicatore di pH, giallo-rossastro in condizioni di acidità e viola in condizioni di alcalinità. La corteccia e le foglie sono utilizzate anche in varie applicazioni mediche.[NEWLINE]Il legno di sanguinella ha avuto un ruolo importante nella vita dei bucanieri del XVII secolo, durante l'età d'oro della pirateria. I tagliatori di legno di sanguinello si vedevano spesso sequestrare la loro produzione dalle navi spagnole, per cui si univano alle ciurme dei pirati per razziare gli spagnoli e recuperare il loro legno.</Italian>
 		<Spanish>La madera sanguina es un tinte versátil, utilizado tanto para textiles como para papel. También puede utilizarse como indicador del pH, de color amarillo rojizo en condiciones ácidas y púrpura cuando es alcalino. La corteza y las hojas también se utilizan en diversas aplicaciones médicas.[NEWLINE]La madera de sanguino desempeñó un papel importante en la vida de los bucaneros del siglo XVII durante la Edad de Oro de la Piratería. A menudo, los barcos españoles se apoderaban de la madera, por lo que se unían a las tripulaciones piratas para asaltar a los españoles y recuperar su madera.</Spanish>
+		<Hungarian>A kékfa egy sokoldalú festék, amelyet textíliák és papír festésére egyaránt használnak. pH-indikátorként is alkalmazható: savas környezetben sárgás-vöröses, lúgos környezetben pedig lila színű. A kéreg és a levelek különböző gyógyászati célokra is felhasználhatók. A kékfa fontos szerepet játszott a 17. századi kalózok életében, a kalózkodás aranykorában. A kékfavágók áruját gyakran elkobozták a spanyol hajók, ezért csatlakoztak a kalózokhoz, hogy megtámadják a spanyolokat és visszaszerezzék a fát.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BLOODWOOD_CUTTER_STRATEGY</Tag>
@@ -253,6 +265,7 @@
 		<German>Dschungel-Geländefelder können [LINK=YIELD_LOGWOOD]Blauholz[\LINK] liefern, wenn der Kolonist, der sie bearbeitet, dem Beruf [LINK=PROFESSION_LOGWOOD_COLLECTOR]Holzfäller (Blauholz)[COLOR_REVERT] zugeordnet ist. Die Blauholzproduktion kann erhöht werden, indem ein [LINK=UNIT_LOGWOOD_COLLECTOR]erfahrener Blauholz-Sammler[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere della giungla possono produrre [LINK=YIELD_LOGWOOD]legno di sangue[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]tagliatore di legno di sangue[COLOR_REVERT]. La produzione di legno di sangue può essere aumentata assegnando al lavoro un [LINK=UNIT_LOGWOOD_COLLECTOR]tagliatore di legno di sangue esperto[\LINK].</Italian>
 		<Spanish>Las losetas de selva pueden producir [LINK=YIELD_LOGWOOD]madera de sangre[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]cortador de madera de sangre[COLOR_REVERT]. La producción de madera de sangre puede aumentarse asignando un [LINK=UNIT_LOGWOOD_COLLECTOR]experto cortador de madera de sangre[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dzsungel mezők [LINK=YIELD_LOGWOOD]kéfát[\LINK] adnak, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]kéfa favágó[COLOR_REVERT] szakmát választod. A kékfa termelése növelhető, ha egy [LINK=UNIT_LOGWOOD_COLLECTOR]tapasztalt kékfa favágót[\LINK] rendelsz a munkához.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HARDWOOD_LUMBERJACK</Tag>
@@ -282,6 +295,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Лесоруб (твердая древесина):Лесорубы (твердая древесина)</Russian>
+		<Hungarian>Favágó (Keményfa):Favágó (Keményfa)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HARDWOOD_LUMBERJACK_HELP</Tag>
@@ -294,6 +308,7 @@
 		<German>Hartholz findet man in Laubwäldern der gemäßigten und tropischen Zonen. Tropische Harthölzer wie Mahagoni werden für Möbel geschätzt. Teakholz ist zwar nicht auf dem amerikanischen Kontinent heimisch, kann aber in der Karibik angebaut werden und ist für den Schiffbau von Bedeutung.[NEWLINE]Hartholz wird für Brennstoffe, Werkzeuge, den Bau, den Bootsbau, den Möbelbau, Musikinstrumente, Fußböden, zum Kochen, für Fässer und zur Herstellung von Holzkohle verwendet. Die Dichte trägt zu Haltbarkeit, Aussehen und Leistung bei. Massivholztischlerarbeiten sind im Vergleich zu Weichholz teuer.</German>
 		<Italian>Il legno duro si trova nelle foreste temperate e tropicali a foglia larga. I legni duri tropicali come il mogano sono apprezzati per i mobili. Il teak, pur non essendo originario delle Americhe, può essere coltivato nei Caraibi ed è importante per la costruzione di navi.[NEWLINE]Il legno duro è usato per combustibili, utensili, costruzioni, costruzione di barche, mobili, strumenti musicali, pavimenti, cucina, barili e produzione di carbone. La densità aumenta la durata, l'aspetto e le prestazioni. La falegnameria in legno massiccio è costosa rispetto al legno tenero.</Italian>
 		<Spanish>La madera dura se encuentra en los bosques tropicales y templados de hoja ancha. Las maderas duras tropicales, como la caoba, son apreciadas para la fabricación de muebles. La teca, aunque no es nativa de América, puede cultivarse en el Caribe y es importante en la construcción naval[NEWLINE]La madera dura se utiliza como combustible, herramienta, construcción, construcción de barcos, fabricación de muebles, instrumentos musicales, suelos, cocina, barriles y fabricación de carbón vegetal. Su densidad contribuye a su durabilidad, aspecto y rendimiento. La carpintería de madera dura maciza es más cara que la de madera blanda.</Spanish>
+		<Hungarian>A keményfa lombhullató, mérsékelt éghajlati és trópusi erdőkben található. A trópusi keményfák, mint például a mahagóni, bútorok gyártásához használatosak. A teakfa, bár nem őshonos Amerikában, a Karib-térségben termeszthető és fontos szerepet játszik a hajóépítésben. A keményfa tüzelőanyagként, szerszámok, építkezés, hajóépítés, bútorgyártás, hangszerek, padlóburkolat, főzés, hordók és faszén gyártásához használatos. Sűrűsége növeli a tartósságát, megjelenését és minőségét. A tömör keményfa drágább a puhafához képest.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HARDWOOD_LUMBERJACK_STRATEGY</Tag>
@@ -302,6 +317,7 @@
 		<German>Dschungel- und Wald-Geländefelder können [LINK=YIELD_HARDWOOD]Hartholz[\LINK] liefern, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Holzfäller (Hartholz)[COLOR_REVERT] zugeordnet ist. Die Hartholzproduktion kann erhöht werden, indem ein [LINK=UNIT_LUMBERJACK]erfahrener Holzfäller[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere giungla e foresta possono produrre [LINK=YIELD_HARDWOOD]legno duro[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]taglialegna[COLOR_REVERT]. La produzione di legno duro può essere aumentata assegnando al lavoro un [LINK=UNIT_LUMBERJACK]boscaiolo esperto[\LINK].</Italian>
 		<Spanish>Las losetas de selva y bosque pueden producir [LINK=YIELD_HARDWOOD]madera dura[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]leñador de madera dura[COLOR_REVERT]. La producción de madera dura puede aumentarse asignando un [LINK=UNIT_LUMBERJACK]leñador experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dzsungel és az erdő mezők [LINK=YIELD_HARDWOOD]keményfát[\LINK] adnak, ha az itt dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]keményfa favágó[COLOR_REVERT] szakmát választod. A keményfa termelése növelhető egy [LINK=UNIT_LUMBERJACK]tapasztalt favágó[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GOATHERD</Tag>
@@ -335,6 +351,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Kecskepásztor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GOATHERD_HELP</Tag>
@@ -342,11 +359,12 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GOATHERD_PEDIA</Tag>
-		<English>Goats will eat vegetation that most other domesticated livestock decline, so they can subsist on very poor land. Unprocessed goat milk has small, well-emulsified fat globules, which means the cream remains suspended in the milk instead of rising to the top, as in unprocessed cow milk; therefore, it does not need to be homogenized.[NEWLINE]The number of animals that a goat farmer can sustain depends on the quality of the pasture. A poor man with poor land can still raise goats.[NEWLINE]Perhaps because of their adaptability, goats have become a symbol of evil. Witches are said to cavort with goats. Satan has goat horns.</English>
+		<English>Goats will eat vegetation that most other domesticated livestock avoid, so they can subsist on very poor land. Unprocessed goat milk has small, well-emulsified fat globules, which means the cream remains suspended in the milk instead of rising to the top, as in unprocessed cow milk; therefore, it does not need to be homogenized.[NEWLINE]The number of animals that a goat farmer can sustain depends on the quality of the pasture. A poor man with poor land can still raise goats.[NEWLINE]Perhaps because of their adaptability, goats have become a symbol of evil. Witches are said to cavort with goats. Satan has goat horns.</English>
 		<French>Les chèvres mangent des végétaux que la plupart des autres animaux domestiques refusent, ce qui leur permet de subsister sur des terres très pauvres. Le lait de chèvre non transformé contient de petits globules gras bien émulsionnés, ce qui signifie que la crème reste en suspension dans le lait au lieu de remonter à la surface, comme c'est le cas pour le lait de vache non transformé ; il n'est donc pas nécessaire de l'homogénéiser.[NEWLINE]Le nombre d'animaux qu'un éleveur de chèvres peut faire vivre dépend de la qualité du pâturage. Un homme pauvre disposant d'une terre pauvre peut tout de même élever des chèvres.[NEWLINE]Peut-être en raison de leur adaptabilité, les chèvres sont devenues un symbole du mal. On dit que les sorcières se promènent avec des chèvres. Satan a des cornes de chèvre.</French>
 		<German>Ziegen fressen Pflanzen, die von den meisten anderen Haustieren verschmäht werden, so dass sie auch auf sehr kargen Böden überleben können. Unverarbeitete Ziegenmilch hat kleine, gut emulgierte Fettkügelchen, was bedeutet, daß der Rahm in der Milch schwebt und nicht wie bei unverarbeiteter Kuhmilch nach oben steigt.[NEWLINE]Die Anzahl der Tiere, die ein Ziegenhalter halten kann, hängt von der Qualität der Weide ab. Ein armer Mann mit schlechtem Land kann immer noch Ziegen züchten.[NEWLINE]Vielleicht ist die Ziege wegen ihrer Anpassungsfähigkeit zu einem Symbol des Bösen geworden. Man sagt, daß sich Hexen mit Ziegen tummeln. Satan hat Ziegenhörner.</German>
 		<Italian>Le capre mangiano la vegetazione che la maggior parte degli altri animali domestici rifiuta, per cui possono sopravvivere anche su terreni molto poveri. Il latte di capra non trasformato ha globuli di grasso piccoli e ben emulsionati, il che significa che la panna rimane sospesa nel latte invece di salire in cima, come nel latte di mucca non trasformato; pertanto, non ha bisogno di essere omogeneizzato.[NEWLINE]Il numero di animali che un allevatore di capre può mantenere dipende dalla qualità del pascolo. Un uomo povero con terreni poveri può comunque allevare capre.[NEWLINE]Forse per la loro adattabilità, le capre sono diventate un simbolo del male. Si dice che le streghe cavalchino con le capre. Satana ha corna di capra.</Italian>
 		<Spanish>Las cabras comen vegetación que la mayoría del resto del ganado doméstico rechaza, por lo que pueden subsistir en tierras muy pobres. La leche de cabra sin procesar tiene glóbulos de grasa pequeños y bien emulsionados, lo que significa que la nata permanece suspendida en la leche en lugar de subir a la superficie, como en la leche de vaca sin procesar; por lo tanto, no es necesario homogeneizarla[NEWLINE]El número de animales que puede mantener un criador de cabras depende de la calidad de los pastos. Un hombre pobre con tierras pobres puede criar cabras.[NEWLINE]Quizá por su adaptabilidad, las cabras se han convertido en un símbolo del mal. Se dice que las brujas retozan con cabras. Satán tiene cuernos de cabra.</Spanish>
+		<Hungarian>A kecskék olyan növényeket is megesznek, amelyeket a legtöbb más háziasított állat nem, így nagyon szegényes talajon is megélhetnek. A feldolgozatlan kecsketejben apró, jól emulgeált zsírdarabok vannak, ami azt jelenti, hogy a tejszín a tejben marad és nem emelkedik a tetejére, mint a feldolgozatlan tehéntejben; ezért nem kell homogenizálni. [NEWLINE]Az, hogy egy kecsketenyésztő hány állatot tud tartani, a legelő minőségétől függ. Egy szegény ember szegényes földjén is tarthat kecskéket. [NEWLINE]Talán alkalmazkodóképességük miatt a kecskék a gonosz szimbólumává váltak. A boszorkányok állítólag kecskékkel mulatoznak. A Sátán kecskeszarvakkal rendelkezik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GOATHERD_STRATEGY</Tag>
@@ -355,6 +373,7 @@
 		<German>Auf Hügel-Geländefeldern ([LINK=TERRAIN_TAIGA]Taiga[\LINK], [LINK=TERRAIN_MARSH]Sumpf[\LINK], [LINK=TERRAIN_WETLAND]Moor[\LINK], [LINK=TERRAIN_SHRUBLAND]Buschland[\LINK]) können Sie [LINK=YIELD_GOATS]Ziegen[\LINK] züchten, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Ziegenhirte[COLOR_REVERT] angehört. Ziegenherden können vergrößert werden, indem man einen [LINK=UNIT_HERDER]erfahrenen Hirten[\LINK] mit der Aufgabe betraut.</German>
 		<Italian>Le tessere pianura permettono di allevare [LINK=YIELD_GOATS]capre[\LINK] se il colono che le lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]capraio[COLOR_REVERT]. Gli allevamenti di capre possono essere aumentati assegnando al lavoro un [LINK=UNIT_HERDER]pastore esperto[\LINK].</Italian>
 		<Spanish>Las losetas de llanura te permiten criar [LINK=YIELD_GOATS]cabras[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]cabrero[COLOR_REVERT]. Los rebaños de cabras pueden aumentarse asignando un [LINK=UNIT_HERDER]pastor experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A síksági területeken [LINK=YIELD_GOATS]kecskét[\LINK] lehet tenyészteni, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]kecskepásztor[COLOR_REVERT] szakmát választod. A kecskeállomány gyorsabban növelhető egy [LINK=UNIT_HERDER]Tapasztalt Pásztor[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PIG_BREEDER</Tag>
@@ -384,6 +403,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Скотовод (свиньи):Скотоводы (свиньи)</Russian>
+		<Hungarian>Tenyésztő (Disznó)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PIG_BREEDER_HELP</Tag>
@@ -396,6 +416,7 @@
 		<German>Früher wurden einige wenige Schweine in der Nähe des Wohnsitzes des Besitzers oder im selben Dorf oder Stadt gehalten. Es gibt viele Arten der Schweinehaltung: intensive Massentierhaltung, Freilandbetriebe oder einfaches Herumlaufenlassen. Die Schweine können in einem einfachen Stall angebunden oder in einem Pferch vor dem Haus des Besitzers gehalten werden.[NEWLINE]Schweine werden als Nahrungsmittel und zum Häuten gezüchtet. Sie werden wegen ihrer Fähigkeit geschätzt, ungenießbare Lebensmittel in Fleisch und Dung zu verwandeln, und können mit Lebensmittelabfällen aus dem Haushalt gefüttert werden. In großem Maßstab sind Schweine eine Möglichkeit, kommunale Abfälle zu entsorgen.</German>
 		<Italian>Storicamente, alcuni maiali venivano allevati vicino alla residenza del proprietario, o nello stesso villaggio o città. Esistono molti modi di allevare i maiali: unità commerciali intensive, aziende commerciali a stabulazione libera o semplicemente lasciandoli liberi di vagare. Possono essere legati in un semplice ricovero o tenuti in un recinto fuori dalla casa del proprietario.[NEWLINE]I maiali sono allevati per il cibo e le pelli. Sono apprezzati per la loro capacità di convertire il cibo non commestibile in carne e letame e possono essere alimentati con rifiuti alimentari domestici. Su larga scala, i maiali sono un modo per smaltire i rifiuti urbani.</Italian>
 		<Spanish>Históricamente se criaban unos cuantos cerdos cerca de la residencia del propietario, o en el mismo pueblo o ciudad. Hay muchas formas de criar cerdos: unidades comerciales intensivas, empresas comerciales de cría al aire libre o simplemente dejarlos vagar. Los cerdos se crían para obtener alimentos y pieles.[NEWLINE]Se valoran por su capacidad para convertir alimentos no comestibles en carne y estiércol, y pueden alimentarse con residuos de comida doméstica. A gran escala, los cerdos son una forma de eliminar la basura municipal.</Spanish>
+		<Hungarian>Hagyományosan néhány sertést tartottak a tulajdonos lakóhelye közelében, vagy ugyanabban a faluban vagy városban. A sertés tenyésztésének számos módja létezik: intenzív kereskedelmi egységek, kereskedelmi szabad tartású vállalkozások, vagy egyszerűen csak az állatok szabadon tartása. Az állatokat egyszerű menedékhelyen lehet tartani vagy a tulajdonos házán kívül egy karámban. A sertéseket élelmiszer és bőr céljából tenyésztik. Értékesek azért, mert a nem ehető élelmiszereket hússá és trágyává alakítják és háztartási élelmiszer-hulladékkal is etethetők. Nagy léptékben a sertések a települési hulladékok egyik feldolgozási módját jelentik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PIG_BREEDER_STRATEGY</Tag>
@@ -404,6 +425,7 @@
 		<German>Auf Flachland-Geländefeldern ([LINK=TERRAIN_TAIGA]Taiga[\LINK], [LINK=TERRAIN_MARSH]Sumpf[\LINK], [LINK=TERRAIN_WETLAND]Moor[\LINK], [LINK=TERRAIN_SHRUBLAND]Buschland[\LINK]) können Sie [LINK=YIELD_PIGS]Schweine[\LINK] züchten, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Schweinehirte[COLOR_REVERT] zugeordnet ist. Die Schweineproduktion kann gesteigert werden, indem man einen [LINK=UNIT_HERDER]erfahrenen Hirten[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le caselle di pianura consentono di allevare [LINK=YIELD_PIGS]maiali[\LINK] se il colono che vi lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]allevatore di maiali[COLOR_REVERT]. La produzione di maiali può essere aumentata assegnando al lavoro un [LINK=UNIT_HERDER]pastore esperto[\LINK].</Italian>
 		<Spanish>Las losetas de llanura te permiten criar [LINK=YIELD_PIGS]cerdos[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]criador de cerdos[COLOR_REVERT]. La producción de cerdos puede aumentarse asignando un [LINK=UNIT_HERDER]pastor experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A síksági területeken [LINK=YIELD_PIGS]sertéseket[\LINK] lehet tenyészteni, ha az ott dolgozó lakosnak [COLOR_HIGHLIGHT_TEXT]sertéstenyésztő[COLOR_REVERT] szakmát választod. A sertéstermelés tovább növelhető egy [LINK=UNIT_HERDER]Tapasztalt Pásztor[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHICKEN_BREEDER</Tag>
@@ -433,6 +455,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Заводчик кур:Заводчики кур</Russian>
+		<Hungarian>Tenyésztő (Csirke)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHICKEN_BREEDER_HELP</Tag>
@@ -445,6 +468,7 @@
 		<German>In der Freilandhaltung können sich die Hühner tagsüber frei bewegen, während sie nachts zum Schutz vor Raubtieren normalerweise in Ställen eingesperrt sind.[NEWLINE]Die Hühner beginnen im Alter von 16 bis 21 Wochen mit dem Legen von Eiern, wobei die Produktion nach 25 Wochen abnimmt. Wenn nach etwa 12 Monaten die Wirtschaftlichkeit der Eierproduktion nicht mehr gegeben ist, werden die Hühner geschlachtet.</German>
 		<Italian>L'allevamento all'aperto consente alle galline di razzolare durante il giorno, anche se di notte sono generalmente confinate in pollai per proteggerle dai predatori.[NEWLINE]Le galline iniziano a deporre le uova a 16-21 settimane di età, anche se la produzione inizia a diminuire dopo le 25 settimane. Poiché l'economia delle uova non ha più senso, le galline vengono macellate dopo circa 12 mesi di produzione di uova.</Italian>
 		<Spanish>La avicultura al aire libre permite a las gallinas deambular durante el día, aunque suelen estar confinadas en gallineros por la noche para protegerlas de los depredadores.[NEWLINE]Las gallinas empiezan a poner huevos a las 16-21 semanas de edad, aunque la producción empieza a disminuir a partir de las 25 semanas. Como la economía del huevo ya no tiene sentido, las gallinas se sacrifican después de aproximadamente 12 meses de producción de huevos.</Spanish>
+		<Hungarian>A szabad tartású csirketenyésztés lehetővé teszi, hogy az állatok napközben szabadon mozogjanak, bár éjszakára általában ketrecekbe zárják őket a ragadozóktól való védelem érdekében. Rossz időjárás esetén szintén bent tartják őket. A tyúkok 16–21 hetes korukban kezdenek tojást rakni, bár a termelés 25 hetes koruk után csökkenni kezd. A csirkéket körülbelül 12 hónapos tartás után, a tojástermelés csökkenése után vágják le.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHICKEN_BREEDER_STRATEGY</Tag>
@@ -453,6 +477,7 @@
 		<German>Auf Flachland-Geländefeldern ([LINK=TERRAIN_MARSH]Sumpf[\LINK], [LINK=TERRAIN_SHRUBLAND]Buschland[\LINK]) können Sie [LINK=YIELD_CHICKEN]Hühner[\LINK] züchten, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Geflügelzüchter (Hühner)[COLOR_REVERT] angehört. Die Hühnerproduktion kann gesteigert werden, indem ein [LINK=UNIT_BREEDER]erfahrenen Geflügelzüchter[\LINK] mit der Aufgabe betraut wird.</German>
 		<Italian>Le tessere pianura permettono di allevare [LINK=YIELD_CHICKEN]polli[\LINK] se il colono che vi lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]allevatore di polli[COLOR_REVERT]. La produzione di polli può essere aumentata assegnando al lavoro un [LINK=UNIT_BREEDER]esperto allevatore di pollame[\LINK].</Italian>
 		<Spanish>Las losetas de llanura te permiten criar [LINK=YIELD_CHICKEN]pollos[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]criador de pollos[COLOR_REVERT]. La producción de pollos puede aumentarse asignando un [LINK=UNIT_BREEDER]experto criador de aves de corral[\LINK] al trabajo.</Spanish>
+		<Hungarian>A síksági területeken [LINK=YIELD_CHICKEN]csirkéket[\LINK] lehet tenyészteni, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]csirketenyésztő[COLOR_REVERT] szakmát választod. A csirke termelés tovább növelhető egy [LINK=UNIT_BREEDER]tapasztalt baromfitenyésztő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GEESE_BREEDER</Tag>
@@ -482,6 +507,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Заводчик гусей:Заводчики гусей</Russian>
+		<Hungarian>Tenyésztő (Liba)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GEESE_BREEDER_HELP</Tag>
@@ -494,6 +520,7 @@
 		<German>Gänse sind unter den Hausvögeln die am schnellsten wachsenden Tiere. Sie sind widerstandsfähig und bei ständiger Pflege frei von Krankheiten. Gänse können auf grünen Weiden aufgezogen werden, was die Produktionskosten erheblich senkt.[NEWLINE]Unter den Wasservögeln werden die Gänserassen in schwere, mittlere und leichte Klassen eingeteilt. Gänse werden für Fleisch, Stopfleber und gelegentlich für spezielle Eier gezüchtet. Sie sind auch charmante und intelligente Haustiere, nützliche Wachhunde und effiziente Rasenmäher.[NEWLINE]Jede Zuchtgans benötigt 200 Gramm Getreide und 100 Gramm Gemüse pro Tag. Um festzustellen, wann Gänse sich paaren, nehmen Sie ein Weibchen aus dem Stall und beobachten Sie, wie die Ganter reagieren. Während der Brutzeit werden Gänse, sowohl die Gänse als auch die Ganter, aggressiv gegenüber Menschen, Hunden und Katzen.</German>
 		<Italian>Le oche sono gli uccelli domestici che crescono più rapidamente. Sono resistenti e prive di malattie se sottoposte a cure costanti. Le oche possono essere allevate su pascoli verdi, il che riduce notevolmente i costi di produzione.[NEWLINE]Tra gli uccelli acquatici, le razze di oche sono raggruppate in classi pesanti, medie e leggere. Le oche sono allevate per la carne, il foie gras e occasionalmente per le uova speciali. Sono anche animali domestici affascinanti e intelligenti, utili cani da guardia ed efficienti tosaerba.[NEWLINE]Ogni oca da riproduzione ha bisogno di 200 grammi di cereali e 100 grammi di verdure al giorno. Per sapere quando le oche si stanno accoppiando, basta togliere una femmina dal recinto e vedere come reagisce l'oca. Durante la stagione riproduttiva, sia le oche che i paperi diventano aggressivi nei confronti di persone, cani e gatti.</Italian>
 		<Spanish>Los gansos son las aves domésticas que crecen más rápido. Son resistentes y no padecen enfermedades cuando se les proporcionan cuidados constantes. Los gansos pueden criarse en pastos verdes, lo que reduce considerablemente los costes de producción.[NEWLINE]Entre las aves acuáticas, las razas de gansos se agrupan en pesadas, medianas y ligeras. Las ocas se crían para la producción de carne, foie gras y, ocasionalmente, huevos especiales. También son animales de compañía encantadores e inteligentes, útiles perros guardianes y eficaces cortacéspedes.[NEWLINE]Cada ganso reproductor necesita 200 gramos de grano y 100 gramos de verduras al día. Para saber cuándo se están apareando los gansos, saque una hembra del corral y vea cómo reacciona el ganso. Durante la época de cría, tanto los gansos como las ocas se vuelven agresivos con las personas, los perros y los gatos.</Spanish>
+		<Hungarian>A libák a háziasított madarak közül a leggyorsabban növekvő faj. Állandó gondozás mellett szívósak és betegségmentesek. A libákat zöld legelőkön lehet tartani, ami jelentősen csökkenti a termelési költségeket. A vízimadarak között a libafajtákat nehéz, közepes és könnyű osztályokba sorolják. A libákat húsuk, libamájuk és esetenként speciális tojásuk miatt tenyésztik. Emellett kedves és intelligens háziállatok, hasznos őrök és hatékony fűnyírók is. [NEWLINE]Minden tenyészlibának naponta 200 gramm gabonára és 100 gramm zöldségre van szüksége. Hogy megtudjuk, mikor párzanak a libák, vegyünk ki egy nőstényt a karámból és nézzük meg, hogyan reagál a kakas. A tenyészidőszakban mind a libák, mind a kakasok agresszívvá válnak az ember, a kutya és a macska társaságában.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_GEESE_BREEDER_STRATEGY</Tag>
@@ -502,6 +529,7 @@
 		<German>Auf Flachland-Geländefeldern ([LINK=TERRAIN_TAIGA]Taiga[\LINK], [LINK=TERRAIN_WETLAND]Moor[\LINK]) können Sie [LINK=YIELD_GEESE]Gänse[\LINK] züchten, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Geflügelzüchter (Gänse)[COLOR_REVERT] zugeordnet ist. Die Gänseproduktion kann erhöht werden, indem man einen [LINK=UNIT_BREEDER]erfahrenen Geflügelzüchter[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le tessere pianura permettono di allevare [LINK=YIELD_GEESE]oche[\LINK] se il colono che vi lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]allevatore di oche[COLOR_REVERT]. La produzione di oche può essere aumentata assegnando al lavoro un [LINK=UNIT_BREEDER]esperto allevatore di pollame[\LINK].</Italian>
 		<Spanish>Las losetas de llanura te permiten criar [LINK=YIELD_GEESE]gansos[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]criador de gansos[COLOR_REVERT]. La producción de gansos puede aumentarse asignando un [LINK=UNIT_BREEDER]experto criador de aves de corral[\LINK] al trabajo.</Spanish>
+		<Hungarian>A sík [LINK=TERRAIN_TAIGA]tajga[\LINK] vagy [LINK=TERRAIN_WETLAND]mocsár[\LINK]) mezőkön lehet [LINK=YIELD_GEESE]libákat[\LINK] tenyészteni, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]libatenyésztő[COLOR_REVERT] szakmát választod. A libatenyésztés tovább növelhető egy [LINK=UNIT_BREEDER]tapaszalt baromfitenyésztő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FRUITS_PICKER</Tag>
@@ -535,6 +563,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Gyümölcsszedő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FRUITS_PICKER_HELP</Tag>
@@ -547,6 +576,7 @@
 		<German>Da die Obstsorten während der Saison zu unterschiedlichen Zeiten reifen, sind die Obstpflücker oft Wanderarbeiter, die je nach Bedarf zwischen den Obstplantagen und Farmen wechseln. In den Tropen wächst Obst das ganze Jahr über.[NEWLINE]Bananen sind das beliebteste Obst der Welt. Äpfel sind in den gemäßigten Zonen weit verbreitet, und einige Beeren wachsen in der Taiga oder der Tundra.[NEWLINE]Frisches Obst ist einer der wichtigsten Faktoren, die eine Gemeinschaft vom knappen Überleben zu einer robusten Gesundheit führen. Große Obstplantagen und industrielle Farmen sind auf die tropischen und gemäßigten Zonen beschränkt, aber Beeren sind eine wichtige Vitaminquelle in kalten Klimazonen.</German>
 		<Italian>Poiché le varietà di frutta maturano in momenti diversi nel corso della stagione, i raccoglitori di frutta sono spesso migranti e si spostano tra i frutteti e le fattorie secondo le necessità. Ai tropici la frutta cresce tutto l'anno.[NEWLINE]Le banane sono il frutto più popolare al mondo. Le mele sono comuni nelle zone temperate e alcune bacche crescono nella taiga o nella tundra.[NEWLINE]Avere frutta fresca è uno dei fattori principali che portano una comunità a passare dalla sopravvivenza a malapena alla salute robusta. I grandi frutteti e le fattorie industriali sono limitati alle zone tropicali e temperate, ma le bacche sono un'importante fonte di vitamine nei climi freddi.</Italian>
 		<Spanish>Dado que las variedades de fruta maduran en distintos momentos de la temporada, los recolectores suelen ser migrantes que se desplazan entre los huertos y las explotaciones según las necesidades. En los trópicos, la fruta crece todo el año[NEWLINE]El plátano es la fruta más popular del mundo. Las manzanas son comunes en las zonas templadas, y algunas bayas crecen en la taiga o la tundra.[NEWLINE]Disponer de fruta fresca es uno de los factores más importantes para que una comunidad pase de sobrevivir a duras penas a gozar de buena salud. Los grandes huertos y las explotaciones industriales se limitan a las zonas tropicales y templadas, pero las bayas son una importante fuente de vitaminas en los climas fríos.</Spanish>
+		<Hungarian>Mivel a gyümölcsfajták a szezon során különböző időpontokban érnek be, a gyümölcsszedők gyakran költöznek és szükség szerint vándorolnak a gyümölcsösök és farmok között. A trópusokon a gyümölcsök egész évben teremnek. [NEWLINE] A banán a világ legnépszerűbb gyümölcse. Az alma a mérsékelt éghajlati övezetekben gyakori és egyes bogyós gyümölcsök a tajgán vagy a tundrán teremnek. [NEWLINE] A friss gyümölcsök rendelkezésre állása az egyik legfontosabb tényező, amely egy közösséget a puszta túléléstől a jó egészségi állapotba emeli. A nagy gyümölcsösök és ipari gazdaságok a trópusi és mérsékelt éghajlati övezetekre korlátozódnak, de a bogyós gyümölcsök fontos vitaminforrások a hideg éghajlaton.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FRUITS_PICKER_STRATEGY</Tag>
@@ -555,6 +585,7 @@
 		<German>Auf Ebenenfeldern können Sie [LINK=YIELD_FRUITS]Obst[\LINK] anbauen, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Obstpflücker[COLOR_REVERT] zugeordnet ist. Die Obsternte kann gesteigert werden, indem man einen [LINK=UNIT_FRUITS_PICKER]erfahrenen Obstpflücker[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le piastrelle di pianura permettono di coltivare [LINK=YIELD_FRUITS]frutta[\LINK] se il colono che vi lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]raccoglitore di frutta[COLOR_REVERT]. I raccolti di frutta possono essere aumentati assegnando al lavoro un [LINK=UNIT_FRUITS_PICKER]raccoglitore di frutta esperto[\LINK].</Italian>
 		<Spanish>Las baldosas de llanura te permiten cultivar [LINK=YIELD_FRUITS]fruta[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de fruta[COLOR_REVERT]. Las cosechas de fruta se pueden aumentar asignando un [LINK=UNIT_FRUITS_PICKER]recolector de fruta experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A síksági területeken [LINK=YIELD_FRUITS]gyümölcsöt[\LINK] termeszthetsz, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]gyümölcsszedő[COLOR_REVERT] szakmát választod. A gyümölcstermés tovább növelhető egy [LINK=UNIT_FRUITS_PICKER]tapasztalt gyümölcsszedő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RICE_FARMER</Tag>
@@ -584,6 +615,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик риса:Сборщики риса</Russian>
+		<Hungarian>Földműves (Rizs)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RICE_FARMER_HELP</Tag>
@@ -596,6 +628,7 @@
 		<German>Reis wird seit mindestens 7.000 Jahren angebaut. Unter den Getreidesorten ist er insofern ungewöhnlich, als fast der gesamte Reis vom Menschen gegessen wird, obwohl die nach dem Mahlen verbleibende Kleie als Viehfutter verwendet wird. Der meiste Reis wird auf überschwemmtem Land in den Küstenebenen, Gezeitendeltas und Flussgebieten der tropischen, halbtropischen und gemäßigten Regionen angebaut.[NEWLINE]40 Tage mit einer Temperatur von über 21 Grad sind für den Anbau von Reis erforderlich. Normalerweise wird er als einjährige Pflanze angebaut, aber in tropischen Gebieten kann er auch als mehrjährige Pflanze überleben und bis zu 30 Jahre lang eine Ernte liefern. Getrocknet bietet er einen hohen Nährwert im Verhältnis zum Gewicht und ist daher ein beliebtes Nahrungsmittel für erfahrene Pfadfinder.</German>
 		<Italian>Il riso viene coltivato da almeno 7.000 anni. È insolito tra i cereali perché quasi tutto il riso viene mangiato dall'uomo, anche se la crusca rimasta dopo la macinazione viene usata come mangime per il bestiame. La maggior parte del riso viene coltivata su terreni sommersi nelle pianure costiere, nei delta di marea e nei bacini fluviali delle regioni tropicali, semitropicali e temperate.[NEWLINE]La coltivazione del riso richiede 40 giorni continui al di sopra dei 21 gradi (70 F). Normalmente viene coltivato come pianta annuale, anche se nelle aree tropicali può sopravvivere come pianta perenne, producendo un raccolto fino a 30 anni. Quando viene essiccato offre un elevato valore alimentare in rapporto al peso, per cui è uno dei cibi preferiti dagli scout più esperti.</Italian>
 		<Spanish>El arroz se cultiva desde hace al menos 7.000 años. Es un cereal inusual, ya que casi todo el arroz es consumido por el hombre, aunque el salvado que queda después de la molienda se utiliza como alimento para el ganado. La mayor parte del arroz se cultiva en tierras sumergidas de las llanuras costeras, deltas mareales y cuencas fluviales de las regiones tropicales, semitropicales y templadas[NEWLINE]El cultivo del arroz requiere 40 días continuos por encima de los 21 grados (70 F). Normalmente se cultiva como planta anual, aunque en las zonas tropicales puede sobrevivir como perenne, produciendo una cosecha de hasta 30 años. Cuando se seca ofrece un alto valor alimenticio por su peso, por lo que es uno de los alimentos favoritos de los exploradores experimentados.</Spanish>
+		<Hungarian>A rizst legalább 7000 éve termesztik. A gabonafélék között szokatlan, hogy szinte az összes rizst az emberek fogyasztják, bár az őrlés után visszamaradt korpa állati takarmányként kerül felhasználásra. A rizst többnyire a trópusi, szubtrópusi és mérsékelt éghajlati övezetek partvidéki síkságain, tengerparti deltáiban és folyómedreiben, víz alatt álló területeken termesztik. [NEWLINE]A rizs termesztéséhez 40 napig folyamatos 21 fok feletti hőmérsékletre van szükség. Általában egynyári növényként termesztik, bár a trópusi területeken évelőként is megmaradhat és akár 30 évig is termést hozhat. Szárítva súlyához képest magas tápértékű, ezért a tapasztalt felderítők kedvenc étele.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RICE_FARMER_STRATEGY</Tag>
@@ -604,6 +637,7 @@
 		<German>Auf flachen [LINK=TERRAIN_MARSH]Sumpf[\LINK]-Geländefeldern kann [LINK=YIELD_RICE]Reis[\LINK] angebaut werden, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Reisbauer[COLOR_REVERT] zugeordnet ist. Die Reisernte kann gesteigert werden, indem ein [LINK=UNIT_RICE_FARMER]erfahrener Reisbauer[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere pianura permettono di coltivare [LINK=YIELD_RICE]riso[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]coltivatore di riso[COLOR_REVERT]. Il raccolto di riso può essere aumentato assegnando al lavoro un [LINK=UNIT_RICE_FARMER]coltivatore di riso esperto[\LINK].</Italian>
 		<Spanish>Las losetas de llanura te permiten cultivar [LINK=YIELD_RICE]arroz[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]arrocero[COLOR_REVERT]. La cosecha de arroz puede aumentarse asignando un [LINK=UNIT_RICE_FARMER]experto arrocero[\LINK] al trabajo.</Spanish>
+		<Hungarian>A sík [LINK=TERRAIN_MARSH]mocsár[\LINK] területeken [LINK=YIELD_RICE]rizst[\LINK] lehet termeszteni, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]rizstermesztő[COLOR_REVERT] szakmát választod. A rizs terméshozamát tovább növelni lehet egy [LINK=UNIT_RICE_FARMER]tapasztalt rizstermelő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CASSAVA_PLANTER</Tag>
@@ -633,6 +667,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Плантатор маниоки:Плантаторы маниоки</Russian>
+		<Hungarian>Növénytermesztő (Manióka)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CASSAVA_PLANTER_HELP</Tag>
@@ -645,6 +680,7 @@
 		<German>Maniok ist eine der wichtigsten Kohlenhydratquellen in den Tropen und wird nur von Reis und Mais übertroffen. Sie wird als süß oder bitter klassifiziert. Bittere Sorten enthalten mehr Antinährstoffe.[NEWLINE]Bei unsachgemäßer Zubereitung von Maniok kann beispielsweise so viel Zyanid zurückbleiben, daß eine akute Zyanidvergiftung und sogar der Tod eintreten kann.[NEWLINE]Die Maniokwurzel kann gekocht werden. Tapioka, die Maniokstärke, kann extrahiert und für alles Mögliche verwendet werden, von Desserts bis hin zu Tierfutterzusätzen. Maniok ist besonders reich an Vitamin C.</German>
 		<Italian>La manioca è una delle principali fonti di carboidrati ai tropici, superata solo dal riso e dal mais. È classificata come dolce o amara. Le varietà amare contengono più antinutrienti.[NEWLINE]Ad esempio, una preparazione impropria della manioca può lasciare una quantità di cianuro residuo sufficiente a causare un'intossicazione acuta da cianuro e persino la morte.[NEWLINE]La radice di manioca può essere bollita. La tapioca, che è l'amido della manioca, può essere estratta e utilizzata per qualsiasi cosa, dai dolci agli integratori alimentari per animali. La manioca è particolarmente ricca di vitamina C.</Italian>
 		<Spanish>La yuca es una fuente primordial de hidratos de carbono en los trópicos, sólo superada por el arroz y el maíz. Se clasifica en dulce o amarga. Las variedades amargas contienen más antinutrientes.[NEWLINE]Por ejemplo, una preparación inadecuada de la yuca puede dejar suficientes residuos de cianuro como para provocar una intoxicación aguda por cianuro, e incluso la muerte.[NEWLINE]La raíz de yuca puede hervirse. La tapioca, que es el almidón de la yuca, puede extraerse y utilizarse para todo, desde postres a suplementos alimenticios para animales. La yuca es especialmente rica en vitamina C.</Spanish>
+		<Hungarian>A manióka a trópusokon a rizs és a kukorica után a harmadik legfontosabb szénhidrátforrás. Édes vagy keserű változatban létezik. A keserű fajták több antinutrienst tartalmaznak. Például a manióka nem megfelelő elkészítése esetén elegendő mennyiségű cianid maradhat vissza, ami akut cianidmérgezést, sőt halált is okozhat. A manióka gyökér főzhető. A tapióka, amely manióka keményítő, kivonható és desszertekhez, állati takarmány-kiegészítőkhöz és sok máshoz felhasználható. A manióka különösen magas C-vitamin-tartalommal rendelkezik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CASSAVA_PLANTER_STRATEGY</Tag>
@@ -653,6 +689,7 @@
 		<German>[LINK=TERRAIN_SHRUBLAND]Buschland[\LINK]-Geländefelder ermöglichen den Anbau von [LINK=YIELD_CASSAVA]Maniok[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Maniokpflanzer[COLOR_REVERT] zugeordnet ist. Die Maniokernte kann erhöht werden, indem man einen [LINK=UNIT_CASSAVA_PLANTER]erfahrenen Maniokpflanzer[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le tessere della giungla permettono di coltivare [LINK=YIELD_CASSAVA]manioca[\LINK] se il colono che vi lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]piantatore di manioca[COLOR_REVERT]. Il raccolto di manioca può essere aumentato assegnando al lavoro un [LINK=UNIT_CASSAVA_PLANTER]piantatore di manioca esperto[\LINK].</Italian>
 		<Spanish>Las baldosas de selva te permiten cultivar [LINK=YIELD_CASSAVA]yuca[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]plantador de yuca[COLOR_REVERT]. La cosecha de yuca puede aumentarse asignando un [LINK=UNIT_CASSAVA_PLANTER]experto plantador de yuca[\LINK] al trabajo.</Spanish>
+		<Hungarian>A [LINK=TERRAIN_SHRUBLAND]cserjés[\LINK] területeken [LINK=YIELD_CASSAVA]maniókát[\LINK] termeszthetsz, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]maniókatermesztő[COLOR_REVERT] szakmát választod. A manióka terméshozamát tovább lehet növelni egy [LINK=UNIT_CASSAVA_PLANTER]tapasztalt maniókaültető[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FLAX_PLANTER</Tag>
@@ -682,6 +719,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик льна:Сборщики льна</Russian>
+		<Hungarian>Növénytermesztő (Len)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FLAX_PLANTER_HELP</Tag>
@@ -694,6 +732,7 @@
 		<German>Flachs wird als Nahrungsmittel und Faserstoff angebaut. Textilien aus Flachs sind als Leinen bekannt. Das Speiseöl ist reich an Omega-3-Fettsäuren, die für die Gesundheit des Herzens wichtig sind.[NEWLINE]Die für Flachs am besten geeigneten Böden sind Schwemmlandböden oder tiefgründige Lehmböden mit einem hohen Anteil an organischem Material. Flachs wächst oft knapp über der Wasserlinie in Mooren.[NEWLINE]Aus Leinsamen wird ein Pflanzenöl gewonnen, das als Leinsamenöl oder Leinöl bekannt ist und zu den ältesten kommerziellen Ölen gehört. Es handelt sich um ein Speiseöl, das durch Expeller-Pressung und manchmal durch anschließende Lösungsmittelextraktion gewonnen wird. Lösungsmittelverarbeitetes Leinsamenöl wird seit vielen Jahrhunderten als Trockenöl in der Malerei und Lackierung verwendet.</German>
 		<Italian>Il lino viene coltivato per l'alimentazione e per le fibre. I tessuti di lino sono noti come lino. L'olio commestibile è ricco di acidi grassi omega-3, importanti per la salute del cuore.[NEWLINE]I terreni più adatti al lino sono quelli alluvionali o profondi con molta materia organica. Il lino cresce spesso appena sopra la linea di galleggiamento nelle paludi di mirtilli rossi.[NEWLINE]I semi di lino producono un olio vegetale noto come olio di semi di lino o olio di lino, uno dei più antichi oli commerciali. Si tratta di un olio commestibile ottenuto mediante spremitura ad aria compressa, talvolta seguita da un'estrazione con solvente. L'olio di semi di lino trattato con solventi è stato utilizzato per molti secoli come olio essiccante per la pittura e la verniciatura.</Italian>
 		<Spanish>El lino se cultiva como alimento y fibra. Los tejidos de lino se conocen como lino. El aceite comestible tiene un alto contenido en ácidos grasos omega-3, importantes para la salud del corazón.[NEWLINE]Los suelos más adecuados para el lino son los aluviales o margas profundas con mucha materia orgánica. El lino suele crecer justo por encima de la línea de flotación en los pantanos de arándanos.[NEWLINE]Las semillas de lino producen un aceite vegetal conocido como aceite de semilla de lino o aceite de linaza, que es uno de los aceites comerciales más antiguos. Se trata de un aceite comestible que se obtiene mediante prensado por expulsión y, en ocasiones, seguido de extracción con disolventes. El aceite de linaza procesado con disolventes se ha utilizado durante muchos siglos como aceite secante en pinturas y barnices.</Spanish>
+		<Hungarian>A lent étkezési célra és rostanyagként termesztik. A lenből készült textíliákat lenvászonnak nevezik. Az étkezési olaj magas omega-3 zsírsavtartalommal rendelkezik, ami fontos a szív egészségének megőrzése szempontjából. [NEWLINE]A len termesztésére legalkalmasabb talajok az alluviális vagy mély, sok szerves anyagot tartalmazó vályogtalajok. A len gyakran a vörösáfonya-mocsarak vízszintje felett nő. [NEWLINE]A lenmagból nyerik a lenmagolajat vagy lenolajat, amely az egyik legrégebbi kereskedelmi forgalomban lévő olaj. Ez egy étkezési olaj, amelyet préseléssel állítanak elő és néha oldószeres extrakcióval is kiegészítenek. Az oldószerrel feldolgozott lenmagolajat évszázadok óta használják festéshez és lakkozáshoz szárítóolajként.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FLAX_PLANTER_STRATEGY</Tag>
@@ -702,6 +741,7 @@
 		<German>Auf vielen verschiedenen Geländefeldern können Sie [LINK=YIELD_FLAX]Flachs[\LINK] anbauen, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Flachspflanzer[COLOR_REVERT] zugeordnet ist. Wie Hanf kann Flachs zur Herstellung von Segeln und Seilen verwendet werden. Die Flachsernte kann erhöht werden, indem man einen [LINK=UNIT_LINEN_PLANTER]erfahrenen Flachspflanzer[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Molti terreni diversi permettono di coltivare [LINK=YIELD_FLAX]lino[\LINK] se il colono che le lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]piantatore di lino[COLOR_REVERT]. Come la canapa, il lino può essere utilizzato per produrre vele e corde. Il raccolto di lino può essere aumentato assegnando al lavoro un [LINK=UNIT_LINEN_PLANTER]piantatore di lino esperto[\LINK].</Italian>
 		<Spanish>Muchos terrenos diferentes te permiten cultivar [LINK=YIELD_FLAX]lino[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]plantador de lino[COLOR_REVERT]. Al igual que el cáñamo, el lino puede utilizarse para fabricar velas y cuerdas. La cosecha de lino puede aumentarse asignando un [LINK=UNIT_LINEN_PLANTER]experto plantador de lino[\LINK] al trabajo.</Spanish>
+		<Hungarian>Számos különböző terepen termeszthetsz [LINK=YIELD_FLAX]lent[\LINK], ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]lentermesztő[COLOR_REVERT] szakmát választasz. A kenderhez hasonlóan a len is felhasználható vitorlák és kötelek készítéséhez. A len terméshozamát tovább lehet növelni egy [LINK=UNIT_LINEN_PLANTER]tapasztalt lentermesztő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RAPE_PLANTER</Tag>
