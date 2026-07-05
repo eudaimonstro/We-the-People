@@ -926,7 +926,8 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
-		<Russian>Сборщик стручков ванили:Сборщики стручков ванили</Russian>
+		<Russian>Сборщик стручков ванили:Сборщики стручков ванили</Russian
+		<Hungarian>Vaníliabab Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_VANILLA_COLLECTOR_HELP</Tag>
@@ -934,11 +935,12 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_VANILLA_COLLECTOR_PEDIA</Tag>
-		<English>Vanilla is one of the two most popular flavours for sweet treats, the other being chocolate. It's used in candy, baking and liqueurs, all of which would be familiar to monks in colonial missions.[NEWLINE]Vanilla is a spice derived from orchids. There are three major species, all derived from the original Mexican plant. It can be pollinated by hand to produce the vanilla bean.</English>
+		<English>Vanilla is one of the two most popular flavours for sweet treats, the other being chocolate. It's used in candy, baking and liqueurs, all of which would be familiar to monks in colonial missions.[NEWLINE]Vanilla is a spice derived from orchids. There are three major species derived from the original Mexican plant. It can be pollinated by hand to produce the vanilla bean.</English>
 		<French>La vanille est l'un des deux arômes les plus populaires pour les friandises, l'autre étant le chocolat. Elle est utilisée dans les bonbons, les pâtisseries et les liqueurs, autant d'arômes familiers aux moines des missions coloniales.[NEWLINE]La vanille est une épice dérivée des orchidées. Il existe trois espèces principales, toutes dérivées de la plante mexicaine originale. Elle peut être pollinisée à la main pour produire la gousse de vanille.</French>
 		<German>Vanille ist neben Schokolade eine der beiden beliebtesten Geschmacksrichtungen für süße Leckereien. Sie wird in Süßigkeiten, zum Backen und für Liköre verwendet, alles Dinge, die Mönchen in kolonialen Missionen vertraut sind.[NEWLINE]Vanille ist ein aus Orchideen gewonnenes Gewürz. Es gibt drei Hauptarten, die alle von der ursprünglichen mexikanischen Pflanze abstammen. Sie kann von Hand bestäubt werden, um die Vanilleschote zu gewinnen.</German>
 		<Italian>La vaniglia è uno dei due aromi più popolari per i dolci, l'altro è il cioccolato. Si usa nei dolci, nella pasticceria e nei liquori, tutti aromi familiari ai monaci delle missioni coloniali.[NEWLINE]La vaniglia è una spezia derivata dalle orchidee. Esistono tre specie principali, tutte derivate dalla pianta originale messicana. Può essere impollinata a mano per produrre il baccello di vaniglia.</Italian>
 		<Spanish>La vainilla es uno de los dos sabores más populares de los dulces, el otro es el chocolate. Se utiliza en dulces, repostería y licores, todo lo cual sería familiar a los monjes de las misiones coloniales.[NEWLINE]La vainilla es una especia derivada de las orquídeas. Hay tres especies principales, todas derivadas de la planta mexicana original. Se puede polinizar a mano para producir la vaina de vainilla.</Spanish>
+		<Hungarian>A vanília az édességek két legnépszerűbb ízének egyike, a másik a csokoládé. Cukorkákban, süteményekben és likőrökben használják, amelyek mindegyike ismerős lehetett a gyarmati missziókban élő szerzetesek számára. [NEWLINE]A vanília egy orchideákból nyert fűszer. Három fő faja létezik, amelyek mindegyike az eredeti mexikói növényből származik. Kézzel beporozható, így vaníliarúdat lehet előállítani belőle.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_VANILLA_COLLECTOR_STRATEGY</Tag>
@@ -947,6 +949,7 @@
 		<German>Dschungelplättchen ermöglichen das Sammeln von [LINK=YIELD_VANILLA_PODS]Vanilleschoten[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Vanilleschalen-Sammler[COLOR_REVERT] zugeordnet ist. Die Ernte von Vanilleschoten kann erhöht werden, indem ein [LINK=UNIT_VANILLA_COLLECTOR]erfahrener Vanille-Sammler[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere della giungla permettono di raccogliere [LINK=YIELD_VANILLA_PODS]baccelli di vaniglia[\LINK] se il colono che vi lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]raccoglitore di baccelli di vaniglia[COLOR_REVERT]. Il raccolto di baccelli di vaniglia può essere aumentato assegnando al lavoro un [LINK=UNIT_VANILLA_COLLECTOR]raccoglitore di vaniglia esperto[\LINK].</Italian>
 		<Spanish>Las baldosas de selva te permiten recolectar [LINK=YIELD_VANILLA_PODS]vainas de vainilla[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de vainas de vainilla[COLOR_REVERT]. La cosecha de vainas de vainilla puede aumentarse asignando un [LINK=UNIT_VANILLA_COLLECTOR]recolector de vainilla experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dzsungel területeken [LINK=YIELD_VANILLA_PODS]vaníliababot[\LINK] termeszthetsz, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]vanília termesztő[COLOR_REVERT] szakmát választasz. A vaníliababok terméshozama növelhető egy [LINK=UNIT_VANILLA_COLLECTOR]tapaszalt vanília termesztő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COCHINEAL_COLLECTOR</Tag>
@@ -976,6 +979,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик кошенили:Сборщики кошенили</Russian>
+		<Hungarian>Bíbortetű Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COCHINEAL_COLLECTOR_HELP</Tag>
@@ -988,6 +992,7 @@
 		<German>Die Cochenille-Schildläuse, die auf den Blättern des Feigenkaktus zu finden sind, produzieren Karminsäure, eine Chemikalie, die Raubtiere abschreckt. In Verbindung mit Aluminium- oder Kalziumsalzen wird aus Cochenille ein karminroter Farbstoff. Sammler sammeln die Insekten, indem sie sie von den Kaktusblättern abbürsten.[NEWLINE]Der leuchtend rote Karminfarbstoff, der in Amerika zum Färben von Stoffen verwendet wurde, wurde erst ab Mitte des 16. Jahrhunderts zu einem wichtigen Exportgut, da die Konquistadoren deren Wert unterschätzt hatten.[NEWLINE]Cochenille-Schildläuse sind in den heutigen Gebieten von Peru, Mexiko, Chile und Argentinien zu finden.</German>
 		<Italian>Gli insetti cocciniglia che si trovano sui cuscinetti del fico d'India producono acido carminico, una sostanza chimica che dissuade i predatori. Se mescolata con sali di alluminio o di calcio, la cocciniglia diventa un colorante carminio. I collezionisti raccolgono gli insetti spazzolandoli via dai cactus.[NEWLINE]Il colorante rosso vivo carminio, utilizzato in America per tingere i tessuti, divenne un importante prodotto di esportazione solo a partire dalla metà del XVI secolo, poiché i conquistadores ne avevano sottovalutato il valore.[NEWLINE]Gli insetti cocciniglia si trovano nelle aree oggi conosciute come Perù, Messico, Cile e Argentina.</Italian>
 		<Spanish>Los insectos cochinilla que se encuentran en las hojas de las chumberas producen ácido carmínico, una sustancia química que disuade a los depredadores. Mezclado con sales de aluminio o calcio, la cochinilla se convierte en colorante carmín. Los recolectores recogen los insectos cepillándolos de las cactáceas.[NEWLINE]El tinte rojo brillante carmín, que se utilizaba en América para teñir telas, sólo se convirtió en un importante producto de exportación a partir de mediados del siglo XVI, ya que los conquistadores habían subestimado su valor.[NEWLINE]Los insectos cochinilla se encuentran en las zonas conocidas actualmente como Perú, México, Chile y Argentina.</Spanish>
+		<Hungarian>A fügekaktusz levelein élő rovarok karminsavot termelnek, amely egy ragadozókat elriasztó vegyi anyag. Alumínium- vagy kalciumsókkal keverve karminfestékké válik. A gyűjtők a kaktuszlevelekről kefével szedik le a rovarokat. [NEWLINE]Az élénkpiros karminfesték, amelyet Amerikában szövetek festésére használtak, csak a 16. század közepétől vált fontos exportáruvá, mivel a konkvisztádorok alábecsülték értékét. [NEWLINE]A bíbortetűk a mai Peru, Mexikó, Chile és Argentína területén élnek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COCHINEAL_COLLECTOR_STRATEGY</Tag>
@@ -996,6 +1001,7 @@
 		<German>[LINK=TERRAIN_DESERT]Wüsten[\LINK]-Geländefelder mit einem [COLOR_HIGHLIGHT_TEXT]Kaktusbaum[COLOR_REVERT] Bonus und [LINK=TERRAIN_SHRUBLAND]Buschland[\LINK] ermöglichen das Sammeln von [LINK=YIELD_COCHINEAL]Cochenille-Schildläusen[\LINK], wenn der Kolonist, der das Geländefeld bearbeitet, den Beruf [COLOR_HIGHLIGHT_TEXT]Sammler (Cochenille)[COLOR_REVERT] ausübt. Die Ernte von Cochenille-Schildläusen kann gesteigert werden, indem man das einen [LINK=UNIT_COCHINEAL_COLLECTOR]erfahrenen Cochenille-Sammler[\LINK] machen läßt.</German>
 		<Italian>Le tessere del deserto permettono di raccogliere [LINK=YIELD_COCHINEAL]cocciniglia[\LINK] se il colono che le lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]raccoglitore di cocciniglia[COLOR_REVERT]. Il raccolto di cocciniglia può essere aumentato assegnando al lavoro un [LINK=UNIT_COCHINEAL_COLLECTOR]raccoglitore esperto di cocciniglia[\LINK].</Italian>
 		<Spanish>Las baldosas del desierto te permiten recolectar [LINK=YIELD_COCHINEAL]cochinilla[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de cochinilla[COLOR_REVERT]. La cosecha de cochinilla puede aumentarse asignando un [LINK=UNIT_COCHINEAL_COLLECTOR]experto recolector de cochinilla[\LINK] al trabajo.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]kaktuszfa[COLOR_REVERT] bónusszal rendelkező [LINK=TERRAIN_DESERT]Sivatag[\LINK] területeken vagy a [LINK=TERRAIN_SHRUBLAND]cserjés [\LINK] területeken lehetséges a [LINK=YIELD_COCHINEAL]bíbortetű[\LINK] gyűjtése, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]bíbortetű gyűjtő[COLOR_REVERT] szakmát választod. A bíbortetűk mennyisége tovább növelhető egy [LINK=UNIT_COCHINEAL_COLLECTOR]tapasztalt bíbortetű gyűjtő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEANUT_PLANTER</Tag>
@@ -1025,6 +1031,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Плантатор арахиса:Плантаторы арахиса</Russian>
+		<Hungarian>Növénytermesztő (Mogyoró)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEANUT_PLANTER_HELP</Tag>
@@ -1037,6 +1044,7 @@
 		<German>Erdnüsse werden in den Tropen und Subtropen weit verbreitet angebaut. Botanisch gesehen gehören sie zur Familie der Bohnengewächse, aber in der Küche werden sie wie eine Nuss verwendet. Im Gegensatz zu den meisten Hülsenfrüchten reifen Erdnussschoten unterirdisch.[NEWLINE]Gekochte Erdnüsse sind in den Anbaugebieten ein beliebter Snack. Sie können zur Behandlung von Unterernährung verwendet werden und sind besonders wichtig für die Ernährung von Sklaven.[NEWLINE]Erdnüsse werden in der Regel geröstet, bevor sie verschifft werden.</German>
 		<Italian>Le arachidi sono ampiamente coltivate nei tropici e nelle regioni subtropicali. Dal punto di vista botanico fanno parte della famiglia dei fagioli, ma in cucina vengono utilizzate come una noce. A differenza della maggior parte dei legumi, i baccelli delle arachidi maturano sottoterra.[NEWLINE]Le arachidi bollite sono uno spuntino popolare nelle zone in cui vengono coltivate. Possono essere usate per curare la malnutrizione e sono particolarmente importanti per nutrire le popolazioni di schiavi.[NEWLINE]Le arachidi vengono solitamente tostate prima di essere spedite.</Italian>
 		<Spanish>Los cacahuetes se cultivan ampliamente en las zonas tropicales y subtropicales. Botánicamente pertenecen a la familia de las judías, pero en la cocina se utilizan como frutos secos. A diferencia de la mayoría de las legumbres, las vainas de los cacahuetes maduran bajo tierra.[NEWLINE]Los cacahuetes hervidos son un aperitivo muy popular en las zonas donde se cultivan. Pueden utilizarse para tratar la malnutrición y son especialmente importantes para alimentar a las poblaciones de esclavos.[NEWLINE]Los cacahuetes suelen tostarse antes de ser enviados.</Spanish>
+		<Hungarian>A mogyorót széles körben termesztik a trópusokon és a szubtrópusokon. Botanikailag a hüvelyesek családjába tartozik, de a konyhában dióféléként használják. A legtöbb hüvelyes növénytől eltérően a mogyoró hüvelyének érése a föld alatt történik.[NEWLINE]A főtt mogyoró népszerű harapnivaló azon a területen, ahol termesztik. Alultápláltság kezelésére is használható, és különösen fontos a rabszolgák ellátásában. [NEWLINE]A mogyorót általában pörkölik, mielőtt szállítják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEANUT_PLANTER_STRATEGY</Tag>
@@ -1045,6 +1053,7 @@
 		<German>Auf Flachland-Geländefeldern können Sie [LINK=YIELD_PEANUTS]Erdnüsse[\LINK] anbauen, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Erdnusspflanzer[COLOR_REVERT] zugeordnet ist. Die Erdnussernte kann erheblich gesteigert werden, wenn ein [LINK=UNIT_PEANUT_PLANTER]erfahrener Erdnusspflanzer[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le piastrelle di pianura consentono di coltivare [LINK=YIELD_PEANUTS]arachidi[\LINK] se il colono che vi lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]piantatore di arachidi[COLOR_REVERT]. Il raccolto di arachidi può essere aumentato in modo significativo assegnando al lavoro un [LINK=UNIT_PEANUT_PLANTER]piantatore di arachidi esperto[\LINK].</Italian>
 		<Spanish>Las losetas de llanura te permiten cultivar [LINK=YIELD_PEANUTS]cacahuetes[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]plantador de cacahuetes[COLOR_REVERT]. La cosecha de cacahuetes puede incrementarse significativamente asignando a un [LINK=UNIT_PEANUT_PLANTER]experto plantador de cacahuetes[\LINK] al trabajo.</Spanish>
+		<Hungarian>A síkság területeken lehet [LINK=YIELD_PEANUTS]mogyorót[\LINK] termeszteni, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]mogyoró termesztő[COLOR_REVERT] szakmát választod. A mogyoró terméshozama jelentősen növelhető egy [LINK=UNIT_PEANUT_PLANTER]tapasztalt mogyoró termesztő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_KAUTSCHUK_COLLECTOR</Tag>
@@ -1074,6 +1083,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик каучука:Сборщики каучука</Russian>
+		<Hungarian>Kaucsuk Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_KAUTSCHUK_COLLECTOR_HELP</Tag>
@@ -1086,6 +1096,7 @@
 		<German>Kautschuk wird durch Einschnitte in die Rinde von Kautschukbäumen geerntet. Der Latex wird erhitzt, um Kautschuk zu erzeugen, der vor der Weiterverarbeitung zu wasserdichten Bahnen getrocknet werden kann. Kautschuk hat ein großes Dehnungsverhältnis, eine hohe Elastizität und ist außerdem wasserdicht. Er wird zu den Elastomeren gezählt.</German>
 		<Italian>La gomma viene raccolta praticando incisioni nella corteccia degli alberi della gomma. Il lattice viene riscaldato per creare gomma che può essere essiccata in fogli impermeabili prima di essere lavorata ulteriormente. La gomma ha un grande rapporto di elasticità, un'elevata resilienza ed è anche impermeabile. È classificata come elastomero.</Italian>
 		<Spanish>El caucho se recolecta haciendo incisiones en la corteza de los árboles del caucho. El látex se calienta para crear caucho que puede secarse en láminas impermeables antes de seguir procesándolo. El caucho tiene una gran elasticidad, una gran resistencia y es impermeable. Se clasifica como elastómero.</Spanish>
+		<Hungarian>A kaucsukot a kaucsukfák kérgének bemetszésével nyerik. A latexet felmelegítik, hogy olyan gumit kapjanak, amelyet további feldolgozás előtt vízálló lapokká lehet szárítani. A kaucsuk nagy nyújthatósággal, nagy rugalmassággal rendelkezik és vízálló is. Elasztomernek minősül.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_KAUTSCHUK_COLLECTOR_STRATEGY</Tag>
@@ -1094,6 +1105,7 @@
 		<German>Dschungelplättchen ermöglichen das Sammeln von [LINK=YIELD_KAUTSCHUK]Gummi[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Gummi-Sammler[COLOR_REVERT] zugeordnet ist. Die Gummiproduktion kann gesteigert werden, indem ein [LINK=UNIT_KAUTSCHUK_COLLECTOR]erfahrener Gummi-Sammler[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere della giungla permettono di raccogliere [LINK=YIELD_KAUTSCHUK]gomma[\LINK] se il colono che le lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]raccoglitore di gomma[COLOR_REVERT]. La produzione di gomma può essere aumentata assegnando al lavoro un [LINK=UNIT_KAUTSCHUK_COLLECTOR]raccoglitore di gomma esperto[\LINK].</Italian>
 		<Spanish>Las losetas de selva te permiten recolectar [LINK=YIELD_KAUTSCHUK]caucho[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de caucho[COLOR_REVERT]. La producción de caucho puede aumentarse asignando un [LINK=UNIT_KAUTSCHUK_COLLECTOR]recolector de caucho experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dzsungel területeken [LINK=YIELD_KAUTSCHUK]gumi[\LINK] gyűjthető, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]kaucsuk gyűjtő[COLOR_REVERT] szakmát választod. A kaucsuk termelés növelhető egy [LINK=UNIT_KAUTSCHUK_COLLECTOR]tapasztalt kaucsuk gyűjtő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MAPLE_SIRUP_COLLECTOR</Tag>
@@ -1123,6 +1135,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик кленового сиропа:Сборщики кленового сиропа</Russian>
+		<Hungarian>Juharszirup Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MAPLE_SIRUP_COLLECTOR_HELP</Tag>
@@ -1135,6 +1148,7 @@
 		<German>Im Frühjahr, wenn der Saft in den Ahornwäldern zu fließen beginnt, schlagen die Pflücker mit dem Hammer Tüllen durch die Rinde und sammeln eine dünne Flüssigkeit, die dann über einem langsamen Feuer zu einem reichhaltigen, dicken Sirup destilliert wird. Ahornsirup stammt aus Ahornwäldern, die in den nördlichen gemäßigten Zonen wachsen. Er ist ein beliebter Genuss und trägt zum Glücklichsein bei.</German>
 		<Italian>In primavera, quando la linfa inizia a scorrere nelle foreste di aceri, i battitori martellano i becchi attraverso la corteccia e raccolgono un fluido sottile che viene poi distillato a fuoco lento in un ricco e denso sciroppo. Lo sciroppo d'acero può anche essere versato sulla neve per ottenere lo zucchero d'acero.[NEWLINE]Lo sciroppo d'acero proviene dalle foreste di aceri che crescono nelle regioni nord-temperate. È una bevanda popolare che contribuisce alla felicità.</Italian>
 		<Spanish>En primavera, cuando la savia empieza a fluir en los bosques de arce, los recolectores martillean la corteza y recogen un líquido fino que luego se destila a fuego lento hasta obtener un sirope espeso. También se puede verter sobre la nieve para hacer azúcar de arce.[NEWLINE]El sirope de arce procede de los bosques de arce que crecen en las regiones templadas del norte. Es una golosina popular que contribuye a la felicidad.</Spanish>
+		<Hungarian>Tavasszal, amikor a juharfákban megindul a nedvkeringés, a juharszirup gyűjtők kalapáccsal lyukakat ütnek a kéregbe és összegyűjtik a híg folyadékot, amelyet aztán lassú tűzön sűrű, ízletes sziruppá főznek. A szirupot a hóra is lehet önteni, hogy juharszirup készüljön belőle. A juharszirup az északi mérsékelt éghajlati övezetekben növő juharfákból származik. Népszerű csemege, amely hozzájárul a boldogsághoz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MAPLE_SIRUP_COLLECTOR_STRATEGY</Tag>
@@ -1143,6 +1157,7 @@
 		<German>Hügelige [LINK=TERRAIN_TAIGA]Taiga[\LINK]-Geländefelder ermöglichen Ihnen das Abzapfen von [LINK=YIELD_MAPLE_SIRUP]Ahornsirup[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Ahornsirup-Sammler[COLOR_REVERT] zugeordnet ist. Die Produktion von Ahornsirup kann gesteigert werden, indem ein [LINK=UNIT_MAPLE_SIRUP_COLLECTOR]erfahrener Ahornsirup-Sammler[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere foresta permettono di raccogliere [LINK=YIELD_MAPLE_SIRUP]sciroppo d'acero[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]raccoglitore di sciroppo d'acero[COLOR_REVERT]. La produzione di sciroppo d'acero può essere aumentata assegnando al lavoro un [LINK=UNIT_MAPLE_SIRUP_COLLECTOR]raccoglitore esperto di sciroppo d'acero[\LINK].</Italian>
 		<Spanish>Las losetas de bosque te permiten recolectar [LINK=YIELD_MAPLE_SIRUP]sirope de arce[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de sirope de arce[COLOR_REVERT]. La producción de sirope de arce puede aumentarse asignando un [LINK=UNIT_MAPLE_SIRUP_COLLECTOR]experto recolector de sirope de arce[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dombos [LINK=TERRAIN_TAIGA]tajga[\LINK] terepen [LINK=YIELD_MAPLE_SIRUP]juharszirup[\LINK] gyűjthető, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]juharszirup gyűjtő[COLOR_REVERT] szakmát választod. A juharszirup gyűjtés  növelhető egy [LINK=UNIT_MAPLE_SIRUP_COLLECTOR]tapasztalt juharszirup gyűjtő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEAT_CUTTER</Tag>
@@ -1172,6 +1187,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Торфодобытчик:Торфодобытчики</Russian>
+		<Hungarian>Tőzegbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEAT_CUTTER_HELP</Tag>
@@ -1184,6 +1200,7 @@
 		<German>Torf ist ein bäuerlicher Brennstoff, der die Armen und Sklaven zu geringen oder gar keinen Kosten wärmt. Torf ist die effizienteste Kohlenstoffsenke der Welt und speichert 42 % des gesamten Bodenkohlenstoffs, mehr als alle anderen Vegetationsarten, einschließlich der Wälder der Welt. Er ist nicht erneuerbar.[NEWLINE]Ein Sumpf trocknet und verwandelt sich sehr langsam in ein Torfmoor, das billigen Brennstoff bietet, wenn Holz und Kohle nicht verfügbar sind. Torfstecher brauchen für ihre Arbeit nicht viel Ausrüstung, nur einen Stecher und eine Hacke, mit der sie die Torfstücke auf dem Rücken tragen.</German>
 		<Italian>La torba è un combustibile contadino, che riscalda i poveri e gli schiavi a costi bassi o nulli. La torba è il più efficiente serbatoio di carbonio al mondo, in quanto immagazzina il 42% di tutto il carbonio del suolo, più di tutti gli altri tipi di vegetazione, comprese le foreste del mondo. Non è rinnovabile.[NEWLINE]Una palude si asciuga e si trasforma molto lentamente in una torbiera, che offre combustibile a basso costo dove legno e carbone non sono disponibili. I tagliatori di torba non hanno bisogno di molte attrezzature per svolgere il loro lavoro, solo di una taglierina e di un'ascia per trasportare i pezzi di torba sulla schiena.</Italian>
 		<Spanish>La turba es un combustible campesino, que calienta a los pobres y a los esclavos a un coste bajo o nulo. La turba es el sumidero de carbono más eficaz del mundo, ya que almacena el 42% de todo el carbono del suelo, más que todos los demás tipos de vegetación, incluidos los bosques del mundo. No es renovable.[NEWLINE]Un pantano se seca y se convierte muy lentamente en una turbera, que ofrece combustible barato donde no hay madera ni carbón. Los cortadores de turba no necesitan mucho equipo para hacer su trabajo, sólo un cortador y un hod para transportar trozos de turba a la espalda.</Spanish>
+		<Hungarian>A tőzeg a parasztok tüzelőanyaga, amely alacsony vagy nulla költséggel melegíti a szegényeket és a rabszolgákat. A tőzeg a világ leghatékonyabb szén-dioxid-elnyelője, amely a talajban található szén 42%-át tárolja, többet, mint bármely más növényzet, beleértve a világ erdőit is. Nem megújuló erőforrás. [NEWLINE] A mocsár kiszárad és nagyon lassan tőzeglápokká alakul, amelyek olcsó tüzelőanyagot nyújtanak ott, ahol fa és szén nem áll rendelkezésre. A tőzegbányászoknak nem kell sok felszerelés a munkájukhoz, csak egy csákány és egy kosár, amellyel a tőzegdarabokat a hátukon szállíthatják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEAT_CUTTER_STRATEGY</Tag>
@@ -1192,6 +1209,7 @@
 		<German>[LINK=TERRAIN_WETLAND]Moor[\LINK] Geländefelder ermöglichen das Sammeln von [LINK=YIELD_PEAT]Torf[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Torfstecher[COLOR_REVERT] zugeordnet ist. Die Torfproduktion kann erhöht werden, indem man einen [LINK=UNIT_PEAT_CUTTER]erfahrenen Torf- und Lehmstecher[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le tessere palude permettono di raccogliere [LINK=YIELD_PEAT]torba[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]tagliatore di torba[COLOR_REVERT]. La produzione di torba può essere aumentata assegnando al lavoro un [LINK=UNIT_PEAT_CUTTER]tagliatore di torba e argilla esperto[\LINK].</Italian>
 		<Spanish>Las baldosas de pantano te permiten recoger [LINK=YIELD_PEAT]turba[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]cortador de turba[COLOR_REVERT]. La producción de turba puede aumentarse asignando un [LINK=UNIT_PEAT_CUTTER]experto cortador de turba y arcilla[\LINK] al trabajo.</Spanish>
+		<Hungarian>Az [LINK=TERRAIN_WETLAND]ingovány[\LINK] területeken [LINK=YIELD_PEAT]tőzeg[\LINK] gyűjthető, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]tőzegbányász[COLOR_REVERT] szakmát választod. A tőzegtermelés növelhető egy [LINK=UNIT_PEAT_CUTTER]tapasztalt tőzeg és agyagbányász[\LINK] alkamazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CLAY_MINER</Tag>
@@ -1221,6 +1239,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Добытчик глины:Добытчики глины</Russian>
+		<Hungarian>Agyagbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CLAY_MINER_HELP</Tag>
@@ -1233,6 +1252,7 @@
 		<German>Ton ist im nassen Zustand aufgrund eines molekularen Wasserfilms, der die Tonpartikel umgibt, plastisch, wird aber beim Trocknen oder Brennen hart, spröde und nicht plastisch. Schiefer, der größtenteils aus Ton besteht, ist das häufigste Sedimentgestein.[NEWLINE]Ton ist das älteste bekannte keramische Material. Prähistorische Menschen nutzten ihn zur Herstellung von Töpferwaren. Frühe Tonscherben wurden auf 14.000 v. Chr. datiert, und Tontafeln sind das erste bekannte Schreibmedium.</German>
 		<Italian>L'argilla sviluppa plasticità quando è bagnata, a causa di una pellicola molecolare di acqua che circonda le particelle di argilla, ma diventa dura, fragile e non plastica quando si asciuga o si cuoce. L'argilla, formata in gran parte da argilla, è la roccia sedimentaria più comune.[NEWLINE]L'argilla è il più antico materiale ceramico conosciuto. Gli esseri umani preistorici la usavano per produrre vasellame. I primi cocci di ceramica sono stati datati al 14.000 a.C. e le tavolette di argilla sono il primo supporto di scrittura conosciuto.</Italian>
 		<Spanish>La arcilla desarrolla plasticidad cuando está húmeda, debido a una película molecular de agua que rodea las partículas de arcilla, pero se vuelve dura, quebradiza y no plástica al secarse o cocerse. El esquisto, formado en gran parte por arcilla, es la roca sedimentaria más común[NEWLINE]La arcilla es el material cerámico más antiguo que se conoce. Los humanos prehistóricos la utilizaban para fabricar alfarería. Los primeros fragmentos de cerámica datan del 14.000 a.C., y las tablillas de arcilla son el primer medio de escritura conocido.</Spanish>
+		<Hungarian>Agyag nedves állapotban alakítható, mivel az anyag részecskéit molekuláris vízréteg veszi körül, de szárítás vagy égetés után kemény, törékeny és nem alakítható. A nagyrészt agyagból kialakult pala a leggyakoribb üledékes kőzet. [NEWLINE]Az agyag a legrégebbi ismert kerámiaanyag. Az őskori emberek kerámiaedények készítésére használták. A korai kerámiatöredékek i. e. 14 000-re datálhatók és az agyagtáblák az első ismert írásos tárgyak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CLAY_MINER_STRATEGY</Tag>
@@ -1241,6 +1261,7 @@
 		<German>Hügelige [LINK=TERRAIN_MARSH]Sumpf[\LINK] oder [LINK=TERRAIN_WETLAND]Moor[\LINK] Geländefelder ermöglichen das Stechen von [LINK=YIELD_CLAY]Lehm[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Lehmkuhlenarbeiter[COLOR_REVERT] zugeordnet ist. Um den Wänden von Gebäuden eine glatte Oberfläche zu verleihen, kann ein Maurer Lehm aufspachteln. Die Lehmproduktion kann erhöht werden, indem man einen [LINK=UNIT_PEAT_CUTTER]erfahrenen Torf- und Lehmstecher[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le tessere di montagna e collina permettono di raccogliere [LINK=YIELD_CLAY]argilla[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]tagliatore di argilla[COLOR_REVERT]. Per dare una finitura liscia alle pareti degli edifici, l'argilla può essere spalmata da un muratore. La produzione di argilla può essere aumentata assegnando al lavoro un [LINK=UNIT_PEAT_CUTTER]esperto tagliatore di torba e argilla[\LINK].</Italian>
 		<Spanish>Las baldosas de montaña y colina te permiten recolectar [LINK=YIELD_CLAY]arcilla[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]cortador de arcilla[COLOR_REVERT]. Para dar un acabado liso a las paredes de los edificios, el albañil puede extender la arcilla. La producción de arcilla puede aumentarse asignando un [LINK=UNIT_PEAT_CUTTER]experto cortador de turba y arcilla[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dombos [LINK=TERRAIN_MARSH]Mocsár[\LINK] vagy [LINK=TERRAIN_WETLAND]Ingovány[\LINK] területeken [LINK=YIELD_CLAY]agyagot[\LINK] lehet bányászni, ha az ott dolgozó lakosnak az [COLOR_HIGHLIGHT_TEXT]agyagbányász[COLOR_REVERT] szakmát választod. Az épületek falainak sima felületét a kőművesek agyaggal tudják kialakítani. Az agyagtermelés növelhető egy [LINK=UNIT_PEAT_CUTTER]tapasztalt tőzeg és agyagbányász[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COAL_MINER</Tag>
@@ -1270,6 +1291,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Добытчик угля:Добытчик угля</Russian>
+		<Hungarian>Szénbányász</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COAL_MINER_HELP</Tag>
@@ -1282,6 +1304,7 @@
 		<German>Kohle entsteht, wenn abgestorbenes Pflanzenmaterial zu Torf zerfällt und durch die Hitze und den Druck der oberen Erdschichten über Millionen von Jahren in Kohle umgewandelt wird. In der Kolonialzeit wurde Kohle zum Heizen verwendet, nicht für die Industrie. Der Kohleabbau führt zu vorzeitigem Tod und Krankheit, aber es handelt sich um ein weiches Gestein, für das nicht so viele Sprengstoffe benötigt werden wie für den Abbau von Hartgestein. Es ist ein Job, bei dem die Arbeiter mit Spitzhacke und Schaufel arbeiten, und sie werden nicht gut bezahlt.</German>
 		<Italian>Il carbone si forma quando la materia vegetale morta si decompone in torba e viene convertita in carbone dal calore e dalla pressione della sepoltura profonda per milioni di anni. Durante l'epoca coloniale il carbone viene utilizzato per il riscaldamento, non per l'industria. L'estrazione del carbone causa morti premature e malattie, ma si tratta di una roccia morbida che non richiede l'uso di esplosivi come l'estrazione di rocce dure. È un lavoro in cui i manovali usano picconi e pale e non vengono pagati molto.</Italian>
 		<Spanish>El carbón se forma cuando la materia vegetal muerta se descompone en turba y se convierte en carbón por el calor y la presión del enterramiento profundo durante millones de años. En la época colonial, el carbón se utiliza para calefacción, no para la industria. La minería del carbón causa muertes prematuras y enfermedades, pero es una roca blanda que no necesita tantos explosivos como la minería de roca dura. Es un trabajo en el que los obreros utilizan picos y palas, y no cobran mucho.</Spanish>
+		<Hungarian>A szén akkor keletkezik, amikor az elhalt növényi anyagok tőzeggé bomlanak és több millió év alatt a mélyen eltemetett rétegek hője és nyomása hatására szénné alakulnak. A gyarmati időkben a szenet fűtésre használták, nem ipari célokra. A szénbányászat korai halált és betegségeket okoz, de a szén puha kőzet, ezért nem igényel annyi robbanószert, mint a kemény kőzetek bányászata. Ez egy olyan munka, ahol a munkások csákányt és lapátot használnak és nem kapnak sok fizetést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COAL_MINER_STRATEGY</Tag>
@@ -1290,6 +1313,7 @@
 		<German>Berg- und Hügel-Geländefelder ermöglichen den Abbau von [LINK=YIELD_COAL]Kohle[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [LINK=PROFESSION_COAL_MINER]Bergmann[\LINK] zugeordnet ist. Die Kohleproduktion kann erhöht werden, indem man einen [LINK=UNIT_COAL_MINER]erfahrenen Kohlekumpel[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le tessere montagna e collina permettono di estrarre [LINK=YIELD_COAL]carbone[\LINK] se il colono che vi lavora è assegnato alla professione [LINK=PROFESSION_COAL_MINER]minatore di carbone[\LINK]. La produzione di carbone può essere aumentata assegnando al lavoro un [LINK=UNIT_COAL_MINER]minatore di carbone esperto[\LINK].</Italian>
 		<Spanish>Las losetas de montaña y colina te permiten extraer [LINK=YIELD_COAL]carbón[\LINK] si el colono que las trabaja tiene asignada la profesión de [LINK=PROFESSION_COAL_MINER]minero del carbón[\LINK]. La producción de carbón se puede aumentar asignando un [LINK=UNIT_COAL_MINER]minero del carbón experto[\LINK] al trabajo.</Spanish>
+		<Hungarian>A hegység és dombság területeken [LINK=YIELD_COAL]szén[\LINK] bányászható, ha az ott dolgozó lakosnak a [LINK=PROFESSION_COAL_MINER]szénbányász[\LINK] szakmát választod. A széntermelés növelhető egy [LINK=UNIT_COAL_MINER]tapasztalt szénbányász[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_YERBA_TRADER</Tag>
@@ -1319,6 +1343,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Чайных дел мастер:Чайных дел мастера</Russian>
+		<Hungarian>Teakészítő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_YERBA_TRADER_HELP</Tag>
@@ -1331,6 +1356,7 @@
 		<German>Mate-Blätter werden in heißem Wasser eingeweicht, um ein koffeinhaltiges Getränk herzustellen: Mate-Tee. Mit Eiswasser aufgegossen ist er Hauptbestandteil von Tereré.[NEWLINE]Die Guarani und Tupi bauten Mate bereits vor der europäischen Kolonisierung an. Nachdem die Jesuiten dies übernommen hatten, verbreitete sich Mate-Tee weit über das heutige Paraguay hinaus in die anderen spanischen Kolonien Süd-Amerikas.</German>
 		<Italian>Le foglie di yerba vengono messe in infusione in acqua calda per ottenere una bevanda a base di caffeina: la yerba mate. Preparato a freddo, viene usato per fare il terere.[NEWLINE]I Guarani e i Tupi coltivavano la yerba mate prima della colonizzazione europea. Dopo che i gesuiti iniziarono a usarla, la yerba mate si diffuse nell'attuale Paraguay e in altre colonie spagnole.</Italian>
 		<Spanish>Las hojas de yerba se remojan en agua caliente para preparar una bebida con cafeína: la yerba mate. Elaborado en frío, se utiliza para hacer terere.[NEWLINE]Los guaraníes y los tupíes cultivaban la yerba mate antes de la colonización europea. Después de que los jesuitas empezaran a utilizarla, la yerba mate se generalizó en lo que hoy es Paraguay y en otras colonias españolas.</Spanish>
+		<Hungarian>A tealeveleket forró vízben áztatják, hogy koffeintartalmú italt készítsenek belőle. Hidegen főzve tereré készítésére használják.[NEWLINE]A guaranik és a tupik már az európai gyarmatosítás előtt is termesztették a tealeveleket. Miután a jezsuiták elkezdték használni, a tea elterjedt a mai Paraguayban és más spanyol gyarmatokon is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_YERBA_TRADER_STRATEGY</Tag>
@@ -1339,6 +1365,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Mate-Teehändler[COLOR_REVERT] können im [LINK=BUILDING_TOBACCONIST_HOUSE]Tabak- und Yerba-Haus[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_YERBA]Mate-Tee[\LINK] aus [LINK=YIELD_YERBA_LEAVES]Mate-Blättern[\LINK] herzustellen. [LINK=UNIT_YERBA_TRADER]Meister-Mate-Teehändler[\LINK] beherrschen dieses Handwerk und können Ihre Produktion von Mate-Tee erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]commercianti di mate[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_TOBACCONIST_HOUSE]Casa del tabacco e della yerba[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_YERBA]mate[\LINK] dalle [LINK=YIELD_YERBA_LEAVES]foglie di yerba[\LINK]. I [LINK=UNIT_YERBA_TRADER]mastri commercianti di mate[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di mate.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]comerciantes de yerba mate[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_TOBACCONIST_HOUSE]Casa del Tabaco y la Yerba[\LINK] o en una de sus mejoras para producir [LINK=YIELD_YERBA]yerba mate[\LINK] a partir de [LINK=YIELD_YERBA_LEAVES]hojas de yerba[\LINK]. Los [LINK=UNIT_YERBA_TRADER]maestros comerciantes de yerba mate[\LINK] destacan en este oficio, y pueden aumentar enormemente tu producción de yerba mate.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Teakészítők[COLOR_REVERT] a [LINK=BUILDING_TOBACCONIST_HOUSE]dohány- és teaműhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_YERBA]teát[\LINK] állítsanak elő [LINK=YIELD_YERBA_LEAVES]tealevelekből[\LINK]. A [LINK=UNIT_YERBA_TRADER]Teakészítő Mesterek[\LINK] kiválóan értik ezt a mesterséget és jelentősen növelhetik a tea termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HOOCH_DISTILLER</Tag>
@@ -1368,6 +1395,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Винокур (бренди):Винокуры (бренди)</Russian>
+		<Hungarian>Szeszfőző (Gyümölcspárlat)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HOOCH_DISTILLER_HELP</Tag>
@@ -1380,6 +1408,7 @@
 		<German>Obstbranntwein wird aus einer Vielzahl von Früchten wie Beeren, Pflaumen und Äpfeln hergestellt. Kommerzielle Brennereien begannen im späten 18. Jahrhundert mit der Herstellung von Obstbranntwein.[NEWLINE]Während des Bürgerkriegs wurden Verbrauchssteuern eingeführt. Dies führte zu Schwarzbrand, hochprozentigem Schnaps, der vor allem im amerikanischen Süden nachts in den Wäldern illegal hergestellt wurde.</German>
 		<Italian>L'acquavite di frutta si ottiene da una varietà di frutti che vanno dalle bacche e dalle prugne alle mele. Le distillerie commerciali iniziarono a produrre acquavite di frutta a partire dalla fine del XVIII secolo.[NEWLINE]Durante la Guerra Civile furono introdotte le accise. Questo portò al moonshine, un liquore ad alta gradazione prodotto illegalmente di notte nei boschi, soprattutto nel Sud americano.</Italian>
 		<Spanish>El aguardiente de frutas se elabora con diversas frutas, desde bayas y ciruelas hasta manzanas. Las destilerías comerciales empezaron a elaborar aguardiente de frutas a finales del siglo XVIII.[NEWLINE]Durante la Guerra Civil se introdujeron impuestos especiales. Esto dio lugar al moonshine, licor de alta graduación elaborado ilegalmente por la noche en los bosques, sobre todo en el sur de Estados Unidos.</Spanish>
+		<Hungarian>A gyümölcspárlat különféle gyümölcsökből készül, a bogyós gyümölcsöktől a szilván keresztül az almáig. A kereskedelmi lepárlók a 18. század végén kezdtek gyümölcspárlatot gyártani.[NEWLINE]A polgárháború idején bevezették a jövedéki adót. Ez oda vezetett, hogy az amerikai déli államokban éjszaka az erdőkben illegálisan magas alkoholtartalmú szeszes italt, úgynevezett "holdfényt" kezdtek előállítani.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HOOCH_DISTILLER_STRATEGY</Tag>
@@ -1388,6 +1417,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Schnapsbrenner[COLOR_REVERT] können im [LINK=BUILDING_DISTILLERS_HOUSE]Brennerhaus[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_HOOCH]Schnaps[\LINK] aus [LINK=YIELD_FRUITS]Obst[\LINK] herzustellen. [LINK=UNIT_DISTILLER]Brennermeister[\LINK] sind die Meister dieses Handwerks und können die Produktion von Obstbranntwein erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]distillatori di acquavite di frutta[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_DISTILLERS_HOUSE]casa del distillatore[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_HOOCH]acquavite di frutta[\LINK] da [LINK=YIELD_FRUITS]frutta[\LINK]. I [LINK=UNIT_DISTILLER]mastri distillatori[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di acquavite di frutta.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]destiladores de aguardiente de fruta[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_DISTILLERS_HOUSE]casa del destilador[\LINK] o en una de sus mejoras para producir [LINK=YIELD_HOOCH]aguardiente de fruta[\LINK] a partir de [LINK=YIELD_FRUITS]fruta[\LINK]. Los [LINK=UNIT_DISTILLER]maestros destiladores[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de aguardiente de frutas.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Gyümölcslepárlók[COLOR_REVERT] a [LINK=BUILDING_DISTILLERS_HOUSE]lepárlóházban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_HOOCH]gyümölcspárlatot[\LINK] állítsanak elő [LINK=YIELD_FRUITS]gyümölcsből[\LINK]. A [LINK=UNIT_DISTILLER]Lepárlómesterek[\LINK] kiválóan értik ezt a mesterséget és jelentősen növelhetik a gyümölcspárlat termelését.</Hungarian>
 	</TEXT>
 	<!-- Different Furniture Padding -->
 	<TEXT>
@@ -1418,6 +1448,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Обивщик мебели (пух):Обивщики мебели (пух)</Russian>
+		<Hungarian>Kárpitos (Pehelytoll)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PADDED_FURNITURE_MAKER_WILD_FEATHERS</Tag>
@@ -1443,6 +1474,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Обивщик мебели (Перья):Обивщики мебели (Перья)</Russian>
+		<Hungarian>Kárpitos (Madártoll)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PADDED_FURNITURE_MAKER_HELP</Tag>
@@ -1456,6 +1488,7 @@
 		<Italian>I robusti mobili in legno vanno bene per i coloni della frontiera, ma i cittadini che si sono guadagnati un po' di comfort apprezzano una poltrona e un divano grande e morbido in cui sprofondare. Pagheranno un extra per questo piacere, ed è per questo che il tappezziere ha scelto un buon mestiere.</Italian>
 		<Spanish>Los robustos muebles de madera están muy bien para los colonos de la frontera, pero los ciudadanos que se han ganado un poco de comodidad aprecian un sillón y un mullido sofá en el que tumbarse. Por eso el tapicero ha elegido un buen oficio.</Spanish>
 		<Russian>Грубая деревянная мебель хороша для поселенцев на фронтире, но граждане, которые предпочитают комфорт, ценят удобные кресла и большой мягкий диван, в которые так приятно садиться. Они готовы платить за это удовольствие большие деньги, поэтому обивщик никогда не будет жаловаться на выбор плохой профессии.</Russian>
+		<Hungarian>A masszív fa bútorok a határvidéken élő telepesek számára teljesen megfelelőek, de azok a lakosok, akik már megszerezték maguknak egy kis kényelmet, értékelik a kényelmes foteleket és a nagy, puha kanapékat, amelyekbe bele lehet süllyedni. Ezért hajlandóak többet fizetni ezért az élvezetért, így a Kárpitosok jó szakmát választottak.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PADDED_FURNITURE_MAKER_STRATEGY</Tag>
@@ -1465,6 +1498,7 @@
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]tappezzieri[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_FURNITURE_MAKERS_HOUSE]casa del mobiliere[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_PADDED_FURNITURE]mobili imbottiti[\LINK] in [LINK=YIELD_VALUABLE_WOOD]legno esotico[\LINK] e [LINK=YIELD_DOWNS]piuma[\LINK]. I [LINK=UNIT_FURNITURE_MAKER]mastri ebanisti[\LINK] eccellono in questo mestiere e possono incrementare notevolmente la produzione di mobili imbottiti.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]tapiceros[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_FURNITURE_MAKERS_HOUSE]casa del fabricante de muebles[\LINK] o en una de sus mejoras para fabricar [LINK=YIELD_PADDED_FURNITURE]muebles tapizados[\LINK] de [LINK=YIELD_VALUABLE_WOOD]madera exótica[\LINK] y [LINK=YIELD_DOWNS]plumón[\LINK]. Los [LINK=UNIT_FURNITURE_MAKER]maestros ebanistas[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de muebles acolchados.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]Обивщики[COLOR_REVERT] могут работать в [LINK=BUILDING_FURNITURE_MAKERS_HOUSE]доме краснодеревщика[\LINK] или в одном из его улучшений для производства [LINK=YIELD_PADDED_FURNITURE]мягкой мебели[\LINK] из [LINK=YIELD_VALUABLE_WOOD]ценной древесины[\LINK] и [LINK=YIELD_DOWNS]пуха[\LINK] или [LINK=YIELD_WILD_FEATHERS]перьев диких птиц[\LINK]. [LINK=UNIT_FURNITURE_MAKER]Мастера[\LINK] преуспели в этом ремесле и могут значительно увеличить производство мягкой мебели.</Russian>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Kárpitosok[COLOR_REVERT] a [LINK=BUILDING_FURNITURE_MAKERS_HOUSE]Asztalosműhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_PADDED_FURNITURE]kárpitozott bútorokat készítenek [\LINK] [LINK=YIELD_VALUABLE_WOOD]bútorfából[\LINK] és [LINK=YIELD_DOWNS]pehelytollból[\LINK] vagy [LINK=YIELD_WILD_FEATHERS]madártollból[\LINK]. Az [LINK=UNIT_FURNITURE_MAKER]Asztalosmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a kárpitozott bútorok gyártását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_TANNER_PIG</Tag>
@@ -1490,6 +1524,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Дубильщик свиной кожи:Дубильщики свиной кожи</Russian>
+		<Hungarian>Tímár (Disznóbőr)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_TANNER_PIG_HELP</Tag>
@@ -1502,6 +1537,7 @@
 		<German>Schweinsleder ist weicher als Rindsleder und wird für detaillierte Gegenstände wie Handschuhe bevorzugt. Jacken aus Schweinsleder sind geschmeidiger als die schwereren Jacken aus Rindsleder, die jedoch haltbarer sind. Schweinsleder lässt sich leichter verarbeiten, so dass die Kleidungsstücke in der Regel ein feineres Finish aufweisen.</German>
 		<Italian>La pelle di maiale è più morbida della pelle di mucca e viene preferita per articoli dettagliati come i guanti. Le giacche in pelle di maiale sono più morbide della più pesante giacca in pelle di mucca, che tuttavia è più resistente. La pelle di maiale è più facile da lavorare, quindi i capi hanno in genere una finitura più fine.</Italian>
 		<Spanish>La piel de cerdo es más suave que la de vaca y se prefiere para artículos detallados como los guantes. Las chaquetas de piel de cerdo son más flexibles que las de piel de vaca, más pesadas, pero más duraderas. La piel de cerdo es más fácil de trabajar, por lo que las prendas suelen tener un acabado más fino.</Spanish>
+		<Hungarian>A sertésbőr puhább, mint a marhabőr, ezért inkább olyan aprólékos munkát igénylő termékekhez használják, mint például a kesztyűk. A sertésbőr kabátok rugalmasabbak, mint a nehezebb marhabőr kabátok, amelyek viszont tartósabbak. A sertésbőr könnyebben megmunkálható, ezért az ebből készült ruhák általában finomabb kivitelűek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_TANNER_PIG_STRATEGY</Tag>
@@ -1510,6 +1546,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Schweinsledergerber[COLOR_REVERT] können im [LINK=BUILDING_TANNERS_HOUSE]Haus des Gerbers[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_PIG_LEATHER]Schweinslederschürzen[\LINK] aus [LINK=YIELD_PIG_SKIN]Schweinsleder[\LINK] herzustellen. [LINK=UNIT_TANNER]Gerbermeister[\LINK] beherrschen dieses Handwerk und können die Produktion von Schweinsleder erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Conciatori di pelli di maiale[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_TANNERS_HOUSE]casa dei conciatori[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_PIG_LEATHER]grembiuli in pelle di maiale[\LINK] dai [LINK=YIELD_PIG_SKIN]pelli di maiale[\LINK]. I [LINK=UNIT_TANNER]mastri conciatori[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di pelli di maiale.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]curtidores de pieles de cerdo[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_TANNERS_HOUSE]casa del curtidor[\LINK] o en una de sus mejoras para producir [LINK=YIELD_PIG_LEATHER]delantales de piel de cerdo[\LINK] a partir de [LINK=YIELD_PIG_SKIN]pieles de cerdo[\LINK]. Los [LINK=UNIT_TANNER]maestros curtidores[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de pieles de cerdo.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT] Disznóbőr Tímárok[COLOR_REVERT] a [LINK=BUILDING_TANNERS_HOUSE]Cserzőműhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgoznak, hogy [LINK=YIELD_PIG_LEATHER]Disznóbőr Kötényeket[\LINK] állítsanak elő [LINK=YIELD_PIG_SKIN]disznóbőrből[\LINK]. A [LINK=UNIT_TANNER]Cserzőmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a sertésbőrök termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_POTTER</Tag>
@@ -1535,6 +1572,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Гончар:Гончары</Russian>
+		<Hungarian>Fazekas</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_POTTER_HELP</Tag>
@@ -1547,6 +1585,7 @@
 		<German>Töpferwaren sind eine uralte Methode zur Lagerung von Getreide. Frühe Tonscherben wurden auf 14.000 v. Chr. datiert.[NEWLINE]In der regnerischen, von Insekten heimgesuchten Neuen Welt enthielten die Töpfe genug Getreide, um die Siedler über den Winter am Leben zu erhalten, bis sie im Frühjahr endlich ihre neue Ernte einpflanzen konnten.[NEWLINE]Ton für Töpferwaren entwickelt im nassen Zustand aufgrund eines molekularen Wasserfilms, der die Tonpartikel umgibt, Plastizität, wird aber beim Trocknen oder Brennen hart, spröde und nicht plastisch.</German>
 		<Italian>La ceramica è un modo antico di conservare il grano. I primi cocci di ceramica sono stati datati al 14.000 a.C.[NEWLINE]Nel Nuovo Mondo, caratterizzato da piogge e insetti, i vasi contengono abbastanza grano per mantenere i coloni in vita durante l'inverno, fino a quando non possono piantare le nuove colture in primavera.[NEWLINE]L'argilla per la ceramica sviluppa plasticità quando è bagnata, a causa di una pellicola molecolare di acqua che circonda le particelle di argilla, ma diventa dura, fragile e non plastica quando si asciuga o si cuoce.</Italian>
 		<Spanish>La cerámica es una forma antigua de almacenar grano. Los primeros fragmentos de cerámica datan del 14.000 a.C.[NEWLINE]En el lluvioso Nuevo Mundo, plagado de insectos, las vasijas contienen grano suficiente para mantener vivos a los colonos durante el invierno, hasta que por fin pueden plantar sus nuevas cosechas en primavera.[NEWLINE]La arcilla para la alfarería desarrolla plasticidad cuando está húmeda, debido a una película molecular de agua que rodea las partículas de arcilla, pero se vuelve dura, quebradiza y no plástica al secarse o cocerse.</Spanish>
+		<Hungarian>A kerámiaedények ősi eszközök a gabona tárolására. A legkorábbi kerámiatöredékek i. e. 14 000-re datálhatók. Az esős, rovarokkal teli Újvilágban az edényekben elég gabonát tároltak ahhoz, hogy a gyarmatosítók túléjék a telet, amíg tavasszal végre elvethetik az új termést. A kerámiához használt agyag nedves állapotban plasztikussá válik, az agyagrészecskéket körülvevő vízréteg miatt, de szárítás vagy égetés után kemény, törékeny és szilárd lesz.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_POTTER_STRATEGY</Tag>
@@ -1555,6 +1594,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Töpfer[COLOR_REVERT] können im [LINK=BUILDING_POTTERY_HOUSE]Haus des Töpfers[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_POTTERY]Töpferwaren[\LINK] aus [LINK=YIELD_CLAY]Ton[\LINK], mit Hilfe von [LINK=YIELD_PEAT]Torf[\LINK], herzustellen. [LINK=UNIT_POTTER]Töpfermeister[\LINK] beherrschen dieses Handwerk hervorragend und können die Produktion von Töpferwaren erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]vasai[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_POTTERY_HOUSE]casa del vasaio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_POTTERY]ceramica[\LINK] dall'[LINK=YIELD_CLAY]argilla[\LINK]. I [LINK=UNIT_POTTER]mastri vasai[\LINK] eccellono in questo mestiere e possono incrementare notevolmente la produzione di vasellame.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]alfareros[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_POTTERY_HOUSE]casa del alfarero[\LINK] o en una de sus mejoras para producir [LINK=YIELD_POTTERY]cerámica[\LINK] a partir de [LINK=YIELD_CLAY]arcilla[\LINK]. Los [LINK=UNIT_POTTER]maestros alfareros[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de cerámica.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Fazekasok[COLOR_REVERT] a [LINK=BUILDING_POTTERY_HOUSE]Fazekas Boltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_POTTERY]kerámiát[\LINK] készítsenek [LINK=YIELD_CLAY]agyagból[\LINK]. A fazekasok ezután [LINK=YIELD_PEAT]tőzeggel[\LINK] égetik ki a fazekakat. A [LINK=UNIT_POTTER]Fazekasmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a kerámia termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FIELD_WORKER_TOOLS_TRADER</Tag>
@@ -1580,6 +1620,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Изготовитель полевых инструментов:Изготовители полевых инструментов</Russian>
+		<Hungarian>Mezőgazdasági Szerszámkészítő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FIELD_WORKER_TOOLS_TRADER_HELP</Tag>
@@ -1592,6 +1633,7 @@
 		<German>Feldarbeiter können mit ihren Werkzeugen hart umgehen. Äxte werden stumpf, Schaufeln verbiegen sich und Hammerköpfe fliegen vom Stiel. Ein guter Werkzeuglieferant bringt die notwendige Ausrüstung dorthin, wo die Arbeiter sie brauchen.</German>
 		<Italian>I lavoratori sul campo possono essere duri con i loro attrezzi. Le asce si opacizzano, le pale si piegano e le teste dei martelli si staccano dal manico. Un buon fornitore di utensili farà arrivare l'attrezzatura necessaria dove i lavoratori ne hanno bisogno.</Italian>
 		<Spanish>Los trabajadores del campo pueden ser muy duros con sus herramientas. Las hachas se desafilan, las palas se doblan y las cabezas de los martillos se salen del mango. Un buen proveedor de herramientas llevará el equipo necesario al lugar donde los trabajadores lo necesiten.</Spanish>
+		<Hungarian>A mezőgazdasági munkások keményen bánnak szerszámaikkal. A balták elkopnak, a lapátok meghajlanak, a kalapácsfejek pedig letörnek a nyélről. Egy jó szerszámkészítő eljuttatja a szükséges felszerelést oda, ahol a munkásoknak szükségük van rá.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FIELD_WORKER_TOOLS_TRADER_STRATEGY</Tag>
@@ -1600,6 +1642,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Feldarbeiterwerkzeug-Händler[COLOR_REVERT] können auf dem [LINK=BUILDING_MARKET]Dorfmarkt[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_FIELD_WORKER_TOOLS]Feldarbeiterwerkzeug[\LINK] zu verkaufen. Für die Herstellung von Feldarbeiterwerkzeugen werden [LINK=YIELD_HARDWOOD]Hartholz[\LINK] und [LINK=YIELD_PIG_SKIN]Schweinehaut[\LINK] benötigt. [LINK=UNIT_HOUSEHOLD_TRADER]Meister-Haushaltswarenhändler[\LINK] beherrschen dieses Handwerk hervorragend und können den Absatz von Feldarbeiterwerkzeugen erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]commercianti di attrezzi da lavoro[COLOR_REVERT] possono lavorare nel [LINK=BUILDING_MARKET]mercato del villaggio[\LINK] o in uno dei suoi aggiornamenti per vendere [LINK=YIELD_FIELD_WORKER_TOOLS]attrezzi da lavoro[\LINK]. Per fabbricare gli attrezzi da campo servono [LINK=YIELD_HARDWOOD]legno duro[\LINK] e [LINK=YIELD_PIG_SKIN]pelli di maiale[\LINK]. I [LINK=UNIT_HOUSEHOLD_TRADER]mastri commercianti di articoli per la casa[\LINK] eccellono in questo mestiere e possono incrementare notevolmente le vendite di utensili da campo.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]comerciantes de herramientas de campo[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_MARKET]mercado del pueblo[\LINK] o en una de sus mejoras para vender [LINK=YIELD_FIELD_WORKER_TOOLS]herramientas de campo[\LINK]. Para fabricar herramientas se necesita [LINK=YIELD_HARDWOOD]madera dura[\LINK] y [LINK=YIELD_PIG_SKIN]pieles de cerdo[\LINK]. Los [LINK=UNIT_HOUSEHOLD_TRADER]maestros comerciantes de enseres domésticos[\LINK] destacan en este oficio y pueden aumentar mucho tus ventas de herramientas de artesano.</Spanish>
+		<Hungarian>A mezőgazdasági munkások keményen bánnak szerszámaikkal. A balták elkopnak, a lapátok meghajlanak, a kalapácsfejek pedig letörnek a nyélről. Egy jó szerszámkészítő eljuttatja a szükséges felszerelést oda, ahol a munkásoknak szükségük van rá.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HOUSEHOLD_GOODS_TRADER</Tag>
@@ -1625,6 +1668,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Изготовитель домашних инструментов:Изготовители домашних инструментов</Russian>
+		<Hungarian>Háztartási Árugyártó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HOUSEHOLD_GOODS_TRADER_HELP</Tag>
@@ -1637,6 +1681,7 @@
 		<German>Der Haushaltswarenhändler betreibt einen Gemischtwarenladen, in dem Lebensmittel, Kleidung und Haushaltswaren zum Kauf angeboten werden.</German>
 		<Italian>Il commerciante di articoli per la casa gestisce un negozio generale dove è possibile acquistare generi alimentari, abbigliamento e articoli per la casa.</Italian>
 		<Spanish>El comerciante de artículos domésticos gestiona un almacén general donde se pueden adquirir alimentos, ropa y artículos de primera necesidad.</Spanish>
+		<Hungarian>A Háztartási Árugyártó egy vegyesboltot üzemeltet, ahol élelmiszerek, ruházati cikkek és háztartási cikkek vásárolhatók.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_HOUSEHOLD_GOODS_TRADER_STRATEGY</Tag>
@@ -1645,6 +1690,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Haushaltswarenhändler[COLOR_REVERT] können auf dem [LINK=BUILDING_MARKET]Dorfmarkt[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_HOUSEHOLD_GOODS]Haushaltswaren[\LINK] zu verkaufen. Für die Herstellung von Haushaltswaren benötigt man [LINK=YIELD_VALUABLE_WOOD]Edelholz[\LINK] und [LINK=YIELD_GOAT_HIDES]Ziegenfelle[\LINK]. [LINK=UNIT_HOUSEHOLD_TRADER]Meister-Haushaltswarenhändler[\LINK] beherrschen dieses Handwerk hervorragend und können den Verkauf von Haushaltswaren erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]commercianti di articoli per la casa[COLOR_REVERT] possono lavorare nel [LINK=BUILDING_MARKET]mercato del villaggio[\LINK] o in uno dei suoi potenziamenti per vendere [LINK=YIELD_HOUSEHOLD_GOODS]articoli per la casa[\LINK]. Per produrre oggetti per la casa sono necessari [LINK=YIELD_VALUABLE_WOOD]legno esotico[\LINK] e [LINK=YIELD_GOAT_HIDES]pelli di capra[\LINK]. I [LINK=UNIT_HOUSEHOLD_TRADER]mastri commercianti di articoli per la casa[\LINK] eccellono in questo mestiere e possono incrementare notevolmente le vendite di articoli per la casa.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]comerciantes de artículos domésticos[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_MARKET]mercado del pueblo[\LINK] o en una de sus mejoras para vender [LINK=YIELD_HOUSEHOLD_GOODS]artículos domésticos[\LINK]. Para fabricar artículos domésticos se necesita [LINK=YIELD_VALUABLE_WOOD]madera exótica[\LINK] y [LINK=YIELD_GOAT_HIDES]pieles de cabra[\LINK]. Los [LINK=UNIT_HOUSEHOLD_TRADER]Maestros comerciantes de artículos domésticos[\LINK] destacan en este oficio y pueden aumentar mucho tus ventas de artículos domésticos.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Háztartási Árugyártó[COLOR_REVERT] a [LINK=BUILDING_MARKET]piacon[\LINK] vagy annak egyik továbbfejlesztésén dolgozhat, hogy [LINK=YIELD_HOUSEHOLD_GOODS]háztartási árut[\LINK] értékesítsen. A háztartási áruk gyártásához [LINK=YIELD_VALUABLE_WOOD]bútorfa[\LINK] és [LINK=YIELD_GOAT_HIDES]kecskebőr[\LINK] szükséges. A [LINK=UNIT_HOUSEHOLD_TRADER]Háztartási Árugyártó Mester[\LINK] kiválóan ért ehhez a szakmához és jelentősen növelheti a háztartási áruk eladásait.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEANUT_ROASTER</Tag>
@@ -1674,6 +1720,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Обжарщик арахиса:Обжарщики арахиса</Russian>
+		<Hungarian>Pörkölő (Mogyoró)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEANUT_ROASTER_HELP</Tag>
@@ -1686,6 +1733,7 @@
 		<German>Die Erdnuss ist eine Hülsenfrucht, die hauptsächlich wegen ihrer essbaren Samen angebaut wird. Sie wird in den Tropen und Subtropen weit verbreitet angebaut. Die Erdnuss ist sowohl als Körnerleguminose als auch aufgrund ihres hohen Ölgehalts als Ölpflanze wertvoll. Der Anbau war auf dem amerikanischen Kontinent bereits vor der Ankunft der Spanier etabliert.</German>
 		<Italian>L'arachide è un legume coltivato principalmente per i suoi semi commestibili. È ampiamente coltivata nei tropici e nelle regioni subtropicali. L'arachide è preziosa sia come legume da granella sia, grazie al suo elevato contenuto di olio, come coltura oleosa. La coltivazione era ben radicata nelle Americhe prima dell'arrivo degli spagnoli.</Italian>
 		<Spanish>El cacahuete es una leguminosa cultivada principalmente por sus semillas comestibles. Se cultiva ampliamente en los trópicos y subtrópicos. El cacahuete es valioso como legumbre de grano y, por su alto contenido en aceite, como oleaginosa. Su cultivo estaba muy arraigado en América antes de la llegada de los españoles.</Spanish>
+		<Hungarian>A mogyoró egy főleg az ehető magjáért termesztett hüvelyes növény. Széles körben termesztik a trópusokon és a szubtrópusokon. A mogyoró mind hüvelyes gabonaként, mind pedig magas olajtartalma miatt olajnövényként is értékes. A spanyolok érkezése előtt az amerikai kontinensen már régóta termesztették.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PEANUT_ROASTER_STRATEGY</Tag>
@@ -1694,6 +1742,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Erdnussröster[COLOR_REVERT] können im [LINK=BUILDING_ROASTER_HOUSE]Haus des Rösters[\LINK] oder einer seiner Erweiterungen arbeiten, um aus [LINK=YIELD_PEANUTS]Erdnüssen[\LINK] [LINK=YIELD_ROASTED_PEANUTS]geröstete Erdnüsse[\LINK] herzustellen. [LINK=UNIT_ROASTER]Röstmeister[\LINK] beherrschen dieses Handwerk hervorragend und können Ihre Produktion von gerösteten Erdnüssen erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]torrefattori di arachidi[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_ROASTER_HOUSE]casa del torrefattore[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_ROASTED_PEANUTS]arachidi arrostite[\LINK] da [LINK=YIELD_PEANUTS]arachidi[\LINK]. I [LINK=UNIT_ROASTER]mastri torrefattori[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di arachidi arrostite.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]tostadores de cacahuetes[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_ROASTER_HOUSE]casa del tostador[\LINK] o en una de sus mejoras para producir [LINK=YIELD_ROASTED_PEANUTS]cacahuetes tostados[\LINK] a partir de [LINK=YIELD_PEANUTS]cacahuetes[\LINK]. Los [LINK=UNIT_ROASTER]maestros tostadores[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de cacahuetes tostados.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT] mogyoró pörkölők[COLOR_REVERT] a [LINK=BUILDING_ROASTER_HOUSE]pörkölőházban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_ROASTED_PEANUTS]pörkölt mogyorót[\LINK] állítsanak elő [LINK=YIELD_PEANUTS]mogyoróból[\LINK]. A [LINK=UNIT_ROASTER]pörkőlőmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a pörkölt mogyoró termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_GOATS</Tag>
@@ -1723,6 +1772,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мясник (козы):Мясники (козы)</Russian>
+		<Hungarian>Hentes (Kecske)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_GOATS_HELP</Tag>
@@ -1735,6 +1785,7 @@
 		<German>Die Ziege ist eines der ältesten domestizierten Tiere. Archäologische Funde belegen, daß sie bereits vor 10.000 Jahren in Persien gezüchtet wurde. Ziegen werden in weiten Teilen der Welt zur Gewinnung von Milch, Fleisch, Fell und Häuten genutzt. Unverarbeitete Ziegenmilch hat kleine, gut emulgierte Fettkügelchen, was bedeutet, daß der Rahm in der Milch schwebt und nicht wie bei unverarbeiteter Kuhmilch nach oben steigt; daher muss sie nicht homogenisiert werden.</German>
 		<Italian>La capra è uno dei più antichi animali domestici. Le prove archeologiche dimostrano che veniva allevata in Persia 10.000 anni fa. Le capre sono utilizzate per il latte, la carne, la pelliccia e le pelli in gran parte del mondo. Il latte di capra non trasformato ha globuli di grasso piccoli e ben emulsionati, il che significa che la panna rimane sospesa nel latte invece di salire verso l'alto, come nel latte di mucca non trasformato; pertanto, non ha bisogno di essere omogeneizzato.</Italian>
 		<Spanish>La cabra es uno de los animales domésticos más antiguos. Las pruebas arqueológicas demuestran que ya se pastoreaba en Persia hace 10.000 años. En gran parte del mundo se utiliza para la producción de leche, carne, pieles y cueros. La leche de cabra sin procesar tiene glóbulos de grasa pequeños y bien emulsionados, lo que significa que la nata permanece suspendida en la leche en lugar de subir a la superficie, como en la leche de vaca sin procesar; por lo tanto, no es necesario homogeneizarla.</Spanish>
+		<Hungarian>A kecske az egyik legrégebbi háziasított állat. Régészeti leletek bizonyítják, hogy már 10 000 évvel ezelőtt is tartották Perzsiában. A kecskét a világ nagy részén a tejért, húsért, bőréért és a bundájáért tartják. A feldolgozatlan kecsketejben apró, jól emulgeált zsír található, ami miatt a tejszín a tejben marad és nem emelkedik a tetejére, mint a feldolgozatlan tehéntejben; ezért nem szükséges homogenizálni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_GOATS_STRATEGY</Tag>
@@ -1743,6 +1794,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Ziegenschlachter[COLOR_REVERT] können in der [LINK=BUILDING_BUTCHERS_HOUSE]Haus des Schlachters[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_FOOD]Ziegenfleisch[\LINK] und [LINK=YIELD_GOAT_HIDES]Ziegenfelle[\LINK] von [LINK=YIELD_GOATS]Ziegen[\LINK] zu produzieren. [LINK=UNIT_BUTCHER]Metzgermeister[\LINK] beherrschen dieses Handwerk hervorragend und können die Produktion von Ziegenfleisch erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Macellai di capre[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_BUTCHERS_HOUSE]casa del macellaio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_FOOD]carne di capra[\LINK] e [LINK=YIELD_GOAT_HIDES]pelli di capra[\LINK] dalle [LINK=YIELD_GOATS]capre[\LINK]. I [LINK=UNIT_BUTCHER]mastri macellai[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di carne di capra.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]Carniceros de cabra[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_BUTCHERS_HOUSE]carnicería[\LINK] o en una de sus mejoras para producir [LINK=YIELD_FOOD]carne de cabra[\LINK] y [LINK=YIELD_GOAT_HIDES]pieles de cabra[\LINK] de [LINK=YIELD_GOATS]cabras[\LINK]. Los [LINK=UNIT_BUTCHER]maestros Carniceros[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de carne de cabra.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT] kecske hentesek[COLOR_REVERT] a [LINK=BUILDING_BUTCHERS_HOUSE]hentesboltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_FOOD]húst[\LINK] és [LINK=YIELD_GOAT_HIDES]kecskebőrt [\LINK] állítsanak elő [LINK=YIELD_GOATS]kecskékből[\LINK]. A [LINK=UNIT_BUTCHER]hentesmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a kecskehús termelést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_PIGS</Tag>
@@ -1772,6 +1824,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мясник (свиньи):Мясники (свиньи)</Russian>
+		<Hungarian>Hentes (Disznó)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_PIGS_HELP</Tag>
@@ -1784,6 +1837,7 @@
 		<German>Die Schweinehaltung ist ein Zweig der Tierhaltung, der die Zucht von Hausschweinen umfaßt. Die Schweine werden zur Herstellung von Lebensmitteln und Häuten gezüchtet.</German>
 		<Italian>L'allevamento di suini domestici è un ramo della zootecnia. I maiali vengono allevati per il cibo e le pelli.</Italian>
 		<Spanish>La porcinocultura es la cría de cerdos domésticos, una rama de la ganadería. Los cerdos se crían para obtener alimentos y pieles.</Spanish>
+		<Hungarian>A sertéstenyésztés az állattenyésztés egyik ága, amely házi sertések tenyésztésével foglalkozik. A sertéseket élelmiszer és bőr céljára tenyésztik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_PIGS_STRATEGY</Tag>
@@ -1792,6 +1846,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Schweineschlachter[COLOR_REVERT] können in der [LINK=BUILDING_BUTCHERS_HOUSE]Haus des Schlachters[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_FOOD]Schweinefleisch[\LINK] und [LINK=YIELD_PIG_SKIN]Schweinsleder[\LINK] von [LINK=YIELD_PIGS]Schweinen[\LINK] herzustellen. [LINK=UNIT_BUTCHER]Metzgermeister[\LINK] beherrschen dieses Handwerk hervorragend und können die Produktion von Schweinefleisch erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]macellai di maiali[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_BUTCHERS_HOUSE]casa del macellaio[\LINK] o in uno dei suoi per produrre [LINK=YIELD_FOOD]carne di maiale[\LINK] e [LINK=YIELD_PIG_SKIN]pelle di maiale[\LINK] da [LINK=YIELD_PIGS]maiali[\LINK]. I [LINK=UNIT_BUTCHER]mastri Macellai[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di carne di maiale.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]carniceros[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_BUTCHERS_HOUSE]carnicería[\LINK] o en una de sus mejoras. para producir [LINK=YIELD_FOOD]carne de cerdo[\LINK] y [LINK=YIELD_PIG_SKIN]piel de cerdo[\LINK] de [LINK=YIELD_PIGS]cerdos[\LINK]. Los [LINK=UNIT_BUTCHER]maestros Carniceros[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de carne de cerdo.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]sertés hentesek[COLOR_REVERT] a [LINK=BUILDING_BUTCHERS_HOUSE]hentesboltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_FOOD]húst[\LINK] és [LINK=YIELD_PIG_SKIN]disznőbőrt[\LINK] állítsanak elő [LINK=YIELD_PIGS]disznókból[\LINK]. A [LINK=UNIT_BUTCHER]hentesmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a hústermelést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_CHICKEN</Tag>
@@ -1821,6 +1876,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мясник (курица):Мясники (курица)</Russian>
+		<Hungarian>Hentes (Csirke)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_CHICKEN_HELP</Tag>
@@ -1833,6 +1889,7 @@
 		<German>In der Freilandhaltung können sich die Hühner tagsüber frei bewegen, während sie nachts zum Schutz vor Raubtieren normalerweise in Ställen eingesperrt sind.[NEWLINE]Die Hühner beginnen im Alter von 16 bis 21 Wochen mit dem Legen von Eiern, wobei die Produktion nach 25 Wochen abnimmt. Wenn nach etwa 12 Monaten die Wirtschaftlichkeit der Eierproduktion nicht mehr gegeben ist, werden die Hühner geschlachtet.</German>
 		<Italian>L'allevamento all'aperto consente alle galline di razzolare durante il giorno, anche se di notte sono generalmente confinate in pollai per proteggerle dai predatori.[NEWLINE]Le galline iniziano a deporre le uova a 16-21 settimane di età, anche se la produzione inizia a diminuire dopo le 25 settimane. Poiché l'economia delle uova non ha più senso, le galline vengono macellate dopo circa 12 mesi di produzione di uova.</Italian>
 		<Spanish>La avicultura al aire libre permite a las gallinas deambular durante el día, aunque suelen estar confinadas en gallineros por la noche para protegerlas de los depredadores.[NEWLINE]Las gallinas empiezan a poner huevos a las 16-21 semanas de edad, aunque la producción empieza a disminuir a partir de las 25 semanas. Como la economía del huevo ya no tiene sentido, las gallinas se sacrifican después de aproximadamente 12 meses de producción de huevos.</Spanish>
+		<Hungarian>A szabad tartású baromfitenyésztés lehetővé teszi a csirkéknek, hogy napközben szabadon kóboroljanak, bár éjszakára általában ketrecekbe zárják, hogy megvédjék őket a ragadozóktól. Rossz időjárás esetén is bent tartják őket. A tyúkok 16–21 hetes korukban kezdenek tojást tojni, bár a termelés 25 hetes koruk után csökkenni kezd. A csirkéket 12 hónapos tojástermelés után levágják. A csirkék ilyenkor már kevesebbet tojnak, így a tojástermelés már nem gazdaságos.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_CHICKEN_STRATEGY</Tag>
@@ -1841,6 +1898,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Geflügelschlachter[COLOR_REVERT] können im [LINK=BUILDING_BUTCHERS_HOUSE]Haus des Schlachters[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_FOOD]Hühnerfleisch[\LINK] [LINK=YIELD_DOWNS]Hühnerfedern[\LINK] durch die Schlachtung von [LINK=YIELD_CHICKEN]Hühnern[\LINK] zu produzieren. [LINK=UNIT_POULTRY_BUTCHER]Meister-Geflügelschlachter[\LINK] beherrschen dieses Handwerk hervorragend und können die Produktion von Hühnerfleisch erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Macellai di polli[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_BUTCHERS_HOUSE]casa del macellaio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_FOOD]carne di pollo[\LINK] e [LINK=YIELD_DOWNS]piuma di pollo[\LINK]dai [LINK=YIELD_CHICKEN]polli[\LINK]. I [LINK=UNIT_POULTRY_BUTCHER]mastri macellai di pollame[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di carne di pollo.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]Carniceros de pollos[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_BUTCHERS_HOUSE]carnicería[\LINK] o en una de sus mejoras para producir [LINK=YIELD_FOOD]carne de pollo[\LINK] y [LINK=YIELD_DOWNS]plumón de pollo[\LINK] a partir de [LINK=YIELD_CHICKEN]pollos[\LINK]. Los [LINK=UNIT_POULTRY_BUTCHER]maestros carniceros[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de carne de pollo.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Csirke hentesek[COLOR_REVERT] a [LINK=BUILDING_BUTCHERS_HOUSE]hentesboltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_FOOD]húst[\LINK] és [LINK=YIELD_DOWNS]pehelytollat[\LINK] állítsanak elő [LINK=YIELD_CHICKEN]csirkékből[\LINK]. A [LINK=UNIT_POULTRY_BUTCHER]Baromfihentes Mesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a csirkehús termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_GEESE</Tag>
@@ -1870,6 +1928,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Мясник (гуси):Мясники (гуси)</Russian>
+		<Hungarian>Hentes (Liba)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_GEESE_HELP</Tag>
@@ -1882,6 +1941,7 @@
 		<German>Gänse sind unter den Hausvögeln die am schnellsten wachsenden Tiere. Sie sind widerstandsfähig und bei ständiger Pflege frei von Krankheiten. Gänse können auf grünen Weiden aufgezogen werden, was die Produktionskosten erheblich senkt.</German>
 		<Italian>Le oche sono gli uccelli domestici che crescono più rapidamente. Sono resistenti e prive di malattie se sottoposte a cure costanti. Le oche possono essere allevate su pascoli verdi, il che riduce notevolmente i costi di produzione.</Italian>
 		<Spanish>Los gansos son las aves domésticas que crecen más rápido. Son resistentes y no padecen enfermedades cuando se les proporcionan cuidados constantes. Los gansos pueden criarse en pastos verdes, lo que reduce considerablemente los costes de producción.</Spanish>
+		<Hungarian>A libák a háziasított madarak közül a leggyorsabban növekednek. Állandó gondozás mellett ellenállóak és betegségmentesek. A libákat zöld legelőkön lehet tartani, ami jelentősen csökkenti a termelési költségeket.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BUTCHER_GEESE_STRATEGY</Tag>
@@ -1890,6 +1950,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Gänseschlachter[COLOR_REVERT] können in der [LINK=BUILDING_BUTCHERS_HOUSE]Haus des Schlachters[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_FOOD]Gänsefleisch[\LINK] und [LINK=YIELD_DOWNS]Gänsedaunen[\LINK] durch die Schlachtung von [LINK=YIELD_GEESE]Gänsen[\LINK] zu produzieren. [LINK=UNIT_POULTRY_BUTCHER]Meister-Geflügelschlachter[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Gänsefleisch und -daunen dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Macellai d'oca[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_BUTCHERS_HOUSE]casa del macellaio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_FOOD]carne d'oca[\LINK] e [LINK=YIELD_DOWNS]piuma d'oca[\LINK] dalle [LINK=YIELD_GEESE]oche[\LINK]. I [LINK=UNIT_POULTRY_BUTCHER]mastri macellai di pollame[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di carne e piume d'oca.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]carniceros de oca[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_BUTCHERS_HOUSE]carnicería[\LINK] o en una de sus mejoras para producir [LINK=YIELD_FOOD]carne de oca[\LINK] y [LINK=YIELD_DOWNS]plumón de oca[\LINK] de [LINK=YIELD_GEESE]oca[\LINK]. Los [LINK=UNIT_POULTRY_BUTCHER]maestros Carniceros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de carne y plumón de ganso.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]liba hentesek[COLOR_REVERT] a [LINK=BUILDING_BUTCHERS_HOUSE]hentesboltban [\LINK] vagy annak egyik továbbfejlesztésében, hogy [LINK=YIELD_FOOD]húst[\LINK] és [LINK=YIELD_DOWNS]libatollat[\LINK] állítsanak elő [LINK=YIELD_GEESE]libákból[\LINK]. A [LINK=UNIT_POULTRY_BUTCHER]Baromfihentes Mesterek[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a libahús és a libatoll termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_CATTLE</Tag>
@@ -1923,6 +1984,7 @@
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Fejőnő (Tehén)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_CATTLE_HELP</Tag>
@@ -1935,6 +1997,7 @@
 		<German>Milchmädchen arbeiten hart, um die Siedler, ob jung oder alt, mit dem dringend benötigten Eiweiß zu versorgen. Wer glaubt, daß die Arbeit leicht ist, war noch nicht nah genug am Arbeitsende einer Kuh.[NEWLINE]Milchmädchen sind auch immun gegen Pocken, ein seltener Vorteil in der Kolonialzeit.[NEWLINE]Mit Milch als Geschäft ist meist die Milch von Kühen gemeint. Sie ist eine gute Quelle für Eiweiß und Fett. Bei der Herstellung von Käse wird die Milch gesäuert und die Enzyme von Lab oder anderen Bakterien werden hinzugefügt, um das Kasein gerinnen zu lassen.</German>
 		<Italian>Le lattaie lavorano duramente per fornire le proteine tanto necessarie ai coloni giovani e anziani. Chiunque pensi che il lavoro sia facile non è stato abbastanza vicino alla parte commerciale di una mucca.[NEWLINE]Le lattaie sono anche immuni al vaiolo, un vantaggio raro in epoca coloniale.[NEWLINE]Per latte si intende il latte delle mucche. È una buona fonte di proteine e grassi. Per la produzione del formaggio, il latte viene acidificato e gli vengono aggiunti gli enzimi del caglio o di altri batteri per far coagulare la caseina.</Italian>
 		<Spanish>Las lecheras trabajan duro para suministrar las proteínas que tanto necesitan los colonos jóvenes y viejos. Cualquiera que piense que el trabajo es fácil no se ha acercado lo suficiente al negocio de una vaca.[NEWLINE]Las lecheras también son inmunes a la viruela, una ventaja poco común en la época colonial.[NEWLINE]La leche como negocio suele significar la leche de vaca. Es una buena fuente de proteínas y grasas. Cuando se utiliza para hacer queso, la leche se acidifica y se añaden las enzimas del cuajo u otras bacterias para provocar la coagulación de la caseína.</Spanish>
+		<Hungarian>A fejőnők keményen dolgoznak, hogy a fiatal és idős gyarmatosoknak a szükséges fehérjét biztosítsák. Aki azt hiszi, hogy ez a munka könnyű, az még nem került elég közel egy tehénhez. [NEWLINE]A fejőnők immunisak a himlőre is, ami a gyarmati időkben ritka előny volt. [NEWLINE]A tejiparban leggyakrabban tehéntejről van szó, bár kecskéket és juhokat is fejnek. A tej jó fehérje- és zsírforrás. Sajt készítéséhez a tejet savanyítják, majd enzimeket vagy más baktériumokat adnak hozzá, hogy a tejfehérje megalvadjon.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_CATTLE_STRATEGY</Tag>
@@ -1943,6 +2006,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können in den [LINK=BUILDING_STABLE]Stallungen[\LINK] oder dessen Erweiterungen arbeiten, um mit dem Melken von Milchkühen [LINK=YIELD_MILK]Milch[\LINK] zu produzieren. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Kuhmilch dramatisch.</German>
 		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre il [LINK=YIELD_MILK]latte di mucca da latte[\LINK]. Le [LINK=UNIT_MILK_MAID]lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di latte di mucca.</Italian>
 		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_MILK]leche de vaca[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de leche de vaca.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]fejőnők[COLOR_REVERT] az [LINK=BUILDING_STABLE]istállóban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy tejtermelő tehenekből [LINK=YIELD_MILK]tejet[\LINK] állítsák elő. A [LINK=UNIT_MILK_MAID]Szakképzett Fejőnők[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a tehéntej termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_SHEEP</Tag>
