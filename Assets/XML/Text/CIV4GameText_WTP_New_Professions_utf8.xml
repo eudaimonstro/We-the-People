@@ -771,6 +771,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик рапса:Сборщики рапса</Russian>
+		<Hungarian>Növénytermesztő (Repce)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RAPE_PLANTER_HELP</Tag>
@@ -783,6 +784,7 @@
 		<German>Der Raps mit seinen leuchtend gelben Blüten wird hauptsächlich wegen seiner ölhaltigen Samen angebaut, die beträchtliche Mengen an Erucasäure enthalten. Rapsschrot, der nach der Ölgewinnung übrig bleibt, ist ein proteinreiches Tierfutter.[NEWLINE]Raps ist eine wertvolle Ölpflanze. Nach der Extraktion des Öls wird der Rest als Futtermittel für Haustiere, vor allem Rinder, aber auch Schweine und Geflügel, verwendet. Er gehört zur Familie der Kohlgewächse.</German>
 		<Italian>La colza, con i suoi fiori gialli e brillanti, è coltivata principalmente per i suoi semi ricchi di olio, che contengono quantità apprezzabili di acido erucico. La farina di colza, che rimane dopo l'estrazione dell'olio, è un mangime per animali ad alto contenuto proteico.[NEWLINE]La colza è una coltura oleosa di grande valore. Una volta estratto l'olio, ciò che resta viene utilizzato come foraggio per gli animali domestici, soprattutto bovini, ma anche suini e pollame. È un membro della famiglia dei cavoli.</Italian>
 		<Spanish>La colza, con sus brillantes flores amarillas, se cultiva principalmente por su semilla rica en aceite, que contiene cantidades apreciables de ácido erúcico. La harina de colza, que se obtiene una vez extraído el aceite, es un pienso rico en proteínas.[NEWLINE]La colza es un valioso cultivo oleaginoso. Una vez extraído el aceite, lo que queda se utiliza como forraje para animales domésticos, principalmente ganado vacuno, pero también cerdos y aves de corral. Pertenece a la familia de las coles.</Spanish>
+		<Hungarian>A ragyogó sárga virágú repcét főként olajban gazdag magjáért termesztik, amely jelentős mennyiségű erukasavat tartalmaz. Az olaj kinyerése után visszamaradó repcemagliszt magas fehérjetartalmú állati takarmány. [NEWLINE]A repce értékes olajos növény. Az olaj kinyerése után a visszamaradó rész háziállatok, főként szarvasmarhák, de sertések és baromfi takarmányaként is felhasználható. A káposztafélék családjába tartozik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RAPE_PLANTER_STRATEGY</Tag>
@@ -791,6 +793,7 @@
 		<German>Auf Flachland-Geländefeldern in der [LINK=TERRAIN_TAIGA]Taiga[\LINK] kann [LINK=YIELD_RAPE]Raps[\LINK] angebaut werden, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Rapspflanzer[COLOR_REVERT] zugeordnet ist. Die Rapsernte kann erhöht werden, indem man einen [LINK=UNIT_RAPE_PLANTER]erfahrenen Rapspflanzer[\LINK] mit der Arbeit beauftragt.</German>
 		<Italian>Le piastrelle di pianura permettono di coltivare [LINK=YIELD_RAPE]colza[\LINK] se il colono che le lavora è assegnato alla professione [COLOR_HIGHLIGHT_TEXT]piantatore di colza[COLOR_REVERT]. Il raccolto di colza può essere aumentato assegnando al lavoro un [LINK=UNIT_RAPE_PLANTER]piantatore di colza esperto[\LINK].</Italian>
 		<Spanish>Las baldosas de llanura te permiten cultivar [LINK=YIELD_RAPE]colza[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]plantador de colza[COLOR_REVERT]. La cosecha de colza puede aumentarse asignando un [LINK=UNIT_RAPE_PLANTER]experto plantador de colza[\LINK] al trabajo.</Spanish>
+		<Hungarian>A sík [LINK=TERRAIN_TAIGA]tajga[\LINK] területeken [LINK=YIELD_RAPE]repce[\LINK] termeszthető, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]repcetermesztő[COLOR_REVERT] szakmát választasz. A repce terméshozamát tovább lehet növelni [LINK=UNIT_RAPE_PLANTER]tapasztalt repcetermesztő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVES_PLANTER</Tag>
@@ -820,6 +823,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик оливок:Сборщики оливок</Russian>
+		<Hungarian>Olajbogyó Szedő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVES_PLANTER_HELP</Tag>
@@ -832,6 +836,7 @@
 		<German>Olivenbäume liefern entweder Tafeloliven oder Oliven zur Ölgewinnung. Spanische Kolonisten brachten die Olive im Jahr 1560 in die Neue Welt, wo ihr Anbau im heutigen Peru, Chile und Argentinien florierte. Im 18. Jahrhundert pflanzten spanische Missionare Olivenbäume in Kalifornien. Da das Wild vor allem an der Grenze so mager ist, sind Speiseöle wichtig für die Gesundheit.[NEWLINE]Vor dem Kontakt mit den Europäern war Speiseöl für die Ureinwohner des pazifischen Nordwestens lebenswichtig. Oolichan-Öl aus Kerzenfisch machte einen so großen Teil des Handels der Ureinwohner aus, daß die Handelsrouten als "Fettstraßen" bezeichnet wurden.</German>
 		<Italian>Gli olivi producono olive da tavola o olive da olio. I coloni spagnoli portarono l'olivo nel Nuovo Mondo nel 1560, dove la sua coltivazione prosperò negli attuali Perù, Cile e Argentina. Nel XVIII secolo i missionari spagnoli piantarono olivi in California. Poiché la selvaggina è così magra, soprattutto in frontiera, gli oli da cucina sono importanti per la salute.[NEWLINE]Prima del contatto europeo, l'olio da cucina era essenziale per i nativi del Pacifico nordoccidentale. L'olio di oolichan ricavato dal pesce candela costituiva una parte così importante del commercio dei nativi che le rotte commerciali venivano chiamate "vie del grasso".</Italian>
 		<Spanish>Los olivos producen aceitunas de mesa o aceitunas para aceite. Los colonos españoles llevaron el olivo al Nuevo Mundo en 1560, donde su cultivo prosperó en los actuales Perú, Chile y Argentina. En el siglo XVIII, los misioneros españoles plantaron olivos en California. Como la caza salvaje es tan magra, especialmente en la frontera, los aceites de cocina son importantes para la salud.[NEWLINE]Antes del contacto europeo, el aceite de cocina era esencial para las naciones indígenas del noroeste del Pacífico. El aceite de oolichan procedente del pez vela constituía una parte tan importante del comercio nativo que las rutas comerciales se llamaban "rutas de la grasa".</Spanish>
+		<Hungarian>Az olajfákról asztali olajbogyó vagy olajhoz való olajbogyó szüretelhető. A spanyol gyarmatosítók 1560-ban hozták az olajbogyót az Újvilágba, ahol termesztése a mai Peru, Chile és Argentína területén virágzott. A 18. században spanyol misszionáriusok olajfákat ültettek Kaliforniában. Mivel a vadhús nagyon sovány, különösen a határvidéken, az étolajok fontosak az egészséges táplálkozáshoz. [NEWLINE] Az európaiakkal való kapcsolatfelvétel előtt az étolaj elengedhetetlen volt a Csendes-óceán északnyugati partvidékén élő indiánok számára. A gyertyaolaj annyira központi szerepet játszott az indián kereskedelemben, hogy a kereskedelmi útvonalakat "zsíros ösvényeknek" nevezték.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVES_PLANTER_STRATEGY</Tag>
@@ -840,6 +845,7 @@
 		<German>Auf Flachland-Geländefeldern können Sie [LINK=YIELD_OLIVES]Oliven[\LINK] anbauen, wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Olivensammler[COLOR_REVERT] zugeordnet ist. Die Olivenernte kann erheblich gesteigert werden, wenn ein [LINK=UNIT_OLIVES_PLANTER]erfahrener Oliven-Sammler[\LINK] mit der Arbeit beauftragt wird.</German>
 		<Italian>Le tessere di pianura permettono di coltivare [LINK=YIELD_OLIVES]olive[\LINK] se il colono che vi lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]raccoglitore di olive[COLOR_REVERT]. Il raccolto di olive può essere aumentato notevolmente assegnando un [LINK=UNIT_OLIVES_PLANTER]raccoglitore di olive esperto[\LINK] al lavoro.</Italian>
 		<Spanish>Las baldosas de llanura te permiten cultivar [LINK=YIELD_OLIVES]aceitunas[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de olivos[COLOR_REVERT]. La cosecha de aceitunas puede aumentar considerablemente si se asigna un [LINK=UNIT_OLIVES_PLANTER]experto recolector de olivos[\LINK] al trabajo.</Spanish>
+		<Hungarian>A síksági területeken [LINK=YIELD_OLIVES]olajbogyót[\LINK] termeszthetsz, ha az ott dolgozó lakosnak az [COLOR_HIGHLIGHT_TEXT]olajbogyó szedő[COLOR_REVERT] szakmát választod. Az olajbogyó termés jelentősen növelhető egy [LINK=UNIT_OLIVES_PLANTER]tapasztalt olajbogyó szedő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_YERBA_COLLECTOR</Tag>
@@ -869,6 +875,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сборщик чайных листьев:Сборщики чайных листьев</Russian>
+		<Hungarian>Tealevél Gyűjtő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_YERBA_COLLECTOR_HELP</Tag>
@@ -881,6 +888,7 @@
 		<German>Die Guarani und Tupi bauten Yerba Mate bereits vor der europäischen Kolonisierung an. Nachdem die Jesuiten damit begonnen hatten, wurde Mate-Tee im heutigen Paraguay und in anderen spanischen Kolonien weit verbreitet.[NEWLINE]Mate-Blätter werden in heißem Wasser eingeweicht, um ein koffeinhaltiges Getränk herzustellen: Mate-Tee. Kalt gebraut, wird er zur Herstellung von Terere verwendet.</German>
 		<Italian>I Guarani e i Tupi coltivavano la yerba mate prima della colonizzazione europea. Dopo che i gesuiti iniziarono a usarla, la yerba mate si diffuse nell'attuale Paraguay e in altre colonie spagnole.[NEWLINE]Le foglie di yerba vengono messe in infusione in acqua calda per ottenere una bevanda a base di caffeina: la yerba mate. Preparato a freddo, viene usato per fare il terere.</Italian>
 		<Spanish>Los guaraníes y los tupíes cultivaban la yerba mate antes de la colonización europea. Después de que los jesuitas empezaran a utilizarla, la yerba mate se generalizó en lo que hoy es Paraguay y en otras colonias españolas.[NEWLINE]Las hojas de yerba se remojan en agua caliente para preparar una bebida con cafeína: la yerba mate. Elaborado en frío, se utiliza para hacer terere.</Spanish>
+		<Hungarian>A guaraní és a tupí népek már az európai gyarmatosítás előtt is termesztették a tealeveleket. Miután a jezsuiták elkezdték használni, a tea elterjedt a mai Paraguay területén és más spanyol gyarmatokon is. [NEWLINE]A tealeveleket forró vízben áztatják, így készül a koffeintartalmú ital. Hidegen főzve tereré készítésére használják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_YERBA_COLLECTOR_STRATEGY</Tag>
@@ -889,6 +897,7 @@
 		<German>Dschungel-Geländefelder ermöglichen Ihnen den Anbau von [LINK=YIELD_YERBA_LEAVES]Mate-Blättern[\LINK], wenn der Kolonist, der sie bearbeitet, dem Beruf [COLOR_HIGHLIGHT_TEXT]Yerba-Sammler[COLOR_REVERT] zugeordnet ist. Die Ernte an Mate-Blättern kann gesteigert werden, indem ein [LINK=UNIT_YERBA_PLANTER]erfahrener Yerba-Pflanzer[\LINK] zur Arbeit eingeteilt wird.</German>
 		<Italian>Le tessere della giungla permettono di coltivare [LINK=YIELD_YERBA_LEAVES]foglie di yerba[\LINK] se il colono che le lavora è assegnato alla professione di [COLOR_HIGHLIGHT_TEXT]raccoglitore di yerba[COLOR_REVERT]. Il raccolto di yerba può essere aumentato assegnando al lavoro un [LINK=UNIT_YERBA_PLANTER]piantatore di yerba esperto[\LINK].</Italian>
 		<Spanish>Las baldosas de selva te permiten cultivar [LINK=YIELD_YERBA_LEAVES]hojas de yerba[\LINK] si el colono que las trabaja tiene asignada la profesión de [COLOR_HIGHLIGHT_TEXT]recolector de yerba[COLOR_REVERT]. La cosecha de yerba se puede aumentar asignando un [LINK=UNIT_YERBA_PLANTER]experto plantador de yerba[\LINK] al trabajo.</Spanish>
+		<Hungarian>A dzsungel területeken [LINK=YIELD_YERBA_LEAVES]tealeveleket[\LINK] termeszthetsz, ha az ott dolgozó lakosnak a [COLOR_HIGHLIGHT_TEXT]tealevél gyűjtő[COLOR_REVERT] szakmát választod. A tealevél terméshozam tovább növelhető egy [LINK=UNIT_YERBA_PLANTER]tapasztalt tealevél gyűjtő[\LINK] alkalmazásával.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_VANILLA_COLLECTOR</Tag>
