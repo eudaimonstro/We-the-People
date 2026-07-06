@@ -2040,6 +2040,7 @@
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Fejőnő (Birka)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_SHEEP_HELP</Tag>
@@ -2052,6 +2053,7 @@
 		<German>Schafsmilch hat mehr Eiweiß und Fett und größere Kaseinpartikel als Kuh- oder Ziegenmilch. Sie ist nahrhaft und eine Quelle für besondere Käsesorten.</German>
 		<Italian>Il latte di pecora ha più proteine e grassi e particelle di caseina più grandi rispetto al latte di mucca o di capra. È nutriente e fonte di formaggi particolari.</Italian>
 		<Spanish>La leche de oveja tiene más proteínas y grasas, y partículas de caseína más grandes que la de vaca o cabra. Es nutritiva y fuente de quesos característicos.</Spanish>
+		<Hungarian>A juhtej több fehérjét és zsírt tartalmaz, valamint nagyobb tejfehérje részecskéket, mint a tehén- vagy kecsketej. Tápláló, és jellegzetes sajtok alapanyaga.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_SHEEP_STRATEGY</Tag>
@@ -2060,6 +2062,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können im [LINK=BUILDING_STABLE]Stall[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_MILK]Schafsmilch[\LINK] herzustellen. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] sind in diesem Handwerk hervorragend. Sie steigern die Produktion von Schafsmilch dramatisch.</German>
 		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_MILK]latte di pecora[\LINK]. Le [LINK=UNIT_MILK_MAID]lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di latte di pecora.</Italian>
 		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_MILK]leche de oveja[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de leche de oveja.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]fejőnők[COLOR_REVERT] az [LINK=BUILDING_STABLE]istállóban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_MILK]juhtejet[\LINK] állítsanak elő. A [LINK=UNIT_MILK_MAID]szakképzett fejőnők[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a juhtej termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_GOATS</Tag>
@@ -2093,6 +2096,7 @@
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Fejőnő (Kecske)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_GOATS_HELP</Tag>
@@ -2105,6 +2109,7 @@
 		<German>Unverarbeitete Ziegenmilch hat kleine, gut emulgierte Fettkügelchen, was bedeutet, daß der Rahm in der Milch schwebt und nicht wie bei unverarbeiteter Kuhmilch nach oben steigt; daher muss sie nicht homogenisiert werden.[NEWLINE]Die Anzahl der Tiere, die ein Ziegenhalter halten kann, hängt von der Qualität des Weidelands ab.</German>
 		<Italian>Il latte di capra non trasformato ha globuli di grasso piccoli e ben emulsionati, il che significa che la panna rimane sospesa nel latte invece di salire verso l'alto, come nel latte di mucca non trasformato; pertanto, non ha bisogno di essere omogeneizzato.[NEWLINE]Il numero di animali che un allevatore di capre può mantenere dipende dalla qualità del pascolo.</Italian>
 		<Spanish>La leche de cabra sin procesar tiene glóbulos de grasa pequeños y bien emulsionados, lo que significa que la nata permanece suspendida en la leche en lugar de subir a la superficie, como en la leche de vaca sin procesar; por lo tanto, no es necesario homogeneizarla.[NEWLINE]El número de animales que puede mantener un ganadero caprino depende de la calidad de los pastos.</Spanish>
+		<Hungarian>A feldolgozatlan kecsketejben apró, jól emulgeált zsír található, ami azt jelenti, hogy a tejszín a tejben marad és nem emelkedik a tetejére, mint a feldolgozatlan tehéntejben; ezért nem szükséges homogenizálni.[NEWLINE]A kecsketenyésztő által tartott állatok száma a legelő minőségétől függ.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_GOATS_STRATEGY</Tag>
@@ -2113,6 +2118,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können im [LINK=BUILDING_STABLE]Stall[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_MILK]Ziegenmilch[\LINK] zu produzieren. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] sind in diesem Handwerk hervorragend. Sie steigern die Produktion von Ziegenmilch dramatisch.</German>
 		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_MILK]latte di capra[\LINK]. Le [LINK=UNIT_MILK_MAID]Lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di latte di capra.</Italian>
 		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_MILK]leche de cabra[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de leche de cabra.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]fejőnők[COLOR_REVERT] az [LINK=BUILDING_STABLE]istállóban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_MILK]kecsketejet[\LINK] állítsanak elő. A [LINK=UNIT_MILK_MAID]szakképzett fejőnők[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a kecsketej termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER</Tag>
@@ -2146,6 +2152,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Sajtkészítő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER_HELP</Tag>
@@ -2158,6 +2165,7 @@
 		<German>Käse wird durch Gerinnung des Milcheiweißes Kasein in einer breiten Palette von Geschmacksrichtungen und Texturen hergestellt. Er besteht aus Proteinen und Fett und wird normalerweise aus der Milch von Kühen, Ziegen oder Schafen gewonnen. Bei der Herstellung wird die Milch angesäuert und die Enzyme des Labs oder andere bakterielle Enzyme werden hinzugefügt, um das Kasein zur Gerinnung zu bringen. Der feste Käsebruch wird dann von der flüssigen Molke getrennt und zu fertigem Käse gepresst.</German>
 		<Italian>Il formaggio viene prodotto in un'ampia gamma di sapori e consistenze attraverso la coagulazione della proteina del latte, la caseina. È composto da proteine e grassi, solitamente provenienti dal latte di mucca, capra o pecora. Durante la produzione, il latte viene acidificato e vengono aggiunti gli enzimi del caglio o altri enzimi batterici per provocare la coagulazione della caseina. La cagliata solida viene quindi separata dal siero liquido e pressata per ottenere il formaggio finito.</Italian>
 		<Spanish>El queso se produce en una amplia gama de sabores y texturas por coagulación de la proteína láctea caseína. Está compuesto de proteínas y grasa, y suele proceder de la leche de vaca, cabra u oveja. Durante la producción, se acidifica la leche y se añaden las enzimas del cuajo u otras enzimas bacterianas para provocar la coagulación de la caseína. A continuación, la cuajada sólida se separa del suero líquido y se prensa para obtener el queso acabado.</Spanish>
+		<Hungarian>A sajt a tejfehérje megalvasztásával készül és ízében és állagában nagy változatosságot mutat. Fehérjékből és zsírokból áll, általában tehén-, kecske- vagy juhtejből. Az előállítás során a tejet savanyítják, majd enzimeket vagy más baktériumokat adnak hozzá, hogy a tejfehérje megalvadjon. A megszilárdult tejfehérjét ezután elválasztják a folyékony tejsavótól, majd préselik, hogy elkészüljön a sajt.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER_STRATEGY</Tag>
@@ -2166,6 +2174,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Käsemacher[COLOR_REVERT] können in den [LINK=BUILDING_STABLE]Stallungen[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_CHEESE]Käse[\LINK] aus [LINK=YIELD_MILK]Milch[\LINK] herzustellen. [LINK=UNIT_CHEESE_MAKER]Käsemeister[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern Ihre Käseproduktion dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Casari[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_CHEESE]formaggio[\LINK] dal [LINK=YIELD_MILK]latte[\LINK]. I [LINK=UNIT_CHEESE_MAKER]mastri casari[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di formaggio.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]queseros[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CHEESE]queso[\LINK] a partir de [LINK=YIELD_MILK]leche[\LINK]. Los [LINK=UNIT_CHEESE_MAKER]maestros queseros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de queso.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]sajtkészítők[COLOR_REVERT] az [LINK=BUILDING_STABLE]istállóban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_CHEESE]sajtot[\LINK] állítsanak elő [LINK=YIELD_MILK]tejből[\LINK]. A [LINK=UNIT_CHEESE_MAKER]sajtkészítő mesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik a sajttermelést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RAPE_OIL_TRADER</Tag>
@@ -2195,6 +2204,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Маслодел (рапс):Маслоделы (рапс)</Russian>
+		<Hungarian>Olajkészítő (Repce)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RAPE_OIL_TRADER_HELP</Tag>
@@ -2207,6 +2217,7 @@
 		<German>Im Mittelalter nutzten die Bauern den Raps in der Fruchtfolge, um Unkraut einzudämmen und den Boden zu verbessern. Rapsöl wurde nur selten von Menschen gegessen. Die alten Sorten waren furchtbar bitter und enthielten einen hohen Gehalt an giftiger Erucasäure. Jahrhundertelang wurde das Öl als Tierfutter verwendet.</German>
 		<Italian>Nel Medioevo gli agricoltori utilizzavano la colza nella rotazione delle colture per contenere le erbacce e migliorare il terreno. L'olio di colza era raramente consumato dall'uomo. Le vecchie varietà erano terribilmente amare e contenevano alti livelli di acido erucico tossico. Per secoli l'olio è stato utilizzato per l'alimentazione degli animali.</Italian>
 		<Spanish>En la Edad Media, los agricultores utilizaban la colza en la rotación de cultivos para reducir las malas hierbas y mejorar el suelo. El aceite de colza rara vez era consumido por el ser humano. Las variedades antiguas eran terriblemente amargas y contenían altos niveles de ácido erúcico tóxico. Durante siglos, el aceite se utilizó en la alimentación animal.</Spanish>
+		<Hungarian>A középkorban a gazdák a vetésforgóban repcét használtak a gyomok visszaszorítására és a talaj javítására. A repceolajat az emberek ritkán fogyasztották. A régi fajták rettenetesen keserűek voltak és magas mennyiségben tartalmaztak mérgező erukasavat. Évszázadokig az olajat állati takarmányként használták.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_RAPE_OIL_TRADER_STRATEGY</Tag>
@@ -2215,6 +2226,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Rapsölhändler[COLOR_REVERT] können im [LINK=BUILDING_OIL_TRADER_HOUSE]Haus des Ölhändlers[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_RAPE_OIL]Rapsöl[\LINK] herzustellen. [LINK=UNIT_OIL_TRADER]Meister-Speiseölhändler[\LINK] sind in diesem Handwerk hervorragend. Sie steigern Ihre Produktion von Rapsöl dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]commercianti di olio di colza[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_OIL_TRADER_HOUSE]casa del commerciante di olio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_RAPE_OIL]olio di colza[\LINK]. I [LINK=UNIT_OIL_TRADER]mastri oliatori[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di olio di colza.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]comerciantes de aceite de colza[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_OIL_TRADER_HOUSE]casa del comerciante de aceite[\LINK] o en una de sus mejoras para producir [LINK=YIELD_RAPE_OIL]aceite de colza[\LINK]. Los [LINK=UNIT_OIL_TRADER]maestros engrasadores[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de aceite de colza.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]repceolaj készítők[COLOR_REVERT] az [LINK=BUILDING_OIL_TRADER_HOUSE]étolaj boltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_RAPE_OIL]repceolajat[\LINK] állítsanak elő. Az [LINK=UNIT_OIL_TRADER]Étolajkészítő Mesterek[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a repceolaj termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVE_OIL_TRADER</Tag>
@@ -2244,6 +2256,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Маслодел (оливки):Маслоделы (оливки)</Russian>
+		<Hungarian>Olajkészítő (Oliva)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVE_OIL_TRADER_HELP</Tag>
@@ -2256,6 +2269,7 @@
 		<German>Das Pressen von Öl ist ein altes Handwerk in Europa, insbesondere in den Mittelmeerkulturen. Die Geräte, mit denen Oliven zur Gewinnung von Öl gepresst werden, können auch für die Verarbeitung von Raps verwendet werden.</German>
 		<Italian>La spremitura dell'olio è un'attività antica in Europa, in particolare nelle culture mediterranee. Le attrezzature che schiacciano le olive per ricavarne l'olio possono essere adattate alla colza.</Italian>
 		<Spanish>El prensado del aceite es un antiguo oficio en Europa, sobre todo en las culturas mediterráneas. Antes del contacto europeo, el aceite de cocina era esencial para las naciones indígenas del noroeste del Pacífico.</Spanish>
+		<Hungarian>Az olajpréselés ősi mesterség Európában, különösen a mediterrán kultúrákban. Az olajbogyókat olaj előállításához préselő berendezések repce magvak feldolgozására is átalakíthatók.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVE_OIL_TRADER_STRATEGY</Tag>
@@ -2264,6 +2278,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Olivenölhändler[COLOR_REVERT] können im [LINK=BUILDING_OIL_TRADER_HOUSE]Haus des Ölhändlers[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_OLIVE_OIL]Olivenöl[\LINK] herzustellen. [LINK=UNIT_OIL_TRADER]Meister-Speiseölhändler[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Olivenöl dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Commercianti di olio d'oliva[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_OIL_TRADER_HOUSE]casa del commerciante di olio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_OLIVE_OIL]olio d'oliva[\LINK]. I [LINK=UNIT_OIL_TRADER]mastri oliatori[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di olio d'oliva.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]comerciantes de aceite de oliva[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_OIL_TRADER_HOUSE]casa del comerciante de aceite[\LINK] o en una de sus mejoras para producir [LINK=YIELD_OLIVE_OIL]aceite de oliva[\LINK]. Los [LINK=UNIT_OIL_TRADER]maestros engrasadores[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de aceite de oliva.</Spanish>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]olívaolaj készítők[COLOR_REVERT] az [LINK=BUILDING_OIL_TRADER_HOUSE]étolaj boltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_OLIVE_OIL]olívaolajat[\LINK] állítsanak elő. Az [LINK=UNIT_OIL_TRADER]Étolajkészítő Mesterek[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik az olívaolaj termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FESTIVE_CLOTHES_TAILOR</Tag>
@@ -2293,6 +2308,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Портной праздничной одежды:Портные праздничной одежды</Russian>
+		<Hungarian>Szabó (Ünnepi Ruha)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FESTIVE_CLOTHES_TAILOR_HELP</Tag>
@@ -2305,6 +2321,7 @@
 		<German>Der Schneider erschafft den gut gekleideten Mann, stilvoll und bereit, in der Diplomatie, im Geschäftsleben und in der Romantik erfolgreich zu sein. Die Schneiderei umfasst Teilgewerke. Der Schneider näht nur selten das Kleidungsstück. Ein anderer wählt den perfekten Stoff aus. In einer wachsenden Stadt mit einem modischen Schneider kauft jeder, vom Kaufmann bis zum Schmied, dort ein, um gut auszusehen.</German>
 		<Italian>Il sarto crea l'uomo ben vestito, elegante e pronto ad avere successo nella diplomazia, negli affari e nel romanticismo. La sartoria comprende dei sub-lavori. Il tagliatore raramente cuce il capo. Un altro sceglie il tessuto perfetto. In una città in crescita con un sarto alla moda, tutti, dal mercante al fabbro, acquistano lì per apparire al meglio.</Italian>
 		<Spanish>El sastre crea al hombre bien vestido, con estilo y listo para triunfar en la diplomacia, los negocios y el romance. La sastrería incluye oficios secundarios. El cortador rara vez cose la prenda. Otro elige la tela perfecta. En una ciudad en expansión con un sastre a la moda, todos, desde el comerciante hasta el herrero, compran allí para lucir lo mejor posible.</Spanish>
+		<Hungarian>A szabó teremti meg az elegánsan öltözött férfit, aki stílusos és készen áll a diplomácia, az üzleti élet és a szerelem terén elért sikerekre. A szabó műhelyében más szakmák is jelen vannak.[NEWLINE]A szabó ritkán varrja meg a ruhát. Más választja ki a tökéletes anyagot. Vannak varrónők, akik stílusos női ruhákat készítenek. Egy növekvő városban, ahol van egy divatos szabó, mindenki, a kereskedőtől a kovácsig, ott vásárol, hogy a legjobban nézzen ki.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FESTIVE_CLOTHES_TAILOR_STRATEGY</Tag>
@@ -2313,6 +2330,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Schneider für formelle Kleidung[COLOR_REVERT] können im [LINK=BUILDING_TAILOR_HOUSE]Haus des Schneiders[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_FESTIVE_CLOTHES]formelle Kleidung[\LINK] für besondere Anlässe herzustellen. [LINK=UNIT_CLOTH_TAYLOR]Schneidermeister[\LINK] zeichnen sich in diesem Handwerk aus. Sie steigern Ihre Produktion von stilvoller Kleidung erheblich.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]sarti di abiti da cerimonia[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_TAILOR_HOUSE]casa del sarto[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_FESTIVE_CLOTHES]abiti da cerimonia[\LINK] per occasioni speciali. I [LINK=UNIT_CLOTH_TAYLOR]Mastri sarti[\LINK] eccellono in questo mestiere. Aumentano notevolmente la produzione di abiti eleganti.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]sastres de ropa formal[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_TAILOR_HOUSE]casa del sastre[\LINK] o en una de sus mejoras para producir [LINK=YIELD_FESTIVE_CLOTHES]ropa formal[\LINK] para ocasiones especiales. Los [LINK=UNIT_CLOTH_TAYLOR]maestros sastres[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de ropa elegante.</Spanish>
+		<Hungarian>Az [COLOR_HIGHLIGHT_TEXT]ünnepi ruhák szabói[COLOR_REVERT] a [LINK=BUILDING_TAILOR_HOUSE]szabóműhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy különleges alkalmakra [LINK=YIELD_FESTIVE_CLOTHES]ünnepi ruhákat[\LINK] készítsenek. A díszes ruhák elkészítéséhez a szabóknak festett kelmére van szükségük. A [LINK=UNIT_CLOTH_TAYLOR]szabómesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik az ünnepi ruhák gyártását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_EVERYDAY_CLOTHES_TAILOR</Tag>
@@ -2342,6 +2360,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Портной повседневной одежды:Портные повседневной одежды</Russian>
+		<Hungarian>Szabó (Hétköznapi Ruha)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_EVERYDAY_CLOTHES_TAILOR_HELP</Tag>
@@ -2354,6 +2373,7 @@
 		<German>Der Schneider muss wissen, wie er haltbare Kleidung zu einem guten Preis anbieten kann. In einer wachsenden Stadt muss der Schneider effizient und auch diplomatisch sein, denn jeder möchte das Gefühl haben, daß er gut aussieht.</German>
 		<Italian>Il sarto deve saper fornire abiti resistenti a un buon prezzo. In una città in crescita, il sarto deve essere efficiente e anche diplomatico, perché tutti vogliono sentirsi bene.</Italian>
 		<Spanish>El sastre tiene que saber proporcionar ropa duradera a buen precio. En una ciudad en crecimiento, el sastre debe ser eficiente y también diplomático, porque todo el mundo quiere sentir que tiene buen aspecto.</Spanish>
+		<Hungarian>A szabónak tudnia kell, hogyan lehet tartós ruhákat jó áron készíteni. Egy növekvő városban a szabónak hatékonynak és diplomatikusnak kell lennnie, mert mindenki szeretné, ha jól nézne ki.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_EVERYDAY_CLOTHES_TAILOR_STRATEGY</Tag>
@@ -2362,6 +2382,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Schneider für Alltagskleidung[COLOR_REVERT] nähen im [LINK=BUILDING_TAILOR_HOUSE]Haus des Schneiders[\LINK] oder einer seiner Erweiterungen, um [LINK=YIELD_EVERYDAY_CLOTHES]Alltagskleidung[\LINK] herzustellen. Um alltagstaugliche Kleidung herzustellen, brauchen Schneider farbige Wollstoffe. [LINK=UNIT_CLOTH_TAYLOR]Schneidermeister[\LINK] zeichnen sich in diesem Handwerk aus. Sie steigern die Produktion von praktischer Kleidung für das tägliche Leben erheblich.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]sarti da lavoro[COLOR_REVERT] possono cucire nella [LINK=BUILDING_TAILOR_HOUSE]casa del sarto[\LINK] o in uno dei suoi aggiornamenti per produrre [LINK=YIELD_EVERYDAY_CLOTHES]abiti per la vita quotidiana[\LINK]. Per realizzare abiti pratici, i sarti hanno bisogno di panni di lana colorati. I [LINK=UNIT_CLOTH_TAYLOR]mastri sarti[\LINK] eccellono in questo mestiere. Essi aumentano notevolmente la produzione di abiti pratici per la vita quotidiana.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]sastres de ropa de trabajo[COLOR_REVERT] pueden coser en la [LINK=BUILDING_TAILOR_HOUSE]casa del sastre[\LINK] o en una de sus mejoras para producir [LINK=YIELD_EVERYDAY_CLOTHES]prendas para la vida cotidiana[\LINK]. Para confeccionar ropa práctica, los sastres necesitan paños de lana de colores. Los [LINK=UNIT_CLOTH_TAYLOR]maestros sastres[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de ropa práctica para la vida cotidiana.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]munkaruha szabók[COLOR_REVERT] a [LINK=BUILDING_TAILOR_HOUSE]szabóműhelyben[\LINK] vagy annak egyik továbbfejlesztésében varrhatnak [LINK=YIELD_EVERYDAY_CLOTHES]hétköznapi ruhákat[\LINK]. A praktikus ruhák elkészítéséhez a szabóknak festett gyapjúkelmére van szükségük. A [LINK=UNIT_CLOTH_TAYLOR]szabómesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik a mindennapi élethez szükséges hétköznapi ruhák gyártását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CONFECTIONER_CHOCOLATE</Tag>
@@ -2391,6 +2412,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Кондитер (шоколад):Кондитеры (шоколад)</Russian>
+		<Hungarian>Cukrász (Csokoládé)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CONFECTIONER_CHOCOLATE_HELP</Tag>
@@ -2403,6 +2425,7 @@
 		<German>Ein Konditor macht aus Plantagenzucker ein hochwertiges Produkt, indem er ihn aromatisiert - etwa mit Schokolade oder Vanille. Es ist wichtig, den Zucker fein zu mahlen, damit die Süßigkeit eine glatte Konsistenz erhält.</German>
 		<Italian>Il pasticcere trasforma lo zucchero di piantagione in un prodotto di alto valore aromatizzandolo, magari con cioccolato o vaniglia. È importante macinare lo zucchero finemente in modo che le caramelle abbiano una consistenza omogenea.</Italian>
 		<Spanish>Un confitero convierte el azúcar de plantación en un producto de alto valor aromatizándolo, quizá con chocolate o vainilla. Es importante moler el azúcar finamente para que el caramelo tenga una consistencia suave.</Spanish>
+		<Hungarian>A cukrász az ültetvényeken termelt cukrot ízesítéssel – például csokoládéval vagy vaníliával – értékes termékké alakítja. Fontos, hogy a cukrot finomra őröljék, hogy a cukorka sima állagú legyen.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CONFECTIONER_CHOCOLATE_STRATEGY</Tag>
@@ -2411,6 +2434,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Konditoren[COLOR_REVERT] können im [LINK=BUILDING_CONFECTIONER_HOUSE]Haus des Konditors[\LINK] oder einer seiner Erweiterungen arbeiten, um eine Vielzahl von [LINK=YIELD_CHOCOLATE]Schokoladensorten[\LINK] herzustellen. Zur Herstellung von Schokolade benötigt der Konditor Kakao und Zucker. [LINK=UNIT_CONFECTIONER]Konditormeister[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Schokolade dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]cioccolatieri[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_CONFECTIONER_HOUSE]casa del pasticciere[\LINK] o in uno dei suoi ampliamenti per produrre [LINK=YIELD_CHOCOLATE]una varietà di cioccolatini[\LINK]. Per produrre cioccolatini, il pasticcere ha bisogno di cacao e zucchero. I [LINK=UNIT_CONFECTIONER]mastri cioccolatieri[\LINK] eccellono in questo mestiere. Essi aumentano drasticamente la produzione di cioccolatini.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]chocolateros[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_CONFECTIONER_HOUSE]casa del confitero[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CHOCOLATE]una variedad de chocolates[\LINK]. Para hacer bombones, el confitero necesita cacao y azúcar. Los [LINK=UNIT_CONFECTIONER]maestros chocolateros[\LINK] destacan en este oficio. Aumentan drásticamente su producción de bombones.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Csokoládékészítők[COLOR_REVERT] a [LINK=BUILDING_CONFECTIONER_HOUSE]cukrászboltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy különböző fajta [LINK=YIELD_CHOCOLATE]csokoládét[\LINK] állítsanak elő. A csokoládé elkészítéséhez a cukrásznak kakaóra és cukorra van szüksége. A [LINK=UNIT_CONFECTIONER]cukrászmesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik a csokoládétermelésedet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CONFECTIONER_VANILLA</Tag>
@@ -2440,6 +2464,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Кондитер (ваниль):Кондитеры (ваниль)</Russian>
+		<Hungarian>Cukrász (Vanília)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CONFECTIONER_VANILLA_HELP</Tag>
@@ -2453,6 +2478,7 @@
 		<Italian>Il pasticcere trasforma lo zucchero di piantagione in un prodotto di alto valore aromatizzandolo, magari con cioccolato o vaniglia. È importante macinare lo zucchero finemente in modo che le caramelle abbiano una consistenza omogenea.</Italian>
 		<Spanish>Un confitero convierte el azúcar de plantación en un producto de alto valor aromatizándolo, quizá con chocolate o vainilla. Es importante moler el azúcar finamente para que el caramelo tenga una consistencia suave.</Spanish>
 	</TEXT>
+		<Hungarian>A cukrász a ültetvényen termsztett cukrot ízesítéssel – például csokoládéval vagy vaníliával – értékes termékké alakítja. Fontos, hogy a cukrot finomre őröljék, hogy a cukorka sima állagú legyen.</Hungarian>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CONFECTIONER_VANILLA_STRATEGY</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Confectioners[COLOR_REVERT] can work in the [LINK=BUILDING_CONFECTIONER_HOUSE]confectioner's house[\LINK] or one of its upgrades to produce [LINK=YIELD_VANILLA]vanilla treats[\LINK]. To make vanilla delicacies the confectioner needs [LINK=YIELD_VANILLA_PODS]green vanilla pods[\LINK]. [LINK=UNIT_CONFECTIONER]Master confectioners[\LINK] excel at this craft. They dramatically boost your production of vanilla cakes and candies.</English>
@@ -2460,6 +2486,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Konditoren[COLOR_REVERT] können im [LINK=BUILDING_CONFECTIONER_HOUSE]Haus des Konditors[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_VANILLA]Vanilleköstlichkeiten[\LINK] herzustellen. Für die Herstellung von Vanilleköstlichkeiten benötigt der Konditor [LINK=YIELD_VANILLA_PODS]grüne Vanilleschoten[\LINK]. [LINK=UNIT_CONFECTIONER]Konditormeister[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Vanillekuchen und -bonbons dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Pasticcieri[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_CONFECTIONER_HOUSE]casa del pasticcere[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_VANILLA]delizie alla vaniglia[\LINK]. Per produrre delizie alla vaniglia, il pasticcere ha bisogno di [LINK=YIELD_VANILLA_PODS]baccelli di vaniglia verde[\LINK]. I [LINK=UNIT_CONFECTIONER]mastri pasticceri[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di torte e caramelle alla vaniglia.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]confiteros[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_CONFECTIONER_HOUSE]casa del confitero[\LINK] o en una de sus mejoras para producir [LINK=YIELD_VANILLA]delicias de vainilla[\LINK]. Para hacer delicias de vainilla, el pastelero necesita [LINK=YIELD_VANILLA_PODS]vainas de vainilla verde[\LINK]. Los [LINK=UNIT_CONFECTIONER]maestros confiteros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de pasteles y dulces de vainilla.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Csokoládékészítők[COLOR_REVERT] a [LINK=BUILDING_CONFECTIONER_HOUSE]cukrászboltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy különböző fajta [LINK=YIELD_CHOCOLATE]csokoládét[\LINK] állítsanak elő. A csokoládé elkészítéséhez a cukrásznak kakaóra és cukorra van szüksége. A [LINK=UNIT_CONFECTIONER]cukrászmesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik a csokoládétermelésedet.</Hungarian>
 	</TEXT>
 	<!-- Different Coat Padding -->
 	<TEXT>
@@ -2490,6 +2517,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Портной-кожевник (утепленные куртки, пух):Портные-кожевники (утепленные куртки, пух)</Russian>
+		<Hungarian>Kabátkészítő (Bélelt Bőrkabát, Pehelytoll)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_LEATHER_PADDER_COATS_WILD_FEATHERS</Tag>
@@ -2515,6 +2543,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Портной-кожевник (утепленные куртки, перья):Портные-кожевники (утепленные куртки, перья)</Russian>
+		<Hungarian>Kabátkészítő (Bélelt Bőrkabát, Madártoll)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_LEATHER_PADDER_COATS_HELP</Tag>
@@ -2527,6 +2556,7 @@
 		<German>Das Einnähen von Polstern und Futter in Leder macht das Kleidungsstück nicht nur bequemer. Durch die zusätzliche Isolierung wird auch die Gesundheit derjenigen verbessert, die im Freien arbeiten, und kann sogar ihr Leben retten.</German>
 		<Italian>Cucire un'imbottitura e una fodera nella pelle non rende solo l'indumento più confortevole. L'aggiunta di isolamento migliora anche la salute di chi lavora all'aperto e può addirittura salvargli la vita.</Italian>
 		<Spanish>Coser acolchado y forro a la piel no sólo hace que la prenda sea más cómoda. Al añadir aislamiento, también mejora la salud de quienes trabajan al aire libre, e incluso puede salvarles la vida.</Spanish>
+		<Hungarian>A bélés és annak bevarrása a bőrbe nem csak a ruhadarabot teszi kényelmesebbé. A szigetelés hozzáadásával javul a kültéren dolgozók egészségi állapota, sőt, akár életüket is megmentheti.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_LEATHER_PADDER_COATS_STRATEGY</Tag>
@@ -2536,6 +2566,8 @@
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]produttori di cappotti in pelle foderati[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_LEATHER_PADDER_HOUSE]casa del lavoratore del cuoio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_PADDED_LEATHER_COATS]cappotti di pelle foderati[\LINK]. Per realizzare un cappotto isolato, gli produttori di cappotti hanno bisogno di [LINK=YIELD_HIDES]pelli du mucca[\LINK] e [LINK=YIELD_DOWNS]piume[\LINK]. I [LINK=UNIT_LEATHER_TAYLOR]mastri pellettieri[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di cappotti con fodere.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]abrigos de piel forrados[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_LEATHER_PADDER_HOUSE]casa del marroquinero[\LINK] o en una de sus mejoras para producir [LINK=YIELD_PADDED_LEATHER_COATS]abrigos de cuero forrados[\LINK]. Para fabricar un abrigo aislante, los abrigadores necesitan [LINK=YIELD_HIDES]pieles de vaca[\LINK] y [LINK=YIELD_DOWNS]plumón[\LINK]. Los [LINK=UNIT_LEATHER_TAYLOR]maestros marroquineros[\LINK] destacan en este oficio. Aumentan drásticamente su producción de abrigos con forro.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]Производители утеплённой одежды[COLOR_REVERT] могут работать в [LINK=BUILDING_LEATHER_PADDER_HOUSE]доме кожевника[\LINK] или в одном из его улучшений для производства [LINK=YIELD_PADDED_LEATHER_COATS]утеплённых курток[\LINK]. Для их изготовления понадобятся [LINK=YIELD_HIDES]коровьи шкуры[\LINK] и [LINK=YIELD_DOWNS]пух[\LINK] или [LINK=YIELD_WILD_FEATHERS]перья диких птиц[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Мастера кожевники[\LINK] преуспели в этом ремесле. Они значительно увеличивают производство утеплённой одежды.</Russian>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]bélelt bőrkabátok[COLOR_REVERT] készítői a [LINK=BUILDING_LEATHER_PADDER_HOUSE]Bőrműves Boltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_PADDED_LEATHER_COATS]bélelt bőrkabátokat[\LINK] állítsanak elő. A bélelt kabátok gyártásához a kabátkészítőknek [LINK=YIELD_HIDES]marhabőrre[\LINK] és [LINK=YIELD_DOWNS]pehelytollra[\LINK] vagy [LINK=YIELD_WILD_FEATHERS]madártollra[\LINK] van szükségük. A [LINK=UNIT_LEATHER_TAYLOR]Bőrműves Mesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik a bélelt kabátok gyártását.</Hungarian>
+
 	</TEXT>
 	<!-- Different Boots Padding -->
 	<TEXT>
@@ -2562,6 +2594,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сапожник (пух):Сапожники (пух)</Russian>
+		<Hungarian>Csizmadia (Pehelytoll)</Hungarian>
 	</TEXT>	
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_LEATHER_PADDER_BOOTS_WILD_FEATHERS</Tag>
@@ -2591,6 +2624,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Сапожник (перья):Сапожники (перья)</Russian>
+		<Hungarian>Csizmadia (Madártoll)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_LEATHER_PADDER_BOOTS_HELP</Tag>
@@ -2604,6 +2638,7 @@
 		<Italian>Cucire una fodera negli stivali è di grande aiuto quando fa freddo. Chi lavora all'aperto sarà più comodo e potrà lavorare più a lungo.</Italian>
 		<Spanish>Coser un forro en las botas es una gran ayuda cuando hace frío. Cualquiera que trabaje al aire libre estará más cómodo, y eso significa que podrá trabajar más tiempo.</Spanish>
 		<Russian>Сапоги с утеплённой подкладкой помогут в холодную погоду. Любой, кто работает на улице, будет чувствовать себя более комфортно, а значит, он сможет работать дольше.</Russian>
+		<Hungarian>A bélés varrása a csizmákba nagy segítség hideg időben. A kültéren dolgozók kényelmesebbnek fogják érezni magukat, és ez azt jelenti, hogy hosszabb ideig tudnak dolgozni.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_LEATHER_PADDER_BOOTS_STRATEGY</Tag>
@@ -2613,6 +2648,7 @@
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]barcaioli[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_LEATHER_PADDER_HOUSE]casa del lavoratore del cuoio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_GOAT_HIDE_BOOTS]stivali in pelle di capra[\LINK]. Per produrre gli stivali i pellettieri hanno bisogno di [LINK=YIELD_GOAT_HIDES]pelli di capra[\LINK] e [LINK=YIELD_WILD_FEATHERS]plumas[\LINK]. I [LINK=UNIT_LEATHER_TAYLOR]maestri pellettieri[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di stivali di cuoio.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]boteros[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_LEATHER_PADDER_HOUSE]casa del marroquinero[\LINK] o en una de sus mejoras para producir [LINK=YIELD_GOAT_HIDE_BOOTS]botas de piel de cabra[\LINK]. Para fabricar las botas, los marroquineros necesitan [LINK=YIELD_GOAT_HIDES]pieles de cabra[\LINK] y [LINK=YIELD_WILD_FEATHERS]plumas[\LINK]. Los [LINK=UNIT_LEATHER_TAYLOR]maestros marroquineros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de botas de cuero.</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]Сапожники[COLOR_REVERT] могут работать в [LINK=BUILDING_LEATHER_PADDER_HOUSE]доме кожевника[\LINK] или в одном из его улучшений для производства [LINK=YIELD_GOAT_HIDE_BOOTS]сапог из козьих шкур[\LINK]. Для их изготовления понадобятся [LINK=YIELD_GOAT_HIDES]козьи шкуры[\LINK] и [LINK=YIELD_WILD_FEATHERS]перья диких птиц[\LINK] или [LINK=YIELD_DOWNS]пух[\LINK]. [LINK=UNIT_LEATHER_TAYLOR]Мастера кожевники[\LINK] преуспели в этом ремесле. Они значительно увеличивают производство обуви.</Russian>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]Csizmadiák[COLOR_REVERT] a [LINK=BUILDING_LEATHER_PADDER_HOUSE]Bőrműves Boltban[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_GOAT_HIDE_BOOTS]bélelt kecskebőr csizmát[\LINK] gyártsanak. A csizmák elkészítéséhez a csizmadiának [LINK=YIELD_GOAT_HIDES]kecskebőrre[\LINK] és [LINK=YIELD_WILD_FEATHERS]madártollakra[\LINK] vagy [LINK=YIELD_DOWNS]pehelytollakra[\LINK] van szükségük. A [LINK=UNIT_LEATHER_TAYLOR]Bőrműves Mesterek[\LINK] kiválóan értik ezt a szakmát. Jelentősen növelik a bőrcsizmák gyártását.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHARCOAL_BURNER</Tag>
@@ -2646,6 +2682,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Szénégető</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHARCOAL_BURNER_HELP</Tag>
@@ -2658,6 +2695,7 @@
 		<German>Der Köhler beobachtet den Rauch, der den Ofen verlässt. Wenn der Rauch dick und grau ist, ist das Holz noch roh; dünner, blauer Rauch deutet auf eine gute Verkohlung hin. Holzkohle wird aus Holz hergestellt, das sechs bis acht Tage lang, manchmal auch länger, in einem Ofen gebrannt wurde. Holzkohle brennt bei 1.100 Grad Celsius. Der Schmelzpunkt von Eisen liegt bei 1.200 Grad.</German>
 		<Italian>Il carbonaio osserva il fumo che esce dal forno. Se il fumo è denso e grigio, il legno è ancora grezzo; un fumo sottile e blu indica una buona carbonizzazione. Il carbone di legna proviene da legna cotta in una fornace per sei-otto giorni, a volte anche di più. Il carbone di legna brucia a 1.100 gradi Celsius. Il punto di fusione del ferro è di 1.200 gradi.</Italian>
 		<Spanish>El carbonero observa el humo que sale del horno. Si el humo es espeso y gris, la madera aún está cruda; un humo fino y azul indica una buena carbonización. El carbón vegetal procede de madera cocida en un horno durante seis u ocho días, a veces más. El carbón arde a 1.100 grados Celsius. El punto de fusión del hierro es de 1.200 grados.</Spanish>
+		<Hungarian>A faszénégető figyeli a kemencéből kijövő füstöt. Ha a füst sűrű és szürke, akkor a fa még nyers; a vékony, kék füst jó karbonizációt jelez. A faszén hat-nyolc napig, néha még tovább kemencében égetett fából készül. A faszén 1100 Celsius-fokon ég. A vas olvadáspontja 1200 fok.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_CHARCOAL_BURNER_STRATEGY</Tag>
@@ -2666,6 +2704,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Köhler[COLOR_REVERT] können im [LINK=BUILDING_FIREWORKERS_HOUSE]Pulvermagazin[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_CHAR_COAL]Holzkohle[\LINK] herstellen. [LINK=UNIT_CHARCOAL_BURNER]Köhlermeister[\LINK] beherrschen dieses Handwerk besonders gut. Sie steigern die Produktion von Holzkohle dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]carbonai[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_FIREWORKERS_HOUSE]polveriera[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_CHAR_COAL]carbone di legna[\LINK]. I [LINK=UNIT_CHARCOAL_BURNER]mastri carbonari[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di carbone di legna.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]carboneros[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_FIREWORKERS_HOUSE]polvorín[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CHAR_COAL]carbón vegetal[\LINK]. Los [LINK=UNIT_CHARCOAL_BURNER]maestros carboneros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de carbón.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]szénégetők[COLOR_REVERT] a [LINK=BUILDING_FIREWORKERS_HOUSE]Puskaporgyártó Műhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_CHAR_COAL]faszenet[\LINK] állítsanak elő. A [LINK=UNIT_CHARCOAL_BURNER]faszénégető mesterek[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a faszéntermelést.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FIREWORKER</Tag>
@@ -2699,6 +2738,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Puskapor Készítő</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FIREWORKER_HELP</Tag>
@@ -2711,6 +2751,7 @@
 		<German>Weit entfernt von anderen Gebäuden mischt der Pulvermacher Schwarzpulver aus Schwefel, Holzkohle und Salpeter für die Gewehre der Soldaten. In der Kolonialzeit ist es der einzige verfügbare Sprengstoff (Dynamit wird erst 1867 erfunden) und wird auch für die Artillerie, den Bergbau und den Straßenbau verwendet.</German>
 		<Italian>Ben lontano da altri edifici, il fabbricante di polvere da sparo mescola la polvere da sparo con zolfo, carbone e salnitro: munizioni per i cannoni dei soldati. In epoca coloniale è l'unico esplosivo disponibile (la dinamite sarà inventata nel 1867), quindi viene utilizzato anche per l'artiglieria, le miniere e la costruzione di strade.</Italian>
 		<Spanish>Alejado de otros edificios, el polvorero mezcla pólvora a partir de azufre, carbón vegetal y salitre: munición para las armas de los soldados. En la época colonial es el único explosivo disponible (la dinamita se inventará en 1867), por lo que también se utiliza para la artillería, la minería y la construcción de carreteras.</Spanish>
+		<Hungarian>Távol más épületektől a puskaporkeverő kénből, faszénből és salétromból keveri össze a puskaport: a katonák fegyvereinek lőszerét. A gyarmati időkben ez az egyetlen rendelkezésre álló robbanóanyag (a dinamitot 1867-ben találják fel), ezért tüzérségi célokra, bányászatban és útépítésben is használják.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_FIREWORKER_STRATEGY</Tag>
@@ -2719,6 +2760,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Pulvermacher[COLOR_REVERT] können im [LINK=BUILDING_FIREWORKERS_HOUSE]Pulvermagazin[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_BLACK_POWDER]Schwarzpulver[\LINK] herzustellen. Zur Herstellung von Schießpulver benötigen die Pulvermacher Holzkohle. [LINK=UNIT_FIREWORKER]Meister-Pulvermacher[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Schwarzpulver dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]Polverai[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_FIREWORKERS_HOUSE]polveriera[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_BLACK_POWDER]polvere da sparo[\LINK]. Per produrre polvere da sparo i fabbricanti di polvere hanno bisogno di carbone di legna. I [LINK=UNIT_FIREWORKER]mastri Polverai[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di polvere da sparo.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]Pólvoreros[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_FIREWORKERS_HOUSE]polvorín[\LINK] o en una de sus mejoras para producir [LINK=YIELD_BLACK_POWDER]pólvora[\LINK]. Para fabricar pólvora, los polvoristas necesitan carbón vegetal. Los [LINK=UNIT_FIREWORKER]maestros polvoreros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de pólvora.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]puskaporkeverők[COLOR_REVERT] a [LINK=BUILDING_FIREWORKERS_HOUSE]Puskaporgyártó Műhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_BLACK_POWDER]puskaport[\LINK] állítsanak elő. A puskapor előállításához a puskaporkeverőknek faszénre van szükségük. A [LINK=UNIT_FIREWORKER]Puskaporkeverő Mesterek[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a puskapor termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_ENTERTAINER</Tag>
@@ -2752,6 +2794,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Előadóművész</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_ENTERTAINER_HELP</Tag>
@@ -2764,6 +2807,7 @@
 		<German>Der Mensch ist ein Gesellschaftstier. Ruhm ist ein gutes Zugpferd Menschen zusammenzubringen, ihnen Unterhaltung zu bieten, damit sie sehen und gesehen werden können. Der Auftritt einer Berühmtheit zieht die ganze Stadt und das Umland in ihren Bann. Die Anwesenheit einer berühmten Schauspielerin verbessert den Ruf einer Stadt. Je mehr gebrochene Herzen sie hinter sich lässt, desto mehr wächst ihre Legende.</German>
 		<Italian>Gli esseri umani sono animali sociali, la fama riunisce le persone per essere intrattenute, per vedere ed essere viste. Un'esibizione di una celebrità attira l'intera campagna. Avere un'attrice famosa residente migliora la reputazione di qualsiasi comunità. Lasciando dietro di sé una scia di cuori infranti, la sua leggenda cresce.</Italian>
 		<Spanish>Los humanos somos animales sociales, la Fama reúne a la gente para entretenerse, para ver y ser vistos. La actuación de una celebridad atrae a todo el campo. Tener una actriz famosa residente mejora la reputación de cualquier comunidad. Dejando tras de sí un rastro de corazones rotos, su leyenda crece.</Spanish>
+		<Hungarian>Az emberek társas lények. A hírnév összehozza az embereket, hogy szórakozzanak, lássanak és lássák őket. Egy híresség fellépése az egész vidék figyelmét magára vonzza. Ha egy híres színésznő egy közösségben él, az javítja a közösség hírnevét. Összetört szíveket hagyva maga után, legendája egyre növekszik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_ENTERTAINER_STRATEGY</Tag>
@@ -2772,6 +2816,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Unterhalter[COLOR_REVERT] können in der [LINK=BUILDING_TAVERN]Taverne[\LINK] oder einer ihrer Erweiterungen arbeiten, um [LINK=YIELD_CULTURE]Kultur[\LINK] zu produzieren. [LINK=UNIT_ENTERTAINER]Berühmte Schauspielerinnen[\LINK] beherrschen dieses Handwerk hervorragend. Zusammen mit ein wenig Glück steigern sie Ihre Kulturproduktion dramatisch.</German>
 		<Italian>Gli [COLOR_HIGHLIGHT_TEXT]Intrattenitori[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_TAVERN]taverna[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_CULTURE]cultura[\LINK]. Le [LINK=UNIT_ENTERTAINER]attrici famose[\LINK] eccellono in questo mestiere. Insieme a un po' di felicità, aumentano drasticamente la produzione di cultura.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Animadores[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_TAVERN]taberna[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CULTURE]cultura[\LINK]. [LINK=UNIT_ENTERTAINER]Actrices famosas[\LINK] destacan en este oficio. Junto con un poco de felicidad aumentan drásticamente tu producción de cultura.</Spanish>
+		<Hungarian>Az [COLOR_HIGHLIGHT_TEXT]Előadóművészek[COLOR_REVERT] a [LINK=BUILDING_TAVERN]kocsmában[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_CULTURE]kultúrát[\LINK] állítsanak elő. A [LINK=UNIT_ENTERTAINER]Híres Színésznők[\LINK] kiválóan értik ezt a szakmát. Egy kis boldogság mellett drámai módon növelik a kultúra termelését.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PROSTITUTE</Tag>
@@ -2805,6 +2850,7 @@
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Prostituált</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PROSTITUTE_HELP</Tag>
@@ -2817,6 +2863,7 @@
 		<German>Frömmlerische Damen mögen auf eine ehrliche Hure herabblicken, aber Huren haben oft Einfluß bei den Mächtigen, auch in der Kirche. Die Prostitution ist so vielfältig wie die Gesellschaft selbst. Eine verführerische Hure mag eine lukrative Karriere haben, aber sie ist nur kurz. Manche, denen das Leben gefällt, eröffnen nach den Jahren, in denen sie am meisten Geld verdient haben, ein eigenes Etablissement auf.</German>
 		<Italian>Le signore che frequentano la chiesa possono guardare dall'alto in basso una prostituta onesta, ma le prostitute hanno spesso influenza sui potenti, compresi quelli della chiesa. La prostituzione è varia come la società stessa. La prostituta seducente può avere una carriera redditizia, ma breve. Alcune che amano questa vita si dedicano all'amministrazione dopo gli anni di massimo guadagno personale.</Italian>
 		<Spanish>Las señoras que van a la iglesia pueden despreciar a una puta honesta, pero las rameras suelen tener influencia con los altos y poderosos, incluidos los de la iglesia. La prostitución es tan diversa como la propia sociedad. La prostituta seductora puede tener una carrera lucrativa, pero corta. Algunas, a las que les gusta la vida, se dedican a la administración después de sus mejores años de ganancias personales.</Spanish>
+		<Hungarian>A templomba járó hölgyek lenézhetik a becsületes prostituáltakat, de a szajhák gyakran nagy hatással vannak a hatalmasságokra, beleértve a templomban lévőket is. A prostitúció ugyanolyan sokszínű, mint maga a társadalom. A csábító szajha karrierje jövedelmező lehet, de rövid. Néhányan, akik szeretik ezt az életet, a legjövedelmezőbb évek után a menedzsmentbe lépnek.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_PROSTITUTE_STRATEGY</Tag>
@@ -2825,6 +2872,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Prostituierte[COLOR_REVERT] können in der [LINK=BUILDING_TAVERN]Taverne[\LINK] oder einer ihrer Erweiterungen arbeiten, um [LINK=YIELD_HAPPINESS]Zufriedenheit[\LINK] und [LINK=YIELD_CULTURE]Kultur[\LINK] zu produzieren. [LINK=UNIT_HARLOT]Verführerische Dirnen[\LINK] beherrschen dieses Handwerk hervorragend. Zusammen mit ein wenig Kultur werden sie Ihre Produktion von Glück dramatisch steigern.</German>
 		<Italian>Le [COLOR_HIGHLIGHT_TEXT]prostitute[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_TAVERN]taverna[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_HAPPINESS]felicità[\LINK] e [LINK=YIELD_CULTURE]cultura[\LINK]. Le [LINK=UNIT_HARLOT]puttane seducenti[\LINK] eccellono in questo mestiere. Insieme a un po' di cultura, aumenteranno drasticamente la vostra produzione di felicità.</Italian>
 		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]prostitutas[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_TAVERN]taberna[\LINK] o en una de sus mejoras para producir [LINK=YIELD_HAPPINESS]felicidad[\LINK] y [LINK=YIELD_CULTURE]cultura[\LINK]. Las [LINK=UNIT_HARLOT]putas seductoras[\LINK] destacan en este arte. Junto con un poco de cultura aumentarán drásticamente tu producción de felicidad.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]prostituáltak[COLOR_REVERT] a [LINK=BUILDING_TAVERN]kocsmában[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_HAPPINESS]boldogságot[\LINK] és [LINK=YIELD_CULTURE]kultúrát[\LINK] állítsanak elő. A [LINK=UNIT_HARLOT]csábító szajhák[\LINK] kiválóan értik ezt a szakmát. Egy kis kultúrával együtt drámai módon növelik a boldogság termelésedet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BAKER_BARLEY</Tag>
@@ -2858,6 +2906,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Russian>
+		<Hungarian>Pék (Árpa)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BAKER_RICE</Tag>
@@ -2887,6 +2936,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Пекарь (рис):Пекари (рис)</Russian>
+		<Hungarian>Pék (Rizs)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BAKER_CASSAVA</Tag>
@@ -2916,6 +2966,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Пекарь (маниока):Пекари (маниока)</Russian>
+		<Hungarian>Pék (Manióka)</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BAKER_HELP</Tag>
@@ -2928,6 +2979,7 @@
 		<German>Der Bäcker beginnt seine Arbeit lange vor der Morgendämmerung, damit die Haushalte ihr tägliches Brot bekommen können. Wenn die Bäckerei wächst und Kekse und Gebäck anbietet, wird sie zu einem sozialen Zentrum. Einige Bäcker stellen sogar Tische auf, an denen Tee zu den Leckereien serviert wird.</German>
 		<Italian>Il panettiere inizia a lavorare ben prima dell'alba, in modo che le famiglie possano avere il pane quotidiano. Man mano che il panificio cresce, offrendo biscotti e pasticcini, diventa un centro sociale. Alcuni panettieri allestiscono persino dei tavoli dove viene servito il tè per accompagnare le prelibatezze.</Italian>
 		<Spanish>El panadero empieza a trabajar mucho antes del amanecer para que los hogares puedan tener el pan de cada día. A medida que la panadería crece, ofreciendo galletas y pasteles, se convierte en un centro social. Algunos panaderos incluso instalan mesas donde se sirve té para acompañar los dulces.</Spanish>
+		<Hungarian>A pék jóval hajnal előtt megkezdi munkáját, hogy a háztartásoknak legyen napi kenyerük. Ahogy a pékség növekszik és süteményeket, péksüteményeket és egyéb szükséges élelmiszereket is kínál, társadalmi központtá válik. Néhány pék még asztalokat is felállít, ahol teát szolgálnak fel a finomságok mellé.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BAKER_STRATEGY</Tag>
@@ -2936,6 +2988,7 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Bäcker[COLOR_REVERT] können im [LINK=BUILDING_BAKER_HOUSE]Haus des Bäckers[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_BAKERY_GOODS]Proviant[\LINK] herzustellen. [LINK=UNIT_BAKER]Bäckermeister[\LINK] beherrschen dieses Handwerk besonders gut und können die Produktion von Proviant erheblich steigern.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]panettieri[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_BAKER_HOUSE]casa del fornaio[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_BAKERY_GOODS]prodotti da forno[\LINK]. I [LINK=UNIT_BAKER]mastri panettieri[\LINK] eccellono in questo mestiere e possono incrementare notevolmente la produzione di prodotti da forno freschi.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]panaderos[COLOR_REVERT] pueden trabajar en la [LINK=BUILDING_BAKER_HOUSE]panadería[\LINK] o en una de sus mejoras para producir [LINK=YIELD_BAKERY_GOODS]productos de panadería[\LINK]. Los [LINK=UNIT_BAKER]maestros panaderos[\LINK] destacan en este oficio y pueden aumentar enormemente tu producción de pan recién horneado.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]pékek[COLOR_REVERT] a [LINK=BUILDING_BAKER_HOUSE]pékségben[\LINK] vagy annak egyik továbbfejlesztésében dolgozhatnak, hogy [LINK=YIELD_BAKERY_GOODS]ellátmányt[\LINK] állítsanak elő. A [LINK=UNIT_BAKER]pékmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik az ellátmány termelésedet.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_JUDGE</Tag>
@@ -2965,6 +3018,7 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Судья:Судьи</Russian>
+		<Hungarian>Bíró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_JUDGE_HELP</Tag>
@@ -2977,6 +3031,7 @@
 		<German>Ein Richter leitet die Verhandlung, hört alle Zeugen und alle anderen von den Anwälten vorgelegten Beweise an, beurteilt die Glaubwürdigkeit und die Argumente der Parteien und fällt dann auf der Grundlage seiner Rechtsauffassung und seines persönlichen Urteils eine Entscheidung in der Sache. Von einem Richter wird erwartet, daß er die Verhandlung unparteiisch und in öffentlicher Sitzung führt.</German>
 		<Italian>Un giudice presiede il procedimento giudiziario, ascolta tutti i testimoni e qualsiasi altra prova presentata dagli avvocati o dai legali della causa, valuta la credibilità e le argomentazioni delle parti, quindi emette una sentenza sulla base della sua interpretazione della legge e del suo giudizio personale. Il giudice è tenuto a condurre il processo in modo imparziale in un'aula aperta.</Italian>
 		<Spanish>El juez preside los procedimientos judiciales, escucha a todos los testigos y cualquier otra prueba presentada por los abogados o procuradores del caso, evalúa la credibilidad y los argumentos de las partes y, a continuación, dicta sentencia en el caso basándose en su interpretación de la ley y en su propio criterio personal. El juez debe dirigir el juicio con imparcialidad en audiencia pública.</Spanish>
+		<Hungarian>A bíró elnököl a bírósági eljárásokon, meghallgatja az összes tanút és az ügyvéd vagy jogtanácsos által bemutatott egyéb bizonyítékokat, értékeli a felek hitelességét és érveit, majd a törvény értelmezése és saját személyes ítélete alapján hoz döntést az ügyben. A bírótól elvárják, hogy a tárgyalást pártatlanul, nyílt ülésen vezesse le.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_JUDGE_STRATEGY</Tag>
@@ -2985,5 +3040,6 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Richter[COLOR_REVERT] arbeiten im [LINK=BUILDING_COURTHOUSE]Gerichtsgebäude[\LINK] oder in einem seiner Erweiterungen, um [LINK=YIELD_LAW]Recht[\LINK] zu sprechen. [LINK=UNIT_JUDGE]Ehrenwerte Richter[\LINK] zeichnen sich in diesem Handwerk aus. Sie steigern die Produktion von Recht dramatisch.</German>
 		<Italian>I [COLOR_HIGHLIGHT_TEXT]giudici[COLOR_REVERT] lavorano nel [LINK=BUILDING_COURTHOUSE]palazzo di giustizia[\LINK] o in uno dei suoi aggiornamenti per produrre [LINK=YIELD_LAW]legge[\LINK]. Gli [LINK=UNIT_JUDGE]Onorevoli giudici[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di leggi.</Italian>
 		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]jueces[COLOR_REVERT] trabajan en el [LINK=BUILDING_COURTHOUSE]palacio de justicia[\LINK] o en una de sus mejoras para producir [LINK=YIELD_LAW]derecho[\LINK]. [LINK=UNIT_JUDGE]Honorables jueces[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de leyes.</Spanish>
+		<Hungarian>A [COLOR_HIGHLIGHT_TEXT]bírók[COLOR_REVERT] a [LINK=BUILDING_COURTHOUSE]bíróságon[\LINK] vagy annak egyik továbbfejlesztésén dolgoznak, hogy [LINK=YIELD_LAW]törvényt[\LINK] hozzanak létre. A [LINK=UNIT_JUDGE]Méltóságos Bírók[\LINK] kiválóan értik ezt a szakmát. Drámai mértékben növelik a törvényalkotás hatékonyságát.</Hungarian>
 	</TEXT>
 </Civ4GameText>
