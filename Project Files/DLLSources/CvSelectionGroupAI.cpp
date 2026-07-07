@@ -1378,6 +1378,13 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 							}
 						}
 					}
+					else if (bSmartHuman)
+					{
+						// Transport automation fix: land wagons finally pay for distance,
+						// same shape as the coastal tuning above.
+						const int iDistanceTurns = getAutomationDefine("AUTOMATION_TRANSPORT_DISTANCE_TURNS", 2);
+						iValue /= std::max(1, iTurns - iDistanceTurns);
+					}
 				}
 				else
 				{
@@ -1390,6 +1397,18 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 				iBestDestinationValue = iValue;
 				kBestDestination = it->first;
 			}
+		}
+	}
+
+	// Transport automation fix: an EMPTY transport may reposition only when the
+	// prize is worth a real haul; kills aimless long empty runs. Loaded
+	// transports are exempt - cargo must reach a destination.
+	if (bSmartHuman && bNoCargo && kBestDestination.eOwner != NO_PLAYER)
+	{
+		const int iMinHaul = getAutomationDefine("AUTOMATION_TRANSPORT_MIN_HAUL", 10);
+		if (iBestDestinationValue < iMinHaul * 100)
+		{
+			kBestDestination = IDInfo(NO_PLAYER, -1);
 		}
 	}
 
