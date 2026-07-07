@@ -1426,6 +1426,20 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 		}
 	}
 
+	if (bSmartHuman && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+	{
+		CvCity* const pLogDest = ::getCity(kBestDestination);
+		char buf[512];
+		sprintf(buf, "transport group %d at %S: dest=%S value=%d cargo=%d virtualRoutes=%d",
+			getID(),
+			pPlotCity != NULL ? pPlotCity->getName().GetCString() : L"(field)",
+			pLogDest != NULL ? pLogDest->getName().GetCString() : L"(none)",
+			iBestDestinationValue,
+			(int)hasCargo(),
+			(int)virtualRoutes.size());
+		gDLL->logMsg("automation.log", buf);
+	}
+
 	if ((pPlotCity != NULL) && (kBestDestination.eOwner != NO_PLAYER))
 	{
 		//We need to keep looping and recalculating
@@ -1514,6 +1528,20 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 
 							// R&R mod, vetiarvind, max yield import limit - end
 							aiYieldsLoaded[routes[iBestRoute]->getYield()] += loaded;
+							if (bSmartHuman && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+							{
+								std::map<const CvTradeRoute*, char>::const_iterator itClass =
+									virtualRouteClass.find(routes[iBestRoute]);
+								const char cClass = (itClass != virtualRouteClass.end()) ? itClass->second : 'R';
+								CvCity* const pLogDest = ::getCity(kBestDestination);
+								char buf[256];
+								sprintf(buf, "  loaded %d %S [%c] for %S",
+									loaded,
+									GC.getYieldInfo(routes[iBestRoute]->getYield()).getDescription(),
+									cClass,
+									pLogDest != NULL ? pLogDest->getName().GetCString() : L"?");
+								gDLL->logMsg("automation.log", buf);
+							}
 							break;
 						}
 					}
