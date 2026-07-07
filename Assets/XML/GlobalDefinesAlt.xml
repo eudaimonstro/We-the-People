@@ -9,6 +9,31 @@
 		<DefineName>MODS_SHOULD_OVERRIDE_GLOBAL_DEFINES_HERE</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
+	<!-- Citizen automation fix (human cities only) - see docs/superpowers/specs/2026-07-07-citizen-automation-design.md -->
+	<Define>
+		<DefineName>AUTOMATION_FOOD_RESERVE_TURNS</DefineName>
+		<iDefineIntVal>8</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_FOOD_EMERGENCY_MULTIPLIER</DefineName>
+		<iDefineIntVal>5</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_STOCKPILE_HORIZON</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_EXPERT_BONUS_PERCENT</DefineName>
+		<iDefineIntVal>50</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_STICKINESS_PERCENT</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_LOGGING</DefineName>
+		<iDefineIntVal>0</iDefineIntVal>
+	</Define>
 	<Define>
 		<DefineName>START_YEAR</DefineName>
 		<iDefineIntVal>1492</iDefineIntVal>
