@@ -259,6 +259,9 @@ bool isPotentialEnemy(TeamTypes eOurTeam, TeamTypes eTheirTeam);
 DllExport CvCity* getCity(const IDInfo& city);
 DllExport CvUnit* getUnit(const IDInfo& unit);
 
+// Citizen/transport automation fix: XML knob with default when the entry is missing or nonpositive.
+int getAutomationDefine(const char* szName, int iDefault);
+
 bool isBeforeUnitCycle(const CvUnit* pFirstUnit, const CvUnit* pSecondUnit);
 
 ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, int iCount = 0);

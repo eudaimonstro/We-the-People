@@ -31,16 +31,6 @@
 
 #define YIELD_DISCOUNT_TURNS 			10
 
-namespace
-{
-	// XML knob with default when the entry is missing or nonpositive.
-	int getAutomationDefine(const char* szName, int iDefault)
-	{
-		const int iValue = GC.getDefineINT(szName);
-		return iValue > 0 ? iValue : iDefault;
-	}
-}
-
 // Public Functions...
 
 CvCityAI::CvCityAI()

@@ -37,6 +37,12 @@
 // R&R, Robert Surcouf, Damage on Storm plots, End
 #define PATH_COMBAT_WEIGHT								(300) // K-Mod. penalty for having to fight along the way.
 
+int getAutomationDefine(const char* szName, int iDefault)
+{
+	const int iValue = GC.getDefineINT(szName);
+	return iValue > 0 ? iValue : iDefault;
+}
+
 CvPlot* plotCity(int iX, int iY, int iIndex)
 {
 	return GC.getMap().plotINLINE((iX + GC.getCityPlotX()[iIndex]), (iY + GC.getCityPlotY()[iIndex]));
@@ -1149,7 +1155,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 		!USE_CLASSIC_MOVEMENT_SYSTEM &&
 		!pSelectionGroup->AI_isControlled())
 	{
-		// UI case (finder!=0): use finder’s dest.
+		// UI case (finder!=0): use finderï¿½s dest.
 		// K-Mod case (finder==0): rely on hint passed in data arg 
 		const bool isFirstEdge = (parent->m_pParent == NULL);
 		const bool isGoalEdge = (finder != 0
