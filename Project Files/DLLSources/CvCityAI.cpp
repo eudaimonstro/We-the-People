@@ -201,6 +201,14 @@ void CvCityAI::AI_assignWorkingPlots()
 		}
 	}
 
+	if (AI_isHumanAutomationCity() && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+	{
+		char buf[256];
+		sprintf(buf, "=== assign pass: %S (pop %d, netFood %d) ===",
+			getName().GetCString(), getPopulation(), foodDifference());
+		gDLL->logMsg("automation.log", buf);
+	}
+
 	/*
 	Citizen Algorithm:
 	Take all citizens which aren't locked in place, put them in a pool.
@@ -281,6 +289,19 @@ void CvCityAI::AI_assignWorkingPlots()
 		}
 
 		CvUnit* const pOldUnit = AI_parallelAssignToBestJob(*pUnit);
+
+		if (AI_isHumanAutomationCity() && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+		{
+			const ProfessionTypes eNewProf = pUnit->getProfession();
+			char buf[512];
+			sprintf(buf, "%S: unit %d (%S) -> %S | netFood=%d storedFood=%d displaced=%d",
+				getName().GetCString(), pUnit->getID(),
+				pUnit->getName().GetCString(),
+				eNewProf != NO_PROFESSION ? GC.getProfessionInfo(eNewProf).getDescription() : L"NONE",
+				foodDifference(), getYieldStored(YIELD_FOOD),
+				pOldUnit != NULL ? pOldUnit->getID() : -1);
+			gDLL->logMsg("automation.log", buf);
+		}
 
 		// Limit the number of attempt for this citizen
 		if (pOldUnit != NULL)
