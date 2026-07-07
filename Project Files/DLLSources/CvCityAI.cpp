@@ -3640,6 +3640,83 @@ CvUnit* CvCityAI::AI_parallelAssignToBestJob(CvUnit& kUnit, bool bIndoorOnly)
 
 }
 
+// Best job value kUnit could get in this city right now, without committing
+// anything. Used to decide whether a garrisoned colonist is worth recruiting.
+int CvCityAI::AI_automationBestJobValue(const CvUnit& kUnit) const
+{
+	int iBest = 0;
+	for (int i = 0; i < GC.getNumProfessionInfos(); ++i)
+	{
+		const BestJob job = AI_findBestJob(*this, (ProfessionTypes)i, kUnit, false);
+		if (job.iBestValue > iBest)
+		{
+			iBest = job.iBestValue;
+		}
+	}
+	return iBest;
+}
+
+// Recruit idle colonists standing on the city tile into the workforce when a
+// work slot is worth clearly more than what they cost the city. Triggered by
+// the human "automate all citizens" button only. The join bar is higher than
+// the overpopulation ejection bar so units do not flap in and out; after each
+// join the workforce is re-optimized so the next candidate is judged against
+// the settled state (and a join that settles badly is ejected right back).
+void CvCityAI::AI_automationRecruitGarrison()
+{
+	if (!AI_isHumanAutomationCity())
+	{
+		return;
+	}
+
+	const int iJoinPercent = getAutomationDefine("AUTOMATION_JOIN_THRESHOLD_PERCENT", 150);
+	const ProfessionTypes eDefaultProfession = GC.getCivilizationInfo(getCivilizationType()).getDefaultProfession();
+	CvPlot* const pPlot = plot();
+
+	// Collect candidates first: joining mutates the plot's unit list.
+	std::vector<CvUnit*> candidates;
+	CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode();
+	while (pUnitNode != NULL)
+	{
+		CvUnit* const pLoopUnit = pPlot->getUnitNodeLoop(pUnitNode);
+		if (pLoopUnit != NULL
+			&& pLoopUnit->getOwnerINLINE() == getOwnerINLINE()
+			// idle colonists only: garrison soldiers, scouts, pioneers etc. keep their posts
+			&& pLoopUnit->getProfession() == eDefaultProfession)
+		{
+			candidates.push_back(pLoopUnit);
+		}
+	}
+
+	for (uint i = 0; i < candidates.size(); ++i)
+	{
+		CvUnit* const pLoopUnit = candidates[i];
+		// Re-check per candidate: earlier joins change food legality and job values.
+		if (!pLoopUnit->canJoinCity(pPlot))
+		{
+			continue;
+		}
+		// Threshold in the scorer's units: the food a citizen eats, times the join margin.
+		const int iJoinThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION) * iJoinPercent / 100;
+		const int iBestValue = AI_automationBestJobValue(*pLoopUnit);
+		if (iBestValue >= iJoinThreshold)
+		{
+			if (GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+			{
+				char buf[256];
+				sprintf(buf, "%S: unit %d (%S) recruited from garrison, best job value %d >= join threshold %d",
+					getName().GetCString(), pLoopUnit->getID(), pLoopUnit->getName().GetCString(),
+					iBestValue, iJoinThreshold);
+				gDLL->logMsg("automation.log", buf);
+			}
+			if (pLoopUnit->joinCity())
+			{
+				AI_assignWorkingPlots();
+			}
+		}
+	}
+}
+
 //Returns the displaced unit, if any.
 CvUnit* CvCityAI::AI_assignToBestJob(CvUnit* pUnit, bool bIndoorOnly)
 {

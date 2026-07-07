@@ -102,6 +102,8 @@ public:
 	bool AI_isHumanAutomationCity() const;
 	int AI_sustainedInputAvailable(YieldTypes eYield, ProfessionTypes eProfession,
 		const CvUnit& kUnit, const CvUnit* pDisplaceUnit) const;
+	int AI_automationBestJobValue(const CvUnit& kUnit) const;
+	void AI_automationRecruitGarrison();
 	// Non-virtual wrapper for AI_professionValue
 	int AI_citizenProfessionValue(
 		ProfessionTypes eProfession,

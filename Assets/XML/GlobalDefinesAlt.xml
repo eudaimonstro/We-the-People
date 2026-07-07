@@ -35,6 +35,10 @@
 		<iDefineIntVal>120</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_JOIN_THRESHOLD_PERCENT</DefineName>
+		<iDefineIntVal>150</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_LOGGING</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>

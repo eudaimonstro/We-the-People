@@ -3910,6 +3910,10 @@ void CvCity::setAllCitizensAutomated(bool bAutomated)
 	if (bAutomated)
 	{
 		AI_assignWorkingPlots();
+		// Automation fix: the automate-all button also recruits idle colonists
+		// from the city tile when a work slot is worth enough (human cities only,
+		// no-op for AI - see CvCityAI::AI_automationRecruitGarrison).
+		AI_automationRecruitGarrison();
 	}
 
 	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
