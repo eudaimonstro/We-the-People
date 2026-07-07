@@ -1249,6 +1249,20 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 			//int iAmount = pSourceCity->getYieldStored(eYield) - pSourceCity->getMaintainLevel(eYield);
 			int iAmount = pSourceCity->getYieldStored(eYield) - pSourceCity->getAutoMaintainThreshold(eYield);
 			// transport feeder - end - Nightinggale
+
+			// Transport automation fix: discount surplus that other automated
+			// transports already heading to this source will grab first, so
+			// empty wagons stop herding to the same pile. Approximation: each
+			// inbound transport group claims one hold's worth.
+			if (bSmartHuman && pSourceCity != pPlotCity)
+			{
+				const int iInbound = kOwner.AI_plotTargetMissionAIs(pSourceCity->plot(), MISSIONAI_TRANSPORT, this, 0);
+				if (iInbound > 0)
+				{
+					iAmount -= iInbound * GC.getGameINLINE().getCargoYieldCapacity();
+				}
+			}
+
 			// R&R mod, vetiarvind, max yield import limit - start
 			if(pDestinationCity != NULL && pDestinationCity->getMaxImportAmount(eYield) > 0)
 			{
