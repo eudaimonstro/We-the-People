@@ -39,6 +39,18 @@
 		<iDefineIntVal>150</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_TRANSPORT_BUFFER_TURNS</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_TRANSPORT_MIN_HAUL</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_TRANSPORT_DISTANCE_TURNS</DefineName>
+		<iDefineIntVal>2</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_LOGGING</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
