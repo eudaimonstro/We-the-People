@@ -12380,6 +12380,25 @@ int CvCity::getMaxImportAmount(YieldTypes eYield) const
 
 // R&R mod, vetiarvind, max yield import limit - End
 
+int CvCity::getAutomationTransportDemand(YieldTypes eYield) const
+{
+	const int iConsumed = getRawYieldConsumed(eYield);
+	if (iConsumed <= 0)
+	{
+		return 0;
+	}
+	const int iBuffer = getAutomationDefine("AUTOMATION_TRANSPORT_BUFFER_TURNS", 10);
+	// projected stock after the buffer horizon at current rates
+	const int iProjected = getYieldStored(eYield)
+		+ (getRawYieldProduced(eYield) - iConsumed) * iBuffer;
+	if (iProjected >= 0)
+	{
+		return 0;
+	}
+	// never ask for more than the warehouse/import limit accepts
+	return std::min(-iProjected, getMaxImportAmount(eYield));
+}
+
 // transport feeder - start - Nightinggale
 
 void CvCity::setImportsMaintain(YieldTypes eYield, bool bSetting)

@@ -1069,6 +1069,10 @@ public:
 	inline bool getHasUnlockedStorageLossTradeSettings()const		{ return m_bHasUnlockedStorageLossTradeSettings; }
 
 	int getMaxImportAmount(YieldTypes eYield) const;
+
+	// Transport automation fix: how much of eYield this city wants delivered to keep
+	// its working consumers (craftsmen) running for AUTOMATION_TRANSPORT_BUFFER_TURNS.
+	int getAutomationTransportDemand(YieldTypes eYield) const;
 };
 
 // NBMOD EDU cache - start - Nightinggale
