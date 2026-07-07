@@ -3900,6 +3900,9 @@ int CvCityAI::AI_citizenProfessionValue(
 
 	const CvProfessionInfo& kProfInfo = GC.getProfessionInfo(eProfession);
 
+	// Automation fix: human-owned cities get better scoring; AI cities keep stock behavior.
+	const bool bHumanAutomation = AI_isHumanAutomationCity();
+
 	// TODO: Get rid of this
 	const CvUnit* const pUnit = &kUnit;
 
@@ -3939,6 +3942,29 @@ int CvCityAI::AI_citizenProfessionValue(
 	else
 	{
 		int actual = getProfessionActualOutput(eProfession, *pUnit);
+		if (bHumanAutomation && actual > 0)
+		{
+			// getProfessionActualOutput capped by netProduced + full stockpile;
+			// re-cap using the sustained figure so output the input flow cannot
+			// sustain is not valued. (Same 1 input : 1 output convention as
+			// getProfessionActualOutput.)
+			for (int i = 0; i < kProfInfo.getNumYieldsConsumed(); ++i)
+			{
+				const YieldTypes yIn = (YieldTypes)kProfInfo.getYieldsConsumed(i);
+				if (yIn != NO_YIELD)
+				{
+					const int iSustained = AI_sustainedInputAvailable(yIn, eProfession, kUnit, pDisplaceUnit);
+					if (iSustained < actual)
+					{
+						actual = iSustained;
+					}
+				}
+			}
+			if (actual <= 0)
+			{
+				return 0;
+			}
+		}
 		if (actual > 0)
 		{
 			YieldTypes y = (YieldTypes)kProfInfo.getYieldsProduced(0);
@@ -3958,7 +3984,17 @@ int CvCityAI::AI_citizenProfessionValue(
 	for (int i = 0; i < numIn; ++i)
 	{
 		YieldTypes y = inYields[i];
-		int avail = getRawYieldProduced(y) + getYieldStored(y);
+		int avail;
+		if (bHumanAutomation)
+		{
+			// Sustained flow + amortized stockpile; a token leftover in the
+			// warehouse no longer qualifies the job.
+			avail = AI_sustainedInputAvailable(y, eProfession, kUnit, pDisplaceUnit);
+		}
+		else
+		{
+			avail = getRawYieldProduced(y) + getYieldStored(y);
+		}
 		if (avail <= 0)
 			return 0;
 	}
