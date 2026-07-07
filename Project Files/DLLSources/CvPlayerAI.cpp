@@ -9799,19 +9799,35 @@ int CvPlayerAI::AI_transferYieldValue(const IDInfo target, YieldTypes eYield, in
 				iValue = std::min(iSurplus, -iAmount);
 
 				iValue *= 50 + ((100 * iStored) / std::max(1, iMaxCapacity));
-				int iMax = iMaxCapacity * 9 / 10;
 
-				// WTP, ray, even if it should never happen, let us prevent iMax being 0 if iMaxCapacity for some reason is 1 above - START
-				if (iMax == 0)
+				if (isHuman())
 				{
-					iMax = 270;
-				}
-				// WTP, ray, even if it should never happen, let us prevent iMax being 0 if iMaxCapacity for some reason is 1 above - END
-
-				if (iTotalStored >= iMax)
-				{
-					iValue *= 125 + ((100 * iMax) / iMax);
+					// Transport automation fix: continuous total-fullness urgency
+					// instead of a cliff at 90%, plus a rot bonus once the city is
+					// past capacity and actively losing goods to decay.
+					iValue *= 100 + (125 * iTotalStored) / std::max(1, iMaxCapacity);
 					iValue /= 100;
+					if (iTotalStored > iMaxCapacity)
+					{
+						iValue *= 2;
+					}
+				}
+				else
+				{
+					int iMax = iMaxCapacity * 9 / 10;
+
+					// WTP, ray, even if it should never happen, let us prevent iMax being 0 if iMaxCapacity for some reason is 1 above - START
+					if (iMax == 0)
+					{
+						iMax = 270;
+					}
+					// WTP, ray, even if it should never happen, let us prevent iMax being 0 if iMaxCapacity for some reason is 1 above - END
+
+					if (iTotalStored >= iMax)
+					{
+						iValue *= 125 + ((100 * iMax) / iMax);
+						iValue /= 100;
+					}
 				}
 			}
 		}
@@ -9885,6 +9901,13 @@ int CvPlayerAI::AI_transferYieldValue(const IDInfo target, YieldTypes eYield, in
 				iValue *= 2;
 			}
 			// transport feeder - end - Nightinggale
+
+			// Transport automation fix: deliveries that keep working craftsmen
+			// running outrank generic hauling and port drains.
+			if (isHuman() && pCity->getAutomationTransportDemand(eYield) > 0)
+			{
+				iValue *= 2;
+			}
 		}
 	}
 	else if (target == kEurope)
