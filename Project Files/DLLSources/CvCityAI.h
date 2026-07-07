@@ -98,6 +98,10 @@ public:
 
 	ProfessionTypes AI_bestPlotProfession(const CvUnit* pUnit, const CvPlot* pPlot) const;
 	int AI_bestProfessionPlot(ProfessionTypes eProfession, const CvUnit* pUnit) const;
+	// Citizen automation fix (human cities only)
+	bool AI_isHumanAutomationCity() const;
+	int AI_sustainedInputAvailable(YieldTypes eYield, ProfessionTypes eProfession,
+		const CvUnit& kUnit, const CvUnit* pDisplaceUnit) const;
 	// Non-virtual wrapper for AI_professionValue
 	int AI_citizenProfessionValue(
 		ProfessionTypes eProfession,
@@ -228,6 +232,11 @@ protected:
 	bool m_bChooseProductionDirty;
 
 	int m_iWorkforceHack; //Does not need to be serialized.
+
+	// Transient pre-pass job memory for automation stickiness; NOT saved to savegames.
+	// unit ID -> (profession, plot worked or NULL). Rebuilt at the start of every
+	// AI_assignWorkingPlots pass, read (const, concurrently) by AI_citizenProfessionValue.
+	std::map<int, std::pair<ProfessionTypes, const CvPlot*> > m_automationPrevJob;
 
 	IDInfo m_routeToCity;
 

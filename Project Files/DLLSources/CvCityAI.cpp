@@ -185,6 +185,21 @@ void CvCityAI::AI_assignWorkingPlots()
 	removeNonCityPopulationUnits();
 	jobMutex.unlock();
 
+	// Automation stickiness: remember every unlocked citizen's current job before
+	// the pass shuffles anyone, so the scorer can favor the status quo.
+	m_automationPrevJob.clear();
+	if (AI_isHumanAutomationCity())
+	{
+		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+		{
+			CvUnit* pUnit = m_aPopulationUnits[i];
+			if (pUnit != NULL && !pUnit->isColonistLocked() && pUnit->getProfession() != NO_PROFESSION)
+			{
+				m_automationPrevJob[pUnit->getID()] =
+					std::make_pair(pUnit->getProfession(), (const CvPlot*)getPlotWorkedByUnit(pUnit));
+			}
+		}
+	}
 
 	/*
 	Citizen Algorithm:
@@ -3831,6 +3846,43 @@ namespace
 		int iNetYield;
 		int iNetValue;
 	};
+
+	// XML knob with default when the entry is missing or nonpositive.
+	int getAutomationDefine(const char* szName, int iDefault)
+	{
+		const int iValue = GC.getDefineINT(szName);
+		return iValue > 0 ? iValue : iDefault;
+	}
+}
+
+bool CvCityAI::AI_isHumanAutomationCity() const
+{
+	return GET_PLAYER(getOwnerINLINE()).isHuman();
+}
+
+// Per-turn availability of an input yield as the automation scorer should see it:
+// ongoing net production - crediting back what this unit and the unit it would
+// displace currently consume, since those slots are being re-decided - plus the
+// stockpile amortized over AUTOMATION_STOCKPILE_HORIZON turns. A stale handful of
+// stored goods no longer makes a craftsman look employable; a real stockpile does.
+int CvCityAI::AI_sustainedInputAvailable(YieldTypes eYield, ProfessionTypes eProfession,
+	const CvUnit& kUnit, const CvUnit* pDisplaceUnit) const
+{
+	int iNet = getRawYieldProduced(eYield) - getRawYieldConsumed(eYield);
+	if (kUnit.getProfession() == eProfession)
+	{
+		iNet += getProfessionInput(eProfession, &kUnit);
+	}
+	if (pDisplaceUnit != NULL && pDisplaceUnit != &kUnit && pDisplaceUnit->getProfession() == eProfession)
+	{
+		iNet += getProfessionInput(eProfession, pDisplaceUnit);
+	}
+	if (iNet < 0)
+	{
+		iNet = 0;
+	}
+	const int iHorizon = getAutomationDefine("AUTOMATION_STOCKPILE_HORIZON", 10);
+	return iNet + getYieldStored(eYield) / iHorizon;
 }
 
 // Returns an estimate of the economic output value of pUnit in eProfession,
