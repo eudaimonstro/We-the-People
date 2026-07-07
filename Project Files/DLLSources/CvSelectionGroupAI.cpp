@@ -929,6 +929,18 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 	const bool bIgnoreDanger = getIgnoreDangerStatus();
 	// R&R mod, vetiarvind, max yield import limit - end
 
+	// Transport automation fix (human players only). bSmartHuman gates scoring
+	// fixes for any automated human transport; virtual routes additionally
+	// require FULL mode (the zero-config "automate transport" button).
+	const bool bSmartHuman = isHuman() && isAutomated();
+	const bool bVirtualRoutes = isHuman() && (getAutomateType() == AUTOMATE_TRANSPORT_FULL);
+	// Ephemeral synthesized routes. deque: growth must not invalidate the
+	// pointers pushed into `routes`, so no std::vector here. Function scope:
+	// must outlive every use of `routes`.
+	std::deque<CvTradeRoute> virtualRoutes;
+	// demand class per synthesized route, for the decision log ('F' feed, 'P' port drain)
+	std::map<const CvTradeRoute*, char> virtualRouteClass;
+
 	// Erik: We need to determine if we're dealing with a coastal transport
 	bool bCoastalTransport = false;
 	CLLNode<IDInfo>* pUnitNode = headUnitNode();
@@ -997,6 +1009,102 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 					}
 				}
 				// TODO: Need to path find if the area check fails like below
+			}
+		}
+
+		// Transport automation fix: synthesize virtual routes from real supply and
+		// demand so the button works with zero Domestic Advisor configuration.
+		// Player-configured routes always win: no virtual route is made where a
+		// real (source, dest, yield) route already exists, and virtual deliveries
+		// flow through the same import-limit / feeder checks as real ones.
+		if (bVirtualRoutes)
+		{
+			const DomainTypes eDomain = getDomainType();
+			CvCity* const pPortCity = kOwner.AI_findBestPort();
+			int iCityLoop;
+			for (CvCity* pSource = kOwner.firstCity(&iCityLoop); pSource != NULL; pSource = kOwner.nextCity(&iCityLoop))
+			{
+				// same reachability rules as real routes above
+				CvArea* const pSourceWaterArea = pSource->waterArea();
+				if (eDomain == DOMAIN_SEA && pSourceWaterArea == NULL)
+				{
+					continue;
+				}
+				const int iSourceArea = (eDomain == DOMAIN_SEA) ? pSourceWaterArea->getID() : pSource->getArea();
+				const bool bReachable = (eDomain == DOMAIN_SEA) ? plot()->isAdjacentToArea(iSourceArea)
+					: ((iSourceArea == getArea())
+						|| (plot()->getTerrainType() == TERRAIN_LARGE_RIVERS && plot()->isAdjacentToArea(pSource->getArea())));
+				if (!bReachable)
+				{
+					continue;
+				}
+
+				for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+				{
+					const YieldTypes eYield = (YieldTypes)iYield;
+					if (!GC.getYieldInfo(eYield).isCargo())
+					{
+						continue;
+					}
+					// a city the player flagged as importer of this yield never supplies it
+					if (pSource->isImport(eYield))
+					{
+						continue;
+					}
+					const int iSurplus = pSource->getYieldStored(eYield) - pSource->getAutoMaintainThreshold(eYield);
+					if (iSurplus <= 0)
+					{
+						continue;
+					}
+
+					int iDestLoop;
+					for (CvCity* pDest = kOwner.firstCity(&iDestLoop); pDest != NULL; pDest = kOwner.nextCity(&iDestLoop))
+					{
+						if (pDest == pSource || pDest->isAutoImportStopped(eYield))
+						{
+							continue;
+						}
+						// player-configured route for this triple already exists? it wins.
+						bool bHaveReal = false;
+						for (uint r = 0; r < routes.size(); ++r)
+						{
+							if (routes[r]->getYield() == eYield
+								&& routes[r]->getSourceCity() == pSource->getIDInfo()
+								&& routes[r]->getDestinationCity() == pDest->getIDInfo())
+							{
+								bHaveReal = true;
+								break;
+							}
+						}
+						if (bHaveReal)
+						{
+							continue;
+						}
+
+						char cClass = 0;
+						if (pDest->getAutomationTransportDemand(eYield) > 0)
+						{
+							cClass = 'F'; // keep craftsmen running
+						}
+						else if (pDest == pPortCity
+							&& pSource != pPortCity
+							&& kOwner.isYieldEuropeTradable(eYield)
+							&& pDest->getMaxImportAmount(eYield) > 0)
+						{
+							cClass = 'P'; // drain sellable surplus to the port
+						}
+						if (cClass == 0)
+						{
+							continue;
+						}
+
+						virtualRoutes.push_back(CvTradeRoute());
+						CvTradeRoute& kRoute = virtualRoutes.back();
+						kRoute.init(pSource->getIDInfo(), pDest->getIDInfo(), eYield);
+						virtualRouteClass[&kRoute] = cClass;
+						processTradeRoute(&kRoute, cityValues, routes, routeValues, yieldsDelivered, yieldsToUnload);
+					}
+				}
 			}
 		}
 	}
