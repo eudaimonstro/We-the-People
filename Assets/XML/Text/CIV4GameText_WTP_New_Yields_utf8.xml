@@ -889,6 +889,7 @@
 		<Italian>Campeggio</Italian>
 		<Spanish>Palo de Campeche</Spanish>
 		<Russian>Кампеш</Russian>
+		<Hungarian>Kékfa</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_LOGWOOD</Tag>
@@ -902,6 +903,7 @@
 		<Italian>Campeggio</Italian>
 		<Spanish>Palo de Campeche</Spanish>
 		<Russian>Кампеш</Russian>
+		<Hungarian>Kékfa</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LOGWOOD</Tag>
@@ -915,6 +917,7 @@
 		<Italian>Campeggio</Italian>
 		<Spanish>Palo de Campeche</Spanish>
 		<Russian>Кампеш</Russian>
+		<Hungarian>Kékfa</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_LOGWOOD_PEDIA</Tag>
@@ -923,6 +926,7 @@
 		<German>[H1]Färbholz[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Blauholz[COLOR_REVERT] findet man in [LINK=FEATURE_TROPICAL_GROVES]tropischen Hainen[\LINK]. Um es zu sammeln, muss ein Kolonist den Beruf [LINK=PROFESSION_BLOODWOOD_CUTTER]Blauholz-Holzfäller[\LINK] ausüben. Der Holzeinschlag kann verdoppelt werden, indem [LINK=UNIT_LOGWOOD_COLLECTOR]erfahrene Blauholz-Sammler[\LINK] eingestellt werden, die in Europa angeworben oder in den Dörfern der Eingeborenen ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Der Baum war in der Kolonialzeit von großer wirtschaftlicher Bedeutung, als er zum Färben von Stoffen nach Europa exportiert wurde. Unter Mißachtung spanischer Gebietsansprüche fällten und sammelten ausländische Seeleute Bäume, um sie nach Europa zu verschiffen. Spanien beauftragte daraufhin Freibeuter, sie anzugreifen.[NEWLINE][NEWLINE]Unter dem Druck der spanischen Freibeuter gründeten die Holzfäller ihre eigenen Piratencrews, um die Spanier zu überfallen. Blackbeard verwendete erbeutete Blauholz-Schaluppen als Piratenschiffe.</German>
 		<Italian>[H1]CAMPEGGIO[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Il [COLOR_HIGHLIGHT_TEXT]legno di tronco[COLOR_REVERT] si trova nelle [LINK=FEATURE_JUNGLE]giungle[\LINK] o nei [LINK=FEATURE_TROPICAL_GROVES]boschetti tropicali[\LINK]. Per raccoglierlo, un colono deve avere la professione [LINK=PROFESSION_BLOODWOOD_CUTTER]tagliatore di legno di sangue[\LINK]. Il raccolto di legna da ardere può essere raddoppiato impiegando [LINK=UNIT_LOGWOOD_COLLECTOR]Tagliatori di legno di sangue esperti[\LINK] che possono essere assunti in Europa o addestrati nei villaggi dei nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'albero aveva una grande importanza economica nell'era coloniale, quando veniva esportato in Europa per tingere i tessuti. Sfidando le rivendicazioni territoriali spagnole, i marinai stranieri tagliavano e raccoglievano gli alberi per spedirli in Europa. La Spagna rispose incaricando i corsari di attaccarli.[NEWLINE][NEWLINE]Sotto l'attacco dei corsari spagnoli, i tagliatori di legna formarono le proprie ciurme di pirati per razziare gli spagnoli. Barbanera trasformò gli sloop catturati in navi pirata.</Italian>
 		<Spanish>[H1]PALO DE CAMPECHE[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]leña[COLOR_REVERT] se encuentra en [LINK=FEATURE_JUNGLE]selvas[\LINK] o en [LINK=FEATURE_TROPICAL_GROVES]arboledas tropicales[\LINK]. Para recolectarla, el colono debe tener la profesión [LINK=PROFESSION_BLOODWOOD_CUTTER]cortador de madera de sangre[\LINK]. La cosecha de leña puede duplicarse empleando a [LINK=UNIT_LOGWOOD_COLLECTOR]expertos cortadores de madera de sangre[\LINK] que pueden ser contratados en Europa o formados en los pueblos nativos.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]El árbol tuvo una gran importancia económica en la época colonial, cuando se exportaba a Europa para teñir telas. Desafiando las reivindicaciones territoriales españolas, marineros extranjeros cortaban y recolectaban árboles para enviarlos a Europa. España respondió encargando a corsarios que los atacaran.[NEWLINE][NEWLINE]Bajo el ataque de los corsarios españoles, los cortadores de leña formaron sus propias tripulaciones piratas para asaltar a los españoles. Barbanegra convirtió las balandras capturadas en barcos piratas.</Spanish>
+		<Hungarian>[H1]KÉKFA[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Kékfa[COLOR_REVERT] betakarításához egy telepesnek [LINK=PROFESSION_BLOODWOOD_CUTTER]Kékfa Favágó[\LINK] szakmát kell választani. A kékfa festékként használható a  [LINK=YIELD_COLOURED_CLOTH]festett kelmék[\LINK] és [LINK=YIELD_COLOURED_WOOL_CLOTH]festett gyapjúkelmék[\LINK] előállításához, akárcsak az [LINK=YIELD_INDIGO]indigó[\LINK] és a [LINK=YIELD_COCHINEAL]bíbortetű[\LINK]. A Kékfa betakarítása megduplázható [LINK=UNIT_LOGWOOD_COLLECTOR]Szakértő Kékfa Gyűjtő[\LINK] alkalmazásával, akit Európában lehet felbérelni vagy az Indián falvakban kiképezni.[NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Kékfa[COLOR_REVERT] a [LINK=FEATURE_TROPICAL_GROVES]Trópusi Ligetben[\LINK] él.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A fa nagy gazdasági jelentőséggel bírt a gyarmati korszakban, amikor Európába exportálták szövetfestésre. A spanyol területi igényekkel dacolva külföldi tengerészek kivágták és begyűjtötték a fát, hogy Európába szállítsák. Spanyolország erre válaszul kalózhajókat bízott meg a megtámadásukkal.[NEWLINE][NEWLINE]A spanyol kalózhajók támadásai nyomán a kékfa favágók saját kalózcsapatokat alakítottak, hogy rajtaütéseket hajtsanak végre a spanyolokon. Feketeszakáll kalózhajókká alakította a zsákmányolt kékfaszállító hajókat.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LOGWOOD_PEDIA</Tag>
@@ -945,6 +949,7 @@
 		<Italian>Mate</Italian>
 		<Spanish>Yerba mate</Spanish>
 		<Russian>Чай</Russian>
+		<Hungarian>Tea</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_YERBA_TEA</Tag>
@@ -958,6 +963,7 @@
 		<Italian>Mate</Italian>
 		<Spanish>Yerba mate</Spanish>
 		<Russian>Чай</Russian>
+		<Hungarian>Tea</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_TEA</Tag>
@@ -971,14 +977,16 @@
 		<Italian>Mate</Italian>
 		<Spanish>Yerba mate</Spanish>
 		<Russian>Чай</Russian>
+		<Hungarian>Tea</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_YERBA_TEA_PEDIA</Tag>
-		<English>[H1]YERBA MATÉ[\H1][NEWLINE][BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Yerba tea[COLOR_REVERT] is made from [LINK=YIELD_YERBA_LEAVES]yerba leaves[\LINK]. To do this, a colonist needs to have the [LINK=PROFESSION_YERBA_TRADER]yerba maté trader[\LINK] profession in the [LINK=BUILDING_TOBACCONIST_HOUSE]Tobacco and Yerba House[\LINK] or one of its upgrades. The output of yerba maté can be doubled by commissioning [LINK=UNIT_YERBA_TRADER]master yerba maté traders[\LINK] who can be hired in Europe.[NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]Getting started in the yerba maté trade meant dealing with two especially dangerous Indigenous nations : the Guarani and Tupi. To add to the challenge, yerba leaves were found in only two regions, Amambay and Alto Parana. After the Jesuits started using it, yerba maté became widespread in what's now Paraguay and throughout other Spanish colonies.</English>
+		<English>[H1]YERBA MATÉ[\H1][NEWLINE][BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Yerba tea[COLOR_REVERT] is made from [LINK=YIELD_YERBA_LEAVES]yerba leaves[\LINK]. To do this, a colonist needs to have the [LINK=PROFESSION_YERBA_TRADER]yerba maté trader[\LINK] profession in the [LINK=BUILDING_TOBACCONIST_HOUSE]Tobacco and Yerba House[\LINK] or one of its upgrades. The output of yerba maté can be doubled by commissioning [LINK=UNIT_YERBA_TRADER]master yerba maté traders[\LINK] who can be hired in Europe.[NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]Getting started in the yerba maté trade meant dealing with two especially dangerous Indigenous nations: the Guarani and Tupi. To add to the challenge, yerba leaves were found in only two regions, Amambay and Alto Parana. After the Jesuits started using it, yerba maté became widespread in what's now Paraguay and throughout other Spanish colonies.</English>
 		<French>[H1]MATÉ[\H1][NEWLINE][BOLD]Stratégie :[\BOLD][NEWLINE]Le [COLOR_HIGHLIGHT_TEXT]thé yerba[COLOR_REVERT] est fabriqué à partir de [LINK=YIELD_YERBA_LEAVES]feuilles de yerba[\LINK]. Pour ce faire, un colon doit avoir la profession de [LINK=PROFESSION_YERBA_TRADER]marchand de maté[\LINK] dans la [LINK=BUILDING_TOBACCONIST_HOUSE]Maison du tabac et de la yerba[\LINK] ou l'une de ses améliorations. La production de maté peut être doublée en faisant appel à des [LINK=UNIT_YERBA_TRADER]maîtres marchands en maté[\LINK] qui peuvent être engagés en Europe.[NEWLINE][NEWLINE][BOLD]Contexte :[\BOLD][NEWLINE]Pour se lancer dans le commerce de la yerba, il fallait traiter avec deux nations indigènes particulièrement dangereuses : les Guarani et les Tupi. Pour ajouter au défi, on ne la trouvait que dans deux régions, Amambay et Alto Parana. Après que les Jésuites aient commencé à l'utiliser, le maté s'est répandu dans ce qui est aujourd'hui le Paraguay et dans d'autres colonies espagnoles.</French>
 		<German>[H1]Mate-Tee[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Mate-Tee[COLOR_REVERT] wird aus [LINK=YIELD_YERBA_LEAVES]Mate-Blättern[\LINK] hergestellt. Dazu muss ein Kolonist den Beruf [LINK=PROFESSION_YERBA_TRADER]Mate-Teehändler[\LINK] im [LINK=BUILDING_TOBACCONIST_HOUSE]Tabak- und Yerba-Haus[\LINK] oder eine seiner Erweiterungen haben. Die Produktion von Mate-Tee kann durch die Beauftragung von [LINK=UNIT_YERBA_TRADER]Meister Mate-Teehändlern[\LINK] verdoppelt werden, die in Europa angeworben werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Um in den Yerba-Handel einzusteigen, musste man sich mit zwei besonders gefährlichen indigenen Völkern auseinandersetzen : den Guarani und den Tupi. Erschwerend kam hinzu, dass die Yerba-Blätter nur in zwei Regionen zu finden waren : Amambay und Alto Parana. Nachdem die Jesuiten dies übernommen hatten, verbreitete sich Mate-Tee weit über das heutige Paraguay hinaus in die anderen spanischen Kolonien Süd-Amerikas.</German>
 		<Italian>[H1]MATE[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Il [COLOR_HIGHLIGHT_TEXT]tè di yerba[COLOR_REVERT] si ottiene dalle [LINK=YIELD_YERBA_LEAVES]foglie di yerba[\LINK]. Per farlo, un colono deve avere la professione [LINK=PROFESSION_YERBA_TRADER]commerciante di mate[\LINK] nella [LINK=BUILDING_TOBACCONIST_HOUSE]Casa del tabacco e della yerba[\LINK] o uno dei suoi potenziamenti. La produzione di mate può essere raddoppiata commissionando [LINK=UNIT_YERBA_TRADER]mastri commercianti di mate[\LINK] che possono essere assunti in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]Iniziare il commercio della mate significava avere a che fare con due popoli indigeni particolarmente pericolosi : i Guarani e i Tupi. Inoltre, le foglie di yerba si trovava solo in due regioni, Amambay e Alto Parana. Dopo che i gesuiti iniziarono a usarla, la mate si diffuse nell'attuale Paraguay e in altre colonie spagnole.</Italian>
 		<Spanish>[H1]YERBA MATE[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]El [COLOR_HIGHLIGHT_TEXT]té de yerba[COLOR_REVERT] se elabora con hojas de [LINK=YIELD_YERBA_LEAVES]yerba[\LINK]. Para ello, un colono necesita tener la [LINK=PROFESSION_YERBA_TRADER]profesión de comerciante de yerba mate[\LINK] en la [LINK=BUILDING_TOBACCONIST_HOUSE]Casa de Tabaco y Yerba[\LINK] o una de sus mejoras. La producción de yerba mate se puede duplicar encargando a [LINK=UNIT_YERBA_TRADER]maestros comerciantes de yerba mate[\LINK] que se pueden contratar en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]Iniciarse en el comercio de la yerba significaba tratar con dos naciones indígenas especialmente peligrosas : los guaraníes y los tupíes. Para colmo de males, sólo se encontraba en dos regiones, Amambay y Alto Paraná. Después de que los jesuitas empezaran a utilizarla, la yerba mate se generalizó en lo que hoy es Paraguay y en otras colonias españolas.</Spanish>
+		<Hungarian>[H1]TEA[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] [LINK=YIELD_YERBA_LEAVES]Tealevelekből[\LINK] készül. Ehhez egy telepesnek [LINK=PROFESSION_YERBA_TRADER]Teakészítő[\LINK] szakmát kell választani a [LINK=BUILDING_TOBACCONIST_HOUSE]Dohány és Teaboltban[\LINK] vagy annak egyik fejlesztésében. A Tea termelése megduplázható az Európában felbérelhető [LINK=UNIT_YERBA_TRADER]Teakészítő Mester[\LINK] alkalmazásával.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A yerba tea kereskedés megkezdése két különösen veszélyes indián néppel: a guaranival és a tupival való üzletelést jelentette. A kihívást tetézte, hogy a yerba levelek csak két régióban, Amambayban és Alto Paranában voltak fellelhetők. Miután a jezsuiták elkezdték használni, a yerba tea széles körben elterjedt a mai Paraguay területén és más spanyol gyarmatokon is.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_YERBA_TEA_PEDIA</Tag>
@@ -1001,6 +1009,7 @@
 		<Italian>Tessuto di lana colorato</Italian>
 		<Spanish>Tejido de lana de colores</Spanish>
 		<Russian>Цветная шерстяная ткань</Russian>
+		<Hungarian>Festett Gyapjúkelme</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_COLOURED_WOOL_CLOTH</Tag>
@@ -1014,6 +1023,7 @@
 		<Italian>Tessuto di lana colorato</Italian>
 		<Spanish>Tejido de lana de colores</Spanish>
 		<Russian>Цветная шерстяная ткань</Russian>
+		<Hungarian>Festett Gyapjúkelme</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOURED_WOOL_CLOTH</Tag>
@@ -1027,6 +1037,7 @@
 		<Italian>Tessuto di lana colorato</Italian>
 		<Spanish>Tejido de lana de colores</Spanish>
 		<Russian>Цветная шерстяная ткань</Russian>
+		<Hungarian>Festett Gyapjúkelme</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_COLOURED_WOOL_CLOTH_PEDIA</Tag>
@@ -1035,6 +1046,7 @@
 		<German>[H1]Gefärbter Wollstoff[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE]Um [LINK=YIELD_EVERYDAY_CLOTHES]Alltagskleidung[\LINK] herzustellen, braucht der [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Schneider[\LINK] [COLOR_HIGHLIGHT_TEXT]gefärbten Wollstoff[COLOR_REVERT].[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Alltagskleidung muss strapazierfähig sein, aber sie sollte trotzdem gut aussehen. Die meisten Menschen können sich Kleidung zum Wechseln leisten. Der Besitz einer Vielzahl von Stilen und Farben ist ein Zeichen für bescheidenen Wohlstand.</German>
 		<Italian>[H1]TESSUTO DI LANA COLORATO[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Per confezionare [LINK=YIELD_EVERYDAY_CLOTHES]abiti di tutti i giorni[\LINK] il [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]sarto[\LINK] ha bisogno di [COLOR_HIGHLIGHT_TEXT]tessuto di lana colorato[COLOR_REVERT].[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]I vestiti di tutti i giorni devono essere resistenti, ma devono comunque avere un bell'aspetto. La maggior parte delle persone può permettersi un cambio di vestiti. Possedere una varietà di stili e colori è un segno di modesto benessere.</Italian>
 		<Spanish>[H1]TEJIDO DE LANA DE COLORES[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Para confeccionar [LINK=YIELD_EVERYDAY_CLOTHES]ropa de diario[\LINK] el [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]sastre[\LINK] necesita [COLOR_HIGHLIGHT_TEXT]tejido de lana de colores[COLOR_REVERT].[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La ropa de diario tiene que ser resistente, pero debe tener buen aspecto. La mayoría de la gente puede permitirse una muda de ropa. Poseer una variedad de estilos y colores es señal de una modesta prosperidad.</Spanish>
+		<Hungarian>[H1]FESTETT GYAPJÚKELME[\H1][NEWLINE][BOLD]Stratégia : [\BOLD][NEWLINE]Ahhoz, hogy [LINK=YIELD_EVERYDAY_CLOTHES]Hétköznapi Ruhát[\LINK] készíts, a [LINK=PROFESSION_EVERYDAY_CLOTHES_TAILOR]Szabónak[\LINK] szüksége van [COLOR_HIGHLIGHT_TEXT]Festett Gyapjúszövetre[COLOR_REVERT]. [NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A hétköznapi ruháknak strapabírónak kell lenniük, de mégis jól kell kinézniük. A legtöbb ember megengedhet magának egy váltóruhát. A különböző stílusú és színű ruhák birtoklása a szerény jólét jele.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOURED_WOOL_CLOTH_PEDIA</Tag>
@@ -1057,6 +1069,7 @@
 		<Italian>Argilla</Italian>
 		<Spanish>Arcilla</Spanish>
 		<Russian>Глина</Russian>
+		<Hungarian>Agyag</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_CLAY_PEDIA</Tag>
@@ -1065,6 +1078,7 @@
 		<German>[H1]Lehm[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Lehm[COLOR_REVERT] findet man auf Hügeln in [LINK=TERRAIN_MARSH]Sümpfen[\LINK], [LINK=TERRAIN_WETLAND]Mooren[\LINK] oder [LINK=TERRAIN_TUNDRA]Tundra[\LINK]. Um ihn zu sammeln, muss ein Kolonist den Beruf [LINK=PROFESSION_CLAY_MINER]Lehmkuhlenarbeiter[\LINK] ausüben. Der Vorrat an Lehm kann verdoppelt werden, indem [LINK=UNIT_PEAT_CUTTER]erfahrene Torf- und Lehmstecher[\LINK] beauftragt werden, die in Europa angeworben oder in Dörfern der Ureinwohner ausgebildet werden können.[NEWLINE]Lehm wird für das Errichten vieler Gebäude und für die Herstellung von [LINK=YIELD_POTTERY]Töpferwaren[\LINK] benötigt.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Ton ist im nassen Zustand aufgrund eines molekularen Wasserfilms, der die Tonpartikel umgibt, plastisch, wird aber beim Trocknen oder Brennen hart, spröde und nicht plastisch. Schiefer, der größtenteils aus Ton besteht, ist das häufigste Sedimentgestein.[NEWLINE][NEWLINE]Ton ist das älteste bekannte keramische Material. Prähistorische Menschen nutzten ihn zur Herstellung von Töpferwaren. Frühe Tonscherben wurden auf 14.000 v. Chr. datiert, und Tontafeln sind das erste bekannte Schreibmedium.</German>
 		<Italian>[H1]ARGILLA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]L'[COLOR_HIGHLIGHT_TEXT]argilla[COLOR_REVERT] si trova sulle colline dei terreni [LINK=TERRAIN_MARSH]paludosi[\LINK], [LINK=TERRAIN_WETLAND]umidi[\LINK] o [LINK=TERRAIN_TUNDRA]tundra[\LINK]. Per raccoglierla, un colono deve avere la professione di [LINK=PROFESSION_CLAY_MINER]tagliatore di argilla[\LINK]. La fornitura di argilla può essere raddoppiata commissionando [LINK=UNIT_PEAT_CUTTER]esperti tagliatori di torba e argilla[\LINK] che possono essere assunti in Europa o addestrati nei villaggi dei nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'argilla sviluppa plasticità quando è bagnata, a causa di una pellicola molecolare di acqua che circonda le particelle di argilla, ma diventa dura, fragile e non plastica quando si asciuga o si cuoce. L'argilla, formata in gran parte da argilla, è la roccia sedimentaria più comune.[NEWLINE][NEWLINE]L'argilla è il più antico materiale ceramico conosciuto. Gli esseri umani preistorici la usavano per produrre vasellame. I primi cocci di ceramica sono stati datati al 14.000 a.C. e le tavolette di argilla sono il primo supporto di scrittura conosciuto.</Italian>
 		<Spanish>[H1]ARCILLA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]arcilla[COLOR_REVERT] se encuentra en las colinas de los terrenos [LINK=TERRAIN_MARSH]marismas[\LINK], [LINK=TERRAIN_WETLAND]humedales[\LINK] o [LINK=TERRAIN_TUNDRA]tundra[\LINK]. Para recogerla, un colono necesita tener la profesión [LINK=PROFESSION_CLAY_MINER]cortador de arcilla[\LINK]. El suministro de arcilla puede duplicarse encargando a [LINK=UNIT_PEAT_CUTTER]expertos cortadores de turba y arcilla[\LINK] que pueden contratarse en Europa o formarse en los pueblos nativos.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La arcilla desarrolla plasticidad cuando está húmeda, debido a una película molecular de agua que rodea las partículas de arcilla, pero se vuelve dura, quebradiza y no plástica al secarse o cocerse. El esquisto, formado en gran parte por arcilla, es la roca sedimentaria más común[NEWLINE][NEWLINE]La arcilla es el material cerámico más antiguo que se conoce. Los humanos prehistóricos la utilizaban para fabricar alfarería. Los primeros fragmentos de cerámica datan del 14.000 a.C., y las tablillas de arcilla son el primer medio de escritura conocido.</Spanish>
+		<Hungarian>[H1]AGYAG[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]Az [COLOR_HIGHLIGHT_TEXT]Agyag[COLOR_REVERT] - rengeteg Agyag - nagyobb épületek megépítéséhez szükséges. A [LINK=YIELD_STONE]Kőhöz[\LINK] és a [LINK=YIELD_TOOLS]Szerszámokhoz[\LINK] hasonlóan, városoknak a középjátékban rengeteg hajórakomány Agyagra van szükségük. Az Agyagot [LINK=YIELD_POTTERY]Kerémia[\LINK] előállítására is fel lehet használni. A begyűjtéséhez egy telepesnek [LINK=PROFESSION_CLAY_MINER]Agyagbányász[\LINK] szakmát kell választani. Az Agyagkitermelés megduplázható [LINK=UNIT_PEAT_CUTTER]Szakértő Tőzeg és Agyagbányász[\LINK] alkalmazásával, akit Európában lehet felbérelni vagy az Indián falvakban kiképezni.[NEWLINE]Az Agyag Dombokon lévő [LINK=TERRAIN_MARSH]Mocsár[\LINK], [LINK=TERRAIN_WETLAND]Ingovány[\LINK] vagy [LINK=TERRAIN_TUNDRA]Tundra[\LINK] terepen található.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]Az agyag nedvesen alakítható, az agyagrészecskéket körülvevő molekuláris vízfilm miatt, de száradáskor vagy égetéskor kemény, rideg és nem szilárd lesz. A nagyrészt agyagból képződött pala a leggyakoribb üledékes kőzet.[NEWLINE][NEWLINE]Az agyag a legrégebbi ismert kerámiaanyag. Az őskori emberek fazekasáruk készítésére használták. A korai kerámia szilánkokat i.e. 14 000-re datálják, és az agyagtáblák az első ismert íróeszközök.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CLAY_PEDIA</Tag>
@@ -1087,6 +1101,7 @@
 		<Italian>Carbone</Italian>
 		<Spanish>Carbón</Spanish>
 		<Russian>Уголь</Russian>
+		<Hungarian>Szén</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_COAL_PEDIA</Tag>
@@ -1095,6 +1110,7 @@
 		<German>[H1]Kohle[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Kohle[COLOR_REVERT] findet man in [COLOR_HIGHLIGHT_TEXT]hügeligem[COLOR_REVERT] Gelände oder in [COLOR_HIGHLIGHT_TEXT]Bergen[COLOR_REVERT]. Um sie abzubauen, muss ein Kolonist den Beruf [LINK=PROFESSION_COAL_MINER]Bergmann[\LINK] ausüben. In einer [LINK=BUILDING_ARMORY]Waffenkammer[\LINK] oder einer seiner Erweiterungen kann [COLOR_HIGHLIGHT_TEXT]Kohle[COLOR_REVERT] verbrannt werden, um [LINK=YIELD_ORE]Eisenerz[\LINK] zu schmelzen und daraus die für die Kriegsführung unerlässlichen [LINK=YIELD_MUSKETS]Musketen[\LINK] und [LINK=YIELD_CANNONS]Kanonen[\LINK] herzustellen. Die Förderung von Kohle kann stark erhöht werden, indem man [LINK=UNIT_COAL_MINER]erfahrene Kohlekumpel[\LINK] anheuert, die in Europa angeworben oder in den Dörfern der Eingeborenen ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Der Kohleabbau findet unter schwierigen und gefährlichen Arbeitsbedingungen statt, die oftmals zu Krankheit und vorzeitigem Tod führen. Kohle ist ein relativ weiches Gestein, für das nicht soviel Sprengstoff wie für den Abbau von Hartgestein benötigt wird. Es ist ein Job, bei dem die Arbeiter mit Spitzhacke und Schaufel arbeiten, und sie werden nicht gut bezahlt.</German>
 		<Italian>[H1]CARBONE[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Il [COLOR_HIGHLIGHT_TEXT]carbone[COLOR_REVERT] si trova sulle [COLOR_HIGHLIGHT_TEXT]colline[COLOR_REVERT]. Per raccoglierlo, un colono deve avere la professione [LINK=PROFESSION_COAL_MINER]minatore di carbone[\LINK]. La fornitura di carbone può essere raddoppiata commissionando [LINK=UNIT_COAL_MINER]minatori esperti[\LINK] che possono essere assunti in Europa o addestrati nei villaggi nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'estrazione del carbone causa morti premature e malattie, ma si tratta di una roccia morbida che non richiede l'uso di esplosivi come l'estrazione di rocce dure. È un lavoro in cui i manovali usano picconi e pale e non vengono pagati molto.</Italian>
 		<Spanish>[H1]CARBÓN[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]El [COLOR_HIGHLIGHT_TEXT]carbón[COLOR_REVERT] se encuentra en las [COLOR_HIGHLIGHT_TEXT]colinas[COLOR_REVERT]. Para recogerlo, un colono necesita tener la profesión [LINK=PROFESSION_COAL_MINER]minero del carbón[\LINK]. El suministro de carbón puede duplicarse encargando [LINK=UNIT_COAL_MINER]mineros expertos[\LINK] que pueden ser contratados en Europa o formados en pueblos nativos.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La minería del carbón causa muertes prematuras y enfermedades, pero es una roca blanda que no necesita tantos explosivos como la minería de roca dura. Es un trabajo en el que los obreros utilizan picos y palas, y no cobran mucho.</Spanish>
+		<Hungarian>[H1]SZÉN[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A Puskaművesnek [COLOR_HIGHLIGHT_TEXT]szénre[COLOR_REVERT] van szüksége ahhoz, hogy a [LINK=YIELD_TOOLS]szerszámokat[\LINK] puskákká és ágyúkká alakítsa. A szén [COLOR_HIGHLIGHT_TEXT]dombokon[COLOR_REVERT] és [COLOR_HIGHLIGHT_TEXT]hegyekben [COLOR_REVERT] található. A kitermeléséhez a lakosnak [LINK=PROFESSION_COAL_MINER]szénbányász[\LINK] szakmát kell választani. A [LINK=BUILDING_ARMORY]Fegyvertárban[\LINK] vagy annak egyik továbbfejlesztésében a [COLOR_HIGHLIGHT_TEXT]szén[COLOR_REVERT] felhasználható a [LINK=YIELD_TOOLS]szerszámok[\LINK] hevítésére, amelyekből [LINK=YIELD_MUSKETS]puskák[\LINK] és [LINK=YIELD_CANNONS]ágyúk[\LINK] kovácsolhatók. A szénellátást növelni lehet [LINK=UNIT_COAL_MINER]tapasztalt szénbányászok[\LINK] alkalmazásával, akiket Európában lehet felfogadni vagy az indián falvakban kiképezni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A szénbányászat korai halált és betegségeket okoz, de a szén puha kőzet, így nem igényel annyi robbanószert, mint a kemény kőzetek bányászata. Bár a szénbányászat alapvető munka, csákányokkal és lapátokkal, alacsony fizetéssel, a szénbányászok lányai büszkék rájuk.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COAL_PEDIA</Tag>
@@ -1117,6 +1133,7 @@
 		<Italian>Carbone di legna</Italian>
 		<Spanish>Carbón vegetal</Spanish>
 		<Russian>Древесный уголь</Russian>
+		<Hungarian>Faszén</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_CHAR_COAL_PEDIA</Tag>
@@ -1125,6 +1142,7 @@
 		<German>[H1]Holzkohle[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Holzkohle[COLOR_REVERT] wird aus [LINK=YIELD_LUMBER]Holz[\LINK] von Kolonisten hergestellt, die im [LINK=BUILDING_FIREWORKERS_HOUSE]Pulvermacherhaus[\LINK] oder einer seiner Erweiterungen arbeiten. Um sie herzustellen, muss ein Kolonist den Beruf [LINK=PROFESSION_CHARCOAL_BURNER]Köhler[\LINK] ausüben. Die Produktion an Holzkohle kann verdoppelt werden, indem [LINK=UNIT_CHARCOAL_BURNER]Köhlermeister[\LINK] eingestellt werden, die in Europa angeworben oder in den Dörfern der Ureinwohner ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Holzkohle wird aus Holz gewonnen, das sechs bis acht Tage lang, manchmal auch länger, in einem Ofen gebrannt wird. Holzkohle brennt bei 1.100 Grad Celsius. Der Schmelzpunkt von Eisen liegt bei 1.200 Grad. Mit einem Blasebalg auf Holzkohle kann ein Schmied seine Arbeit aufnehmen.</German>
 		<Italian>[H1]CARBONE DI LEGNA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Il [COLOR_HIGHLIGHT_TEXT]carbone di legna[COLOR_REVERT] viene prodotto con [LINK=YIELD_LUMBER]legname[\LINK] dai coloni che lavorano nella [LINK=BUILDING_FIREWORKERS_HOUSE]casa del fabbricante di polvere[\LINK] o in uno dei suoi potenziamenti. Per crearlo, un colono deve avere la professione [LINK=PROFESSION_CHARCOAL_BURNER]carbonaio[\LINK]. La fornitura di carbone può essere raddoppiata impiegando [LINK=UNIT_CHARCOAL_BURNER]maestri carbonai[\LINK] che possono essere assunti in Europa o addestrati nei villaggi dei nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]Il carbone di legna proviene da legna cotta in un forno per sei-otto giorni, a volte anche più a lungo. Il carbone di legna brucia a 1.100 gradi Celsius. Il punto di fusione del ferro è di 1.200 gradi. Usando un mantice sul carbone di legna, un fabbro può mettersi al lavoro.</Italian>
 		<Spanish>[H1]CARBÓN VEGETAL[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]El [COLOR_HIGHLIGHT_TEXT]carbón vegetal[COLOR_REVERT] se fabrica con [LINK=YIELD_LUMBER]madera[\LINK] por colonos que trabajan en la [LINK=BUILDING_FIREWORKERS_HOUSE]casa del polvorista[\LINK] o en una de sus mejoras. Para crearlo, un colono necesita tener la profesión [LINK=PROFESSION_CHARCOAL_BURNER]carbonero[\LINK]. El suministro de carbón se puede duplicar empleando [LINK=UNIT_CHARCOAL_BURNER]maestros carboneros[\LINK] que pueden ser contratados en Europa o entrenados en las aldeas nativas.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]El carbón vegetal procede de la madera cocida en un horno durante seis u ocho días, a veces más. El carbón arde a 1.100 grados Celsius. El punto de fusión del hierro es de 1.200 grados. Utilizando un fuelle sobre carbón vegetal, un herrero puede ponerse manos a la obra.</Spanish>
+		<Hungarian>[H1]FASZÉN[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]faszenet[COLOR_REVERT] az [LINK=YIELD_LUMBER]épületfából[\LINK] lassú tűzön égetik ki a [LINK=BUILDING_FIREWORKERS_HOUSE]Puskaporgyártó Műhelyben[\LINK] vagy annak egyik továbbfejlesztésében dolgozó lakosok. A faszén a [LINK=YIELD_BLACK_POWDER]puskapor[\LINK] alapanyaga. A faszén előállításához a telepesnek [LINK=PROFESSION_CHARCOAL_BURNER]faszénégető[\LINK] szakmát kell választani. A faszénellátás megduplázható [LINK=UNIT_CHARCOAL_BURNER]Faszénégető Mesterek[\LINK] alkalmazásával, akiket Európában lehet felfogadni vagy az indián falvakban kiképezni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A faszén hat-nyolc napig, néha még tovább is kemencében égetett fából készül. A faszén 1100 Celsius-fokon ég. A vas olvadáspontja 1200 fok. A faszénre fújtatva a kovács elég lágyra tudja olvasztani a vasat ahhoz, hogy megmunkálhassa.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHAR_COAL_PEDIA</Tag>
@@ -1147,6 +1165,7 @@
 		<Italian>Polvere da sparo</Italian>
 		<Spanish>Pólvora</Spanish>
 		<Russian>Порох</Russian>
+		<Hungarian>Puskapor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_BLACK_POWDER</Tag>
@@ -1160,6 +1179,7 @@
 		<Italian>Polvere da sparo</Italian>
 		<Spanish>Pólvora</Spanish>
 		<Russian>Порох</Russian>
+		<Hungarian>Puskapor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BLACK_POWDER</Tag>
@@ -1173,6 +1193,7 @@
 		<Italian>Polvere da sparo</Italian>
 		<Spanish>Pólvora</Spanish>
 		<Russian>Порох</Russian>
+		<Hungarian>Puskapor</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_BLACK_POWDER_PEDIA</Tag>
@@ -1181,6 +1202,7 @@
 		<German>[H1]Schwarzpulver[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Schwarzpulver[COLOR_REVERT] wird aus [LINK=YIELD_CHAR_COAL]Holzkohle[\LINK] von Kolonisten hergestellt, die den Beruf [LINK=PROFESSION_FIREWORKER]Pulvermacher[\LINK] erlernt haben. Um Schwarzpulver herzustellen, muss der Kolonist im [LINK=BUILDING_FIREWORKERS_HOUSE]Haus des Pulvermachers[\LINK] oder einer seiner Erweiterungen arbeiten. Die Schwarzpulverproduktion kann durch die Beschäftigung eines [LINK=UNIT_FIREWORKER]Meister-Pulvermachers[\LINK] verdoppelt werden, der in Europa angeworben werden kann.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Weit weg von anderen Gebäuden mischen sie sorgfältig Schwarzpulver aus Schwefel, Holzkohle und Salpeter: Schießpulver für die Gewehre und Kanonen der Armee. In der Kolonialzeit ist Schwarzpulver der einzige verfügbare Sprengstoff (Dynamit wird erst 1867 erfunden) und wird daher auch für die Artillerie, den Bergbau und den Straßenbau verwendet.[NEWLINE][NEWLINE]Schwarzpulver mag gefährlich sein, aber es ist nicht so gefährlich wie eine schwache Armee ohne genügend Munition.</German>
 		<Italian>[H1]POLVERE DA SPARO[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]polvere da sparo[COLOR_REVERT] è prodotta dal [LINK=YIELD_CHAR_COAL]carbone di legna[\LINK] dai coloni che sono stati assegnati alla professione di [LINK=PROFESSION_FIREWORKER]miscelatore di polvere da sparo[\LINK]. Per produrre polvere da sparo, il colono deve lavorare nella [LINK=BUILDING_FIREWORKERS_HOUSE]casa del fabbricante di polvere da sparo[\LINK] o in uno dei suoi potenziamenti. La produzione di polvere da sparo può essere raddoppiata assumendo un [LINK=UNIT_FIREWORKER]mastro fabbricante di polvere da sparo[\LINK], che può essere assunto in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]Lontano da altri edifici, mescolano con cura la polvere da sparo a partire da zolfo, carbone e salnitro: munizioni per i fucili dei soldati. Nell'epoca coloniale è l'unico esplosivo disponibile (la dinamite sarà inventata nel 1867), quindi viene usata anche per l'artiglieria, le miniere e la costruzione di strade.[NEWLINE][NEWLINE]La polvere da sparo può essere pericolosa, ma non lo è quanto avere un esercito debole senza abbastanza munizioni.</Italian>
 		<Spanish>[H1]PÓLVORA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]pólvora[COLOR_REVERT] es fabricada a partir de [LINK=YIELD_CHAR_COAL]carbón vegetal[\LINK] por los colonos, que han sido asignados a la profesión de [LINK=PROFESSION_FIREWORKER]mezclador de pólvora[\LINK]. Para producir pólvora, el colono necesita trabajar en la [LINK=BUILDING_FIREWORKERS_HOUSE]casa del polvorero[\LINK] o en una de sus mejoras. La producción de pólvora puede duplicarse empleando a un [LINK=UNIT_FIREWORKER]maestro polvorero[\LINK], que puede contratarse en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]Bien lejos de otros edificios, mezclan cuidadosamente pólvora a partir de azufre, carbón vegetal y salitre: munición para los cañones de los soldados. En la época colonial es el único explosivo disponible (la dinamita se inventará en 1867), por lo que también se utiliza para la artillería, la minería y la construcción de carreteras.[NEWLINE][NEWLINE]La pólvora puede ser peligrosa, pero no lo es tanto como tener un ejército débil sin munición suficiente.</Spanish>
+		<Hungarian>[H1]PUSKAPOR[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]puskapor[COLOR_REVERT] [LINK=YIELD_CHAR_COAL]faszénből[\LINK] készül, amit a [LINK=PROFESSION_FIREWORKER]Puskaporkeverő[\LINK] szakmát választó lakosok állítanak elő. A puskapor előállításához a lakosnak a [LINK=BUILDING_FIREWORKERS_HOUSE]Puskaporgyártó Műhelyben[\LINK] vagy annak egyik továbbfejlesztésében kell dolgoznia. A puskapor termelése megduplázható egy [LINK=UNIT_FIREWORKER]Puskaporkeverő Mester[\LINK] alkalmazásával, akit Európában lehet felfogadni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]Távol más épületektől gondosan keverik össze a kénből, faszénből és salétromból készült puskaport: a katonák fegyvereinek lőszerét. A gyarmati időkben ez az egyetlen rendelkezésre álló robbanóanyag (a dinamitot 1867-ben találják fel), ezért tüzérségi, bányászati és útépítési célokra is használják.[NEWLINE][NEWLINE]A puskapor veszélyes lehet, de nem annyira, mint egy gyenge hadsereg, amelynek nincs elegendő lőszere.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BLACK_POWDER_PEDIA</Tag>
@@ -1203,6 +1225,7 @@
 		<Italian>Prodotti da forno</Italian>
 		<Spanish>Productos de panadería</Spanish>
 		<Russian>Провиант</Russian>
+		<Hungarian>Ellátmány</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_BAKERY_GOODS_PEDIA</Tag>
@@ -1211,6 +1234,7 @@
 		<German>[H1]Proviant[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Proviant[COLOR_REVERT] wird aus [LINK=YIELD_RICE]Reis[\LINK], [LINK=YIELD_BARLEY]Gerste[\LINK] oder [LINK=YIELD_CASSAVA]Maniok[\LINK] im [LINK=BUILDING_BAKER_HOUSE]Haus des Bäckers[\LINK] oder einer seiner Erweiterungen hergestellt. Um die Bürger mit Proviant zu versorgen, muss ein Kolonist den Beruf des Bäckers ausüben. [LINK=UNIT_BAKER]Bäckermeister[\LINK] beherrschen dieses Handwerk hervorragend und können die Produktion von Provianten erheblich steigern.[NEWLINE][NEWLINE]Bei normaler Spielgeschwindigkeit werden 50 Proviante für die Ausrüstung von Pionieren und Missionaren benötigt. Späher, Stadtwachen und königliche Hellebardiere benötigen 20 Proviante.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Zunächst bäckt jeder Haushalt sein eigenes Brot, doch schon bald wird die Lebensmittelproduktion durch die Bäckereien zentralisiert. Der Bäcker beginnt seine Arbeit lange vor dem Morgengrauen, damit die Haushalte ihr tägliches Brot bekommen. Siedler, die sich an die frühen Hungertage erinnern, bauen weiterhin Kürbisse, Bohnen und Mais an, aber Neuankömmlinge bevorzugen die vertrauten Lebensmittel aus dem alten Land.[NEWLINE][NEWLINE]Mit einer Bäckerei muss nicht jeder Haushalt sein eigenes Brot backen. So können die anderen Kolonisten ihre Zeit mit dem verbringen, was sie am besten können. Spezialisierung hilft der Wirtschaft zu wachsen, ein Konzept, das schon bald in den Büchern der Ökonomen Adam Smith und David Ricardo popularisiert wurde.</German>
 		<Italian>[H1]PRODOTTI DA FORNO[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]I [COLOR_HIGHLIGHT_TEXT]prodotti da forno[COLOR_REVERT] sono disponibili nella [LINK=BUILDING_BAKER_HOUSE]casa del fornaio[\LINK] o in uno dei suoi potenziamenti. Per rifornire i cittadini di prodotti da forno, un colono deve svolgere la professione di panettiere. I [LINK=UNIT_BAKER]Mastri fornai[\LINK] eccellono in questo mestiere e possono aumentare notevolmente la produzione di prodotti da forno freschi.[NEWLINE][NEWLINE]50 prodotti da forno sono necessari per equipaggiare pionieri e missionari. Gli esploratori, le guardie cittadine e gli alabardieri reali hanno bisogno di 20 prodotti da forno.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]All'inizio ogni famiglia prepara il proprio pane, ma presto la casa del fornaio centralizza la produzione di cibo. Il fornaio inizia a lavorare molto prima dell'alba, in modo che le famiglie possano avere il pane quotidiano. I coloni che ricordano i primi tempi di fame continuano a coltivare zucche, fagioli e mais, ma i nuovi arrivati preferiscono il cibo familiare del vecchio Paese.[NEWLINE][NEWLINE]Avere un panificio significa che ogni famiglia non ha bisogno di cuocere il proprio pane. Questo permette agli altri coloni di dedicare il loro tempo a ciò che sanno fare meglio. La specializzazione aiuta l'economia a crescere, un concetto presto reso popolare nei libri degli economisti Adam Smith e David Ricardo.</Italian>
 		<Spanish>[H1]PRODUCTOS DE PANADERÍA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Los [COLOR_HIGHLIGHT_TEXT]productos de panadería[COLOR_REVERT] están disponibles en la [LINK=BUILDING_BAKER_HOUSE]casa del panadero[\LINK] o en una de sus mejoras. Para abastecer a los ciudadanos con productos de panadería, un colono tiene que trabajar en la profesión de panadero. Los [LINK=UNIT_BAKER]maestros panaderos[\LINK] destacan en este oficio, y pueden aumentar enormemente su producción de productos de panadería frescos.[NEWLINE][NEWLINE]Se necesitan 50 productos de panadería para equipar a pioneros y misioneros. Los exploradores, guardias de la ciudad y alabarderos reales necesitan 20 productos de panadería.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]Al principio, cada hogar hornea su propio pan, pero pronto la casa del panadero centraliza la producción de alimentos. El panadero empieza a trabajar mucho antes del amanecer para que los hogares puedan tener su pan diario. Los colonos que recuerdan los primeros días de hambruna siguen cultivando calabaza, judías y maíz, pero los recién llegados prefieren la comida familiar del viejo país[NEWLINE][NEWLINE]Tener una panadería significa que cada hogar no necesita hornear su propio pan. Eso permite a los demás colonos dedicar su tiempo a lo que mejor saben hacer. La especialización contribuye al crecimiento de la economía, un concepto que pronto se popularizó en los libros de los economistas Adam Smith y David Ricardo.</Spanish>
+		<Hungarian>[H1]ELLÁTMÁNY[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]Az [COLOR_HIGHLIGHT_TEXT]ellátmány[COLOR_REVERT]  [LINK=YIELD_RICE]rizsből[\LINK], [LINK=YIELD_BARLEY]árpából[\LINK] vagy [LINK=YIELD_CASSAVA]maniókából[\LINK] készül a [LINK=BUILDING_BAKER_HOUSE]pékségben[\LINK] vagy annak egyik továbbfejlesztésében. Ahhoz, hogy a lakosoknak ellátmányt biztosíts, egy lakosnak pék szakmát kell választani. A [LINK=UNIT_BAKER]pékmesterek[\LINK] kiválóan értik ezt a szakmát és jelentősen növelhetik a friss ellátmány termelését. Normál játéksebesség mellett 50 ellátmányra van szükség az utászok és a misszionáriusok felszereléséhez. A felderítőknek, a polgárőrségnek és a királyi alabárdosoknak 20 ellátmányra van szükségük. [NEWLINE][NEWLINE][BOLD]Háttér:[\BOLD][NEWLINE]Eleinte minden háztartás saját kenyeret süt, de hamarosan a pékház központosítja az élelmiszer-termelést. A pék hajnal előtt jóval megkezdi a munkát, hogy a háztartásoknak legyen napi kenyerük. A pékség más szárított élelmiszereket is tart készleten az utazók számára. A korai éhezés napjait még emlékező telepesek továbbra is tököt, babot és kukoricát termesztenek, de az újonnan érkezők inkább a régi hazájukból ismert ételeket kedvelik. [NEWLINE][NEWLINE]A pékség megléte azt jelenti, hogy a háztartásoknak nem kell saját kenyeret sütniük. Ez lehetővé teszi a többi telepesnek, hogy azzal foglalkozzanak, amiben a legjobbak. A specializáció elősegíti a gazdaság növekedését, egy koncepció, amelyet hamarosan népszerűsítettek Adam Smith és David Ricardo közgazdászok könyveikben.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BAKERY_GOODS_PEDIA</Tag>
@@ -1233,6 +1257,7 @@
 		<Italian>Vaniglia</Italian>
 		<Spanish>Vainilla</Spanish>
 		<Russian>Ваниль</Russian>
+		<Hungarian>Vanília</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_VANILLA</Tag>
@@ -1246,6 +1271,7 @@
 		<Italian>Vaniglia</Italian>
 		<Spanish>Vainilla</Spanish>
 		<Russian>Ваниль</Russian>
+		<Hungarian>Vanília</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA</Tag>
@@ -1259,6 +1285,7 @@
 		<Italian>Vaniglia</Italian>
 		<Spanish>Vainilla</Spanish>
 		<Russian>Ваниль</Russian>
+		<Hungarian>Vanília</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_VANILLA_PEDIA</Tag>
@@ -1267,6 +1294,7 @@
 		<German>[H1]Vanille[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Vanille[COLOR_REVERT] wird aus [LINK=YIELD_VANILLA_PODS]grünen Vanilleschoten[\LINK] hergestellt. Dazu muss ein Kolonist den Beruf [LINK=PROFESSION_CONFECTIONER_VANILLA]Vanillekonditor[\LINK] im [LINK=BUILDING_CONFECTIONER_HOUSE]Haus des Konditors[\LINK] oder einer seiner Erweiterungen ausüben. Die Produktion von Vanille kann durch die Beschäftigung von [LINK=UNIT_CONFECTIONER]Konditormeistern[\LINK] verdoppelt werden, die in Europa angeworben werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Vanille ist ein Gewürz, das aus Orchideen gewonnen wird. Es gibt drei Hauptarten, die alle von der ursprünglichen mexikanischen Pflanze abstammen. Sie kann von Hand bestäubt werden, um die Vanilleschote zu gewinnen.</German>
 		<Italian>[H1]VANIGLIA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]vaniglia[COLOR_REVERT] si ottiene dai [LINK=YIELD_VANILLA_PODS]baccelli di vaniglia verde[\LINK]. Per farlo, un colono deve avere la professione di [LINK=PROFESSION_CONFECTIONER_VANILLA]pasticcere di vaniglia[\LINK] nella [LINK=BUILDING_CONFECTIONER_HOUSE]casa del pasticcere[\LINK] o uno dei suoi potenziamenti. La produzione di vaniglia può essere raddoppiata assumendo [LINK=UNIT_CONFECTIONER]mastri pasticceri[\LINK] che possono essere assunti in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]La vaniglia è una spezia derivata dalle orchidee. Esistono tre specie principali, tutte derivate dalla pianta originale messicana. Può essere impollinata a mano per produrre il baccello di vaniglia.</Italian>
 		<Spanish>[H1]VAINILLA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]vainilla[COLOR_REVERT] se elabora a partir de [LINK=YIELD_VANILLA_PODS]vainas de vainilla verde[\LINK]. Para ello, un colono necesita tener la profesión [LINK=PROFESSION_CONFECTIONER_VANILLA]confitero de vainilla[\LINK] en la [LINK=BUILDING_CONFECTIONER_HOUSE]casa del confitero[\LINK] o una de sus mejoras. La producción de vainilla puede duplicarse empleando [LINK=UNIT_CONFECTIONER]maestros confiteros[\LINK] que pueden contratarse en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La vainilla es una especia derivada de las orquídeas. Hay tres especies principales, todas derivadas de la planta mexicana original. Se puede polinizar a mano para producir la vaina de vainilla.</Spanish>
+		<Hungarian>[H1]VANÍLIA[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]vanília[COLOR_REVERT] [LINK=YIELD_VANILLA_PODS]zöld vaníliababból[\LINK] készül. Ehhez a lakosnak [LINK=PROFESSION_CONFECTIONER_VANILLA]vanília cukrász[\LINK] szakmát kell választani a [LINK=BUILDING_CONFECTIONER_HOUSE]cukrászboltban[\LINK] vagy annak egyik továbbfejlesztésében. A vanília termelése megduplázható [LINK=UNIT_CONFECTIONER]mester cukrászok[\LINK] alkalmazásával, akiket Európában lehet felfogadni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A vanília egy orchideákból nyert fűszer. Három fő fajtája létezik, mindegyik az eredeti mexikói növényből származik. Kézzel beporozható, így vaníliababot lehet előállítani.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA_PEDIA</Tag>
@@ -1289,6 +1317,7 @@
 		<Italian>Baccelli di vaniglia verde</Italian>
 		<Spanish>Vainas de vainilla verde</Spanish>
 		<Russian>Стручки ванили</Russian>
+		<Hungarian>Zöld Vaníliabab</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_VANILLA_PODS</Tag>
@@ -1302,6 +1331,7 @@
 		<Italian>Baccelli di vaniglia verde</Italian>
 		<Spanish>Vainas de vainilla verde</Spanish>
 		<Russian>Стручки ванили</Russian>
+		<Hungarian>Zöld Vaníliabab</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA_PODS</Tag>
@@ -1315,6 +1345,7 @@
 		<Italian>Baccelli di vaniglia verde</Italian>
 		<Spanish>Vainas de vainilla verde</Spanish>
 		<Russian>Стручки ванили</Russian>
+		<Hungarian>Zöld Vaníliabab</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_VANILLA_PODS_PEDIA</Tag>
@@ -1323,6 +1354,7 @@
 		<German>[H1]Grüne Vanilleschote[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Grüne Vanilleschoten[COLOR_REVERT] werden in hügeligem [LINK=TERRAIN_SHRUBLAND]Strauchland[\LINK] gepflückt. Um grüne Vanilleschoten zu sammeln, muss ein Kolonist den Beruf [LINK=PROFESSION_VANILLA_COLLECTOR]Vanillesammler[\LINK] ausüben. Die Ernte an grünen Vanilleschoten kann verdoppelt werden, indem [LINK=UNIT_VANILLA_COLLECTOR]erfahrene Vanillesammler[\LINK] eingesetzt werden, die in [COLOR_HIGHLIGHT_TEXT]Port Royal[COLOR_REVERT] angeworben oder in Dörfern der Ureinwohner ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Vanille ist ein Gewürz, das aus Orchideen gewonnen wird. Es gibt drei Hauptarten, die alle von der ursprünglichen mexikanischen Pflanze abstammen. Sie kann von Hand bestäubt werden, um die Vanilleschote zu gewinnen.</German>
 		<Italian>[H1]BACCELLI DI VANIGLIA VERDE[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]I [COLOR_HIGHLIGHT_TEXT]baccelli di vaniglia verde[COLOR_REVERT] si raccolgono nelle [LINK=FEATURE_JUNGLE]giungle[\LINK] o [LINK=TERRAIN_SHRUBLAND]arbusteti[\LINK]. Per raccogliere i baccelli di vaniglia verde, un colono deve avere la professione [LINK=PROFESSION_VANILLA_COLLECTOR]raccoglitore di vaniglia[\LINK]. La fornitura di baccelli di vaniglia verde può essere raddoppiata impiegando [LINK=UNIT_VANILLA_COLLECTOR]esperti raccoglitori di vaniglia[\LINK] che possono essere assunti in Europa o addestrati nei villaggi nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]La vaniglia è una spezia derivata dalle orchidee. Esistono tre specie principali, tutte derivate dalla pianta originale messicana. Può essere impollinata a mano per produrre il baccello di vaniglia.</Italian>
 		<Spanish>[H1]VAINAS DE VAINILLA VERDE[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Las [COLOR_HIGHLIGHT_TEXT]vainas de vainilla verde[COLOR_REVERT] se recogen en [LINK=FEATURE_JUNGLE]selvas[\LINK] o [LINK=TERRAIN_SHRUBLAND]matorrales[\LINK]. Para recolectar vainas de vainilla verde, un colono necesita tener la profesión [LINK=PROFESSION_VANILLA_COLLECTOR]recolector de vainilla[\LINK]. El suministro de vainas de vainilla verde puede duplicarse empleando a [LINK=UNIT_VANILLA_COLLECTOR]recolectores de vainilla expertos[\LINK] que pueden ser contratados en Europa o formados en las aldeas nativas.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La vainilla es una especia derivada de las orquídeas. Hay tres especies principales, todas derivadas de la planta mexicana original. Se puede polinizar a mano para producir la vaina de vainilla.</Spanish>
+		<Hungarian>[H1]ZÖLD VANÍLIABAB[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]zöld vaníliabab[COLOR_REVERT] a [LINK=YIELD_VANILLA]vanília[\LINK] alapanyaga. A zöld vaníliabab gyűjtéséhez a lakosnak [LINK=PROFESSION_VANILLA_COLLECTOR]Vanília Termesztő[\LINK] szakmát kell választani . A zöld vaníliababok termesztése megduplázható [LINK=UNIT_VANILLA_COLLECTOR]Tapasztalt Vanília Termesztők[\LINK] alkalmazásával, akiket [COLOR_HIGHLIGHT_TEXT]Port Royalban[COLOR_REVERT] lehet felfogadni vagy az indián falvakban kiképezni. A vaníliababok [LINK=TERRAIN_SHRUBLAND]cserjés[\LINK] terepen, dombokon termeszthetők. [NEWLINE][NEWLINE][BOLD]Háttér:[\BOLD][NEWLINE]A vanília egy orchideákból nyert fűszer. Három fő fajtája létezik, amelyek mindegyike a mexikói ős növényből származik. Kézzel beporozható, így vaníliababot termel.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VANILLA_PODS_PEDIA</Tag>
@@ -1345,6 +1377,7 @@
 		<Italian>Torba</Italian>
 		<Spanish>Turba</Spanish>
 		<Russian>Торф</Russian>
+		<Hungarian>Tőzeg</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_PEAT_PEDIA</Tag>
@@ -1353,6 +1386,7 @@
 		<German>[H1]Torf[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Torf[COLOR_REVERT] findet man in [LINK=TERRAIN_WETLAND]Mooren[\LINK]. Um ihn zu sammeln, muss ein Kolonist den Beruf [LINK=PROFESSION_PEAT_CUTTER]Torfstecher[\LINK] ausüben. Der Torfvorrat kann verdoppelt werden, indem [LINK=UNIT_PEAT_CUTTER]erfahrene Torfstecher[\LINK] eingestellt werden, die in Europa angeworben oder in den Dörfern der Eingeborenen ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Torf ist der Brennstoff, der die Armen und Sklaven zu geringen oder gar keinen Kosten wärmt. Torf ist die effizienteste Kohlenstoffsenke der Welt und speichert 42 % des gesamten im Boden gebundenen Kohlenstoffs, mehr als alle anderen Vegetationsarten, einschließlich der Wälder der Welt. Er ist nicht erneuerbar.</German>
 		<Italian>[H1]TORBA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]torba[COLOR_REVERT] si trova nelle [LINK=FEATURE_BOG]paludi[\LINK] o [LINK=TERRAIN_WETLAND]zone umide[\LINK]. Per raccoglierla, un colono deve avere la professione [LINK=PROFESSION_PEAT_CUTTER]tagliatore di torba[\LINK]. Le scorte di torba possono essere raddoppiate impiegando [LINK=UNIT_PEAT_CUTTER]tagliatori di torba esperti[\LINK] che possono essere assunti in Europa o addestrati nei villaggi nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]La torba è un combustibile contadino, che riscalda i poveri e gli schiavi a costi bassi o nulli. La torba è il più efficiente serbatoio di carbonio al mondo, in quanto immagazzina il 42% di tutto il carbonio del suolo, più di tutti gli altri tipi di vegetazione, comprese le foreste del mondo. Non è rinnovabile.</Italian>
 		<Spanish>[H1]TURBA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]La [COLOR_HIGHLIGHT_TEXT]turba[COLOR_REVERT] se encuentra en [LINK=FEATURE_BOG]turberas[\LINK] o [LINK=TERRAIN_WETLAND]humedales[\LINK]. Para recogerla, un colono necesita tener la profesión [LINK=PROFESSION_PEAT_CUTTER]cortador de turba[\LINK]. La reserva de turba puede duplicarse empleando [LINK=UNIT_PEAT_CUTTER]expertos cortadores de turba[\LINK] que pueden ser contratados en Europa o formados en los pueblos nativos.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La turba es un combustible campesino, que calienta a los pobres y a los esclavos a un coste bajo o nulo. La turba es el sumidero de carbono más eficaz del mundo, ya que almacena el 42% de todo el carbono del suelo, más que todos los demás tipos de vegetación, incluidos los bosques del mundo. No es renovable.</Spanish>
+		<Hungarian>[H1]TŐZEG[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]tőzeg[COLOR_REVERT] a kerámia gyártáshoz szükséges. Az [LINK=YIELD_CLAY]agyag[\LINK] kiégetéséhez használják. A tőzeg gyűjtéséhez a lakosnak [LINK=PROFESSION_PEAT_CUTTER]tőzegbányász[\LINK] szakmát kell választani. A tőzegkészletet meg lehet duplázni [LINK=UNIT_PEAT_CUTTER]Tapasztalt Tőzeg és Agyagbányászok[\LINK] alkalmazásával, akiket Európában lehet felfogadni vagy az indián falvakban kiképezni.[NEWLINE]A tőzeg [LINK=TERRAIN_WETLAND]mocsarakban[\LINK] található.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD] [NEWLINE]A tőzeg paraszti tüzelőanyag, amely alacsony vagy nulla költséggel melegíti a szegényeket és a rabszolgákat. A tőzeg a világ leghatékonyabb szén-dioxid-elnyelője, amely a talaj szén-dioxid-tartalmának 42%-át tárolja, többet, mint bármely más növényzet, beleértve a világ erdőit is. Nem megújuló erőforrás.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEAT_PEDIA</Tag>
@@ -1375,6 +1409,7 @@
 		<Italian>Arachidi</Italian>
 		<Spanish>Cacahuetes</Spanish>
 		<Russian>Арахис</Russian>
+		<Hungarian>Mogyoró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_PEANUTS</Tag>
@@ -1388,6 +1423,7 @@
 		<Italian>Arachidi</Italian>
 		<Spanish>Cacahuetes</Spanish>
 		<Russian>Арахис</Russian>
+		<Hungarian>Mogyoró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEANUTS</Tag>
@@ -1401,6 +1437,7 @@
 		<Italian>Arachidi</Italian>
 		<Spanish>Cacahuetes</Spanish>
 		<Russian>Арахис</Russian>
+		<Hungarian>Mogyoró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_PEANUTS_PEDIA</Tag>
@@ -1409,6 +1446,7 @@
 		<German>[H1]Erdnüsse[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Erdnüsse[COLOR_REVERT] wachsen im Flachland in [LINK=TERRAIN_PLAINS_FERTILE]Ebenen[\LINK]. Um Erdnüsse zu ernten, muss ein Kolonist den Beruf [LINK=PROFESSION_PEANUT_PLANTER]Erdnusspflanzer[\LINK] ausüben. Die Erdnussversorgung kann verdoppelt werden, indem [LINK=UNIT_PEANUT_PLANTER]erfahrene Erdnusspflanzer[\LINK] beauftragt werden, die in Europa angeworben oder in den Dörfern der Eingeborenen ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Die Erdnuss ist eine Hülsenfrucht, die hauptsächlich wegen ihrer essbaren Samen angebaut wird. Sie wird in den Tropen und Subtropen weit verbreitet angebaut. Die Erdnuss ist sowohl als Körnerleguminose als auch aufgrund ihres hohen Ölgehalts als Ölpflanze wertvoll. Der Anbau war auf dem amerikanischen Kontinent bereits vor der Ankunft der Spanier etabliert. Die Konquistadoren fanden die tlalcacahuatl (der Nahuatl-Name der Pflanze) auf dem Markt von Tenochtitlan zum Verkauf angeboten.</German>
 		<Italian>[H1]ARACHIDI[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Le [COLOR_HIGHLIGHT_TEXT]arachidi[COLOR_REVERT] crescono in pianura in un terreno di [LINK=TERRAIN_PLAINS_FERTILE]pianura[\LINK]. Per raccogliere le arachidi, un colono deve avere la professione di [LINK=PROFESSION_PEANUT_PLANTER]piantatore di arachidi[\LINK]. La fornitura di arachidi può essere raddoppiata incaricando [LINK=UNIT_PEANUT_PLANTER]esperti piantatori di arachidi[\LINK] che possono essere assunti in Europa o addestrati nei villaggi nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'arachide è un legume coltivato principalmente per i suoi semi commestibili. È ampiamente coltivata nei tropici e nelle regioni subtropicali. L'arachide è preziosa sia come legume da granella sia, grazie al suo elevato contenuto di olio, come coltura oleosa. La coltivazione era ben radicata nelle Americhe prima dell'arrivo degli spagnoli. I conquistadores trovarono il tlalcacahuatl (nome nahuatl della pianta) in vendita nel mercato di Tenochtitlan.</Italian>
 		<Spanish>[H1]CACAHUETES[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Los [COLOR_HIGHLIGHT_TEXT]cacahuetes[COLOR_REVERT] crecen en llanuras en [LINK=TERRAIN_PLAINS_FERTILE]llanuras[\LINK]terreno. Para excavar cacahuetes, un colono necesita tener la profesión [LINK=PROFESSION_PEANUT_PLANTER]plantador de cacahuetes[\LINK]. El suministro de cacahuetes puede duplicarse encargando a [LINK=UNIT_PEANUT_PLANTER]expertos plantadores de cacahuetes[\LINK] que pueden ser contratados en Europa o formados en las aldeas nativas.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]El cacahuete es una leguminosa cultivada principalmente por sus semillas comestibles. Se cultiva ampliamente en los trópicos y subtrópicos. El cacahuete es valioso como legumbre de grano y, por su alto contenido en aceite, como oleaginosa. Su cultivo estaba muy arraigado en América antes de la llegada de los españoles. Los conquistadores encontraron el tlalcacahuatl (nombre náhuatl de la planta) a la venta en el mercado de Tenochtitlan.</Spanish>
+		<Hungarian>[H1]MOGYORÓ[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]mogyoró[COLOR_REVERT] termesztéséhez a lakosnak [LINK=PROFESSION_PEANUT_PLANTER]Mogyorószedő[\LINK] szakmát kell választani. A mogyoró mennyisége megduplázható [LINK=UNIT_PEANUT_PLANTER]Tapasztalt Mogyoró Termesztők[\LINK] alkalmazásával, akiket Európában lehet felfogadni vagy az indián falvakban kiképezni.[NEWLINE]A mogyoró [LINK=TERRAIN_PLAINS_FERTILE]síkságon[\LINK] terem. [NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A mogyoró egy hüvelyes növény, amelyet főként ehető magjai miatt termesztenek. Széles körben termesztik a trópusokon és a szubtrópusokon. A mogyoró értékes mind hüvelyes gabonaként, mind pedig magas olajtartalma miatt olajnövényként. A termesztése már a spanyolok érkezése előtt is jól meghonosodott Amerikában. A konkvisztádorok a tlalcacahuatl (a növény nahuatl neve) eladását találták Tenochtitlan piacán.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEANUTS_PEDIA</Tag>
@@ -1431,6 +1469,7 @@
 		<Italian>Arachidi arrostite</Italian>
 		<Spanish>Cacahuetes tostados</Spanish>
 		<Russian>Жареный арахис</Russian>
+		<Hungarian>Pörkölt Mogyoró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_ROASTED_PEANUTS</Tag>
@@ -1444,6 +1483,7 @@
 		<Italian>Arachidi arrostite</Italian>
 		<Spanish>Cacahuetes tostados</Spanish>
 		<Russian>Жареный арахис</Russian>
+		<Hungarian>Pörkölt Mogyoró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROASTED_PEANUTS</Tag>
@@ -1457,6 +1497,7 @@
 		<Italian>Arachidi arrostite</Italian>
 		<Spanish>Cacahuetes tostados</Spanish>
 		<Russian>Жареный арахис</Russian>
+		<Hungarian>Pörkölt Mogyoró</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_ROASTED_PEANUTS_PEDIA</Tag>
@@ -1465,6 +1506,7 @@
 		<German>[H1]Geröstete Erdnüsse[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Geröstete Erdnüsse[COLOR_REVERT] werden aus [LINK=YIELD_PEANUTS]Erdnüssen[\LINK] hergestellt. Dazu muss ein Kolonist den Beruf [LINK=PROFESSION_PEANUT_ROASTER]Erdnussröster[\LINK] im [LINK=BUILDING_ROASTER_HOUSE]Haus des Rösters[\LINK] oder einem seiner Erweiterungen haben. Die Produktion von gerösteten Erdnüssen kann durch die Beschäftigung von [LINK=UNIT_ROASTER]Röstmeistern[\LINK] verdoppelt werden, die in Europa angeworben werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Die Erdnuss ist eine Hülsenfrucht, die hauptsächlich wegen ihrer essbaren Samen angebaut wird. Sie wird in den Tropen und Subtropen weit verbreitet angebaut. Sie ist sowohl als Körnerleguminose als auch, aufgrund ihres hohen Ölgehalts, als Ölpflanze wertvoll. Der Anbau war auf dem amerikanischen Kontinent bereits vor der Ankunft der Spanier etabliert. Die Konquistadoren fanden die Tlalcacahuatl (der Nahuatl-Name der Pflanze) auf dem Markt von Tenochtitlan zum Verkauf angeboten.</German>
 		<Italian>[H1]ARACHIDI ARROSTITE[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Le [COLOR_HIGHLIGHT_TEXT]arachidi tostate[COLOR_REVERT] si ottengono dalle [LINK=YIELD_PEANUTS]arachidi[\LINK]. Per farlo, un colono deve avere la professione [LINK=PROFESSION_PEANUT_ROASTER]tostatore di arachidi[\LINK] nella [LINK=BUILDING_ROASTER_HOUSE]casa del tostatore[\LINK] o uno dei suoi potenziamenti. La produzione di arachidi tostate può essere raddoppiata impiegando [LINK=UNIT_ROASTER]mastri tostatori[\LINK] che possono essere assunti in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'arachide è una leguminosa coltivata principalmente per i suoi semi commestibili. È ampiamente coltivata nei tropici e nelle regioni subtropicali. È preziosa sia come legume da granella sia, grazie al suo elevato contenuto di olio, come coltura oleosa. La coltivazione era ben radicata nelle Americhe prima dell'arrivo degli spagnoli. I conquistadores trovarono il tlalcacahuatl (nome nahuatl della pianta) in vendita nel mercato di Tenochtitlan.</Italian>
 		<Spanish>[H1]CACAHUETES TOSTADOS[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Los [COLOR_HIGHLIGHT_TEXT]cacahuetes tostados[COLOR_REVERT] se hacen con [LINK=YIELD_PEANUTS]cacahuetes[\LINK]. Para ello, un colono necesita tener la profesión [LINK=PROFESSION_PEANUT_ROASTER]tostador de cacahuetes[\LINK] en la [LINK=BUILDING_ROASTER_HOUSE]casa del tostador[\LINK] o una de sus mejoras. La producción de cacahuetes tostados puede duplicarse empleando [LINK=UNIT_ROASTER]maestros tostadores[\LINK] que pueden contratarse en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]El cacahuete es una leguminosa que se cultiva principalmente por sus semillas comestibles. Se cultiva ampliamente en los trópicos y subtrópicos. Es valioso como leguminosa de grano y, por su alto contenido en aceite, como oleaginosa. Ya se cultivaba en América antes de la llegada de los españoles. Los conquistadores encontraron el tlalcacahuatl (nombre náhuatl de la planta) a la venta en el mercado de Tenochtitlan.</Spanish>
+		<Hungarian>[H1]PÖRKÖLT MOGYORÓ[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]Pörkölt Mogyoró[COLOR_REVERT] [LINK=YIELD_PEANUTS]Mogyoróból[\LINK] készül. Ehhez egy lakosnak a [LINK=PROFESSION_PEANUT_ROASTER]mogyorópörkölő[\LINK] szakmát kell választani a [LINK=BUILDING_ROASTER_HOUSE]pörkölőházban[\LINK] vagy annak egyik továbbfejlesztésében. A pörkölt mogyoró termelés megduplázható [LINK=UNIT_ROASTER]pörkölőmesterek[\LINK] alkalmazásával, akiket Európában lehet felfogadni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A mogyoró egy hüvelyes növény, amelyet főként ehető magjai miatt termesztenek. Széles körben termesztik a trópusokon és a szubtrópusokon. Értékes mind hüvelyes növényként, mind pedig magas olajtartalma miatt olajnövényként. A spanyolok érkezése előtt már jól meghonosodott az amerikai kontinensen. A konkistádorok a tlalcacahuatl (a növény nahuatl neve) eladását találták Tenochtitlan piacán.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROASTED_PEANUTS_PEDIA</Tag>
@@ -1487,6 +1529,7 @@
 		<Italian>Olive</Italian>
 		<Spanish>Aceitunas</Spanish>
 		<Russian>Оливки</Russian>
+		<Hungarian>Olajbogyó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_OLIVES</Tag>
@@ -1500,6 +1543,7 @@
 		<Italian>Olive</Italian>
 		<Spanish>Aceitunas</Spanish>
 		<Russian>Оливки</Russian>
+		<Hungarian>Olajbogyó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVES</Tag>
@@ -1513,6 +1557,7 @@
 		<Italian>Olive</Italian>
 		<Spanish>Aceitunas</Spanish>
 		<Russian>Оливки</Russian>
+		<Hungarian>Olajbogyó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_OLIVES_PEDIA</Tag>
@@ -1521,6 +1566,7 @@
 		<German>[H1]Oliven[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Oliven[COLOR_REVERT] wachsen auf Hügeln auf [LINK=TERRAIN_PLAINS_FERTILE]Ebenen[\LINK] Gelände. Um Oliven anzubauen, muss ein Kolonist den Beruf [LINK=PROFESSION_OLIVES_PLANTER]Olivenpflücker[\LINK] ausüben. Die Ernte von Oliven kann verdoppelt werden, indem man [LINK=UNIT_OLIVES_PLANTER]erfahrene Olivenpflücker[\LINK] einsetzt, die in Europa angeworben oder in den Dörfern der Eingeborenen ausgebildet werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Die Olive ist ein kleiner Baum, der im Mittelmeerraum beheimatet ist. Oliven sind eine der wichtigsten Zutaten der mediterranen Küche. Der Olivenbaum hat Tausende von Kultivaren.</German>
 		<Italian>[H1]OLIVE[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]Le [COLOR_HIGHLIGHT_TEXT]olive[COLOR_REVERT] crescono sulle colline su terreni [LINK=TERRAIN_PLAINS_FERTILE]pianura[\LINK]. Per coltivare le olive, un colono deve avere la professione di [LINK=PROFESSION_OLIVES_PLANTER]raccoglitore di olive[\LINK]. L'offerta di olive può essere raddoppiata impiegando [LINK=UNIT_OLIVES_PLANTER]raccoglitori di olive esperti[\LINK] che possono essere assunti in Europa o addestrati nei villaggi nativi.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'olivo è un piccolo albero originario del bacino del Mediterraneo. Le olive sono uno degli ingredienti principali della cucina mediterranea. L'olivo ha migliaia di cultivar.</Italian>
 		<Spanish>[H1]ACEITUNAS[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Las [COLOR_HIGHLIGHT_TEXT]aceitunas[COLOR_REVERT] crecen en colinas sobre [LINK=TERRAIN_PLAINS_FERTILE]llanuras[\LINK] terreno. Para cultivar aceitunas, un colono necesita tener la profesión [LINK=PROFESSION_OLIVES_PLANTER]recolector de aceitunas[\LINK]. El suministro de aceitunas puede duplicarse empleando [LINK=UNIT_OLIVES_PLANTER]expertos recolectores de aceitunas[\LINK] que pueden ser contratados en Europa o formados en los pueblos nativos.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]El olivo es un árbol pequeño originario de la cuenca mediterránea. Las aceitunas son uno de los ingredientes básicos de la cocina mediterránea. El olivo tiene miles de variedades.</Spanish>
+		<Hungarian>[H1]OLAJBOGYÓ[\H1][NEWLINE][BOLD]Stratégia :Az [\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]olajbogyó[COLOR_REVERT] termesztéséhez a lakosnak [LINK=PROFESSION_OLIVES_PLANTER]olajbogyó szedő[\LINK] szakmát kell választani. Az olajbogyó termés megduplázható [LINK=UNIT_OLIVES_PLANTER]Tapasztalt Olajbogyó Szedők[\LINK] alkalmazásával, akiket Európában lehet felfogadni vagy az Indián falvakban kiképezni.[NEWLINE]Az olajbogyó dombokkal rendelkező [LINK=TERRAIN_PLAINS_FERTILE]síkságon[\LINK] terem. [NEWLINE]Az olajbogyót [LINK=YIELD_OLIVE_OIL]étolaj[\LINK] előállítására az [LINK=PROFESSION_OLIVE_OIL_TRADER]Olivaolaj készítő[\LINK] az [LINK=BUILDING_OLIVE_OIL_TRADERS_HOUSE]étolaj boltban[\LINK] vagy annak egyik továbbfejlesztésében tudja előállítani. [NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]Az olajfa egy kis fa, amely a Földközi-tenger medencéjéből származik. Az olajbogyó a mediterrán konyha egyik alapvető összetevője. Az olajfának több ezer fajtája létezik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVES_PEDIA</Tag>
@@ -1543,6 +1589,7 @@
 		<Italian>Colza</Italian>
 		<Spanish>Colza</Spanish>
 		<Russian>Рапс</Russian>
+		<Hungarian>Repce</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_RAPE</Tag>
@@ -1556,6 +1603,7 @@
 		<Italian>Colza</Italian>
 		<Spanish>Colza</Spanish>
 		<Russian>Рапс</Russian>
+		<Hungarian>Repce</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE</Tag>
@@ -1569,6 +1617,7 @@
 		<Italian>Colza</Italian>
 		<Spanish>Colza</Spanish>
 		<Russian>Рапс</Russian>
+		<Hungarian>Repce</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_RAPE_PEDIA</Tag>
@@ -1577,6 +1626,7 @@
 		<German>[H1]Raps[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Raps[COLOR_REVERT] wächst im Flachland in der [LINK=TERRAIN_TAIGA]Taiga[\LINK]. Um Raps anzubauen, muss ein Kolonist den Beruf [LINK=PROFESSION_RAPE_PLANTER]Rapspflanzer[\LINK] ausüben.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Die Römer führten den Raps in Westeuropa ein. Im Mittelalter nutzten die Landwirte ihn in der Fruchtfolge, um das Unkraut einzudämmen und den Boden zu verbessern.[NEWLINE][NEWLINE]Rapsöl wurde nur selten vom Menschen verzehrt. Die alten Sorten waren furchtbar bitter und enthielten einen hohen Gehalt an giftiger Erucasäure. Das Öl wurde jahrhundertelang als Tierfutter und später während der industriellen Revolution als Schmiermittel verwendet. [NEWLINE]In den 1970er Jahren entwickelten Landwirte neue Rapssorten mit geringem Erucasäuregehalt. Dieses schmackhafte Öl, das in Nordamerika als Rapsöl bekannt ist, wird häufig als Speiseöl vermarktet.</German>
 		<Italian>[H1]COLZA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]I Romani introdussero la colza nell'Europa occidentale. Nel Medioevo gli agricoltori la utilizzavano nella rotazione delle colture per ridurre le erbacce e migliorare il terreno.[NEWLINE][NEWLINE]L'olio di colza era raramente consumato dall'uomo. Le vecchie varietà erano terribilmente amare e contenevano alti livelli di acido erucico tossico. L'olio è stato usato per secoli nell'alimentazione animale e poi come lubrificante durante la rivoluzione industriale.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]Negli anni '70 gli agricoltori hanno sviluppato nuovi ceppi di colza con bassi livelli di acido erucico. Questo olio gradevole, noto come olio di canola in Nord America, è ampiamente commercializzato come olio da cucina.</Italian>
 		<Spanish>[H1]COLZA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Los romanos introdujeron la colza en Europa occidental. Durante la Edad Media, los agricultores la utilizaban en la rotación de cultivos para mantener a raya las malas hierbas y mejorar el suelo.[NEWLINE][NEWLINE]El aceite de colza rara vez era consumido por el ser humano. Las variedades antiguas eran terriblemente amargas y contenían altos niveles de ácido erúcico tóxico.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]En los años 70, los agricultores desarrollaron nuevas variedades de colza con bajos niveles de ácido erúcico. Este aceite de sabor agradable, conocido como aceite de canola en Norteamérica, se comercializa ampliamente como aceite de cocina.</Spanish>
+		<Hungarian>[H1]REPCE[\H1][NEWLINE][NEWLINE][BOLD]Stratégia :A [\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]repce[COLOR_REVERT] termesztéséhez egy lakosnak a [LINK=PROFESSION_RAPE_PLANTER]Repce Termesztő[\LINK] szakmát kell választani. [NEWLINE]A repce a [LINK=TERRAIN_TAIGA]tajga[\LINK] terepen, sík területeken terem. [NEWLINE]A repce [LINK=YIELD_RAPE_OIL]repceolaj[\LINK] előállításához felhasználható, amelyet a [LINK=PROFESSION_RAPE_OIL_TRADER]repceolaj készítő[\LINK] az [LINK=BUILDING_RAPE_OIL_TRADERS_HOUSE]étolaj boltban [\LINK] vagy annak egyik továbbfejlesztésében.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A repcét a rómaiak hozták be Nyugat-Európába. A középkorban a parasztok vetésforgóban használták, hogy visszaszorítsák a gyomokat és javítsák a talaj minőségét.[NEWLINE]A repceolajat ritkán fogyasztották az emberek. A régi fajták rettenetesen keserűek voltak és magas szintű mérgező erukasavat tartalmaztak. Az olajat évszázadokig állati takarmányként használták, majd az ipari forradalom idején kenőanyagként. [NEWLINE]Az 1970-es években a gazdák új, alacsony erukasav-tartalmú repcefajtákat fejlesztettek ki. Ez az ízletes olaj, amelyet Észak-Amerikában kanolaolajnak neveznek, széles körben forgalmazzák étolajként.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE_PEDIA</Tag>
@@ -1599,6 +1649,7 @@
 		<Italian>Olio d'oliva</Italian>
 		<Spanish>Aceite de oliva</Spanish>
 		<Russian>Оливковое масло</Russian>
+		<Hungarian>Olívaolaj</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_OLIVE_OIL</Tag>
@@ -1612,6 +1663,7 @@
 		<Italian>Olio d'oliva</Italian>
 		<Spanish>Aceite de oliva</Spanish>
 		<Russian>Оливковое масло</Russian>
+		<Hungarian>Olívaolaj</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVE_OIL</Tag>
@@ -1625,6 +1677,7 @@
 		<Italian>Olio d'oliva</Italian>
 		<Spanish>Aceite de oliva</Spanish>
 		<Russian>Оливковое масло</Russian>
+		<Hungarian>Olívaolaj</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_OLIVE_OIL_PEDIA</Tag>
@@ -1633,6 +1686,7 @@
 		<German>[H1]Olivenöl[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Olivenöl[COLOR_REVERT] wird aus [LINK=YIELD_OLIVES]Oliven[\LINK] hergestellt. Dazu muss ein Kolonist den Beruf [LINK=PROFESSION_OLIVE_OIL_TRADER]Olivenölhändler[\LINK] im [LINK=BUILDING_OIL_TRADER_HOUSE]Haus des Ölhändlers[\LINK] oder einer seiner Erweiterungen ausüben. Die Produktion von Olivenöl kann durch die Beauftragung von [LINK=UNIT_OIL_TRADER]Meister-Speiseölhändlern[\LINK] verdoppelt werden, die in Europa angeworben werden können.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Das Pressen von Öl ist ein altes Handwerk in Europa, insbesondere in den Mittelmeerkulturen. Die Geräte, mit denen Oliven zur Gewinnung von Öl gepresst werden, können auch für die Verarbeitung von Raps verwendet werden.[NEWLINE][NEWLINE]Vor dem Kontakt mit den Europäern war Speiseöl für die Ureinwohner des pazifischen Nordwestens lebenswichtig. Oolichan-Öl aus Kerzenfisch machte einen so großen Teil des Handels der Ureinwohner aus, dass die Handelsrouten als "Fettstraßen" bezeichnet wurden.</German>
 		<Italian>[H1]OLIO D'OLIVA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]L'[COLOR_HIGHLIGHT_TEXT]olio d'oliva[COLOR_REVERT] si ottiene dalle [LINK=YIELD_OLIVES]olive[\LINK]. Per farlo, un colono deve avere la professione [LINK=PROFESSION_OLIVE_OIL_TRADER]commerciante di olio d'oliva[\LINK] nella [LINK=BUILDING_OIL_TRADER_HOUSE]casa del commerciante di olio[\LINK] o uno dei suoi potenziamenti. La produzione di olio d'oliva può essere raddoppiata commissionando [LINK=UNIT_OIL_TRADER]mastri commercianti di olio da cucina[\LINK] che possono essere assunti in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]La spremitura dell'olio è un'attività antica in Europa, in particolare nelle culture mediterranee. Le attrezzature che schiacciano le olive per ricavarne l'olio possono essere adattate alla colza.[NEWLINE][NEWLINE]Prima del contatto europeo, l'olio da cucina era essenziale per i nativi del Pacifico nordoccidentale. L'olio di oolichan ricavato dal pesce candela costituiva una parte così importante del commercio dei nativi che le rotte commerciali venivano chiamate "vie del grasso".</Italian>
 		<Spanish>[H1]ACEITE DE OLIVA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]El [COLOR_HIGHLIGHT_TEXT]aceite de oliva[COLOR_REVERT] se elabora a partir de [LINK=YIELD_OLIVES]aceitunas[\LINK]. Para ello, un colono necesita tener la profesión [LINK=PROFESSION_OLIVE_OIL_TRADER]comerciante de aceite de oliva[\LINK] en la [LINK=BUILDING_OIL_TRADER_HOUSE]casa del comerciante de aceite[\LINK] o una de sus mejoras. La producción de aceite de oliva puede duplicarse encargando a [LINK=UNIT_OIL_TRADER]maestros comerciantes de aceite de cocina[\LINK] que pueden contratarse en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]El prensado del aceite es un antiguo oficio en Europa, sobre todo en las culturas mediterráneas. Los equipos que trituran aceitunas para obtener su aceite pueden adaptarse para trabajar con colza.[NEWLINE][NEWLINE]Antes del contacto europeo, el aceite de cocina era esencial para las naciones indígenas del noroeste del Pacífico. El aceite de oolichan procedente del pez vela constituía una parte tan importante del comercio nativo que las rutas comerciales se llamaban "rutas de la grasa".</Spanish>
+		<Hungarian>[H1]OLÍVAOLAJ[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]Az [COLOR_HIGHLIGHT_TEXT]olívaolaj[COLOR_REVERT] [LINK=YIELD_OLIVES]olajbogyóból[\LINK] készül. Ehhez a lakosnak [LINK=PROFESSION_OLIVE_OIL_TRADER]olajbogyó szedő[\LINK] szakmát kell választani az [LINK=BUILDING_OIL_TRADER_HOUSE]étolaj boltban[\LINK] vagy annak egyik továbbfejlesztésében. Az olívaolaj termelése megduplázható [LINK=UNIT_OIL_TRADER]Étolajkészítő Mesterek[\LINK] alkalmazásával, akiket Európában lehet felfogadni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]Az olajpréselés ősi mesterség Európában, különösen a mediterrán kultúrákban. Az olaj előállításához az olajbogyót zúzó berendezések repceolaj előállítására is átalakíthatók.[NEWLINE][NEWLINE]Az európaiakkal való kapcsolatfelvétel előtt a főzőolaj elengedhetetlen volt a Csendes-óceán északnyugati partvidékén élő őslakos népek számára. A gyertya halból nyert oolichan olaj olyan nagy szerepet játszott az Indiánok kereskedelmében, hogy a kereskedelmi útvonalakat "zsíros ösvényeknek" nevezték.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OLIVE_OIL_PEDIA</Tag>
@@ -1655,6 +1709,7 @@
 		<Italian>Olio di colza</Italian>
 		<Spanish>Aceite de colza</Spanish>
 		<Russian>Рапсовое масло</Russian>
+		<Hungarian>Repceolaj</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_RAPE_OIL</Tag>
@@ -1668,6 +1723,7 @@
 		<Italian>Olio di colza</Italian>
 		<Spanish>Aceite de colza</Spanish>
 		<Russian>Рапсовое масло</Russian>
+		<Hungarian>Repceolaj</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE_OIL</Tag>
@@ -1681,6 +1737,7 @@
 		<Italian>Olio di colza</Italian>
 		<Spanish>Aceite de colza</Spanish>
 		<Russian>Рапсовое масло</Russian>
+		<Hungarian>Repceolaj</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_RAPE_OIL_PEDIA</Tag>
@@ -1689,6 +1746,7 @@
 		<German>[H1]Rapsöl[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Rapsöl[COLOR_REVERT] wird aus [LINK=YIELD_RAPE]Rapssamen[\LINK] hergestellt. Dazu muss ein Kolonist den Beruf [LINK=PROFESSION_RAPE_OIL_TRADER]Rapsölhändler[\LINK] im [LINK=BUILDING_OIL_TRADER_HOUSE]Haus des Ölhändlers[\LINK] oder einer seiner Erweiterungen ausüben. Die Produktion von Rapsöl kann durch die Beauftragung von [LINK=UNIT_OIL_TRADER]Meister-Speiseölhändlern[\LINK], die in Europa angeworben werden können, verdoppelt werden.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]Der Raps mit seinen leuchtend gelben Blüten wird hauptsächlich wegen seiner ölreichen Samen angebaut, die beträchtliche Mengen an Erucasäure enthalten. Rapsschrot, das nach der Ölgewinnung übrig bleibt, ist ein proteinreiches Futtermittel.[NEWLINE][NEWLINE]Raps ist eine wertvolle Ölpflanze. Nach der Extraktion des Öls wird der Rest als Futtermittel für Haustiere, vor allem Rinder, aber auch Schweine und Geflügel, verwendet. Er gehört zur Familie der Kohlgewächse.</German>
 		<Italian>[H1]OLIO DI COLZA[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]L'[COLOR_HIGHLIGHT_TEXT]olio di colza[COLOR_REVERT] si ottiene dai [LINK=YIELD_RAPE]semi di colza[\LINK]. Per farlo, un colono deve avere la professione [LINK=PROFESSION_RAPE_OIL_TRADER]commerciante di olio di colza[\LINK] nella [LINK=BUILDING_OIL_TRADER_HOUSE]casa del commerciante di olio[\LINK] o uno dei suoi potenziamenti. La produzione di olio di colza può essere raddoppiata con l'assunzione di [LINK=UNIT_OIL_TRADER]mastri commercianti di olio da cucina[\LINK] che possono essere assunti in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]La colza, con i suoi fiori di colore giallo brillante, viene coltivata principalmente per i suoi semi ricchi di olio, che contengono quantità apprezzabili di acido erucico. La farina di colza, che rimane dopo l'estrazione dell'olio, è un mangime per animali ad alto contenuto proteico.[NEWLINE][NEWLINE]La colza è una coltura oleosa di grande valore. Una volta estratto l'olio, ciò che resta viene utilizzato come foraggio per gli animali domestici, soprattutto bovini, ma anche suini e pollame. È un membro della famiglia dei cavoli.</Italian>
 		<Spanish>[H1]ACEITE DE COLZA[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]El [COLOR_HIGHLIGHT_TEXT]aceite de colza[COLOR_REVERT] se obtiene a partir de [LINK=YIELD_RAPE]semillas de colza[\LINK]. Para ello, un colono necesita tener la profesión [LINK=PROFESSION_RAPE_OIL_TRADER]comerciante de aceite de colza[\LINK] en la [LINK=BUILDING_OIL_TRADER_HOUSE]casa del comerciante de aceite[\LINK] o una de sus mejoras. La producción de aceite de colza puede duplicarse si se contrata a [LINK=UNIT_OIL_TRADER]maestros comerciantes de aceite de cocina[\LINK] que pueden ser contratados en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La colza, con sus brillantes flores amarillas, se cultiva principalmente por su semilla rica en aceite, que tiene cantidades apreciables de ácido erúcico. La harina de colza, una vez extraído el aceite, es un pienso rico en proteínas.[NEWLINE][NEWLINE]La colza es un valioso cultivo oleaginoso. Una vez extraído el aceite, lo que queda se utiliza como forraje para animales domésticos, principalmente ganado vacuno, pero también cerdos y aves de corral. Pertenece a la familia de las coles.</Spanish>
+		<Hungarian>[H1]REPCEOLAJ[\H1][NEWLINE][BOLD]Stratégia :[\BOLD][NEWLINE]A [COLOR_HIGHLIGHT_TEXT]repceolaj[COLOR_REVERT] repcéből készül[LINK=YIELD_RAPE]. Ehhez a lakosnak [LINK=PROFESSION_RAPE_OIL_TRADER]repceolaj készítő[\LINK] szakmát kell választani az [LINK=BUILDING_OIL_TRADER_HOUSE]étolaj boltban[\LINK] vagy annak egyik továbbfejlesztésében. A repceolaj termelése megduplázható [LINK=UNIT_OIL_TRADER]Étolajkészítő Mesterek[\LINK] alkalmazásával, akiket Európában lehet felfogadni.[NEWLINE][NEWLINE][BOLD]Háttér :[\BOLD][NEWLINE]A ragyogó sárga virágú repcét főként olajban gazdag magjáért termesztik, amely jelentős mennyiségű erukasavat tartalmaz. A repceolaj kinyerése után visszamaradó repcemagliszt magas fehérjetartalmú állati takarmány.[NEWLINE][NEWLINE]A repce értékes olajos növény. Az olaj kinyerése után a visszamaradó rész háziállatok, főként szarvasmarhák, de sertések és baromfi takarmányaként is felhasználható. A káposztafélék családjába tartozik.</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RAPE_OIL_PEDIA</Tag>
