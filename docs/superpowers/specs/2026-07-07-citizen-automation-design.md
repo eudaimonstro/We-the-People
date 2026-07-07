@@ -67,6 +67,7 @@ Read via `GC.getDefineINT()` from `Assets/XML/GlobalDefinesAlt.xml`, each with a
 | `AUTOMATION_STOCKPILE_HORIZON` | 10 | Turns over which a stored input stockpile is amortized into per-turn supply |
 | `AUTOMATION_EXPERT_BONUS_PERCENT` | 50 | Score bonus for an expert working their specialty |
 | `AUTOMATION_STICKINESS_PERCENT` | 10 | Retention bonus / displacement + swap margin |
+| `AUTOMATION_KEEP_THRESHOLD_PERCENT` | 120 | Overpopulation: after a pass settles, an unlocked citizen whose job value is below (value of the food they eat x this percent) is ejected from the city as a map unit, via the existing NO_PROFESSION cleanup. Locked citizens and the last citizen are never ejected. Added 2026-07-07 after playtesting showed overpopulated cities kept net-negative workers in marginal slots. |
 
 Editing the XML and relaunching the game re-tunes behavior without recompiling.
 

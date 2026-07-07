@@ -31,6 +31,16 @@
 
 #define YIELD_DISCOUNT_TURNS 			10
 
+namespace
+{
+	// XML knob with default when the entry is missing or nonpositive.
+	int getAutomationDefine(const char* szName, int iDefault)
+	{
+		const int iValue = GC.getDefineINT(szName);
+		return iValue > 0 ? iValue : iDefault;
+	}
+}
+
 // Public Functions...
 
 CvCityAI::CvCityAI()
@@ -349,6 +359,47 @@ void CvCityAI::AI_assignWorkingPlots()
 				if (pUnit->getProfession() != NO_PROFESSION)
 				{
 					AI_juggleColonist(pUnit);
+				}
+			}
+		}
+	}
+
+	// Overpopulation (human automation): a citizen whose settled job is worth
+	// less than what they cost the city (the food they eat, times a margin)
+	// should stand outside the city as a map unit instead of clogging a
+	// marginal slot. Clearing the profession here feeds the NO_PROFESSION
+	// cleanup below, which already knows how to eject citizens safely.
+	// Locked (hand-placed) citizens are never touched; the cleanup never
+	// removes the last citizen.
+	if (AI_isHumanAutomationCity())
+	{
+		const int iFoodPerPop = GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION;
+		const int iKeepPercent = getAutomationDefine("AUTOMATION_KEEP_THRESHOLD_PERCENT", 120);
+		const int iKeepThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100;
+		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+		{
+			CvUnit* const pUnit = m_aPopulationUnits[i];
+			if (pUnit != NULL && !pUnit->isColonistLocked() && pUnit->getProfession() != NO_PROFESSION)
+			{
+				CvPlot* const pWorked = getPlotWorkedByUnit(pUnit);
+				const int iJobValue = AI_citizenProfessionValue(pUnit->getProfession(), *pUnit, pWorked, NULL);
+				if (iJobValue < iKeepThreshold)
+				{
+					if (GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+					{
+						char buf[256];
+						sprintf(buf, "%S: unit %d (%S) ejected, job value %d < keep threshold %d",
+							getName().GetCString(), pUnit->getID(), pUnit->getName().GetCString(),
+							iJobValue, iKeepThreshold);
+						gDLL->logMsg("automation.log", buf);
+					}
+					jobMutex.lock();
+					if (pWorked != NULL)
+					{
+						clearUnitWorkingPlot(pWorked);
+					}
+					pUnit->setProfession(NO_PROFESSION);
+					jobMutex.unlock();
 				}
 			}
 		}
@@ -3867,13 +3918,6 @@ namespace
 		int iNetYield;
 		int iNetValue;
 	};
-
-	// XML knob with default when the entry is missing or nonpositive.
-	int getAutomationDefine(const char* szName, int iDefault)
-	{
-		const int iValue = GC.getDefineINT(szName);
-		return iValue > 0 ? iValue : iDefault;
-	}
 }
 
 bool CvCityAI::AI_isHumanAutomationCity() const
