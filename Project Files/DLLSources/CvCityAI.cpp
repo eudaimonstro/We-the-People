@@ -4114,6 +4114,41 @@ int CvCityAI::AI_citizenProfessionValue(
 			const int iExpertBonus = getAutomationDefine("AUTOMATION_EXPERT_BONUS_PERCENT", 50);
 			combined = combined * (100 + iExpertBonus) / 100;
 		}
+
+		// Stickiness: favor (a) the job the unit currently holds - which makes
+		// displacing an incumbent require a real margin, and juggle swaps
+		// require overcoming two margins - and (b) the job the unit held when
+		// the current assignment pass started (its plot gets cleared during the
+		// pass, so (a) alone cannot see it). Because the displacement checks in
+		// AI_findBestJob and the invariant re-checks in AI_parallelAssignToBestJob
+		// call this same function, the margin stays consistent everywhere.
+		bool bIncumbent = false;
+		if (kUnit.getProfession() == eProfession)
+		{
+			if (kProfInfo.isWorkPlot())
+			{
+				bIncumbent = (pPlot != NULL && getPlotWorkedByUnit(&kUnit) == pPlot);
+			}
+			else
+			{
+				bIncumbent = true;
+			}
+		}
+		if (!bIncumbent)
+		{
+			std::map<int, std::pair<ProfessionTypes, const CvPlot*> >::const_iterator it =
+				m_automationPrevJob.find(kUnit.getID());
+			if (it != m_automationPrevJob.end() && it->second.first == eProfession)
+			{
+				bIncumbent = kProfInfo.isWorkPlot() ? (it->second.second == pPlot)
+				                                    : (it->second.second == NULL);
+			}
+		}
+		if (bIncumbent)
+		{
+			const int iStickiness = getAutomationDefine("AUTOMATION_STICKINESS_PERCENT", 10);
+			combined = combined * (100 + iStickiness) / 100;
+		}
 	}
 
 	return std::max(0, combined);
