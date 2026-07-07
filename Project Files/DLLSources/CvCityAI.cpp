@@ -4102,6 +4102,20 @@ int CvCityAI::AI_citizenProfessionValue(
 	for (int j = 0; j < yieldsOut.count && j < MAX_OUTPUT_YIELDS; ++j)
 		combined += vals[j].iNetValue;
 
+	if (bHumanAutomation && combined > 0)
+	{
+		// Expert-specialty bonus: expertise already raises raw output, but
+		// without an explicit margin an expert-in-specialty vs.
+		// generalist-in-specialty arrangement scores as a near-tie and the
+		// swap pass settles wrong. This margin makes the correct seating
+		// decisive.
+		if (kUnit.AI_getIdealProfession() == eProfession)
+		{
+			const int iExpertBonus = getAutomationDefine("AUTOMATION_EXPERT_BONUS_PERCENT", 50);
+			combined = combined * (100 + iExpertBonus) / 100;
+		}
+	}
+
 	return std::max(0, combined);
 }
 
