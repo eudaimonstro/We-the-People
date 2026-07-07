@@ -4073,6 +4073,26 @@ int CvCityAI::AI_citizenProfessionValue(
 
 		// … other AI tweaks (culture, cargo, etc.) unchanged …
 
+		// Food emergency (human automation): when the city is running a food
+		// deficit and the warehouse cannot cover it for long, food-producing
+		// jobs must dominate everything else. Additive so a zero score (which
+		// gets citizens ejected from the city) cannot result from this path.
+		if (bHumanAutomation && eY == YIELD_FOOD)
+		{
+			const int iNetFood = foodDifference();
+			if (iNetFood < 0)
+			{
+				const int iDeficit = -iNetFood;
+				const int iReserveTurns = getAutomationDefine("AUTOMATION_FOOD_RESERVE_TURNS", 8);
+				if (getYieldStored(YIELD_FOOD) < iDeficit * iReserveTurns)
+				{
+					const int iEmergencyMult = getAutomationDefine("AUTOMATION_FOOD_EMERGENCY_MULTIPLIER", 5);
+					const int iCovered = std::min(pv.iYieldOutput, iDeficit);
+					iOutputValue += 100 * AI_estimateYieldValue(YIELD_FOOD, iCovered) * iEmergencyMult;
+				}
+			}
+		}
+
 		// g) final net for this yield
 		pv.iNetValue = iOutputValue - iInputValue;
 	}
