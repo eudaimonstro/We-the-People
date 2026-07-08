@@ -1868,6 +1868,29 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 		}
 	}
 
+	// Deficiency relief (human cities only): a city suffering negative health
+	// or unsuppressed crime urgently needs the buildings that fix it - the
+	// flat per-yield values never reflect that urgency, so a schoolhouse can
+	// outscore a medical office in a plague-ridden town.
+	if (GET_PLAYER(getOwnerINLINE()).isHuman())
+	{
+		int iDeficiencyBonus = 0;
+		const int iHealthDeficit = -getCityHealth();
+		if (iHealthDeficit > 0 && AI_buildingRelievesYield(eBuilding, YIELD_HEALTH))
+		{
+			iDeficiencyBonus += iHealthDeficit;
+		}
+		const int iLawShortfall = getCityCrime() - getCityLaw();
+		if (iLawShortfall > 0 && AI_buildingRelievesYield(eBuilding, YIELD_LAW))
+		{
+			iDeficiencyBonus += iLawShortfall;
+		}
+		if (iDeficiencyBonus > 0)
+		{
+			iValue += iDeficiencyBonus * getAutomationDefine("AUTOMATION_DEFICIENCY_BONUS", 500);
+		}
+	}
+
 	//return iValue;
 	return std::max(0, iValue);
 	// TAC - AI Buildings - koma13 - END
@@ -4039,6 +4062,41 @@ namespace
 bool CvCityAI::AI_isHumanAutomationCity() const
 {
 	return GET_PLAYER(getOwnerINLINE()).isHuman();
+}
+
+// Does this building help produce eYield - passively or via the professions
+// it hosts? Used to prioritize deficiency-relieving buildings (health, law).
+bool CvCityAI::AI_buildingRelievesYield(BuildingTypes eBuilding, YieldTypes eYield) const
+{
+	const CvBuildingInfo& kBuildingInfo = GC.getBuildingInfo(eBuilding);
+	if (kBuildingInfo.getYieldChange(eYield) > 0)
+	{
+		return true;
+	}
+	if (kBuildingInfo.getSpecialBuildingType() != NO_SPECIALBUILDING)
+	{
+		for (int iI = 0; iI < GC.getNumProfessionInfos(); iI++)
+		{
+			const ProfessionTypes eLoopProfession = (ProfessionTypes)iI;
+			if (!GC.getCivilizationInfo(getCivilizationType()).isValidProfession(eLoopProfession))
+			{
+				continue;
+			}
+			const CvProfessionInfo& kLoopProfession = GC.getProfessionInfo(eLoopProfession);
+			if (kLoopProfession.getSpecialBuilding() != kBuildingInfo.getSpecialBuildingType())
+			{
+				continue;
+			}
+			for (int j = 0; j < kLoopProfession.getNumYieldsProduced(); ++j)
+			{
+				if ((YieldTypes)kLoopProfession.getYieldsProduced(j) == eYield)
+				{
+					return true;
+				}
+			}
+		}
+	}
+	return false;
 }
 
 // Material-aware recommendation gate: can this city plausibly cover the

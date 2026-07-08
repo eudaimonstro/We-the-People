@@ -63,6 +63,10 @@
 		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_DEFICIENCY_BONUS</DefineName>
+		<iDefineIntVal>500</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_LOGGING</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>

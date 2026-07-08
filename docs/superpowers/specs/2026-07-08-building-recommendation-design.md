@@ -59,6 +59,12 @@ Europe purchases as a supply source (gold decisions belong to the player); chang
 
 Human-gated, no persistent state, savegame-compatible both directions, deterministic (city stores/production/thresholds only). The helper runs per candidate building over the player's city list - trivial cost next to `AI_buildingValue`'s existing work, and only on popup/automation evaluation, not per-turn-per-plot.
 
+## Addendum (2026-07-08, playtest): deficiency relief
+
+A city at -1 health had a Schoolhouse recommended over an equally-priced Medical Office. Root cause: `AI_estimateYieldValue`/`AI_yieldValue` treat YIELD_HEALTH and YIELD_LAW as flat values (empty switch cases) - no scorer anywhere knows the city is *suffering*.
+
+Fix (human-gated, in `AI_buildingValue` before its final return): when the city has a health deficit (`getCityHealth() < 0`) or a law shortfall (`getCityCrime() > getCityLaw()`), buildings that relieve the deficient yield - passively via `CvBuildingInfo::getYieldChange` or through hosted professions producing it (helper `AI_buildingRelievesYield`) - receive an additive bonus of `shortfall x AUTOMATION_DEFICIENCY_BONUS` (default 500, XML-tunable). Both deficits can stack. AI players unchanged.
+
 ## Testing
 
 1. Assert build compiles clean; play on Assert build.
