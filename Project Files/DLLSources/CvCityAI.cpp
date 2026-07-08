@@ -999,6 +999,15 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 					 	!checkRequiredYields(ORDER_CONSTRUCT, eLoopBuilding, YIELD_HAMMERS))
 						continue;
 
+					// Material-aware recommendation (human cities only): do not
+					// recommend a building whose material bill is not obtainable
+					// soon; it would just stall with hammers sunk. Manual
+					// construction remains fully available.
+					if (GET_PLAYER(getOwnerINLINE()).isHuman() && !AI_isBuildingAffordable(eLoopBuilding))
+					{
+						continue;
+					}
+
 					if (bAsync)
 					{
 						iValue *= (GC.getASyncRand().get(10, "AI Best Building ASYNC") + 100);
@@ -3990,6 +3999,55 @@ namespace
 bool CvCityAI::AI_isHumanAutomationCity() const
 {
 	return GET_PLAYER(getOwnerINLINE()).isHuman();
+}
+
+// Material-aware recommendation gate: can this city plausibly cover the
+// building's non-hammer material bill soon? Local stock, local net production
+// over a horizon, and exportable surplus in the player's other cities count -
+// the same supply the automated transports can actually deliver. Hammers are
+// excluded: the existing turns-left gate already covers them.
+bool CvCityAI::AI_isBuildingAffordable(BuildingTypes eBuilding) const
+{
+	const int iHorizon = getAutomationDefine("AUTOMATION_BUILD_MATERIAL_HORIZON", 15);
+	const CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
+
+	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+	{
+		const YieldTypes eYield = (YieldTypes)iYield;
+		if (eYield == YIELD_HAMMERS || !GC.getYieldInfo(eYield).isCargo())
+		{
+			continue;
+		}
+		const int iNeeded = getYieldProductionNeeded(eBuilding, eYield) - getYieldRushed(eYield);
+		if (iNeeded <= 0)
+		{
+			continue;
+		}
+
+		int iObtainable = getYieldStored(eYield);
+		const int iNetProduction = getRawYieldProduced(eYield) - getRawYieldConsumed(eYield);
+		if (iNetProduction > 0)
+		{
+			iObtainable += iNetProduction * iHorizon;
+		}
+		if (iObtainable < iNeeded)
+		{
+			// exportable surplus elsewhere in the empire
+			int iCityLoop;
+			for (CvCity* pLoopCity = kOwner.firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = kOwner.nextCity(&iCityLoop))
+			{
+				if (pLoopCity != this)
+				{
+					iObtainable += std::max(0, pLoopCity->getYieldStored(eYield) - pLoopCity->getAutoMaintainThreshold(eYield));
+				}
+			}
+		}
+		if (iObtainable < iNeeded)
+		{
+			return false;
+		}
+	}
+	return true;
 }
 
 // Per-turn availability of an input yield as the automation scorer should see it:

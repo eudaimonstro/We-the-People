@@ -51,6 +51,10 @@
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_BUILD_MATERIAL_HORIZON</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_LOGGING</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>

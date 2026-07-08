@@ -104,6 +104,7 @@ public:
 		const CvUnit& kUnit, const CvUnit* pDisplaceUnit) const;
 	int AI_automationBestJobValue(const CvUnit& kUnit) const;
 	void AI_automationRecruitGarrison();
+	bool AI_isBuildingAffordable(BuildingTypes eBuilding) const;
 	// Non-virtual wrapper for AI_professionValue
 	int AI_citizenProfessionValue(
 		ProfessionTypes eProfession,
