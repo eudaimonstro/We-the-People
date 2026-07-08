@@ -21,6 +21,10 @@ A Master Sail Maker with ample stored hemp keeps getting assigned to mine raw ma
 
 No new knobs; no new state; savegame-safe; deterministic. AI players: change 1 and 3 live inside functions only called on human-gated paths (`AI_sustainedInputAvailable` is called only under `bHumanAutomation`); change 2 is called from `AI_tradeRoutes` virtual-route synthesis (human FULL mode only) and `AI_transferYieldValue`'s feeding boost (gated `isHuman()`) - verified call sites, AI unaffected.
 
+## Addendum (2026-07-08, playtest: grapes-to-wine)
+
+The expert-only input-cost discount left GENERALIST craftsmen with the full structural bias: a citizen evaluating winemaking pays full market price for grapes while plot jobs bank pure revenue, so nobody converts an abundant stockpile. Fix: input charge scales with local scarcity - 100% of market price when the stockpile is thin (protects supply chains from premature processing), sliding linearly to 25% once stored input covers `AUTOMATION_INPUT_ABUNDANCE_TURNS` (default 15) of the profession's consumption. The scarcest input governs multi-input professions. The expert-specialty discount (`AUTOMATION_EXPERT_INPUT_COST_PERCENT`) now multiplies on top of the abundance charge instead of replacing it.
+
 ## Testing
 
 1. Assert build clean.

@@ -31,6 +31,10 @@
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_INPUT_ABUNDANCE_TURNS</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_STICKINESS_PERCENT</DefineName>
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>

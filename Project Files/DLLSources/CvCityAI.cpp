@@ -4478,16 +4478,33 @@ int CvCityAI::AI_citizenProfessionValue(
 			for (int k = 0; k < numIn; ++k)
 				inValue += AI_estimateYieldValue(inYields[k], iChargedInput);
 			iInputValue = 100 * inValue;
-			// An expert working their specialty converts inputs at maximum
-			// efficiency - that conversion is why the player staffed the city.
-			// Charging the input at full market price makes the job's margin
-			// round to zero and lose to any decent raw-yield plot, so discount
-			// it. (Plot jobs pay nothing for what they extract; this narrows
-			// that structural bias for the one citizen built to do the job.)
-			if (bExpertSpecialty)
+
+			// Abundant local input is cheap to consume: the real alternative to
+			// converting a big stockpile is letting it sit (or decay), not
+			// selling it at full market price. Charge full price when the input
+			// is scarce (protects the supply chain), sliding to 25% when the
+			// stockpile covers AUTOMATION_INPUT_ABUNDANCE_TURNS of production.
+			// Without this, plot jobs (pure revenue, no input bill) structurally
+			// outbid every processing job - generalists never make wine from a
+			// warehouse full of grapes.
 			{
-				const int iCostPercent = getAutomationDefine("AUTOMATION_EXPERT_INPUT_COST_PERCENT", 50);
-				iInputValue = iInputValue * iCostPercent / 100;
+				int iScarcestStoredTurns = MAX_INT;
+				for (int k = 0; k < numIn; ++k)
+				{
+					const int iStoredTurns = getYieldStored(inYields[k]) / std::max(1, pv.iYieldInput);
+					iScarcestStoredTurns = std::min(iScarcestStoredTurns, iStoredTurns);
+				}
+				const int iAbundanceTurns = getAutomationDefine("AUTOMATION_INPUT_ABUNDANCE_TURNS", 15);
+				const int iAbundancePct = std::min(100, 100 * iScarcestStoredTurns / std::max(1, iAbundanceTurns));
+				int iChargePercent = 100 - (75 * iAbundancePct) / 100;
+				// An expert working their specialty converts at maximum
+				// efficiency - that conversion is why the player staffed the
+				// city. Halve the charge on top of abundance.
+				if (bExpertSpecialty)
+				{
+					iChargePercent = iChargePercent * getAutomationDefine("AUTOMATION_EXPERT_INPUT_COST_PERCENT", 50) / 100;
+				}
+				iInputValue = iInputValue * iChargePercent / 100;
 			}
 		}
 		else
