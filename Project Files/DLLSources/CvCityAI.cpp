@@ -1297,9 +1297,39 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 		iHighestPercentFull = std::max(iHighestPercentFull, 100 * getTotalYieldStored() / iCityCapacity);
 		int iTempValue = kBuildingInfo.getYieldStorage();
 
-		iValue += iTempValue / 3;
-		iValue += iHighestPercentFull;
-		iValue += 10 * iTotalExcess;
+		int iStorageValue = 0;
+		iStorageValue += iTempValue / 3;
+		iStorageValue += iHighestPercentFull;
+		iStorageValue += 10 * iTotalExcess;
+
+		// Storage-pressure scaling (human cities only): a warehouse is only as
+		// valuable as the city's need to store things. Scale by how full the
+		// warehouse already is, or how fast net production would fill it; an
+		// empty city with negligible goods flow scores ~0 here so the
+		// recommendation moves to a building that actually helps. Food is
+		// excluded from the inflow: it fills the growth pool, not the
+		// warehouse. AI players keep the stock formula.
+		if (GET_PLAYER(getOwnerINLINE()).isHuman())
+		{
+			int iNetInflow = 0;
+			for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+			{
+				const YieldTypes ePressureYield = (YieldTypes)iYield;
+				if (ePressureYield != YIELD_FOOD && GC.getYieldInfo(ePressureYield).isCargo())
+				{
+					iNetInflow += std::max(0, getRawYieldProduced(ePressureYield) - getRawYieldConsumed(ePressureYield));
+				}
+			}
+			const int iHorizon = getAutomationDefine("AUTOMATION_STORAGE_PRESSURE_TURNS", 20);
+			const int iFreeSpace = std::max(1, iCityCapacity - getTotalYieldStored());
+			const int iTurnsToFull = iFreeSpace / std::max(1, iNetInflow);
+			const int iPressureFromInflow = 100 * iHorizon / std::max(iHorizon, iTurnsToFull);
+			int iPressurePct = std::max(iHighestPercentFull, iPressureFromInflow);
+			iPressurePct = std::max(0, std::min(100, iPressurePct));
+			iStorageValue = iStorageValue * iPressurePct / 100;
+		}
+
+		iValue += iStorageValue;
 		// Custom_House_Mod Start
 		if (bIsBestPortCity)
 		{

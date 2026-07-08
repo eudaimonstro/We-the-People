@@ -55,6 +55,10 @@
 		<iDefineIntVal>15</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_STORAGE_PRESSURE_TURNS</DefineName>
+		<iDefineIntVal>20</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_LOGGING</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
