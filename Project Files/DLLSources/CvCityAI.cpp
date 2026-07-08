@@ -1919,17 +1919,17 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 	if (GET_PLAYER(getOwnerINLINE()).isHuman())
 	{
 		int iDeficiencyBonus = 0;
-		const int iHealthDeficit = -getCityHealth();
-		if (iHealthDeficit > 0 && AI_buildingRelievesYield(eBuilding, YIELD_HEALTH))
+		const int iHealthShortfall = AI_intangibleShortfall(YIELD_HEALTH, NULL);
+		if (iHealthShortfall > 0 && AI_buildingRelievesYield(eBuilding, YIELD_HEALTH))
 		{
-			iDeficiencyBonus += iHealthDeficit;
+			iDeficiencyBonus += iHealthShortfall;
 		}
-		const int iLawShortfall = getCityCrime() - getCityLaw();
+		const int iLawShortfall = AI_intangibleShortfall(YIELD_LAW, NULL);
 		if (iLawShortfall > 0 && AI_buildingRelievesYield(eBuilding, YIELD_LAW))
 		{
 			iDeficiencyBonus += iLawShortfall;
 		}
-		const int iHappinessShortfall = getCityUnHappiness() - getCityHappiness();
+		const int iHappinessShortfall = AI_intangibleShortfall(YIELD_HAPPINESS, NULL);
 		if (iHappinessShortfall > 0 && AI_buildingRelievesYield(eBuilding, YIELD_HAPPINESS))
 		{
 			iDeficiencyBonus += iHappinessShortfall;
@@ -4113,6 +4113,59 @@ bool CvCityAI::AI_isHumanAutomationCity() const
 	return GET_PLAYER(getOwnerINLINE()).isHuman();
 }
 
+// How urgently does this city need more of an intangible yield (health, law,
+// happiness)? Returns 0 when content. pUnit (optional): that unit's own
+// current production of the yield is netted out, so a seated Healer keeps
+// seeing the bleed they are covering and does not get unseated the moment the
+// city numbers look good because of them.
+// Health follows the player rule "aim for non-negative per-turn health while
+// the level is low": urgency from a negative level, plus urgency from a
+// negative per-turn change whenever the level is at or below the buffer.
+int CvCityAI::AI_intangibleShortfall(YieldTypes eYield, const CvUnit* pUnit) const
+{
+	int iSelf = 0;
+	if (pUnit != NULL && pUnit->getProfession() != NO_PROFESSION)
+	{
+		const CvProfessionInfo& kCurProf = GC.getProfessionInfo(pUnit->getProfession());
+		if (!kCurProf.isWorkPlot())
+		{
+			for (int j = 0; j < kCurProf.getNumYieldsProduced(); ++j)
+			{
+				if ((YieldTypes)kCurProf.getYieldsProduced(j) == eYield)
+				{
+					iSelf = getProfessionOutput(pUnit->getProfession(), pUnit);
+					break;
+				}
+			}
+		}
+	}
+
+	switch (eYield)
+	{
+	case YIELD_HEALTH:
+	{
+		const int iLevel = getCityHealth();
+		const int iChange = getCityHealthChange() - iSelf;
+		int iUrgency = 0;
+		if (iLevel < 0)
+		{
+			iUrgency += -iLevel;
+		}
+		if (iChange < 0 && iLevel <= getAutomationDefine("AUTOMATION_HEALTH_BUFFER", 5))
+		{
+			iUrgency += -iChange;
+		}
+		return iUrgency;
+	}
+	case YIELD_LAW:
+		return std::max(0, getCityCrime() - (getCityLaw() - iSelf));
+	case YIELD_HAPPINESS:
+		return std::max(0, getCityUnHappiness() - (getCityHappiness() - iSelf));
+	default:
+		return 0;
+	}
+}
+
 // Does this building help produce eYield - passively or via the professions
 // it hosts? Used to prioritize deficiency-relieving buildings (health, law).
 bool CvCityAI::AI_buildingRelievesYield(BuildingTypes eBuilding, YieldTypes eYield) const
@@ -4463,6 +4516,21 @@ int CvCityAI::AI_citizenProfessionValue(
 		}
 
 		// … other AI tweaks (culture, cargo, etc.) unchanged …
+
+		// Intangible urgency (human automation): health, law and happiness
+		// jobs earn value proportional to the city's actual need - these
+		// yields have no market price, so without this an urgently-needed
+		// Healer can never outbid a fishing boat. Self-netting inside the
+		// helper keeps seated specialists seated.
+		if (bHumanAutomation && (eY == YIELD_HEALTH || eY == YIELD_LAW || eY == YIELD_HAPPINESS))
+		{
+			const int iShortfall = AI_intangibleShortfall(eY, pUnit);
+			if (iShortfall > 0)
+			{
+				iOutputValue += 100 * pv.iYieldOutput * iShortfall
+					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
+			}
+		}
 
 		// Food emergency (human automation): when the city is running a food
 		// deficit and the warehouse cannot cover it for long, food-producing
@@ -5143,38 +5211,16 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 		case YIELD_CULTURE:
 			break;
 		case YIELD_HEALTH:
-			// Automation fix (human): a suffering city urgently needs Healers.
-			// Additive urgency: intangible yields have no market price, so
-			// multiplying their tiny base value could never compete with a
-			// real economy job - the bonus must live on the same scale as
-			// those jobs.
-			if (AI_isHumanAutomationCity() && getCityHealth() < 0)
-			{
-				iValue += iAmount * (-getCityHealth())
-					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
-			}
+			// Automation fix: intangible urgency lives in
+			// AI_citizenProfessionValue (needs unit context for self-netting).
 			break;
 		case YIELD_EDUCATION:
 			break;
 		case YIELD_HAPPINESS: // WTP, ray, Happiness - START
-			// Automation fix (human): net-unhappy cities urgently need
-			// Entertainers. Additive urgency (see YIELD_HEALTH).
-			if (AI_isHumanAutomationCity() && getCityUnHappiness() > getCityHappiness())
-			{
-				iValue += iAmount * (getCityUnHappiness() - getCityHappiness())
-					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
-			}
 			break;
 		case YIELD_UNHAPPINESS: // WTP, ray, Happiness - START
 			break;
 		case YIELD_LAW: // WTP, ray, Crime and Law - START
-			// Automation fix (human): cities with unsuppressed crime urgently
-			// need Judges. Additive urgency (see YIELD_HEALTH).
-			if (AI_isHumanAutomationCity() && getCityCrime() > getCityLaw())
-			{
-				iValue += iAmount * (getCityCrime() - getCityLaw())
-					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
-			}
 			break;
 		case YIELD_CRIME: // WTP, ray, Crime and Law - START
 			break;

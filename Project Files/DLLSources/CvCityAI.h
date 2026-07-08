@@ -106,6 +106,7 @@ public:
 	void AI_automationRecruitGarrison();
 	bool AI_isBuildingAffordable(BuildingTypes eBuilding) const;
 	bool AI_buildingRelievesYield(BuildingTypes eBuilding, YieldTypes eYield) const;
+	int AI_intangibleShortfall(YieldTypes eYield, const CvUnit* pUnit) const;
 	// Non-virtual wrapper for AI_professionValue
 	int AI_citizenProfessionValue(
 		ProfessionTypes eProfession,
