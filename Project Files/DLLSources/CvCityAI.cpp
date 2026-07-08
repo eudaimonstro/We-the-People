@@ -4541,6 +4541,29 @@ int CvCityAI::AI_citizenProfessionValue(
 			return 0;
 		yieldsOut = pPlot->calculatePotentialProfessionYieldAmount(
 			eProfession, pUnit, false);
+
+		// Livestock grazing investment (human automation): grazing a small herd
+		// produces only a throttled trickle now, but it GROWS the herd toward
+		// the plot's full potential. Value it at that mature potential so the
+		// scorer develops livestock tiles instead of always preferring another
+		// use - only when the city already holds the herd (stored > 0); an
+		// unseeded pasture still produces nothing and is left alone.
+		if (bHumanAutomation && yieldsOut.count > 0)
+		{
+			const YieldTypes ePrimary = yieldsOut.yields[0].eYield;
+			if (GC.getYieldInfo(ePrimary).isLivestock() && getYieldStored(ePrimary) > 0)
+			{
+				const int iMature = pPlot->calculatePotentialYield(ePrimary, pUnit, false, /*bIgnoreLivestockCap*/ true);
+				if (iMature > yieldsOut.yields[0].iAmount)
+				{
+					yieldsOut.yields[0].iAmount = iMature;
+					if (yieldsOut.count > 1)
+					{
+						yieldsOut.yields[1].iAmount = iMature / 2;
+					}
+				}
+			}
+		}
 	}
 	else
 	{

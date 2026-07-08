@@ -425,8 +425,8 @@ public:
 	int calculateTotalBestNatureYield(TeamTypes eTeam) const;
 	int calculateImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield, PlayerTypes ePlayer, bool bOptimal = false) const;
 	int calculateYield(YieldTypes eIndex, bool bDisplay) const;
-	int calculatePotentialYield(YieldTypes eIndex, const CvUnit* pUnit, bool bDisplay) const;
-	int calculatePotentialYield(YieldTypes eYield, PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bIgnoreFeature, RouteTypes eRoute, UnitTypes eUnit, bool bDisplay) const;
+	int calculatePotentialYield(YieldTypes eIndex, const CvUnit* pUnit, bool bDisplay, bool bIgnoreLivestockCap = false) const;
+	int calculatePotentialYield(YieldTypes eYield, PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bIgnoreFeature, RouteTypes eRoute, UnitTypes eUnit, bool bDisplay, bool bIgnoreLivestockCap = false) const;
 	ProfessionYieldList calculatePotentialProfessionYieldAmount(ProfessionTypes eProfession, const CvUnit* pUnit, bool bDisplay) const;
 	int calculatePotentialCityYield(YieldTypes eYield, const CvCity *pCity) const;
 	bool hasYield() const;

@@ -6907,7 +6907,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	return iYield;
 }
 
-int CvPlot::calculatePotentialYield(YieldTypes eYield, const CvUnit* pUnit, bool bDisplay) const
+int CvPlot::calculatePotentialYield(YieldTypes eYield, const CvUnit* pUnit, bool bDisplay, bool bIgnoreLivestockCap) const
 {
 	ImprovementTypes eImprovement;
 	RouteTypes eRoute;
@@ -6931,10 +6931,10 @@ int CvPlot::calculatePotentialYield(YieldTypes eYield, const CvUnit* pUnit, bool
 		eRoute = getRouteType();
 	}
 
-	return calculatePotentialYield(eYield, ePlayer, eImprovement, false, eRoute, pUnit != NULL ? pUnit->getUnitType() : NO_UNIT, bDisplay);
+	return calculatePotentialYield(eYield, ePlayer, eImprovement, false, eRoute, pUnit != NULL ? pUnit->getUnitType() : NO_UNIT, bDisplay, bIgnoreLivestockCap);
 }
 
-int CvPlot::calculatePotentialYield(YieldTypes eYield, PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bIgnoreFeature, RouteTypes eRoute, UnitTypes eUnit, bool bDisplay) const
+int CvPlot::calculatePotentialYield(YieldTypes eYield, PlayerTypes ePlayer, ImprovementTypes eImprovement, bool bIgnoreFeature, RouteTypes eRoute, UnitTypes eUnit, bool bDisplay, bool bIgnoreLivestockCap) const
 {
 	TeamTypes eTeam = ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM);
 
@@ -7100,7 +7100,11 @@ int CvPlot::calculatePotentialYield(YieldTypes eYield, PlayerTypes ePlayer, Impr
 	if (pWorkingCity != NULL)
 	{
 		//if (GC.getYieldInfo(eYield).isLivestock())
-		if (GC.getYieldInfo(eYield).isLivestock() && (pWorkingCity->isHuman() || pWorkingCity->isNative())) // R&R, ray, Livestock Breeding, for AI
+		// Automation fix: bIgnoreLivestockCap lets the citizen scorer see the
+		// plot's MATURE-herd potential (the yield once the herd is grown) so it
+		// will invest a grazer in growing a small herd, instead of scoring only
+		// the throttled early trickle and always preferring another tile use.
+		if (GC.getYieldInfo(eYield).isLivestock() && !bIgnoreLivestockCap && (pWorkingCity->isHuman() || pWorkingCity->isNative())) // R&R, ray, Livestock Breeding, for AI
 		{
 			if (iYield > 0 && pWorkingCity->getYieldStored(eYield) > 0)
 			{
