@@ -5099,34 +5099,37 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 		case YIELD_CULTURE:
 			break;
 		case YIELD_HEALTH:
-			// Automation fix (human): a suffering city urgently needs Healers -
-			// each point of health deficit boosts health-job value.
+			// Automation fix (human): a suffering city urgently needs Healers.
+			// Additive urgency: intangible yields have no market price, so
+			// multiplying their tiny base value could never compete with a
+			// real economy job - the bonus must live on the same scale as
+			// those jobs.
 			if (AI_isHumanAutomationCity() && getCityHealth() < 0)
 			{
-				const int iPct = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_PERCENT", 50);
-				iValue = iValue * (100 + (-getCityHealth()) * iPct) / 100;
+				iValue += iAmount * (-getCityHealth())
+					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
 			}
 			break;
 		case YIELD_EDUCATION:
 			break;
 		case YIELD_HAPPINESS: // WTP, ray, Happiness - START
 			// Automation fix (human): net-unhappy cities urgently need
-			// Entertainers - each point of shortfall boosts happiness-job value.
+			// Entertainers. Additive urgency (see YIELD_HEALTH).
 			if (AI_isHumanAutomationCity() && getCityUnHappiness() > getCityHappiness())
 			{
-				const int iPct = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_PERCENT", 50);
-				iValue = iValue * (100 + (getCityUnHappiness() - getCityHappiness()) * iPct) / 100;
+				iValue += iAmount * (getCityUnHappiness() - getCityHappiness())
+					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
 			}
 			break;
 		case YIELD_UNHAPPINESS: // WTP, ray, Happiness - START
 			break;
 		case YIELD_LAW: // WTP, ray, Crime and Law - START
 			// Automation fix (human): cities with unsuppressed crime urgently
-			// need Judges - each point of shortfall boosts law-job value.
+			// need Judges. Additive urgency (see YIELD_HEALTH).
 			if (AI_isHumanAutomationCity() && getCityCrime() > getCityLaw())
 			{
-				const int iPct = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_PERCENT", 50);
-				iValue = iValue * (100 + (getCityCrime() - getCityLaw()) * iPct) / 100;
+				iValue += iAmount * (getCityCrime() - getCityLaw())
+					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
 			}
 			break;
 		case YIELD_CRIME: // WTP, ray, Crime and Law - START

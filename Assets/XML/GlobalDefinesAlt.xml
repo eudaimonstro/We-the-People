@@ -67,8 +67,8 @@
 		<iDefineIntVal>500</iDefineIntVal>
 	</Define>
 	<Define>
-		<DefineName>AUTOMATION_DEFICIENCY_JOB_PERCENT</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<DefineName>AUTOMATION_DEFICIENCY_JOB_VALUE</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>AUTOMATION_LOGGING</DefineName>
