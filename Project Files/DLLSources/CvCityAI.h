@@ -107,6 +107,8 @@ public:
 	bool AI_isBuildingAffordable(BuildingTypes eBuilding) const;
 	bool AI_buildingRelievesYield(BuildingTypes eBuilding, YieldTypes eYield) const;
 	int AI_intangibleShortfall(YieldTypes eYield, const CvUnit* pUnit) const;
+	void AI_updateInputShortage();
+	int AI_congestionSurcharge() const;
 	// Non-virtual wrapper for AI_professionValue
 	int AI_citizenProfessionValue(
 		ProfessionTypes eProfession,
@@ -242,6 +244,11 @@ protected:
 	// unit ID -> (profession, plot worked or NULL). Rebuilt at the start of every
 	// AI_assignWorkingPlots pass, read (const, concurrently) by AI_citizenProfessionValue.
 	std::map<int, std::pair<ProfessionTypes, const CvPlot*> > m_automationPrevJob;
+
+	// Per-yield unmet industrial input demand (per turn), rebuilt each pass by
+	// AI_updateInputShortage and read (const, concurrently) by the scorer to
+	// reward gathering inputs the city's industry is starving for. NOT saved.
+	std::vector<int> m_automationInputShortage;
 
 	IDInfo m_routeToCity;
 

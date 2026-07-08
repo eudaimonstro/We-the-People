@@ -35,6 +35,14 @@
 		<iDefineIntVal>15</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_INPUT_DEMAND_PERCENT</DefineName>
+		<iDefineIntVal>100</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>AUTOMATION_CONGESTION_PERCENT</DefineName>
+		<iDefineIntVal>100</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_STICKINESS_PERCENT</DefineName>
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>

@@ -201,6 +201,10 @@ void CvCityAI::AI_assignWorkingPlots()
 		}
 	}
 
+	// Snapshot industrial input demand before the pass shuffles anyone, so the
+	// scorer can reward gathering inputs the city's industry is starving for.
+	AI_updateInputShortage();
+
 	if (AI_isHumanAutomationCity() && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
 	{
 		char buf[512];
@@ -419,7 +423,13 @@ void CvCityAI::AI_assignWorkingPlots()
 	{
 		const int iFoodPerPop = GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION;
 		const int iKeepPercent = getAutomationDefine("AUTOMATION_KEEP_THRESHOLD_PERCENT", 120);
-		const int iKeepThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100;
+		// Bar to keep a citizen employed: their food upkeep, plus the misery
+		// they add if the city is strained (crime/unhappiness/health). In a
+		// content city the surcharge is 0 and the city keeps growing; in a
+		// miserable 30-pop city, marginal low-value workers no longer clear the
+		// bar and get shed instead of piling on more negatives.
+		const int iKeepThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100
+			+ AI_congestionSurcharge();
 		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
 		{
 			CvUnit* const pUnit = m_aPopulationUnits[i];
@@ -3807,8 +3817,12 @@ void CvCityAI::AI_automationRecruitGarrison()
 		{
 			continue;
 		}
-		// Threshold in the scorer's units: the food a citizen eats, times the join margin.
-		const int iJoinThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION) * iJoinPercent / 100;
+		// Threshold in the scorer's units: the food a citizen eats, times the
+		// join margin, plus the misery a marginal citizen adds to a strained
+		// city (same surcharge as the keep bar). A miserable city stops
+		// recruiting marginal help; a content one recruits freely.
+		const int iJoinThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION) * iJoinPercent / 100
+			+ AI_congestionSurcharge();
 		const int iBestValue = AI_automationBestJobValue(*pLoopUnit);
 		if (iBestValue >= iJoinThreshold)
 		{
@@ -4166,6 +4180,96 @@ int CvCityAI::AI_intangibleShortfall(YieldTypes eYield, const CvUnit* pUnit) con
 	}
 }
 
+// Rebuild the per-yield unmet industrial-input demand for this city (per turn).
+// Demand = what seated craftsmen currently consume + what idle experts would
+// consume if their (existing, usable) building were staffed. Shortage = demand
+// beyond local production. A positive shortage means the city's industry wants
+// more of this input than it makes - gathering it locally is then worth more
+// than its bare market price (see the boost in AI_citizenProfessionValue).
+// Called once per pass with the workforce in its pre-pass state.
+void CvCityAI::AI_updateInputShortage()
+{
+	m_automationInputShortage.assign(NUM_YIELD_TYPES, 0);
+	if (!AI_isHumanAutomationCity())
+	{
+		return;
+	}
+
+	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+	{
+		const YieldTypes eYield = (YieldTypes)iYield;
+		if (!GC.getYieldInfo(eYield).isCargo())
+		{
+			continue;
+		}
+
+		int iDemand = getRawYieldConsumed(eYield);
+
+		// idle experts whose specialty consumes this yield and whose building exists
+		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+		{
+			CvUnit* const pUnit = m_aPopulationUnits[i];
+			if (pUnit == NULL)
+			{
+				continue;
+			}
+			const ProfessionTypes eIdeal = pUnit->AI_getIdealProfession();
+			if (eIdeal == NO_PROFESSION || pUnit->getProfession() == eIdeal)
+			{
+				continue;
+			}
+			const CvProfessionInfo& kIdeal = GC.getProfessionInfo(eIdeal);
+			bool bConsumes = false;
+			for (int j = 0; j < kIdeal.getNumYieldsConsumed(); ++j)
+			{
+				if ((YieldTypes)kIdeal.getYieldsConsumed(j) == eYield)
+				{
+					bConsumes = true;
+					break;
+				}
+			}
+			if (bConsumes && getProfessionOutput(eIdeal, pUnit) > 0)
+			{
+				iDemand += getProfessionInput(eIdeal, pUnit);
+			}
+		}
+
+		m_automationInputShortage[eYield] = std::max(0, iDemand - getRawYieldProduced(eYield));
+	}
+}
+
+// Extra value bar a marginal citizen must clear because of the misery they add
+// to an already-strained city (crime, unhappiness, health drain). Zero for a
+// content city - population itself is not penalized, only strain is. Per-pop
+// share of each population-driven penalty, valued on the intangible-job scale,
+// counted only for the dimensions the city is at/over its deficiency threshold.
+int CvCityAI::AI_congestionSurcharge() const
+{
+	const int iPop = std::max(1, getPopulation());
+	const int iJobValue = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
+	const int iCongestionPct = getAutomationDefine("AUTOMATION_CONGESTION_PERCENT", 100);
+
+	int iMisery = 0;
+	if (getCityCrime() >= getCityLaw())
+	{
+		iMisery += (getCrimeFromPopulation() + iPop - 1) / iPop; // per-pop share, rounded up
+	}
+	if (getCityUnHappiness() >= getCityHappiness())
+	{
+		iMisery += (getUnhappinessFromPopulation() + iPop - 1) / iPop;
+	}
+	if (getCityHealth() <= getAutomationDefine("AUTOMATION_HEALTH_BUFFER", 5))
+	{
+		// health drain from population is reported as a negative change
+		const int iDrain = -getCityHealthChangeFromPopulation();
+		if (iDrain > 0)
+		{
+			iMisery += (iDrain + iPop - 1) / iPop;
+		}
+	}
+	return iMisery * iJobValue * iCongestionPct / 100 * 100; // x100: same units as job values
+}
+
 // Does this building help produce eYield - passively or via the professions
 // it hosts? Used to prioritize deficiency-relieving buildings (health, law).
 bool CvCityAI::AI_buildingRelievesYield(BuildingTypes eBuilding, YieldTypes eYield) const
@@ -4458,6 +4562,21 @@ int CvCityAI::AI_citizenProfessionValue(
 		{
 			iOutputValue = 100
 				* AI_estimateYieldValue(eY, pv.iYieldOutput);
+
+			// Derived demand (human automation): gathering an input the city's
+			// industry is starving for is worth more than its bare market price
+			// - the gathered unit becomes a processed good at one remove. The
+			// units that cover the shortage earn a processing premium; surplus
+			// beyond what industry can absorb stays at market value. Early game
+			// (no industry) the shortage is zero, so raw cash crops still win.
+			if (bHumanAutomation
+				&& !m_automationInputShortage.empty()
+				&& m_automationInputShortage[eY] > 0)
+			{
+				const int iCovered = std::min(pv.iYieldOutput, m_automationInputShortage[eY]);
+				const int iPremiumPct = getAutomationDefine("AUTOMATION_INPUT_DEMAND_PERCENT", 100);
+				iOutputValue += 100 * AI_estimateYieldValue(eY, iCovered) * iPremiumPct / 100;
+			}
 		}
 		else if (bHumanAutomation && !kProfInfo.isWorkPlot())
 		{
