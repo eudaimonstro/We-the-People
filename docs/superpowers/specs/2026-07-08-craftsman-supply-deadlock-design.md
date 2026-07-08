@@ -25,6 +25,10 @@ No new knobs; no new state; savegame-safe; deterministic. AI players: change 1 a
 
 The expert-only input-cost discount left GENERALIST craftsmen with the full structural bias: a citizen evaluating winemaking pays full market price for grapes while plot jobs bank pure revenue, so nobody converts an abundant stockpile. Fix: input charge scales with local scarcity - 100% of market price when the stockpile is thin (protects supply chains from premature processing), sliding linearly to 25% once stored input covers `AUTOMATION_INPUT_ABUNDANCE_TURNS` (default 15) of the profession's consumption. The scarcest input governs multi-input professions. The expert-specialty discount (`AUTOMATION_EXPERT_INPUT_COST_PERCENT`) now multiplies on top of the abundance charge instead of replacing it.
 
+## Addendum (2026-07-08, playtest: automate-all oscillation)
+
+The congestion surcharge on the KEEP (ejection) bar created a self-driving feedback loop: a strained city ejected marginal workers at a high bar, which relieved the strain, which dropped the bar, which let recruitment re-add them, which restored the strain. The fixed-point loop could not damp it because ejection also runs in per-turn `AI_assignWorkingPlots` passes, outside the automate cycle. Fix: strain gates only RECRUITMENT (join bar = food upkeep + congestion surcharge), never ejection (keep bar = food upkeep only, strain-independent and stable across a cycle's population changes). Result: a miserable city stops growing (won't recruit) but does not shed the workers it already has for strain alone, so repeated automate-all clicks converge. Tradeoff: automation no longer actively shrinks an already-overgrown miserable city (that would require a proper population-equilibrium search); it prevents growth into misery, which was the original request.
+
 ## Testing
 
 1. Assert build clean.

@@ -3817,9 +3817,11 @@ void CvCityAI::AI_automationRecruitGarrison()
 		{
 			continue;
 		}
-		// Recruit against the SAME bar a citizen must clear to stay (so a
-		// recruit is never ejected next click), plus one marginal congestion
-		// surcharge as hysteresis - the strain this unit itself would add.
+		// Recruit against the keep bar (food upkeep) PLUS the congestion
+		// surcharge, so a strained city stops recruiting while an easy city
+		// recruits freely. This is strictly above the keep bar, so a recruited
+		// unit always clears the (lower, strain-free) keep bar and is never
+		// ejected next click - correct hysteresis, no flapping.
 		const int iJoinThreshold = AI_citizenKeepThreshold() + AI_congestionSurcharge();
 		const int iBestValue = AI_automationBestJobValue(*pLoopUnit);
 		if (iBestValue >= iJoinThreshold)
@@ -4268,18 +4270,20 @@ int CvCityAI::AI_congestionSurcharge() const
 	return iMisery * iJobValue * iCongestionPct / 100 * 100; // x100: same units as job values
 }
 
-// The single bar a marginal citizen must clear to stay employed (or be
-// recruited): their food upkeep plus the misery they add to a strained city.
-// One helper so the ejection and recruitment paths cannot disagree - the
-// original bug was recruitment admitting at a low bar (surcharge evaluated at a
-// thinned population) while ejection removed at a high one, so every recruit
-// flapped straight back out.
+// The bar a citizen must clear to STAY employed: just their food upkeep. This
+// deliberately excludes the congestion surcharge. The surcharge relieves itself
+// when a citizen leaves (fewer people -> less strain), so charging it on the
+// keep bar created a feedback loop - eject while strained, un-strain, recruit,
+// strain again - that no fixed-point loop could damp because ejection also runs
+// in per-turn passes. Strain now gates only recruitment (see the join bar), so
+// a miserable city stops GROWING but never sheds the workers it already has for
+// strain alone. Keeping this bar strain-independent makes it stable across the
+// population changes of an automate cycle.
 int CvCityAI::AI_citizenKeepThreshold() const
 {
 	const int iFoodPerPop = GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION;
 	const int iKeepPercent = getAutomationDefine("AUTOMATION_KEEP_THRESHOLD_PERCENT", 120);
-	return 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100
-		+ AI_congestionSurcharge();
+	return 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100;
 }
 
 // Drive automate-all to a fixed point in one click: reassign + recruit until
