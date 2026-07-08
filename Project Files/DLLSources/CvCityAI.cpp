@@ -1885,6 +1885,11 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 		{
 			iDeficiencyBonus += iLawShortfall;
 		}
+		const int iHappinessShortfall = getCityUnHappiness() - getCityHappiness();
+		if (iHappinessShortfall > 0 && AI_buildingRelievesYield(eBuilding, YIELD_HAPPINESS))
+		{
+			iDeficiencyBonus += iHappinessShortfall;
+		}
 		if (iDeficiencyBonus > 0)
 		{
 			iValue += iDeficiencyBonus * getAutomationDefine("AUTOMATION_DEFICIENCY_BONUS", 500);
@@ -5094,14 +5099,35 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 		case YIELD_CULTURE:
 			break;
 		case YIELD_HEALTH:
+			// Automation fix (human): a suffering city urgently needs Healers -
+			// each point of health deficit boosts health-job value.
+			if (AI_isHumanAutomationCity() && getCityHealth() < 0)
+			{
+				const int iPct = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_PERCENT", 50);
+				iValue = iValue * (100 + (-getCityHealth()) * iPct) / 100;
+			}
 			break;
 		case YIELD_EDUCATION:
 			break;
 		case YIELD_HAPPINESS: // WTP, ray, Happiness - START
+			// Automation fix (human): net-unhappy cities urgently need
+			// Entertainers - each point of shortfall boosts happiness-job value.
+			if (AI_isHumanAutomationCity() && getCityUnHappiness() > getCityHappiness())
+			{
+				const int iPct = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_PERCENT", 50);
+				iValue = iValue * (100 + (getCityUnHappiness() - getCityHappiness()) * iPct) / 100;
+			}
 			break;
 		case YIELD_UNHAPPINESS: // WTP, ray, Happiness - START
 			break;
 		case YIELD_LAW: // WTP, ray, Crime and Law - START
+			// Automation fix (human): cities with unsuppressed crime urgently
+			// need Judges - each point of shortfall boosts law-job value.
+			if (AI_isHumanAutomationCity() && getCityCrime() > getCityLaw())
+			{
+				const int iPct = getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_PERCENT", 50);
+				iValue = iValue * (100 + (getCityCrime() - getCityLaw()) * iPct) / 100;
+			}
 			break;
 		case YIELD_CRIME: // WTP, ray, Crime and Law - START
 			break;

@@ -63,7 +63,9 @@ Human-gated, no persistent state, savegame-compatible both directions, determini
 
 A city at -1 health had a Schoolhouse recommended over an equally-priced Medical Office. Root cause: `AI_estimateYieldValue`/`AI_yieldValue` treat YIELD_HEALTH and YIELD_LAW as flat values (empty switch cases) - no scorer anywhere knows the city is *suffering*.
 
-Fix (human-gated, in `AI_buildingValue` before its final return): when the city has a health deficit (`getCityHealth() < 0`) or a law shortfall (`getCityCrime() > getCityLaw()`), buildings that relieve the deficient yield - passively via `CvBuildingInfo::getYieldChange` or through hosted professions producing it (helper `AI_buildingRelievesYield`) - receive an additive bonus of `shortfall x AUTOMATION_DEFICIENCY_BONUS` (default 500, XML-tunable). Both deficits can stack. AI players unchanged.
+Fix (human-gated, in `AI_buildingValue` before its final return): when the city has a health deficit (`getCityHealth() < 0`), a law shortfall (`getCityCrime() > getCityLaw()`), or a happiness shortfall (`getCityUnHappiness() > getCityHappiness()`), buildings that relieve the deficient yield - passively via `CvBuildingInfo::getYieldChange` or through hosted professions producing it (helper `AI_buildingRelievesYield`) - receive an additive bonus of `shortfall x AUTOMATION_DEFICIENCY_BONUS` (default 500, XML-tunable). Deficits stack. AI players unchanged.
+
+Second addendum (2026-07-08, same session): the citizen automation scorer gets the symmetric treatment - in `AI_estimateYieldValue`, the YIELD_HEALTH / YIELD_LAW / YIELD_HAPPINESS cases scale job value by `(100 + shortfall x AUTOMATION_DEFICIENCY_JOB_PERCENT) / 100` (default 50, human-gated). Healers, Judges, and Entertainers get seated with urgency proportional to the city's actual suffering; content cities keep the flat baseline. Boost-only: surpluses never penalize, avoiding churn.
 
 ## Testing
 
