@@ -421,15 +421,9 @@ void CvCityAI::AI_assignWorkingPlots()
 	// removes the last citizen.
 	if (AI_isHumanAutomationCity())
 	{
-		const int iFoodPerPop = GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION;
-		const int iKeepPercent = getAutomationDefine("AUTOMATION_KEEP_THRESHOLD_PERCENT", 120);
-		// Bar to keep a citizen employed: their food upkeep, plus the misery
-		// they add if the city is strained (crime/unhappiness/health). In a
-		// content city the surcharge is 0 and the city keeps growing; in a
-		// miserable 30-pop city, marginal low-value workers no longer clear the
-		// bar and get shed instead of piling on more negatives.
-		const int iKeepThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100
-			+ AI_congestionSurcharge();
+		// Bar to keep a citizen employed: food upkeep + the misery they add to a
+		// strained city. Shared with recruitment so the two cannot disagree.
+		const int iKeepThreshold = AI_citizenKeepThreshold();
 		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
 		{
 			CvUnit* const pUnit = m_aPopulationUnits[i];
@@ -453,6 +447,7 @@ void CvCityAI::AI_assignWorkingPlots()
 						clearUnitWorkingPlot(pWorked);
 					}
 					pUnit->setProfession(NO_PROFESSION);
+					m_automationEjectedThisCycle.insert(pUnit->getID());
 					jobMutex.unlock();
 				}
 			}
@@ -3790,7 +3785,6 @@ void CvCityAI::AI_automationRecruitGarrison()
 		return;
 	}
 
-	const int iJoinPercent = getAutomationDefine("AUTOMATION_JOIN_THRESHOLD_PERCENT", 150);
 	const ProfessionTypes eDefaultProfession = GC.getCivilizationInfo(getCivilizationType()).getDefaultProfession();
 	CvPlot* const pPlot = plot();
 
@@ -3812,17 +3806,21 @@ void CvCityAI::AI_automationRecruitGarrison()
 	for (uint i = 0; i < candidates.size(); ++i)
 	{
 		CvUnit* const pLoopUnit = candidates[i];
+		// Barred if ejected earlier this automate cycle: prevents the recruit
+		// then eject then recruit oscillation and guarantees the loop settles.
+		if (m_automationEjectedThisCycle.count(pLoopUnit->getID()) > 0)
+		{
+			continue;
+		}
 		// Re-check per candidate: earlier joins change food legality and job values.
 		if (!pLoopUnit->canJoinCity(pPlot))
 		{
 			continue;
 		}
-		// Threshold in the scorer's units: the food a citizen eats, times the
-		// join margin, plus the misery a marginal citizen adds to a strained
-		// city (same surcharge as the keep bar). A miserable city stops
-		// recruiting marginal help; a content one recruits freely.
-		const int iJoinThreshold = 100 * AI_estimateYieldValue(YIELD_FOOD, GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION) * iJoinPercent / 100
-			+ AI_congestionSurcharge();
+		// Recruit against the SAME bar a citizen must clear to stay (so a
+		// recruit is never ejected next click), plus one marginal congestion
+		// surcharge as hysteresis - the strain this unit itself would add.
+		const int iJoinThreshold = AI_citizenKeepThreshold() + AI_congestionSurcharge();
 		const int iBestValue = AI_automationBestJobValue(*pLoopUnit);
 		if (iBestValue >= iJoinThreshold)
 		{
@@ -4268,6 +4266,62 @@ int CvCityAI::AI_congestionSurcharge() const
 		}
 	}
 	return iMisery * iJobValue * iCongestionPct / 100 * 100; // x100: same units as job values
+}
+
+// The single bar a marginal citizen must clear to stay employed (or be
+// recruited): their food upkeep plus the misery they add to a strained city.
+// One helper so the ejection and recruitment paths cannot disagree - the
+// original bug was recruitment admitting at a low bar (surcharge evaluated at a
+// thinned population) while ejection removed at a high one, so every recruit
+// flapped straight back out.
+int CvCityAI::AI_citizenKeepThreshold() const
+{
+	const int iFoodPerPop = GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION;
+	const int iKeepPercent = getAutomationDefine("AUTOMATION_KEEP_THRESHOLD_PERCENT", 120);
+	return 100 * AI_estimateYieldValue(YIELD_FOOD, iFoodPerPop) * iKeepPercent / 100
+		+ AI_congestionSurcharge();
+}
+
+// Drive automate-all to a fixed point in one click: reassign + recruit until
+// city membership stops changing. Units ejected during the cycle are barred
+// from re-recruitment (m_automationEjectedThisCycle), which guarantees the loop
+// terminates. Because click 1 converges to a stable set, clicking again starts
+// there and changes nothing - which is exactly the behavior we want.
+void CvCityAI::AI_automationFullCycle()
+{
+	if (!AI_isHumanAutomationCity())
+	{
+		AI_assignWorkingPlots();
+		return;
+	}
+
+	m_automationEjectedThisCycle.clear();
+
+	const int iMaxIterations = 6;
+	std::vector<int> prevMembership;
+	for (int iIter = 0; iIter < iMaxIterations; ++iIter)
+	{
+		AI_assignWorkingPlots();        // reassign + eject surplus (records ejected IDs)
+		AI_automationRecruitGarrison(); // recruit worthwhile idle colonists (skips ejected)
+
+		std::vector<int> membership;
+		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+		{
+			if (m_aPopulationUnits[i] != NULL)
+			{
+				membership.push_back(m_aPopulationUnits[i]->getID());
+			}
+		}
+		std::sort(membership.begin(), membership.end());
+
+		if (iIter > 0 && membership == prevMembership)
+		{
+			break; // fixed point: the city's population is stable
+		}
+		prevMembership = membership;
+	}
+
+	m_automationEjectedThisCycle.clear();
 }
 
 // Does this building help produce eYield - passively or via the professions

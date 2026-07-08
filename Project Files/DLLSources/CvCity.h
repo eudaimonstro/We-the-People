@@ -658,6 +658,7 @@ public:
 	virtual void AI_doNative() = 0;
 	virtual void AI_assignWorkingPlots() = 0;
 	virtual void AI_automationRecruitGarrison() = 0;
+	virtual void AI_automationFullCycle() = 0;
 	virtual void AI_updateAssignWork() = 0;
 	virtual bool AI_avoidGrowth() const = 0;
 	virtual void AI_setAvoidGrowth(bool bNewValue) = 0;

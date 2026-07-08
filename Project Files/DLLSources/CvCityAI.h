@@ -6,6 +6,7 @@
 #define CIV4_CITY_AI_H
 
 #include "CvCity.h"
+#include <set>
 
 typedef std::vector<std::pair<UnitAITypes, int> > UnitTypeWeightArray;
 
@@ -109,6 +110,8 @@ public:
 	int AI_intangibleShortfall(YieldTypes eYield, const CvUnit* pUnit) const;
 	void AI_updateInputShortage();
 	int AI_congestionSurcharge() const;
+	int AI_citizenKeepThreshold() const;
+	void AI_automationFullCycle();
 	// Non-virtual wrapper for AI_professionValue
 	int AI_citizenProfessionValue(
 		ProfessionTypes eProfession,
@@ -249,6 +252,10 @@ protected:
 	// AI_updateInputShortage and read (const, concurrently) by the scorer to
 	// reward gathering inputs the city's industry is starving for. NOT saved.
 	std::vector<int> m_automationInputShortage;
+
+	// Units ejected during the current automate-all cycle; barred from being
+	// re-recruited in the same cycle so the fixed-point loop terminates. NOT saved.
+	std::set<int> m_automationEjectedThisCycle;
 
 	IDInfo m_routeToCity;
 
