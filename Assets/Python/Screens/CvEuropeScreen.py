@@ -1245,7 +1245,12 @@ class CvEuropeScreen:
 		(city, iter) = player.firstCity(False)
 
 		while (city):
-			if (city.isCoastal(gc.getMIN_WATER_SIZE_FOR_OCEAN()) and city.isEuropeAccessable()):
+			# Automation fix: offer any city adjacent to navigable water, not just
+			# ocean-coastal ones. A lake city reachable only through a canal city is
+			# now a valid destination - the generatePath check below uses THIS ship's
+			# movement rules, so it appears only if the ship can actually get there
+			# (e.g. a lake-capable sloop routing ocean -> canal city -> lake).
+			if (city.isCoastal(1)):
 				if unit.getGroup().generatePath(plotEast, city.plot(), 0, False, None):
 					self.CityPlotList.append([city, None])
 				elif unit.getGroup().generatePath(plotWest, city.plot(), 0, False, None):

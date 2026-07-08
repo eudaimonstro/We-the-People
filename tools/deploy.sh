@@ -1,20 +1,29 @@
 #!/bin/bash
-# Copy built DLL + automation XML into the installed WTP 4.2.1 mod.
+# Copy built DLL + automation XML + changed Python screens into the installed
+# WTP 4.2.1 mod.
 # Usage: tools/deploy.sh            deploy built files (backs up originals once)
 #        tools/deploy.sh --restore  put the stock files back
 set -e
 cd "$(dirname "$0")/.."
 MOD="/home/steve/.local/share/Steam/steamapps/common/Civilization IV Colonization/Mods/WeThePeople-4.2.1"
 
+# Files we deploy: source path (in repo) -> destination path (in mod), relative to Assets.
+FILES=(
+  "CvGameCoreDLL.dll"
+  "XML/GlobalDefinesAlt.xml"
+  "Python/Screens/CvEuropeScreen.py"
+)
+
 if [ "$1" = "--restore" ]; then
-  cp "$MOD/Assets/CvGameCoreDLL.dll.stock" "$MOD/Assets/CvGameCoreDLL.dll"
-  cp "$MOD/Assets/XML/GlobalDefinesAlt.xml.stock" "$MOD/Assets/XML/GlobalDefinesAlt.xml"
+  for f in "${FILES[@]}"; do
+    [ -f "$MOD/Assets/$f.stock" ] && cp "$MOD/Assets/$f.stock" "$MOD/Assets/$f"
+  done
   echo "Restored stock files."
   exit 0
 fi
 
-[ -f "$MOD/Assets/CvGameCoreDLL.dll.stock" ] || cp "$MOD/Assets/CvGameCoreDLL.dll" "$MOD/Assets/CvGameCoreDLL.dll.stock"
-[ -f "$MOD/Assets/XML/GlobalDefinesAlt.xml.stock" ] || cp "$MOD/Assets/XML/GlobalDefinesAlt.xml" "$MOD/Assets/XML/GlobalDefinesAlt.xml.stock"
-cp Assets/CvGameCoreDLL.dll "$MOD/Assets/CvGameCoreDLL.dll"
-cp Assets/XML/GlobalDefinesAlt.xml "$MOD/Assets/XML/GlobalDefinesAlt.xml"
+for f in "${FILES[@]}"; do
+  [ -f "$MOD/Assets/$f.stock" ] || cp "$MOD/Assets/$f" "$MOD/Assets/$f.stock"
+  cp "Assets/$f" "$MOD/Assets/$f"
+done
 echo "Deployed. Restore originals with: tools/deploy.sh --restore"

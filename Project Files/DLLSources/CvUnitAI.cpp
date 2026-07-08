@@ -7437,7 +7437,12 @@ CvPlot* CvUnitAI::AI_bestDestinationPlot(bool bIgnoreDanger) const
 	for (CvCity* pCity = kOwner.firstCity(&iLoop); pCity != NULL; pCity = kOwner.nextCity(&iLoop))
 	{
 		CvPlot* const pCityPlot = pCity->plot();
-		if (pCityPlot->isEuropeAccessable())
+		// Automation fix (human-automated ships only): also consider cities on an
+		// inland lake reachable through a canal city. findNearbyOceanPlot +
+		// generatePath below confirm a real route with this ship's movement rules,
+		// so a lake city is only picked if the ship can actually reach it. AI
+		// destination choice is unchanged (still isEuropeAccessable only).
+		if (pCityPlot->isEuropeAccessable() || (isHuman() && pCityPlot->isCoastalLand(1)))
 		{
 			CvPlot* const pOceanPlot = findNearbyOceanPlot(*pCityPlot);
 			const int iFlags = MOVE_BUST_FOG | (bIgnoreDanger ? MOVE_IGNORE_DANGER : 0);
