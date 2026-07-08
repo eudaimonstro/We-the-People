@@ -35,6 +35,10 @@
 		<iDefineIntVal>15</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_LIVESTOCK_SEED</DefineName>
+		<iDefineIntVal>8</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_INPUT_DEMAND_PERCENT</DefineName>
 		<iDefineIntVal>100</iDefineIntVal>
 	</Define>

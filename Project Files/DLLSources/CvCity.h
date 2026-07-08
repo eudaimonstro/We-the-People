@@ -1074,6 +1074,7 @@ public:
 	// Transport automation fix: how much of eYield this city wants delivered to keep
 	// its working consumers (craftsmen) running for AUTOMATION_TRANSPORT_BUFFER_TURNS.
 	int getAutomationTransportDemand(YieldTypes eYield) const;
+	bool canGrazeLivestockYield(YieldTypes eYield) const;
 };
 
 // NBMOD EDU cache - start - Nightinggale

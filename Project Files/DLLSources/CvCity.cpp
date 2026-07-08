@@ -12379,6 +12379,35 @@ int CvCity::getMaxImportAmount(YieldTypes eYield) const
 
 // R&R mod, vetiarvind, max yield import limit - End
 
+// Can this city breed the given livestock locally - i.e. does it have a
+// workable plot that would produce that livestock once a herd exists? Uses the
+// mature-herd potential (ignoring the empty-herd throttle) so a pasture the
+// city holds counts even before it has any animals yet.
+bool CvCity::canGrazeLivestockYield(YieldTypes eYield) const
+{
+	if (!GC.getYieldInfo(eYield).isLivestock())
+	{
+		return false;
+	}
+	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
+	{
+		if (i == CITY_HOME_PLOT)
+		{
+			continue;
+		}
+		CvPlot* const pPlot = getCityIndexPlot((CityPlotTypes)i);
+		if (pPlot != NULL && canWork(pPlot))
+		{
+			if (pPlot->calculatePotentialYield(eYield, getOwnerINLINE(), pPlot->getImprovementType(),
+				false, pPlot->getRouteType(), NO_UNIT, false, /*bIgnoreLivestockCap*/ true) > 0)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 int CvCity::getAutomationTransportDemand(YieldTypes eYield) const
 {
 	int iConsumed = getRawYieldConsumed(eYield);
@@ -12446,6 +12475,20 @@ int CvCity::getAutomationTransportDemand(YieldTypes eYield) const
 		if (iRemaining > iDemand)
 		{
 			iDemand = iRemaining;
+		}
+	}
+
+	// (C) livestock seeding: a city that can breed this livestock locally but
+	// holds less than a starter herd pulls in breeding stock, so herds spread to
+	// grazing cities instead of all livestock draining to the port for sale.
+	// Once seeded the herd grows locally (see the grazing valuation) and this
+	// demand goes away.
+	if (GC.getYieldInfo(eYield).isLivestock() && canGrazeLivestockYield(eYield))
+	{
+		const int iSeedNeed = getAutomationDefine("AUTOMATION_LIVESTOCK_SEED", 8) - getYieldStored(eYield);
+		if (iSeedNeed > iDemand)
+		{
+			iDemand = iSeedNeed;
 		}
 	}
 

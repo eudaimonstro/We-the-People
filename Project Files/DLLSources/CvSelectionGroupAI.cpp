@@ -1051,7 +1051,19 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 					{
 						continue;
 					}
-					const int iSurplus = pSource->getYieldStored(eYield) - pSource->getAutoMaintainThreshold(eYield);
+					int iSourceMaintain = pSource->getAutoMaintainThreshold(eYield);
+					// A grazing city keeps a breeding herd: it only exports
+					// livestock above the seed level, so zero-config routes (incl.
+					// the port drain) can't strip its breeders and stall breeding.
+					if (GC.getYieldInfo(eYield).isLivestock() && pSource->canGrazeLivestockYield(eYield))
+					{
+						const int iSeed = getAutomationDefine("AUTOMATION_LIVESTOCK_SEED", 8);
+						if (iSeed > iSourceMaintain)
+						{
+							iSourceMaintain = iSeed;
+						}
+					}
+					const int iSurplus = pSource->getYieldStored(eYield) - iSourceMaintain;
 					if (iSurplus <= 0)
 					{
 						continue;
