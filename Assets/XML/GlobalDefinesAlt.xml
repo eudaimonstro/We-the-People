@@ -27,6 +27,10 @@
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>AUTOMATION_EXPERT_INPUT_COST_PERCENT</DefineName>
+		<iDefineIntVal>50</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>AUTOMATION_STICKINESS_PERCENT</DefineName>
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>

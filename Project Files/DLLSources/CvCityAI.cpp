@@ -4135,6 +4135,27 @@ int CvCityAI::AI_citizenProfessionValue(
 	// Automation fix: human-owned cities get better scoring; AI cities keep stock behavior.
 	const bool bHumanAutomation = AI_isHumanAutomationCity();
 
+	// Specialty match for the expert bonus and input-cost discount: the exact
+	// ideal profession, or a sibling variant in the same building producing the
+	// same yield - WTP splits professions per input (Sailmaker (Flax) vs
+	// Sailmaker (Hemp)), and an expert's "ideal" is only one of the variants.
+	bool bExpertSpecialty = false;
+	if (bHumanAutomation)
+	{
+		const ProfessionTypes eIdealProfession = kUnit.AI_getIdealProfession();
+		if (eIdealProfession == eProfession)
+		{
+			bExpertSpecialty = true;
+		}
+		else if (eIdealProfession != NO_PROFESSION)
+		{
+			const CvProfessionInfo& kIdealInfo = GC.getProfessionInfo(eIdealProfession);
+			bExpertSpecialty = kIdealInfo.getSpecialBuilding() != NO_SPECIALBUILDING
+				&& kIdealInfo.getSpecialBuilding() == kProfInfo.getSpecialBuilding()
+				&& kIdealInfo.getYieldsProduced(0) == kProfInfo.getYieldsProduced(0);
+		}
+	}
+
 	// TODO: Get rid of this
 	const CvUnit* const pUnit = &kUnit;
 
@@ -4297,6 +4318,17 @@ int CvCityAI::AI_citizenProfessionValue(
 			for (int k = 0; k < numIn; ++k)
 				inValue += AI_estimateYieldValue(inYields[k], iChargedInput);
 			iInputValue = 100 * inValue;
+			// An expert working their specialty converts inputs at maximum
+			// efficiency - that conversion is why the player staffed the city.
+			// Charging the input at full market price makes the job's margin
+			// round to zero and lose to any decent raw-yield plot, so discount
+			// it. (Plot jobs pay nothing for what they extract; this narrows
+			// that structural bias for the one citizen built to do the job.)
+			if (bExpertSpecialty)
+			{
+				const int iCostPercent = getAutomationDefine("AUTOMATION_EXPERT_INPUT_COST_PERCENT", 50);
+				iInputValue = iInputValue * iCostPercent / 100;
+			}
 		}
 		else
 		{
@@ -4360,8 +4392,10 @@ int CvCityAI::AI_citizenProfessionValue(
 		// without an explicit margin an expert-in-specialty vs.
 		// generalist-in-specialty arrangement scores as a near-tie and the
 		// swap pass settles wrong. This margin makes the correct seating
-		// decisive.
-		if (kUnit.AI_getIdealProfession() == eProfession)
+		// decisive. (bExpertSpecialty also matches sibling input-variants of
+		// the ideal profession, e.g. Sailmaker (Hemp) for a Master Sailmaker
+		// whose recorded ideal is Sailmaker (Flax).)
+		if (bExpertSpecialty)
 		{
 			const int iExpertBonus = getAutomationDefine("AUTOMATION_EXPERT_BONUS_PERCENT", 50);
 			combined = combined * (100 + iExpertBonus) / 100;
