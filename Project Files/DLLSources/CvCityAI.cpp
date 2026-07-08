@@ -4721,8 +4721,21 @@ int CvCityAI::AI_citizenProfessionValue(
 			const int iShortfall = AI_intangibleShortfall(eY, pUnit);
 			if (iShortfall > 0)
 			{
-				iOutputValue += 100 * pv.iYieldOutput * iShortfall
+				int iUrgency = 100 * pv.iYieldOutput * iShortfall
 					* getAutomationDefine("AUTOMATION_DEFICIENCY_JOB_VALUE", 10);
+				// Expert preservation: an economic expert has no advantage in a
+				// Judge/Healer/Entertainer slot (a generalist covers it equally),
+				// so discount the urgency for a unit whose ideal profession is a
+				// different, economic role. Generalists then win the deficiency
+				// slots and experts keep making cigars/tools/etc. Full urgency
+				// still applies if only experts are available (half of a large
+				// number is still large).
+				const ProfessionTypes eIdeal = kUnit.AI_getIdealProfession();
+				if (eIdeal != NO_PROFESSION && eIdeal != eProfession)
+				{
+					iUrgency = iUrgency * getAutomationDefine("AUTOMATION_EXPERT_DEFICIENCY_PERCENT", 50) / 100;
+				}
+				iOutputValue += iUrgency;
 			}
 		}
 
