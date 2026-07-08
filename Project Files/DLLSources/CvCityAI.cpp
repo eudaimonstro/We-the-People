@@ -203,10 +203,54 @@ void CvCityAI::AI_assignWorkingPlots()
 
 	if (AI_isHumanAutomationCity() && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
 	{
-		char buf[256];
-		sprintf(buf, "=== assign pass: %S (pop %d, netFood %d) ===",
-			getName().GetCString(), getPopulation(), foodDifference());
+		char buf[512];
+		sprintf(buf, "=== assign pass: %S (pop %d, netFood %d, health %d, law %d, crime %d, happy %d, unhappy %d) ===",
+			getName().GetCString(), getPopulation(), foodDifference(),
+			getCityHealth(), getCityLaw(), getCityCrime(),
+			getCityHappiness(), getCityUnHappiness());
 		gDLL->logMsg("automation.log", buf);
+
+		// Diagnostic: value and slot availability of every intangible-yield
+		// profession for a sample unlocked citizen, so "why was no Healer
+		// seated" is answerable from the log alone.
+		CvUnit* pSampleUnit = NULL;
+		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+		{
+			CvUnit* pUnit = m_aPopulationUnits[i];
+			if (pUnit != NULL && !pUnit->isColonistLocked())
+			{
+				pSampleUnit = pUnit;
+				break;
+			}
+		}
+		if (pSampleUnit != NULL)
+		{
+			for (int iI = 0; iI < GC.getNumProfessionInfos(); iI++)
+			{
+				const ProfessionTypes eLoopProfession = (ProfessionTypes)iI;
+				const CvProfessionInfo& kLoopProfession = GC.getProfessionInfo(eLoopProfession);
+				if (!kLoopProfession.isCitizen() || kLoopProfession.isWorkPlot())
+				{
+					continue;
+				}
+				const YieldTypes eProduced = (YieldTypes)kLoopProfession.getYieldsProduced(0);
+				if (eProduced != YIELD_HEALTH && eProduced != YIELD_LAW && eProduced != YIELD_HAPPINESS)
+				{
+					continue;
+				}
+				if (!GC.getCivilizationInfo(getCivilizationType()).isValidProfession(eLoopProfession))
+				{
+					continue;
+				}
+				sprintf(buf, "  diag %S: val=%d canHave=%d canHaveNoBump=%d actualOutput=%d",
+					kLoopProfession.getDescription(),
+					AI_citizenProfessionValue(eLoopProfession, *pSampleUnit, NULL, NULL),
+					(int)canHaveCitizenProfession(*pSampleUnit, eLoopProfession, true),
+					(int)canHaveCitizenProfession(*pSampleUnit, eLoopProfession, false),
+					getProfessionActualOutput(eLoopProfession, *pSampleUnit));
+				gDLL->logMsg("automation.log", buf);
+			}
+		}
 	}
 
 	/*
