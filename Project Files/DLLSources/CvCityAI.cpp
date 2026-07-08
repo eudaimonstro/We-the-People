@@ -293,11 +293,21 @@ void CvCityAI::AI_assignWorkingPlots()
 		if (AI_isHumanAutomationCity() && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
 		{
 			const ProfessionTypes eNewProf = pUnit->getProfession();
+			const ProfessionTypes eIdealProf = pUnit->AI_getIdealProfession();
+			const int iChosenValue = (eNewProf != NO_PROFESSION)
+				? AI_citizenProfessionValue(eNewProf, *pUnit, getPlotWorkedByUnit(pUnit), NULL) : 0;
+			// ideal-profession value: building jobs evaluate with NULL plot;
+			// plot-job ideals report 0 here (plot context unknown)
+			const int iIdealValue = (eIdealProf != NO_PROFESSION && eIdealProf != eNewProf)
+				? AI_citizenProfessionValue(eIdealProf, *pUnit, NULL, NULL) : -1;
 			char buf[512];
-			sprintf(buf, "%S: unit %d (%S) -> %S | netFood=%d storedFood=%d displaced=%d",
+			sprintf(buf, "%S: unit %d (%S) -> %S val=%d | ideal=%S idealVal=%d | netFood=%d storedFood=%d displaced=%d",
 				getName().GetCString(), pUnit->getID(),
 				pUnit->getName().GetCString(),
 				eNewProf != NO_PROFESSION ? GC.getProfessionInfo(eNewProf).getDescription() : L"NONE",
+				iChosenValue,
+				eIdealProf != NO_PROFESSION ? GC.getProfessionInfo(eIdealProf).getDescription() : L"-",
+				iIdealValue,
 				foodDifference(), getYieldStored(YIELD_FOOD),
 				pOldUnit != NULL ? pOldUnit->getID() : -1);
 			gDLL->logMsg("automation.log", buf);
@@ -4267,6 +4277,26 @@ int CvCityAI::AI_citizenProfessionValue(
 		{
 			iOutputValue = 100
 				* AI_estimateYieldValue(eY, pv.iYieldOutput);
+		}
+		else if (bHumanAutomation && !kProfInfo.isWorkPlot())
+		{
+			// Output was already capped by sustained supply in step 4: value it
+			// fully, and charge only the input that the capped output actually
+			// consumes. (Previously capped output paid for FULL input demand,
+			// making a half-supplied craftsman look like a net loss - a Master
+			// Sail Maker would rather mine ore than make sails from a real
+			// hemp stockpile.)
+			iOutputValue = 100 * AI_estimateYieldValue(eY, pv.iYieldOutput);
+			const int iBaseOutput = getProfessionOutput(eProfession, pUnit);
+			int iChargedInput = pv.iYieldInput;
+			if (iBaseOutput > 0 && yieldsOut.yields[j].iAmount < iBaseOutput)
+			{
+				iChargedInput = pv.iYieldInput * yieldsOut.yields[j].iAmount / iBaseOutput;
+			}
+			int inValue = 0;
+			for (int k = 0; k < numIn; ++k)
+				inValue += AI_estimateYieldValue(inYields[k], iChargedInput);
+			iInputValue = 100 * inValue;
 		}
 		else
 		{
