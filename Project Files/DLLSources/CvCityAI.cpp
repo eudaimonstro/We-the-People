@@ -5908,6 +5908,45 @@ void CvCityAI::AI_bestPlotBuild(const CvPlot* pPlot, int* piBestValue, BuildType
 				bRemoveFeature = kBuild.isFeatureRemove(eFeature);
 			}
 
+			// Automation fix (human players only): forest protection for
+			// automated builds.
+			if (bRemoveFeature && GET_PLAYER(getOwnerINLINE()).isHuman())
+			{
+				// (a) The "Leave Forests" player option previously applied only
+				// to fort placement; honor it for every automated build.
+				if (GET_PLAYER(getOwnerINLINE()).isOption(PLAYEROPTION_LEAVE_FORESTS))
+				{
+					continue;
+				}
+				// (b) Never remove a feature out from under a citizen working
+				// this plot when that would reduce the yield they harvest
+				// (protects lumberjacks' forests; still allows upgrades that
+				// keep the worker's yield intact).
+				if (pPlot->isBeingWorked())
+				{
+					CvCity* const pWorkingCity = pPlot->getWorkingCity();
+					CvUnit* const pWorkingUnit = (pWorkingCity != NULL) ? pWorkingCity->getUnitWorkingPlot(pPlot) : NULL;
+					if (pWorkingUnit != NULL && pWorkingUnit->getProfession() != NO_PROFESSION)
+					{
+						const CvProfessionInfo& kWorkedProf = GC.getProfessionInfo(pWorkingUnit->getProfession());
+						bool bHarmsWorker = false;
+						for (int iP = 0; iP < kWorkedProf.getNumYieldsProduced() && !bHarmsWorker; ++iP)
+						{
+							const YieldTypes eWorkedYield = (YieldTypes)kWorkedProf.getYieldsProduced(iP);
+							if (eWorkedYield != NO_YIELD
+								&& pPlot->getYieldWithBuild(eBuild, eWorkedYield, true) < pPlot->getYield(eWorkedYield))
+							{
+								bHarmsWorker = true;
+							}
+						}
+						if (bHarmsWorker)
+						{
+							continue;
+						}
+					}
+				}
+			}
+
 			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 			{
 				YieldTypes eYield = (YieldTypes)iYield;
