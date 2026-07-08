@@ -4433,6 +4433,34 @@ int CvCityAI::AI_sustainedInputAvailable(YieldTypes eYield, ProfessionTypes ePro
 	{
 		iNet = 0;
 	}
+
+	// Livestock is a renewable herd, not a warehouse: consuming the stockpile
+	// shrinks the herd, which shrinks future breeding (breeding is proportional
+	// to the herd), so a butcher that eats into stored livestock drives it to
+	// extinction - and it cannot restart from zero. So for a NET-CONSUMING
+	// livestock profession (a butcher), usable supply is ONLY the sustainable
+	// breeding rate (net ongoing production); the stored herd is the principal,
+	// not free supply. A profession that produces the livestock back while it
+	// works (a milkmaid: consumes and re-produces cattle, net zero) does not
+	// deplete the herd, so it keeps the normal stockpile-inclusive supply.
+	if (GC.getYieldInfo(eYield).isLivestock())
+	{
+		const CvProfessionInfo& kProf = GC.getProfessionInfo(eProfession);
+		bool bProducesBack = false;
+		for (int i = 0; i < kProf.getNumYieldsProduced(); ++i)
+		{
+			if ((YieldTypes)kProf.getYieldsProduced(i) == eYield)
+			{
+				bProducesBack = true;
+				break;
+			}
+		}
+		if (!bProducesBack)
+		{
+			return iNet;
+		}
+	}
+
 	const int iHorizon = getAutomationDefine("AUTOMATION_STOCKPILE_HORIZON", 5);
 	// In-transit cargo counts: a wagon already en route with input is supply,
 	// closing the timing gap between automated delivery cycles.
