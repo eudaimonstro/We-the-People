@@ -12382,10 +12382,45 @@ int CvCity::getMaxImportAmount(YieldTypes eYield) const
 
 int CvCity::getAutomationTransportDemand(YieldTypes eYield) const
 {
-	const int iConsumed = getRawYieldConsumed(eYield);
+	int iConsumed = getRawYieldConsumed(eYield);
 	if (iConsumed <= 0)
 	{
-		return 0;
+		// Potential demand: an idle expert whose specialty consumes this yield
+		// and whose building is usable. Stocking the city before the expert
+		// works lets the citizen automation seat them - breaks the deadlock
+		// where no consumption means no deliveries means no consumption.
+		for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+		{
+			CvUnit* const pUnit = m_aPopulationUnits[i];
+			if (pUnit == NULL)
+			{
+				continue;
+			}
+			const ProfessionTypes eIdeal = pUnit->AI_getIdealProfession();
+			if (eIdeal == NO_PROFESSION || pUnit->getProfession() == eIdeal)
+			{
+				continue;
+			}
+			const CvProfessionInfo& kIdeal = GC.getProfessionInfo(eIdeal);
+			bool bConsumesYield = false;
+			for (int j = 0; j < kIdeal.getNumYieldsConsumed(); ++j)
+			{
+				if ((YieldTypes)kIdeal.getYieldsConsumed(j) == eYield)
+				{
+					bConsumesYield = true;
+					break;
+				}
+			}
+			if (bConsumesYield && getProfessionOutput(eIdeal, pUnit) > 0)
+			{
+				iConsumed = getProfessionInput(eIdeal, pUnit);
+				break;
+			}
+		}
+		if (iConsumed <= 0)
+		{
+			return 0;
+		}
 	}
 	const int iBuffer = getAutomationDefine("AUTOMATION_TRANSPORT_BUFFER_TURNS", 10);
 	// projected stock after the buffer horizon at current rates

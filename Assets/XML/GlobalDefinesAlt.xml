@@ -20,7 +20,7 @@
 	</Define>
 	<Define>
 		<DefineName>AUTOMATION_STOCKPILE_HORIZON</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>AUTOMATION_EXPERT_BONUS_PERCENT</DefineName>

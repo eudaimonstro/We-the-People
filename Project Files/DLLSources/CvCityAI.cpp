@@ -4101,8 +4101,10 @@ int CvCityAI::AI_sustainedInputAvailable(YieldTypes eYield, ProfessionTypes ePro
 	{
 		iNet = 0;
 	}
-	const int iHorizon = getAutomationDefine("AUTOMATION_STOCKPILE_HORIZON", 10);
-	return iNet + getYieldStored(eYield) / iHorizon;
+	const int iHorizon = getAutomationDefine("AUTOMATION_STOCKPILE_HORIZON", 5);
+	// In-transit cargo counts: a wagon already en route with input is supply,
+	// closing the timing gap between automated delivery cycles.
+	return iNet + (getYieldStored(eYield) + AI_getTransitYield(eYield)) / iHorizon;
 }
 
 // Returns an estimate of the economic output value of pUnit in eProfession,
