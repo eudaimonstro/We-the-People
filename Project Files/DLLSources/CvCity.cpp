@@ -12416,21 +12416,45 @@ int CvCity::getAutomationTransportDemand(YieldTypes eYield) const
 				break;
 			}
 		}
-		if (iConsumed <= 0)
+	}
+
+	int iDemand = 0;
+
+	// (A) consumption-based demand: keep the city's craftsmen (or an idle expert
+	// whose building is ready) supplied for the buffer horizon.
+	if (iConsumed > 0)
+	{
+		const int iBuffer = getAutomationDefine("AUTOMATION_TRANSPORT_BUFFER_TURNS", 10);
+		// projected stock after the buffer horizon at current rates
+		const int iProjected = getYieldStored(eYield)
+			+ (getRawYieldProduced(eYield) - iConsumed) * iBuffer;
+		if (iProjected < 0)
 		{
-			return 0;
+			iDemand = -iProjected;
 		}
 	}
-	const int iBuffer = getAutomationDefine("AUTOMATION_TRANSPORT_BUFFER_TURNS", 10);
-	// projected stock after the buffer horizon at current rates
-	const int iProjected = getYieldStored(eYield)
-		+ (getRawYieldProduced(eYield) - iConsumed) * iBuffer;
-	if (iProjected >= 0)
+
+	// (B) construction-material demand: a building or unit under construction may
+	// have all its hammers yet stall waiting for non-hammer materials (stone,
+	// tools, ...). Demand what is still missing so transport delivers it instead
+	// of leaving the build stuck. getProductionNeeded is the current order's
+	// total requirement for this yield; MAX_INT means "not a cargo requirement".
+	const int iNeeded = getProductionNeeded(eYield);
+	if (iNeeded > 0 && iNeeded < MAX_INT)
+	{
+		const int iRemaining = iNeeded - getYieldStored(eYield) - getYieldRushed(eYield);
+		if (iRemaining > iDemand)
+		{
+			iDemand = iRemaining;
+		}
+	}
+
+	if (iDemand <= 0)
 	{
 		return 0;
 	}
 	// never ask for more than the warehouse/import limit accepts
-	return std::min(-iProjected, getMaxImportAmount(eYield));
+	return std::min(iDemand, getMaxImportAmount(eYield));
 }
 
 // transport feeder - start - Nightinggale

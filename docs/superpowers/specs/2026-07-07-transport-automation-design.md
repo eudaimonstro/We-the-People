@@ -78,6 +78,10 @@ Diagnostics reuse the existing `AUTOMATION_LOGGING` switch: per automated-transp
 6. **Sea test:** two coastal cities + coastal transport; same behaviors over water.
 7. **AI regression:** AI opponents' wagons unchanged (gate untouched paths); their turns process normally.
 
+## Addendum (2026-07-08, playtest): construction-material demand
+
+A building with all its hammers can stall waiting for non-hammer materials (stone, tools) that no profession consumes, so `getAutomationTransportDemand` reported zero demand and no virtual route delivered them. Fix: `getAutomationTransportDemand(eYield)` now returns the max of (A) consumption-based demand and (B) construction-material demand = `getProductionNeeded(eYield) - stored - rushed` for the current build order (guarded against MAX_INT / non-cargo). A constructing city now pulls in its missing materials via virtual routes, and the existing unload-value boost (which already rewards delivering below production-needed) sizes the haul. Self-limiting: demand vanishes once materials arrive or the build completes.
+
 ## Risks
 
 - **Candidate-set explosion:** cities x cities x yields per wagon per turn. At colony scale (~10 cities, ~40 cargo yields) with early filtering (skip zero-supply yields first), cost is trivial next to the existing per-route `generatePath` calls, but path generation stays only where it already happens (destination choice), not per virtual candidate.
