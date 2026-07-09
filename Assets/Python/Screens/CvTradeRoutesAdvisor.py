@@ -442,23 +442,31 @@ class CvTradeRoutesAdvisor:
 		self.CURRENT_TABLE = self.YIELD_TABLE
 		szTable = self.TableNames[self.CURRENT_TABLE]
 		
-		iRows = int(self.iNumYields**0.5 + 1)
-		YIELD_X, YIELD_Y = 0, 0
-		BOX_SIZE = self.TABLE_WIDTH / iRows
-		
+		# Fit every cargo yield inside the TABLE_WIDTH x TABLE_HEIGHT area. The mod
+		# added far more yields than the original fixed layout assumed, so pick the
+		# column count from the panel's aspect ratio and clamp the box size to BOTH
+		# dimensions - the grid no longer overflows off the bottom of the panel.
+		iCount = self.iNumYields
+		iCols = int((iCount * float(self.TABLE_WIDTH) / float(self.TABLE_HEIGHT)) ** 0.5)
+		if iCols < 1:
+			iCols = 1
+		iRowsNeeded = (iCount + iCols - 1) / iCols   # ceil(count / cols)
+		if iRowsNeeded < 1:
+			iRowsNeeded = 1
+		BOX_SIZE = min(self.TABLE_WIDTH / iCols, self.TABLE_HEIGHT / iRowsNeeded)
+
 		screen.modifyLabel(self.szTitle, u"<font=3b>" + self.TableLabel[self.CURRENT_TABLE] + u"</font>", CvUtil.FONT_LEFT_JUSTIFY)
 		screen.addPanel(szTable, u"", u"", True, True, self.TABLE_X, self.TABLE_Y, self.TABLE_WIDTH, self.TABLE_HEIGHT, PanelStyles.PANEL_STYLE_EMPTY, WidgetTypes.WIDGET_GENERAL, -1, -1)
-		
+
+		iPos = 0
 		for iYield in self.YieldList:
+			YIELD_X = (iPos % iCols) * BOX_SIZE
+			YIELD_Y = (iPos / iCols) * BOX_SIZE
 			screen.addDDSGFCAt(szTable + "Highlight" + str(iYield), szTable, "Art/Interface/Screens/TradeRoutes/BoxSelected.dds", YIELD_X, YIELD_Y, BOX_SIZE, BOX_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 			screen.hide(szTable + "Highlight" + str(iYield))
 			screen.addDDSGFCAt(szTable + "Box" + str(iYield), szTable, ArtFileMgr.getInterfaceArtInfo("INTERFACE_EUROPE_BOX_PRICE").getPath(), YIELD_X, YIELD_Y, BOX_SIZE, BOX_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 			screen.setImageButtonAt(szTable + "Selector" + str(iYield), szTable + "Box" + str(iYield), gc.getYieldInfo(iYield).getIcon(), BOX_SIZE / 6, BOX_SIZE / 6, BOX_SIZE * 2 / 3, BOX_SIZE * 2 / 3, WidgetTypes.WIDGET_GENERAL, self.YIELD_LIST_ID, iYield)
-		
-			YIELD_X += BOX_SIZE
-			if (iYield % iRows) + 1 == iRows:
-				YIELD_X = 0
-				YIELD_Y += BOX_SIZE
+			iPos += 1
 		
 		self.updateButtons()
 		

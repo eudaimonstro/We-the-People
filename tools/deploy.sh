@@ -12,6 +12,7 @@ FILES=(
   "CvGameCoreDLL.dll"
   "XML/GlobalDefinesAlt.xml"
   "Python/Screens/CvEuropeScreen.py"
+  "Python/Screens/CvTradeRoutesAdvisor.py"
 )
 
 if [ "$1" = "--restore" ]; then
