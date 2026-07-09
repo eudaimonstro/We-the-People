@@ -1341,6 +1341,18 @@ bool CvSelectionGroupAI::AI_tradeRoutes()
 
 	// We bail if there's not a single viable destination
 	// Transports with cargo should carry on because they might need to drop it off somewhere before they can start on normal traderoutes
+	if (isHuman() && GC.getDefineINT("AUTOMATION_LOGGING") > 0)
+	{
+		char buf[512];
+		sprintf(buf, "transport group %d at %S: automateType=%d automated=%d assignedRoutes=%d candidates=%d bNoRoute=%d bNoCargo=%d coastal=%d",
+			getID(),
+			pPlotCity != NULL ? pPlotCity->getName().GetCString() : L"(field)",
+			(int)getAutomateType(), (int)isAutomated(),
+			(int)m_aTradeRoutes.size(), (int)routes.size(),
+			(int)bNoRoute, (int)bNoCargo, (int)bCoastalTransport);
+		gDLL->logMsg("automation.log", buf);
+	}
+
 	if (bNoRoute && bNoCargo)
 		return false;
 
